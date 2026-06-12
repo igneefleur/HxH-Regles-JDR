@@ -1,19 +1,7 @@
-# Welcome to MkDocs
+# Dernières modifications
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Suivi des dernières mises à jour du livre de règles, directement depuis le dépôt.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-Domaine Domaines
+<div id="changelog" class="changelog">
+  <p class="cl-info">Chargement des dernières modifications…</p>
+</div>

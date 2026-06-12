@@ -1,17 +1,43 @@
 site_name: HxH Système JDR
 nav:
   - Accueil: index.md
-  - Armes & Armures: armes.md
+  - Livre de Règles:
+      - content/livre/index.md
+      - Caractéristiques: content/livre/caracteristiques.md
+      - Armes: content/livre/armes.md
 theme:
   name: material
   language: fr
   palette:
-    scheme: slate
+    scheme: default
+    primary: custom
+    accent: custom
+  font:
+    text: EB Garamond
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.top
+    - navigation.tabs        # barre horizontale en haut
+    - navigation.tabs.sticky # la barre reste collée (hauteur d'en-tête constante)
+    - navigation.expand      # arborescence dépliée par défaut
+    - navigation.indexes
+    - toc.integrate          # sommaire de la page intégré dans la nav de gauche
+    - content.tooltips
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+  - javascripts/changelog.js
+hooks:
+  - hooks/changelog.py
 plugins:
   - search
 markdown_extensions:
   - abbr
   - attr_list
+  - md_in_html
   - pymdownx.snippets:
       auto_append:
         - includes/glossaire.md
