@@ -1,4 +1,7 @@
 site_name: HxH Système JDR
+nav:
+  - Accueil: index.md
+  - Armes & Armures: armes.md
 theme:
   name: material
   language: fr
