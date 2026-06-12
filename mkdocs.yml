@@ -4,6 +4,7 @@ nav:
   - Livre de Règles:
       - content/livre/index.md
       - Caractéristiques: content/livre/caracteristiques.md
+      - Types de Dégâts: content/livre/degats.md
       - Armes: content/livre/armes.md
 theme:
   name: material
@@ -16,20 +17,22 @@ theme:
     text: EB Garamond
     code: Roboto Mono
   features:
-    - navigation.instant
     - navigation.top
     - navigation.tabs        # barre horizontale en haut
     - navigation.tabs.sticky # la barre reste collée (hauteur d'en-tête constante)
     - navigation.expand      # arborescence dépliée par défaut
     - navigation.indexes
-    - toc.integrate          # sommaire de la page intégré dans la nav de gauche
+    - navigation.footer      # liens page précédente / suivante (requis pour le défilement continu)
     - content.tooltips
+extra:
+  generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
   - javascripts/changelog.js
+  - javascripts/continuous.js
 hooks:
   - hooks/changelog.py
 plugins:

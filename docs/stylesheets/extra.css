@@ -79,6 +79,7 @@
 .md-typeset h5,
 .md-typeset h6 {
   color: var(--green-section);
+  text-align: center;
 }
 
 /* ============================================================
@@ -310,8 +311,42 @@
   display: none !important;
 }
 
+/* Footer : on garde les liens prev/next mais en tout petit, et on supprime
+   la barre méta (copyright / générateur). */
+.md-footer-meta {
+  display: none;
+}
+.md-footer__inner.md-grid {
+  margin: 0 auto;
+  padding: 0.1rem 0.4rem;
+}
+.md-footer__link {
+  padding: 0.1rem 0.2rem;
+  align-items: center;
+}
+.md-footer__title {
+  font-size: 0.62rem;
+  line-height: 1.1;
+  padding: 0 0.3rem;
+}
+/* Le label « Précédent/Suivant » est en absolu et réserve de la hauteur :
+   on le repasse en flux et minuscule pour aplatir le footer. */
+.md-footer__direction {
+  position: static;
+  font-size: 0.48rem;
+  opacity: 0.7;
+  margin: 0;
+}
+.md-footer__button.md-icon {
+  padding: 0.1rem;
+}
+.md-footer__button.md-icon svg {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
 /* ============================================================
-   Navigation latérale dense, façon « sommaire de livre » (5e.tools)
+   Navigation latérale
    ============================================================ */
 
 /* Sidebar plus large pour accueillir l'arborescence */
@@ -319,9 +354,9 @@
   width: 14rem;
 }
 
-/* Arborescence compacte */
+/* Nav Material générale (pages hors livre) */
 .md-nav {
-  font-size: 0.64rem;
+  font-size: 0.66rem;
   line-height: 1.3;
 }
 .md-nav__title {
@@ -329,32 +364,113 @@
   font-size: 0.7rem;
   color: var(--green-section);
 }
-
-/* Liens de nav serrés, avec un léger filet façon table des matières */
-.md-nav__list .md-nav__item {
-  padding: 0;
-}
-.md-nav__item .md-nav__link {
-  margin: 0.05rem 0;
-  padding: 0.12rem 0;
-}
-
-/* Indentation marquée des sous-niveaux (sections / sous-sections) */
-.md-nav__item .md-nav .md-nav__link {
-  padding-left: 0.6rem;
-  border-left: 1px solid #cdd8c8;
-}
-
-/* Lien actif mis en valeur */
 .md-nav__link--active,
 .md-nav__link--active > * {
   color: var(--green-title) !important;
   font-weight: 600;
 }
-
-/* Survol */
 .md-nav__link:hover {
   color: var(--green-title);
+}
+
+/* ============================================================
+   Arbre custom du livre (généré par continuous.js)
+   Sur les pages du livre, on masque la nav auto de Material.
+   ============================================================ */
+.book-mode .md-sidebar--primary .md-nav--primary {
+  display: none;
+}
+
+.book-nav {
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  padding: 0.6rem 0.7rem;
+}
+.book-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Chapitres */
+.book-chapter > .book-link {
+  display: block;
+  padding: 0.22rem 0;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: var(--green-section);
+  text-decoration: none;
+  cursor: pointer;
+}
+.book-chapter > .book-link:hover {
+  color: var(--green-title);
+}
+.book-chapter.active > .book-link {
+  color: var(--green-title);
+}
+
+/* Sous-sections : visibles uniquement pour le chapitre actif */
+.book-sections {
+  display: none;
+  margin: 0.1rem 0 0.4rem;
+}
+.book-chapter.active .book-sections {
+  display: block;
+}
+.book-sec {
+  display: block;
+  padding: 0.12rem 0 0.12rem 0.7rem;
+  margin-left: 0.15rem;
+  border-left: 1px solid #cdd8c8;
+  color: #5a5a5a;
+  text-decoration: none;
+  cursor: pointer;
+}
+.book-sec:hover {
+  color: var(--green-title);
+  border-left-color: var(--green-header);
+}
+.book-sec.active {
+  color: var(--green-title);
+  border-left-color: var(--green-title);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Lecture en défilement continu (continuous.js)
+   Chaque page devient une « feuille » séparée : le conteneur passe en
+   transparent, et chaque .cont-page porte le papier crème + une marge
+   (le fond sombre apparaît donc entre deux pages).
+   ============================================================ */
+.md-typeset .cont-sentinel {
+  height: 1px;
+}
+
+/* Surbrillance temporaire du titre ciblé après un clic dans l'arbre */
+@keyframes cont-flash-anim {
+  0%   { background-color: rgba(130, 153, 123, 0.55); }
+  100% { background-color: transparent; }
+}
+.md-typeset .cont-flash {
+  animation: cont-flash-anim 1.5s ease-out;
+  border-radius: 3px;
+  box-decoration-break: clone;
+}
+.md-content > .md-content__inner.cont-active {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  /* Désactive l'ancrage de scroll natif : sinon il entre en conflit avec la
+     compensation manuelle lors de l'insertion de pages au-dessus. */
+  overflow-anchor: none;
+}
+.md-typeset .cont-page {
+  background: var(--paper);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .18);
+  padding: 1.6rem 2rem 2.2rem;
+  margin-bottom: 1.8rem;
 }
 
 /* ============================================================

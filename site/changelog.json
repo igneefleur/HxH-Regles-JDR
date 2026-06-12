@@ -1,1 +1,26 @@
-[]
+[
+{
+"short": "b7fe42a",
+"author": "Théo Cavaillès",
+"date": "2026-06-12T19:33:46+02:00",
+"message": "modifying structure",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/b7fe42a3c91cf6d72b235f5dd999417b63438d6a",
+"files": [
+{
+"status": "renamed",
+"filename": "content/livre/armes.md",
+"url": "content/livre/armes/"
+},
+{
+"status": "added",
+"filename": "content/livre/caracteristiques.md",
+"url": "content/livre/caracteristiques/"
+},
+{
+"status": "added",
+"filename": "content/livre/index.md",
+"url": "content/livre/"
+}
+]
+}
+]
