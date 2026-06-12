@@ -1,5 +1,24 @@
 [
 {
+"short": "50b797c",
+"author": "Théo Cavaillès",
+"date": "2026-06-12T23:06:08+02:00",
+"message": "Lecteur continu du livre + page Types de Dégâts séparée",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/50b797c0a6367adece4b63f90a8da104ce08039a",
+"files": [
+{
+"status": "modified",
+"filename": "content/livre/armes.md",
+"url": "content/livre/armes/"
+},
+{
+"status": "added",
+"filename": "content/livre/degats.md",
+"url": "content/livre/degats/"
+}
+]
+},
+{
 "short": "b7fe42a",
 "author": "Théo Cavaillès",
 "date": "2026-06-12T19:33:46+02:00",
