@@ -1,0 +1,447 @@
+/* ============================================================
+   Thème inspiré du document « Armes & Armures »
+   Palette parchemin + verts, polices Cinzel / EB Garamond.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --green-title:   #667861;
+  --green-section: #63755e;
+  --green-header:  #82997b;
+  --row-a:         #d6e2d0;
+  --row-b:         #e9f0e6;
+  --ink:           #1d1d1d;
+  --paper:         #faf6eb; /* crème chaud parchemin (feuille du corps de texte) */
+
+  /* Surcharge des variables Material */
+  --md-primary-fg-color:        var(--green-section);
+  --md-primary-fg-color--light: var(--green-header);
+  --md-primary-fg-color--dark:  var(--green-title);
+  --md-accent-fg-color:         var(--green-title);
+  --md-default-bg-color:        var(--paper);
+  --md-typeset-color:           var(--ink);
+}
+
+/* Fond général plus sombre et chaud (visible de chaque côté de la feuille) */
+.md-main,
+.md-container {
+  background: #e4ddcd;
+}
+
+/* La zone de contenu est transparente : on voit le fond sombre sur les côtés */
+.md-content {
+  background: transparent;
+}
+
+/* Seule la colonne de lecture porte le « papier » blanc, façon feuille posée */
+.md-content > .md-content__inner {
+  background: var(--paper);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .18);
+  padding: 1.4rem 2rem 2rem;
+}
+
+/* Corps de texte en Garamond */
+.md-typeset,
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset th {
+  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+}
+
+.md-typeset {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* Titres et sous-titres en Cinzel */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+}
+
+.md-typeset h1 {
+  color: var(--green-title);
+  font-style: italic;
+  text-align: center;
+}
+
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--green-section);
+}
+
+/* ============================================================
+   Tableaux façon « table de référence » (5e.tools) :
+   denses, triables, en-têtes collants, pleine largeur.
+   ============================================================ */
+
+/* Grille en pleine largeur : la nav latérale va à l'extrême gauche de l'écran,
+   le contenu occupe tout le reste (puis on le recentre ci-dessous). */
+.md-grid {
+  max-width: none;
+}
+
+/* Colonne de lecture centrée. La nav étant fixée hors du flux (voir plus bas),
+   le contenu occupe tout le viewport et se centre donc au milieu de la PAGE. */
+[dir=ltr] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner,
+[dir=rtl] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner,
+.md-content > .md-content__inner {
+  max-width: 50rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ============================================================
+   Mise en page sur 2 colonnes — À LA DEMANDE
+   Entourer le contenu voulu de :  <div class="cols" markdown> … </div>
+   ============================================================ */
+.md-typeset .cols {
+  column-count: 2;
+  column-gap: 2.4rem;
+}
+
+/* Dans une zone 2-colonnes : les tableaux et titres principaux s'étalent
+   sur toute la largeur et ne se coupent pas entre deux colonnes. */
+.md-typeset .cols h1,
+.md-typeset .cols table {
+  column-span: all;
+  break-inside: avoid;
+}
+
+/* Éviter qu'un titre de section reste seul en bas d'une colonne */
+.md-typeset .cols h2,
+.md-typeset .cols h3 {
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+/* Desktop : on sort la nav du flux et on la fixe à l'extrême gauche.
+   Le contenu (.md-main__inner = .md-grid en pleine largeur) remplit alors
+   tout le viewport et la colonne de lecture se centre au milieu de la page. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    position: fixed;
+    top: 4.8rem;   /* sous le header + la barre d'onglets */
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 14rem;
+    padding: 1.2rem 0;
+    z-index: 1;
+  }
+}
+
+/* Apparence commune à toutes les tables ; les petites tables (Dégâts,
+   Illégalité, Allonge) gardent le layout auto natif de Material. */
+.md-typeset table:not([class]) {
+  font-size: 0.62rem;
+  line-height: 1.2;
+  border: none;
+  box-shadow: none;
+}
+
+/* ─── Tables d'armes uniquement (celles à 10 colonnes) ───
+   table-layout: fixed + width 100% => elles tiennent dans la zone (aucun
+   scroll, aucun débordement) ; les largeurs ci-dessous rendent les colonnes
+   PROPORTIONNELLES (Variantes & Propriétés larges, le reste étroit). */
+.md-typeset table:not([class]):has(th:nth-child(10)) {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(1)  { width: 10%; } /* Archétype */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(2)  { width: 21%; } /* Variantes  */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(3)  { width: 9%;  } /* Prix       */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(4)  { width: 6%;  } /* Illég.     */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(5)  { width: 7%;  } /* Usage      */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(6)  { width: 6%;  } /* Mains      */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(7)  { width: 6%;  } /* Dég.       */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(8)  { width: 9%;  } /* Type       */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(9)  { width: 8%;  } /* Allonge    */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(10) { width: 18%; } /* Propriétés */
+
+/* En-tête triable ; revient à la ligne pour ne pas forcer la largeur des colonnes */
+.md-typeset table:not([class]) th {
+  background: var(--green-header);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 0.3em 0.45em;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Indicateurs de tri (tablesort pose aria-sort) */
+.md-typeset table:not([class]) th[aria-sort="ascending"]::after {
+  content: " ▲";
+  font-size: 0.8em;
+  opacity: 0.85;
+}
+.md-typeset table:not([class]) th[aria-sort="descending"]::after {
+  content: " ▼";
+  font-size: 0.8em;
+  opacity: 0.85;
+}
+.md-typeset table:not([class]) th:not([aria-sort]):hover::after {
+  content: " ⇅";
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+/* Cellules compactes ; le texte revient à la ligne pour éviter tout débordement */
+.md-typeset table:not([class]) td {
+  padding: 0.18em 0.5em;
+  border: none;
+  vertical-align: middle;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* La 2e colonne (variantes/exemples) est la plus dense */
+.md-typeset table:not([class]) td:nth-child(2) {
+  font-size: 0.92em;
+  color: #4a4a4a;
+}
+
+/* Lignes alternées */
+.md-typeset table:not([class]) tbody tr:nth-child(odd) td {
+  background: var(--row-a);
+}
+.md-typeset table:not([class]) tbody tr:nth-child(even) td {
+  background: var(--row-b);
+}
+
+.md-typeset table:not([class]) tbody tr {
+  border: none;
+  transition: background 0.05s;
+}
+.md-typeset table:not([class]) tbody tr:hover td {
+  background: #c7d7c0;
+}
+
+/* Abréviations de type de dégâts (CON, TRA, FEU…) en petites capitales */
+.md-typeset table:not([class]) td:nth-child(8),
+.md-typeset table:not([class]) td:nth-child(7) {
+  font-variant: small-caps;
+  letter-spacing: .03em;
+}
+
+/* Citations TODO : mises en avant ambrées */
+.md-typeset blockquote {
+  border-left: .2rem solid var(--green-header);
+  color: #555;
+  font-style: italic;
+}
+
+/* ============================================================
+   En-tête façon 5e.tools (palette verte conservée)
+   ============================================================ */
+
+/* Bandeau de titre */
+.md-header {
+  background-color: var(--green-title);
+  box-shadow: none;
+}
+.md-header__title {
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+}
+
+/* Barre de navigation (rangée de boutons) — collée et de hauteur constante */
+.md-tabs {
+  background-color: var(--green-section);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* Boutons de nav centrés, encadrés, contigus comme 5e.tools */
+.md-tabs__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: .25rem 0;
+}
+.md-tabs__item {
+  height: auto;
+  padding: 0;
+  margin: 0 .1rem;
+}
+.md-tabs__link {
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: .72rem;
+  margin: 0;
+  padding: .18rem .7rem;
+  opacity: 1;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, .06);
+  transition: background-color .12s, border-color .12s;
+}
+.md-tabs__link:hover {
+  background-color: rgba(255, 255, 255, .18);
+  border-color: rgba(255, 255, 255, .65);
+  opacity: 1;
+}
+.md-tabs__link--active {
+  background-color: var(--green-header);
+  border-color: #fff;
+  font-weight: 600;
+}
+
+/* Pas de sommaire (Table des matières) à droite : avec toc.integrate il est
+   intégré dans la nav de gauche, on masque la colonne secondaire. */
+.md-sidebar--secondary {
+  display: none !important;
+}
+
+/* ============================================================
+   Navigation latérale dense, façon « sommaire de livre » (5e.tools)
+   ============================================================ */
+
+/* Sidebar plus large pour accueillir l'arborescence */
+.md-sidebar--primary {
+  width: 14rem;
+}
+
+/* Arborescence compacte */
+.md-nav {
+  font-size: 0.64rem;
+  line-height: 1.3;
+}
+.md-nav__title {
+  font-family: 'Cinzel', Garamond, serif;
+  font-size: 0.7rem;
+  color: var(--green-section);
+}
+
+/* Liens de nav serrés, avec un léger filet façon table des matières */
+.md-nav__list .md-nav__item {
+  padding: 0;
+}
+.md-nav__item .md-nav__link {
+  margin: 0.05rem 0;
+  padding: 0.12rem 0;
+}
+
+/* Indentation marquée des sous-niveaux (sections / sous-sections) */
+.md-nav__item .md-nav .md-nav__link {
+  padding-left: 0.6rem;
+  border-left: 1px solid #cdd8c8;
+}
+
+/* Lien actif mis en valeur */
+.md-nav__link--active,
+.md-nav__link--active > * {
+  color: var(--green-title) !important;
+  font-weight: 600;
+}
+
+/* Survol */
+.md-nav__link:hover {
+  color: var(--green-title);
+}
+
+/* ============================================================
+   Page d'accueil : dernières modifications (changelog)
+   ============================================================ */
+.md-typeset .changelog {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin-top: 1rem;
+}
+.md-typeset .cl-commit {
+  background: #fff;
+  border: 1px solid #d3ddcd;
+  border-left: 3px solid var(--green-header);
+  border-radius: 3px;
+  padding: .5rem .7rem;
+}
+.md-typeset .cl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .6rem;
+}
+.md-typeset .cl-msg {
+  font-weight: 600;
+  color: var(--green-section);
+}
+.md-typeset .cl-sha {
+  font-family: 'Roboto Mono', monospace;
+  font-size: .68rem;
+  color: #8a8a8a;
+  flex-shrink: 0;
+}
+.md-typeset .cl-meta {
+  font-size: .68rem;
+  color: #777;
+  margin: .1rem 0 .35rem;
+}
+.md-typeset .cl-files {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.md-typeset .cl-file {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin: .12rem 0;
+  font-size: .72rem;
+}
+.md-typeset .cl-file code {
+  background: transparent;
+  padding: 0;
+  font-size: .72rem;
+  color: #3a3a3a;
+}
+.md-typeset .cl-link {
+  font-size: .72rem;
+  color: var(--green-section);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--green-header);
+}
+.md-typeset .cl-link:hover {
+  color: var(--green-title);
+  border-bottom-style: solid;
+}
+.md-typeset .cl-status {
+  flex-shrink: 0;
+  min-width: 4.4rem;
+  text-align: center;
+  font-size: .6rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: .05rem .3rem;
+  border-radius: 2px;
+  color: #fff;
+}
+.md-typeset .cl-added    { background: #5a8a5a; }
+.md-typeset .cl-modified { background: #b08a3e; }
+.md-typeset .cl-removed  { background: #a85a52; }
+.md-typeset .cl-renamed  { background: #5a7a9a; }
+.md-typeset .cl-info {
+  color: #777;
+  font-style: italic;
+}
+.md-typeset .cl-error {
+  color: #a85a52;
+}
+
