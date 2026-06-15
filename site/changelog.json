@@ -1,5 +1,50 @@
 [
 {
+"short": "local",
+"author": "Théo Cavaillès",
+"date": null,
+"message": "Modifications en cours (non committées)",
+"url": null,
+"pending": true,
+"files": [
+{
+"status": "modified",
+"filename": "content/livre/armes.md",
+"url": "content/livre/armes/"
+},
+{
+"status": "modified",
+"filename": "content/livre/degats.md",
+"url": "content/livre/degats/"
+},
+{
+"status": "added",
+"filename": "content/livre/creation-armes.md",
+"url": "content/livre/creation-armes/"
+},
+{
+"status": "added",
+"filename": "content/livre/etats.md",
+"url": "content/livre/etats/"
+},
+{
+"status": "added",
+"filename": "content/livre/manoeuvres.md",
+"url": "content/livre/manoeuvres/"
+},
+{
+"status": "added",
+"filename": "content/livre/sens.md",
+"url": "content/livre/sens/"
+},
+{
+"status": "added",
+"filename": "content/livre/tailles.md",
+"url": "content/livre/tailles/"
+}
+]
+},
+{
 "short": "4c2c76d",
 "author": "Théo Cavaillès",
 "date": "2026-06-12T23:06:08+02:00",

@@ -59,13 +59,6 @@
     return frag;
   }
 
-  function initTables(scope) {
-    if (typeof Tablesort === "undefined") return;
-    scope.querySelectorAll("table:not([class])").forEach(t => {
-      try { new Tablesort(t); } catch (_) {}
-    });
-  }
-
   // Surbrillance temporaire d'un titre (pour repérer où l'on a atterri).
   function flash(el) {
     if (!el) return;
@@ -84,6 +77,13 @@
     const inner = document.querySelector(".md-content__inner");
     if (!inner) return;
     inner.classList.add("cont-active");
+
+    // On modifie l'URL via replaceState pendant le scroll : on fige donc les
+    // liens de nav en absolu (résolus maintenant, avant tout replaceState),
+    // sinon l'onglet Accueil — relatif — finirait par pointer vers /content/.
+    document.querySelectorAll('.md-tabs__link, a.md-logo').forEach(a => {
+      a.setAttribute('href', a.href);
+    });
 
     const firstPage = document.createElement("div");
     firstPage.className = "cont-page";
@@ -232,7 +232,6 @@
         if (res.article) {
           const el = makeFrag(res.article);
           inner.insertBefore(el, bottom);
-          initTables(el);
           registerPage(el, { ...t, title: res.title });
         }
         loadedBottom = i;
@@ -256,7 +255,6 @@
           inner.insertBefore(el, top.nextSibling);
           const after = document.documentElement.scrollHeight;
           window.scrollBy(0, after - before);
-          initTables(el);
           registerPage(el, { ...t, title: res.title });
         }
         loadedTop = i;

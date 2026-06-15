@@ -54,6 +54,41 @@ def _page_url(rel):
     return p + "/"             # content/livre/armes -> content/livre/armes/
 
 
+def _content_file(status, path, docs_rel, content_prefix):
+    """Transforme (statut, chemin dépôt) en entrée de fichier de contenu, ou None."""
+    if not path.startswith(content_prefix) or not path.endswith(".md"):
+        return None
+    rel = path[len(docs_rel) + 1:]
+    url = None if status == "removed" else _page_url(rel)
+    return {"status": status, "filename": rel, "url": url}
+
+
+def _working_changes(docs_rel, content_prefix):
+    """Fichiers de contenu modifiés dans le dossier de travail (non committés).
+    Vide sur un dépôt propre (ex. déploiement CI)."""
+    raw = _run(["git", "-c", "core.quotepath=false", "status", "--porcelain"])
+    files = []
+    for line in raw.splitlines():
+        if not line.strip():
+            continue
+        xy, rest = line[:2], line[3:]
+        if "->" in rest:                       # renommage : on garde le nouveau nom
+            rest = rest.split("->")[-1]
+        path = rest.strip().strip('"')
+        if xy == "??" or "A" in xy:
+            status = "added"
+        elif "D" in xy:
+            status = "removed"
+        elif "R" in xy:
+            status = "renamed"
+        else:
+            status = "modified"
+        cf = _content_file(status, path, docs_rel, content_prefix)
+        if cf:
+            files.append(cf)
+    return files
+
+
 def _parse_log(raw):
     """Renvoie une liste de commits avec leurs fichiers bruts (chemin dépôt)."""
     commits = []
@@ -89,14 +124,27 @@ def on_files(files, config, **kwargs):
     ])
 
     out = []
+
+    # Modifications en cours (non committées) — en tête, vide sur dépôt propre.
+    pending = _working_changes(docs_rel, content_prefix)
+    if pending:
+        author = _run(["git", "config", "user.name"]).strip() or "—"
+        out.append({
+            "short": "local",
+            "author": author,
+            "date": None,
+            "message": "Modifications en cours (non committées)",
+            "url": None,
+            "pending": True,
+            "files": pending,
+        })
+
     for c in _parse_log(raw) if raw.strip() else []:
         content_files = []
         for status, path in c["_files"]:
-            if not path.startswith(content_prefix) or not path.endswith(".md"):
-                continue
-            rel = path[len(docs_rel) + 1:]               # content/livre/armes.md
-            url = None if status == "removed" else _page_url(rel)
-            content_files.append({"status": status, "filename": rel, "url": url})
+            cf = _content_file(status, path, docs_rel, content_prefix)
+            if cf:
+                content_files.append(cf)
         if not content_files:
             continue
         out.append({

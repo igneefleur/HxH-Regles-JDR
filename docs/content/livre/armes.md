@@ -123,7 +123,6 @@ Chaque ligne représente un archétype mécanique ; les variantes culturelles ou
 | Grenade à main | Fragmentation, incendiaire, flashbang, fumigène | 50 000 Ƶ / u. | 5 | L | 1 | 100 | PER ou FEU | Courte | Zone (5 m), Consommable |
 | Lance-grenades | M203, GP-25, MGL | 2 500 000 Ƶ | 5 | T | 2 | 120 | PER | Moyenne | Zone (5 m), Chargeur (1–6) |
 | Lance-roquettes | RPG-7, AT4, LAW | 4 000 000 Ƶ | 5 | T | 2 | 200 | FEU/PER | Moyenne | Zone (5 m), Perce-armure, Rechargement, Bruyante |
-| Missile guidé portable | Javelin, NLAW, Stinger | 15 000 000 Ƶ | 5 | T | 2 | 250 | FEU/PER | Longue | Zone (5 m), Perce-armure, Guidé, Lente |
 | Charge explosive | C4, Semtex, mine Claymore | 100 000 Ƶ / kg | 4 | — | — | 200 | FEU/PER | Posée | Zone (10 m), Détonateur, Consommable |
 | Mortier | 60 / 81 / 120 mm | 5 000 000 Ƶ | 5 | T | — | 180 | PER | T. longue | Zone (10 m), Tir indirect, Stationnaire |
 | Lance-flammes | M2, LPO-50, RPO-A | 2 000 000 Ƶ | 4 | T | 2 | 80 | FEU | T. courte | Cône (15 m), Embrasement, Réservoir (10) |

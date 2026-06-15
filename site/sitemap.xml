@@ -2,22 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://igneefleur.github.io/HxH-Regles-JDR/</loc>
-         <lastmod>2026-06-12</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/</loc>
-         <lastmod>2026-06-12</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/armes/</loc>
-         <lastmod>2026-06-12</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/caracteristiques/</loc>
-         <lastmod>2026-06-12</lastmod>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/creation-armes/</loc>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/degats/</loc>
-         <lastmod>2026-06-12</lastmod>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/etats/</loc>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/manoeuvres/</loc>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/sens/</loc>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://igneefleur.github.io/HxH-Regles-JDR/content/livre/tailles/</loc>
+         <lastmod>2026-06-15</lastmod>
     </url>
 </urlset>

@@ -47,18 +47,23 @@
   }
 
   function commitCard(c) {
-    const sha = c.url
-      ? `<a class="cl-sha" href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.short)}</a>`
-      : `<span class="cl-sha">${escapeHtml(c.short)}</span>`;
+    const sha = c.pending
+      ? `<span class="cl-sha cl-pending-tag">en cours</span>`
+      : c.url
+        ? `<a class="cl-sha" href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.short)}</a>`
+        : `<span class="cl-sha">${escapeHtml(c.short)}</span>`;
+    const when = c.pending || !c.date
+      ? "non committé"
+      : `<time title="${fmtDate(c.date)}">${timeAgo(c.date)}</time>`;
     const files = (c.files || []).length
       ? `<ul class="cl-files">${c.files.map(fileRow).join("")}</ul>`
       : "";
-    return `<article class="cl-commit">
+    return `<article class="cl-commit${c.pending ? " cl-pending" : ""}">
       <header class="cl-head">
         <span class="cl-msg">${escapeHtml(c.message)}</span>
         ${sha}
       </header>
-      <div class="cl-meta">${escapeHtml(c.author)} · <time title="${fmtDate(c.date)}">${timeAgo(c.date)}</time></div>
+      <div class="cl-meta">${escapeHtml(c.author)} · ${when}</div>
       ${files}
     </article>`;
   }

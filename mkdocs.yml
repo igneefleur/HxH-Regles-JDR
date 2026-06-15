@@ -5,8 +5,13 @@ nav:
   - Livre de Règles:
       - content/livre/index.md
       - Caractéristiques: content/livre/caracteristiques.md
+      - Les Sens: content/livre/sens.md
+      - Les Tailles: content/livre/tailles.md
       - Types de Dégâts: content/livre/degats.md
+      - Création d'Armes: content/livre/creation-armes.md
       - Armes: content/livre/armes.md
+      - Manœuvres: content/livre/manoeuvres.md
+      - États: content/livre/etats.md
 theme:
   name: material
   language: fr
@@ -30,8 +35,6 @@ extra:
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
-  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
-  - javascripts/tablesort.js
   - javascripts/changelog.js
   - javascripts/continuous.js
 hooks:
