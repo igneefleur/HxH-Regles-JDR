@@ -1,5 +1,49 @@
 [
 {
+"short": "cb9941a",
+"author": "Théo Cavaillès",
+"date": "2026-06-15T17:17:28+02:00",
+"message": "Pages Sens, Tailles, Manœuvres ; refonte États ; système de création d'armes",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/cb9941ad4bf7973e03b5ac1572650e431f09f5c9",
+"files": [
+{
+"status": "modified",
+"filename": "content/livre/armes.md",
+"url": "content/livre/armes/"
+},
+{
+"status": "added",
+"filename": "content/livre/creation-armes.md",
+"url": "content/livre/creation-armes/"
+},
+{
+"status": "modified",
+"filename": "content/livre/degats.md",
+"url": "content/livre/degats/"
+},
+{
+"status": "added",
+"filename": "content/livre/etats.md",
+"url": "content/livre/etats/"
+},
+{
+"status": "added",
+"filename": "content/livre/manoeuvres.md",
+"url": "content/livre/manoeuvres/"
+},
+{
+"status": "added",
+"filename": "content/livre/sens.md",
+"url": "content/livre/sens/"
+},
+{
+"status": "added",
+"filename": "content/livre/tailles.md",
+"url": "content/livre/tailles/"
+}
+]
+},
+{
 "short": "4c2c76d",
 "author": "Théo Cavaillès",
 "date": "2026-06-12T23:06:08+02:00",
