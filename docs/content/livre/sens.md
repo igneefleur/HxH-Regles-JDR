@@ -4,7 +4,7 @@
 
 Un personnage perçoit le monde, et son propre corps, à travers ses sens. Chaque sens repose sur une compétence de perception : plus elle est élevée, plus le personnage remarque de choses, de loin et avec finesse. On range les sens selon deux axes : ce qu'ils mesurent — le monde ou le corps — et ce qu'ils permettent d'en tirer — se repérer, localiser ou identifier.
 
-## Deux familles, trois niveaux
+### Deux familles, trois niveaux
 
 Chaque sens se décrit par deux choses : ce qu'il mesure et ce qu'il permet.
 
@@ -19,7 +19,7 @@ Les deux familles suivent les mêmes trois niveaux :
 | Secondaire<br>*localiser* | En se concentrant, situer précisément un élément : sa position, sa distance, sa direction. | En se concentrant, situer un de ses membres ou l'endroit exact d'une sensation. |
 | Tertiaire<br>*identifier* | En se concentrant, reconnaître la nature ou l'identité d'un élément. | En se concentrant, reconnaître la nature d'une sensation interne. |
 
-## La grille des sens
+### La grille des sens
 
 Chaque sens réel occupe une case de cette grille — même structure que ci-dessus, mais avec les sens nommés.
 
@@ -29,13 +29,13 @@ Chaque sens réel occupe une case de cette grille — même structure que ci-des
 | Secondaire | Ouïe<br>Toucher<br>Thermoception | Proprioception<br>Nociception |
 | Tertiaire | Odorat<br>Goût<br>Magnétoréception | Intéroception<br>Chémoréception<br>Chronoception |
 
-## L'acuité des sens
+### L'acuité des sens
 
 Chaque sens possède une acuité, notée de 0 à 10, qui mesure à quel point il fonctionne sur le moment. Tout personnage commence à 10 dans chacun de ses sens ; à ce niveau, le sens est parfait et n'impose aucun malus. Fumée, éblouissement, vacarme, engourdissement, blessure : bien des effets font chuter l'acuité d'un sens. Chaque sens conserve sa propre acuité, et les pertes de sources différentes se cumulent sans jamais la faire descendre sous 0.
 
 Une acuité inférieure à 10 produit l'un de deux effets, selon la nature du jet. Ces deux effets ne s'appliquent jamais ensemble sur un même jet, et tous deux se comptent par point d'acuité manquant.
 
-### Percevoir
+#### Percevoir
 
 Lorsqu'un jet consiste à se servir du sens lui-même — remarquer, localiser, identifier — il subit un malus par point manquant, identique pour tous les sens.
 
@@ -43,7 +43,7 @@ Lorsqu'un jet consiste à se servir du sens lui-même — remarquer, localiser, 
 |---|---|
 | Tous les sens | −20 |
 
-### Agir
+#### Agir
 
 Lorsqu'une action s'appuie sur le sens sans relever de la perception — attaquer, esquiver, se déplacer — le jet subit un malus par point manquant, lui aussi identique pour tous les sens.
 
@@ -51,7 +51,7 @@ Lorsqu'une action s'appuie sur le sens sans relever de la perception — attaque
 |---|---|
 | Tous les sens | −10 |
 
-### Cumul et limites
+#### Cumul et limites
 
 Le malus d'acuité ne se cumule pas d'un sens à l'autre : quand un jet dépend de plusieurs sens dégradés, on ne retient que le plus fort d'entre eux. Un personnage à −40 sur la Vue et à −20 sur l'Ouïe ne subit donc que −40.
 

@@ -2,151 +2,88 @@
 
 <div class="cols" markdown>
 
-## Situations de combat
+<div class="states" markdown>
 
-Ces circonstances tactiques modifient l'attaque, la défense ou l'initiative d'un personnage. Sauf précision contraire, leurs malus ne valent que face à l'adversaire qui en est la cause.
+Les états regroupent les circonstances et les afflictions qui modifient ce qu'un personnage peut faire. On distingue les situations de combat et les autres états du corps.
 
-### De dos
+### Situations
 
-Un adversaire est dans le dos du personnage lorsqu'il se tient directement derrière lui. Le personnage ne le voit pas venir et ne peut guère se protéger : contre cet adversaire, il subit −30 à l'attaque, −80 à la parade et −80 à l'esquive.
+Ces circonstances tactiques modifient l'attaque, la défense ou l'initiative. Sauf mention contraire, leurs malus ne valent que face à l'adversaire qui en est la cause. Une case vide signale l'absence de modificateur.
 
-### De flanc
+<table>
+<thead><tr><th>Situation</th><th>Init.</th><th>Att.</th><th>Esq.</th><th>Par.</th><th>Phys.</th></tr></thead>
+<tbody>
+<tr><td>De dos</td><td></td><td>−30</td><td>−80</td><td>−80</td><td></td></tr>
+<tr><td>De flanc</td><td></td><td>−10</td><td>−30</td><td>−30</td><td></td></tr>
+<tr><td>En joue</td><td>−50</td><td>−20</td><td>−120</td><td>−120</td><td>−100</td></tr>
+<tr><td>Espace réduit</td><td></td><td>−40</td><td>−40</td><td>−40</td><td>−20</td></tr>
+<tr><td>Position supérieure</td><td></td><td>+20</td><td></td><td></td><td></td></tr>
+<tr><td>Position inférieure</td><td></td><td>−20</td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
 
-Un adversaire prend le personnage de flanc lorsqu'il se tient sur son côté, légèrement en retrait. Contre cet adversaire, le personnage subit −10 à l'attaque, −30 à la parade et −30 à l'esquive.
+<div class="defs" markdown>
 
-Un combattant de taille moyenne ne peut faire face qu'à trois adversaires à la fois : le quatrième et le cinquième le prennent de flanc, et le sixième se retrouve dans son dos.
+**De dos :** un adversaire se tient directement derrière le personnage ; il ne le voit pas venir et ne peut guère se protéger.
 
-### En joue
+**De flanc :** un adversaire se tient sur son côté, légèrement en retrait. Un combattant moyen ne fait face qu'à trois adversaires : les quatrième et cinquième le prennent de flanc, le sixième dans le dos.
 
-Le personnage est tenu en joue lorsqu'un adversaire le menace de près et dans l'instant — une lame sur la gorge, une arme braquée à bout portant. Il peut encore bouger et agir, mais le moindre geste est extrêmement dangereux. Contre l'adversaire qui le tient en joue, il subit −20 à l'attaque, −120 à la parade, −120 à l'esquive, −50 à l'initiative et −100 à ses actions physiques.
+**En joue :** un adversaire le menace de près et dans l'instant : une lame sur la gorge, une arme à bout portant. Il peut encore agir, mais le moindre geste est extrêmement dangereux.
 
-### Espace réduit
+**Espace réduit :** le combat se déroule dans un lieu exigu, de moins d'un mètre de large. Ces malus pèsent sur toutes ses actions, quel que soit l'adversaire.
 
-Le combat se déroule dans un lieu exigu, comme un passage de moins d'un mètre de large. À l'étroit, le personnage subit −40 à l'attaque, −40 à la parade, −40 à l'esquive et −20 à ses actions physiques. Ces malus pèsent sur toutes ses actions, sans distinction d'adversaire.
+**Position supérieure :** le personnage domine son adversaire en hauteur (un muret, une table, une monture).
 
-### Position supérieure
+**Position inférieure :** le personnage se trouve plus bas que son adversaire, qui le surplombe.
 
-Le personnage domine son adversaire en hauteur — perché sur un muret, sur une table, ou monté sur une créature. Contre cet adversaire plus bas que lui, il gagne +20 à l'attaque.
-
-### Position inférieure
-
-Le personnage se trouve plus bas que son adversaire, qui le surplombe. Contre cet adversaire, il subit −20 à l'attaque.
+</div>
 
 ### Surpris
 
-Un personnage est surpris lorsqu'il ne s'attend pas du tout à une attaque et ne peut l'anticiper d'aucune manière. Pris de court, il ne peut pas attaquer ce tour — il n'a pas l'initiative — et subit −90 à la parade, −90 à l'esquive et −90 à ses actions physiques. Il lui reste toutefois la possibilité de contre-attaquer.
+Un personnage pris au dépourvu au moment où un affrontement éclate est surpris : il subit −120 à son jet d'initiative en début de combat.
 
-## Mutisme
+### Autres états
 
-Le personnage est réduit au silence : il ne peut plus parler ni émettre le moindre son avec sa voix.
+Les afflictions du corps et de l'esprit. Sauf mention contraire, un état dure tant que sa cause persiste, et ses malus ou bonus s'appliquent à tous les jets concernés.
 
-## Entrave et paralysie
+<div class="defs" markdown>
 
-*Mouvement ou actions restreints, du plus léger au total.*
+**Mutisme :** ne peut plus parler ni émettre le moindre son avec sa voix.
 
-- Agrippé : ne peut plus se déplacer par lui-même, mais ce qui le tient peut l'entraîner avec lui, à vitesse réduite de moitié.
-- Immobilisé : ne peut plus bouger du tout.
-- Étourdi
-- Paralysie légère
-- Paralysie partielle
-- Paralysie totale (Incapacité)
-- Pétrifié
+**Empoisonné :** une toxine le ronge ; il subit −20 à ses jets d'attaque et de caractéristique tant qu'elle agit.
 
-## Vulnérabilité et inconscience
+**Charmé :** il tient la source pour un allié ; il ne peut ni l'attaquer ni la prendre pour cible, et celle-ci bénéficie de +20 à ses interactions sociales avec lui.
 
-*Personnage exposé ou hors de combat.*
+**Effrayé :** tant que la source de sa peur reste perceptible, il subit −20 à ses attaques et à ses tests, et ne peut s'en rapprocher de son plein gré.
 
-- À terre
-- Inconscience
+**Agrippé :** ne peut plus se déplacer de lui-même ; ce qui le tient peut l'entraîner à vitesse réduite de moitié. Il subit une Paralysie légère.
 
-## États émotionnels
+**Maîtrisé :** tenu dans une prise resserrée ; il ne peut plus se déplacer et subit une Paralysie partielle.
 
-Un personnage ne ressent jamais ces états de lui-même : ils ne naissent que d'un pouvoir, Nen ou autre, qui impose une émotion à sa victime. Chaque émotion se rapporte à une cible, qui peut être un objet comme une créature, désignée par le pouvoir.
+**Soumis :** tenu dans une prise totale ; il subit une Paralysie totale.
 
-Toute émotion existe à trois intensités croissantes : faible, moyenne, intense. Chacune impose à toutes les actions du personnage — attaques comme défenses — un malus de plus en plus lourd : −20, −40, puis −80. À partir du palier moyen, un effet supplémentaire s'y ajoute : le palier moyen gêne le personnage sans lui ôter le contrôle, tandis que le palier intense lui fait entièrement perdre la main et lui impose son tour. Le pouvoir qui inflige l'émotion en fixe l'intensité, et le personnage n'en subit qu'une seule à la fois pour une émotion donnée.
+**Immobilisé :** ne peut plus bouger ; il subit −20 à l'attaque et à l'esquive, et les attaques portées contre lui bénéficient de +20.
 
-Les malus émotionnels ne se cumulent pas. Un personnage peut subir plusieurs de ces états en même temps et les conserve tous, mais quand plusieurs d'entre eux pèsent sur un même jet, seul le plus fort s'applique. Un personnage à la fois sous Appréhension et sous Peur garde les deux états, mais ne subit que −40.
+**Étourdi :** sonné, il perd ses actions et ne peut pas réagir ; les attaques portées contre lui bénéficient de +20.
 
-### Peur
+**Paralysie légère :** ses gestes sont gênés ; il subit −20 à l'attaque, à la parade et à l'initiative, et −40 à l'esquive et aux actions physiques.
 
-La peur dresse le personnage contre ce qu'il redoute.
+**Paralysie partielle :** une partie de son corps ne répond plus ; il subit −80 à l'attaque, à la parade et à l'esquive, −30 à l'initiative et −60 aux actions physiques.
 
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Appréhension | −20 à toutes ses actions. | — |
-| Peur | −40 à toutes ses actions. | Le personnage ne peut pas s'approcher de la cible volontairement. |
-| Terreur | −80 à toutes ses actions. | Le personnage doit passer son tour à s'éloigner le plus possible de la cible sans se mettre en danger. |
+**Paralysie totale :** il ne peut absolument plus bouger ; il subit −200 à l'attaque, à la parade, à l'esquive et aux actions physiques, et −100 à l'initiative.
 
-### Colère
+**Pétrifié :** changé en matière inerte ; immobile, insensible et hors de combat.
 
-La colère tourne le personnage tout entier vers la cible de sa fureur.
+**Invisible :** impossible à localiser à l'œil nu ; ses attaques bénéficient de +20 et les attaques portées contre lui subissent −20.
 
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Agacement | −20 à toutes ses actions. | — |
-| Colère | −40 à toutes ses actions. | Le personnage ne peut pas adopter de position défensive. |
-| Rage | −80 à toutes ses actions. | Le personnage doit passer son tour à se rapprocher de la cible et à l'attaquer. |
+**À terre :** au sol et vulnérable ; se relever coûte une action. Il subit −20 à ses attaques ; contre lui, les attaques au corps à corps bénéficient de +20, celles à distance subissent −20.
 
-### Tristesse
+**Inconscience :** hors de combat et sans défense ; il lâche ce qu'il tient, tombe À terre, et toute attaque qui le touche au corps à corps est un coup critique.
 
-La tristesse accable le personnage sans se fixer sur aucune cible.
+</div>
 
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Mélancolie | −20 à toutes ses actions. | — |
-| Tristesse | −40 à toutes ses actions. | Le personnage ne peut effectuer qu'une seule action active par tour. |
-| Chagrin | −80 à toutes ses actions. | Le personnage doit passer son tour prostré, sans rien entreprendre. |
+> Les états liés aux sens (cécité, surdité, aveuglement, assourdissement…) ne figurent pas ici : ils sont gérés par l'acuité des [sens](sens.md).
 
-### Dégoût
-
-Le dégoût pousse le personnage à se détourner de la cible qui le répugne.
-
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Ennui | −20 à toutes ses actions. | — |
-| Dégoût | −40 à toutes ses actions. | Le personnage ne peut pas entrer en contact avec la cible volontairement. |
-| Répulsion | −80 à toutes ses actions. | Le personnage doit passer son tour à s'écarter de la cible pour fuir tout contact. |
-
-### Joie
-
-La joie endort la méfiance du personnage et lui fait baisser la garde.
-
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Sérénité | −20 à toutes ses actions. | — |
-| Joie | −40 à toutes ses actions. | Le personnage ne peut pas se défendre contre la cible. |
-| Extase | −80 à toutes ses actions. | Le personnage doit passer son tour immobile, submergé de plaisir. |
-
-### Confiance
-
-La confiance attache le personnage à la cible à laquelle il se fie et l'empêche de s'y opposer.
-
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Acceptation | −20 à toutes ses actions. | — |
-| Confiance | −40 à toutes ses actions. | Le personnage ne peut pas attaquer la cible. |
-| Admiration | −80 à toutes ses actions. | Le personnage doit passer son tour à exécuter ce que demande la cible. |
-
-### Étonnement
-
-L'étonnement prend le personnage de court et brouille ses réflexes.
-
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Distraction | −20 à toutes ses actions. | — |
-| Étonnement | −40 à toutes ses actions. | Le personnage perd l'initiative et agit en dernier ce tour. |
-| Stupéfaction | −80 à toutes ses actions. | Le personnage doit passer son tour figé, incapable d'agir. |
-
-### Anticipation
-
-L'anticipation rive l'attention du personnage sur ce qu'il guette.
-
-| Intensité | Malus | Effet supplémentaire |
-|---|---|---|
-| Intérêt | −20 à toutes ses actions. | — |
-| Anticipation | −40 à toutes ses actions. | Le personnage ne peut pas détourner son attention de la cible qu'il guette. |
-| Vigilance | −80 à toutes ses actions. | Le personnage doit passer son tour à guetter la cible et à y réagir, sans rien faire d'autre. |
-
-> Les états liés aux sens (cécité, surdité, aveuglement, assourdissement…) ne figurent pas ici : ils sont gérés par l'acuité des sens (voir [Les Sens](sens.md)).
+</div>
 
 </div>

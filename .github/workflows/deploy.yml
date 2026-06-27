@@ -14,6 +14,32 @@ jobs:
           fetch-depth: 0   # historique complet pour le changelog (hooks/changelog.py)
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+          python-version: '3.13'   # version éprouvée avec weasyprint==62.3 (évite le bleeding-edge 3.14)
+
+      # Bibliothèques natives requises par WeasyPrint (Pango >= 1.44 ; cairo et
+      # gdk-pixbuf ne sont plus nécessaires depuis WeasyPrint 53). On installe
+      # aussi EB Garamond (police du corps) pour un rendu déterministe.
+      - name: Dépendances système WeasyPrint + polices
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libpango-1.0-0 \
+            libpangoft2-1.0-0 \
+            libharfbuzz0b \
+            libharfbuzz-subset0 \
+            fonts-ebgaramond \
+            fontconfig
+          fc-cache -f
+
+      # mkdocs-to-pdf épingle lui-même weasyprint==62.3 et pydyf==0.10.0 : ne pas
+      # ajouter « weasyprint » à la main. brotli sert à décoder les woff2 des
+      # Google Fonts (@import dans extra.css : Cinzel pour les titres).
+      - name: Dépendances Python
+        run: pip install mkdocs-material "mkdocs-to-pdf==0.11.2" brotli
+
+      # Build + déploiement avec la config CI (qui active le plugin PDF). La
+      # variable ENABLE_PDF_EXPORT déclenche réellement la génération du PDF.
+      - name: Build et déploiement (PDF activé)
+        env:
+          ENABLE_PDF_EXPORT: "1"
+        run: mkdocs gh-deploy --config-file mkdocs.ci.yml --force

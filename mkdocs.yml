@@ -1,19 +1,43 @@
 site_name: HxH Système JDR
 site_url: https://igneefleur.github.io/HxH-Regles-JDR/
+exclude_docs: |
+  includes/glossaire.md
 nav:
   - Accueil: index.md
   - Livre de Règles:
       - content/livre/index.md
-      - Caractéristiques: content/livre/caracteristiques.md
-      - Les Sens: content/livre/sens.md
-      - Les Tailles: content/livre/tailles.md
-      - Types de Dégâts: content/livre/degats.md
-      - Création d'Armes: content/livre/creation-armes.md
-      - Armes: content/livre/armes.md
-      - Manœuvres: content/livre/manoeuvres.md
-      - États: content/livre/etats.md
+      - Avantages: content/livre/avantages.md
+      - Le Personnage:
+          - Éclat: content/livre/eclat.md
+          - Caractéristiques: content/livre/caracteristiques.md
+          - Capacités physiques: content/livre/capacites-physiques.md
+          - Points de formation: content/livre/points-formation.md
+          - Compétences: content/livre/competences.md
+          - Les Sens: content/livre/sens.md
+          - États: content/livre/etats.md
+          - Activités: content/livre/activites.md
+      - L'Échelle du Monde:
+          - Les Tailles: content/livre/tailles.md
+          - Types de Dégâts: content/livre/degats.md
+      - Le Combat:
+          - Déroulement du combat: content/livre/deroulement-combat.md
+          - Manœuvres: content/livre/manoeuvres.md
+          - Arts martiaux: content/livre/arts-martiaux.md
+          - Formations: content/livre/formations.md
+          - Critique et Blessures: content/livre/critique-blessures.md
+          - Armes: content/livre/armes.md
+      - Nen:
+          - Les 12 archétypes de Nen: content/livre/archetypes-nen.md
+          - Techniques du Nen: content/livre/techniques-nen.md
+          - Renforcement: content/livre/renforcement.md
+          - Émission: content/livre/emission.md
+          - Transmutation: content/livre/transmutation.md
+          - Manipulation: content/livre/manipulation.md
+          - Conjuration: content/livre/conjuration.md
+          - Spécialisation: content/livre/specialisation.md
 theme:
   name: material
+  custom_dir: overrides
   language: fr
   palette:
     scheme: default
@@ -23,7 +47,7 @@ theme:
     text: EB Garamond
     code: Roboto Mono
   features:
-    - navigation.top
+    - navigation.instant  # navigation SPA : pas de rechargement complet (pas de flash)
     - navigation.tabs        # barre horizontale en haut
     - navigation.tabs.sticky # la barre reste collée (hauteur d'en-tête constante)
     - navigation.expand      # arborescence dépliée par défaut
@@ -37,6 +61,8 @@ extra_css:
 extra_javascript:
   - javascripts/changelog.js
   - javascripts/continuous.js
+  - javascripts/glossary.js
+  - javascripts/print-book.js
 hooks:
   - hooks/changelog.py
 plugins:
@@ -47,4 +73,4 @@ markdown_extensions:
   - md_in_html
   - pymdownx.snippets:
       auto_append:
-        - includes/glossaire.md
+        - docs/includes/glossaire.md

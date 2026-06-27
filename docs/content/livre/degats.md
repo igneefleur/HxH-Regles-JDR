@@ -4,6 +4,8 @@
 
 Toute source de dégâts appartient à un ou plusieurs des sept types suivants, répartis en deux familles : les dégâts physiques et les dégâts élémentaires. Le type détermine quelle valeur d'armure (TA) s'applique en défense, ainsi que la nature des effets secondaires éventuels (saignement, brûlure, etc.).
 
+<div class="keep" markdown>
+
 ## Dégâts Physiques
 
 | Type | Abr. | Exemples |
@@ -11,6 +13,10 @@ Toute source de dégâts appartient à un ou plusieurs des sept types suivants, 
 | Contondant | CON | Masses, poings, chutes, projections |
 | Tranchant | TRA | Lames, griffes, fil de Nen tendu |
 | Perforant | PER | Pointes, flèches, balles, aiguilles |
+
+</div>
+
+<div class="keep" markdown>
 
 ## Dégâts Élémentaires
 
@@ -20,6 +26,8 @@ Toute source de dégâts appartient à un ou plusieurs des sept types suivants, 
 | Froid | FRO | Glace, gel, froid surnaturel |
 | Électricité | ÉLE | Foudre, décharges, lumière |
 | Décomposition | DÉC | Corruption, pourriture, acide, ténèbres |
+
+</div>
 
 Les dégâts d'Électricité couvrent également les dégâts de lumière (éclairs aveuglants, lumière sacrée, rayons).
 
