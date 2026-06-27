@@ -1,5 +1,170 @@
 [
 {
+"short": "local",
+"author": "Théo Cavaillès",
+"date": null,
+"message": "Modifications en cours (non committées)",
+"url": null,
+"pending": true,
+"files": [
+{
+"status": "modified",
+"filename": "content/livre/activites.md",
+"url": "content/livre/activites/"
+},
+{
+"status": "modified",
+"filename": "content/livre/archetypes-nen.md",
+"url": "content/livre/archetypes-nen/"
+},
+{
+"status": "modified",
+"filename": "content/livre/armes.md",
+"url": "content/livre/armes/"
+},
+{
+"status": "modified",
+"filename": "content/livre/arts-martiaux.md",
+"url": "content/livre/arts-martiaux/"
+},
+{
+"status": "modified",
+"filename": "content/livre/avantages.md",
+"url": "content/livre/avantages/"
+},
+{
+"status": "modified",
+"filename": "content/livre/capacites-physiques.md",
+"url": "content/livre/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/livre/caracteristiques.md",
+"url": "content/livre/caracteristiques/"
+},
+{
+"status": "modified",
+"filename": "content/livre/competences.md",
+"url": "content/livre/competences/"
+},
+{
+"status": "modified",
+"filename": "content/livre/conjuration.md",
+"url": "content/livre/conjuration/"
+},
+{
+"status": "modified",
+"filename": "content/livre/critique-blessures.md",
+"url": "content/livre/critique-blessures/"
+},
+{
+"status": "modified",
+"filename": "content/livre/degats.md",
+"url": "content/livre/degats/"
+},
+{
+"status": "modified",
+"filename": "content/livre/deroulement-combat.md",
+"url": "content/livre/deroulement-combat/"
+},
+{
+"status": "modified",
+"filename": "content/livre/eclat.md",
+"url": "content/livre/eclat/"
+},
+{
+"status": "modified",
+"filename": "content/livre/emission.md",
+"url": "content/livre/emission/"
+},
+{
+"status": "modified",
+"filename": "content/livre/etats.md",
+"url": "content/livre/etats/"
+},
+{
+"status": "modified",
+"filename": "content/livre/formations.md",
+"url": "content/livre/formations/"
+},
+{
+"status": "modified",
+"filename": "content/livre/index.md",
+"url": "content/livre/"
+},
+{
+"status": "modified",
+"filename": "content/livre/manipulation.md",
+"url": "content/livre/manipulation/"
+},
+{
+"status": "modified",
+"filename": "content/livre/manoeuvres.md",
+"url": "content/livre/manoeuvres/"
+},
+{
+"status": "modified",
+"filename": "content/livre/points-formation.md",
+"url": "content/livre/points-formation/"
+},
+{
+"status": "modified",
+"filename": "content/livre/renforcement.md",
+"url": "content/livre/renforcement/"
+},
+{
+"status": "modified",
+"filename": "content/livre/sens.md",
+"url": "content/livre/sens/"
+},
+{
+"status": "modified",
+"filename": "content/livre/specialisation.md",
+"url": "content/livre/specialisation/"
+},
+{
+"status": "modified",
+"filename": "content/livre/tailles.md",
+"url": "content/livre/tailles/"
+},
+{
+"status": "modified",
+"filename": "content/livre/techniques-nen.md",
+"url": "content/livre/techniques-nen/"
+},
+{
+"status": "modified",
+"filename": "content/livre/transmutation.md",
+"url": "content/livre/transmutation/"
+},
+{
+"status": "added",
+"filename": "content/livre/aura.md",
+"url": "content/livre/aura/"
+},
+{
+"status": "added",
+"filename": "content/livre/classe.md",
+"url": "content/livre/classe/"
+},
+{
+"status": "added",
+"filename": "content/livre/di.md",
+"url": "content/livre/di/"
+},
+{
+"status": "added",
+"filename": "content/livre/heavens-arena.md",
+"url": "content/livre/heavens-arena/"
+},
+{
+"status": "added",
+"filename": "content/livre/systeme-points-armes.md",
+"url": "content/livre/systeme-points-armes/"
+}
+]
+},
+{
 "short": "026890b",
 "author": "Théo Cavaillès",
 "date": "2026-06-27T03:10:07+02:00",

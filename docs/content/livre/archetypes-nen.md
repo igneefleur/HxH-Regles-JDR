@@ -2,34 +2,70 @@
 
 <div class="cols" markdown>
 
-À la création de personnage — ou lorsqu'un personnage apprend le Nen en cours de jeu — le joueur choisit un archétype parmi douze. L'archétype fixe les aptitudes de départ dans les six catégories de Hatsu : il dit où l'aura du personnage est la plus à l'aise.
+<div class="keep" markdown>
+
+À la création, ou lorsqu'il apprend le Nen en cours de jeu, le personnage choisit un archétype parmi douze. L'archétype fixe ses aptitudes de départ dans les six catégories de Hatsu, c'est-à-dire où son aura est la plus à l'aise.
+
+</div>
 
 ## L'affinité
 
-Tout personnage possède une affinité pour chacune des six catégories de Hatsu, exprimée en pourcentage. Les six catégories se disposent en hexagone — renforcement, émission, manipulation, spécialisation, conjuration, transmutation, puis retour au renforcement —, et plus deux catégories y sont proches, plus leurs affinités se ressemblent : 100 % pour sa propre catégorie, 80 % pour les voisines, 60 % au cran suivant, 40 % pour l'opposée.
+<div class="keep" markdown>
+
+Chaque personnage a une affinité, en pourcentage, pour chacune des six catégories de Hatsu. Elles se disposent en hexagone (renforcement, émission, manipulation, spécialisation, conjuration, transmutation, puis retour au renforcement) : plus deux catégories y sont proches, plus leurs affinités se ressemblent. Sa catégorie vaut 100 %, les voisines 80 %, le cran suivant 60 %, l'opposée 40 %.
+
+</div>
+
+<div class="keep" markdown>
 
 Cette affinité se lit sur deux plans :
 
 | Affinité | Ce qu'elle gouverne |
 |---|---|
-| Apprentissage | la vitesse à laquelle le personnage apprend et progresse dans une catégorie |
-| Application | la puissance de son Nen lorsqu'il emploie cette catégorie |
+| Apprentissage | la vitesse à laquelle on apprend et progresse dans une catégorie |
+| Application | la puissance du Nen quand on emploie cette catégorie |
 
-Le pourcentage d'une catégorie en fixe à la fois l'apprentissage et l'application : une affinité élevée s'acquiert vite et frappe fort, une affinité faible reste lente à développer et limitée en puissance.
+</div>
+
+<div class="keep" markdown>
+
+Le pourcentage fixe les deux à la fois : une affinité élevée s'acquiert vite et frappe fort, une affinité faible reste lente à développer et faible en puissance.
+
+</div>
 
 ## Simple ou hybride ?
 
-Six archétypes sont simples : ils concentrent le potentiel sur une seule catégorie, portée à son maximum. Six autres sont hybrides : ils le répartissent entre deux catégories voisines sur l'hexagone, un peu en deçà du sommet, mais sur deux fronts à la fois.
+<div class="keep" markdown>
 
-Le choix oppose la puissance à l'ampleur. L'archétype simple atteint le plus haut degré possible dans sa catégorie et frappe le plus fort là où il excelle. L'hybride n'a pas ce sommet, mais dispose de deux registres voisins à un niveau quasi égal, et s'adapte plus facilement à des situations variées.
+Six archétypes sont simples : ils concentrent le potentiel sur une seule catégorie, portée au maximum. Six autres sont hybrides : ils le répartissent sur deux catégories voisines, un peu en deçà du sommet.
 
-Les deux hybrides qui touchent à la spécialisation — Manipulateur-Spécialiste et Conjurateur-Spécialiste — restent exceptionnels : la spécialisation ne s'ouvre presque jamais par le seul entraînement. On les réserve aux personnages au potentiel singulier.
+</div>
+
+<div class="keep" markdown>
+
+Le choix oppose la puissance à l'ampleur : le simple frappe le plus fort là où il excelle, l'hybride renonce à ce sommet pour deux registres voisins presque égaux, plus souples face à des situations variées.
+
+</div>
+
+<div class="keep" markdown>
+
+Les deux hybrides qui touchent à la spécialisation (Manipulateur-Spécialiste et Conjurateur-Spécialiste) restent exceptionnels : la spécialisation ne s'ouvre presque jamais par le seul entraînement, et on les réserve aux personnages au potentiel singulier.
+
+</div>
 
 ## Choisir son archétype
 
-Un personnage peut choisir librement son archétype, à l'exception de la spécialisation et de ses deux hybrides — Manipulateur-Spécialiste et Conjurateur-Spécialiste —, réservés aux personnages dotés de l'avantage [Spécialiste](avantages.md) : à peine 0,033 % des utilisateurs de Nen y accèdent.
+<div class="keep" markdown>
+
+Un personnage choisit librement son archétype, sauf la spécialisation et ses deux hybrides (Manipulateur-Spécialiste et Conjurateur-Spécialiste), réservés aux porteurs de l'avantage [Spécialiste](avantages.md) : à peine 0,033 % des utilisateurs de Nen y accèdent.
+
+</div>
+
+<div class="keep" markdown>
 
 À défaut de choisir, il s'en remet au hasard avec un d100. La spécialisation et ses deux hybrides n'y figurent pas.
+
+</div>
 
 <div class="keep" markdown>
 
@@ -63,7 +99,7 @@ Un archétype simple porte sa catégorie à 100 %, et les autres décroissent se
 
 ### Renforceur
 
-Le Renforceur incarne le combattant de Nen dans sa forme la plus directe : il emploie son aura pour amplifier les capacités naturelles d'un corps ou d'un objet — la force, la vitesse, la dureté, l'endurance, la guérison. C'est la catégorie la plus équilibrée des six, aussi solide en défense que redoutable en attaque, ce qui prédispose le Renforceur au combat rapproché. Il n'a pas les pouvoirs les plus spectaculaires, mais aucun autre archétype n'égale sa puissance brute au contact.
+Le Renforceur est le combattant de Nen le plus direct : il amplifie de son aura les capacités d'un corps ou d'un objet (force, vitesse, dureté, endurance, guérison). C'est la catégorie la plus équilibrée, aussi solide en défense qu'en attaque, taillée pour le corps à corps. Ses pouvoirs sont peu spectaculaires, mais nul ne l'égale en puissance brute au contact.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -98,7 +134,7 @@ Le Renforceur incarne le combattant de Nen dans sa forme la plus directe : il em
 
 ### Émitteur
 
-L'Émitteur a maîtrisé le déploiement de son aura loin de son corps. D'ordinaire, l'aura commence à se disperser à l'instant où elle quitte le corps ; l'Émitteur, lui, la garde stable et intacte même projetée à grande distance. Il en tire des attaques qui frappent là où les autres ne peuvent atteindre — mais son aura déportée le laisse plus exposé au corps à corps, qu'il cherche en général à éviter.
+L'Émitteur déploie son aura loin de son corps. Là où l'aura ordinaire se disperse dès qu'elle s'éloigne, la sienne reste stable et intacte à grande distance. Il frappe là où nul n'atteint, mais son aura déportée l'expose au corps à corps, qu'il préfère éviter.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -117,7 +153,7 @@ L'Émitteur a maîtrisé le déploiement de son aura loin de son corps. D'ordina
 
 ### Transmuteur
 
-Le Transmuteur a appris à changer la nature et les propriétés de son aura pour lui faire imiter une autre substance : la rendre tranchante, élastique, collante, électrique ou brûlante. L'aura n'en prend que les propriétés, jamais la matière réelle — une aura chargée d'électricité en garde les qualités d'aura et ne se comporte donc pas tout à fait comme une vraie décharge. Le Transmuteur brille au contact, où chaque coup porte l'effet qu'il a façonné dans son aura.
+Le Transmuteur change les propriétés de son aura pour lui faire imiter une substance : tranchante, élastique, collante, électrique ou brûlante. Elle en prend les propriétés, jamais la matière réelle : une aura électrique garde les qualités d'aura et n'agit pas tout à fait comme une vraie décharge. Au contact, chaque coup porte l'effet qu'il a façonné.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -152,7 +188,7 @@ Le Transmuteur a appris à changer la nature et les propriétés de son aura pou
 
 ### Manipulateur
 
-Le Manipulateur tourne son aura vers le contrôle des êtres vivants et des objets. Son pouvoir s'accompagne presque toujours de conditions qu'il fixe à l'avance — marionnettes, ordres imposés, emprise scellée par un contact ou un rituel — et plus ces conditions sont contraignantes, plus son emprise est forte. Il combat rarement de front : il prépare le terrain, retourne ses cibles et les laisse se battre à sa place.
+Le Manipulateur tourne son aura vers le contrôle des êtres et des objets. Son pouvoir s'assortit presque toujours de conditions fixées d'avance (marionnettes, ordres imposés, emprise scellée par un contact ou un rituel) : plus elles sont contraignantes, plus son emprise est forte. Il combat rarement de front : il prépare le terrain et retourne ses cibles pour qu'elles se battent à sa place.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -171,7 +207,7 @@ Le Manipulateur tourne son aura vers le contrôle des êtres vivants et des obje
 
 ### Conjurateur
 
-Le Conjurateur donne à son aura une existence matérielle : il crée des objets bien réels et indépendants, que l'on peut toucher et qu'un tiers perçoit. Une fois qu'il maîtrise un objet, il l'invoque et le congédie à volonté, et peut lui attacher des propriétés singulières qu'aucune autre catégorie ne produirait. C'est là que le Nen déploie le plus d'inventivité : un objet conjuré peut faire à peu près n'importe quoi, pour peu que son créateur en ait conçu les règles.
+Le Conjurateur donne à son aura une existence matérielle : des objets bien réels et indépendants, que l'on touche et qu'un tiers perçoit. Une fois l'objet maîtrisé, il l'invoque et le congédie à volonté, et lui attache des propriétés qu'aucune autre catégorie ne produirait. C'est là que le Nen est le plus inventif : un objet conjuré fait presque n'importe quoi, pour peu que son créateur en ait fixé les règles.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -206,7 +242,7 @@ Le Conjurateur donne à son aura une existence matérielle : il crée des objets
 
 ### Spécialiste
 
-Le Spécialiste échappe à toute classification : sa catégorie réunit tous les pouvoirs qui n'entrent dans aucune des cinq autres. Ses effets sont uniques, propres à chaque utilisateur, et ne répondent à aucune règle commune. On naît Spécialiste plus souvent qu'on ne le devient, et c'est de loin l'archétype le plus rare et le plus imprévisible des six.
+Le Spécialiste échappe à toute classification : sa catégorie réunit les pouvoirs qui n'entrent dans aucune des cinq autres. Ses effets sont uniques, propres à chacun, sans règle commune. On naît Spécialiste plus qu'on ne le devient : c'est de loin l'archétype le plus rare et le plus imprévisible.
 
 Cet archétype, comme ses deux hybrides, ne peut être choisi sans l'avantage [Spécialiste](avantages.md) : sans lui, l'affinité de spécialisation reste à 0 %.
 
@@ -235,7 +271,7 @@ Un archétype hybride répartit son potentiel entre deux catégories voisines, �
 
 ### Renforceur-Émitteur
 
-Le Renforceur-Émitteur tient autant du combattant que du tireur. Il décuple son corps et la matière comme un Renforceur, mais sait détacher cette puissance pour frapper à distance à la manière d'un Émitteur. De près comme de loin, ses coups gardent la force du renforcement, ce qui en fait un archétype redoutablement polyvalent.
+Le Renforceur-Émitteur tient du combattant comme du tireur. Il décuple son corps comme un Renforceur, puis détache cette puissance pour frapper au loin comme un Émitteur. De près comme de loin, ses coups gardent la force du renforcement : un archétype très polyvalent.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -270,7 +306,7 @@ Le Renforceur-Émitteur tient autant du combattant que du tireur. Il décuple so
 
 ### Renforceur-Transmuteur
 
-Le Renforceur-Transmuteur amplifie son corps et la matière comme un Renforceur, puis donne à cette aura les propriétés qu'il imagine à la manière d'un Transmuteur. Il combat au contact, frappant fort de coups auxquels il prête tranchant, charge électrique ou tout autre effet façonné dans son aura.
+Le Renforceur-Transmuteur amplifie son corps comme un Renforceur, puis prête à son aura les propriétés qu'il imagine comme un Transmuteur. Il combat au contact, de coups chargés de tranchant, d'électricité ou de tout autre effet façonné dans son aura.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -289,7 +325,7 @@ Le Renforceur-Transmuteur amplifie son corps et la matière comme un Renforceur,
 
 ### Émitteur-Manipulateur
 
-L'Émitteur-Manipulateur projette son aura au loin sans jamais en perdre la main. Il marie la portée de l'émission à l'emprise de la manipulation : ses tirs et son aura déportée suivent les conditions qu'il leur a fixées, frappent à distance et reviennent là où on ne les attend pas.
+L'Émitteur-Manipulateur projette son aura au loin sans en perdre la main. Il marie la portée de l'émission à l'emprise de la manipulation : ses tirs suivent les conditions qu'il leur a fixées, frappent à distance et reviennent là où on ne les attend pas.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -324,7 +360,7 @@ L'Émitteur-Manipulateur projette son aura au loin sans jamais en perdre la main
 
 ### Transmuteur-Conjurateur
 
-Le Transmuteur-Conjurateur donne à son aura les propriétés qu'il imagine comme un Transmuteur, puis lui prête une existence matérielle à la manière d'un Conjurateur. Il fait surgir des objets bien réels, taillés sur mesure, porteurs des qualités de son choix — tranchant, élasticité, charge électrique.
+Le Transmuteur-Conjurateur prête à son aura les propriétés qu'il imagine comme un Transmuteur, puis lui donne une existence matérielle comme un Conjurateur. Il fait surgir des objets bien réels, taillés sur mesure, porteurs des qualités de son choix : tranchant, élasticité, charge électrique.
 
 | Catégorie | Base d'Affinité |
 |---|---|

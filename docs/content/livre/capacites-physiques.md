@@ -2,11 +2,11 @@
 
 <div class="cols" markdown>
 
-Les capacités physiques mesurent ce que le corps d'un personnage accomplit concrètement : la charge qu'il soulève, la distance qu'il franchit, le temps qu'il retient son souffle. Chacune découle d'une [caractéristique](caracteristiques.md) physique brute, notée de 0 à 30, et se lit dans un tableau : on repère la valeur de la caractéristique, on suit sa ligne jusqu'à la colonne de l'effort fourni, et l'on obtient le résultat sans le moindre jet de dé. C'est un repère chiffré dont le MJ se sert pour trancher ce qu'un personnage réussit.
+Les capacités physiques mesurent ce que le corps accomplit : charge soulevée, distance franchie, souffle retenu. Chacune découle d'une [caractéristique](caracteristiques.md) physique notée de 0 à 30, et se lit dans un tableau sans jet de dé : on croise la valeur de la caractéristique et la colonne de l'effort fourni. C'est un repère chiffré pour le MJ.
 
-Sur cette échelle, 5 est la moyenne humaine et 9 le plafond qu'un être humain atteint dans la réalité. Dans l'univers, l'entraînement le plus poussé mène jusqu'à 19, sommet d'un corps humain ; au-delà, seuls des moyens surnaturels font progresser, jusqu'à 30, qui ne connaît plus aucune limite.
+Sur cette échelle, 5 est la moyenne humaine et 9 le plafond humain réel. Dans l'univers, l'entraînement mène jusqu'à 19, sommet d'un corps humain ; au-delà, seul le surnaturel fait progresser, jusqu'à 30, sans aucune limite.
 
-Toute capacité se lit à l'un des trois régimes d'[activité](activites.md), légère, intermédiaire ou lourde, qui disent l'intensité de l'effort. À chaque instant, un personnage relève du plus exigeant des régimes que ses actions lui imposent, et ce régime unique vaut pour toutes ses capacités à la fois : courir ou porter lourd écourte son apnée autant que cela pèse sur ses muscles.
+Toute capacité se lit à l'un des trois régimes d'[activité](activites.md) : légère, intermédiaire ou lourde, selon l'intensité de l'effort. À chaque instant, le personnage relève du plus exigeant des régimes que ses actions imposent, et ce régime unique vaut pour toutes ses capacités à la fois : courir ou porter lourd écourte son apnée autant que cela pèse sur ses muscles.
 
 Plusieurs des règles qui suivent convertissent un jet en paliers, gagnés ou retranchés selon le cas. Un jet ne vaut un palier qu'à partir de [Difficile](competences.md), et en ajoute un par degré de difficulté franchi au-delà.
 
@@ -62,29 +62,29 @@ L'indice de poids découle de la Force : il fixe la charge qu'un personnage port
 
 <div class="defs" markdown>
 
-**Légère :** le poids qu'un personnage porte ou déplace sans la moindre fatigue, et qu'il tiendrait indéfiniment. Tant qu'une charge n'excède pas cette valeur, elle ne lui coûte aucun effort et ne l'oblige à aucun ménagement.
+**Légère :** le poids porté ou déplacé sans aucune fatigue, indéfiniment. Tant qu'une charge n'excède pas cette valeur, elle ne coûte aucun effort.
 
-**Intermédiaire :** le poids qu'il manie au prix d'un vrai labeur, des heures durant, mais entrecoupées de pauses. Dès qu'une charge dépasse son activité légère, il bascule de lui-même dans ce régime : l'effort se fait sentir, et il ne saurait le soutenir sans répit. Il est dès lors au moins en activité intermédiaire.
+**Intermédiaire :** le poids manié au prix d'un vrai effort, des heures durant mais avec des pauses. Dès qu'une charge dépasse l'activité légère, le personnage bascule dans ce régime et passe au moins en activité intermédiaire.
 
-**Lourde :** le poids maximal qu'il soulève ou brise à pleine puissance, le temps d'un seul effort. Pour mouvoir une charge qui en relève, il doit recourir à l'action Forcer ; sans cet élan rassemblé, elle lui demeure hors de portée. Il est alors en activité lourde.
+**Lourde :** le poids maximal soulevé ou brisé à pleine puissance, le temps d'un seul effort. Mouvoir une telle charge exige l'action Forcer ; sans elle, elle reste hors de portée. Le personnage passe alors en activité lourde.
 
 </div>
 
-> Exemple. Un personnage doté d'une Force de 5, la moyenne humaine, porte sans se fatiguer 10 kg en activité légère, manie 30 kg au fil d'un travail en activité intermédiaire, puis soulève jusqu'à 100 kg le temps d'un effort en activité lourde.
+> Exemple. Avec une Force de 5, la moyenne humaine, un personnage porte sans fatigue 10 kg en activité légère, manie 30 kg en activité intermédiaire, puis soulève jusqu'à 100 kg le temps d'un effort en activité lourde.
 
 *Pour mémoire, le record réel du soulevé de terre avoisine 510 kg, et la plus lourde charge jamais soulevée par un homme, deux voitures en arrière-soulevé, près de 2,4 tonnes : c'est l'ordre de grandeur du palier 9, sommet humain réel. La moyenne humaine (5) soulève une centaine de kilos au prix d'un effort maximal.*
 
 #### Forcer
 
-Forcer est une [Action](deroulement-combat.md) : le personnage rassemble toute sa puissance en un seul élan. Il tente un jet de [Prouesse de Force](competences.md) et hausse d'autant de paliers la Force avec laquelle il soulève, brise ou résiste à un écrasement, jusqu'à la fin du prochain round. Le temps de ce sursaut, son indice de poids se lit à ce palier supérieur.
+Forcer est une [Action](deroulement-combat.md). Le personnage tente un jet de [Prouesse de Force](competences.md) et hausse d'autant de paliers la Force avec laquelle il soulève, brise ou résiste à un écrasement, jusqu'à la fin du prochain round. Le temps de ce sursaut, son indice de poids se lit à ce palier supérieur.
 
 #### Tirer et pousser
 
-Tirer ou pousser une charge, au lieu de la soulever, suit le même indice de poids, mais toutes ses valeurs sont multipliées par dix : un personnage tire ou pousse dix fois ce qu'il porterait. Les régimes, l'activité qu'ils imposent et l'action Forcer pour la colonne lourde s'appliquent comme pour le soulevé. Là où une Force de 9, sommet humain, soulève une tonne à pleine puissance, elle en tire ou en pousse dix.
+Tirer ou pousser une charge suit le même indice de poids, mais toutes ses valeurs sont multipliées par dix : on tire ou pousse dix fois ce qu'on porterait. Les régimes, l'activité imposée et l'action Forcer pour la colonne lourde s'appliquent comme au soulevé. Ainsi une Force de 9, sommet humain, soulève une tonne à pleine puissance mais en tire ou pousse dix.
 
 ### Mouvement
 
-Le mouvement découle de l'Agilité : c'est la distance qu'un personnage franchit en un round, soit environ 6 secondes, selon l'effort qu'il fournit.
+Le mouvement découle de l'Agilité : la distance franchie en un round, soit environ 6 secondes, selon l'effort fourni.
 
 <div class="gloss-source" markdown>
 
@@ -126,25 +126,25 @@ Le mouvement découle de l'Agilité : c'est la distance qu'un personnage franchi
 
 <div class="defs" markdown>
 
-**Légère :** la distance qu'il franchit d'un pas tranquille et qu'il tiendrait sans fin, sans jamais s'essouffler : sa marche ordinaire, que nulle fatigue ne vient borner.
+**Légère :** la distance franchie d'un pas tranquille, indéfiniment et sans s'essouffler : la marche ordinaire.
 
-**Intermédiaire :** la distance qu'il couvre en course soutenue, des heures durant, mais avec des pauses. Pour passer outre sa marche en un round, il adopte d'office cette allure : il court, et cet effort, s'il se prolonge, réclame du repos. Il est dès lors au moins en activité intermédiaire.
+**Intermédiaire :** la distance couverte en course soutenue, des heures durant mais avec des pauses. Dès qu'il dépasse sa marche en un round, le personnage adopte cette allure et passe au moins en activité intermédiaire.
 
-**Lourde :** la distance qu'il abat en sprint, toute vitesse lâchée, le temps d'un seul élan. Atteindre cette allure exige l'action Foncer ; sans elle, il ne dépasse jamais sa course. Il est alors en activité lourde.
+**Lourde :** la distance abattue en sprint, le temps d'un seul élan. Cette allure exige l'action Foncer ; sans elle, le personnage ne dépasse jamais sa course. Il passe alors en activité lourde.
 
 </div>
 
-> Exemple. Doté d'une Agilité de 5, un personnage couvre par round 8 m d'un pas tranquille en allure légère, 16 m en course soutenue en allure intermédiaire, puis 40 m en sprint le temps d'un effort en allure lourde.
+> Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m d'un pas tranquille en allure légère, 16 m en course soutenue en allure intermédiaire, puis 40 m en sprint en allure lourde.
 
-*Pour mémoire, un humain marche à environ 5 km/h et sprinte au mieux autour de 45 km/h (palier 9). Le palier 19, sommet humain de l'univers, frôle le mur du son (sa colonne lourde, 2 km en un round, vaut près de 1 200 km/h) ; le palier 30 atteint des vitesses de l'ordre de Mach 250.*
+*Pour mémoire, un humain marche à environ 5 km/h et sprinte au mieux autour de 45 km/h (palier 9). Le palier 19, sommet humain de l'univers, frôle le mur du son (colonne lourde : 2 km en un round, près de 1 200 km/h) ; le palier 30 atteint des vitesses de l'ordre de Mach 250.*
 
 #### Foncer
 
-Foncer est une [Action](deroulement-combat.md) : le personnage se jette en avant de toutes ses forces. Il tente le jet de la compétence de déplacement qui convient à son geste, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre, et hausse d'autant de paliers le mouvement qu'il atteint, jusqu'à la fin du prochain round. Sa distance par round se lit alors à ce palier supérieur.
+Foncer est une [Action](deroulement-combat.md). Le personnage tente le jet de la compétence de déplacement qui convient, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre, et hausse d'autant de paliers son mouvement jusqu'à la fin du prochain round. Sa distance par round se lit alors à ce palier supérieur.
 
 ### Apnée
 
-L'apnée découle de l'Endurance : c'est la durée pendant laquelle un personnage retient sa respiration. À l'inverse du poids et du mouvement, un effort plus intense la raccourcit : plus le corps s'active, plus il brûle d'oxygène, moins le souffle se garde. On la lit donc à la colonne de l'activité du moment.
+L'apnée découle de l'Endurance : la durée pendant laquelle le personnage retient sa respiration. À l'inverse du poids et du mouvement, un effort plus intense la raccourcit : plus le corps s'active, plus il brûle d'oxygène. On la lit à la colonne de l'activité du moment.
 
 <div class="gloss-source" markdown>
 
@@ -194,9 +194,9 @@ L'apnée découle de l'Endurance : c'est la durée pendant laquelle un personnag
 
 </div>
 
-> Exemple. Doté d'une Endurance de 5, un personnage retient son souffle 1 minute au repos en activité légère, 30 secondes sous un effort modéré en activité intermédiaire, puis 18 secondes en plein combat, en activité lourde.
+> Exemple. Avec une Endurance de 5, un personnage retient son souffle 1 minute au repos en activité légère, 30 secondes sous un effort modéré en activité intermédiaire, puis 18 secondes en plein combat en activité lourde.
 
-*Pour mémoire, un humain moyen retient son souffle environ une minute au repos (5). Le record réel d'apnée statique frôle douze minutes sans préparation et près de vingt-cinq minutes après respiration d'oxygène pur : c'est l'ordre de grandeur du palier 9, sommet humain réel. Au-delà, seul le surnaturel porte l'apnée vers des durées sans commune mesure. Les durées les plus brèves se comptent en rounds (un round dure environ 6 secondes), et « 0 s » marque qu'à très faible Endurance le souffle ne peut être retenu en plein effort.*
+*Pour mémoire, un humain moyen retient son souffle environ une minute au repos (5). Le record réel d'apnée statique frôle douze minutes sans préparation et près de vingt-cinq minutes après respiration d'oxygène pur : l'ordre de grandeur du palier 9, sommet humain réel. Au-delà, seul le surnaturel porte l'apnée vers des durées sans commune mesure. Les durées les plus brèves se comptent en rounds (un round dure environ 6 secondes), et « 0 s » marque qu'à très faible Endurance le souffle ne peut être retenu en plein effort.*
 
 #### Passer en apnée
 
@@ -204,25 +204,25 @@ Passer en apnée demande une [Action](deroulement-combat.md), le temps de bloque
 
 #### Alterner entre deux activités en apnée
 
-Rien n'oblige à garder le même effort durant toute une apnée : le personnage passe d'un régime à l'autre à sa guise, luttant quelques secondes à pleine puissance avant de se calmer. Le souffle reste une réserve unique, que chaque régime épuise seulement plus ou moins vite.
+Rien n'oblige à garder le même effort durant toute une apnée : le personnage passe d'un régime à l'autre à sa guise. Le souffle reste une réserve unique, que chaque régime épuise plus ou moins vite.
 
-On la suit en fractions : le temps passé dans un régime en consomme une part de la durée maximale, et cette même part se reporte à l'identique sur les autres colonnes.
+On la suit en fractions : le temps passé dans un régime en consomme une part de sa durée maximale, et cette même part se reporte à l'identique sur les autres colonnes.
 
-> Exemple. Avec une Endurance de 10, un personnage tient 20 minutes en activité légère, 10 en intermédiaire et 5 en lourde. Une minute passée en activité lourde lui en coûte le cinquième ; ramené à l'activité légère, c'est comme s'il avait dépensé 4 minutes, un cinquième de 20. En se calmant ensuite, il ne lui reste plus que 16 minutes d'apnée légère.
+> Exemple. Avec une Endurance de 10, un personnage tient 20 minutes en activité légère, 10 en intermédiaire et 5 en lourde. Une minute en activité lourde lui en coûte le cinquième, soit 4 minutes d'activité légère (un cinquième de 20). En se calmant, il ne lui reste plus que 16 minutes d'apnée légère.
 
 ### Écrasement
 
-Une masse trop lourde qui s'abat sur un personnage, ou sous laquelle il se trouve coincé, l'écrase. On la compare à son indice de poids : tant qu'elle n'excède pas ce qu'il lève à pleine puissance, il la supporte, quitte à rester bloqué. Au-delà, chaque palier de Force qui le sépare du palier capable de lever cette masse lui inflige 40 dégâts.
+Une masse trop lourde qui s'abat sur le personnage, ou sous laquelle il est coincé, l'écrase. On la compare à son indice de poids : tant qu'elle n'excède pas ce qu'il lève à pleine puissance, il la supporte, quitte à rester bloqué. Au-delà, chaque palier de Force qui le sépare du palier capable de lever cette masse lui inflige 40 dégâts.
 
-Les dégâts tombent dès l'instant de l'écrasement, puis se répètent à la fin de chacun de ses tours tant qu'il reste pris. À chaque fois, il peut tenter un jet de [Prouesse de Force](competences.md) pour résister : sa réussite efface autant de paliers d'écrasement, et les dégâts du round retombent d'autant.
+Les dégâts tombent dès l'écrasement, puis à la fin de chacun de ses tours tant qu'il reste pris. À chaque fois, il peut tenter un jet de [Prouesse de Force](competences.md) : sa réussite efface autant de paliers d'écrasement, et les dégâts du round retombent d'autant.
 
-> Exemple. Avec une Force de 5, un personnage lève 100 kg à pleine puissance, le palier 5 de la colonne lourde. Pris sous un bloc d'une tonne, que seul un palier 9 soulèverait, il est dépassé de quatre paliers, soit 160 dégâts. S'il atteint Très difficile (180) à son jet de Prouesse de Force, il en efface deux et n'en subit plus que 80 ce round-là.
+> Exemple. Avec une Force de 5, un personnage lève 100 kg à pleine puissance (palier 5 de la colonne lourde). Pris sous un bloc d'une tonne, que seul un palier 9 soulèverait, il est dépassé de quatre paliers, soit 160 dégâts. S'il atteint Très difficile (180) à son jet de Prouesse de Force, il en efface deux et n'en subit plus que 80 ce round-là.
 
 ### Chute
 
 Un personnage qui tombe subit les dégâts de l'impact. En chute libre, il descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round, sa vitesse plafonnant autour de 50 m/s, soit 180 km/h.
 
-Les dégâts se lisent par paliers de chute, selon la hauteur totale parcourue : chaque palier en double la hauteur et les dégâts. On retient le palier le plus haut que la chute atteint ; en deçà de 3 mètres, elle ne fait aucun mal.
+Les dégâts se lisent par paliers de chute, selon la hauteur totale parcourue : chaque palier en double la hauteur et les dégâts. On retient le palier le plus haut atteint ; en deçà de 3 mètres, la chute ne fait aucun mal.
 
 | Palier | Hauteur de chute | Dégâts |
 |:---:|:---:|:---:|
@@ -232,17 +232,17 @@ Les dégâts se lisent par paliers de chute, selon la hauteur totale parcourue :
 | 4 | 24 m | 160 |
 | 5 | 48 m et plus | 320 |
 
-Au moment de toucher le sol, le personnage peut dépenser sa [réaction](deroulement-combat.md) pour un jet de [Chute](competences.md) : sa réussite retranche autant de paliers, et les dégâts retombent d'autant. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.
+En touchant le sol, le personnage peut dépenser sa [réaction](deroulement-combat.md) pour un jet de [Chute](competences.md) : sa réussite retranche autant de paliers, et les dégâts retombent d'autant. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.
 
 > Exemple. Une chute de trente mètres relève du palier 4, soit 160 dégâts. En atteignant Absurde (240) à son jet de Chute, le personnage retranche trois paliers : il tombe au palier 1 et n'encaisse plus que 20 dégâts.
 
 #### Chuter dans l'eau
 
-Heurter l'eau plutôt qu'une surface dure amortit la chute : un personnage qui s'y abîme subit des dégâts divisés par deux, une fois toute autre réduction appliquée.
+Heurter l'eau plutôt qu'une surface dure amortit la chute : les dégâts sont divisés par deux, une fois toute autre réduction appliquée.
 
 ### Suffocation
 
-Privé d'air, étranglé, noyé ou enfermé sans oxygène, un personnage suffoque. Il résiste un nombre de rounds égal à son Endurance, ce décompte baissant de 1 par round. Tombé à 0, il perd connaissance ; inconscient, il poursuit sa chute au même rythme et meurt lorsque le décompte atteint l'opposé de son Endurance. La suffocation frappe celui que l'on prive d'air en pleine détresse, là où l'apnée mesure le souffle retenu de plein gré, au calme.
+Privé d'air, étranglé, noyé ou enfermé sans oxygène, un personnage suffoque. Il résiste un nombre de rounds égal à son Endurance, le décompte baissant de 1 par round. Tombé à 0, il perd connaissance ; inconscient, il poursuit sa chute au même rythme et meurt lorsque le décompte atteint l'opposé de son Endurance. La suffocation est subie de force, en pleine détresse, là où l'apnée mesure le souffle retenu de plein gré, au calme.
 
 > Exemple. Avec une Endurance de 10, un personnage lutte 10 rounds avant de sombrer dans l'inconscience, puis tient 10 rounds encore, jusqu'à −10, avant de mourir. Un round valant environ 6 secondes, c'est près d'une minute de résistance, puis une minute de sursis.
 

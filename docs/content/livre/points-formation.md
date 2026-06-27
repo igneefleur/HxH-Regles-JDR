@@ -2,13 +2,23 @@
 
 <div class="cols" markdown>
 
-Les points de formation, ou **PF**, sont la mesure de tout ce qu'un personnage a appris et la monnaie de sa progression. Ses [caractéristiques](caracteristiques.md), ses [compétences](competences.md), ses [avantages](avantages.md), ses [formations](formations.md) : tout ce qui le définit s'acquiert et s'affine en PF. Le talent brut se mesure ; le PF, lui, se gagne et se dépense, et c'est par lui qu'un personnage devient peu à peu celui qu'il veut être.
+<div class="keep" markdown>
 
-Un personnage en accumule au fil de son entraînement et de ses aventures, puis les investit à sa guise. À sa création, il reçoit un premier capital de PF qu'il répartit pour décider de ce qu'il est au départ ; par la suite, chaque point gagné est un pas de plus, qu'il dépense aussitôt ou met de côté pour un progrès plus ambitieux.
+Les points de formation, ou PF, paient la progression. Tout ce qui définit un personnage s'acquiert en PF : ses [caractéristiques](caracteristiques.md), ses [compétences](competences.md), ses [avantages](avantages.md), ses [formations](formations.md). Le [développement intérieur](di.md) forge le Nen ; les PF forgent le corps, le savoir et les compétences.
+
+</div>
+
+<div class="keep" markdown>
+
+Un personnage gagne des PF au fil de son entraînement et de ses aventures, puis les investit librement. À la création, il reçoit un capital de PF qui fixe ce qu'il est au départ. Ensuite, chaque point gagné se dépense aussitôt ou s'épargne pour un progrès plus coûteux.
+
+</div>
+
+<div class="keep" markdown>
 
 ### Niveau
 
-Le total des points de formation qu'un personnage a gagnés marque son **niveau** : c'est le repère qui dit, d'un coup d'œil, tout le chemin parcouru. Tous les cent PF, il franchit un niveau ; pour le connaître, on divise son total par cent et l'on arrondit au palier supérieur.
+Le total de PF gagné marque le niveau. Tous les 100 PF, le personnage franchit un niveau.
 
 <p class="formula">Niveau = ⌈ PF ÷ 100 ⌉</p>
 
@@ -25,6 +35,22 @@ Le total des points de formation qu'un personnage a gagnés marque son **niveau*
 | 801 à 900 | 9 |
 | 901 à 1 000 | 10 |
 
-Et ainsi de suite, cent points par niveau, sans plafond : un personnage ne cesse jamais vraiment d'apprendre.
+Et ainsi de suite, 100 points par niveau, sans plafond.
+
+</div>
+
+<div class="keep" markdown>
+
+### Développer une compétence
+
+Hausser une [compétence](competences.md) se paie en PF par tranches de 5 : chaque tranche de 5 PF ajoute 20 à sa base.
+
+| Amélioration | Effet | Coût |
+|:---|:---|:---:|
+| Base de compétence | +20 à la base | 5 PF |
+
+Par niveau, un personnage ne peut pas consacrer plus de 5 PF à une même compétence : aucune ne progresse donc de plus de 20 par niveau. Ce rythme se combine aux plafonds de formation de sa [classe](classe.md), qui bornent la part de PF investie dans chaque champ.
+
+</div>
 
 </div>

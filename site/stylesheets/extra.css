@@ -178,6 +178,16 @@
   -webkit-column-break-inside: avoid;
   break-inside: avoid;
 }
+/* Cut-safety générale des pages en deux colonnes : paragraphes, citations
+   (exemples) et blocs de définitions ne sont jamais coupés par un saut de
+   colonne. Même effet qu'un bloc .keep, sans avoir à les envelopper un à un
+   sur les longues pages de règles (ex. Capacités physiques). */
+.md-typeset .cols p,
+.md-typeset .cols blockquote,
+.md-typeset .cols .defs {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
 /* Séparateur (---) en colonnes : ligne grise fine qui traverse les deux
    colonnes et réinitialise l'équilibrage → les groupes d'archétypes repartent
    alignés en haut de colonne sous chaque trait. */
@@ -353,17 +363,16 @@
   padding-bottom: 0.12rem;
   border-bottom: 1px solid #cfc8b8;
 }
-/* Colonnes de coût (DC et UA) : étroites et centrées à droite, comme les
+/* Colonnes de coût (DC, UA, MA, EC) : étroites et centrées, comme les
    colonnes Coût/GN d'ANIMA ; la colonne effet occupe le reste. */
 .md-typeset .cj-modules table:not([class]) th:nth-child(1) {
   width: 73% !important;
 }
-.md-typeset .cj-modules table:not([class]) th:nth-child(2),
-.md-typeset .cj-modules table:not([class]) td:nth-child(2),
-.md-typeset .cj-modules table:not([class]) th:nth-child(3),
-.md-typeset .cj-modules table:not([class]) td:nth-child(3),
-.md-typeset .cj-modules table:not([class]) th:last-child,
-.md-typeset .cj-modules table:not([class]) td:last-child {
+.md-typeset .cj-modules table:not([class]):has(th:nth-child(5)) th:nth-child(1) {
+  width: 64% !important;
+}
+.md-typeset .cj-modules table:not([class]) th:not(:first-child),
+.md-typeset .cj-modules table:not([class]) td:not(:first-child) {
   width: 9% !important;
   text-align: center !important;
   padding-left: 0.2em;
@@ -478,6 +487,14 @@
 /* Entrées de définition dans une carte (façon modules de conjuration). */
 .md-typeset .mcard .defs { margin: 0.2rem 0 0.1rem; }
 .md-typeset .mcard .defs p { margin: 0.18rem 0; }
+/* Séparateur (---) à l'intérieur d'une carte : filet simple qui NE traverse pas
+   les colonnes (contrairement à .cols hr), pour cloisonner deux blocs de règle. */
+.md-typeset .mcard hr {
+  column-span: none;
+  border: none;
+  border-top: 1px solid #ded5c0;
+  margin: 0.45rem 0;
+}
 /* Cartes d'arts martiaux : en-tête (nom + aspect) centré et dominant, séparé d'un filet. */
 .md-typeset .mcard.art > p:first-child {
   text-align: center;
@@ -493,7 +510,7 @@
   padding-bottom: 0;
   margin-bottom: 0.1rem;
 }
-.md-typeset .mcard.art .prereq {
+.md-typeset .mcard.art > p:first-child .prereq {
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.11em;
@@ -920,6 +937,26 @@
 }
 .md-typeset table:not([class]) tbody tr:nth-child(odd)  td { background: var(--row-a); }
 .md-typeset table:not([class]) tbody tr:nth-child(even) td { background: var(--row-b); }
+
+/* Tables dans une carte (ex. les rayons de l'En) : style épuré façon liste, entièrement
+   transparent (Material pose un fond sur l'élément table lui-même), sans en-tête vert
+   plein ni zébrures — l'en-tête se réduit à un filet, le fond reste celui de la carte. */
+.md-typeset .mcard table:not([class]) { background: none; }
+.md-typeset .mcard table:not([class]) th {
+  background: none;
+  color: #4a4538;
+  text-align: left;
+  border-bottom: 1px solid #ded5c0;
+}
+.md-typeset .mcard table:not([class]) td {
+  background: none;
+  text-align: left;
+}
+.md-typeset .mcard table:not([class]) tbody tr:nth-child(odd)  td,
+.md-typeset .mcard table:not([class]) tbody tr:nth-child(even) td {
+  background: none;
+  border-bottom: 1px solid #ece7d8;
+}
 
 /* ── Tables d'armes (10 colonnes) : largeurs proportionnelles ── */
 .md-typeset table:not([class]):has(th:nth-child(10)) {

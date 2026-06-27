@@ -4,11 +4,11 @@
 
 <div class="states" markdown>
 
-Les états regroupent les circonstances et les afflictions qui modifient ce qu'un personnage peut faire. On distingue les situations de combat et les autres états du corps.
+Les états sont les circonstances et afflictions qui modifient ce qu'un personnage peut faire : situations de combat d'un côté, autres états du corps de l'autre.
 
 ### Situations
 
-Ces circonstances tactiques modifient l'attaque, la défense ou l'initiative. Sauf mention contraire, leurs malus ne valent que face à l'adversaire qui en est la cause. Une case vide signale l'absence de modificateur.
+Ces circonstances tactiques modifient l'attaque, la défense ou l'initiative. Sauf mention contraire, leurs malus ne valent que face à l'adversaire qui en est la cause. Une case vide : aucun modificateur.
 
 <table>
 <thead><tr><th>Situation</th><th>Init.</th><th>Att.</th><th>Esq.</th><th>Par.</th><th>Phys.</th></tr></thead>
@@ -50,12 +50,6 @@ Les afflictions du corps et de l'esprit. Sauf mention contraire, un état dure t
 
 **Mutisme :** ne peut plus parler ni émettre le moindre son avec sa voix.
 
-**Empoisonné :** une toxine le ronge ; il subit −20 à ses jets d'attaque et de caractéristique tant qu'elle agit.
-
-**Charmé :** il tient la source pour un allié ; il ne peut ni l'attaquer ni la prendre pour cible, et celle-ci bénéficie de +20 à ses interactions sociales avec lui.
-
-**Effrayé :** tant que la source de sa peur reste perceptible, il subit −20 à ses attaques et à ses tests, et ne peut s'en rapprocher de son plein gré.
-
 **Agrippé :** ne peut plus se déplacer de lui-même ; ce qui le tient peut l'entraîner à vitesse réduite de moitié. Il subit une Paralysie légère.
 
 **Maîtrisé :** tenu dans une prise resserrée ; il ne peut plus se déplacer et subit une Paralysie partielle.
@@ -64,17 +58,11 @@ Les afflictions du corps et de l'esprit. Sauf mention contraire, un état dure t
 
 **Immobilisé :** ne peut plus bouger ; il subit −20 à l'attaque et à l'esquive, et les attaques portées contre lui bénéficient de +20.
 
-**Étourdi :** sonné, il perd ses actions et ne peut pas réagir ; les attaques portées contre lui bénéficient de +20.
-
 **Paralysie légère :** ses gestes sont gênés ; il subit −20 à l'attaque, à la parade et à l'initiative, et −40 à l'esquive et aux actions physiques.
 
 **Paralysie partielle :** une partie de son corps ne répond plus ; il subit −80 à l'attaque, à la parade et à l'esquive, −30 à l'initiative et −60 aux actions physiques.
 
 **Paralysie totale :** il ne peut absolument plus bouger ; il subit −200 à l'attaque, à la parade, à l'esquive et aux actions physiques, et −100 à l'initiative.
-
-**Pétrifié :** changé en matière inerte ; immobile, insensible et hors de combat.
-
-**Invisible :** impossible à localiser à l'œil nu ; ses attaques bénéficient de +20 et les attaques portées contre lui subissent −20.
 
 **À terre :** au sol et vulnérable ; se relever coûte une action. Il subit −20 à ses attaques ; contre lui, les attaques au corps à corps bénéficient de +20, celles à distance subissent −20.
 

@@ -13,6 +13,7 @@ nav:
           - Capacités physiques: content/livre/capacites-physiques.md
           - Points de formation: content/livre/points-formation.md
           - Compétences: content/livre/competences.md
+          - Classes: content/livre/classe.md
           - Les Sens: content/livre/sens.md
           - États: content/livre/etats.md
           - Activités: content/livre/activites.md
@@ -27,6 +28,8 @@ nav:
           - Critique et Blessures: content/livre/critique-blessures.md
           - Armes: content/livre/armes.md
       - Nen:
+          - Aura: content/livre/aura.md
+          - Développement intérieur: content/livre/di.md
           - Les 12 archétypes de Nen: content/livre/archetypes-nen.md
           - Techniques du Nen: content/livre/techniques-nen.md
           - Renforcement: content/livre/renforcement.md
@@ -35,6 +38,8 @@ nav:
           - Manipulation: content/livre/manipulation.md
           - Conjuration: content/livre/conjuration.md
           - Spécialisation: content/livre/specialisation.md
+      - Heavens Arena: content/livre/heavens-arena.md
+      - Système de points des armes: content/livre/systeme-points-armes.md
 theme:
   name: material
   custom_dir: overrides

@@ -15,20 +15,20 @@ Prendre une posture coûte 1 action et dure jusqu'au début du prochain tour. Un
 
 ### Manœuvres d'attaque
 
-Quand le personnage attaque, il choisit sa manœuvre avant de lancer les dés. Une attaque ne suit qu'une seule manœuvre. Toutes les manœuvres ne lancent pas de jet d'attaque : celles qui en font un le précisent. Seule Blesser inflige des dégâts ; les autres l'échangent contre un effet. Les prises (Agripper, Maîtriser, Soumettre) s'enchaînent, chaque cran exigeant le précédent.
+Le personnage choisit sa manœuvre avant de lancer les dés. Une attaque ne suit qu'une seule manœuvre. Seules celles qui le précisent font un jet d'attaque. Seule Blesser inflige des dégâts ; les autres l'échangent contre un effet. Les prises (Agripper, Maîtriser, Soumettre) s'enchaînent, chaque cran exigeant le précédent.
 
 <div class="mcard" markdown>
-**Blesser** <span class="prereq">Prérequis : aucun</span> Le personnage fait un jet d'attaque en opposition au jet de défense de l'adversaire. Si l'attaque touche, la cible subit les dégâts de l'arme.
+**Blesser** <span class="prereq">Prérequis : aucun</span> Jet d'attaque opposé au jet de défense de l'adversaire. Si l'attaque touche, la cible subit les dégâts de l'arme.
 
-Si la manœuvre est utilisée de pair avec Viser, la blessure éventuelle se localise automatiquement sur la zone visée (voir Blessures), au lieu d'être tirée au hasard.
+Utilisée avec Viser, la blessure éventuelle se localise sur la zone visée (voir Blessures) au lieu d'être tirée au hasard.
 </div>
 
 <div class="mcard" markdown>
-**Agripper** <span class="prereq">Prérequis : Arme possédant la propriété Saisie</span> Le personnage fait un jet d'attaque avec un malus de −40 en opposition au jet de défense de l'adversaire. Si l'attaque touche, il doit effectuer un jet de lutte en opposition au jet de lutte ou de contorsion de l'adversaire. S'il l'emporte l'opposition, la cible devient Agrippée (voir États). Tant qu'il maintient la prise, le personnage subit lui aussi une Paralysie légère. Le personnage peut lâcher la prise à tout moment (aucune action requise).
+**Agripper** <span class="prereq">Prérequis : Arme possédant la propriété Saisie</span> Jet d'attaque à −40 opposé au jet de défense de l'adversaire. Si l'attaque touche, jet de lutte opposé au jet de lutte ou de contorsion de l'adversaire. En cas de réussite, la cible devient Agrippée (voir États). Tant qu'il maintient la prise, le personnage subit lui aussi une Paralysie légère. Il peut la lâcher à tout moment (aucune action requise).
 
-L'adversaire peut tenter de se libérer en prenant une action, un nouveau jet d'opposition de lutte du personnage face à un jet de lutte ou de contorsion de l'adversaire. Si l'adversaire gagne, il se libère de la prise et ne subit plus l'état Agrippé.
+L'adversaire peut se libérer en prenant une action : nouveau jet de lutte du personnage opposé au jet de lutte ou de contorsion de l'adversaire. S'il gagne, il ne subit plus l'état Agrippé.
 
-Si la manœuvre est utilisée de pair avec Viser, l'adversaire subit un effet supplémentaire selon la partie du corps saisie :
+Utilisée avec Viser, l'adversaire subit un effet supplémentaire selon la partie du corps saisie :
 
 <div class="defs" markdown>
 
@@ -46,11 +46,11 @@ Si la manœuvre est utilisée de pair avec Viser, l'adversaire subit un effet su
 </div>
 
 <div class="mcard" markdown>
-**Maîtriser** <span class="prereq">Prérequis : cible Agrippée par le personnage</span> Le personnage effectue un jet de lutte en opposition au jet de lutte ou de contorsion de la cible qu'il tient. S'il l'emporte, la cible passe d'Agrippée à Maîtrisée (voir États). Tant qu'il maintient la prise, le personnage subit lui aussi une Paralysie partielle. Le personnage peut lâcher la prise à tout moment (aucune action requise).
+**Maîtriser** <span class="prereq">Prérequis : cible Agrippée par le personnage</span> Jet de lutte opposé au jet de lutte ou de contorsion de la cible tenue. En cas de réussite, elle passe d'Agrippée à Maîtrisée (voir États). Tant qu'il maintient la prise, le personnage subit lui aussi une Paralysie partielle. Il peut la lâcher à tout moment (aucune action requise).
 
-L'adversaire peut tenter de se libérer en prenant une action, un nouveau jet d'opposition de lutte du personnage face à un jet de lutte ou de contorsion de l'adversaire. Si l'adversaire gagne, il redevient seulement Agrippé.
+L'adversaire peut se libérer en prenant une action : nouveau jet de lutte du personnage opposé au jet de lutte ou de contorsion de l'adversaire. S'il gagne, il redevient seulement Agrippé.
 
-Si la prise vise une partie du corps précise (la manœuvre Aggriper a été utilisée de pair avec Viser), ses effets persistes. De plus, certaines parties du corps obtiennent un effet supplémentaire :
+Si la prise vise une partie précise (Agripper utilisée avec Viser), ses effets persistent. Certaines parties donnent en plus un effet supplémentaire :
 
 <div class="defs" markdown>
 
@@ -62,11 +62,11 @@ Si la prise vise une partie du corps précise (la manœuvre Aggriper a été uti
 </div>
 
 <div class="mcard" markdown>
-**Soumettre** <span class="prereq">Prérequis : cible Maîtrisée par le personnage</span> Le personnage effectue un jet de lutte en opposition au jet de lutte ou de contorsion de la cible qu'il tient. S'il l'emporte, la cible passe de Maîtrisée à Soumise (voir États). Tant qu'il maintient la prise, le personnage subit lui aussi une Paralysie totale. Le personnage peut lâcher la prise à tout moment (aucune action requise).
+**Soumettre** <span class="prereq">Prérequis : cible Maîtrisée par le personnage</span> Jet de lutte opposé au jet de lutte ou de contorsion de la cible tenue. En cas de réussite, elle passe de Maîtrisée à Soumise (voir États). Tant qu'il maintient la prise, le personnage subit lui aussi une Paralysie totale. Il peut la lâcher à tout moment (aucune action requise).
 
-L'adversaire peut tenter de se libérer en prenant une action, un nouveau jet d'opposition de lutte du personnage face à un jet de lutte ou de contorsion de l'adversaire. Si l'adversaire gagne, il redevient seulement Maîtrisé.
+L'adversaire peut se libérer en prenant une action : nouveau jet de lutte du personnage opposé au jet de lutte ou de contorsion de l'adversaire. S'il gagne, il redevient seulement Maîtrisé.
 
-Si la prise vise une partie du corps précise (la manœuvre Aggriper a été utilisée de pair avec Viser), ses effets persistes. De plus, certaines parties du corps obtiennent un effet supplémentaire :
+Si la prise vise une partie précise (Agripper utilisée avec Viser), ses effets persistent. Certaines parties donnent en plus un effet supplémentaire :
 
 <div class="defs" markdown>
 
@@ -76,20 +76,20 @@ Si la prise vise une partie du corps précise (la manœuvre Aggriper a été uti
 </div>
 
 <div class="mcard" markdown>
-**Désarmer** <span class="prereq">Prérequis : Viser une partie du corps qui tient un objet</span> Le personnage fait un jet d'attaque en opposition au jet de défense de l'adversaire. Le malus est de −20, augmenté du malus de Viser de chaque main qui tient l'arme (−40 par main, voir Viser) : soit −60 pour une arme à une main, −100 pour une arme à deux mains. Si l'attaque touche, la cible lâche l'objet, qui tombe à ses pieds.
+**Désarmer** <span class="prereq">Prérequis : Viser une partie du corps qui tient un objet</span> Jet d'attaque opposé au jet de défense de l'adversaire. Malus de −20, augmenté du malus de Viser de chaque main tenant l'arme (−40 par main, voir Viser) : soit −60 pour une arme à une main, −100 pour une arme à deux mains. Si l'attaque touche, la cible lâche l'objet, qui tombe à ses pieds.
 </div>
 
 <div class="mcard" markdown>
-**Mettre à terre** <span class="prereq">Prérequis : aucun</span> Le personnage fait un jet d'attaque avec un malus de −40 en opposition au jet de défense de l'adversaire. Si l'attaque touche, il doit effectuer un jet de lutte en opposition au jet de lutte ou d'équilibre de l'adversaire. S'il l'emporte, la cible tombe À terre (voir États) ; elle se relève en prenant une action.
+**Mettre à terre** <span class="prereq">Prérequis : aucun</span> Jet d'attaque à −40 opposé au jet de défense de l'adversaire. Si l'attaque touche, jet de lutte opposé au jet de lutte ou d'équilibre de l'adversaire. En cas de réussite, la cible tombe À terre (voir États) ; elle se relève en prenant une action.
 </div>
 
 <div class="mcard" markdown>
-**Pousser** <span class="prereq">Prérequis : aucun</span> Le personnage fait un jet d'attaque avec un malus de −40 en opposition au jet de défense de l'adversaire. Si l'attaque touche, il doit effectuer un jet de lutte en opposition au jet de lutte ou d'équilibre de l'adversaire. S'il l'emporte, la cible est repoussée de 2 mètres en ligne droite, davantage si la marge est forte.
+**Pousser** <span class="prereq">Prérequis : aucun</span> Jet d'attaque à −40 opposé au jet de défense de l'adversaire. Si l'attaque touche, jet de lutte opposé au jet de lutte ou d'équilibre de l'adversaire. En cas de réussite, la cible est repoussée de 2 mètres en ligne droite, davantage si la marge est forte.
 </div>
 
 ### Viser
 
-Viser est une manœuvre spéciale : elle ne s'emploie jamais seule, mais accompagne une autre manœuvre dont elle précise la cible. Le personnage vise une zone précise (tableau ci-dessous) ; son attaque subit le malus correspondant, et seule l'armure couvrant cette zone compte (si elle est nue, l'attaque l'ignore). Son effet exact figure dans la manœuvre accompagnée (voir Blesser et Agripper).
+Viser ne s'emploie jamais seule : elle accompagne une autre manœuvre dont elle précise la cible. Le personnage vise une zone (tableau ci-dessous) ; son attaque subit le malus correspondant, et seule l'armure couvrant cette zone compte (si elle est nue, l'attaque l'ignore). L'effet exact figure dans la manœuvre accompagnée (voir Blesser et Agripper).
 
 <table>
 <thead><tr><th>Partie du corps</th><th>Malus à l'attaque</th></tr></thead>

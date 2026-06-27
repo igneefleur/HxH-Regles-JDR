@@ -2,7 +2,7 @@
 
 <div class="cols" markdown>
 
-Toute créature et tout objet possèdent une taille, qui les range dans l'une de onze catégories, de la microscopique à la titanesque. La taille mesure l'ampleur physique d'un être : elle détermine la place qu'il occupe, la portée de ses coups et la facilité avec laquelle on peut l'atteindre. Le cœur de l'échelle reprend les neuf catégories de D&D 3.5, la plus fine des éditions de référence ; on y ajoute une catégorie à chaque extrémité, le microscopique et le titanesque, pour couvrir l'infiniment petit comme le démesuré.
+Toute créature et tout objet ont une taille, parmi onze catégories, de la microscopique à la titanesque. La taille mesure l'ampleur physique : elle fixe la place occupée, la portée des coups et la facilité à atteindre l'être. Le cœur de l'échelle reprend les neuf catégories de D&D 3.5 ; on ajoute le microscopique et le titanesque aux extrémités, pour l'infiniment petit comme le démesuré.
 
 ## Les catégories de taille
 
@@ -24,7 +24,7 @@ Toute créature et tout objet possèdent une taille, qui les range dans l'une de
 
 La catégorie d'un être se lit d'abord sur sa hauteur ou sa longueur. On retient la hauteur pour les créatures dressées, comme les humanoïdes, et la longueur pour les créatures allongées, comme les serpents ou les quadrupèdes très étirés.
 
-La hauteur et le poids ne sont toutefois que des repères, à l'usage des joueurs comme du maître du jeu. Une créature n'a pas à correspondre exactement à une catégorie sur les deux critères à la fois : si le maître du jeu veut une créature dont la hauteur relève d'une catégorie et le poids d'une autre — un colosse étonnamment léger, une petite bête anormalement dense — c'est parfaitement permis. Ces chiffres orientent, ils ne contraignent pas.
+Hauteur et poids ne sont que des repères, pour les joueurs comme pour le maître du jeu. Une créature n'a pas à correspondre à une catégorie sur les deux critères à la fois : un colosse étonnamment léger ou une petite bête anormalement dense sont permis. Ces chiffres orientent, ils ne contraignent pas.
 
 ## L'espace et l'allonge
 
@@ -32,7 +32,7 @@ L'espace est la place qu'occupe la créature au sol. L'allonge est la distance �
 
 ## Interagir avec une cible plus petite
 
-Plus une cible est petite par rapport à soi, plus elle est difficile à frapper et à suivre. Pour chaque palier de taille qui sépare un personnage d'une cible plus petite que lui, il subit −10 à toutes ses interactions physiques avec elle : la frapper, la percevoir, la saisir, et plus généralement tout ce qui passe par le corps.
+Plus une cible est petite que soi, plus elle est dure à frapper et à suivre. Par palier de taille d'écart vers le bas, le personnage subit −10 à toutes ses interactions physiques avec elle : la frapper, la percevoir, la saisir, tout ce qui passe par le corps.
 
 Le malus ne joue que vers le bas : viser une cible plus grande que soi n'impose aucune pénalité de taille.
 

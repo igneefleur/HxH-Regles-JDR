@@ -2,7 +2,7 @@
 
 <div class="cols" markdown>
 
-Toute source de dégâts appartient à un ou plusieurs des sept types suivants, répartis en deux familles : les dégâts physiques et les dégâts élémentaires. Le type détermine quelle valeur d'armure (TA) s'applique en défense, ainsi que la nature des effets secondaires éventuels (saignement, brûlure, etc.).
+Toute source de dégâts relève d'un ou plusieurs des sept types, répartis en deux familles : physiques et élémentaires. Le type fixe la valeur d'armure (TA) qui s'applique en défense et la nature des effets secondaires éventuels (saignement, brûlure, etc.).
 
 <div class="keep" markdown>
 
@@ -29,16 +29,16 @@ Toute source de dégâts appartient à un ou plusieurs des sept types suivants, 
 
 </div>
 
-Les dégâts d'Électricité couvrent également les dégâts de lumière (éclairs aveuglants, lumière sacrée, rayons).
+Les dégâts d'Électricité couvrent aussi la lumière (éclairs aveuglants, rayons aveuglants, lumière pure).
 
 ## Règles Générales
 
-Une arme inflige un ou plusieurs types de dégâts. Si elle en possède plusieurs, l'attaquant choisit lequel utiliser au moment de l'attaque, avant le jet.
+Une arme inflige un ou plusieurs types. Si elle en a plusieurs, l'attaquant choisit lequel au moment de l'attaque, avant le jet.
 
-Une armure possède une valeur de TA distincte pour chaque type, physique comme élémentaire. Seule la TA correspondant au type de l'attaque s'applique.
+Une armure a une TA distincte par type, physique comme élémentaire. Seule la TA du type de l'attaque s'applique.
 
-Une attaque de Hatsu inflige le type de dégâts correspondant à sa forme : une lame d'aura inflige du TRA, une explosion de chaleur du FEU, un impact concussif du CON.
+Une attaque de Hatsu inflige le type correspondant à sa forme : une lame d'aura du TRA, une explosion de chaleur du FEU, un impact concussif du CON.
 
-> **TODO :** effets secondaires par type (saignement, brûlure, étourdissement…), interaction avec le Ken / les défenses d'aura, et cas des créatures immatérielles.
+> **TODO :** effets secondaires par type (saignement, brûlure…), interaction avec le Ken / les défenses d'aura, et cas des créatures immatérielles.
 
 </div>
