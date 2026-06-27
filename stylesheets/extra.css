@@ -102,7 +102,7 @@
 }
 
 .md-typeset blockquote {
-  border-left: .2rem solid var(--green-header);
+  border-left: 2px solid #e0dccd;
   color: #555;
   font-style: italic;
 }
@@ -144,10 +144,106 @@
 .md-typeset .cols h1 {
   column-span: all;   /* le titre s'étale sur les deux colonnes */
 }
-.md-typeset .cols h2,
+.md-typeset .cols h2 {
+  column-span: all;   /* titres de section pleine largeur, jamais seuls en colonne */
+}
 .md-typeset .cols h3 {
   break-after: avoid; /* pas de titre orphelin en bas de colonne */
   break-inside: avoid;
+}
+.md-typeset .cols h4 {
+  break-after: avoid; /* l'entrée de glossaire reste collée à sa description */
+  break-inside: avoid;
+}
+/* Encart de référence (rappel du modèle de combat) : fond léger, filet vert à gauche. */
+.md-typeset .rappel {
+  background: rgba(127, 127, 127, 0.08);
+  border-left: 3px solid var(--green-title, #5a7d2a);
+  border-radius: 4px;
+  padding: 0.2rem 1rem 0.6rem;
+  margin: 1rem 0 1.6rem;
+}
+.md-typeset .rappel h3 {
+  margin-top: 0.5rem;
+}
+/* Paragraphe d'introduction qui doit s'étaler sur les deux colonnes. */
+.md-typeset .cols .span {
+  column-span: all;
+}
+/* Garder un bloc (titre + sa description/table) insécable dans une colonne :
+   entourer de <div class="keep" markdown> … </div>. S'il ne tient pas en bas
+   d'une colonne, il passe ENTIER à la colonne suivante (fiable sous Chrome,
+   contrairement aux sauts de colonne forcés). */
+.md-typeset .cols .keep {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+/* Séparateur (---) en colonnes : ligne grise fine qui traverse les deux
+   colonnes et réinitialise l'équilibrage → les groupes d'archétypes repartent
+   alignés en haut de colonne sous chaque trait. */
+.md-typeset .cols hr {
+  column-span: all;
+  border: none;
+  border-top: 1px solid #cfc8b8;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Illustration d'un personnage à côté d'un archétype. C'est un bloc .keep
+   (insécable) qui occupe une colonne ; le bloc .keep voisin (description +
+   table) occupe l'autre. Un séparateur --- avant et après chaque paire
+   réinitialise l'équilibrage des colonnes, ce qui réaligne les deux blocs côte
+   à côte et fait alterner le côté de l'image selon l'ordre dans le markdown. */
+.md-typeset .cols .portrait {
+  text-align: center;
+  margin: 0;
+}
+.md-typeset .cols .portrait .frame {
+  position: relative;
+  display: block;
+  line-height: 0;
+}
+.md-typeset .cols .portrait .frame p {
+  margin: 0;
+  line-height: 0;
+}
+.md-typeset .cols .portrait .frame img {
+  width: 100%;
+  display: block;
+  border: 1px solid #cfc8b8;
+  background: #fff;
+  padding: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15);
+}
+/* Crédit de l'image : petit lien discret en bas à gauche de la vignette. */
+.md-typeset .cols .portrait .credit {
+  position: absolute;
+  left: 7px;
+  bottom: 7px;
+  max-width: calc(100% - 14px);
+  box-sizing: border-box;
+  padding: 1px 5px;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 0.5rem;
+  line-height: 1.4;
+  color: #fff;
+  background: rgba(0, 0, 0, .55);
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.md-typeset .cols .portrait .credit:hover {
+  background: rgba(0, 0, 0, .82);
+  text-decoration: underline;
+}
+.md-typeset .cols .portrait em {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: 'Cinzel', Garamond, serif;
+  font-style: normal;
+  font-size: 0.66rem;
+  color: var(--green-section);
 }
 
 /* ---------- 5. Tableaux ---------- */
@@ -171,6 +267,631 @@
 .md-typeset .cols table:not([class]) td:not([align]) {
   text-align: justify;
 }
+/* Tableaux d'armes (les seuls à 9 colonnes du livre) : cellules courtes (symboles,
+   petits nombres), donc table-layout: auto les rétrécit. On passe en fixed avec des
+   proportions adaptées pour remplir la colonne de lecture. N'affecte PAS la largeur de page. */
+.md-typeset table:not([class]):has(th:nth-child(9)) {
+  table-layout: fixed;
+}
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(1),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(1) { width: 15%; }  /* Arme */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(2),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(2) { width: 5%; }   /* AM */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(3),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(3) { width: 11%; }  /* Portée */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(4),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(4) { width: 9%; }   /* Mains */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(5),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(5) { width: 6%; }   /* Dégâts */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(6),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(6) { width: 8%; }   /* Mod. dégâts */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(7),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(7) { width: 9%; }   /* Type */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(8),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(8) { width: 7%; }   /* Illégalité */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(9),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(9) { width: 30%; }  /* Propriétés */
+/* Centrage des colonnes 2 à 8 (AM, Portée, Mains, Dégâts, Mod., Type, Illégalité),
+   en-têtes compris. Arme (1) et Propriétés (9) restent alignées à gauche. */
+.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(n+2):nth-child(-n+8),
+.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(n+2):nth-child(-n+8) {
+  text-align: center;
+}
+/* Tableaux de la page Éclat (apprentissage, niveau/prestige par âge) : colonnes
+   régulières, première colonne (Éclat) étroite. Ces tables ont 8 ou 9 colonnes,
+   donc on neutralise au passage la règle des tables d'armes (9 colonnes) et le
+   table-layout: auto, qui les déformaient. */
+.md-typeset .eclat-grid table:not([class]) {
+  table-layout: fixed !important;
+  width: 100%;
+}
+.md-typeset .eclat-grid table:not([class]) th,
+.md-typeset .eclat-grid table:not([class]) td {
+  width: auto !important;
+  text-align: center !important;
+  vertical-align: middle;          /* centre « Éclat » qui s'étend sur deux rangs d'en-tête */
+  padding: 0.18rem 0.15rem;
+}
+/* Cellules de DONNÉES seulement : on annule le gris/petit de la 2e colonne (hérité de
+   la règle des tables d'armes à 10 colonnes), sans toucher l'en-tête, qui reste blanc. */
+.md-typeset .eclat-grid table:not([class]) td {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-variant: normal !important;
+  letter-spacing: normal !important;
+}
+.md-typeset .eclat-grid table:not([class]) th:first-child,
+.md-typeset .eclat-grid table:not([class]) td:first-child {
+  width: 3rem !important;
+}
+/* Page Éclat : descriptions de palier en entrées titrées. Le « Éclat N » est sur sa
+   propre ligne, en vert Cinzel, suivi d'un saut de ligne avant la description.
+   Sans aucune majuscule. */
+.md-typeset .eclat-tiers p {
+  margin: 0.8rem 0;
+  break-inside: avoid;
+}
+.md-typeset .eclat-tiers p strong:first-child {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  color: var(--green-title);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.15rem;
+}
+
+/* ── Modules de conjuration : présentation façon bestiaire ANIMA ──
+   Titre de capacité souligné, table « Effet | Coût » avec colonne de coût
+   étroite à droite, définitions de propriétés en retrait sous la table. */
+.md-typeset .cj-modules h3,
+.md-typeset .cj-modules h4 {
+  font-size: 0.78rem;
+  color: var(--green-title);
+  letter-spacing: 0.03em;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.12rem;
+  border-bottom: 1px solid #cfc8b8;
+}
+/* Colonnes de coût (DC et UA) : étroites et centrées à droite, comme les
+   colonnes Coût/GN d'ANIMA ; la colonne effet occupe le reste. */
+.md-typeset .cj-modules table:not([class]) th:nth-child(1) {
+  width: 73% !important;
+}
+.md-typeset .cj-modules table:not([class]) th:nth-child(2),
+.md-typeset .cj-modules table:not([class]) td:nth-child(2),
+.md-typeset .cj-modules table:not([class]) th:nth-child(3),
+.md-typeset .cj-modules table:not([class]) td:nth-child(3),
+.md-typeset .cj-modules table:not([class]) th:last-child,
+.md-typeset .cj-modules table:not([class]) td:last-child {
+  width: 9% !important;
+  text-align: center !important;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+/* Lignes de catégorie (« Quantité », « Taille », « Volume », « Charge »…) :
+   présentées comme des lignes de tableau normales, simplement alignées à gauche. */
+.md-typeset .cj-modules table:not([class]) tbody tr.cat td {
+  text-align: left !important;
+  padding-left: 0.5em !important;
+}
+/* Lignes appartenant à une catégorie : tabulées vers la droite pour montrer
+   qu'elles dépendent de la ligne de catégorie au-dessus. */
+.md-typeset .cj-modules table:not([class]):has(tbody tr.cat) tbody tr:not(.cat):not(.flush) td:first-child {
+  padding-left: 1rem;
+}
+/* Paragraphes de la zone modules : par défaut traités comme des définitions de
+   propriété (petits, en retrait avec un filet) ; la description, juste après le
+   titre, reprend le corps normal. */
+.md-typeset .cj-modules p {
+  font-size: 0.66rem;
+  margin: 0.25rem 0;
+  text-align: left;
+}
+/* Bloc d'entrées sous un tableau : une seule barre grise continue à gauche,
+   plutôt qu'une barre par paragraphe. Utilisable hors conjuration (ex. états). */
+.md-typeset .defs {
+  border-left: 2px solid #e0dccd;
+  padding-left: 0.7rem;
+  margin: 0.4rem 0 0.6rem;
+}
+.md-typeset .defs p {
+  font-size: 0.66rem;
+  margin: 0.25rem 0;
+}
+.md-typeset .defs ul {
+  margin: 0.1rem 0 0.5rem;
+}
+/* Variante « titre » des définitions : le nom passe en titre sur sa propre ligne
+   (en vert), la description vient dessous. Pour bien distinguer les manœuvres. */
+.md-typeset .defs.titled {
+  border-left: none;
+  padding-left: 0;
+}
+.md-typeset .defs.titled p {
+  margin: 0 0 0.7rem;
+  break-inside: avoid;
+}
+.md-typeset .defs.titled p strong:first-child {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  color: var(--green-title, #5a7d2a);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.05rem;
+}
+/* Ligne de prérequis sous le nom de manœuvre : Cinzel gris, plus petit. */
+.md-typeset .defs.titled p .prereq {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #8a8478;
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+}
+/* Cartes de manœuvres : chaque manœuvre est un <div class="mcard"> (parchemin),
+   ce qui autorise paragraphes et vraies listes à puces lisibles à l'intérieur. */
+.md-typeset .mcard {
+  background: #fbf9f1;
+  border: 1px solid #d9d2bf;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem 0.55rem;
+  margin: 0 0 0.7rem;
+  break-inside: avoid;
+  box-shadow: 0 1px 2px rgba(60, 50, 20, 0.06);
+}
+.md-typeset .mcard p {
+  font-size: 0.66rem;
+  margin: 0 0 0.4rem;
+}
+.md-typeset .mcard p:last-child { margin-bottom: 0; }
+.md-typeset .mcard > p:first-child strong:first-child {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  color: var(--green-title);
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #e8e1cf;
+  padding-bottom: 0.22rem;
+  margin-bottom: 0.28rem;
+}
+.md-typeset .mcard .prereq {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #8a8478;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+.md-typeset .mcard ul {
+  margin: 0.15rem 0 0.2rem;
+  padding-left: 1rem;
+  font-size: 0.66rem;
+}
+.md-typeset .mcard li { margin: 0.06rem 0; }
+/* Entrées de définition dans une carte (façon modules de conjuration). */
+.md-typeset .mcard .defs { margin: 0.2rem 0 0.1rem; }
+.md-typeset .mcard .defs p { margin: 0.18rem 0; }
+/* Cartes d'arts martiaux : en-tête (nom + aspect) centré et dominant, séparé d'un filet. */
+.md-typeset .mcard.art > p:first-child {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.32rem;
+  border-bottom: 1px solid #ded5c0;
+}
+.md-typeset .mcard.art > p:first-child strong:first-child {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.1rem;
+}
+.md-typeset .mcard.art .prereq {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.55rem;
+  margin-bottom: 0;
+}
+/* Corps des cartes d'arts : paragraphes resserrés. */
+.md-typeset .mcard.art p { margin-bottom: 0.28rem; }
+/* Titre de palier : aligné à gauche, court trait sous le seul mot (display:table
+   pour que le filet épouse la largeur du texte). Subordonné à l'en-tête centré. */
+.md-typeset .mcard.art p.palier {
+  display: table;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green-section);
+  font-size: 0.58rem;
+  margin: 0.55rem 0 0.12rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid #ded5c0;
+}
+
+/* Cartes de glossaire : titre, description + exemples à gauche, image carrée à droite. */
+.md-typeset .gcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.6rem;
+  margin: 0.6rem 0 1rem;
+}
+.md-typeset .gcard {
+  background: #fbf9f1;
+  border: 1px solid #d9d2bf;
+  border-radius: 5px;
+  padding: 0.45rem 0.6rem 0.55rem;
+  box-shadow: 0 1px 2px rgba(60, 50, 20, 0.06);
+}
+.md-typeset .gcard > p:first-child {
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  color: var(--green-title);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.35rem;
+  border-bottom: 1px solid #e8e1cf;
+  padding-bottom: 0.2rem;
+}
+.md-typeset .gcard-body {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.md-typeset .gcard-text {
+  flex: 1;
+  font-size: 0.66rem;
+}
+.md-typeset .gcard-text p { margin: 0 0 0.4rem; }
+.md-typeset .gcard-text p:last-child { margin-bottom: 0; }
+.md-typeset .gcard-img {
+  flex-shrink: 0;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 4px;
+  border: 1px solid #d9d2bf;
+  object-fit: cover;
+}
+.md-typeset .gcard-img.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #efeada;
+  color: #9a9078;
+  font-size: 0.55rem;
+  text-align: center;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.md-typeset .gcard-fig {
+  flex-shrink: 0;
+  width: 8.5rem;
+  margin: 0;
+  text-align: center;
+}
+.md-typeset .gcard-fig .gcard-img {
+  width: 8.5rem;
+  height: 8.5rem;
+}
+.md-typeset .gcard-fig figcaption {
+  font-size: 0.42rem;
+  line-height: 1.2;
+  color: #9a9078;
+  margin-top: 3px;
+}
+
+/* Glossaire au survol : cartes masquées, bulle flottante, cellules survolables. */
+.gloss-defs { display: none; }
+.gloss-tip {
+  position: absolute;
+  z-index: 2000;
+  width: 21rem;
+  max-width: 85vw;
+  pointer-events: none;
+  display: none;
+}
+.gloss-tip .gcard {
+  margin: 0;
+  box-shadow: 0 4px 14px rgba(40, 30, 10, 0.22);
+}
+.md-typeset .gloss-source td.gloss-trigger { cursor: help; }
+.md-typeset .gloss-source td.gloss-trigger:hover { background: #f3edda; }
+.md-typeset .defs li {
+  font-size: 0.66rem;
+  margin: 0.08rem 0;
+}
+
+/* ---- Compétences : modules ---- */
+.md-typeset .comp h4 {
+  font-size: 0.8rem;
+  color: var(--green-title);
+  border-bottom: 1px solid #cfc8b8;
+  padding-bottom: 0.12rem;
+  margin: 0.1rem 0 0.3rem;
+}
+.md-typeset .comp .groupes {
+  font-size: 0.6rem;
+  font-style: italic;
+  color: #9b9686;
+  line-height: 1.35;
+  margin: 0.2rem 0 0.3rem;
+}
+.md-typeset .comp p:not(.groupes) {
+  font-size: 0.7rem;
+  margin: 0.2rem 0 0;
+}
+.md-typeset .comp .keep {
+  margin: 0 0 0.7rem;
+}
+
+/* ---- Compétences : tableaux récapitulatifs (un par champ, pleine largeur) ---- */
+.md-typeset .comp-recap {
+  margin: 0.6rem 0 1.6rem;
+}
+.md-typeset .comp-recap table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.68rem;
+  margin: 0 0 1.3rem;
+}
+.md-typeset .comp-recap th,
+.md-typeset .comp-recap td {
+  padding: 0.2em 0.6em;
+}
+.md-typeset .comp-recap td:first-child {
+  width: 34%;
+}
+.md-typeset .comp-recap td:nth-child(2) {
+  width: 20%;
+}
+/* Formule (difficulté…) : ligne grise en italique sous un tableau. */
+.md-typeset p.formula {
+  font-style: italic;
+  color: #9b9686;
+  font-size: 0.66rem;
+  margin: 0.3rem 0 0.7rem;
+}
+
+/* Paragraphes en blocs insécables : ne se coupent pas au changement de colonne ;
+   le titre reste collé à son contenu. */
+.md-typeset .blocs p {
+  break-inside: avoid;
+}
+.md-typeset .blocs h3 {
+  break-after: avoid;
+}
+
+/* ============================================================
+   Critique & Blessures — fiches de blessure dans le flux 2 colonnes.
+   Chaque zone garde son groupe de 5 degrés insécable et ses fiches
+   s'empilent dans la colonne (sceau chiffré + couleur + jauge ▰▱
+   = triple signal de gravité).
+   ============================================================ */
+.md-typeset .cols .wounds {
+  column-span: all;
+  margin: 0.6rem 0 0.2rem;
+}
+.md-typeset .wzone {
+  break-inside: avoid;
+  margin: 0 0 1.4rem;
+}
+.md-typeset .wzone-titre {
+  font-family: 'Cinzel', Garamond, serif;
+  color: var(--green-title);
+  font-size: 0.82rem;
+  margin: 0 0 0.45rem;
+  padding-bottom: 0.12rem;
+  border-bottom: 1px solid #cfc8b8;
+  break-after: avoid;
+}
+/* Par zone : degrés 1 2 puis 3 4 par lignes de deux, le 5 centré seul (flex 2 par ligne). */
+.md-typeset .wgrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+/* ---- La fiche ---- */
+.md-typeset .wfiche {
+  --g: #7c9275;
+  flex: 0 0 calc((100% - 0.55rem) / 2);
+  background: #fffdf6;
+  border: 1px solid #ded7c5;
+  border-left: 3px solid var(--g);
+  border-radius: 3px;
+  padding: 0.4rem 0.55rem 0.5rem;
+  break-inside: avoid;
+  font-size: 0.66rem;
+  line-height: 1.32;
+  text-align: left;
+}
+.md-typeset .wfiche[data-deg="1"] { --g: #7c9275; }
+.md-typeset .wfiche[data-deg="2"] { --g: #968d52; }
+.md-typeset .wfiche[data-deg="3"] { --g: #c0853b; }
+.md-typeset .wfiche[data-deg="4"] { --g: #b26a3a; }
+.md-typeset .wfiche[data-deg="5"] { --g: #9c4a42; }
+
+/* ---- En-tête : sceau de cire + nom + jauge ---- */
+.md-typeset .wf-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "sceau nom" "sceau jauge";
+  column-gap: 0.45rem;
+  align-items: center;
+  margin-bottom: 0.32rem;
+}
+.md-typeset .wf-sceau {
+  grid-area: sceau;
+  align-self: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fdfaf1;
+  background: var(--g);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35), 0 1px 1px rgba(0, 0, 0, .25);
+}
+.md-typeset .wf-nom {
+  grid-area: nom;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  line-height: 1.15;
+  color: var(--green-section);
+  margin: 0;
+}
+.md-typeset .wf-jauge {
+  grid-area: jauge;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--g);
+  margin-top: 0.05rem;
+}
+
+/* ---- Effet : le « diagnostic », sur pavé teinté ---- */
+.md-typeset .wf-effet {
+  margin: 0 0 0.35rem;
+  padding: 0.25rem 0.4rem;
+  background: #f6f1e2;
+  border-radius: 2px;
+}
+
+/* ---- Soins : étiquettes Cinzel grises, test isolé en vert ---- */
+.md-typeset .wf-soins {
+  margin: 0;
+  border-top: 1px dotted #d8d1bf;
+  padding-top: 0.32rem;
+}
+.md-typeset .wf-soin { margin: 0 0 0.4rem; }
+.md-typeset .wf-soin:last-child { margin-bottom: 0; }
+.md-typeset .wf-lbl {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-size: 0.54rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9b9686;
+}
+/* Méthode de soin : tout le jet en gras vert (compétence + parenthèse +
+   difficulté, ou « Repos : N jours »), pas seulement le mot « Médecine ». */
+.md-typeset .wf-roll {
+  display: block;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--green-section);
+}
+.md-typeset .wf-test { font-weight: inherit; color: inherit; }
+.md-typeset .wf-desc {
+  display: block;
+  line-height: 1.32;
+  margin-top: 0.05rem;
+}
+/* « aucun » : ni gras ni vert, mention discrète. */
+.md-typeset .wf-roll.wf-aucun { font-weight: normal; color: #a59f8e; font-style: italic; }
+
+/* ============================================================
+   Impression / export PDF.
+   Le PDF du livre est rendu au build par WeasyPrint (plugin mkdocs-to-pdf, en
+   media « print »). Ces règles ne s'appliquent donc qu'au PDF et à un éventuel
+   Ctrl+P, jamais à l'affichage écran. */
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* Fiches et zones insécables. */
+  .md-typeset .wfiche { box-shadow: none; }
+  .md-typeset .wzone, .md-typeset .wfiche { break-inside: avoid; }
+
+  /* La mise en page multi-colonnes (.cols) ne pagine pas proprement sur du
+     papier : on repasse en colonne unique pour le PDF. */
+  .md-typeset .cols { column-count: 1; }
+
+  /* Ne jamais imprimer les définitions de glossaire (cachées à l'écran). */
+  .gloss-defs { display: none !important; }
+
+  /* Ne pas couper titres, tableaux et blocs de référence entre deux pages. */
+  .md-typeset h1, .md-typeset h2, .md-typeset h3 { break-after: avoid; }
+  .md-typeset table, .md-typeset figure, .md-typeset img,
+  .md-typeset .gloss-source { break-inside: avoid; }
+
+  @page { margin: 14mm 12mm; }
+}
+/* ---- Écran étroit : la frise retombe en pile ---- */
+/* Écran étroit : une fiche par ligne. */
+@media screen and (max-width: 40em) {
+  .md-typeset .wfiche { flex-basis: 100%; }
+}
+
+/* Tables de contenu (états…) : colonne de nom étroite, le reste pour le texte. */
+.md-typeset .states table:not([class]) th:first-child,
+.md-typeset .states table:not([class]) td:first-child {
+  width: 26%;
+}
+/* Table des situations (6 colonnes : nom + 5 malus) : nom large, malus étroits et centrés. */
+.md-typeset .states table:not([class]):has(th:nth-child(6)) {
+  table-layout: fixed;
+}
+.md-typeset .states table:not([class]):has(th:nth-child(6)) th:first-child {
+  width: 35%;
+}
+.md-typeset .states table:not([class]):has(th:nth-child(6)) th:nth-child(n+2),
+.md-typeset .states table:not([class]):has(th:nth-child(6)) td:nth-child(n+2) {
+  width: 13%;
+  text-align: center;
+}
+/* Formule de calcul d'une catégorie non cumulable : ligne grise sous le tableau,
+   donnant les formules exactes (effet, DC, UA) pour extrapoler au-delà des paliers. */
+.md-typeset .cj-modules p.formula {
+  font-size: 0.58rem;
+  color: #9b9686;
+  margin: 0.1rem 0 0.4rem;
+}
+/* Ligne « TYPE : … » sous le titre : étiquette grise en Cinzel, en majuscules,
+   indiquant quels types de conjuration peuvent prendre ce module. */
+.md-typeset .cj-modules .mod-type {
+  font-family: 'Cinzel', Garamond, serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9b9686;
+  margin: 0 0 0.4rem;
+  padding-left: 0;
+  border-left: none;
+  text-align: left;
+}
+/* Description du module : paragraphe qui suit la ligne TYPE (ou le titre, pour
+   les modules sans ligne TYPE), en corps normal. */
+.md-typeset .cj-modules .mod-type + p,
+.md-typeset .cj-modules h3 + p,
+.md-typeset .cj-modules h4 + p {
+  font-size: inherit;
+  margin: 0.2rem 0 0.45rem;
+  padding-left: 0;
+  border-left: none;
+  text-align: justify;
+}
+
+/* Tables à 3 colonnes en multicol (ex. modules de conjuration : Nom | Effet |
+   Coût) : nom étroit, effet large, coût compact à droite. */
+.md-typeset .cols table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) th:nth-child(1) { width: 30%; }
+.md-typeset .cols table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) th:nth-child(2) { width: 50%; }
+.md-typeset .cols table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) th:nth-child(3) { width: 20%; text-align: center; }
+.md-typeset .cols table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) td:nth-child(3) { text-align: center; }
 
 /* En-têtes : verts, à la ligne. */
 .md-typeset table:not([class]) th {
@@ -307,6 +1028,13 @@
 .book-mode .md-sidebar--primary .md-nav--primary {
   display: none;
 }
+
+/* Anti-FOUC au rechargement : on masque le contenu (sans en perdre la mise en
+   page, donc visibility et non display) jusqu'à ce que continuous.js l'ait
+   enveloppé et positionné, puis retire book-loading. */
+html.book-loading .md-content__inner {
+  visibility: hidden;
+}
 .book-nav {
   font-family: 'EB Garamond', Garamond, serif;
   font-size: 0.7rem;
@@ -318,11 +1046,37 @@
   margin: 0;
   padding: 0;
 }
+
+/* Niveau chapitre : en-tête du groupe, toujours déplié. Même TAILLE que les
+   pages — seule l'indentation des pages les distingue. Le clic défile vers la
+   première page du chapitre. */
+.book-group-title {
+  display: block;
+  padding: 0.2rem 0;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--green-section);
+  text-decoration: none;
+  cursor: pointer;
+}
+.book-group.active > .book-group-title,
+.book-group-title:hover {
+  color: var(--green-title);
+}
+/* Scopé sous .book-nav pour battre `.book-nav ul { padding/margin: 0 }` en
+   spécificité — sinon l'indentation des pages est écrasée. */
+.book-nav .book-group-pages {
+  margin: 0 0 0.35rem 0.35rem;
+  padding-left: 0.7rem;
+  border-left: 1px solid #d8e0d3;
+}
+
 .book-chapter > .book-link {
   display: block;
-  padding: 0.22rem 0;
+  padding: 0.2rem 0;
   font-family: 'Cinzel', Garamond, serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 0.72rem;
   color: var(--green-section);
   text-decoration: none;
@@ -366,8 +1120,27 @@
   background: transparent;
   box-shadow: none;
   padding: 0;
-  overflow-anchor: none;  /* évite le conflit avec la compensation de scroll */
+  /* Ancrage natif ACTIF : pendant le scroll, le navigateur garde la position
+     de façon fluide quand une page s'insère au-dessus (pas de scrollTo manuel
+     qui glitcherait). Les cas tout-en-haut (clic/arrivée) sont repositionnés
+     explicitement par continuous.js sur la cible. */
 }
+/* Offset pour scrollIntoView (clics dans l'arbre) : la cible se place sous
+   l'en-tête collant (header + onglets ≈ 4.8rem). */
+.cont-page,
+.cont-page h1,
+.cont-page h2,
+.cont-page h3 {
+  scroll-margin-top: 5.2rem;
+}
+
+/* Page fraîchement chargée : masquée le temps d'être mise en page (l'espace est
+   réservé via visibility, donc pas de saut), puis révélée d'un coup → tous ses
+   éléments apparaissent en même temps, jamais le fond seul puis le contenu. */
+.md-typeset .cont-page.cont-pending {
+  visibility: hidden;
+}
+
 .md-typeset .cont-page {
   background: var(--paper);
   box-shadow: 0 1px 6px rgba(0, 0, 0, .18);
@@ -385,7 +1158,9 @@
 .md-typeset .cont-flash {
   animation: cont-flash-anim 1.5s ease-out;
   border-radius: 3px;
-  box-decoration-break: clone;
+  /* PAS de box-decoration-break ici : le modifier dans un multi-colonnes force
+     une re-fragmentation et fait sauter les colonnes au clic. Le fond animé
+     suffit ; les titres flashés tiennent sur une ligne. */
 }
 
 /* ---------- 10. Page d'accueil : changelog ---------- */
@@ -438,8 +1213,10 @@
 .md-typeset .cl-file code {
   background: transparent;
   padding: 0;
+  font-family: inherit;
   font-size: .72rem;
-  color: #3a3a3a;
+  color: var(--green-section);
+  border-bottom: 1px dotted var(--green-header);
 }
 .md-typeset .cl-link {
   font-size: .72rem;
