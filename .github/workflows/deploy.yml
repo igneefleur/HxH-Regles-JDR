@@ -31,11 +31,15 @@ jobs:
             fontconfig
           fc-cache -f
 
-      # mkdocs-to-pdf épingle lui-même weasyprint==62.3 et pydyf==0.10.0 : ne pas
-      # ajouter « weasyprint » à la main. brotli sert à décoder les woff2 des
-      # Google Fonts (@import dans extra.css : Cinzel pour les titres).
+      # mkdocs-to-pdf 0.11.2 épingle weasyprint==62.3, qui plante (AssertionError:
+      # assert root_box) à la pagination de certaines pages. On force donc une
+      # version récente de weasyprint + pydyf, validée localement, qui corrige le
+      # bug ; l'API utilisée par mkdocs-to-pdf reste compatible. brotli sert à
+      # décoder les woff2 des Google Fonts (@import dans extra.css : Cinzel).
       - name: Dépendances Python
-        run: pip install mkdocs-material "mkdocs-to-pdf==0.11.2" brotli
+        run: |
+          pip install mkdocs-material "mkdocs-to-pdf==0.11.2" brotli
+          pip install -U "weasyprint==69.0" "pydyf==0.12.1"
 
       # Build + déploiement avec la config CI (qui active le plugin PDF). La
       # variable ENABLE_PDF_EXPORT déclenche réellement la génération du PDF.

@@ -1,47 +1,11 @@
 [
 {
-"short": "local",
+"short": "026890b",
 "author": "Théo Cavaillès",
-"date": null,
-"message": "Modifications en cours (non committées)",
-"url": null,
-"pending": true,
+"date": "2026-06-27T03:10:07+02:00",
+"message": "Ajout de nombreuses pages du livre, assets et scripts ; refonte de la création de personnage",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/026890b881c2cb1dfe8d3415219fa4fb0a947c84",
 "files": [
-{
-"status": "modified",
-"filename": "content/livre/armes.md",
-"url": "content/livre/armes/"
-},
-{
-"status": "modified",
-"filename": "content/livre/caracteristiques.md",
-"url": "content/livre/caracteristiques/"
-},
-{
-"status": "removed",
-"filename": "content/livre/creation-armes.md",
-"url": null
-},
-{
-"status": "modified",
-"filename": "content/livre/degats.md",
-"url": "content/livre/degats/"
-},
-{
-"status": "modified",
-"filename": "content/livre/etats.md",
-"url": "content/livre/etats/"
-},
-{
-"status": "modified",
-"filename": "content/livre/manoeuvres.md",
-"url": "content/livre/manoeuvres/"
-},
-{
-"status": "modified",
-"filename": "content/livre/sens.md",
-"url": "content/livre/sens/"
-},
 {
 "status": "added",
 "filename": "content/livre/activites.md",
@@ -51,6 +15,11 @@
 "status": "added",
 "filename": "content/livre/archetypes-nen.md",
 "url": "content/livre/archetypes-nen/"
+},
+{
+"status": "modified",
+"filename": "content/livre/armes.md",
+"url": "content/livre/armes/"
 },
 {
 "status": "added",
@@ -68,6 +37,11 @@
 "url": "content/livre/capacites-physiques/"
 },
 {
+"status": "modified",
+"filename": "content/livre/caracteristiques.md",
+"url": "content/livre/caracteristiques/"
+},
+{
 "status": "added",
 "filename": "content/livre/competences.md",
 "url": "content/livre/competences/"
@@ -78,9 +52,19 @@
 "url": "content/livre/conjuration/"
 },
 {
+"status": "removed",
+"filename": "content/livre/creation-armes.md",
+"url": null
+},
+{
 "status": "added",
 "filename": "content/livre/critique-blessures.md",
 "url": "content/livre/critique-blessures/"
+},
+{
+"status": "modified",
+"filename": "content/livre/degats.md",
+"url": "content/livre/degats/"
 },
 {
 "status": "added",
@@ -98,6 +82,11 @@
 "url": "content/livre/emission/"
 },
 {
+"status": "modified",
+"filename": "content/livre/etats.md",
+"url": "content/livre/etats/"
+},
+{
 "status": "added",
 "filename": "content/livre/formations.md",
 "url": "content/livre/formations/"
@@ -108,6 +97,11 @@
 "url": "content/livre/manipulation/"
 },
 {
+"status": "modified",
+"filename": "content/livre/manoeuvres.md",
+"url": "content/livre/manoeuvres/"
+},
+{
 "status": "added",
 "filename": "content/livre/points-formation.md",
 "url": "content/livre/points-formation/"
@@ -116,6 +110,11 @@
 "status": "added",
 "filename": "content/livre/renforcement.md",
 "url": "content/livre/renforcement/"
+},
+{
+"status": "modified",
+"filename": "content/livre/sens.md",
+"url": "content/livre/sens/"
 },
 {
 "status": "added",
