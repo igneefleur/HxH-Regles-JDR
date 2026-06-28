@@ -830,21 +830,42 @@
 @media print {
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-  /* Fiches et zones insécables. */
-  .md-typeset .wfiche { box-shadow: none; }
-  .md-typeset .wzone, .md-typeset .wfiche { break-inside: avoid; }
+  /* WeasyPrint (le moteur du PDF du livre) ne sait paginer ni le multi-colonnes
+     ni les grilles/flex CSS : dès la première page riche, il interrompt le rendu
+     et tronque le livre (symptôme : un PDF de 5 pages au lieu du livre entier).
+     Pour le PDF uniquement, on aplatit donc toute la mise en page riche en simple
+     flux de blocs, qui se pagine correctement. L'affichage à l'écran n'est pas
+     touché (ces règles sont sous @media print). */
+  .md-typeset .cols {
+    columns: auto !important;
+    column-count: auto !important;
+    column-width: auto !important;
+  }
+  .md-typeset .cols h1, .md-typeset .cols h2, .md-typeset .cols h3,
+  .md-typeset .cols h4, .md-typeset .cols .span, .md-typeset .cols hr,
+  .md-typeset .cols .wounds { column-span: none !important; }
+  .md-typeset .eclat-grid, .md-typeset .eclat-tiers, .md-typeset .cj-modules,
+  .md-typeset .comp, .md-typeset .comp-recap, .md-typeset .defs,
+  .md-typeset .states, .md-typeset .mcard, .md-typeset .frieze,
+  .md-typeset .portrait, .md-typeset .frame, .md-typeset .wgrid,
+  .md-typeset .wfiche, .md-typeset .wf-head, .md-typeset .wf-soins,
+  .md-typeset .gloss-source {
+    display: block !important;
+    grid-template-columns: none !important;
+    grid-template-areas: none !important;
+  }
+  /* Un élément « insécable » plus haut qu'une page bloque aussi la pagination de
+     WeasyPrint : on autorise les coupures partout pour le PDF. */
+  .md-typeset, .md-typeset * {
+    break-inside: auto !important;
+    break-after: auto !important;
+    break-before: auto !important;
+  }
 
-  /* La mise en page multi-colonnes (.cols) ne pagine pas proprement sur du
-     papier : on repasse en colonne unique pour le PDF. */
-  .md-typeset .cols { column-count: 1; }
+  .md-typeset .wfiche { box-shadow: none; }
 
   /* Ne jamais imprimer les définitions de glossaire (cachées à l'écran). */
   .gloss-defs { display: none !important; }
-
-  /* Ne pas couper titres, tableaux et blocs de référence entre deux pages. */
-  .md-typeset h1, .md-typeset h2, .md-typeset h3 { break-after: avoid; }
-  .md-typeset table, .md-typeset figure, .md-typeset img,
-  .md-typeset .gloss-source { break-inside: avoid; }
 
   @page { margin: 14mm 12mm; }
 }
