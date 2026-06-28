@@ -32,11 +32,29 @@
     return clone.textContent.trim();
   }
 
+  // Fige les URLs (liens + images) d'une page chargée en ABSOLU, résolues contre
+  // l'URL PROPRE de cette page. En lecture continue, des pages de profondeurs
+  // différentes cohabitent sous une seule URL de document ; un href relatif
+  // (ex. « ../competences/ ») se résoudrait sinon contre la mauvaise base après
+  // un history.replaceState — d'où des renvois cassés (.../content/competences/
+  // au lieu de .../content/livre/competences/). On ne touche pas aux ancres pures
+  // (#section) ni aux URL déjà absolues (http:, mailto:, //…).
+  function absolutize(root, base) {
+    root.querySelectorAll("a[href], img[src]").forEach(el => {
+      const attr = el.tagName === "IMG" ? "src" : "href";
+      const raw = el.getAttribute(attr);
+      if (!raw || raw[0] === "#" || raw.startsWith("//") || /^[a-z][a-z0-9+.-]*:/i.test(raw)) return;
+      try { el.setAttribute(attr, new URL(raw, base).href); } catch (_) {}
+    });
+  }
+
   async function fetchArticle(url) {
     const res = await fetch(url, { cache: "no-cache" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     const doc = new DOMParser().parseFromString(await res.text(), "text/html");
-    return doc.querySelector(".md-content__inner");
+    const inner = doc.querySelector(".md-content__inner");
+    if (inner) absolutize(inner, url);   // renvois figés contre l'URL de CETTE page
+    return inner;
   }
 
   function makeFrag(article) {
@@ -89,6 +107,7 @@
     const firstPage = document.createElement("div");
     firstPage.className = "cont-page";
     while (inner.firstChild) firstPage.appendChild(inner.firstChild);
+    absolutize(firstPage, location.href);   // fige ses renvois avant tout replaceState
 
     // Ordre des chapitres, lu dans la nav de Material.
     const bookPages = [...document.querySelectorAll('.md-sidebar--primary .md-nav__link[href]')]
