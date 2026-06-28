@@ -1,11 +1,10 @@
 [
 {
-"short": "local",
+"short": "403a86d",
 "author": "Théo Cavaillès",
-"date": null,
-"message": "Modifications en cours (non committées)",
-"url": null,
-"pending": true,
+"date": "2026-06-27T19:07:44+02:00",
+"message": "Refonte concise du livre, nouvelles pages et modules ; retrait de l'état Étourdi",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/403a86d7bbe53a5caa105b7fe18bbef283b76b9d",
 "files": [
 {
 "status": "modified",
@@ -28,6 +27,11 @@
 "url": "content/livre/arts-martiaux/"
 },
 {
+"status": "added",
+"filename": "content/livre/aura.md",
+"url": "content/livre/aura/"
+},
+{
 "status": "modified",
 "filename": "content/livre/avantages.md",
 "url": "content/livre/avantages/"
@@ -41,6 +45,11 @@
 "status": "modified",
 "filename": "content/livre/caracteristiques.md",
 "url": "content/livre/caracteristiques/"
+},
+{
+"status": "added",
+"filename": "content/livre/classe.md",
+"url": "content/livre/classe/"
 },
 {
 "status": "modified",
@@ -68,6 +77,11 @@
 "url": "content/livre/deroulement-combat/"
 },
 {
+"status": "added",
+"filename": "content/livre/di.md",
+"url": "content/livre/di/"
+},
+{
 "status": "modified",
 "filename": "content/livre/eclat.md",
 "url": "content/livre/eclat/"
@@ -86,6 +100,11 @@
 "status": "modified",
 "filename": "content/livre/formations.md",
 "url": "content/livre/formations/"
+},
+{
+"status": "added",
+"filename": "content/livre/heavens-arena.md",
+"url": "content/livre/heavens-arena/"
 },
 {
 "status": "modified",
@@ -123,6 +142,11 @@
 "url": "content/livre/specialisation/"
 },
 {
+"status": "added",
+"filename": "content/livre/systeme-points-armes.md",
+"url": "content/livre/systeme-points-armes/"
+},
+{
 "status": "modified",
 "filename": "content/livre/tailles.md",
 "url": "content/livre/tailles/"
@@ -136,31 +160,6 @@
 "status": "modified",
 "filename": "content/livre/transmutation.md",
 "url": "content/livre/transmutation/"
-},
-{
-"status": "added",
-"filename": "content/livre/aura.md",
-"url": "content/livre/aura/"
-},
-{
-"status": "added",
-"filename": "content/livre/classe.md",
-"url": "content/livre/classe/"
-},
-{
-"status": "added",
-"filename": "content/livre/di.md",
-"url": "content/livre/di/"
-},
-{
-"status": "added",
-"filename": "content/livre/heavens-arena.md",
-"url": "content/livre/heavens-arena/"
-},
-{
-"status": "added",
-"filename": "content/livre/systeme-points-armes.md",
-"url": "content/livre/systeme-points-armes/"
 }
 ]
 },

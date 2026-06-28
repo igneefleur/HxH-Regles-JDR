@@ -669,6 +669,9 @@ CLASSE_LIST = '"Combattant"'
 TAILLE_LIST = ('"Microscopique,Infime,Minuscule,Très petite,Petite,Moyenne,'
                'Grande,Très grande,Gigantesque,Colossale,Titanesque"')
 TYPE_LIST = '"CON,TRA,PER,FEU,FRO,ÉLE,DÉC"'
+# Bonus de classe (Combattant) : choix d'arme d'attaque et de défense
+ARME_BONUS_LIST = '"Armes de mêlée,Armes de jet,Archerie,Armes à feu"'
+DEF_BONUS_LIST  = '"Parade,Esquive"'
 ARCH_LIST_RNG = f"={BAR['ARCH'].split(':')[0]}:$A${arch_last}"  # colonne A des archétypes
 
 
@@ -750,6 +753,75 @@ label(F, f"C{row}", "Prestige")
 PRESTIGE = calc(F, f"D{row}", f"=ROUNDUP({DI.coordinate}/100,0)")
 label(F, f"F{row}", "PV courants")
 PVCUR = inp(F, f"G{row}", 100)
+row += 1
+
+# Bonus de classe (Combattant) : deux choix d'office (+10 chacun).
+label(F, f"A{row}", "Arme (bonus de classe)")
+ARME_BONUS = inp(F, f"B{row}", "Armes de mêlée", align=AL_L)
+F.merge_cells(f"B{row}:D{row}")
+add_list(F, f"B{row}", ARME_BONUS_LIST)
+label(F, f"F{row}", "Défense (bonus de classe)")
+DEF_BONUS = inp(F, f"G{row}", "Esquive", align=AL_L)
+F.merge_cells(f"G{row}:I{row}")
+add_list(F, f"G{row}", DEF_BONUS_LIST)
+row += 1
+cell(F, f"A{row}",
+     "Bonus de classe du Combattant (+10 d'office) : Initiative, Lutte, Résistance à la douleur, "
+     "l'arme choisie ci-dessus et la défense choisie ci-dessus. Reportés dans la colonne Bonus des compétences.",
+     font=FONT_SMALL, fill=FILL_PARCHEMIN, align=AL_LW, border=False)
+F.merge_cells(f"A{row}:N{row}")
+F.row_dimensions[row].height = 24
+row += 2
+
+# =========================================================================== #
+# 1 bis. PLAFONDS DE FORMATION (Combattant)
+# =========================================================================== #
+# Pour chaque champ : plafond en % (constante) et PF max dérivé =
+# ROUNDDOWN(plafond% × PF total / 100, 0), pointant vers la cellule PF total.
+section_title(F, row, 1, 14, "1 bis · Plafonds de formation (Combattant)")
+row += 1
+
+PLAFONDS_FORMATION = [
+    ("Martial", 40), ("Vital", 30), ("Athlétique", 30), ("Sensoriel", 20),
+    ("Furtif", 20), ("Sauvage", 20), ("Social", 10), ("Intellectuel", 10),
+    ("Technique", 10), ("Créatif", 10),
+]
+
+# Trois blocs de colonnes : (Champ | Plafond % | PF max) en A.., F.., K..
+PLAF_GROUPS = [("A", "B", "C"), ("F", "G", "H"), ("K", "L", "M")]
+PF_REF = f"${PF.coordinate[0]}${PF.row}"  # référence absolue vers PF total
+
+# En-têtes pour chaque bloc
+for cChamp, cPct, cMax in PLAF_GROUPS:
+    header_cell(F, f"{cChamp}{row}", "Champ")
+    header_cell(F, f"{cPct}{row}", "Plafond %")
+    header_cell(F, f"{cMax}{row}", "PF max")
+row += 1
+
+# 10 champs répartis sur 3 colonnes (4 + 3 + 3)
+plaf_layout = [PLAFONDS_FORMATION[0:4], PLAFONDS_FORMATION[4:7], PLAFONDS_FORMATION[7:10]]
+plaf_top = row
+plaf_bottoms = []
+for gi, group in enumerate(plaf_layout):
+    cChamp, cPct, cMax = PLAF_GROUPS[gi]
+    rr = plaf_top
+    for champ, pct in group:
+        label(F, f"{cChamp}{rr}", champ)
+        # % = constante (texte/calcul), affiché avec le signe %
+        calc(F, f"{cPct}{rr}", pct, align=AL_C, fmt="0\\%")
+        # PF max = ROUNDDOWN(plafond% × PF total / 100, 0) → formule vers PF total
+        calc(F, f"{cMax}{rr}", f"=ROUNDDOWN({pct}*{PF_REF}/100,0)", align=AL_C)
+        rr += 1
+    plaf_bottoms.append(rr)
+row = max(plaf_bottoms)
+
+# Note sur les arts martiaux / formations
+cell(F, f"A{row}",
+     "Arts martiaux et formations comptent dans le champ Martial. "
+     "Le plafond s'applique aux PF totaux, et s'élève donc avec le niveau.",
+     font=FONT_SMALL, fill=FILL_PARCHEMIN, align=AL_LW, border=False)
+F.merge_cells(f"A{row}:N{row}")
+F.row_dimensions[row].height = 24
 row += 2
 
 # =========================================================================== #
@@ -1126,6 +1198,25 @@ COL_GROUPS = [
     ("K", "L", "M", "N"),   # bloc droit
 ]
 
+# --- Bonus de classe (Combattant) appliqués au calcul du Bonus de compétence -- #
+# Toujours +10 (fixe) :
+CLASS_BONUS_FIXED = {"Initiative", "Lutte", "Résistance à la douleur"}
+# Au choix d'arme d'attaque (+10 à celle pointée par la cellule ARME_BONUS) :
+CLASS_BONUS_WEAPONS = {"Armes de mêlée", "Armes de jet", "Archerie", "Armes à feu"}
+# Au choix de défense (+10 à celle pointée par la cellule DEF_BONUS) :
+CLASS_BONUS_DEFENSE = {"Parade", "Esquive"}
+
+def class_bonus_term(skill_name):
+    """Renvoie le terme de formule à ajouter à 'Valeur + MOD' pour le bonus de
+    classe Combattant, ou '' si la compétence n'en bénéficie pas."""
+    if skill_name in CLASS_BONUS_FIXED:
+        return "+10"
+    if skill_name in CLASS_BONUS_WEAPONS:
+        return f'+IF({ARME_BONUS.coordinate}="{skill_name}",10,0)'
+    if skill_name in CLASS_BONUS_DEFENSE:
+        return f'+IF({DEF_BONUS.coordinate}="{skill_name}",10,0)'
+    return ""
+
 def write_field_block(ws, top_row, cols, champ, comps, sensoriel=False):
     """Écrit un champ de compétences dans un bloc de colonnes.
        Renvoie la dernière ligne utilisée."""
@@ -1168,7 +1259,10 @@ def write_field_block(ws, top_row, cols, champ, comps, sensoriel=False):
             cell(ws, f"{cL}{rr}", sname, font=FONT_BASE, fill=fill, align=AL_L)
             cell(ws, f"{cC}{rr}", csig, font=FONT_BASE, fill=fill, align=AL_C)
             valc = inp(ws, f"{cV}{rr}", 0)
-            calc(ws, f"{cB}{rr}", f"={valc.coordinate}+{CARAC_MOD[csig]}", align=AL_C)
+            # Bonus = Valeur + MOD (+ bonus de classe Combattant si applicable)
+            bonus = class_bonus_term(sname)
+            calc(ws, f"{cB}{rr}",
+                 f"={valc.coordinate}+{CARAC_MOD[csig]}{bonus}", align=AL_C)
         rr += 1
     return rr
 
