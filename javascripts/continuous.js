@@ -13,7 +13,9 @@
 // navigation.instant. Les liens de nav sont figés en absolu pour résister au
 // changement d'URL.
 (function () {
-  const SCOPE = "/content/livre/";
+  // Le « scope » du livre courant (/content/<livre>/) : il isole chaque livre
+  // (Règles, Univers) en lecture continue distincte. Recalculé à chaque page
+  // (un livre par onglet Material), d'où sa définition dans init().
   const ACTIVE_LINE = "-45% 0px -55% 0px";  // ligne de détection du chapitre/section courant
   const LOAD_MARGIN_PX = 2200;              // distance d'anticipation du chargement
   let observers = [];
@@ -37,7 +39,7 @@
   // différentes cohabitent sous une seule URL de document ; un href relatif
   // (ex. « ../competences/ ») se résoudrait sinon contre la mauvaise base après
   // un history.replaceState — d'où des renvois cassés (.../content/competences/
-  // au lieu de .../content/livre/competences/). On ne touche pas aux ancres pures
+  // au lieu de .../content/regles/competences/). On ne touche pas aux ancres pures
   // (#section) ni aux URL déjà absolues (http:, mailto:, //…).
   function absolutize(root, base) {
     root.querySelectorAll("a[href], img[src]").forEach(el => {
@@ -81,7 +83,9 @@
 
   function init() {
     teardown();
-    const isBook = location.pathname.includes(SCOPE);
+    const scopeMatch = location.pathname.match(/\/content\/[^/]+\//);
+    const SCOPE = scopeMatch ? scopeMatch[0] : null;
+    const isBook = !!SCOPE;
     // book-mode sur <html> ET <body> : <html> est aussi posé avant le rendu par
     // le script du <head> (anti-FOUC) ; on le garde synchro pour la navigation
     // instantanée (où le <head> ne se ré-exécute pas).
