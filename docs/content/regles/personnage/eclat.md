@@ -152,7 +152,3 @@ L'Éclat de Naissance ne bouge jamais ; l'Éclat actuel, lui, peut s'élever com
 </div>
 
 </div>
-
----
-
-L'allure à laquelle un personnage transforme son talent en progrès, sa vitesse d'apprentissage selon l'Éclat, est détaillée là où elle s'applique : sur la page des [points de formation](points-formation.md) pour le niveau, et sur celle du [développement intérieur](../nen/di.md) pour le prestige.

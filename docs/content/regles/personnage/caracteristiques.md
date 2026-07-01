@@ -6,9 +6,9 @@ Les caractéristiques mesurent les aptitudes naturelles d'un personnage, avant t
 
 Chaque caractéristique se note de 0 à 30. 5 est la moyenne humaine, 9 le maximum humain. Au-delà commence le surnaturel : 19 marque la limite d'un être hors norme, 29 l'extrême maximum, et 30 ce qui se tient au-delà de tout.
 
-Les douze caractéristiques se répartissent en deux groupes de six, physique et mental. À chaque caractéristique d'un groupe répond une caractéristique de l'autre, et l'ensemble se rattache aux catégories de Nen ; ces correspondances sont détaillées plus loin.
+Les douze caractéristiques se répartissent en deux groupes de six, physique et mental. Chaque caractéristique mentale se rattache à une catégorie de Nen ; ces correspondances sont détaillées plus loin.
 
-Le travail seul ne suffit pas : le maximum qu'une caractéristique peut atteindre dépend de l'[Éclat](eclat.md), le talent inné. Sans lui, l'entraînement bute vite contre un plafond.
+Le travail seul ne suffit pas : le maximum qu'une caractéristique peut atteindre dépend de l'[Éclat](eclat.md). Sans lui, l'entraînement bute vite contre un plafond.
 
 | Caractéristique | Éclat requis |
 |:---:|:---:|
@@ -19,19 +19,19 @@ Le travail seul ne suffit pas : le maximum qu'une caractéristique peut atteindr
 | 25 – 29 | 40 |
 | 30 | 50 |
 
-Ainsi, un personnage d'Éclat 0 plafonne à 9 partout. Il faut un Éclat de 40 pour porter une caractéristique à 29, et 50 pour atteindre le maximum absolu de 30.
+Ainsi, un personnage d'Éclat 0 plafonne à 9 partout. Chaque palier d'Éclat repousse ce plafond : 10 permet d'atteindre 14, 20 d'atteindre 19, 30 d'atteindre 24, 40 d'atteindre 29, et 50 de toucher le maximum absolu de 30.
 
 ### Modificateurs
 
-Chaque caractéristique a un modificateur qui dépend de sa valeur. Le modificateur brut découle de la caractéristique brute, le modificateur effectif de la caractéristique effective. Le tableau suivant donne le modificateur de chaque valeur.
+Chaque caractéristique a un modificateur qui dépend de sa valeur. Le tableau suivant donne le modificateur de chaque valeur.
 
 | Caractéristique | Modificateur |
 |:---:|:---:|
-| 0 | -25 |
-| 1 | -20 |
-| 2 | -15 |
-| 3 | -10 |
-| 4 | -5 |
+| 0 | −25 |
+| 1 | −20 |
+| 2 | −15 |
+| 3 | −10 |
+| 4 | −5 |
 | 5 | +0 |
 | 6 – 9 | +5 |
 | 10 – 12 | +10 |
@@ -57,7 +57,7 @@ La répartition se fait par achat de points. Chaque caractéristique part de 3, 
 
 Monter une caractéristique coûte 1 point par cran jusqu'à la moyenne de l'Éclat. Au-delà, le premier cran coûte 2 points, le second 3, et ainsi jusqu'au plafond. Aucune caractéristique ne descend sous 3 ni ne dépasse le plafond.
 
-À l'Éclat 0, atteindre 5 coûte 2 points, 6 coûte 4 points, 7 coûte 7 points. Dépenser le budget à parts égales porte chaque caractéristique à la moyenne : un personnage complet, sans faille ni sommet. Un point fort se paie de plus en plus cher et oblige à laisser d'autres caractéristiques au plus bas : le spécialiste échange sa polyvalence contre quelques sommets.
+À l'Éclat 0, atteindre 5 coûte 2 points, 6 coûte 4 points, 7 coûte 7 points. Dépenser le budget à parts égales porte chaque caractéristique à la moyenne : un personnage complet, sans faille ni sommet. Un point fort se paie de plus en plus cher et oblige à laisser d'autres caractéristiques au plus bas.
 
 Ainsi, à l'Éclat 0, porter la Force et l'Endurance à 7 coûte 7 points chacune ; les 10 points restants montent cinq autres caractéristiques à 5, et les cinq dernières demeurent à 3.
 
@@ -141,7 +141,7 @@ La Logique mesure la rigueur du raisonnement et le sens de l'analyse. Elle perme
 
 ### Instinct (INS)
 
-L'Instinct mesure la vivacité du jugement spontané, l'intelligence qui agit avant le raisonnement. Il guide la décision prise dans l'instant, la lecture d'une situation ou d'un visage, la perception intuitive du temps, de son propre corps et des signaux que l'on capte sans y penser, le flair du survivant et du pisteur. Là où la Logique pèse et calcule, l'Instinct tranche d'emblée.
+L'Instinct mesure la vivacité du jugement spontané, l'intelligence qui agit avant le raisonnement. Il guide la décision prise dans l'instant, la lecture d'une situation ou d'un visage, la perception intuitive du temps, de son propre corps et des signaux que l'on capte sans y penser, le flair du survivant et du pisteur.
 
 </div>
 
@@ -165,7 +165,7 @@ L'Imagination mesure la faculté de concevoir et d'inventer ce qui n'existe pas 
 
 ### Charisme (CHA)
 
-Le Charisme mesure l'intelligence sociale et l'art de toucher autrui par la parole. Il sert à convaincre, négocier, séduire, tromper ou se lier, partout où il faut choisir ses mots et lire ceux d'en face. Là où la Présence impose par l'apparence, le Charisme persuade par le verbe : il fédère les volontés et façonne les opinions.
+Le Charisme mesure l'intelligence sociale et l'art de toucher autrui par la parole. Il sert à convaincre, négocier, séduire, tromper ou se lier, partout où il faut choisir ses mots et lire ceux d'en face.
 
 </div>
 

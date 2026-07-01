@@ -4,9 +4,9 @@
 
 Les capacités physiques mesurent ce que le corps accomplit : charge soulevée, distance franchie, souffle retenu. Chacune découle d'une [caractéristique](caracteristiques.md) physique notée de 0 à 30, et se lit dans un tableau sans jet de dé : on croise la valeur de la caractéristique et la colonne de l'effort fourni. C'est un repère chiffré pour le MJ.
 
-Sur cette échelle, 5 est la moyenne humaine et 9 le plafond humain réel. Dans l'univers, l'entraînement mène jusqu'à 19, sommet d'un corps humain ; au-delà, seul le surnaturel fait progresser, jusqu'à 30, sans aucune limite.
+Sur cette échelle, 5 est la moyenne humaine et 9 le plafond humain réel. Dans l'univers, l'entraînement mène jusqu'à 19, sommet d'un corps humain ; au-delà, seul le surnaturel fait progresser, jusqu'à 30.
 
-Toute capacité se lit à l'un des trois régimes d'[activité](#activite) : légère, intermédiaire ou lourde, selon l'intensité de l'effort. À chaque instant, le personnage relève du plus exigeant des régimes que ses actions imposent, et ce régime unique vaut pour toutes ses capacités à la fois : courir ou porter lourd écourte son apnée autant que cela pèse sur ses muscles.
+Toute capacité se lit à l'un des trois régimes d'[activité](#activite) : légère, intermédiaire ou lourde, selon l'intensité de l'effort. À chaque instant, le personnage ne se trouve que dans un seul régime : celui de son effort le plus intense du moment. S'il fait plusieurs choses à la fois, c'est la plus exigeante qui décide.
 
 ### Activité {#activite}
 
@@ -20,19 +20,23 @@ Une activité est tout ce qu'un personnage fait de son corps, du repos au combat
 
 <div class="defs" markdown>
 
-**Légère :** un effort minime, soutenu indéfiniment sans peine, qui n'entame jamais les réserves. C'est le régime ordinaire d'une journée éveillée : ni heures ni fatigue à compter. Par exemple : marcher d'un pas tranquille, flâner ; cuisiner, bricoler, ranger un campement, jardiner sans forcer ; lire, étudier, dessiner une carte, converser ; monter la garde, faire le guet, voyager assis ; s'étirer, répéter des gestes lents, s'entraîner en douceur.
+**Légère :** un effort minime, soutenu indéfiniment sans peine, qui n'entame jamais les réserves. C'est le régime ordinaire d'une journée éveillée : ni heures ni fatigue à compter. Par exemple : marcher d'un pas tranquille, flâner ; cuisiner, ranger un campement, jardiner sans forcer ; lire, étudier, dessiner une carte, converser ; monter la garde, faire le guet, voyager assis ; s'étirer, répéter des gestes lents.
 
-**Intermédiaire :** un effort moyen, tenable de longues heures avec des pauses. Le personnage transpire et fournit un travail réel sans se mettre à bout : le rythme d'une vraie journée de labeur. Par exemple : randonner sac au dos, marcher vite, trottiner longtemps ; fendre du bois, creuser, manier la pioche, charrier des charges ; travailler dur à la forge, aux champs ou sur un chantier ; nager, ramer, pédaler à rythme régulier ; s'entraîner aux armes ou au corps à corps à l'allure normale.
+**Intermédiaire :** un effort moyen, tenable de longues heures avec des pauses. Le personnage transpire et fournit un travail réel sans se mettre à bout : le rythme d'une vraie journée de labeur. Par exemple : randonner sac au dos, marcher vite, trottiner longtemps ; fendre du bois, creuser, manier la pioche, charrier des charges ; travailler à la forge, aux champs ou sur un chantier ; nager, ramer, pédaler à rythme régulier.
 
-**Lourde :** un gros effort à pleine puissance, à l'intensité maximale du corps. Le personnage se dépense sans retenue et puise dans ses réserves : il ne tient ce rythme qu'un temps limité avant de réclamer du repos. Toute action menée au maximum en relève, le combat en tête. Par exemple : combattre, en duel ou en mêlée ; sprinter, fuir, poursuivre à toutes jambes ; escalader une paroi à mains nues, forcer un passage ; soulever ou briser au prix d'une dépense extrême ; pousser le corps à sa limite lors d'un exploit.
+**Lourde :** un gros effort à pleine puissance, à l'intensité maximale du corps. Le personnage se dépense sans retenue et puise dans ses réserves : il ne tient ce rythme qu'un temps limité avant de réclamer du repos. Par exemple : combattre, en duel ou en mêlée ; sprinter, fuir, poursuivre à toutes jambes ; pousser le corps à sa limite lors d'un exploit.
 
 </div>
 
-*Pour mémoire, ces régimes recoupent la physiologie : l'effort léger n'entame jamais les réserves, et l'effort intermédiaire correspond à une journée de travail, que même les métiers les plus physiques tiennent en restant en moyenne sous la moitié de la puissance maximale du corps.*
+<div class="memo" markdown>
+
+Pour mémoire, ces régimes recoupent la physiologie : l'effort léger n'entame jamais les réserves, et l'effort intermédiaire correspond à une journée de travail, que même les métiers les plus physiques tiennent en restant en moyenne sous la moitié de la puissance maximale du corps.
+
+</div>
 
 ### Repos et fatigue
 
-Pour être bien reposé et entamer sa journée sans malus, un personnage a besoin chaque jour du temps de sommeil que fixe son Endurance, lu dans le tableau ; ce besoin décroît à mesure qu'elle s'élève, du dormeur animal qui passe sa vie assoupi jusqu'à l'être qui ne dort plus du tout. La même Endurance fixe ce qu'il peut fournir d'effort, sur des courbes distinctes : l'activité lourde s'élève régulièrement jusqu'à son plafond, et l'activité intermédiaire monte avec elle tant que la journée n'est pas pleine ; une fois la journée entièrement occupée, l'intermédiaire cède peu à peu du terrain à l'effort lourd, qui croît encore. Sommeil, activité intermédiaire et activité lourde se partagent les vingt-quatre heures sans jamais les dépasser ; le temps qui reste se passe en activité légère, qui entretient le corps sans l'user. Une journée qui respecte ces limites efface la fatigue accumulée : le personnage repart frais le lendemain.
+Pour être bien reposé et entamer sa journée sans malus, un personnage a besoin chaque jour du temps de sommeil que fixe son Endurance, lu dans le tableau.
 
 <div class="gloss-source" markdown>
 
@@ -74,9 +78,13 @@ Pour être bien reposé et entamer sa journée sans malus, un personnage a besoi
 
 > Exemple. Avec une Endurance de 5, la moyenne humaine, un personnage dort 8 heures, fournit jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée ; tout le reste se passe en activité légère. Au pic humain réel (Endurance 9), six heures de sommeil lui suffisent, il tient 12 heures d'intermédiaire et tout juste une heure de lourde.
 
-*Pour mémoire, ces durées suivent la physiologie réelle. Le besoin de sommeil d'un adulte tient entre 7 et 9 heures, 8 au centre ; le plancher documenté, propre à de rares constitutions, descend vers 6 heures et, à l'extrême, 4. Tout en bas de l'échelle, le sommeil rejoint celui des grands dormeurs du règne animal, lion ou opossum, qui passent jusqu'à dix-huit heures par jour assoupis ; tout en haut, le corps s'en affranchit entièrement. L'effort vraiment maximal, lui, ne se compte qu'en minutes : au-dessus de la puissance critique, l'épuisement vient en deux à quinze minutes, et en moins de deux pour un effort quasi maximal. Le cumul d'activité lourde sur une journée reste donc bref, de l'ordre du quart d'heure pour l'humain moyen et d'une heure pour un athlète d'élite ; l'activité intermédiaire, plus modérée, se soutient une journée de labeur entière, le corps restant l'essentiel du temps sous la moitié de sa puissance.*
+<div class="memo" markdown>
 
-Un personnage qui n'a pas dormi son content commence sa journée avec un point de fatigue (−10 à toutes ses actions), qu'il garde jusqu'à sa prochaine vraie nuit de sommeil. La dette ne se cumule pas d'une nuit sur l'autre : seul le dernier sommeil compte, et seul dormir la comble, aucune activité légère ne la compense.
+Pour mémoire, ces durées suivent la physiologie réelle. Le besoin de sommeil d'un adulte tient entre 7 et 9 heures, 8 au centre ; le plancher documenté, propre à de rares constitutions, descend vers 6 heures et, à l'extrême, 4. Tout en bas de l'échelle, le sommeil rejoint celui des grands dormeurs du règne animal, lion ou opossum, qui passent jusqu'à dix-huit heures par jour assoupis ; tout en haut, le corps s'en affranchit entièrement. L'effort vraiment maximal, lui, ne se compte qu'en minutes : au-dessus de la puissance critique, l'épuisement vient en deux à quinze minutes, et en moins de deux pour un effort quasi maximal. Le cumul d'activité lourde sur une journée reste donc bref, de l'ordre du quart d'heure pour l'humain moyen et d'une heure pour un athlète d'élite ; l'activité intermédiaire, plus modérée, se soutient une journée de labeur entière, le corps restant l'essentiel du temps sous la moitié de sa puissance.
+
+</div>
+
+Un personnage qui n'a pas dormi le temps requis commence sa journée avec un point de fatigue (−10 à toutes ses actions), qu'il garde jusqu'à sa prochaine vraie nuit de sommeil. Ce point se cumule d'une nuit sur l'autre : chaque nuit sans le sommeil requis en ajoute un, et seule une nuit de sommeil suffisante les efface tous.
 
 #### Forcer l'effort
 
@@ -200,7 +208,11 @@ L'indice de poids découle de la Force : il fixe la charge qu'un personnage port
 
 > Exemple. Avec une Force de 5, la moyenne humaine, un personnage porte sans fatigue 10 kg en activité légère, manie 30 kg en activité intermédiaire, puis soulève jusqu'à 100 kg le temps d'un effort en activité lourde.
 
-*Pour mémoire, le record réel du soulevé de terre avoisine 510 kg, et la plus lourde charge jamais soulevée par un homme, deux voitures en arrière-soulevé, près de 2,4 tonnes : c'est l'ordre de grandeur du palier 9, sommet humain réel. La moyenne humaine (5) soulève une centaine de kilos au prix d'un effort maximal.*
+<div class="memo" markdown>
+
+Pour mémoire, le record réel du soulevé de terre avoisine 510 kg, et la plus lourde charge jamais soulevée par un homme, deux voitures en arrière-soulevé, près de 2,4 tonnes : c'est l'ordre de grandeur du palier 9, sommet humain réel. La moyenne humaine (5) soulève une centaine de kilos au prix d'un effort maximal.
+
+</div>
 
 #### Forcer
 
@@ -264,7 +276,11 @@ Le mouvement découle de l'Agilité : la distance franchie en un round, soit env
 
 > Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m d'un pas tranquille en allure légère, 16 m en course soutenue en allure intermédiaire, puis 40 m en sprint en allure lourde.
 
-*Pour mémoire, un humain marche à environ 5 km/h et sprinte au mieux autour de 45 km/h (palier 9). Le palier 19, sommet humain de l'univers, frôle le mur du son (colonne lourde : 2 km en un round, près de 1 200 km/h) ; le palier 30 atteint des vitesses de l'ordre de Mach 250.*
+<div class="memo" markdown>
+
+Pour mémoire, un humain marche à environ 5 km/h et sprinte au mieux autour de 45 km/h (palier 9). Le palier 19, sommet humain de l'univers, frôle le mur du son (colonne lourde : 2 km en un round, près de 1 200 km/h) ; le palier 30 atteint des vitesses de l'ordre de Mach 250.
+
+</div>
 
 #### Foncer
 
@@ -324,7 +340,11 @@ L'apnée découle de l'Endurance : la durée pendant laquelle le personnage reti
 
 > Exemple. Avec une Endurance de 5, un personnage retient son souffle 1 minute au repos en activité légère, 30 secondes sous un effort modéré en activité intermédiaire, puis 18 secondes en plein combat en activité lourde.
 
-*Pour mémoire, un humain moyen retient son souffle environ une minute au repos (5). Le record réel d'apnée statique frôle douze minutes sans préparation et près de vingt-cinq minutes après respiration d'oxygène pur : l'ordre de grandeur du palier 9, sommet humain réel. Au-delà, seul le surnaturel porte l'apnée vers des durées sans commune mesure. Les durées les plus brèves se comptent en rounds (un round dure environ 6 secondes), et « 0 s » marque qu'à très faible Endurance le souffle ne peut être retenu en plein effort.*
+<div class="memo" markdown>
+
+Pour mémoire, un humain moyen retient son souffle environ une minute au repos (5). Le record réel d'apnée statique frôle douze minutes sans préparation et près de vingt-cinq minutes après respiration d'oxygène pur : l'ordre de grandeur du palier 9, sommet humain réel. Au-delà, seul le surnaturel porte l'apnée vers des durées sans commune mesure. Les durées les plus brèves se comptent en rounds (un round dure environ 6 secondes), et « 0 s » marque qu'à très faible Endurance le souffle ne peut être retenu en plein effort.
+
+</div>
 
 #### Passer en apnée
 

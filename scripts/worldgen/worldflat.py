@@ -652,16 +652,21 @@ def build_flat(seed, ow, oh, n_continents=6,
     rolling=(0.06*fbm((X,Y,np.full_like(X,18.0)),_perm(seed*13+61),6,5.5)
              +0.05*fbm((X,Y,np.full_like(X,4.2)),_perm(seed*13+63),5,12.0)
              +0.035*fbm((X,Y,np.full_like(X,9.6)),_perm(seed*13+65),5,24.0)).astype(np.float32)
-    hL=(0.06*interior+0.06*C01+0.13*prov+0.07*craton+0.32*plateau
-        +rolling+float(relief_chains)*1.4*belts).astype(np.float32)
+    # REFONTE RELIEF « façon Terre » (demande utilisateur) : intérieurs PLATS (plaines vertes)
+    # + reliefs CONCENTRÉS en chaînes NETTES le long des frontières de plaques. On COUPE fortement
+    # les provinces/cratons/dôme-intérieur qui étalaient du mid-relief (tan) partout ; on GARDE des
+    # plateaux de collision DÉFINIS (façon Tibet) ; les CEINTURES (belts, tracées sur les fronts
+    # convergents) DOMINENT le haut de l'échelle -> montagnes = lignes tectoniques, pas des bosses éparses.
+    hL=(0.015*interior+0.02*C01+0.05*prov+0.03*craton+0.22*plateau
+        +rolling+float(relief_chains)*1.95*belts).astype(np.float32)
     # ---- 7) TRANSFERT HYPSOMÉTRIQUE TERRE : rang -> mètres (Terre : surtout BAS, fine queue) ----
     elev_m=np.zeros(C.shape,np.float32)
     li=np.where(land.ravel())[0]
     if li.size>0:
         jit=(0.01*fbm((X,Y,np.full_like(X,12.0)),_perm(seed*13+131),3,6.0)).ravel()[li]  # anti-terrasses
         rL=np.argsort(np.argsort(hL.ravel()[li].astype(np.float64)+jit))/max(li.size-1,1)
-        xpL=[0.00,0.25,0.52,0.74,0.90,0.96,0.99,1.00]            # rangs = hypsométrie CUMULÉE de la Terre
-        fpL=[0.0,float(land_mode)*0.667,float(land_mode)*1.667,1000.0,2000.0,3000.0,4000.0*float(mtn_tail),7000.0*float(mtn_tail)]
+        xpL=[0.00,0.32,0.62,0.80,0.92,0.97,0.99,1.00]            # rangs -> ~80% des terres BASSES (plaines vertes), queue haute réservée aux CEINTURES
+        fpL=[0.0,float(land_mode)*0.5,float(land_mode)*1.2,700.0,1600.0,2900.0,4300.0*float(mtn_tail),7000.0*float(mtn_tail)]
         altL=np.interp(rL,xpL,fpL)+float(relief_chains)*300.0*belts.ravel()[li]   # pics SUR les ceintures
         flatL=np.zeros(C.size,np.float64); flatL[li]=altL; elev_m=flatL.reshape(C.shape).astype(np.float32)
         # --- DÉTAIL FRACTAL EN MÈTRES : relief CONTINU partout (plaines ondulées,
@@ -998,16 +1003,22 @@ def render_relief(g,w,path):
     # Paliers ÉTALÉS dans le bas (0->1000 m) : la majorité des terres (basses) n'est
     # plus un vert unique mais un dégradé vert -> jaune-vert -> tan, révélant le
     # relief continu ; brun/gris/blanc réservés aux vraies hautes terres.
-    hl=[0.00,0.04,0.10,0.20,0.42,0.72,1.05,1.35,1.80]   # *5000 m -> 0,200,500,1000,2100,3600,5250,6750,9000 m
+    hl=[0.00,0.06,0.13,0.22,0.33,0.46,0.62,0.82,1.05,1.35,1.60,1.90]   # *5000 m -> 0,300,650,1100,1650,2300,3100,4100,5250,6750,8000,9500 m — vert TENU plus haut (plaines vertes facon Terre)
     # hautes terres = BRUN ROCHEUX soutenu, puis GRIS roche (~5500 m) et BLANC neige (~7000 m)
     # aux sommets extrêmes (façon Tibet/Andes d'ETOPO1). Gris/blanc MATS (ombrage spéculaire
     # plafonné à 1.0) -> ni capsule brillante, ni plastique : roche/neige mate.
-    R=[ 74,120,170,210,202,150,150,182,236]; G=[138,165,182,190,150,102,128,178,236]; B=[ 80, 86, 96,116, 92, 70,112,178,238]
+    # RESTYLE ATLAS-TERRE (demande utilisateur, ref = carte physique atlas) : vert VIF de plaine
+    # -> jaune-vert -> jaune -> tan -> brun clair -> brun -> brun sombre -> roche grise -> neige.
+    # Le vert est plus saturé/vif que l'ancien olive ; brun DOMINANT en montagne (façon Andes/Himalaya),
+    # gris/blanc réservés aux sommets extrêmes (les calottes polaires sont gérées à part, par latitude).
+    R=[ 88,120,168,206,222,210,184,154,120, 96,150,238]; G=[150,170,190,200,195,168,134,104, 80, 64,120,238]; B=[ 66, 78, 96,120,140,110, 84, 64, 52, 46,104,240]
     lr=np.stack([np.interp(hb,hl,R)/255,np.interp(hb,hl,G)/255,np.interp(hb,hl,B)/255],axis=-1)
     # -- océan : plateau pâle (côte) -> bleu moyen -> abysse -> fosse navy
     db=sea-elev                                                    # profondeur sous le niveau marin
-    do=[0.00,0.04,0.15,0.28,0.40,0.52,0.64,0.78,0.92,1.06,1.45,2.20]   # *5000 -> 0,200,750,1400,2000,2600,3200,3900,4600,5300,7250,11000 m — RÉSOLUTION accrue dans la plage RÉELLE de l'abysse (2000-5600 m) pour que le dégradé âge-profondeur y VARIE en couleur (panel #20 : « navy uniforme »)
-    Ro=[120,120,124,132,130,124,118,106, 84, 58, 22, 12]; Go=[178,182,190,200,199,197,193,183,158,110, 52, 32]; Bo=[216,219,224,230,229,227,224,215,185,140, 85, 55]   # RETOUR à J2 (panels : J2/k-fix = MEILLEUR océan fiable 5.1 ; K/K2 « re-brillants » ont RÉGRESSÉ à 4.58, jugés « trop clair/uniforme/plat, manque de navy/hiérarchie »). Le CONTRASTE cyan-clair(jeune)->navy(vieux)+fosses est ce que les juges veulent (hiérarchie plateau/plaine/fosse) ; l'écraser a coûté. J2 : bulk cyan (db0-0.78 B215-230) + vieux plancher sombre (db0.92 B185, db1.06 B140) pour la variance (σ~35) + queue navy fosses (db>=1.45 B85/55). NB : l'oscillation « trop navy » vs « trop clair » entre panels vient de la RACINE = dorsales éparses -> age-depth lu en vignette, non corrigeable par la LUT seule (il faut un vrai réseau de dorsales).
+    do=[0.00,0.03,0.08,0.16,0.28,0.42,0.58,0.75,0.95,1.20,1.60,2.20]   # *5000 -> 0,150,400,800,1400,2100,2900,3750,4750,6000,8000,11000 m
+    # RESTYLE ATLAS-TERRE : océan BLEU SATURÉ (plus de cyan pâle). Plateau/côte bleu clair -> bleu moyen
+    # -> bleu profond -> fosse bleu sombre. Dégradé clair->foncé net (façon carte physique), sans virer au cyan.
+    Ro=[156,132,108, 84, 68, 56, 48, 42, 38, 33, 28, 22]; Go=[198,180,162,142,126,112,100, 90, 82, 72, 62, 50]; Bo=[226,216,206,194,182,170,160,150,142,130,116,100]
     oc=np.stack([np.interp(db,do,Ro)/255,np.interp(db,do,Go)/255,np.interp(db,do,Bo)/255],axis=-1)
     # TEINTE DE DORSALE : on ÉCLAIRCIT l'eau vers un CYAN VIF le long de l'axe (proximité mémorisée
     # dans build_flat), AVANT l'ombrage. Découple la VISIBILITÉ de la dorsale de sa PROFONDEUR : la
@@ -1015,8 +1026,8 @@ def render_relief(g,w,path):
     # ait à la rendre peu profonde (ce qui aplatirait la bimodalité). C'est une LIGNE -> pas d'anneau.
     tint=w.get('ridge_tint')
     if tint is not None:
-        cyan=np.array([0.76,0.91,0.99],np.float32)                # CYAN clair (194,232,252), pas blanc pur : le bloom #26 venait du BLANC (209,240,255) ÉTALÉ (exp diffus). Ici la teinte est CONFINÉE à une bande étroite à coupure nette (tcore) -> un cyan clair y lit comme une LIGNE d'axe, pas une lueur
-        k=(0.55*np.clip(tint,0.0,1.0))[...,None]                   # ÉQUILIBRE (panel multi-juge : k0.40 a TUÉ les dorsales -> 1/4 détectées, « dorsales absentes » = pire artefact ; k0.65 les rendait « vers fluo »). k0.55 + ridge_z 1.40 (RELIEF renforcé) : la dorsale redevient VISIBLE (portée par le relief ombré ET une teinte cyan modérée) sans le bloom du 0.65. Cible : dorsales détectées 4/4 sans aspect « ver lumineux ».
+        cyan=np.array([0.62,0.78,0.92],np.float32)                # RESTYLE ATLAS : bleu clair d'axe (pas cyan fluo). La dorsale se lit comme un liséré bleu PÂLE (façon ride médio-océanique d'atlas), pas une ligne turquoise vive
+        k=(0.30*np.clip(tint,0.0,1.0))[...,None]                   # teinte de dorsale ATTÉNUÉE (0.55->0.30) : discrète, cohérente avec un océan bleu saturé ; le relief ombré (ridge_z) porte l'essentiel de la visibilité de l'axe
         oc=(oc*(1.0-k)+cyan[None,None,:]*k).astype(np.float32)
     # ANTI-CRÉNELAGE de côte : on fond terre/mer par un masque ADOUCI (~1 px) au lieu
     # d'un masque binaire (escaliers de pixels) -> littoral lissé, pas de marches.
@@ -1036,7 +1047,7 @@ def render_relief(g,w,path):
     cgate=(cgate*cgate*(3.0-2.0*cgate)).astype(np.float32)                    # smoothstep (transition douce)
     hb_fine=((hb_src-ndimage.gaussian_filter(hb_src,max(4.0,0.045*db.shape[1])))*cgate).astype(np.float32)  # passe-haut GATÉ hors côte (panel #27 P2) : le mur SE du talus continental ne porte plus d'« ombre portée en goutte » (2 juges worst-artifact) ; la crête de dorsale (ridge_z, hors gate) reste ombrée partout
     odeepf=np.clip((db-0.20)/0.90,0.0,1.0).astype(np.float32)     # 0 plateau -> 1 abysse profond
-    oexo=(2.2+1.8*odeepf).astype(np.float32)                      # PLANCHER RELEVÉ (1.3->2.2, panel multi-juge P1 : la brosse de fracture est GÉNÉRÉE mais NOYÉE au rendu, « abysse aérographe lisse » = écart n°1). L'ancien oexo n'amplifiait la texture QUE dans l'abysse profond (odeepf~1) ; à 2.2+1.8 la brosse est nettement visible DÈS la croûte jeune/moyenne (young ~2.4x, profond ~4x) -> stries denses sur >70% de l'abysse, pas seulement au large.
+    oexo=(1.35+1.15*odeepf).astype(np.float32)                    # RESTYLE ATLAS : texture abyssale ATTÉNUÉE (2.2+1.8 -> 1.35+1.15). Les stries de fracture restent présentes mais DISCRÈTES (façon carte physique : fonds à peine texturés, pas d'aérographe de hachures marquées) ; l'axe de dorsale reste porté par ridge_z + la teinte bleu clair.
     # OMBRAGE EXPLICITE DE LA DORSALE : on RÉINJECTE le bombement de dorsale (mémorisé dans
     # build_flat) DIRECTEMENT dans le relief ombré. Le passe-haut l'aurait sinon effacé (c'est un
     # bombement LARGE), or la dorsale est une LIGNE -> l'ombrer donne un relief LINÉAIRE (versants

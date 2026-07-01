@@ -166,6 +166,18 @@
 .md-typeset .rappel h3 {
   margin-top: 0.5rem;
 }
+/* Encart « Pour mémoire » : notes de contexte (physiologie, réalité) hors règles. */
+.md-typeset .memo {
+  background: rgba(127, 127, 127, 0.06);
+  border-left: 3px solid #cfc8b8;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 1.4rem;
+  font-size: 0.9em;
+  font-style: italic;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
 /* Paragraphe d'introduction qui doit s'étaler sur les deux colonnes. */
 .md-typeset .cols .span {
   column-span: all;

@@ -16,8 +16,8 @@ def norm(s):
 
 BONUS = {
     # +10
-    "Retour": 10, "Dégainage instantané": 10, "Poussée": 10, "Éraflure": 10,
-    "Aggravation": 10, "Dissimulable": 10, "Saisie": 10, "Parade": 10, "Finesse": 10, "Précise": 10, "Déchirante": 10,
+    "Retour": 10, "Dégainage instantané": 10, "Poussée": 10,
+    "Dissimulable": 10, "Saisie": 10, "Parade": 10, "Finesse": 10, "Précise": 10, "Déchirante": 10,
     "Jumelable": 10, "Désarmement": 10,
     # +20
     "Vitesse du son": 20, "Mains libres": 20, "Renversement": 20, "Allonge ×2": 20, "Assommement": 20, "Indésarmable": 20, "Nuage persistant": 20,
@@ -28,7 +28,8 @@ BONUS = {
 }
 # Propriétés à coût tiéré, parsées depuis la parenthèse (rayon / longueur, angle pour le cône)
 ZONE_TIERS = {3: 20, 5: 30, 10: 40, 20: 50}
-CONE_TIERS = {5: 20, 10: 30, 15: 40, 20: 50}
+CONE_TIERS = {5: 20, 10: 30, 15: 40, 20: 50}   # cône : table de LONGUEUR
+CONE_ANGLE = {45: 0, 90: 10}                    # cône : table d'ANGLE (s'ajoute à la longueur)
 INEFF_TIERS = {"contact": 10, "courte": 20, "moyenne": 30, "longue": 40}
 CONSTRAINT = {
     # −10
@@ -61,7 +62,12 @@ def portee_pts(cell):
     total = 0
     for part in re.split(r"\s*·\s*|<br>", cell):   # deux portées séparées par « · » ou un saut de ligne <br>
         p = norm(part).lower()
-        if "cône" in p or "contact (posée)" in p:
+        if "cône" in p:   # le cône est une portée : longueur (table) + angle (table)
+            nums = re.findall(r"\d+", p)
+            ln = int(nums[0]) if nums else 0
+            ang = int(nums[1]) if len(nums) > 1 else 45
+            total += CONE_TIERS.get(ln, 0) + (CONE_ANGLE[90] if ang >= 90 else CONE_ANGLE[45])
+        elif "contact (posée)" in p:
             total += 0
         elif p.startswith("mêlée") or p.startswith("contact"):
             total += 10
@@ -124,10 +130,10 @@ for l in lines:
         type_pts = 0                   # 0 dégât -> pas de type (cellule vide)
     else:
         tt = [x.strip() for x in typ.split("/")]
-        type_pts = 10 * (len(tt) - 1) + 20 * sum(x in {"FEU", "FRO", "ÉLE", "DÉC"} for x in tt)
+        type_pts = min(50, 10 * (len(tt) - 1)) + 20 * sum(x in {"FEU", "FRO", "ÉLE", "DÉC"} for x in tt)   # nombre de types plafonné à 6 (+50)
     plus = minus = 0
-    has_auto = False
     has_rafale = False
+    has_cone = "cône" in norm(por).lower()
     detail = [f"dég {deg_v}", f"AM +{ampts}", f"portée +{por_v}", f"type +{type_pts}", f"mod +{mult_pts}", f"mains {mains_pts:+d}"]
     if props.strip() != "Aucune":
         for tok in split_props(props):
@@ -150,12 +156,6 @@ for l in lines:
                 cp = cone_pts(ln, 90 if "90" in tok else 45)
                 plus += cp
                 detail.append(f"Cône +{cp}")
-            elif b == "Tir soutenu":
-                m = re.search(r"(\d+)\s*m", tok)
-                cp = cone_pts(int(m.group(1)) if m else 0, 45)
-                plus += cp
-                has_auto = True
-                detail.append(f"Tir soutenu +{cp}")
             elif b == "Inefficace de près":
                 mb = re.search(r"\((\w+)", tok)
                 ip = INEFF_TIERS.get(mb.group(1) if mb else "", 0)
@@ -166,6 +166,10 @@ for l in lines:
                 pp = ign // 2                                    # ignore 20/40/60/80/100 -> +10/20/30/40/50
                 plus += pp
                 detail.append(f"Perce-armure({ign}) +{pp}")
+            elif b in ("Éraflure", "Aggravation"):
+                pct = int(re.search(r"\((\d+)", tok).group(1))   # palier : le coût vaut le bonus en %
+                plus += pct
+                detail.append(f"{b}({pct}%) +{pct}")
             elif b in BONUS:
                 plus += BONUS[b]
                 detail.append(f"{b} +{BONUS[b]}")
@@ -179,7 +183,7 @@ for l in lines:
     detail.append(f"illég −{illeg}")
     if total != 100:
         bad.append((nom, total, " | ".join(detail)))
-    if has_auto and not has_rafale:
+    if has_rafale and not has_cone:
         auto_sans_reservoir.append(nom)
 
 print(f"armes vérifiées : {n}")
@@ -195,7 +199,7 @@ if hors_portee:
     for nom, hp in hors_portee:
         print(f"  ✗ {nom} : {hp}")
 if auto_sans_reservoir:
-    print("\ntir automatique sans rafale (Tir soutenu exige une arme à rafale) :")
+    print("\ntir en rafale sans cône (une rafale arrose un cône) :")
     for nom in auto_sans_reservoir:
         print(f"  ✗ {nom}")
 if not bad and not unknown and not hors_portee and not auto_sans_reservoir:

@@ -1,11 +1,5 @@
 # Armes
 
-Toutes les armes valent exactement 100 points (sauf les armes naturelles du corps, ci-dessous) : elles se valent. Une arme à petits dégâts compense par des propriétés fortes ; une arme à gros dégâts dépense presque tout dans la frappe et porte peu de propriétés.
-
-Colonnes des tableaux : AM = palier d'arts martiaux praticable avec l'arme, en symboles (✦ plein, ✧ vide : ✦✧✧ Basique, ✦✦✧ Avancé, ✦✦✦ Expert) · Portée = distance(s) d'engagement · Mains = nombre de mains pour manier l'arme (1 main, Polyvalente ou 2 mains) · Mod. dégâts = multiplicateur du modificateur de Force ajouté aux dégâts, ×0 à ×3 (une arme Finesse peut y substituer la Dextérité) · Type = type(s) de dégâts (CON/TRA/PER physiques, FEU/FRO/ÉLE/DÉC élémentaires) · Illégalité = note de 0 à 5 affichée en étoiles (★ pleine, ☆ vide).
-
-Le barème est volontairement « gros » : chaque propriété ou contrainte vaut beaucoup de points (multiples de 10, de 10 à 50). Une arme se définit donc avec peu de traits, 1 à 3 pour la plupart. Seules les armes à très gros dégâts en portent plus, car il leur faut beaucoup de contraintes pour redescendre à 100. Chaque arme part de 20 dégâts de base gratuits (comme une attaque à mains nues) ; les dégâts affichés incluent cette base et vont jusqu'à 200.
-
 ## Corps
 
 Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles échappent au système de points.
@@ -27,11 +21,11 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Arme | AM | Portée | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Propriétés |
 |---|---|---|---|---|---|---|---|---|
 | Dague | ✦✦✧ | Mêlée<br>Jet 10/20 m | 1 main | 30 | ×1 FOR | PER | ★☆☆☆☆ | Déchirante, Finesse, Parade, Jumelable, Dégainage instantané, Dissimulable |
-| Katar | ✦✦✦ | Mêlée | 1 main | 40 | ×1 FOR | PER | ★☆☆☆☆ | Perce-armure (20), Éraflure, Finesse, Parade, Jumelable |
+| Katar | ✦✦✦ | Mêlée | 1 main | 40 | ×1 FOR | PER | ★★☆☆☆ | Perce-armure (20), Éraflure (20 %), Finesse, Parade, Jumelable, Dissimulable |
 | Épée courte | ✦✦✧ | Mêlée | 1 main | 60 | ×1 FOR | TRA | ★☆☆☆☆ | Finesse, Précise, Parade, Dégainage instantané |
 | Épée longue | ✦✦✧ | Mêlée | Polyvalente | 70 | ×2 FOR | TRA | ★☆☆☆☆ | Désarmement, Précise, Parade |
 | Épée à deux mains | ✦✦✧ | Mêlée | 2 mains | 70 | ×3 FOR | TRA | ★☆☆☆☆ | Renversement, Poussée, Parade, Lourde |
-| Sabre | ✦✦✧ | Mêlée | 1 main | 40 | ×2 FOR | TRA | ★☆☆☆☆ | Déchirante, Éraflure, Finesse, Parade, Dégainage instantané |
+| Sabre | ✦✦✧ | Mêlée | 1 main | 50 | ×1 FOR | TRA | ★☆☆☆☆ | Déchirante, Éraflure (10 %), Finesse, Parade, Dégainage instantané |
 | Rapière | ✦✦✧ | Mêlée | 1 main | 60 | ×1 FOR | PER | ★☆☆☆☆ | Désarmement, Finesse, Précise, Parade |
 | Falchion | ✦✦✧ | Mêlée | 1 main | 40 | ×2 FOR | TRA | ★☆☆☆☆ | Déchirante, Renversement, Parade, Dégainage instantané |
 | Macuahuitl | ✦✧✧ | Mêlée | 2 mains | 70 | ×2 FOR | TRA / CON | ★☆☆☆☆ | Déchirante, Assommement, Parade |
@@ -63,7 +57,7 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Nunchaku | ✦✦✦ | Mêlée | 1 main | 60 | ×1 FOR | CON | ★★☆☆☆ | Désarmement, Finesse, Parade, Jumelable, Dissimulable |
 | Chaîne lestée | ✦✦✦ | Mêlée | 1 main | 60 | ×1 FOR | CON | ★★☆☆☆ | Allonge ×3, Désarmement, Saisie, Finesse, Inefficace de près (contact) |
 | Kusarigama | ✦✦✦ | Mêlée | 1 main | 50 | ×1 FOR | TRA | ★★☆☆☆ | Allonge ×3, Déchirante, Désarmement, Saisie, Finesse, Inefficace de près (contact) |
-| Fouet | ✦✦✦ | Mêlée | 1 main | 30 | ×1 FOR | CON | ★☆☆☆☆ | Allonge ×3, Déchirante, Désarmement, Saisie, Finesse, Inefficace de près (contact) |
+| Fouet | ✦✦✦ | Mêlée | 1 main | 30 | ×1 FOR | TRA | ★☆☆☆☆ | Allonge ×3, Déchirante, Désarmement, Saisie, Finesse, Inefficace de près (contact) |
 
 </div>
 
@@ -90,7 +84,7 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 |---|---|---|---|---|---|---|---|---|
 | Javelot | ✦✧✧ | Mêlée<br>Jet 40/80 m | 1 main | 60 | ×1 FOR | PER | ☆☆☆☆☆ | Déchirante |
 | Hache de jet | ✦✧✧ | Mêlée<br>Jet 10/20 m | 1 main | 70 | ×1 FOR | TRA | ☆☆☆☆☆ | Déchirante |
-| Boomerang | ✦✧✧ | Jet 20/40 m | 1 main | 70 | ×1 FOR | CON | ☆☆☆☆☆ | Retour |
+| Boomerang | ✦✧✧ | Jet 40/80 m | 1 main | 70 | ×1 FOR | CON | ☆☆☆☆☆ | Retour |
 | Bolas | ✦✧✧ | Jet 10/20 m | 1 main | 70 |  | CON | ☆☆☆☆☆ | Immobilisation à distance |
 
 </div>
@@ -104,8 +98,8 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Fronde | ✦✧✧ | Tir 30/90 m | 1 main | 50 | ×1 FOR | CON | ☆☆☆☆☆ | Assommement |
 | Arc court | ✦✧✧ | Tir 30/90 m | 2 mains | 90 | ×1 FOR | PER | ☆☆☆☆☆ | Aucune |
 | Arc long | ✦✧✧ | Tir 40/180 m | 2 mains | 100 | ×1 FOR | PER | ☆☆☆☆☆ | Perce-armure (20), Très lourde, Inefficace de près (contact) |
-| Arc composite | ✦✧✧ | Tir 40/150 m | 2 mains | 100 | ×1 FOR | PER | ☆☆☆☆☆ | Perce-armure (20), Très lourde, Inefficace de près (contact) |
-| Arc à poulies | ✦✧✧ | Tir 40/180 m | 2 mains | 100 | ×1 FOR | PER | ☆☆☆☆☆ | Perce-armure (20), Très lourde, Inefficace de près (contact) |
+| Arc composite | ✦✧✧ | Tir 40/150 m | 2 mains | 90 | ×1 FOR | PER | ☆☆☆☆☆ | Perce-armure (40), Très lourde, Inefficace de près (contact) |
+| Arc à poulies | ✦✧✧ | Tir 40/180 m | 2 mains | 90 | ×1 FOR | PER | ☆☆☆☆☆ | Perce-armure (20), Précise, Très lourde, Inefficace de près (contact) |
 | Arbalète de poing | ✧✧✧ | Tir 20/40 m | 1 main | 90 |  | PER | ★☆☆☆☆ | Précise, Dégainage instantané, Dissimulable, Munitions (1 tir) |
 | Arbalète légère | ✧✧✧ | Tir 30/90 m | 2 mains | 120 |  | PER | ★☆☆☆☆ | Perce-armure (20), Munitions (1 tir) |
 | Arbalète lourde | ✧✧✧ | Tir 30/120 m | 2 mains | 130 |  | PER | ★☆☆☆☆ | Perce-armure (40), Très lourde, Rechargement lent, Munitions (1 tir) |
@@ -121,7 +115,7 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 |---|---|---|---|---|---|---|---|---|
 | Pistolet à poudre noire | ✧✧✧ | Tir 10/30 m | Polyvalente | 150 |  | PER | ★☆☆☆☆ | Dégainage instantané, Dissimulable, Rechargement lent, Sensible à l'humidité, Bruyante, Munitions (1 tir) |
 | Mousquet | ✧✧✧ | Mêlée<br>Tir 40/80 m | 2 mains | 150 |  | PER | ★☆☆☆☆ | Perce-armure (40), Parade, Très lourde, Rechargement lent, Sensible à l'humidité, Bruyante, Munitions (1 tir) |
-| Tromblon | ✧✧✧ | Tir 10/20 m | 2 mains | 140 |  | PER | ★☆☆☆☆ | Cône (10 m, 90°), Rechargement lent, Sensible à l'humidité, Bruyante, Munitions (1 tir) |
+| Tromblon | ✧✧✧ | Tir 10/20 m<br>Cône 10 m, 90° | 2 mains | 140 |  | PER | ★☆☆☆☆ | Rechargement lent, Sensible à l'humidité, Bruyante, Munitions (1 tir) |
 
 </div>
 
@@ -132,18 +126,18 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Arme | AM | Portée | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Propriétés |
 |---|---|---|---|---|---|---|---|---|
 | Pistolet semi-auto | ✧✧✧ | Tir 20/40 m | Polyvalente | 110 |  | PER | ★★★☆☆ | Précise, Dégainage instantané, Dissimulable, Bruyante, Munitions (15 tirs) |
-| Revolver | ✧✧✧ | Tir 20/40 m | Polyvalente | 140 |  | PER | ★★★☆☆ | Précise, Dégainage instantané, Bruyante, Munitions (6 tirs) |
+| Revolver | ✧✧✧ | Tir 20/40 m | Polyvalente | 130 |  | PER | ★★★☆☆ | Précise, Dégainage instantané, Dissimulable, Bruyante, Munitions (6 tirs) |
 | Derringer | ✧✧✧ | Tir 10/20 m | 1 main | 150 |  | PER | ★★★☆☆ | Dégainage instantané, Dissimulable, Bruyante, Munitions (2 tirs) |
 | Derringer 4 canons | ✧✧✧ | Tir 10/20 m | 1 main | 140 |  | PER | ★★★☆☆ | Dégainage instantané, Dissimulable, Bruyante, Munitions (4 tirs) |
-| Pistolet-mitrailleur | ✧✧✧ | Tir 20/40 m | 2 mains | 120 |  | PER | ★★★★☆ | Tir soutenu (cône 15 m), Éraflure, Précise, Bruyante, Munitions (10 tirs, rafale de 3) |
-| Fusil d'assaut | ✧✧✧ | Tir 30/90 m | 2 mains | 100 |  | PER | ★★★★★ | Tir soutenu (cône 15 m), Perce-armure (40), Vitesse du son, Éraflure, Bruyante, Munitions (10 tirs, rafale de 3) |
+| Pistolet-mitrailleur | ✧✧✧ | Tir 20/40 m<br>Cône 15 m, 45° | Polyvalente | 110 |  | PER | ★★★★☆ | Éraflure (10 %), Précise, Bruyante, Munitions (10 tirs, rafale de 3) |
+| Fusil d'assaut | ✧✧✧ | Tir 30/90 m<br>Cône 15 m, 45° | 2 mains | 100 |  | PER | ★★★★★ | Perce-armure (40), Vitesse du son, Éraflure (10 %), Bruyante, Munitions (10 tirs, rafale de 3) |
 | Fusil de combat | ✧✧✧ | Tir 50/150 m | 2 mains | 100 |  | PER | ★★★★☆ | Perce-armure (60), Vitesse du son, Précise, Très lourde, Bruyante, Munitions (20 tirs) |
-| Fusil de précision | ✧✧✧ | Tir 60/240 m | 2 mains | 160 |  | PER | ★★★★☆ | Perce-armure (80), Vitesse du son, Aggravation, Précise, Extrêmement lourde, Arme lente, Bruyante, Inefficace de près (courte), Munitions (6 tirs) |
-| Fusil anti-matériel | ✧✧✧ | Tir 90/360 m | 2 mains | 150 |  | PER | ★★★★★ | Perce-armure (100), Vitesse du son, Déchirante, Éraflure, Aggravation, Précise, Extrêmement lourde, Arme lente, Rechargement lent, Bruyante, Inefficace de près (courte), Munitions (10 tirs) |
-| Fusil à pompe | ✧✧✧ | Tir 10/30 m | 2 mains | 140 |  | PER | ★★☆☆☆ | Cône (5 m, 90°), Lourde, Rechargement lent, Bruyante, Munitions (6 tirs) |
-| Fusil à canon double | ✧✧✧ | Tir 10/30 m | 2 mains | 160 |  | PER | ★★☆☆☆ | Cône (5 m, 90°), Lourde, Rechargement lent, Bruyante, Munitions (2 tirs) |
+| Fusil de précision | ✧✧✧ | Tir 60/240 m | 2 mains | 160 |  | PER | ★★★★☆ | Perce-armure (80), Vitesse du son, Aggravation (10 %), Précise, Extrêmement lourde, Arme lente, Bruyante, Inefficace de près (courte), Munitions (6 tirs) |
+| Fusil anti-matériel | ✧✧✧ | Tir 90/360 m | 2 mains | 160 |  | PER | ★★★★★ | Perce-armure (100), Vitesse du son, Déchirante, Aggravation (10 %), Précise, Extrêmement lourde, Arme lente, Rechargement lent, Bruyante, Inefficace de près (courte), Munitions (10 tirs) |
+| Fusil à pompe | ✧✧✧ | Tir 10/30 m<br>Cône 5 m, 90° | 2 mains | 140 |  | PER | ★★☆☆☆ | Lourde, Rechargement lent, Bruyante, Munitions (6 tirs) |
+| Fusil à canon double | ✧✧✧ | Tir 10/30 m<br>Cône 5 m, 90° | 2 mains | 160 |  | PER | ★★☆☆☆ | Lourde, Rechargement lent, Bruyante, Munitions (2 tirs) |
 | Carabine civile | ✧✧✧ | Tir 30/90 m | 2 mains | 100 |  | PER | ★★☆☆☆ | Perce-armure (20), Vitesse du son, Bruyante, Munitions (10 tirs) |
-| Mitrailleuse légère | ✧✧✧ | Tir 30/90 m | 2 mains | 100 |  | PER | ★★★★★ | Tir soutenu (cône 20 m), Perce-armure (80), Vitesse du son, Déchirante, Éraflure, Extrêmement lourde, Rechargement lent, Surchauffe, Bruyante, Munitions (20 tirs, rafale de 10) |
+| Mitrailleuse légère | ✧✧✧ | Tir 30/90 m<br>Cône 20 m, 45° | 2 mains | 100 |  | PER | ★★★★★ | Perce-armure (80), Vitesse du son, Déchirante, Éraflure (10 %), Extrêmement lourde, Rechargement lent, Surchauffe, Bruyante, Munitions (20 tirs, rafale de 10) |
 
 </div>
 
@@ -156,7 +150,7 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Grenade à main | ✧✧✧ | Jet 30 m | 1 main | 200 |  | CON / PER | ★★★★★ | Zone (rayon 10 m), Bruyante, Usage unique |
 | Lance-grenades | ✧✧✧ | Tir 40/120 m | 2 mains | 200 |  | CON / PER | ★★★★★ | Zone (rayon 20 m), Très lourde, Rechargement lent, Bruyante, Inefficace de près (courte), Munitions (1 tir) |
 | Lance-roquettes | ✧✧✧ | Tir 40 m (direct) | 2 mains | 200 |  | CON / PER | ★★★★★ | Zone (rayon 20 m), Perce-armure (80), Renversement, Extrêmement lourde, Arme lente, Rechargement lent, Bruyante, Inefficace de près (courte), Munitions (1 tir) |
-| Lance-flammes | ✧✧✧ | Cône 10 m | 2 mains | 180 |  | FEU | ★★★★★ | Cône (10 m, 90°), Très lourde, Munitions (6 tirs) |
+| Lance-flammes | ✧✧✧ | Cône 10 m, 90° | 2 mains | 180 |  | FEU | ★★★★★ | Très lourde, Munitions (6 tirs) |
 
 </div>
 
@@ -282,13 +276,26 @@ Le nombre de mains nécessaires pour manier l'arme. Coût selon la prise :
 <div class="mcard" markdown>
 **Type de dégâts** <span class="prereq">Coût : var.</span>
 
-Le ou les types de dégâts infligés : contondant, tranchant, perforant, ou un type élémentaire. Avec plusieurs types, l'attaquant choisit lequel à chaque attaque. Coût selon le type :
+Le ou les types de dégâts infligés : contondant, tranchant, perforant, ou un type élémentaire. Avec plusieurs types, l'attaquant choisit lequel à chaque attaque. Le coût s'additionne depuis deux tables, la nature des types et leur nombre :
 
 | Type | Coût |
 |---|:---:|
-| Un type physique (CON / TRA / PER) | 0 |
-| Chaque type au-delà du premier | +10 |
-| Chaque type élémentaire (FEU / FRO / ÉLE / DÉC) | +20 |
+| CON | +0 |
+| TRA | +0 |
+| PER | +0 |
+| FEU | +20 |
+| FRO | +20 |
+| ÉLE | +20 |
+| DÉC | +20 |
+
+| Nombre de types | Coût |
+|---|:---:|
+| 1 | +0 |
+| 2 | +10 |
+| 3 | +20 |
+| 4 | +30 |
+| 5 | +40 |
+| 6 | +50 |
 </div>
 
 <div class="mcard" markdown>
@@ -328,9 +335,9 @@ L'attaque touche toutes les cibles d'un rayon (précisé entre parenthèses) ; o
 </div>
 
 <div class="mcard" markdown>
-**Cône** <span class="prereq">Coût : var.</span>
+**Cône** <span class="prereq">portée</span>
 
-L'attaque touche toutes les cibles d'un cône (longueur et angle précisés entre parenthèses). Un cône à 90° monte d'un palier (plafond +50). Coût selon la longueur, à 45° :
+L'attaque touche toutes les cibles d'un cône : c'est une **portée**, inscrite dans la colonne Portée (« Cône 10 m, 90° »), pas une propriété. Son coût s'additionne depuis deux tables, la longueur et l'angle :
 
 | Longueur | Coût |
 |---|:---:|
@@ -338,12 +345,11 @@ L'attaque touche toutes les cibles d'un cône (longueur et angle précisés entr
 | 10 m | +30 |
 | 15 m | +40 |
 | 20 m | +50 |
-</div>
 
-<div class="mcard" markdown>
-**Tir soutenu** <span class="prereq">Coût : var.</span> <span class="prereq">Nécessite : arme à rafale</span>
-
-L'arme tire en automatique : elle arrose un cône (voir Cône) et touche toutes les cibles dedans. Réservée aux armes à rafale, qui consomment plusieurs munitions par tir (indiqué dans leurs Munitions, « rafale de N »). Se paie au palier du cône arrosé.
+| Angle | Coût |
+|---|:---:|
+| 45° | +0 |
+| 90° | +10 |
 </div>
 
 <div class="mcard" markdown>
@@ -439,17 +445,33 @@ Sur une touche, la cible fait un test de Résistance à la douleur Difficulté T
 </div>
 
 <div class="mcard" markdown>
-**Éraflure** <span class="prereq">Coût : +10</span>
+**Éraflure** <span class="prereq">Coût : var.</span>
 
-+10 points de touche (la marge), mais uniquement si la touche sans le bonus est ≤ 90 % (90 % compris). Ainsi une touche à 90 % passe à 100 % ; une touche à 0 % (marge 0–9, normalement 0 dégât) passe à 10 % : la lame mord toujours un peu. Un coup déjà à 100 % ou plus n'en profite pas.
+Ajoute des points de touche (la marge), mais uniquement si la touche sans le bonus est ≤ 90 % (90 % compris) : la lame mord toujours un peu, même sur un coup médiocre. Un coup déjà à 100 % ou plus n'en profite pas. C'est un **palier** dont le coût vaut le bonus en pourcentage :
+
+| Bonus | Coût |
+|---|:---:|
+| +10 % | +10 |
+| +20 % | +20 |
+| +30 % | +30 |
+| +40 % | +40 |
+| +50 % | +50 |
 </div>
 
 <div class="mcard" markdown>
-**Aggravation** <span class="prereq">Coût : +10</span>
+**Aggravation** <span class="prereq">Coût : var.</span>
 
-+10 points de touche, mais uniquement si la touche sans le bonus est ≥ 100 % (100 % compris). Récompense les coups déjà excellents : un 150 % devient 160 %. Reste plafonné à 200 % (un 200 % ne gagne rien).
+Ajoute des points de touche, mais uniquement si la touche sans le bonus est ≥ 100 % (100 % compris) : récompense les coups déjà excellents. Reste plafonné à 200 %. Comme Éraflure, c'est un **palier** dont le coût vaut le bonus en pourcentage :
 
-*Éraflure et Aggravation se complètent exactement au seuil 90 / 100 : comme les marges s'arrondissent à la dizaine, il n'existe pas de valeur intermédiaire, donc aucun recouvrement.*
+| Bonus | Coût |
+|---|:---:|
+| +10 % | +10 |
+| +20 % | +20 |
+| +30 % | +30 |
+| +40 % | +40 |
+| +50 % | +50 |
+
+*Éraflure et Aggravation se complètent au seuil 90 / 100 : à paliers égaux, l'une couvre les touches faibles, l'autre les excellentes, sans recouvrement.*
 </div>
 
 <div class="mcard" markdown>
@@ -461,7 +483,7 @@ Arme de précision : le porteur applique son modificateur de Dextérité au lieu
 <div class="mcard" markdown>
 **Précise** <span class="prereq">Coût : +10</span>
 
-Arme faite pour le coup ajusté : avec la manœuvre Viser, le malus de visée de la zone ciblée est divisé par deux. Réservée aux armes naturellement précises (armes de poing et de précision, arbalètes, lames d'estoc).
+Arme faite pour le coup ajusté : avec la manœuvre Viser, le malus de visée de la zone ciblée est divisé par deux. Réservée aux armes naturellement précises : armes de poing et de précision, arbalètes, et lames droites d'estoc maniables à une main (rapière, épée courte, épée longue). Les lames courbes de pure taille (sabre, falchion) et les grandes lames à deux mains (arme de puissance, non d'estoc ajusté) en sont exclues.
 </div>
 
 <div class="mcard" markdown>
@@ -533,7 +555,7 @@ Recharger l'arme occupe un tour entier : le porteur y consacre toutes ses action
 <div class="mcard" markdown>
 **Surchauffe** <span class="prereq">Coût : −20</span>
 
-Le tir soutenu échauffe l'arme : après trois tours consécutifs de tir, elle s'enraye et reste inutilisable tant que le porteur ne consacre pas un tour entier à la laisser refroidir.
+Le tir en rafale échauffe l'arme : après trois tours consécutifs de tir, elle s'enraye et reste inutilisable tant que le porteur ne consacre pas un tour entier à la laisser refroidir.
 </div>
 
 <div class="mcard" markdown>
@@ -581,5 +603,82 @@ Réservoir de l'arme, exprimé en **tirs avant recharge** (pas en balles) : une 
 | 15 | +40 |
 | 20 | +50 |
 </div>
+
+</div>
+
+---
+
+## Créer une arme {: style="text-align: center" }
+
+<div class="cols" markdown>
+
+Une arme se conçoit comme un budget : cent points à dépenser, jamais un de plus ni un de moins. Tout ce qui la rend efficace, ses dégâts, sa portée, ses propriétés, se paie ; tout défaut qu'elle accepte, un poids, un rechargement, une illégalité, lui en rembourse. De la dague au lance-roquettes, chaque arme tient dans ce même budget, et c'est pourquoi elles se valent : une arme à petits dégâts compense par des propriétés fortes, une arme à gros dégâts dépense presque tout dans la frappe et porte peu de traits.
+
+Ce chapitre nomme les pièces, puis les assemble. Le coût détaillé de chaque pièce vit dans le glossaire qui précède ; on ne redonne ici que la méthode.
+
+### Le principe : cent points
+
+Le compte d'une arme s'écrit d'une seule somme :
+
+Dégâts + Type + Portée(s) + Mains + Modificateur + Compatibilité AM + Propriétés − Contraintes − Illégalité = 100
+
+Tout est en multiples de dix, et le barème est volontairement « gros » : chaque trait pèse lourd, de sorte qu'une arme se définit avec une poignée de propriétés fortes plutôt qu'une longue liste de petites. Les vingt premiers dégâts sont offerts, le score d'une attaque à mains nues ; le budget n'achète que ce qui dépasse vingt, et les dégâts affichés incluent déjà cette base.
+
+### Anatomie d'une arme
+
+Une arme se lit en deux registres : ses colonnes obligatoires, que toute arme porte, et ses propriétés supplémentaires, qu'on greffe pour combler le compte.
+
+<div class="defs" markdown>
+
+**Colonnes obligatoires :** dégâts, type de dégâts, portée(s), mains, modificateur de Force, compatibilité arts martiaux, illégalité. Chacune a sa table dans le glossaire. La plupart coûtent ; l'illégalité seule rembourse, et plus elle est haute, plus elle rend ; les mains remboursent selon la prise.
+
+**Propriétés supplémentaires :** les traits qu'on ajoute pour dépenser ce qui reste, de Déchirante à Perce-armure. Presque toutes coûtent ; les contraintes (Lourde, Rechargement lent, Usage unique) remboursent, et servent à faire redescendre à cent une arme qui déborde.
+
+</div>
+
+### Créer une arme, pas à pas
+
+On bâtit une arme en cinq temps, du concept jusqu'au compte. Un même exemple court d'un bout à l'autre, celui de la dague.
+
+#### 1. Poser le concept
+
+On décide ce qu'est l'arme et ce qu'elle évoque : sa nature, son illégalité, le palier d'arts martiaux qu'elle ouvre. Ce cadre oriente tout le reste.
+
+> Exemple. Une lame courte et dissimulable, faite pour l'escrime et le lancer. Illégalité ★, arme blanche ; compatibilité AM ✦✦✧, art de combat dédié.
+
+#### 2. Fixer les dégâts et le modificateur
+
+On pose les dégâts affichés, vingt de base plus ce qu'on achète, sans passer deux cents ; puis le multiplicateur du modificateur de Force, de ×0 à ×3, qui s'ajoute en jeu à chaque attaque.
+
+> Exemple. Trente dégâts affichés, vingt de base et dix achetés ; ×1 le modificateur de Force.
+
+#### 3. Payer les portées
+
+Chaque portée se paie : la mêlée, le lancer, le tir. Une même arme peut en cumuler plusieurs.
+
+> Exemple. La dague frappe au contact et se lance à courte distance, 10/20 m.
+
+#### 4. Combler l'écart avec des propriétés
+
+On additionne ce qu'on tient déjà, on mesure ce qui manque pour cent, et on comble avec quelques propriétés fortes. Si au contraire l'arme dépasse, on lui ajoute des contraintes, qui remboursent.
+
+> Exemple. Il reste de la place : Déchirante, Finesse, Parade, Jumelable, Dégainage instantané, Dissimulable.
+
+#### 5. Vérifier le compte
+
+Tout étant en multiples de dix, la somme tombe juste.
+
+> Exemple. 10 (dégâts au-dessus de 20) + 10 (mêlée) + 10 (lancer 10/20) + 10 (×1 Force) + 20 (AM ✦✦✧) + 60 (Déchirante, Finesse, Parade, Jumelable, Dégainage, Dissimulable) − 20 (★) = 100. La dague est prête.
+
+Une arme lourde suit le même chemin en sens inverse : ses dégâts et sa perforation dévorent le budget, et il lui faut beaucoup de contraintes pour redescendre à cent.
+
+> Exemple, fusil anti-matériel (★★★★★, AM ✧✧✧, 160 dégâts) : 140 (dégâts) + 50 (tir très longue) + 50 (Perce-armure 100) + 20 (Vitesse du son) + 30 (Déchirante, Aggravation, Précise) + 30 (10 tirs) − 20 (deux mains) − 100 (Extrêmement lourde, Arme lente, Inefficace de près, Rechargement lent, Bruyante) − 100 (★★★★★) = 100.
+
+### Repères de l'échelle
+
+- 30 à 90, le corps à corps : vingt de base offerts, le reste acheté ; le modificateur ×N s'ajoute en jeu.
+- 60 à 90, les armes de jet et les arcs.
+- 90 à 200, les armes mécaniques et à feu : à un coup elles frappent fort, à grand chargeur elles frappent moins.
+- 200, le plafond des dégâts affichés (cent quatre-vingts achetés plus vingt de base), atteint par le lance-roquettes, l'anti-matériel, la mitrailleuse, le fusil de précision et les explosifs de jet.
 
 </div>

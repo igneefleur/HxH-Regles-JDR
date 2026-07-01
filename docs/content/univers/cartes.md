@@ -2,19 +2,13 @@
 
 Le monde connu forme une étendue plate, cernée d'océan sur tous ses bords. Ce que montrent ces cartes n'est que la part explorée : au delà de la limite tracée, les terres restent à découvrir.
 
-Trois lectures de la même géographie sont proposées ci dessous.
+Deux lectures de la même géographie sont proposées ci dessous.
 
 ## Carte physique
 
 ![Carte physique du monde connu](../../assets/cartes/monde_plat_aplat.png)
 
 Les terres émergées et les mers, sans frontières.
-
-## Relief
-
-![Relief du monde connu](../../assets/cartes/monde_plat_relief.png)
-
-Les altitudes et les profondeurs. Les plaines vertes couvrent l'essentiel des terres ; les chaînes de montagnes se dressent là où les plaques se compriment, au cœur comme en bordure des continents, parfois jusque sur les côtes. Sous la mer, le relief n'est pas uniforme : les fonds s'approfondissent à mesure que l'on s'éloigne des côtes, des hauts-fonds pâles du littoral jusqu'aux abysses sombres du large.
 
 ## Plaques tectoniques
 
