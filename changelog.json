@@ -1,5 +1,19 @@
 [
 {
+"short": "4ca47fc",
+"author": "Théo Cavaillès",
+"date": "2026-07-01T19:58:42+02:00",
+"message": "Conjuration : scinde le Stockage en deux, deplace l'Eveil au Nen en module optionnel, restaure la Conjuration d'objet",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/4ca47fc0cf6a01ae6f354e4d4f15906b71f9be69",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/nen/conjuration.md",
+"url": "content/regles/nen/conjuration/"
+}
+]
+},
+{
 "short": "6d29c60",
 "author": "Théo Cavaillès",
 "date": "2026-07-01T19:26:54+02:00",
