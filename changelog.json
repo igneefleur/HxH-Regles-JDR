@@ -1,5 +1,19 @@
 [
 {
+"short": "6d29c60",
+"author": "Théo Cavaillès",
+"date": "2026-07-01T19:26:54+02:00",
+"message": "Ajoute la Transmutation d'arme (socle special de transmutation, budget 20-400 points)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6d29c60856ff28f63ef14cd8d52dbc112f422c59",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/nen/transmutation.md",
+"url": "content/regles/nen/transmutation/"
+}
+]
+},
+{
 "short": "91e65c9",
 "author": "Théo Cavaillès",
 "date": "2026-07-01T18:53:27+02:00",
