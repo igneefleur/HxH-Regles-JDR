@@ -126,6 +126,100 @@ L'autonomie dit si la bête doit être dirigée ou si elle agit d'elle-même.
 
 </div>
 
+---
+
+### La Conjuration d'objet
+
+La conjuration d'objet ne prête pas une propriété à l'aura : elle lui donne l'existence entière d'une chose matérielle et inerte, réelle et détachée, que chacun peut voir, toucher et manier. C'est un socle en soi, avec ses modules obligatoires, et comme toute conjuration, l'objet subsiste tant qu'on le soutient, à maintien. Là où la [transmutation d'arme](transmutation.md) donne à l'aura du conjurateur la forme d'une arme qu'il porte lui-même, l'objet conjuré est une chose à part, qui demeure hors de lui.
+
+On le bâtit en retenant ce qui le définit : sa nature, ce qu'il est et l'usage auquel il se prête, et sa taille. Un objet fait pour blesser suit les [règles de création d'armes](../combat/armes.md) ; les autres n'ont d'autre limite que celle de leur genre.
+
+<div class="cj-modules anima" markdown>
+
+<div class="keep" markdown>
+
+#### Nature de l'objet
+
+<p class="mod-type">Obligatoire</p>
+
+La nature fixe ce qu'est l'objet et l'usage auquel il se prête. Les objets simples se conçoivent pour presque rien ; ceux dont la mécanique est riche, arme, armure ou véhicule, coûtent davantage.
+
+<table>
+<thead><tr><th>Nature</th><th>DI</th><th>CAR</th><th>UA</th><th>MA</th><th>AE</th></tr></thead>
+<tbody>
+<tr><td>Accessoire</td><td>5</td><td>5</td><td>20</td><td>10</td><td>—</td></tr>
+<tr><td>Outil</td><td>5</td><td>5</td><td>20</td><td>10</td><td>—</td></tr>
+<tr><td>Meuble</td><td>5</td><td>5</td><td>20</td><td>10</td><td>—</td></tr>
+<tr><td>Arme</td><td>15</td><td>10</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Armure</td><td>15</td><td>10</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Véhicule</td><td>25</td><td>13</td><td>60</td><td>30</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="defs" markdown>
+
+**Accessoire :** ce qui se porte sur soi sans être ni arme ni armure (vêtement, bijou, gant, lunettes).
+
+**Outil :** un objet fonctionnel tenu en main (corde, crochet, clé, lampe).
+
+**Meuble :** un objet trop grand pour être porté, mais que l'on peut déplacer (coffre, table, statue, machine).
+
+**Arme :** un objet fait pour blesser, bâti selon les [règles de création d'armes](../combat/armes.md) ; une arme réelle et détachée, qu'un autre peut prendre en main. Pour une arme d'aura sans équivalent dans le monde, voir la [transmutation d'arme](transmutation.md).
+
+**Armure :** un objet porté pour encaisser les coups, qui accorde une réduction de dégâts.
+
+**Véhicule :** un objet conçu pour transporter son utilisateur, et parfois des passagers ou une cargaison (du skateboard au navire).
+
+</div>
+
+</div>
+
+<div class="keep" markdown>
+
+#### Taille de l'objet
+
+<p class="mod-type">Obligatoire</p>
+
+La taille situe l'objet sur l'échelle des [grandeurs](../monde/tailles.md). Un objet tenu en main ne coûte rien de plus ; plus il grandit, plus il pèse, en conception comme en aura.
+
+<table>
+<thead><tr><th>Taille</th><th>DI</th><th>CAR</th><th>UA</th><th>MA</th><th>AE</th></tr></thead>
+<tbody>
+<tr><td>Portative</td><td>0</td><td>—</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>Petite</td><td>5</td><td>5</td><td>20</td><td>10</td><td>—</td></tr>
+<tr><td>Moyenne</td><td>10</td><td>7</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Grande</td><td>20</td><td>10</td><td>60</td><td>30</td><td>—</td></tr>
+<tr><td>Très grande</td><td>30</td><td>13</td><td>90</td><td>40</td><td>—</td></tr>
+<tr><td>Gigantesque</td><td>50</td><td>17</td><td>130</td><td>60</td><td>—</td></tr>
+<tr><td>Colossale</td><td>75</td><td>22</td><td>190</td><td>90</td><td>—</td></tr>
+<tr><td>Titanesque</td><td>100</td><td>30</td><td>260</td><td>130</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="defs" markdown>
+
+**Portative :** un objet tenu en main ou porté sur soi (une arme, un outil, un bijou).
+
+**Petite :** un objet qu'on déplace d'une seule main (un tabouret, une trottinette).
+
+**Moyenne :** un objet qui se porte à deux, ou un engin individuel (une table, une moto).
+
+**Grande :** un habitacle pour quelques passagers, ou un meuble encombrant (une voiture, une armoire).
+
+**Très grande :** un gros véhicule de transport, ou une pièce monumentale (un camion, un orgue).
+
+**Gigantesque :** une machine longue de plusieurs sections (une locomotive).
+
+**Colossale :** un véritable bâtiment mobile (un navire).
+
+**Titanesque :** une structure démesurée (un paquebot, un porte-avions).
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 ---
@@ -134,7 +228,7 @@ L'autonomie dit si la bête doit être dirigée ou si elle agit d'elle-même.
 
 <div class="cols" markdown>
 
-Ces modules optionnels s'ajoutent à une conjuration, chacun selon son type. Deux façonnent des contenants d'aura, de type effet : le Catalogue, un répertoire de capacités prêtes à l'emploi, et le Stockage, un espace où ranger objets ou matière. Un autre, l'Éveil au Nen, ne vaut que pour une bête, à qui il ouvre l'usage de l'aura. Les modules qui donnent corps à des objets viendront s'y ajouter.
+Ces modules optionnels s'ajoutent à une conjuration, chacun selon son type. Deux façonnent des contenants d'aura, de type effet : le Catalogue, un répertoire de capacités prêtes à l'emploi, et le Stockage, un espace où ranger objets ou matière. Un autre, l'Éveil au Nen, ne vaut que pour une bête, à qui il ouvre l'usage de l'aura.
 
 <div class="cj-modules anima" markdown>
 
