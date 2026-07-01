@@ -6,7 +6,7 @@ Usage : python scripts/regroup_competences.py"""
 import re
 from pathlib import Path
 
-p = Path("docs/content/livre/competences.md")
+p = Path("docs/content/regles/personnage/competences.md")
 lines = p.read_text(encoding="utf-8").splitlines()
 
 # Groupe par défaut selon le champ.

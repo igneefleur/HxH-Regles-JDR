@@ -9,7 +9,7 @@ import json
 import re
 from pathlib import Path
 
-DEST = Path("docs/content/livre/critique-blessures.md")
+DEST = Path("docs/content/regles/combat/critique-blessures.md")
 AUDIT = json.loads(Path("scripts/blessures_audit.json").read_text(encoding="utf-8"))
 for _z in AUDIT:
     AUDIT[_z].sort(key=lambda x: x["degre"])

@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
-P = Path("docs/content/livre/armes.md")
+P = Path("docs/content/regles/combat/armes.md")
 
 HEAD_OLD = "| Arme | AM | Portée | Dégâts | Mod. dégâts | Illégalité | Propriétés |"
 HEAD_NEW = "| Arme | AM | Portée | Mains | Dégâts | Mod. dégâts | Illégalité | Propriétés |"

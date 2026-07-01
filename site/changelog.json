@@ -1,5 +1,195 @@
 [
 {
+"short": "local",
+"author": "Théo Cavaillès",
+"date": null,
+"message": "Modifications en cours (non committées)",
+"url": null,
+"pending": true,
+"files": [
+{
+"status": "removed",
+"filename": "content/livre/activites.md",
+"url": null
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/armes.md",
+"url": "content/regles/combat/armes/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/arts-martiaux.md",
+"url": "content/regles/combat/arts-martiaux/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/deroulement-combat.md",
+"url": "content/regles/combat/deroulement-combat/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/formations.md",
+"url": "content/regles/combat/formations/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/manoeuvres.md",
+"url": "content/regles/combat/manoeuvres/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/combat/systeme-points-armes.md",
+"url": "content/regles/combat/systeme-points-armes/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/index.md",
+"url": "content/regles/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/monde/degats.md",
+"url": "content/regles/monde/degats/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/monde/tailles.md",
+"url": "content/regles/monde/tailles/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/archetypes-nen.md",
+"url": "content/regles/nen/archetypes-nen/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/aura.md",
+"url": "content/regles/nen/aura/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/conjuration.md",
+"url": "content/regles/nen/conjuration/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/di.md",
+"url": "content/regles/nen/di/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/emission.md",
+"url": "content/regles/nen/emission/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/manipulation.md",
+"url": "content/regles/nen/manipulation/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/renforcement.md",
+"url": "content/regles/nen/renforcement/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/specialisation.md",
+"url": "content/regles/nen/specialisation/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/techniques-nen.md",
+"url": "content/regles/nen/techniques-nen/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/nen/transmutation.md",
+"url": "content/regles/nen/transmutation/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/avantages.md",
+"url": "content/regles/personnage/avantages/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/caracteristiques.md",
+"url": "content/regles/personnage/caracteristiques/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/classe.md",
+"url": "content/regles/personnage/classe/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/eclat.md",
+"url": "content/regles/personnage/eclat/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/points-formation.md",
+"url": "content/regles/personnage/points-formation/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/personnage/sens.md",
+"url": "content/regles/personnage/sens/"
+},
+{
+"status": "renamed",
+"filename": "content/univers/heavens-arena.md",
+"url": "content/univers/heavens-arena/"
+},
+{
+"status": "added",
+"filename": "content/regles/nen/ancienne-version.md",
+"url": "content/regles/nen/ancienne-version/"
+},
+{
+"status": "added",
+"filename": "content/regles/nen/capacites-de-nen.md",
+"url": "content/regles/nen/capacites-de-nen/"
+},
+{
+"status": "added",
+"filename": "content/regles/nen/refonte_nen.md",
+"url": "content/regles/nen/refonte_nen/"
+},
+{
+"status": "added",
+"filename": "content/univers/cartes.md",
+"url": "content/univers/cartes/"
+},
+{
+"status": "added",
+"filename": "content/univers/index.md",
+"url": "content/univers/"
+}
+]
+},
+{
 "short": "403a86d",
 "author": "Théo Cavaillès",
 "date": "2026-06-27T19:07:44+02:00",

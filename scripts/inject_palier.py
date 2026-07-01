@@ -10,7 +10,7 @@ TIERS = ["Triviale", "Très facile", "Facile", "Moyenne", "Difficile", "Très di
          "Absurde", "Quasi impossible", "Impossible", "Surhumaine", "Prodigieuse",
          "Insurmontable", "Irréel"]
 
-SRC = Path("docs/content/livre/competences.md")
+SRC = Path("docs/content/regles/personnage/competences.md")
 out_path = Path(sys.argv[1])
 
 data = json.loads(out_path.read_text(encoding="utf-8"))

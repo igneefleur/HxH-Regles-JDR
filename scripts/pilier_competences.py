@@ -9,7 +9,7 @@ Usage : python scripts/pilier_competences.py"""
 import re
 from pathlib import Path
 
-p = Path("docs/content/livre/competences.md")
+p = Path("docs/content/regles/personnage/competences.md")
 lines = p.read_text(encoding="utf-8").splitlines()
 
 PILIER_DEFAULT = {

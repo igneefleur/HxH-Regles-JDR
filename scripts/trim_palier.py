@@ -5,7 +5,7 @@ des échelles par compétence. N'affecte que les tableaux class="palier"."""
 import re
 from pathlib import Path
 
-SRC = Path("docs/content/livre/competences.md")
+SRC = Path("docs/content/regles/personnage/competences.md")
 DROP = ("Prodigieuse", "Insurmontable", "Irréel")
 drop_re = re.compile(r"^<tr><td>(" + "|".join(DROP) + r")</td>")
 

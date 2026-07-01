@@ -6,14 +6,14 @@
 // assemblage côté client, le rendu (polices, pagination, couverture) est fait au
 // build et identique pour tout le monde.
 (function () {
-  const SCOPE = "/content/livre/";
+  const SCOPE = "/content/regles/";
   const PDF_FILE = "pdf/livre-de-regles.pdf";
   const DOWNLOAD_ICON =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
     '<path d="M5,20H19V18H5V20M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>';
 
   // URL du PDF, préfixe GitHub Pages compris : on coupe le chemin courant à
-  // /content/livre/ pour récupérer la base du site ("/HxH-Regles-JDR" en ligne,
+  // /content/regles/ pour récupérer la base du site ("/HxH-Regles-JDR" en ligne,
   // "" en local), puis on y accroche le fichier.
   function pdfHref() {
     const base = location.pathname.split(SCOPE)[0].replace(/\/$/, "");

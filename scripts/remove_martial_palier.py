@@ -3,7 +3,7 @@
 du Champ Martial uniquement."""
 from pathlib import Path
 
-SRC = Path("docs/content/livre/competences.md")
+SRC = Path("docs/content/regles/personnage/competences.md")
 lines = SRC.read_text(encoding="utf-8").splitlines()
 
 start = next(i for i, l in enumerate(lines) if l.strip() == "## Champ Martial")

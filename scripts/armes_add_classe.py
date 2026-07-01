@@ -3,7 +3,7 @@
 Usage : python scripts/armes_add_classe.py"""
 import sys
 sys.stdout.reconfigure(encoding="utf-8")
-ARMES = "docs/content/livre/armes.md"
+ARMES = "docs/content/regles/combat/armes.md"
 
 CLASSES = {
     "Dague": "Arme courte",

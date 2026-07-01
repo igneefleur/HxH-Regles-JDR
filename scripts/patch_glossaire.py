@@ -147,7 +147,7 @@ g = re.sub(r"(?m)^#", "##", GLOSSAIRE)
 g = g.replace(" — ", " : ")
 assert "—" not in g, "tiret cadratin résiduel"
 
-P = Path("docs/content/livre/armes.md")
+P = Path("docs/content/regles/combat/armes.md")
 text = P.read_text(encoding="utf-8")
 if "Glossaire des propriétés d'armes" not in text:
     text = text.rstrip() + "\n\n---\n\n" + g.strip() + "\n"

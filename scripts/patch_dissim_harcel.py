@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
-P = Path("docs/content/livre/armes.md")
+P = Path("docs/content/regles/combat/armes.md")
 text = P.read_text(encoding="utf-8")
 
 

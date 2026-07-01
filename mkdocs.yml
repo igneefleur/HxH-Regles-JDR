@@ -2,44 +2,50 @@ site_name: HxH Système JDR
 site_url: https://igneefleur.github.io/HxH-Regles-JDR/
 exclude_docs: |
   includes/glossaire.md
+not_in_nav: |
+  content/regles/nen/refonte_nen.md
 nav:
   - Accueil: index.md
-  - Livre de Règles:
-      - content/livre/index.md
-      - Avantages: content/livre/avantages.md
+  - Règles:
+      - content/regles/index.md
       - Le Personnage:
-          - Éclat: content/livre/eclat.md
-          - Caractéristiques: content/livre/caracteristiques.md
-          - Capacités physiques: content/livre/capacites-physiques.md
-          - Points de formation: content/livre/points-formation.md
-          - Compétences: content/livre/competences.md
-          - Classes: content/livre/classe.md
-          - Les Sens: content/livre/sens.md
-          - États: content/livre/etats.md
-          - Activités: content/livre/activites.md
+          - Avantages: content/regles/personnage/avantages.md
+          - Éclat: content/regles/personnage/eclat.md
+          - Caractéristiques: content/regles/personnage/caracteristiques.md
+          - Capacités physiques: content/regles/personnage/capacites-physiques.md
+          - Points de formation: content/regles/personnage/points-formation.md
+          - Compétences: content/regles/personnage/competences.md
+          - Classes: content/regles/personnage/classe.md
+          - Les Sens: content/regles/personnage/sens.md
+          - États: content/regles/personnage/etats.md
       - L'Échelle du Monde:
-          - Les Tailles: content/livre/tailles.md
-          - Types de Dégâts: content/livre/degats.md
+          - Les Tailles: content/regles/monde/tailles.md
+          - Types de Dégâts: content/regles/monde/degats.md
       - Le Combat:
-          - Déroulement du combat: content/livre/deroulement-combat.md
-          - Manœuvres: content/livre/manoeuvres.md
-          - Arts martiaux: content/livre/arts-martiaux.md
-          - Formations: content/livre/formations.md
-          - Critique et Blessures: content/livre/critique-blessures.md
-          - Armes: content/livre/armes.md
+          - Déroulement du combat: content/regles/combat/deroulement-combat.md
+          - Manœuvres: content/regles/combat/manoeuvres.md
+          - Arts martiaux: content/regles/combat/arts-martiaux.md
+          - Formations: content/regles/combat/formations.md
+          - Critique et Blessures: content/regles/combat/critique-blessures.md
+          - Armes: content/regles/combat/armes.md
+          - Système de points des armes: content/regles/combat/systeme-points-armes.md
       - Nen:
-          - Aura: content/livre/aura.md
-          - Développement intérieur: content/livre/di.md
-          - Les 12 archétypes de Nen: content/livre/archetypes-nen.md
-          - Techniques du Nen: content/livre/techniques-nen.md
-          - Renforcement: content/livre/renforcement.md
-          - Émission: content/livre/emission.md
-          - Transmutation: content/livre/transmutation.md
-          - Manipulation: content/livre/manipulation.md
-          - Conjuration: content/livre/conjuration.md
-          - Spécialisation: content/livre/specialisation.md
-      - Heavens Arena: content/livre/heavens-arena.md
-      - Système de points des armes: content/livre/systeme-points-armes.md
+          - Aura: content/regles/nen/aura.md
+          - Développement intérieur: content/regles/nen/di.md
+          - Les 12 archétypes de Nen: content/regles/nen/archetypes-nen.md
+          - Techniques du Nen: content/regles/nen/techniques-nen.md
+          - Capacités de Nen: content/regles/nen/capacites-de-nen.md
+          - Renforcement: content/regles/nen/renforcement.md
+          - Émission: content/regles/nen/emission.md
+          - Transmutation: content/regles/nen/transmutation.md
+          - Manipulation: content/regles/nen/manipulation.md
+          - Conjuration: content/regles/nen/conjuration.md
+          - Spécialisation: content/regles/nen/specialisation.md
+          - Ancienne version: content/regles/nen/ancienne-version.md
+  - Univers:
+      - content/univers/index.md
+      - Cartes du monde: content/univers/cartes.md
+      - Heavens Arena: content/univers/heavens-arena.md
 theme:
   name: material
   custom_dir: overrides

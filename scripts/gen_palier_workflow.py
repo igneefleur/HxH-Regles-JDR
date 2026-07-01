@@ -5,7 +5,7 @@ import json
 import re
 from pathlib import Path
 
-SRC = Path("docs/content/livre/competences.md")
+SRC = Path("docs/content/regles/personnage/competences.md")
 OUT = Path("scripts/wf_palier_generated.js")
 SKIP = {"Course", "Crochetage"}  # déjà faites à la main (témoins)
 

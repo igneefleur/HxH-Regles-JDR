@@ -46,4 +46,5 @@ jobs:
       - name: Build et déploiement (PDF activé)
         env:
           ENABLE_PDF_EXPORT: "1"
+          NO_MKDOCS_2_WARNING: "1"   # coupe l'encadré promo « MkDocs 2.0 » de Material dans les logs
         run: mkdocs gh-deploy --config-file mkdocs.ci.yml --force

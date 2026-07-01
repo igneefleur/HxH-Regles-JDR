@@ -2,7 +2,7 @@
 """Ré-aère competences.md : une ligne vide entre chaque bloc (requis par md_in_html)."""
 from pathlib import Path
 
-p = Path("docs/content/livre/competences.md")
+p = Path("docs/content/regles/personnage/competences.md")
 lines = p.read_text(encoding="utf-8").splitlines()
 
 start = next(i for i, l in enumerate(lines) if l.startswith("## Champ "))

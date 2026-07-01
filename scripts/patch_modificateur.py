@@ -59,7 +59,7 @@ def reduce_deg(deg, drop):
     return str(new_one)
 
 
-P = Path("docs/content/livre/armes.md")
+P = Path("docs/content/regles/combat/armes.md")
 text = P.read_text(encoding="utf-8")
 if "Mod. dégâts" in text:
     raise SystemExit("Déjà appliqué (colonne Mod. dégâts présente) : ne pas relancer, "

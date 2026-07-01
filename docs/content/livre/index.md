@@ -1,3 +1,0 @@
-# Livre de Règles
-
-TODO

@@ -334,20 +334,52 @@
 .md-typeset .eclat-grid table:not([class]) td:first-child {
   width: 3rem !important;
 }
-/* Page Éclat : descriptions de palier en entrées titrées. Le « Éclat N » est sur sa
-   propre ligne, en vert Cinzel, suivi d'un saut de ligne avant la description.
-   Sans aucune majuscule. */
-.md-typeset .eclat-tiers p {
-  margin: 0.8rem 0;
+/* Page Éclat : chaque palier dans une petite carte parchemin (façon .mcard), qui
+   flotte dans le multicol. Le « Éclat N » est sur sa propre ligne, en vert Cinzel,
+   suivi d'un saut de ligne avant la description. Sans aucune majuscule. */
+.md-typeset .eclat-card {
+  background: #fbf9f1;
+  border: 1px solid #d9d2bf;
+  border-radius: 5px;
+  padding: 0.45rem 0.6rem 0.5rem;
+  margin: 0 0 0.6rem;
+  -webkit-column-break-inside: avoid;
   break-inside: avoid;
+  box-shadow: 0 1px 2px rgba(60, 50, 20, 0.06);
 }
-.md-typeset .eclat-tiers p strong:first-child {
+.md-typeset .eclat-card p {
+  margin: 0;
+}
+.md-typeset .eclat-card p strong:first-child {
   display: block;
   font-family: 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title);
   letter-spacing: 0.02em;
   margin-bottom: 0.15rem;
+}
+/* « Les deux Éclats » : entrées de définition alignées, façon lignes de tableau
+   mais sans tableau. Le terme à gauche en vert Cinzel, la description à droite,
+   un filet fin séparant les entrées. Pleine largeur via le bloc .span. */
+.md-typeset .eclat-defs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.1rem;
+  margin: 0.4rem 0 0.9rem;
+}
+.md-typeset .eclat-defs dt,
+.md-typeset .eclat-defs dd {
+  border-top: 1px solid #e0dccd;
+  padding: 0.4rem 0;
+}
+.md-typeset .eclat-defs dt {
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  color: var(--green-title);
+  letter-spacing: 0.02em;
+}
+.md-typeset .eclat-defs dd {
+  margin: 0;
 }
 
 /* ── Modules de conjuration : présentation façon bestiaire ANIMA ──
@@ -388,6 +420,47 @@
    qu'elles dépendent de la ligne de catégorie au-dessus. */
 .md-typeset .cj-modules table:not([class]):has(tbody tr.cat) tbody tr:not(.cat):not(.flush) td:first-child {
   padding-left: 1rem;
+}
+
+/* ── Variante « anima » des modules : tables sépia façon encadré « Modified
+   Costs » d'Anima. Activée par la classe .anima sur le conteneur .cj-modules ;
+   ne touche QUE ces tables-là (titre en petites capitales brun-rouge ; tout le
+   tableau en zébrures crème uniformes, en-tête et lignes de catégorie compris,
+   sans fond spécial), jamais les autres tables du livre. ── */
+.md-typeset .cj-modules.anima h3,
+.md-typeset .cj-modules.anima h4 {
+  font-family: 'Cinzel', Garamond, serif;
+  color: #8a4632;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid #c9a86a;
+}
+/* En-tête : pas de fond plein, juste le libellé brun et un filet ; il reçoit la
+   même crème que les zébrures pour rester dans la trame. */
+.md-typeset .cj-modules.anima table:not([class]) th {
+  background: #fbf7ec;
+  color: #4a3520;
+  border-bottom: 1px solid #b39a68;
+}
+.md-typeset .cj-modules.anima table:not([class]) td {
+  border-bottom: 1px solid #e6dcc1;
+}
+/* Zébrure crème pour TOUTES les lignes du corps, y compris les lignes de
+   catégorie (qui ne reçoivent donc aucun fond particulier). */
+.md-typeset .cj-modules.anima table:not([class]) tbody tr:nth-child(odd)  td { background: #f5efdc; }
+.md-typeset .cj-modules.anima table:not([class]) tbody tr:nth-child(even) td { background: #fbf7ec; }
+/* Colonnes unifiées Effet | DI | CAR | UA | MA | AE : la colonne Effet prend la
+   place restante (sinon six colonnes débordent), les cinq autres restent étroites. */
+.md-typeset .cj-modules.anima table:not([class]) th:nth-child(1) { width: auto !important; }
+/* Filets verticaux séparant les trois groupes (DI CAR · UA MA · AE) : après CAR
+   (3ᵉ colonne) et après MA (5ᵉ), continus sur toute la hauteur du tableau. Les
+   lignes de catégorie sont défusionnées (libellé en 1ʳᵉ colonne, cellules vides
+   ensuite) pour que les filets ne s'y interrompent pas. */
+.md-typeset .cj-modules.anima table:not([class]) th:nth-child(3),
+.md-typeset .cj-modules.anima table:not([class]) td:nth-child(3),
+.md-typeset .cj-modules.anima table:not([class]) th:nth-child(5),
+.md-typeset .cj-modules.anima table:not([class]) td:nth-child(5) {
+  border-right: 1px solid #c9b88f;
 }
 /* Paragraphes de la zone modules : par défaut traités comme des définitions de
    propriété (petits, en retrait avec un filet) ; la description, juste après le
@@ -476,8 +549,76 @@
   color: #8a8478;
   font-size: 0.58rem;
   letter-spacing: 0.03em;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
 }
+/* ====== Page États : blocs façon « statblock » (bandeau de titre coloré + corps compact) ====== */
+.md-typeset .sblock {
+  break-inside: avoid;
+  border: 1px solid #d9d2bf;
+  border-radius: 4px;
+  margin: 0 0 0.55rem;
+  overflow: hidden;
+  font-size: 0.66rem;
+  line-height: 1.34;
+}
+/* Bandeau de titre coloré, pleine largeur */
+.md-typeset .sblock > p:first-child {
+  margin: 0 0 0.35rem;
+  padding: 0.24rem 0.5rem;
+  background: var(--green-header);
+}
+.md-typeset .sblock > p:first-child strong:first-child {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: #fdfaf1;
+}
+/* Corps : retrait latéral pour tout sauf le bandeau */
+.md-typeset .sblock > :not(:first-child) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.md-typeset .sblock > p { margin: 0 0 0.32rem; }
+.md-typeset .sblock > p:last-child { margin-bottom: 0.4rem; }
+/* Paliers (Prise, Paralysie, Mutisme, Immobilisé, Abri) */
+.md-typeset .sblock .palier {
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  color: var(--green-section);
+  margin: 0.1rem 0 0.28rem;
+  padding-top: 0.32rem;
+  border-top: 1px solid #e8e1cf;
+}
+/* Puces de modificateurs chiffrés */
+.md-typeset .sblock .smods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.22rem;
+  margin: 0;
+}
+.md-typeset .sblock .smod {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.18rem;
+  padding: 0.05rem 0.18rem;
+  border-radius: 3px;
+  background: #f4e8e1;
+  font-size: 0.6rem;
+  color: #4a4436;
+  white-space: nowrap;
+}
+.md-typeset .sblock .smod b {
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #a1462f;
+}
+.md-typeset .sblock .smod.pos { background: #e7efdf; }
+.md-typeset .sblock .smod.pos b { color: #587a45; }
 .md-typeset .mcard ul {
   margin: 0.15rem 0 0.2rem;
   padding-left: 1rem;
@@ -693,6 +834,31 @@
    s'empilent dans la colonne (sceau chiffré + couleur + jauge ▰▱
    = triple signal de gravité).
    ============================================================ */
+/* Encadré « règle optionnelle » en tête de chapitre ----------------------- */
+.md-typeset .optrule {
+  break-inside: avoid;
+  margin: 0.2rem 0 1.15rem;
+  padding: 0.5rem 0.85rem 0.55rem;
+  background: #f4eeda;
+  border: 1px solid #d8ceb2;
+  border-left: 4px solid var(--green-title);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(60, 50, 20, 0.06);
+}
+.md-typeset .optrule > p:first-child strong:first-child {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 700;
+  color: var(--green-title);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.22rem;
+}
+.md-typeset .optrule p {
+  font-size: 0.72rem;
+  margin: 0;
+}
+
 .md-typeset .cols .wounds {
   column-span: all;
   margin: 0.6rem 0 0.2rem;
@@ -738,6 +904,34 @@
 .md-typeset .wfiche[data-deg="3"] { --g: #c0853b; }
 .md-typeset .wfiche[data-deg="4"] { --g: #b26a3a; }
 .md-typeset .wfiche[data-deg="5"] { --g: #9c4a42; }
+
+/* ---- 6e case : « perte du membre », carte parchemin claire assortie au fond ---- */
+.md-typeset .wfiche.wperte {
+  background: linear-gradient(#fbf6e9, #f3ecd8);
+  border: 1px solid #ddd3ba;
+  border-left: 3px solid #b0a274;
+}
+.md-typeset .wperte .wf-head { display: block; margin: 0 0 0.32rem; }
+.md-typeset .wperte .wf-nom {
+  font-size: 0.72rem;
+  border-bottom: 1px solid #d8cdae;
+  padding-bottom: 0.18rem;
+}
+.md-typeset .wperte .wf-effet {
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: var(--ink);
+}
+/* Zones sans perte de membre : emplacement image vide (à remplir plus tard). */
+.md-typeset .wfiche.wperte-img { display: flex; }
+.md-typeset .wperte-img .wf-img {
+  flex: 1;
+  min-height: 4rem;
+  border: 1px dashed #cabf9e;
+  border-radius: 3px;
+  background: rgba(176, 162, 116, 0.05);
+}
 
 /* ---- En-tête : sceau de cire + nom + jauge ---- */
 .md-typeset .wf-head {
@@ -977,6 +1171,13 @@
 .md-typeset .mcard table:not([class]) tbody tr:nth-child(even) td {
   background: none;
   border-bottom: 1px solid #ece7d8;
+}
+/* Pas de changement de cellule au survol dans ces tableaux de carte. */
+.md-typeset .mcard table:not([class]) tr:hover,
+.md-typeset .mcard table:not([class]) tr:hover td,
+.md-typeset .mcard table:not([class]) tr:hover th {
+  background: none !important;
+  background-color: transparent !important;
 }
 
 /* ── Tables d'armes (10 colonnes) : largeurs proportionnelles ── */
@@ -1318,3 +1519,31 @@ html.book-loading .md-content__inner {
   text-transform: uppercase;
   letter-spacing: .04em;
 }
+
+/* ARMES-COMME-MODULES */
+/* Tables des familles d'armes présentées façon module de Nen (encadré sépia
+   d'Anima) : l'habillage (en-tête brun, zébrures crème) vient de .cj-modules
+   .anima. Ici on écarte le gabarit 6 colonnes des modules et on REMET les
+   largeurs et l'alignement d'origine des tables d'armes (9 colonnes), en
+   !important pour passer devant les règles !important des modules. */
+.md-typeset .cj-modules.anima.armes table:not([class]) {
+  table-layout: fixed !important;
+}
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(1) { width: 15% !important; text-align: left !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(2),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(2) { width: 5%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(3),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(3) { width: 11% !important; text-align: center !important; border-right: none !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(4),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 9%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(5),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(5) { width: 6%  !important; text-align: center !important; border-right: none !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(6),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(6) { width: 8%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(7),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(7) { width: 9%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(8),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 7%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(9),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(9) { width: 30% !important; text-align: left !important; }

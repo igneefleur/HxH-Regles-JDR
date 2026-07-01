@@ -10,7 +10,7 @@
      sécurité le retire aussi après 2 s au cas où le JS échouerait. #}
   <script>
     (function () {
-      if (location.pathname.indexOf("/content/livre/") !== -1) {
+      if (location.pathname.indexOf("/content/") !== -1) {
         document.documentElement.classList.add("book-mode", "book-loading");
         setTimeout(function () {
           document.documentElement.classList.remove("book-loading");

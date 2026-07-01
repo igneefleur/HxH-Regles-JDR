@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
-P = Path("docs/content/livre/armes.md")
+P = Path("docs/content/regles/combat/armes.md")
 ORDER = [0, 1, 2, 3, 4, 6, 5, 7, 8]
 
 out, n = [], 0
