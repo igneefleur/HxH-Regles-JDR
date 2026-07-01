@@ -1,5 +1,19 @@
 [
 {
+"short": "514e4ce",
+"author": "Théo Cavaillès",
+"date": "2026-07-01T22:15:38+02:00",
+"message": "Manipulation : ajoute le module Vol d'aura (vol d'UAD ou d'UAR sur une attaque)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/514e4ce6ca688b25e078170d8b671e217abf0cbb",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/nen/manipulation.md",
+"url": "content/regles/nen/manipulation/"
+}
+]
+},
+{
 "short": "4ca47fc",
 "author": "Théo Cavaillès",
 "date": "2026-07-01T19:58:42+02:00",
