@@ -17,6 +17,9 @@
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"EB Garamond";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/night.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -26,6 +29,15 @@
           document.documentElement.classList.remove("book-loading");
         }, 2000);
       }
+    })();
+  </script>
+<script>
+    (function () {
+      try {
+        if (localStorage.getItem("night") === "1") {
+          document.documentElement.classList.add("night");
+        }
+      } catch (e) {}
     })();
   </script>
 <link href="../../../../pdf/livre-de-regles.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
@@ -143,6 +155,28 @@
   Univers
 
         </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../forge/">
+        
+  
+  
+    
+  
+  Forge
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../creation/">
+        
+  
+  
+    
+  
+  Atelier
+
+      </a>
 </li>
 </ul>
 </div>
@@ -633,55 +667,73 @@
 <nav aria-label="Champ Vital" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-maladies">
+<a class="md-nav__link" href="#constitution">
 <span class="md-ellipsis">
       
-        Résistance aux Maladies
+        Constitution
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-toxines">
+<a class="md-nav__link" href="#rusticite">
 <span class="md-ellipsis">
       
-        Résistance aux Toxines
+        Rusticité
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-a-la-douleur">
+<a class="md-nav__link" href="#tenacite">
 <span class="md-ellipsis">
       
-        Résistance à la douleur
+        Ténacité
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-a-lenvironnement">
+<a class="md-nav__link" href="#impassibilite">
 <span class="md-ellipsis">
       
-        Résistance à l'Environnement
+        Impassibilité
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-a-la-fatigue">
+<a class="md-nav__link" href="#courage">
 <span class="md-ellipsis">
       
-        Résistance à la Fatigue
+        Courage
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-mentale">
+<a class="md-nav__link" href="#sang-froid">
 <span class="md-ellipsis">
       
-        Résistance Mentale
+        Sang-froid
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fermete">
+<span class="md-ellipsis">
+      
+        Fermeté
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#constance">
+<span class="md-ellipsis">
+      
+        Constance
       
     </span>
 </a>
@@ -1745,7 +1797,7 @@
 <span class="md-ellipsis">
     
   
-    L'Échelle du Monde
+    Formation
   
 
     
@@ -1754,6 +1806,346 @@
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Formation
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-martiales/">
+<span class="md-ellipsis">
+    
+  
+    Formations martiales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-athletiques/">
+<span class="md-ellipsis">
+    
+  
+    Formations athlétiques
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-vitales/">
+<span class="md-ellipsis">
+    
+  
+    Formations vitales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-sociales/">
+<span class="md-ellipsis">
+    
+  
+    Formations sociales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-intellectuelles/">
+<span class="md-ellipsis">
+    
+  
+    Formations intellectuelles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-naturelles/">
+<span class="md-ellipsis">
+    
+  
+    Formations naturelles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-sensorielles/">
+<span class="md-ellipsis">
+    
+  
+    Formations sensorielles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-techniques/">
+<span class="md-ellipsis">
+    
+  
+    Formations techniques
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-transport/">
+<span class="md-ellipsis">
+    
+  
+    Formations du transport
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-furtives/">
+<span class="md-ellipsis">
+    
+  
+    Formations furtives
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-artisanales/">
+<span class="md-ellipsis">
+    
+  
+    Formations artisanales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formation/formations-artistiques/">
+<span class="md-ellipsis">
+    
+  
+    Formations artistiques
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Art
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Art
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-martiaux/">
+<span class="md-ellipsis">
+    
+  
+    Arts martiaux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-athletiques/">
+<span class="md-ellipsis">
+    
+  
+    Arts athlétiques
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-vitaux/">
+<span class="md-ellipsis">
+    
+  
+    Arts vitaux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-sociaux/">
+<span class="md-ellipsis">
+    
+  
+    Arts sociaux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-intellectuels/">
+<span class="md-ellipsis">
+    
+  
+    Arts intellectuels
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-naturels/">
+<span class="md-ellipsis">
+    
+  
+    Arts naturels
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-sensoriels/">
+<span class="md-ellipsis">
+    
+  
+    Arts sensoriels
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-techniques/">
+<span class="md-ellipsis">
+    
+  
+    Arts techniques
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-transport/">
+<span class="md-ellipsis">
+    
+  
+    Arts du transport
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-furtifs/">
+<span class="md-ellipsis">
+    
+  
+    Arts furtifs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-artisanaux/">
+<span class="md-ellipsis">
+    
+  
+    Arts artisanaux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../art/arts-artistiques/">
+<span class="md-ellipsis">
+    
+  
+    Arts artistiques
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    L'Échelle du Monde
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1786,12 +2178,24 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../monde/vehicules/">
+<span class="md-ellipsis">
+    
+  
+    Les Véhicules
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -1802,8 +2206,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_4">
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1830,30 +2234,6 @@
     
   
     Manœuvres
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../combat/arts-martiaux/">
-<span class="md-ellipsis">
-    
-  
-    Arts martiaux
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../combat/formations/">
-<span class="md-ellipsis">
-    
-  
-    Formations
   
 
     
@@ -1888,8 +2268,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -1900,8 +2280,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_5">
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2043,6 +2423,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../nen/formes/">
+<span class="md-ellipsis">
+    
+  
+    Formes du vivant
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../nen/ancienne-version/">
 <span class="md-ellipsis">
     
@@ -2113,6 +2505,30 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../forge/">
+<span class="md-ellipsis">
+    
+  
+    Forge
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../creation/">
+<span class="md-ellipsis">
+    
+  
+    Atelier
+  
+
+    
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -2448,55 +2864,73 @@
 <nav aria-label="Champ Vital" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-maladies">
+<a class="md-nav__link" href="#constitution">
 <span class="md-ellipsis">
       
-        Résistance aux Maladies
+        Constitution
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-toxines">
+<a class="md-nav__link" href="#rusticite">
 <span class="md-ellipsis">
       
-        Résistance aux Toxines
+        Rusticité
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-a-la-douleur">
+<a class="md-nav__link" href="#tenacite">
 <span class="md-ellipsis">
       
-        Résistance à la douleur
+        Ténacité
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-a-lenvironnement">
+<a class="md-nav__link" href="#impassibilite">
 <span class="md-ellipsis">
       
-        Résistance à l'Environnement
+        Impassibilité
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-a-la-fatigue">
+<a class="md-nav__link" href="#courage">
 <span class="md-ellipsis">
       
-        Résistance à la Fatigue
+        Courage
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-mentale">
+<a class="md-nav__link" href="#sang-froid">
 <span class="md-ellipsis">
       
-        Résistance Mentale
+        Sang-froid
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fermete">
+<span class="md-ellipsis">
+      
+        Fermeté
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#constance">
+<span class="md-ellipsis">
+      
+        Constance
       
     </span>
 </a>
@@ -3748,37 +4182,49 @@
 </thead>
 <tbody>
 <tr>
-<td>Résistance aux Maladies</td>
+<td>Constitution</td>
 <td>Endurance</td>
 <td>Physique</td>
 <td></td>
 </tr>
 <tr>
-<td>Résistance aux Toxines</td>
+<td>Rusticité</td>
 <td>Endurance</td>
 <td>Physique</td>
 <td></td>
 </tr>
 <tr>
-<td>Résistance à la douleur</td>
+<td>Ténacité</td>
+<td>Endurance</td>
+<td>Physique</td>
+<td></td>
+</tr>
+<tr>
+<td>Impassibilité</td>
+<td>Endurance</td>
+<td>Physique</td>
+<td></td>
+</tr>
+<tr>
+<td>Courage</td>
 <td>Volonté</td>
-<td>Physique</td>
+<td>Mental</td>
 <td></td>
 </tr>
 <tr>
-<td>Résistance à l'Environnement</td>
-<td>Endurance</td>
-<td>Physique</td>
+<td>Sang-froid</td>
+<td>Volonté</td>
+<td>Mental</td>
 <td></td>
 </tr>
 <tr>
-<td>Résistance à la Fatigue</td>
-<td>Endurance</td>
-<td>Physique</td>
+<td>Fermeté</td>
+<td>Volonté</td>
+<td>Social</td>
 <td></td>
 </tr>
 <tr>
-<td>Résistance Mentale</td>
+<td>Constance</td>
 <td>Volonté</td>
 <td>Mental</td>
 <td></td>
@@ -4607,34 +5053,44 @@
 <h2 id="champ-vital_1">Champ Vital</h2>
 <div class="comp">
 <div class="keep">
-<h4 id="resistance-aux-maladies">Résistance aux Maladies</h4>
+<h4 id="constitution">Constitution</h4>
 <p class="groupes">Caractéristique : Endurance<br/>Piliers : Physique</p>
-<p>Encaisser infections, virus et maladies. Pour surmonter une fièvre foudroyante ou rester debout malgré une contagion qui terrasse les autres.</p>
+<p>Neutraliser un agent étranger qui pénètre l'organisme, vivant ou chimique. Pour surmonter une infection de plaie, survivre à un repas empoisonné ou tenir debout après une morsure venimeuse. Le corps l'oppose à la virulence du germe comme du poison pour savoir si le mal prend ou s'il en vient à bout.</p>
 </div>
 <div class="keep">
-<h4 id="resistance-aux-toxines">Résistance aux Toxines</h4>
+<h4 id="rusticite">Rusticité</h4>
 <p class="groupes">Caractéristique : Endurance<br/>Piliers : Physique</p>
-<p>Encaisser poisons, venins et substances nocives. Pour survivre à un repas empoisonné ou continuer à agir après une morsure venimeuse.</p>
+<p>Endurer les conditions d'un milieu hostile subies du dehors : froid, chaleur, altitude, noyade. Pour traverser un désert brûlant ou survivre une nuit en haute montagne sans abri.</p>
 </div>
 <div class="keep">
-<h4 id="resistance-a-la-douleur">Résistance à la douleur</h4>
-<p class="groupes">Caractéristique : Volonté<br/>Piliers : Physique</p>
-<p>Garder ses moyens malgré la souffrance. Pour serrer les dents sous une plaie atroce, ne pas s'évanouir sous le choc d'une blessure ou continuer à agir malgré tout. C'est elle qu'on teste lorsqu'une blessure menace de faire tomber Inconscient.</p>
-</div>
-<div class="keep">
-<h4 id="resistance-a-lenvironnement">Résistance à l'Environnement</h4>
+<h4 id="tenacite">Ténacité</h4>
 <p class="groupes">Caractéristique : Endurance<br/>Piliers : Physique</p>
-<p>Endurer le froid, la chaleur, l'épuisement et le manque de ressources. Pour traverser un désert brûlant ou survivre une nuit en haute montagne sans abri.</p>
+<p>Tenir bon quand le corps épuise ses réserves. C'est elle qu'on teste pour pousser l'effort au-delà de ce qu'on soutient dans la journée, rester éveillé quand le sommeil manque, ou endurer la faim et la soif, sans sombrer dans la Fatigue.</p>
 </div>
 <div class="keep">
-<h4 id="resistance-a-la-fatigue">Résistance à la Fatigue</h4>
+<h4 id="impassibilite">Impassibilité</h4>
 <p class="groupes">Caractéristique : Endurance<br/>Piliers : Physique</p>
-<p>Tenir bon quand le corps réclame le repos. C'est elle qu'on teste pour pousser l'effort au-delà de ce qu'on soutient dans la journée, ou pour rester éveillé quand le sommeil manque, sans sombrer dans la Fatigue.</p>
+<p>Garder ses moyens malgré la souffrance d'une blessure. Pour serrer les dents sous une plaie atroce, ne pas s'évanouir sous le choc ou continuer à agir malgré tout. C'est elle qu'on teste lorsqu'une blessure menace de faire tomber Inconscient.</p>
 </div>
 <div class="keep">
-<h4 id="resistance-mentale">Résistance Mentale</h4>
+<h4 id="courage">Courage</h4>
 <p class="groupes">Caractéristique : Volonté<br/>Piliers : Mental</p>
-<p>Fermeté d'esprit face à la peur, l'influence et la tentation. Pour ne pas céder à une intimidation ou résister à une emprise qui cherche à plier sa volonté.</p>
+<p>Garder ses moyens devant un danger présent qui déclenche la peur. Pour ne pas se figer face à un prédateur, tenir sa position quand tout pousse à fuir ou surmonter une frayeur soudaine.</p>
+</div>
+<div class="keep">
+<h4 id="sang-froid">Sang-froid</h4>
+<p class="groupes">Caractéristique : Volonté<br/>Piliers : Mental</p>
+<p>Garder son calme et sa raison quand une épreuve émotionnelle attaque la maîtrise de soi. Pour tenir devant un spectacle insoutenable, encaisser un deuil ou ne pas sortir de ses gonds sous la provocation.</p>
+</div>
+<div class="keep">
+<h4 id="fermete">Fermeté</h4>
+<p class="groupes">Caractéristique : Volonté<br/>Piliers : Social</p>
+<p>Ne pas plier face à qui cherche à le faire céder par la parole. Pour résister à une persuasion habile, repousser une tentation ou tenir bon sous l'intimidation. Elle décide si la pression prend, sans démasquer le menteur, ce qui reste affaire de Perspicacité.</p>
+</div>
+<div class="keep">
+<h4 id="constance">Constance</h4>
+<p class="groupes">Caractéristique : Volonté<br/>Piliers : Mental</p>
+<p>Tenir l'esprit debout quand l'épreuve s'étire. Là où rien ne frappe et où personne ne parle, mais où le vide, la solitude et la monotonie rongent la volonté jour après jour, elle décide si le personnage garde ses repères ou glisse vers l'effondrement. Elle est à l'esprit ce que la ténacité est au corps.</p>
 </div>
 </div>
 <h2 id="champ-social_1">Champ Social</h2>
@@ -6032,5 +6488,8 @@
 <script src="../../../../javascripts/continuous.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
+<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/night.js"></script>
+<script src="../../../../javascripts/forge.js"></script>
 </body>
 </html>

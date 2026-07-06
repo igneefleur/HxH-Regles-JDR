@@ -1,5 +1,239 @@
 [
 {
+"short": "0552288",
+"author": "Théo Cavaillès",
+"date": "2026-07-06T20:31:59+02:00",
+"message": "Arts martiaux, Forge/Atelier, géopolitique et contenu",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/0552288ddc3a2bd068f3f299be639abe3b12d725",
+"files": [
+{
+"status": "added",
+"filename": "content/regles/art/arts-artisanaux.md",
+"url": "content/regles/art/arts-artisanaux/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-artistiques.md",
+"url": "content/regles/art/arts-artistiques/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-athletiques.md",
+"url": "content/regles/art/arts-athletiques/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-furtifs.md",
+"url": "content/regles/art/arts-furtifs/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-intellectuels.md",
+"url": "content/regles/art/arts-intellectuels/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-martiaux.md",
+"url": "content/regles/art/arts-martiaux/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-naturels.md",
+"url": "content/regles/art/arts-naturels/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-sensoriels.md",
+"url": "content/regles/art/arts-sensoriels/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-sociaux.md",
+"url": "content/regles/art/arts-sociaux/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-techniques.md",
+"url": "content/regles/art/arts-techniques/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-transport.md",
+"url": "content/regles/art/arts-transport/"
+},
+{
+"status": "added",
+"filename": "content/regles/art/arts-vitaux.md",
+"url": "content/regles/art/arts-vitaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/armes.md",
+"url": "content/regles/combat/armes/"
+},
+{
+"status": "removed",
+"filename": "content/regles/combat/arts-martiaux.md",
+"url": null
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/manoeuvres.md",
+"url": "content/regles/combat/manoeuvres/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-artisanales.md",
+"url": "content/regles/formation/formations-artisanales/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-artistiques.md",
+"url": "content/regles/formation/formations-artistiques/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-athletiques.md",
+"url": "content/regles/formation/formations-athletiques/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-furtives.md",
+"url": "content/regles/formation/formations-furtives/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-intellectuelles.md",
+"url": "content/regles/formation/formations-intellectuelles/"
+},
+{
+"status": "renamed",
+"filename": "content/regles/formation/formations-martiales.md",
+"url": "content/regles/formation/formations-martiales/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-naturelles.md",
+"url": "content/regles/formation/formations-naturelles/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-sensorielles.md",
+"url": "content/regles/formation/formations-sensorielles/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-sociales.md",
+"url": "content/regles/formation/formations-sociales/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-techniques.md",
+"url": "content/regles/formation/formations-techniques/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-transport.md",
+"url": "content/regles/formation/formations-transport/"
+},
+{
+"status": "added",
+"filename": "content/regles/formation/formations-vitales.md",
+"url": "content/regles/formation/formations-vitales/"
+},
+{
+"status": "added",
+"filename": "content/regles/monde/vehicules.md",
+"url": "content/regles/monde/vehicules/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/archetypes-nen.md",
+"url": "content/regles/nen/archetypes-nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/aura.md",
+"url": "content/regles/nen/aura/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/capacites-de-nen.md",
+"url": "content/regles/nen/capacites-de-nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/conjuration.md",
+"url": "content/regles/nen/conjuration/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/emission.md",
+"url": "content/regles/nen/emission/"
+},
+{
+"status": "added",
+"filename": "content/regles/nen/formes.md",
+"url": "content/regles/nen/formes/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/manipulation.md",
+"url": "content/regles/nen/manipulation/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/refonte_nen.md",
+"url": "content/regles/nen/refonte_nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/renforcement.md",
+"url": "content/regles/nen/renforcement/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/techniques-nen.md",
+"url": "content/regles/nen/techniques-nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/transmutation.md",
+"url": "content/regles/nen/transmutation/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/classe.md",
+"url": "content/regles/personnage/classe/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/points-formation.md",
+"url": "content/regles/personnage/points-formation/"
+}
+]
+},
+{
 "short": "514e4ce",
 "author": "Théo Cavaillès",
 "date": "2026-07-01T22:15:38+02:00",
