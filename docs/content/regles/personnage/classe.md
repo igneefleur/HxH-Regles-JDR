@@ -30,7 +30,7 @@ Le plafond se calcule sur ces PF totaux, et non sur les seuls points déjà dép
 
 Les plafonds diffèrent d'un champ à l'autre et dessinent le profil de la classe : où elle laisse se spécialiser, où elle bride.
 
-Les [arts martiaux](../combat/arts-martiaux.md) et les [formations](../combat/formations.md) ne forment pas de champ à part : les PF qu'on y consacre comptent dans le champ martial.
+Les [arts martiaux](../art/arts-martiaux.md) et les [formations](../formation/formations-martiales.md) ne forment pas de champ à part : les PF qu'on y consacre comptent dans le champ martial.
 
 ### Bonus de classe
 
@@ -77,7 +77,7 @@ En prenant la classe, le personnage fixe deux choix. Il porte son bonus d'attaqu
 | [Armes de mêlée](competences.md), [Armes de jet](competences.md), [Archerie](competences.md) ou [Armes à feu](competences.md), au choix | +10 |
 | [Parade](competences.md) ou [Esquive](competences.md), au choix | +10 |
 | [Lutte](competences.md) | +10 |
-| [Résistance à la douleur](competences.md) | +10 |
+| [Impassibilité](competences.md) | +10 |
 
 </div>
 

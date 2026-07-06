@@ -343,9 +343,10 @@ COMPETENCES = {
         ("Prouesse de Force", "FOR"), ("Apnée", "END"),
     ],
     "Vital": [
-        ("Résistance aux Maladies", "END"), ("Résistance aux Toxines", "END"),
-        ("Résistance à la douleur", "END"),
-        ("Résistance à l'Environnement", "END"), ("Résistance Mentale", "VOL"),
+        ("Constitution", "END"), ("Rusticité", "END"),
+        ("Ténacité", "END"), ("Impassibilité", "END"),
+        ("Courage", "VOL"), ("Sang-froid", "VOL"),
+        ("Fermeté", "VOL"), ("Constance", "VOL"),
     ],
     "Social": [
         ("Persuasion", "CHA"), ("Rhétorique", "LOG"), ("Négociation", "CHA"),
@@ -766,7 +767,7 @@ F.merge_cells(f"G{row}:I{row}")
 add_list(F, f"G{row}", DEF_BONUS_LIST)
 row += 1
 cell(F, f"A{row}",
-     "Bonus de classe du Combattant (+10 d'office) : Initiative, Lutte, Résistance à la douleur, "
+     "Bonus de classe du Combattant (+10 d'office) : Initiative, Lutte, Impassibilité, "
      "l'arme choisie ci-dessus et la défense choisie ci-dessus. Reportés dans la colonne Bonus des compétences.",
      font=FONT_SMALL, fill=FILL_PARCHEMIN, align=AL_LW, border=False)
 F.merge_cells(f"A{row}:N{row}")
@@ -1200,7 +1201,7 @@ COL_GROUPS = [
 
 # --- Bonus de classe (Combattant) appliqués au calcul du Bonus de compétence -- #
 # Toujours +10 (fixe) :
-CLASS_BONUS_FIXED = {"Initiative", "Lutte", "Résistance à la douleur"}
+CLASS_BONUS_FIXED = {"Initiative", "Lutte", "Impassibilité"}
 # Au choix d'arme d'attaque (+10 à celle pointée par la cellule ARME_BONUS) :
 CLASS_BONUS_WEAPONS = {"Armes de mêlée", "Armes de jet", "Archerie", "Armes à feu"}
 # Au choix de défense (+10 à celle pointée par la cellule DEF_BONUS) :

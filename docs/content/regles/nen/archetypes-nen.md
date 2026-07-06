@@ -49,7 +49,7 @@ Le choix oppose la puissance à l'ampleur : le simple frappe le plus fort là o�
 
 <div class="keep" markdown>
 
-Les deux hybrides qui touchent à la spécialisation (Manipulateur-Spécialiste et Conjurateur-Spécialiste) restent exceptionnels : la spécialisation ne s'ouvre presque jamais par le seul entraînement, et on les réserve aux personnages au potentiel singulier.
+Les deux hybrides qui touchent à la spécialisation (manipulateur-spécialiste et conjurateur-spécialiste) restent exceptionnels : la spécialisation ne s'ouvre presque jamais par le seul entraînement, et on les réserve aux personnages au potentiel singulier.
 
 </div>
 
@@ -57,7 +57,7 @@ Les deux hybrides qui touchent à la spécialisation (Manipulateur-Spécialiste 
 
 <div class="keep" markdown>
 
-Un personnage choisit librement son archétype, sauf la spécialisation et ses deux hybrides (Manipulateur-Spécialiste et Conjurateur-Spécialiste), réservés aux porteurs de l'avantage [Spécialiste](../personnage/avantages.md) : à peine 0,033 % des utilisateurs de Nen y accèdent.
+Un personnage choisit librement son archétype, sauf la spécialisation et ses deux hybrides (manipulateur-spécialiste et conjurateur-spécialiste), réservés aux porteurs de l'avantage [Spécialiste](../personnage/avantages.md) : à peine 0,033 % des utilisateurs de Nen y accèdent.
 
 </div>
 
@@ -242,7 +242,7 @@ Le Conjurateur donne à son aura une existence matérielle : des objets bien ré
 
 ### Spécialiste
 
-Le Spécialiste échappe à toute classification : sa catégorie réunit les pouvoirs qui n'entrent dans aucune des cinq autres. Ses effets sont uniques, propres à chacun, sans règle commune. On naît Spécialiste plus qu'on ne le devient : c'est de loin l'archétype le plus rare et le plus imprévisible.
+Le Spécialiste échappe à toute classification : sa catégorie réunit les pouvoirs qui n'entrent dans aucune des cinq autres. Ses effets sont uniques, propres à chacun, sans règle commune. On naît spécialiste plus qu'on ne le devient : c'est de loin l'archétype le plus rare et le plus imprévisible.
 
 Cet archétype, comme ses deux hybrides, ne peut être choisi sans l'avantage [Spécialiste](../personnage/avantages.md) : sans lui, l'affinité de spécialisation reste à 0 %.
 
@@ -271,7 +271,7 @@ Un archétype hybride répartit son potentiel entre deux catégories voisines, �
 
 ### Renforceur-Émitteur
 
-Le Renforceur-Émitteur tient du combattant comme du tireur. Il décuple son corps comme un Renforceur, puis détache cette puissance pour frapper au loin comme un Émitteur. De près comme de loin, ses coups gardent la force du renforcement : un archétype très polyvalent.
+Le Renforceur-Émitteur tient du combattant comme du tireur. Il décuple son corps comme un renforceur, puis détache cette puissance pour frapper au loin comme un émitteur. De près comme de loin, ses coups gardent la force du renforcement : un archétype très polyvalent.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -306,7 +306,7 @@ Le Renforceur-Émitteur tient du combattant comme du tireur. Il décuple son cor
 
 ### Renforceur-Transmuteur
 
-Le Renforceur-Transmuteur amplifie son corps comme un Renforceur, puis prête à son aura les propriétés qu'il imagine comme un Transmuteur. Il combat au contact, de coups chargés de tranchant, d'électricité ou de tout autre effet façonné dans son aura.
+Le Renforceur-Transmuteur amplifie son corps comme un renforceur, puis prête à son aura les propriétés qu'il imagine comme un transmuteur. Il combat au contact, de coups chargés de tranchant, d'électricité ou de tout autre effet façonné dans son aura.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -360,7 +360,7 @@ L'Émitteur-Manipulateur projette son aura au loin sans en perdre la main. Il ma
 
 ### Transmuteur-Conjurateur
 
-Le Transmuteur-Conjurateur prête à son aura les propriétés qu'il imagine comme un Transmuteur, puis lui donne une existence matérielle comme un Conjurateur. Il fait surgir des objets bien réels, taillés sur mesure, porteurs des qualités de son choix : tranchant, élasticité, charge électrique.
+Le Transmuteur-Conjurateur prête à son aura les propriétés qu'il imagine comme un transmuteur, puis lui donne une existence matérielle comme un conjurateur. Il fait surgir des objets bien réels, taillés sur mesure, porteurs des qualités de son choix : tranchant, élasticité, charge électrique.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -379,7 +379,7 @@ Le Transmuteur-Conjurateur prête à son aura les propriétés qu'il imagine com
 
 ### Manipulateur-Spécialiste
 
-Le Manipulateur-Spécialiste joint le contrôle de la manipulation aux effets singuliers de la spécialisation. Il soumet êtres et objets à sa volonté, et son emprise s'affranchit des règles communes par un trait qui n'appartient qu'à lui. C'est l'un des deux hybrides réservés aux Spécialistes.
+Le Manipulateur-Spécialiste joint le contrôle de la manipulation aux effets singuliers de la spécialisation. Il soumet êtres et objets à sa volonté, et son emprise s'affranchit des règles communes par un trait qui n'appartient qu'à lui. C'est l'un des deux hybrides réservés aux spécialistes.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -414,7 +414,7 @@ Le Manipulateur-Spécialiste joint le contrôle de la manipulation aux effets si
 
 ### Conjurateur-Spécialiste
 
-Le Conjurateur-Spécialiste crée des objets bien réels comme un Conjurateur, mais les dote de propriétés ou de fonctions qu'aucune autre catégorie ne saurait produire, à la manière d'un Spécialiste. C'est le second hybride réservé aux Spécialistes.
+Le Conjurateur-Spécialiste crée des objets bien réels comme un conjurateur, mais les dote de propriétés ou de fonctions qu'aucune autre catégorie ne saurait produire, à la manière d'un spécialiste. C'est le second hybride réservé aux spécialistes.
 
 | Catégorie | Base d'Affinité |
 |---|---|

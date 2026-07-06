@@ -24,7 +24,10 @@ FIELD_DEFAULT = {
 }
 # Exceptions par compétence (corps + voix + réflexion possibles ensemble).
 OVERRIDE = {
-    "Résistance Mentale": "Réflexion",
+    "Courage": "Réflexion",
+    "Sang-froid": "Réflexion",
+    "Constance": "Réflexion",
+    "Fermeté": "Réflexion",
     "Rhétorique": "Vocal, Réflexion",
     "Style": "aucun",
     "Médecine": "Physique, Réflexion",

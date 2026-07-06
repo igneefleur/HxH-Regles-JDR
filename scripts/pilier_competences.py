@@ -25,7 +25,10 @@ PILIER_DEFAULT = {
     "Champ Créatif": "Physique",
 }
 PILIER_OVERRIDE = {
-    "Résistance Mentale": "Mental",
+    "Courage": "Mental",
+    "Sang-froid": "Mental",
+    "Constance": "Mental",
+    "Fermeté": "Social",
     "Médecine": "Physique, Mental",
     "Survie": "Physique, Mental",
     "Pistage": "Physique, Mental",

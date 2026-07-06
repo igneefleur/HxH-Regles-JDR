@@ -23,3 +23,4 @@ plugins:
       toc_title: Table des matières
       exclude_pages:
         - '^\./$'                             # exclut la page d'accueil (changelog) du PDF
+        - '^creation/'                        # exclut l'atelier de création (outil JS, hors livre)

@@ -18,14 +18,39 @@ nav:
           - Classes: content/regles/personnage/classe.md
           - Les Sens: content/regles/personnage/sens.md
           - États: content/regles/personnage/etats.md
+      - Formation:
+          - Formations martiales: content/regles/formation/formations-martiales.md
+          - Formations athlétiques: content/regles/formation/formations-athletiques.md
+          - Formations vitales: content/regles/formation/formations-vitales.md
+          - Formations sociales: content/regles/formation/formations-sociales.md
+          - Formations intellectuelles: content/regles/formation/formations-intellectuelles.md
+          - Formations naturelles: content/regles/formation/formations-naturelles.md
+          - Formations sensorielles: content/regles/formation/formations-sensorielles.md
+          - Formations techniques: content/regles/formation/formations-techniques.md
+          - Formations du transport: content/regles/formation/formations-transport.md
+          - Formations furtives: content/regles/formation/formations-furtives.md
+          - Formations artisanales: content/regles/formation/formations-artisanales.md
+          - Formations artistiques: content/regles/formation/formations-artistiques.md
+      - Art:
+          - Arts martiaux: content/regles/art/arts-martiaux.md
+          - Arts athlétiques: content/regles/art/arts-athletiques.md
+          - Arts vitaux: content/regles/art/arts-vitaux.md
+          - Arts sociaux: content/regles/art/arts-sociaux.md
+          - Arts intellectuels: content/regles/art/arts-intellectuels.md
+          - Arts naturels: content/regles/art/arts-naturels.md
+          - Arts sensoriels: content/regles/art/arts-sensoriels.md
+          - Arts techniques: content/regles/art/arts-techniques.md
+          - Arts du transport: content/regles/art/arts-transport.md
+          - Arts furtifs: content/regles/art/arts-furtifs.md
+          - Arts artisanaux: content/regles/art/arts-artisanaux.md
+          - Arts artistiques: content/regles/art/arts-artistiques.md
       - L'Échelle du Monde:
           - Les Tailles: content/regles/monde/tailles.md
           - Types de Dégâts: content/regles/monde/degats.md
+          - Les Véhicules: content/regles/monde/vehicules.md
       - Le Combat:
           - Déroulement du combat: content/regles/combat/deroulement-combat.md
           - Manœuvres: content/regles/combat/manoeuvres.md
-          - Arts martiaux: content/regles/combat/arts-martiaux.md
-          - Formations: content/regles/combat/formations.md
           - Critique et Blessures: content/regles/combat/critique-blessures.md
           - Armes: content/regles/combat/armes.md
       - Nen:
@@ -40,11 +65,14 @@ nav:
           - Manipulation: content/regles/nen/manipulation.md
           - Conjuration: content/regles/nen/conjuration.md
           - Spécialisation: content/regles/nen/specialisation.md
+          - Formes du vivant: content/regles/nen/formes.md
           - Ancienne version: content/regles/nen/ancienne-version.md
   - Univers:
       - content/univers/index.md
       - Cartes du monde: content/univers/cartes.md
       - Heavens Arena: content/univers/heavens-arena.md
+  - Forge: forge/index.md
+  - Atelier: creation/index.md
 theme:
   name: material
   custom_dir: overrides
@@ -68,13 +96,21 @@ extra:
   generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/atelier.css
+  - stylesheets/night.css
+  - stylesheets/forge.css
 extra_javascript:
   - javascripts/changelog.js
   - javascripts/continuous.js
   - javascripts/glossary.js
   - javascripts/print-book.js
+  - javascripts/atelier.js
+  - javascripts/night.js
+  - javascripts/forge.js
 hooks:
   - hooks/changelog.py
+  - hooks/nen_atelier.py
+  - hooks/forge.py
 plugins:
   - search
 markdown_extensions:

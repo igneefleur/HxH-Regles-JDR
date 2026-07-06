@@ -34,7 +34,7 @@ conjuration), mais on le réorganise autour de quatre idées :
   chaque module ;
 - des conditions qui s'attachent à une capacité ou à un module et décalent ce
   modificateur ;
-- le câblage explicite des capacités entre elles.
+- le raccord explicite des capacités entre elles.
 
 ---
 
@@ -51,7 +51,7 @@ Trois mots, du plus large au plus fin.
 - Module : la brique, le sort. Le plus petit élément. On empile des modules sur
   une capacité pour la façonner.
 
-Un pouvoir est donc un ensemble de capacités câblées entre elles ; une capacité
+Un pouvoir est donc un ensemble de capacités raccordées entre elles ; une capacité
 est un socle plus une pile de modules, dotée d'une durée, d'un modificateur
 d'affinité d'emploi et, parfois, de conditions.
 
@@ -136,7 +136,7 @@ Modules     :
   - <module> (<catégorie(s)>)
 Conditions  :
   - <énoncé>  (<décalage du modificateur, ex. +10 %>)   au niveau capacité
-Câblage     : <déclencheur | lien | charge utile>       (facultatif)
+Raccord     : <déclencheur | lien | charge utile>       (facultatif)
 ```
 
 #### 3.1 Le type (le socle)
@@ -194,13 +194,13 @@ n'accepte que le type attaque, et n'a aucun sens sur un effet. Chaque module dit
 donc à quels types il peut se greffer.
 
 Une catégorie peut aussi manquer. Un module purement structurel, comme un module
-de câblage, n'appartient à aucune école : il ne se convertit pas en points de
+de raccord, n'appartient à aucune école : il ne se convertit pas en points de
 catégorie mais se paie directement en DI, et aucune affinité ne le concerne.
 
 #### 3.3 Un module, une catégorie
 
 Chaque module relève d'une seule catégorie, ou d'aucune s'il est purement
-structurel (un module de câblage). C'est plus simple, et cela permet de ranger et
+structurel (un module de raccord). C'est plus simple, et cela permet de ranger et
 de trier les modules par école.
 
 Un même concept peut toutefois exister dans plusieurs catégories : il y figure
@@ -282,12 +282,12 @@ composition plus bas.
 
 Les conditions recouvrent deux familles, souvent combinées :
 
-- le câblage (déclencheur, lien, charge utile), qui connecte les capacités entre
+- le raccord (déclencheur, lien, charge utile), qui connecte les capacités entre
   elles, détaillé en partie 4 ;
 - le serment et la restriction, qui bornent l'emploi.
 
 Toutes deux sont des conditions au sens de cette règle ; reste à trancher si une
-condition de pur câblage décale elle aussi le modificateur, ou si seul le serment
+condition de pur raccord décale elle aussi le modificateur, ou si seul le serment
 le fait.
 
 #### 3.7 La composition, module par module
@@ -319,15 +319,15 @@ cela vaut pour n'importe quel module.
 
 ---
 
-### 4. Composer un pouvoir : le câblage
+### 4. Composer un pouvoir : le raccord
 
-Un pouvoir est un graphe de capacités reliées par leur câblage. On le lit comme un
+Un pouvoir est un graphe de capacités reliées par leur raccord. On le lit comme un
 petit circuit : des capacités « source » qui s'activent d'elles-mêmes, des
 capacités « finisseur » qui n'existent que déclenchées.
 
 #### Les déclencheurs
 
-Le câblage se décline en quelques formes, qu'on combine librement.
+Le raccord se décline en quelques formes, qu'on combine librement.
 
 - Immédiat : la capacité part dès qu'on y consacre l'action. Régime par défaut
   d'un instantané.
@@ -366,7 +366,7 @@ Une capacité imbriquée garde ses propres coûts et sa propre affinité : elle 
 résout comme n'importe quelle capacité, le module conteneur n'ajoutant que de quoi
 la tenir prête ou la déclencher.
 
-Le câblage peut s'emboîter : une capacité déclenchée par un Ajouter un Déclencheur
+Le raccord peut s'emboîter : une capacité déclenchée par un Ajouter un Déclencheur
 peut elle-même en porter un, de sorte que les déclencheurs s'enchaînent. Le
 Catalogue, lui, ne s'emboîte pas : une capacité cataloguée ne renferme pas de
 Catalogue.
@@ -394,21 +394,21 @@ Type        : attaque
 Durée       : instantané
 Modules     :
   - bonus de dégâts (renforcement)
-Câblage     : lié, exige la posture Pierre Feuille Ciseaux
+Raccord     : lié, exige la posture Pierre Feuille Ciseaux
 
 Capacité : Feuille                      (finisseur)
 Type        : attaque
 Durée       : instantané
 Modules     :
   - portée / attaque à distance (émission)
-Câblage     : lié, exige la posture Pierre Feuille Ciseaux
+Raccord     : lié, exige la posture Pierre Feuille Ciseaux
 
 Capacité : Ciseaux                      (finisseur)
 Type        : attaque
 Durée       : instantané
 Modules     :
   - bonus d'attaque (renforcement)
-Câblage     : lié, exige la posture Pierre Feuille Ciseaux
+Raccord     : lié, exige la posture Pierre Feuille Ciseaux
 ```
 
 On voit le circuit : la posture ne frappe pas, elle prépare. Les finisseurs ne
@@ -513,7 +513,7 @@ Par définition, la spécialisation n'a pas de modules communs : ses effets sont
 uniques et propres à chacun. Elle reste hors de la bibliothèque et hors du
 périmètre des 90 %. On la mentionne pour mémoire, pas pour la cataloguer.
 
-#### 5.7 Modules de câblage : la glu
+#### 5.7 Modules de raccord : la glu
 
 Ces modules ne décrivent pas un effet mais un branchement. Ils s'appliquent à
 n'importe quel type et sont l'ossature des pouvoirs à plusieurs capacités.
@@ -546,7 +546,7 @@ type revienne.
 | Aura collante et élastique fixée à une cible | effet + adhésif + élastique (transmutation) + lien (émission), à maintien |
 | Illusion de texture | effet + texture (transmutation) |
 | Emprise scellée par un contact | effet + emprise + asservissement par condition (manipulation) |
-| Sort à déclencheur (frappe puis libère un second effet) | attaque + Add Trigger (câblage), capacité imbriquée |
+| Sort à déclencheur (frappe puis libère un second effet) | attaque + Add Trigger (raccord), capacité imbriquée |
 | Bête de garde autonome | catégorie conjuration, type reporté |
 | Réserve de pouvoirs prêts à l'emploi | catégorie conjuration, type reporté |
 
@@ -573,7 +573,7 @@ qu'on laisse de côté, par cohérence avec l'œuvre.
   écoles y figure comme autant d'entrées distinctes, triables par catégorie.
 - Chaque capacité et chaque module portent un modificateur d'affinité
   d'emploi ; les conditions le décalent au niveau où elles sont posées.
-- Le câblage entre capacités devient un jeu de modules à part entière.
+- Le raccord entre capacités devient un jeu de modules à part entière.
 - Certains modules portent une ou plusieurs capacités imbriquées (Add Trigger,
   charge utile, Catalogue), ce qui rend le système récursif.
 - Un module peut n'avoir aucune catégorie : il se paie alors directement en DI, et
@@ -600,7 +600,7 @@ qu'on laisse de côté, par cohérence avec l'œuvre.
 
 *Ce qui reste à trancher (arbitrages).*
 
-- Si une condition de pur câblage décale le modificateur, ou si seul le serment le
+- Si une condition de pur raccord décale le modificateur, ou si seul le serment le
   fait.
 - Quand et sous quelle forme réintroduire les types spéciaux reportés.
 

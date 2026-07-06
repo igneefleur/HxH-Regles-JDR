@@ -14,7 +14,7 @@
     10. Page d'accueil : changelog
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 /* ---------- 1. Variables ---------- */
 :root {
@@ -289,34 +289,61 @@
 .md-typeset .cols table:not([class]) td:not([align]) {
   text-align: justify;
 }
-/* Tableaux d'armes (les seuls à 9 colonnes du livre) : cellules courtes (symboles,
+/* Cartes Compatibilité AM et Illégalité : 4 colonnes, largeurs EXPLICITES par table
+   (le Statut de l'Illégalité est long, le Palier de l'AM court). On garde le
+   table-layout: fixed de .cols et on fixe des proportions adaptées à CHACUNE.
+   Ciblé par [data-cols] : uniquement ces deux tables. */
+.md-typeset .cols [data-cols] table:not([class]) td { text-align: center; }
+.md-typeset .cols [data-cols] table:not([class]) th:nth-child(2),
+.md-typeset .cols [data-cols] table:not([class]) td:nth-child(2) { text-align: left; }
+/* AM : compatibilité | palier | illégalité max | coût */
+.md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(1),
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(1) { width: 18%; }
+.md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(2),
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(2) { width: 30%; }
+.md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(3),
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(3) { width: 30%; }
+.md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(4),
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(4) { width: 22%; }
+/* Illégalité : illégalité | statut (long) | AM max | coût */
+.md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(1),
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(1) { width: 16%; }
+.md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(2),
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(2) { width: 52%; }
+.md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(3),
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(3) { width: 14%; }
+.md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(4),
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(4) { width: 18%; }
+/* Tableaux d'armes (les seuls à 10 colonnes du livre) : cellules courtes (symboles,
    petits nombres), donc table-layout: auto les rétrécit. On passe en fixed avec des
    proportions adaptées pour remplir la colonne de lecture. N'affecte PAS la largeur de page. */
-.md-typeset table:not([class]):has(th:nth-child(9)) {
+.md-typeset table:not([class]):has(th:nth-child(10)) {
   table-layout: fixed;
 }
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(1),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(1) { width: 15%; }  /* Arme */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(2),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(2) { width: 5%; }   /* AM */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(3),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(3) { width: 11%; }  /* Portée */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(4),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(4) { width: 9%; }   /* Mains */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(5),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(5) { width: 6%; }   /* Dégâts */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(6),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(6) { width: 8%; }   /* Mod. dégâts */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(7),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(7) { width: 9%; }   /* Type */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(8),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(8) { width: 7%; }   /* Illégalité */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(9),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(9) { width: 30%; }  /* Propriétés */
-/* Centrage des colonnes 2 à 8 (AM, Portée, Mains, Dégâts, Mod., Type, Illégalité),
-   en-têtes compris. Arme (1) et Propriétés (9) restent alignées à gauche. */
-.md-typeset table:not([class]):has(th:nth-child(9)) th:nth-child(n+2):nth-child(-n+8),
-.md-typeset table:not([class]):has(th:nth-child(9)) td:nth-child(n+2):nth-child(-n+8) {
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(1),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(1) { width: 14%; }  /* Arme */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(2),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(2) { width: 5%; }   /* AM */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(3),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(3) { width: 11%; }  /* Portée */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(4),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(4) { width: 10%; }  /* Munitions */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(5),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(5) { width: 8%; }   /* Mains */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(6),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(6) { width: 5%; }   /* Dégâts */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(7),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(7) { width: 7%; }   /* Mod. dégâts */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(8),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(8) { width: 8%; }   /* Type */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(9),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(9) { width: 6%; }   /* Illégalité */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(10),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(10) { width: 26%; } /* Propriétés */
+/* Centrage des colonnes 2 à 9 (AM, Portée, Munitions, Mains, Dégâts, Mod., Type, Illégalité),
+   en-têtes compris. Arme (1) et Propriétés (10) restent alignées à gauche. */
+.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(n+2):nth-child(-n+9),
+.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(n+2):nth-child(-n+9) {
   text-align: center;
 }
 /* Tableaux de la page Éclat (apprentissage, niveau/prestige par âge) : colonnes
@@ -1536,26 +1563,28 @@ html.book-loading .md-content__inner {
 /* Tables des familles d'armes présentées façon module de Nen (encadré sépia
    d'Anima) : l'habillage (en-tête brun, zébrures crème) vient de .cj-modules
    .anima. Ici on écarte le gabarit 6 colonnes des modules et on REMET les
-   largeurs et l'alignement d'origine des tables d'armes (9 colonnes), en
+   largeurs et l'alignement d'origine des tables d'armes (10 colonnes), en
    !important pour passer devant les règles !important des modules. */
 .md-typeset .cj-modules.anima.armes table:not([class]) {
   table-layout: fixed !important;
 }
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(1),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(1) { width: 15% !important; text-align: left !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(1) { width: 14% !important; text-align: left !important; }   /* Arme */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(2),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(2) { width: 5%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(2) { width: 5%  !important; text-align: center !important; font-size: inherit !important; color: inherit !important; }   /* AM */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(3),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(3) { width: 11% !important; text-align: center !important; border-right: none !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(3) { width: 11% !important; text-align: center !important; border-right: none !important; }   /* Portée */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(4),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 9%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 10% !important; text-align: center !important; }   /* Munitions */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(5),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(5) { width: 6%  !important; text-align: center !important; border-right: none !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(5) { width: 8%  !important; text-align: center !important; border-right: none !important; }   /* Mains */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(6),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(6) { width: 8%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(6) { width: 5%  !important; text-align: center !important; }   /* Dégâts */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(7),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(7) { width: 9%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(7) { width: 7%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Mod. dégâts */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(8),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 7%  !important; text-align: center !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 8%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Type */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(9),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(9) { width: 30% !important; text-align: left !important; }
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(9) { width: 6%  !important; text-align: center !important; }   /* Illégalité */
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(10),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(10) { width: 26% !important; text-align: left !important; }   /* Propriétés */

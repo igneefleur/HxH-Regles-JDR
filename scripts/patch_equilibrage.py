@@ -27,7 +27,7 @@ FIX = {
         "tr": "Le médecin suture le tendon d'Achille et répare les chairs, puis une rééducation rend sa souplesse au pied. Retire le saignement, retire l'état À terre et lève le malus de −25.",
     },
     ("Mollet", 4): {
-        "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −35 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+        "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −35 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
         "tr": "Le médecin réduit et fixe le tibia, reconstruit les muscles broyés du mollet, puis une rééducation redresse la jambe. Retire le saignement, lève le malus de −35, retire l'état À terre, retire l'état Inconscient et rend l'usage de la jambe.",
     },
     ("Genou", 3): {

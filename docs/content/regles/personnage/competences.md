@@ -109,12 +109,14 @@ Chaque palier de l'échelle recouvre un ordre d'action distinct :
 <table>
 <thead><tr><th>Compétence</th><th>Caractéristique</th><th>Piliers</th><th>Groupes</th></tr></thead>
 <tbody>
-<tr><td>Résistance aux Maladies</td><td>Endurance</td><td>Physique</td><td></td></tr>
-<tr><td>Résistance aux Toxines</td><td>Endurance</td><td>Physique</td><td></td></tr>
-<tr><td>Résistance à la douleur</td><td>Volonté</td><td>Physique</td><td></td></tr>
-<tr><td>Résistance à l'Environnement</td><td>Endurance</td><td>Physique</td><td></td></tr>
-<tr><td>Résistance à la Fatigue</td><td>Endurance</td><td>Physique</td><td></td></tr>
-<tr><td>Résistance Mentale</td><td>Volonté</td><td>Mental</td><td></td></tr>
+<tr><td>Constitution</td><td>Endurance</td><td>Physique</td><td></td></tr>
+<tr><td>Rusticité</td><td>Endurance</td><td>Physique</td><td></td></tr>
+<tr><td>Ténacité</td><td>Endurance</td><td>Physique</td><td></td></tr>
+<tr><td>Impassibilité</td><td>Endurance</td><td>Physique</td><td></td></tr>
+<tr><td>Courage</td><td>Volonté</td><td>Mental</td><td></td></tr>
+<tr><td>Sang-froid</td><td>Volonté</td><td>Mental</td><td></td></tr>
+<tr><td>Fermeté</td><td>Volonté</td><td>Social</td><td></td></tr>
+<tr><td>Constance</td><td>Volonté</td><td>Mental</td><td></td></tr>
 </tbody>
 </table>
 
@@ -511,61 +513,81 @@ Retenir sa respiration et fonctionner sans air. Pour traverser un bassin immerg�
 
 <div class="keep" markdown>
 
-#### Résistance aux Maladies
+#### Constitution
 
 <p class="groupes">Caractéristique : Endurance<br>Piliers : Physique</p>
 
-Encaisser infections, virus et maladies. Pour surmonter une fièvre foudroyante ou rester debout malgré une contagion qui terrasse les autres.
+Neutraliser un agent étranger qui pénètre l'organisme, vivant ou chimique. Pour surmonter une infection de plaie, survivre à un repas empoisonné ou tenir debout après une morsure venimeuse. Le corps l'oppose à la virulence du germe comme du poison pour savoir si le mal prend ou s'il en vient à bout.
 
 </div>
 
 <div class="keep" markdown>
 
-#### Résistance aux Toxines
+#### Rusticité
 
 <p class="groupes">Caractéristique : Endurance<br>Piliers : Physique</p>
 
-Encaisser poisons, venins et substances nocives. Pour survivre à un repas empoisonné ou continuer à agir après une morsure venimeuse.
+Endurer les conditions d'un milieu hostile subies du dehors : froid, chaleur, altitude, noyade. Pour traverser un désert brûlant ou survivre une nuit en haute montagne sans abri.
 
 </div>
 
 <div class="keep" markdown>
 
-#### Résistance à la douleur
-
-<p class="groupes">Caractéristique : Volonté<br>Piliers : Physique</p>
-
-Garder ses moyens malgré la souffrance. Pour serrer les dents sous une plaie atroce, ne pas s'évanouir sous le choc d'une blessure ou continuer à agir malgré tout. C'est elle qu'on teste lorsqu'une blessure menace de faire tomber Inconscient.
-
-</div>
-
-<div class="keep" markdown>
-
-#### Résistance à l'Environnement
+#### Ténacité
 
 <p class="groupes">Caractéristique : Endurance<br>Piliers : Physique</p>
 
-Endurer le froid, la chaleur, l'épuisement et le manque de ressources. Pour traverser un désert brûlant ou survivre une nuit en haute montagne sans abri.
+Tenir bon quand le corps épuise ses réserves. C'est elle qu'on teste pour pousser l'effort au-delà de ce qu'on soutient dans la journée, rester éveillé quand le sommeil manque, ou endurer la faim et la soif, sans sombrer dans la Fatigue.
 
 </div>
 
 <div class="keep" markdown>
 
-#### Résistance à la Fatigue
+#### Impassibilité
 
 <p class="groupes">Caractéristique : Endurance<br>Piliers : Physique</p>
 
-Tenir bon quand le corps réclame le repos. C'est elle qu'on teste pour pousser l'effort au-delà de ce qu'on soutient dans la journée, ou pour rester éveillé quand le sommeil manque, sans sombrer dans la Fatigue.
+Garder ses moyens malgré la souffrance d'une blessure. Pour serrer les dents sous une plaie atroce, ne pas s'évanouir sous le choc ou continuer à agir malgré tout. C'est elle qu'on teste lorsqu'une blessure menace de faire tomber Inconscient.
 
 </div>
 
 <div class="keep" markdown>
 
-#### Résistance Mentale
+#### Courage
 
 <p class="groupes">Caractéristique : Volonté<br>Piliers : Mental</p>
 
-Fermeté d'esprit face à la peur, l'influence et la tentation. Pour ne pas céder à une intimidation ou résister à une emprise qui cherche à plier sa volonté.
+Garder ses moyens devant un danger présent qui déclenche la peur. Pour ne pas se figer face à un prédateur, tenir sa position quand tout pousse à fuir ou surmonter une frayeur soudaine.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Sang-froid
+
+<p class="groupes">Caractéristique : Volonté<br>Piliers : Mental</p>
+
+Garder son calme et sa raison quand une épreuve émotionnelle attaque la maîtrise de soi. Pour tenir devant un spectacle insoutenable, encaisser un deuil ou ne pas sortir de ses gonds sous la provocation.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Fermeté
+
+<p class="groupes">Caractéristique : Volonté<br>Piliers : Social</p>
+
+Ne pas plier face à qui cherche à le faire céder par la parole. Pour résister à une persuasion habile, repousser une tentation ou tenir bon sous l'intimidation. Elle décide si la pression prend, sans démasquer le menteur, ce qui reste affaire de Perspicacité.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Constance
+
+<p class="groupes">Caractéristique : Volonté<br>Piliers : Mental</p>
+
+Tenir l'esprit debout quand l'épreuve s'étire. Là où rien ne frappe et où personne ne parle, mais où le vide, la solitude et la monotonie rongent la volonté jour après jour, elle décide si le personnage garde ses repères ou glisse vers l'effondrement. Elle est à l'esprit ce que la ténacité est au corps.
 
 </div>
 

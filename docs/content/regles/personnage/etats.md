@@ -173,9 +173,9 @@ Plus aucun muscle n'obéit ; figé, le personnage ne peut absolument plus bouger
 <div class="sblock" markdown>
 **À terre**
 
-<span class="smods"><span class="smod">Attaque <b>−20</b></span></span>
+<span class="smods"><span class="smod">Actions physiques <b>−40</b></span><span class="smod">Mouvement <b>−2</b></span></span>
 
-Le personnage a été jeté au sol, ou s'y est effondré, et combat désormais couché sur le dos ou à quatre pattes. Privé d'appuis et de hauteur, il frappe mal et ne se dérobe qu'à grand-peine, tandis que ses adversaires le dominent de toute leur taille. Se relever coûte une action. Tant qu'il reste au sol, les attaques au corps à corps portées contre lui gagnent +20, et les attaques à distance, qui doivent l'ajuster plus bas et plus loin, subissent −20.
+Le personnage a été jeté au sol, ou s'y est effondré, et combat désormais couché sur le dos ou à quatre pattes. Privé d'appuis et de hauteur, il frappe, se dérobe et se démène à grand-peine : toutes ses actions physiques, attaque, esquive et parade comprises, subissent −40, et son [mouvement](capacites-physiques.md#mouvement) chute de 2 paliers, lu deux crans plus bas dans la table. Se relever coûte une action.
 </div>
 
 <div class="sblock" markdown>

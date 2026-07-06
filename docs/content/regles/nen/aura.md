@@ -18,7 +18,7 @@ Quatre mesures décrivent l'aura d'un personnage : ce que son corps peut conteni
 
 ### Aura maximale (UAM)
 
-L'UAM est le plafond de la réserve : tout ce qu'un corps peut renfermer. Un personnage a une UAM de 100 par [prestige](../personnage/eclat.md), et peut l'augmenter en investissant du DI. Par exemple, un utilisateur de nen de prestige 3 dispose ainsi d'une UAM de 300.
+L'UAM est le plafond de la réserve : tout ce qu'un corps peut renfermer. Un personnage a une UAM de 1000 par [prestige](../personnage/eclat.md), et peut l'augmenter en investissant du DI. Par exemple, un utilisateur de nen de prestige 3 dispose ainsi d'une UAM de 3000.
 
 </div>
 
@@ -70,7 +70,7 @@ La RUA dit combien d'UA le personnage récupère chaque heure. L'UAD remonte à 
 |:---|:---|:---:|
 | Multiplicateur d'UAR | +1 Mul UAR et RUA | 40 DI |
 | Multiplicateur de RUA | +1 Mul RUA | 20 DI |
-| Aura maximale | +20 à l'UAM | 5 DI |
+| Aura maximale | +200 à l'UAM | 5 DI |
 
 Par prestige, un personnage ne peut pas consacrer plus de 60 DI à ces trois améliorations réunies.
 

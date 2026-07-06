@@ -16,15 +16,17 @@ def norm(s):
 
 BONUS = {
     # +10
-    "Retour": 10, "Dégainage instantané": 10, "Poussée": 10,
-    "Dissimulable": 10, "Saisie": 10, "Parade": 10, "Finesse": 10, "Précise": 10, "Déchirante": 10,
+    "Recharge Rapide": 10, "Retour": 10, "Dégainage instantané": 10, "Poussée": 10,
+    "Dissimulable": 10, "Saisie": 10, "Parade": 10, "Finesse": 10, "Précise": 10,
     "Jumelable": 10, "Désarmement": 10,
     # +20
-    "Vitesse du son": 20, "Mains libres": 20, "Renversement": 20, "Allonge ×2": 20, "Assommement": 20, "Indésarmable": 20, "Nuage persistant": 20,
+    "Mains libres": 20, "Renversement": 20, "Assommement": 20, "Indésarmable": 20, "Nuage persistant": 20,
     # +30
-    "Allonge ×3": 30, "Immobilisation à distance": 30, "Aveuglement de zone": 50,
+    "Immobilisation à distance": 30,
     # +40
-    "Allonge ×4": 40, "Décharge incapacitante": 40,
+    "Décharge incapacitante": 40,
+    # +50
+    "Aveuglement de zone": 50,
 }
 # Propriétés à coût tiéré, parsées depuis la parenthèse (rayon / longueur, angle pour le cône)
 ZONE_TIERS = {3: 20, 5: 30, 10: 40, 20: 50}
@@ -33,7 +35,7 @@ CONE_ANGLE = {45: 0, 90: 10}                    # cône : table d'ANGLE (s'ajout
 INEFF_TIERS = {"contact": 10, "courte": 20, "moyenne": 30, "longue": 40}
 CONSTRAINT = {
     # −10
-    "À deux mains": 10, "Lourde": 10, "Rechargement lent": 10, "Bruyante": 10,
+    "Lourde": 10, "Rechargement lent": 10, "Bruyante": 10,
     # −20
     "Très lourde": 20, "Surchauffe": 20, "Sensible à l'humidité": 20,
     # −30
@@ -43,7 +45,7 @@ CONSTRAINT = {
 }
 # Munitions : coût selon le nombre de TIRS avant recharge (capacité ÷ conso par attaque).
 # Plus de tirs = plus pratique = coûte des points ; le mono-coup ne coûte rien.
-MUN_COST = {1: 0, 2: 0, 4: 10, 6: 20, 10: 30, 15: 40, 20: 50}
+MUN_COST = {1: 0, 2: 10, 4: 20, 6: 30, 10: 40, 15: 50}
 
 
 def mun_pts(tirs):
@@ -54,13 +56,10 @@ def zone_pts(r):
     return ZONE_TIERS.get(r, 0)
 
 
-def cone_pts(length, angle=45):
-    return min(50, CONE_TIERS.get(length, 0) + (10 if angle >= 90 else 0))
-
-
 def portee_pts(cell):
     total = 0
-    for part in re.split(r"\s*·\s*|<br>", cell):   # deux portées séparées par « · » ou un saut de ligne <br>
+    parts = [x for x in re.split(r"\s*·\s*|<br>", cell) if norm(x)]   # portées séparées par « · » ou <br>
+    for part in parts:
         p = norm(part).lower()
         if "cône" in p:   # le cône est une portée : longueur (table) + angle (table)
             nums = re.findall(r"\d+", p)
@@ -70,18 +69,21 @@ def portee_pts(cell):
         elif "contact (posée)" in p:
             total += 0
         elif p.startswith("mêlée") or p.startswith("contact"):
-            total += 10
+            total += 0   # la mêlée (contact) est gratuite
+        elif p.startswith("allonge"):   # allonge = mêlée étendue (portée mêlée)
+            total += {2: 20, 3: 30, 4: 40, 5: 50}.get(int(re.findall(r"\d+", p)[0]), 0)
         elif p.startswith("jet"):
             lng = int(re.findall(r"\d+", p)[-1])
             total += 10 if lng <= 20 else 20
         elif p.startswith("tir"):
             lng = int(re.findall(r"\d+", p)[-1])
-            total += 20 if lng <= 40 else 30 if lng <= 90 else 40 if lng <= 180 else 50
+            total += 20 if lng <= 40 else 30 if lng <= 90 else 40 if lng <= 180 else 50 if lng <= 360 else 60
+    total += max(0, len(parts) - 1) * 10   # nombre de portées : 1 → 0, 2 → +10, 3 → +20
     return total
 
 
 def portee_hors_plafond(cell):
-    # Plafonds fermes : lancer 80 m max, tir 360 m max. Aucune portée illimitée.
+    # Plafonds fermes : lancer 80 m max, tir 600 m max. Aucune portée illimitée.
     for part in re.split(r"\s*·\s*|<br>", cell):
         p = norm(part).lower()
         nums = re.findall(r"\d+", p)
@@ -90,8 +92,8 @@ def portee_hors_plafond(cell):
         lng = int(nums[-1])
         if p.startswith("jet") and lng > 80:
             return f"lancer {lng} m > 80"
-        if p.startswith("tir") and lng > 360:
-            return f"tir {lng} m > 360"
+        if p.startswith("tir") and lng > 600:
+            return f"tir {lng} m > 600"
     return None
 
 
@@ -104,21 +106,23 @@ def base(tok):
 
 
 lines = Path("docs/content/regles/combat/armes.md").read_text(encoding="utf-8").splitlines()
-bad, unknown, hors_portee, auto_sans_reservoir = [], {}, [], []
+bad, unknown, hors_portee, auto_sans_reservoir, tir_sans_mun, am_illeg = [], {}, [], [], [], []
 n = 0
 for l in lines:
     if not (l.startswith("|") and l.rstrip().endswith("|")):
         continue
     cells = [c.strip() for c in l.split("|")[1:-1]]
-    if len(cells) != 9 or not re.fullmatch(r"[✦✧]{3}", cells[1]):
+    if len(cells) != 10 or not re.fullmatch(r"[✦✧]{3}", cells[1]):
         continue                       # garde uniquement les lignes d'arme (AM en symboles)
-    if cells[0] in ("Mains nues", "Pieds", "Tête"):
+    if cells[0] in ("Main", "Pied", "Tête", "Coude", "Genou"):
         continue                       # armes naturelles du corps : seules exemptées du système
     n += 1
-    nom, am, por, mains, deg, mod, typ, il, props = cells
+    nom, am, por, mun, mains, deg, mod, typ, il, props = cells
     deg_v = int(re.match(r"\s*(\d+)", deg).group(1))
     illeg = il.count("★") * 20
     ampts = am.count("✦") * 10
+    if am.count("✦") + il.count("★") > 5:   # plafond croisé : AM élevée ⇄ illégalité élevée s'excluent
+        am_illeg.append((nom, f"{am.count('✦')}✦ + {il.count('★')}★ = {am.count('✦') + il.count('★')}"))
     por_v = portee_pts(por)
     hp = portee_hors_plafond(por)
     if hp:
@@ -134,28 +138,24 @@ for l in lines:
     plus = minus = 0
     has_rafale = False
     has_cone = "cône" in norm(por).lower()
+    if ("tir" in norm(por).lower() or has_cone) and not mun.strip():
+        tir_sans_mun.append(nom)   # règle : arme de tir ou de cône -> munitions obligatoires (colonne dédiée)
     detail = [f"dég {deg_v}", f"AM +{ampts}", f"portée +{por_v}", f"type +{type_pts}", f"mod +{mult_pts}", f"mains {mains_pts:+d}"]
+    if mun.strip():                                     # munitions : colonne dédiée (après Portée)
+        tirs = int(re.search(r"(\d+)", mun).group(1))   # nombre de tirs avant recharge
+        mp = mun_pts(tirs)
+        plus += mp
+        if "munitions par tir" in mun.lower():
+            has_rafale = True
+        detail.append(f"Munitions({mun}) +{mp}")
     if props.strip() != "Aucune":
         for tok in split_props(props):
             b = base(tok)
-            if b.startswith("Munitions"):
-                tirs = int(re.search(r"\((\d+)", tok).group(1))   # nombre de tirs avant recharge
-                mp = mun_pts(tirs)
-                plus += mp
-                if "rafale" in tok.lower():
-                    has_rafale = True
-                detail.append(f"Munitions({tirs} tirs) +{mp}")
-            elif b == "Zone":
+            if b == "Zone":
                 m = re.search(r"(\d+)\s*m", tok)
                 zp = zone_pts(int(m.group(1)) if m else 0)
                 plus += zp
                 detail.append(f"Zone +{zp}")
-            elif b in ("Cône", "Cone"):
-                m = re.search(r"(\d+)\s*m", tok)
-                ln = int(m.group(1)) if m else 0
-                cp = cone_pts(ln, 90 if "90" in tok else 45)
-                plus += cp
-                detail.append(f"Cône +{cp}")
             elif b == "Inefficace de près":
                 mb = re.search(r"\((\w+)", tok)
                 ip = INEFF_TIERS.get(mb.group(1) if mb else "", 0)
@@ -170,6 +170,16 @@ for l in lines:
                 pct = int(re.search(r"\((\d+)", tok).group(1))   # palier : le coût vaut le bonus en %
                 plus += pct
                 detail.append(f"{b}({pct}%) +{pct}")
+            elif b == "Déchirante":
+                m = re.search(r"(\d+)", tok)         # saignement en PV ; base −5 si non précisé
+                saign = int(m.group(1)) if m else 5
+                dp = min(50, saign * 2)              # −5→+10 … −25→+50
+                plus += dp
+                detail.append(f"Déchirante(−{saign}) +{dp}")
+            elif b == "Propulsion mécanique":
+                mal = int(re.search(r"(\d+)", tok).group(1))   # palier de vélocité : le coût vaut le malus de défense procuré (−10→+10 … −50→+50)
+                plus += mal
+                detail.append(f"Propulsion mécanique(−{mal}) +{mal}")
             elif b in BONUS:
                 plus += BONUS[b]
                 detail.append(f"{b} +{BONUS[b]}")
@@ -202,5 +212,13 @@ if auto_sans_reservoir:
     print("\ntir en rafale sans cône (une rafale arrose un cône) :")
     for nom in auto_sans_reservoir:
         print(f"  ✗ {nom}")
-if not bad and not unknown and not hors_portee and not auto_sans_reservoir:
+if tir_sans_mun:
+    print("\narmes de tir/cône SANS munitions (obligatoire) :")
+    for nom in tir_sans_mun:
+        print(f"  ✗ {nom}")
+if am_illeg:
+    print("\nAM + illégalité > 5 (arme trop martiale ET trop illégale) :")
+    for nom, d in am_illeg:
+        print(f"  ✗ {nom} : {d}")
+if not bad and not unknown and not hors_portee and not auto_sans_reservoir and not tir_sans_mun and not am_illeg:
     print("✓ TOUTES les armes valent exactement 100 points.")

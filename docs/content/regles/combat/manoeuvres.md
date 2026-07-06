@@ -87,6 +87,10 @@ Si la prise vise une partie précise (Agripper utilisée avec Viser), ses effets
 **Pousser** <span class="prereq">Prérequis : aucun</span> Jet d'attaque à −40 opposé au jet de défense de l'adversaire. Si l'attaque touche, jet de lutte opposé au jet de lutte ou d'équilibre de l'adversaire. En cas de réussite, la cible est repoussée de 2 mètres en ligne droite, davantage si la marge est forte.
 </div>
 
+<div class="mcard" markdown>
+**Toucher** <span class="prereq">Prérequis : aucun</span> Le personnage cherche à poser la main sur sa cible sans le moindre geste hostile. Il ne fait pas de jet d'attaque : il fixe lui-même son résultat, de 0 à sa valeur d'attaque, modificateurs de l'action compris. Ce résultat s'oppose au jet de défense de la cible ; s'il l'emporte, le contact est établi, sans lui infliger aucun dégât. Toucher coûte une action, mais ne compte pas dans la limite d'une attaque par tour : le personnage peut Toucher sans renoncer à son attaque du tour.
+</div>
+
 ### Viser
 
 Viser ne s'emploie jamais seule : elle accompagne une autre manœuvre dont elle précise la cible. Le personnage vise une zone (tableau ci-dessous) ; son attaque subit le malus correspondant, et seule l'armure couvrant cette zone compte (si elle est nue, l'attaque l'ignore). L'effet exact figure dans la manœuvre accompagnée (voir Blesser et Agripper).
@@ -124,5 +128,21 @@ Viser ne s'emploie jamais seule : elle accompagne une autre manœuvre dont elle 
 <tr><td>Pied</td><td>−50</td></tr>
 </tbody>
 </table>
+
+### Manœuvres de défense
+
+Le personnage choisit sa manœuvre de défense quand une attaque le vise, avant qu'elle ne soit résolue.
+
+<div class="mcard" markdown>
+**Se laisser toucher** <span class="prereq">Prérequis : aucun</span> Le personnage renonce à se défendre et laisse le coup l'atteindre. Il ne fait pas de jet de défense : son résultat de défense vaut 0, si bien que toute attaque dont le résultat dépasse 0 l'atteint d'office (aucune action requise).
+</div>
+
+### Contre-attaque
+
+Contre-attaquer, c'est préparer un coup et le retenir jusqu'à ce que l'adversaire s'ouvre en frappant. Le personnage y consacre une action à son tour : une attaque retardée, assortie d'une condition de déclenchement. Jusqu'au début de son prochain tour, la première fois qu'il réussit un jet de défense, il riposte aussitôt par une attaque contre l'assaillant, en réaction et sans dépenser d'action.
+
+La riposte est une attaque ordinaire, à ceci près qu'elle gagne au jet d'attaque un bonus égal à la moitié de l'écart entre son résultat de défense et le résultat de l'attaque qu'il vient de parer, jusqu'à un maximum de +100. Mieux il se défend, plus fort il rend le coup : une défense qui domine largement l'attaque ouvre une riposte accablante.
+
+Par exception à la règle qui interdit de répéter un type d'action dans un tour, le personnage peut consacrer plusieurs de ses actions à contre-attaquer, tant qu'il lui en reste : chacune prépare une riposte de plus, déclenchée par une défense réussie distincte. Les contre-attaques préparées et non déclenchées se dissipent au début de son tour suivant.
 
 </div>

@@ -51,7 +51,7 @@
   {
    "degre": 4,
    "nom": "Entaille profonde sectionnant la trachée, gros vaisseau déchiré et vertèbre cervicale atteinte",
-   "effet": "La trachée est sectionnée, un gros vaisseau se déchire et une cervicale cède, le souffle sifflant dans la plaie béante. Le blessé subit un Saignement de −20 PV, l'état Mutisme, l'état Paralysie partielle et −40 aux actions physiques. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "La trachée est sectionnée, un gros vaisseau se déchire et une cervicale cède, le souffle sifflant dans la plaie béante. Le blessé subit un Saignement de −20 PV, l'état Mutisme, l'état Paralysie partielle et −40 aux actions physiques. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -67,7 +67,7 @@
   {
    "degre": 5,
    "nom": "Gorge ouverte, cou sectionné",
-   "effet": "La gorge s'ouvre en grand et le cou est presque tranché, le sang inondant la poitrine en flots ininterrompus. Le blessé subit un Saignement de −25 PV et subit l'état Mutisme de façon permanente. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "La gorge s'ouvre en grand et le cou est presque tranché, le sang inondant la poitrine en flots ininterrompus. Le blessé subit un Saignement de −25 PV et subit l'état Mutisme de façon permanente. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -133,7 +133,7 @@
   {
    "degre": 4,
    "nom": "Fracture du crâne avec commotion cérébrale",
-   "effet": "Le crâne se fracture franchement et le cerveau commotionné se met à vaciller : la vue se brouille, les jambes se dérobent et la conscience menace de s'éteindre. Le blessé subit un Saignement de −20 PV, l'état Étourdi jusqu'au début de son prochain tour et −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Le crâne se fracture franchement et le cerveau commotionné se met à vaciller : la vue se brouille, les jambes se dérobent et la conscience menace de s'éteindre. Le blessé subit un Saignement de −20 PV, l'état Étourdi jusqu'au début de son prochain tour et −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -149,7 +149,7 @@
   {
    "degre": 5,
    "nom": "Enfoncement de la boîte crânienne, cerveau écrasé",
-   "effet": "La boîte crânienne cède et s'enfonce dans un fracas d'os, écrasant le cerveau sous les éclats. Le blessé subit un Saignement de −25 PV et −2 permanent à l'Érudition, à la Logique et à l'Imagination. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "La boîte crânienne cède et s'enfonce dans un fracas d'os, écrasant le cerveau sous les éclats. Le blessé subit un Saignement de −25 PV et −2 permanent à l'Érudition, à la Logique et à l'Imagination. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -215,7 +215,7 @@
   {
    "degre": 4,
    "nom": "Fracture ouverte du coude, esquilles et section partielle des vaisseaux",
-   "effet": "L'os éclate à travers la peau en projetant des esquilles et les vaisseaux du pli du coude sont sectionnés en partie. Le sang gicle de la plaie béante tandis que le bras s'affaisse, inerte. Le blessé subit un Saignement de −10 PV, l'état Paralysie partielle au bras et −50 aux actions du membre. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "L'os éclate à travers la peau en projetant des esquilles et les vaisseaux du pli du coude sont sectionnés en partie. Le sang gicle de la plaie béante tandis que le bras s'affaisse, inerte. Le blessé subit un Saignement de −10 PV, l'état Paralysie partielle au bras et −50 aux actions du membre. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -231,7 +231,7 @@
   {
    "degre": 5,
    "nom": "Coude broyé, articulation détruite et avant-bras quasi sectionné à la jointure",
-   "effet": "La jointure éclate en bouillie d'os et de cartilage, et l'avant-bras ne tient plus que par quelques lambeaux de chair. Le sang fuse de la plaie sans répit et la main, déconnectée, ne répond plus du tout. Le blessé subit un Saignement de −20 PV et perd définitivement l'usage du bras à partir du coude. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "La jointure éclate en bouillie d'os et de cartilage, et l'avant-bras ne tient plus que par quelques lambeaux de chair. Le sang fuse de la plaie sans répit et la main, déconnectée, ne répond plus du tout. Le blessé subit un Saignement de −20 PV et perd définitivement l'usage du bras à partir du coude. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -297,7 +297,7 @@
   {
    "degre": 4,
    "nom": "Perforation d'une paroi ventriculaire",
-   "effet": "La paroi du ventricule cède et le sang gicle hors du cœur à chaque battement, vidant le blessé de ses forces. Le blessé subit un Saignement de −20 PV. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "La paroi du ventricule cède et le sang gicle hors du cœur à chaque battement, vidant le blessé de ses forces. Le blessé subit un Saignement de −20 PV. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Quasi impossible",
@@ -313,7 +313,7 @@
   {
    "degre": 5,
    "nom": "Cœur éclaté",
-   "effet": "Le cœur se rompt et se vide d'un seul coup, l'organe déchiré ne pouvant plus assurer sa fonction. Le blessé subit un Saignement de −30 PV et la perte définitive de son cœur. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "Le cœur se rompt et se vide d'un seul coup, l'organe déchiré ne pouvant plus assurer sa fonction. Le blessé subit un Saignement de −30 PV et la perte définitive de son cœur. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Impossible",
@@ -379,7 +379,7 @@
   {
    "degre": 4,
    "nom": "Artère fémorale entaillée, nerf crural lésé",
-   "effet": "L'artère fémorale est ouverte et le nerf crural tranché : le sang fuit en nappe au pli de l'aine et la jambe cesse de porter. Le blessé subit un Saignement de −15 PV, l'état À terre et l'état Paralysie partielle de la jambe. La jambe reste hors d'usage. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "L'artère fémorale est ouverte et le nerf crural tranché : le sang fuit en nappe au pli de l'aine et la jambe cesse de porter. Le blessé subit un Saignement de −15 PV, l'état À terre et l'état Paralysie partielle de la jambe. La jambe reste hors d'usage. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -395,7 +395,7 @@
   {
    "degre": 5,
    "nom": "Aine broyée, hanche arrachée, jambe ne tenant plus que par les chairs",
-   "effet": "L'aine est broyée et la hanche arrachée : la jambe ne pend plus que par quelques lambeaux de chair tandis que le sang jaillit de la racine de la cuisse. Le blessé subit un Saignement de −25 PV et l'état À terre. Le blessé perd définitivement l'usage de la jambe. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "L'aine est broyée et la hanche arrachée : la jambe ne pend plus que par quelques lambeaux de chair tandis que le sang jaillit de la racine de la cuisse. Le blessé subit un Saignement de −25 PV et l'état À terre. Le blessé perd définitivement l'usage de la jambe. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -461,7 +461,7 @@
   {
    "degre": 4,
    "nom": "Pied broyé, tarse et nerfs détruits",
-   "effet": "Le pied est entièrement broyé, le tarse éclate et les nerfs sont détruits, le membre ne répond plus et la jambe se dérobe complètement. Le blessé subit un Saignement de −10 PV ; son pied est hors d'usage et ne permet plus aucun appui, il ne peut se déplacer qu'en prenant appui sur l'autre jambe, il subit l'état Paralysie partielle du membre et l'état À terre. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Le pied est entièrement broyé, le tarse éclate et les nerfs sont détruits, le membre ne répond plus et la jambe se dérobe complètement. Le blessé subit un Saignement de −10 PV ; son pied est hors d'usage et ne permet plus aucun appui, il ne peut se déplacer qu'en prenant appui sur l'autre jambe, il subit l'état Paralysie partielle du membre et l'état À terre. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -477,7 +477,7 @@
   {
    "degre": 5,
    "nom": "Pied sectionné, perte du membre",
-   "effet": "Le pied est tranché net et le moignon s'ouvre en grand, le blessé ne peut plus se tenir debout et s'écroule au sol. Le blessé subit un Saignement de −15 PV, la perte définitive du pied, ne peut plus se déplacer sans appareillage ou prothèse et se traîne, subit l'état Immobilisé et l'état À terre. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "Le pied est tranché net et le moignon s'ouvre en grand, le blessé ne peut plus se tenir debout et s'écroule au sol. Le blessé subit un Saignement de −15 PV, la perte définitive du pied, ne peut plus se déplacer sans appareillage ou prothèse et se traîne, subit l'état Immobilisé et l'état À terre. Il subit en outre −45 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -543,7 +543,7 @@
   {
    "degre": 4,
    "nom": "Main broyée, plusieurs doigts sectionnés",
-   "effet": "La main est écrasée sous la violence du coup et plusieurs doigts sont arrachés net, ne laissant qu'un moignon mutilé d'où le sang jaillit. La douleur est telle qu'elle menace de faire sombrer le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement les doigts sectionnés et ce qui reste de sa main demeure hors d'usage. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "La main est écrasée sous la violence du coup et plusieurs doigts sont arrachés net, ne laissant qu'un moignon mutilé d'où le sang jaillit. La douleur est telle qu'elle menace de faire sombrer le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement les doigts sectionnés et ce qui reste de sa main demeure hors d'usage. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -559,7 +559,7 @@
   {
    "degre": 5,
    "nom": "Main tranchée au poignet",
-   "effet": "Le tranchant emporte la main d'un seul coup au niveau du poignet et le moignon gicle à gros bouillons. La souffrance fulgurante terrasse le blessé. Le blessé subit un Saignement de −25 PV. Le blessé perd définitivement la main. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "Le tranchant emporte la main d'un seul coup au niveau du poignet et le moignon gicle à gros bouillons. La souffrance fulgurante terrasse le blessé. Le blessé subit un Saignement de −25 PV. Le blessé perd définitivement la main. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Difficile",
@@ -625,7 +625,7 @@
   {
    "degre": 4,
    "nom": "Articulation du genou broyée, os écrasés et nerf sectionné",
-   "effet": "Les os du genou sont réduits en éclats et le nerf tranché prive la jambe de toute sensation. Le blessé subit un Saignement de −15 PV, la jambe est hors d'usage, le blessé subit l'état Paralysie partielle du membre et subit l'état À terre. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Les os du genou sont réduits en éclats et le nerf tranché prive la jambe de toute sensation. Le blessé subit un Saignement de −15 PV, la jambe est hors d'usage, le blessé subit l'état Paralysie partielle du membre et subit l'état À terre. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -641,7 +641,7 @@
   {
    "degre": 5,
    "nom": "Genou arraché, jambe sectionnée sous la cuisse",
-   "effet": "Le genou est arraché et la jambe se détache sous la cuisse, le sang jaillit du moignon. Le blessé subit un Saignement de −20 PV, perd définitivement la jambe sous le genou, subit l'état Immobilisé puis l'état À terre. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "Le genou est arraché et la jambe se détache sous la cuisse, le sang jaillit du moignon. Le blessé subit un Saignement de −20 PV, perd définitivement la jambe sous le genou, subit l'état Immobilisé puis l'état À terre. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -707,7 +707,7 @@
   {
    "degre": 4,
    "nom": "Organes abdominaux perforés, intestins déchirés",
-   "effet": "La lame a transpercé le ventre et perforé les organes ; les intestins déchirés se vident dans la cavité abdominale. La douleur cloue le blessé sur place et l'écoulement est massif. Le blessé subit un Saignement de −20 PV et l'état Immobilisé. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "La lame a transpercé le ventre et perforé les organes ; les intestins déchirés se vident dans la cavité abdominale. La douleur cloue le blessé sur place et l'écoulement est massif. Le blessé subit un Saignement de −20 PV et l'état Immobilisé. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -723,7 +723,7 @@
   {
    "degre": 5,
    "nom": "Abdomen ouvert, organes vitaux arrachés",
-   "effet": "L'abdomen se déchire et les organes vitaux qu'il abrite sont broyés et arrachés de la cavité. Le sang jaillit en flot continu et la conscience vacille. Le blessé subit un Saignement de −30 PV et la perte définitive des organes arrachés. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "L'abdomen se déchire et les organes vitaux qu'il abrite sont broyés et arrachés de la cavité. Le sang jaillit en flot continu et la conscience vacille. Le blessé subit un Saignement de −30 PV et la perte définitive des organes arrachés. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Impossible",
@@ -789,7 +789,7 @@
   {
    "degre": 4,
    "nom": "Bras broyé, os et chairs écrasés",
-   "effet": "Le bras est écrasé, l'os éclaté et les chairs réduites en bouillie, et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV. Le bras du blessé est hors d'usage. Le blessé subit l'état Paralysie partielle du membre. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Le bras est écrasé, l'os éclaté et les chairs réduites en bouillie, et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV. Le bras du blessé est hors d'usage. Le blessé subit l'état Paralysie partielle du membre. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -805,7 +805,7 @@
   {
    "degre": 5,
    "nom": "Bras sectionné ou arraché",
-   "effet": "Le bras est tranché net ou arraché à la racine, et la douleur fulgurante terrasse le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement l'usage du bras. Le blessé subit l'état Étourdi jusqu'au début de son prochain tour. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "Le bras est tranché net ou arraché à la racine, et la douleur fulgurante terrasse le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement l'usage du bras. Le blessé subit l'état Étourdi jusqu'au début de son prochain tour. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -871,7 +871,7 @@
   {
    "degre": 4,
    "nom": "Fracture ouverte du fémur, artère fémorale sectionnée",
-   "effet": "Le fémur transperce la chair et l'artère fémorale est tranchée, le sang jaillit par saccades. Le blessé subit un Saignement de −20 PV, sa jambe est hors d'usage et il subit l'état À terre. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Le fémur transperce la chair et l'artère fémorale est tranchée, le sang jaillit par saccades. Le blessé subit un Saignement de −20 PV, sa jambe est hors d'usage et il subit l'état À terre. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -887,7 +887,7 @@
   {
    "degre": 5,
    "nom": "Cuisse broyée, membre arraché à la racine",
-   "effet": "La cuisse est entièrement broyée et la jambe arrachée à la racine, ne laissant qu'un moignon béant. Le blessé subit un Saignement de −25 PV, perd définitivement sa jambe et subit l'état À terre. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "La cuisse est entièrement broyée et la jambe arrachée à la racine, ne laissant qu'un moignon béant. Le blessé subit un Saignement de −25 PV, perd définitivement sa jambe et subit l'état À terre. Il subit en outre −20 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -953,7 +953,7 @@
   {
    "degre": 4,
    "nom": "Tibia fracturé et muscle du mollet broyé jusqu'à l'os",
-   "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −35 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −35 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -969,7 +969,7 @@
   {
    "degre": 5,
    "nom": "Membre inférieur arraché ou sectionné sous le genou",
-   "effet": "La jambe est arrachée ou tranchée net sous le genou et le moignon gicle de sang à chaque battement de cœur, la douleur terrasse le blessé au sol. Le blessé subit un Saignement de −20 PV, l'état À terre et la perte définitive de la jambe sous le genou : tout déplacement lui est impossible sans appareillage. Il subit en outre −35 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "La jambe est arrachée ou tranchée net sous le genou et le moignon gicle de sang à chaque battement de cœur, la douleur terrasse le blessé au sol. Le blessé subit un Saignement de −20 PV, l'état À terre et la perte définitive de la jambe sous le genou : tout déplacement lui est impossible sans appareillage. Il subit en outre −35 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -1035,7 +1035,7 @@
   {
    "degre": 4,
    "nom": "Côtes enfoncées perforant un poumon",
-   "effet": "Le volet thoracique s'effondre et les côtes enfoncées transpercent un poumon ; chaque respiration siffle et arrache du sang. Le blessé subit un Saignement de −10 PV, −40 aux actions physiques et a le torse hors d'usage pour tout effort intense. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "Le volet thoracique s'effondre et les côtes enfoncées transpercent un poumon ; chaque respiration siffle et arrache du sang. Le blessé subit un Saignement de −10 PV, −40 aux actions physiques et a le torse hors d'usage pour tout effort intense. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -1051,7 +1051,7 @@
   {
    "degre": 5,
    "nom": "Cage thoracique défoncée et poumon détruit",
-   "effet": "La cage thoracique cède sous le coup et un poumon est irrémédiablement broyé ; le souffle se fait rare et chaque râle projette du sang. Le blessé subit un Saignement de −15 PV et la perte définitive d'un poumon. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "La cage thoracique cède sous le coup et un poumon est irrémédiablement broyé ; le souffle se fait rare et chaque râle projette du sang. Le blessé subit un Saignement de −15 PV et la perte définitive d'un poumon. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -1117,7 +1117,7 @@
   {
    "degre": 4,
    "nom": "Orbite défoncée, le globe est arraché",
-   "effet": "L'orbite enfoncée libère le globe arraché de sa cavité béante et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV, la perte définitive de l'œil et −50 à toute action visée et à la perception visuelle. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "L'orbite enfoncée libère le globe arraché de sa cavité béante et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV, la perte définitive de l'œil et −50 à toute action visée et à la perception visuelle. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -1133,7 +1133,7 @@
   {
    "degre": 5,
    "nom": "Pointe enfoncée à travers l'orbite jusqu'au cerveau",
-   "effet": "La pointe s'enfonce à travers l'orbite et perce le crâne, fouillant les tissus profonds, et la douleur insoutenable terrasse le blessé. Le blessé subit un Saignement de −20 PV, la perte définitive de l'œil et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "La pointe s'enfonce à travers l'orbite et perce le crâne, fouillant les tissus profonds, et la douleur insoutenable terrasse le blessé. Le blessé subit un Saignement de −20 PV, la perte définitive de l'œil et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit en outre −50 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",
@@ -1199,7 +1199,7 @@
   {
    "degre": 4,
    "nom": "Articulation du poignet broyée, tendons et nerfs arrachés",
-   "effet": "L'articulation est broyée et la main pend, inerte et hors d'usage, au bout d'un avant-bras déchiqueté. Le blessé subit un Saignement de −15 PV et l'état Paralysie totale à la main. Il subit en outre −30 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "L'articulation est broyée et la main pend, inerte et hors d'usage, au bout d'un avant-bras déchiqueté. Le blessé subit un Saignement de −15 PV et l'état Paralysie totale à la main. Il subit en outre −30 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -1215,7 +1215,7 @@
   {
    "degre": 5,
    "nom": "Poignet tranché, main séparée du bras",
-   "effet": "Le poignet est tranché net et la main se détache du bras, perdue définitivement. Le blessé subit un Saignement de −20 PV et la perte définitive de l'usage de la main. Il subit en outre −30 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Absurde ou tomber Inconscient.",
+   "effet": "Le poignet est tranché net et la main se détache du bras, perdue définitivement. Le blessé subit un Saignement de −20 PV et la perte définitive de l'usage de la main. Il subit en outre −30 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Absurde ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Difficile",
@@ -1281,7 +1281,7 @@
   {
    "degre": 4,
    "nom": "Plexus brachial sectionné, vaisseaux de l'aisselle ouverts",
-   "effet": "La lame tranche les nerfs du plexus brachial et ouvre les gros vaisseaux de l'aisselle, le sang jaillit et le bras du blessé ne répond plus à aucun ordre. Le blessé subit un Saignement de −15 PV et l'état Paralysie totale du bras, et les nerfs sectionnés lui infligent un malus permanent de −2 à la Force, à l'Agilité et à la Dextérité. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Très difficile ou tomber Inconscient.",
+   "effet": "La lame tranche les nerfs du plexus brachial et ouvre les gros vaisseaux de l'aisselle, le sang jaillit et le bras du blessé ne répond plus à aucun ordre. Le blessé subit un Saignement de −15 PV et l'état Paralysie totale du bras, et les nerfs sectionnés lui infligent un malus permanent de −2 à la Force, à l'Agilité et à la Dextérité. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Très difficile ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Très difficile",
@@ -1297,7 +1297,7 @@
   {
    "degre": 5,
    "nom": "Épaule broyée, bras arraché de la ceinture scapulaire",
-   "effet": "L'articulation est entièrement broyée et le bras est arraché de la ceinture scapulaire, ne laissant au blessé qu'un moignon déchiqueté qui gicle de sang. Le blessé subit un Saignement de −20 PV et perd définitivement son bras. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test de Résistance à la douleur Difficulté Impossible ou tomber Inconscient.",
+   "effet": "L'articulation est entièrement broyée et le bras est arraché de la ceinture scapulaire, ne laissant au blessé qu'un moignon déchiqueté qui gicle de sang. Le blessé subit un Saignement de −20 PV et perd définitivement son bras. Il subit en outre −40 à toute action. Au début de son prochain tour, le blessé doit réussir un test d'Impassibilité Difficulté Impossible ou tomber Inconscient.",
    "premiersSecours": {
     "possible": true,
     "difficulte": "Absurde",

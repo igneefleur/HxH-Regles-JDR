@@ -30,7 +30,7 @@ Une fois ses nœuds ouverts, le pratiquant cesse de laisser son aura se dissiper
 
 Si le personnage tenait un autre état du Nen, activer le Ten le lui fait perdre. Activer, désactiver ou maintenir le Ten relève d'une même [activité](../personnage/capacites-physiques.md#activite), de même valeur pour les trois, qui s'allège à chaque palier jusqu'à devenir nulle : au plus haut, le voile tient sans effort, même endormi.
 
-Tant que le Ten est tenu, le personnage gagne +40 en résistance mentale.
+Tant que le Ten est tenu, le personnage gagne +40 au Courage et au Sang-froid.
 
 <p class="palier">Basique</p>
 
@@ -66,7 +66,7 @@ Le voile ne demande plus aucun effort : il tient au repos, jusque dans le sommei
 
 Le Zetsu est l'arrêt total du Nen : le pratiquant referme tous ses nœuds et coupe toute sortie d'aura. Sa présence devient très difficile à sentir, ce qui en fait l'état idéal pour filer ou approcher une cible sans être perçu, et la perception des auras voisines s'aiguise au point de déceler un In. Mais le corps, privé de voile, n'a plus aucune défense : la moindre attaque d'aura y inflige d'énormes dégâts. Demeurer en Zetsu repose ; y entrer ou en sortir demande un effort que la maîtrise abrège.
 
-Entrer en Zetsu fait tomber tout autre état du Nen, étant l'extinction de l'aura déployée. Maintenir le Zetsu n'est même pas une [activité](../personnage/capacites-physiques.md#activite) légère. En Zetsu, le personnage gagne +80 aux jets de discrétion, mais subit −20 en résistance mentale.
+Entrer en Zetsu fait tomber tout autre état du Nen, étant l'extinction de l'aura déployée. Maintenir le Zetsu n'est même pas une [activité](../personnage/capacites-physiques.md#activite) légère. En Zetsu, le personnage gagne +80 aux jets de discrétion, mais subit −20 au Courage et au Sang-froid.
 
 <p class="palier">Basique</p>
 
@@ -104,7 +104,7 @@ En forçant ses pores à s'ouvrir grand, le pratiquant produit bien plus d'aura 
 
 Activer un état de Ren coûte une action, le désactiver aussi ; s'il tenait un autre état du Nen, il le perd. Le maintenir est une [activité](../personnage/capacites-physiques.md#activite) lourde.
 
-En accumulant, le personnage met en réserve une partie de son UAR totale pour l'employer de plusieurs manières. Utilisés ou non, ces points sont perdus au début de son prochain round.
+En accumulant, le personnage met en réserve une partie de son UAR totale, son unité d'aura accumulée ou UAA, pour l'employer de plusieurs manières. Employée ou non, l'UAA est perdue au début de son prochain round.
 
 <div class="defs" markdown>
 
@@ -112,9 +112,9 @@ En accumulant, le personnage met en réserve une partie de son UAR totale pour l
 
 **Réduction de dégâts :** il peut transformer jusqu'à 30 % de son UAR en réduction de dégâts (ratio 1:1).
 
-**Gyo :** il peut verser jusqu'à 50 % de son UAR dans son Gyo, s'il le connaît ; cette UA s'ajoute à son jet.
+**Gyo :** il peut verser jusqu'à 50 % de son UAR dans son Gyo, s'il le connaît ; cette UAA s'ajoute à son jet.
 
-**In :** il peut verser jusqu'à 50 % de son UAR dans son In, s'il le connaît ; cette UA s'ajoute à son jet.
+**In :** il peut verser jusqu'à 50 % de son UAR dans son In, s'il le connaît ; cette UAA s'ajoute à son jet.
 
 </div>
 
@@ -172,7 +172,7 @@ Applications plus fines des fondamentales, qui séparent le débutant du combatt
 
 Application avancée du Ren, le Gyo concentre dans une seule partie du corps une part d'aura bien supérieure à la normale, au lieu de la répartir : la zone choisie voit sa puissance décuplée, mais le reste du corps, dégarni, se découvre d'autant. Porté le plus souvent aux yeux, il révèle ce qui échappe au regard ordinaire : le flux d'aura d'autrui, les objets dissimulés par l'In, jusqu'aux traces les plus ténues.
 
-Activer le Gyo coûte une action ; le personnage le maintient aussi longtemps qu'il veut, sans exclure ses autres états. Le Gyo donne +40 à tous ses [jets sensoriels](../personnage/sens.md). Pour percevoir le Nen, et seulement pour cela, il peut renforcer son jet en y versant de l'UA prise sur sa réserve (en état de Ren, de Ken, de Ko ou de Ryu, dans la limite du plafond de cet état), immobilisée tant que le Gyo dure et modulable d'un round à l'autre ; ce renfort se cumule avec le +40, et dès que le jet dépasse le seuil d'un In, le personnage perce la dissimulation et voit l'aura, le piège ou la capacité cachés.
+Activer le Gyo coûte une action ; le personnage le maintient aussi longtemps qu'il veut, sans exclure ses autres états. Le Gyo donne +40 à tous ses [jets sensoriels](../personnage/sens.md). Pour percevoir le Nen, et seulement pour cela, il peut renforcer son jet en y versant de l'UAA prise sur sa réserve (en état de Ren, de Ken, de Ko ou de Ryu, dans la limite du plafond de cet état), immobilisée tant que le Gyo dure et modulable d'un round à l'autre ; ce renfort se cumule avec le +40, et dès que le jet dépasse le seuil d'un In, le personnage perce la dissimulation et voit l'aura, le piège ou la capacité cachés.
 </div>
 
 <div class="mcard art" markdown>
@@ -201,9 +201,9 @@ Tant qu'il maintient le Ken, le personnage met une partie de son UAR en réserve
 
 **Réduction de dégâts :** il peut transformer jusqu'à 50 % de son UAR en réduction de dégâts (ratio 1:1).
 
-**Gyo :** il peut verser jusqu'à 50 % de son UAR dans son Gyo, s'il le connaît ; cette UA s'ajoute à son jet.
+**Gyo :** il peut verser jusqu'à 50 % de son UAR dans son Gyo, s'il le connaît ; cette UAA s'ajoute à son jet.
 
-**In :** il peut verser jusqu'à 50 % de son UAR dans son In, s'il le connaît ; cette UA s'ajoute à son jet.
+**In :** il peut verser jusqu'à 50 % de son UAR dans son In, s'il le connaît ; cette UAA s'ajoute à son jet.
 
 </div>
 
@@ -301,7 +301,7 @@ Le rayon part d'un mètre, compris dans l'apprentissage de l'En, et s'étend cra
 
 Forme avancée du Zetsu, l'In rend l'aura imperceptible, même aux autres utilisateurs de Nen : là où le Zetsu éteint l'aura, l'In en masque le flux, qui demeure actif tout en échappant aux cinq sens comme à toute perception extrasensorielle. C'est l'art des embuscades, car il dissimule la présence du pratiquant comme les constructions de Transmutation et les objets de Conjuration qu'il a façonnés. Un adversaire averti le devine là où il ne sent aucune aura alors qu'il en faudrait, et un Gyo le perce.
 
-Activer l'In coûte une action ; le personnage le maintient aussi longtemps qu'il veut, sans exclure ses autres états. En le déployant, il lance une seule fois un jet de [camouflage](../personnage/competences.md), qui ne se relance pas. Chaque round, il y verse de l'UA prise sur sa réserve (en état de Ren, de Ken, de Ko ou de Ryu, dans la limite du plafond de cet état), et le seuil de l'In vaut alors ce jet plus l'UA versée ce round. Cette UA reste immobilisée tant que l'In dure, indisponible pour les dégâts ou la réduction ; le personnage peut en changer le montant d'un round à l'autre, le seuil suivant sans nouveau jet. Hors d'un état à réserve, l'In se réduit à son seul jet de camouflage. Tant qu'il les couvre, son aura, ses pièges et ses capacités restent indétectables à qui ne dépasse pas ce seuil par un Gyo.
+Activer l'In coûte une action ; le personnage le maintient aussi longtemps qu'il veut, sans exclure ses autres états. En le déployant, il lance une seule fois un jet de [camouflage](../personnage/competences.md), qui ne se relance pas. Chaque round, il y verse de l'UAA prise sur sa réserve (en état de Ren, de Ken, de Ko ou de Ryu, dans la limite du plafond de cet état), et le seuil de l'In vaut alors ce jet plus l'UAA versée ce round. Cette UAA reste immobilisée tant que l'In dure, indisponible pour les dégâts ou la réduction ; le personnage peut en changer le montant d'un round à l'autre, le seuil suivant sans nouveau jet. Hors d'un état à réserve, l'In se réduit à son seul jet de camouflage. Tant qu'il les couvre, son aura, ses pièges et ses capacités restent indétectables à qui ne dépasse pas ce seuil par un Gyo.
 </div>
 
 <div class="mcard art" markdown>
@@ -319,9 +319,9 @@ Tant qu'il le maintient, le personnage met toute son UAR en réserve, perdue au 
 
 **Réduction de dégâts :** il peut transformer 100 % de son UAR en réduction de dégâts (ratio 1:1).
 
-**Gyo :** il peut verser 100 % de son UAR dans son Gyo, s'il le connaît ; cette UA s'ajoute à son jet.
+**Gyo :** il peut verser 100 % de son UAR dans son Gyo, s'il le connaît ; cette UAA s'ajoute à son jet.
 
-**In :** il peut verser 100 % de son UAR dans son In, s'il le connaît ; cette UA s'ajoute à son jet.
+**In :** il peut verser 100 % de son UAR dans son In, s'il le connaît ; cette UAA s'ajoute à son jet.
 
 </div>
 
@@ -371,9 +371,9 @@ Tant qu'il le maintient, le personnage met une partie de son UAR en réserve, pe
 
 **Réduction de dégâts :** il peut transformer jusqu'à 80 % de son UAR en réduction de dégâts (ratio 1:1).
 
-**Gyo :** il peut verser jusqu'à 80 % de son UAR dans son Gyo, s'il le connaît ; cette UA s'ajoute à son jet.
+**Gyo :** il peut verser jusqu'à 80 % de son UAR dans son Gyo, s'il le connaît ; cette UAA s'ajoute à son jet.
 
-**In :** il peut verser jusqu'à 80 % de son UAR dans son In, s'il le connaît ; cette UA s'ajoute à son jet.
+**In :** il peut verser jusqu'à 80 % de son UAR dans son In, s'il le connaît ; cette UAA s'ajoute à son jet.
 
 </div>
 
