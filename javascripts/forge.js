@@ -40,6 +40,7 @@
   // une propriété à paliers ; on l'ajoute aux propriétés pour le coût, la fiche et les prérequis.
   function suppProps() { var m = ob("munitions"); return m ? DATA.supplementaires.concat([m]) : DATA.supplementaires; }
   function map(prop, ti) { var m = {}, t = prop && prop.tables[ti || 0]; if (t) t.rows.forEach(function (r) { m[r.label] = r.cost; }); return m; }
+  function mapAll(prop) { var m = {}; if (prop) prop.tables.forEach(function (t) { t.rows.forEach(function (r) { m[r.label] = r.cost; }); }); return m; }  // toutes les tables (ex. modificateur : force du porteur + propulsion)
   function noteOf(prop, label, ti) { var t = prop && prop.tables[ti || 0]; if (t) for (var i = 0; i < t.rows.length; i++) if (t.rows[i].label === label) return t.rows[i].note; return null; }
   function cost(n) { return n === 0 ? "–" : (n > 0 ? "+" + n : String(n)); }
 
@@ -102,7 +103,7 @@
     var np = Object.keys(ptypes).length + (state.cone ? 1 : 0);
     if (np >= 2) add("Portées ×" + np, (np - 1) * 10);
     add(state.mains, map(ob("mains"), 0)[state.mains] || 0);
-    add("Modificateur " + state.mod, map(ob("modificateur-de-degats"), 0)[state.mod] || 0);
+    add("Modificateur " + state.mod, mapAll(ob("modificateur-de-degats"))[state.mod] || 0);
     add("Compatibilité AM " + state.am, map(ob("compatibilite-arts-martiaux"), 0)[state.am] || 0);
     add("Illégalité " + state.illeg, map(ob("illegalite"), 0)[state.illeg] || 0);
     suppProps().forEach(function (p) {
@@ -128,7 +129,6 @@
       p.prereqs.forEach(function (pr) {
         var low = pr.toLowerCase();
         if (/incompatible/.test(low) && /2 mains/.test(low) && state.mains === "2 mains") w.push(p.name + " est incompatible avec une arme à deux mains.");
-        if (/incompatible/.test(low) && /modificateur de force/.test(low) && /[123]/.test(state.mod || "")) w.push(p.name + " est incompatible avec le modificateur de Force : la puissance ne vient pas des muscles.");
         if (/n[ée]cessite/.test(low) && /zone ou c[oô]ne/.test(low) && !hasZoneOuCone()) w.push(p.name + " nécessite une Zone ou un Cône.");
         if (/n[ée]cessite/.test(low) && /lancer/.test(low) && !hasLancer()) w.push(p.name + " nécessite une portée de lancer.");
         if (/incompatible/.test(low) && /usage unique/.test(low) && activeSupp("usage-unique")) w.push("Retour et Usage unique sont incompatibles.");
@@ -160,7 +160,11 @@
     });
     return out.join(", ") || "Aucune";
   }
-  function ficheMod() { return state.mod === "×0" ? "×0" : state.mod + " " + (state.toggles["finesse"] ? "DEX" : "FOR"); }
+  function ficheMod() {
+    if (state.mod === "×0") return "×0";
+    if (state.mod.charAt(0) === "+") return state.mod;                                   // propulsion mécanique : dégâts fixes
+    return state.mod + " " + (state.toggles["finesse"] ? "DEX" : "FOR");                 // force du porteur : ×N FOR/DEX
+  }
   function ficheMunitions() { return state.tiers["munitions"] || "—"; }
 
   // --- panneau de synthèse ---------------------------------------------------
@@ -299,6 +303,22 @@
     });
     parent.appendChild(seg);
   }
+  // choix simple sur TOUTES les tables d'une fiche (modificateur : force du porteur ×N + propulsion +X)
+  function segForAll(parent, id, setter, cur) {
+    var seg = el("div", "fg-seg");
+    ob(id).tables.forEach(function (t) {
+      t.rows.forEach(function (r) {
+        var b = el("button", "fg-seg-btn" + (r.label === cur ? " on" : ""));
+        b.type = "button"; b.innerHTML = r.label; b.title = (r.note ? r.note + " — " : "") + cost(r.cost);
+        b.addEventListener("click", function () {
+          seg.querySelectorAll(".fg-seg-btn").forEach(function (x) { x.classList.remove("on"); });
+          b.classList.add("on"); setter(r.label); refresh();
+        });
+        seg.appendChild(b);
+      });
+    });
+    parent.appendChild(seg);
+  }
   function tierSelect(parent, prop, cur, onPick) {
     var s = el("select", "fg-select");
     var none = el("option"); none.value = ""; none.textContent = "Aucun"; s.appendChild(none);
@@ -353,7 +373,7 @@
 
     // Modificateur
     var cMo = card(grid, "Modificateur", "", ob("modificateur-de-degats").desc);
-    segFor(cMo, "modificateur-de-degats", function (v) { state.mod = v; }, state.mod);
+    segForAll(cMo, "modificateur-de-degats", function (v) { state.mod = v; }, state.mod);
 
     // Compatibilité AM
     var cA = card(grid, "Compatibilité AM", "", ob("compatibilite-arts-martiaux").desc);

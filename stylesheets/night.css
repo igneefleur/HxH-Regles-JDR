@@ -107,7 +107,6 @@ html.night .md-typeset .wf-lbl,
 html.night .md-typeset .wf-roll.wf-aucun,
 html.night .md-typeset .cj-modules p.formula,
 html.night .md-typeset .cj-modules .mod-type,
-html.night .md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(2),
 html.night .md-typeset .cl-sha,
 html.night .md-typeset .cl-meta,
 html.night .md-typeset .cl-info {
@@ -277,6 +276,32 @@ html.night .md-typeset .cj-modules.anima table:not([class]) th:nth-child(5),
 html.night .md-typeset .cj-modules.anima table:not([class]) td:nth-child(5) {
   border-right-color: #3c3527;
 }
+
+/* Tables de compétences façon « armes » (mêmes teintes que les tables anima en
+   mode nuit) : en-tête sombre à texte clair + zébrures sombres, au lieu du vert. */
+html.night .md-typeset .comp-recap table:not([class]) th,
+html.night .md-typeset .diff-table table:not([class]) th {
+  background: #2a2519;
+  color: #e8dfcb;
+  border-bottom-color: #3c3527;
+}
+html.night .md-typeset .comp-recap table:not([class]) td,
+html.night .md-typeset .diff-table table:not([class]) td {
+  border-bottom-color: #3c3527;
+}
+html.night .md-typeset .comp-recap table:not([class]) tbody tr:nth-child(odd)  td,
+html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(odd)  td { background: #241f16; }
+html.night .md-typeset .comp-recap table:not([class]) tbody tr:nth-child(even) td,
+html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) td { background: #2a2519; }
+
+/* Matrice des sens (page Formes du vivant) : dégradé vert clair (primaire) → foncé
+   (inexistant), adapté au fond sombre ; box-shadow de la même couleur pour souder les
+   jointures. Les en-têtes prennent var(--paper) via extra.css (fond page sombre). */
+html.night .md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.p { background: #63a06d !important; color: #121a12 !important; box-shadow: 0 0 0 1px #63a06d; }
+html.night .md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.s { background: #4c7d52 !important; box-shadow: 0 0 0 1px #4c7d52; }
+html.night .md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.t { background: #3a5d3e !important; box-shadow: 0 0 0 1px #3a5d3e; }
+html.night .md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.l { background: #2f452f !important; box-shadow: 0 0 0 1px #2f452f; }
+html.night .md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.i { background: #28352a !important; box-shadow: 0 0 0 1px #28352a; }
 
 /* Puces de modificateurs (.smod) : pavé clair → pavé sombre, texte → clair */
 html.night .md-typeset .sblock .smod {
