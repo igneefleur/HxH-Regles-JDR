@@ -47,7 +47,7 @@ nav:
       - L'Échelle du Monde:
           - Les Tailles: content/regles/monde/tailles.md
           - Types de Dégâts: content/regles/monde/degats.md
-          - Les Véhicules: content/regles/monde/vehicules.md
+          - Formes du vivant: content/regles/monde/formes.md
       - Le Combat:
           - Déroulement du combat: content/regles/combat/deroulement-combat.md
           - Manœuvres: content/regles/combat/manoeuvres.md
@@ -65,8 +65,6 @@ nav:
           - Manipulation: content/regles/nen/manipulation.md
           - Conjuration: content/regles/nen/conjuration.md
           - Spécialisation: content/regles/nen/specialisation.md
-          - Formes du vivant: content/regles/nen/formes.md
-          - Ancienne version: content/regles/nen/ancienne-version.md
   - Univers:
       - content/univers/index.md
       - Cartes du monde: content/univers/cartes.md

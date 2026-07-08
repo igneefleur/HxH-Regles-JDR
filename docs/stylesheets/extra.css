@@ -289,63 +289,72 @@
 .md-typeset .cols table:not([class]) td:not([align]) {
   text-align: justify;
 }
-/* Cartes Compatibilité AM et Illégalité : 4 colonnes, largeurs EXPLICITES par table
-   (le Statut de l'Illégalité est long, le Palier de l'AM court). On garde le
-   table-layout: fixed de .cols et on fixe des proportions adaptées à CHACUNE.
-   Ciblé par [data-cols] : uniquement ces deux tables. */
+/* Cartes Compatibilité AM et Illégalité : 5 colonnes (une colonne Prix ajoutée),
+   largeurs EXPLICITES par table (le Statut de l'Illégalité est long, le Palier de
+   l'AM court). On garde le table-layout: fixed de .cols et on fixe des proportions
+   adaptées à CHACUNE. Ciblé par [data-cols] : uniquement ces deux tables. */
 .md-typeset .cols [data-cols] table:not([class]) td { text-align: center; }
 .md-typeset .cols [data-cols] table:not([class]) th:nth-child(2),
 .md-typeset .cols [data-cols] table:not([class]) td:nth-child(2) { text-align: left; }
-/* AM : compatibilité | palier | illégalité max | coût */
+/* Coût (DERNIÈRE colonne) et Prix (avant-dernière) de largeur UNIFORME et alignés
+   à droite dans TOUTES les fiches de propriétés → les valeurs s'alignent en colonne
+   d'une fiche à l'autre, plus facile à lire. Largeur FIXE en rem (pas en %) : un % de
+   la largeur de table variait de 3 à 5 colonnes (border-spacing/padding par colonne :
+   ~73 px à 3 col, ~69 px à 5 col, et l'aberrante Lourdeur à 78) ; une largeur fixe donne
+   des pixels IDENTIQUES partout, quel que soit le nombre de colonnes. nth-last-child :
+   marche à 3, 4 ou 5 colonnes ; !important pour battre les règles génériques. */
+/* NB : ces règles Prix/Coût sont réservées aux fiches d'armes (.armes-fiches) ; sans
+   ce garde-fou elles écraseraient les tables descriptives des autres pages qui
+   emploient aussi .mcard (arts martiaux, etc. : dernière colonne longue forcée à
+   2,5 rem nowrap = illisible). */
+.md-typeset .cols.armes-fiches .mcard table:not([class]) th:last-child,
+.md-typeset .cols.armes-fiches .mcard table:not([class]) td:last-child { width: 2.5rem !important; text-align: right !important; white-space: nowrap; }        /* Coût (étroit : collé au Prix) */
+/* Prix : largeur fixe UNIQUEMENT sur les tables à paliers (≥ 3 colonnes), pour que la
+   colonne Prix ait la même taille d'une fiche à paliers à l'autre. */
+.md-typeset .cols.armes-fiches .mcard table:not([class]):has(th:nth-child(3)) th:nth-last-child(2),
+.md-typeset .cols.armes-fiches .mcard table:not([class]):has(th:nth-child(3)) td:nth-last-child(2) { width: 4.6rem !important; text-align: right !important; white-space: nowrap; }  /* Prix */
+/* Propriétés à coût fixe : table « Prix | Coût » (2 colonnes). Elle occupe TOUTE la
+   largeur de la fiche (comme les tables à paliers) ; la colonne Prix (flexible, auto)
+   absorbe le vide à gauche et aligne son contenu à droite, si bien que Prix et Coût
+   tombent au même bord droit que les tables à paliers (Coût = 2,5 rem partout). */
+.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) { width: 100%; }
+.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) th:first-child,
+.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) td:first-child { text-align: right !important; }
+/* Libellés (colonnes AVANT Prix/Coût), somme = 64 % pour tomber pile à 100 %. */
+/* Fiches génériques à 3 colonnes (libellé | prix | coût) : libellé = 64 %. */
+.md-typeset .cols.armes-fiches .mcard:not([data-cols]) table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) th:nth-child(1),
+.md-typeset .cols.armes-fiches .mcard:not([data-cols]) table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) td:nth-child(1) { width: 64%; text-align: left; }
+/* AM : compatibilité | palier | illégalité max (libellés). */
 .md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(1),
-.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(1) { width: 18%; }
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(1) { width: 14%; }
 .md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(2),
-.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(2) { width: 30%; }
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(2) { width: 26%; }
 .md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(3),
-.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(3) { width: 30%; }
-.md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(4),
-.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(4) { width: 22%; }
-/* Illégalité : illégalité | statut (long) | AM max | coût */
+.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(3) { width: 24%; }
+/* Illégalité : illégalité | statut (long) | AM max (libellés). */
 .md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(1),
-.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(1) { width: 16%; }
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(1) { width: 14%; white-space: nowrap; }
 .md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(2),
-.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(2) { width: 52%; }
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(2) { width: 38%; }
 .md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(3),
-.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(3) { width: 14%; }
-.md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(4),
-.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(4) { width: 18%; }
-/* Tableaux d'armes (les seuls à 10 colonnes du livre) : cellules courtes (symboles,
-   petits nombres), donc table-layout: auto les rétrécit. On passe en fixed avec des
-   proportions adaptées pour remplir la colonne de lecture. N'affecte PAS la largeur de page. */
-.md-typeset table:not([class]):has(th:nth-child(10)) {
-  table-layout: fixed;
-}
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(1),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(1) { width: 14%; }  /* Arme */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(2),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(2) { width: 5%; }   /* AM */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(3),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(3) { width: 11%; }  /* Portée */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(4),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(4) { width: 10%; }  /* Munitions */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(5),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(5) { width: 8%; }   /* Mains */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(6),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(6) { width: 5%; }   /* Dégâts */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(7),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(7) { width: 7%; }   /* Mod. dégâts */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(8),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(8) { width: 8%; }   /* Type */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(9),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(9) { width: 6%; }   /* Illégalité */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(10),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(10) { width: 26%; } /* Propriétés */
-/* Centrage des colonnes 2 à 9 (AM, Portée, Munitions, Mains, Dégâts, Mod., Type, Illégalité),
-   en-têtes compris. Arme (1) et Propriétés (10) restent alignées à gauche. */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(n+2):nth-child(-n+9),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(n+2):nth-child(-n+9) {
-  text-align: center;
-}
+.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(3) { width: 12%; }
+/* Mains : mains | effet (long) (libellés). */
+.md-typeset .cols [data-cols="mains"] table:not([class]) th:nth-child(1),
+.md-typeset .cols [data-cols="mains"] table:not([class]) td:nth-child(1) { width: 16%; white-space: nowrap; }
+.md-typeset .cols [data-cols="mains"] table:not([class]) th:nth-child(2),
+.md-typeset .cols [data-cols="mains"] table:not([class]) td:nth-child(2) { width: 48%; }
+/* Table de grade (haut d'armes.md) : 4 colonnes dont la dernière (liste d'armes) très
+   longue. Sans largeurs fixes, elle écrase Grade et Prix (« ×80 » se coupe en deux). */
+.md-typeset .grade-table table:not([class]) { table-layout: fixed; }
+.md-typeset .grade-table table:not([class]) th:nth-child(1),
+.md-typeset .grade-table table:not([class]) td:nth-child(1) { width: 14%; }
+.md-typeset .grade-table table:not([class]) th:nth-child(2),
+.md-typeset .grade-table table:not([class]) td:nth-child(2) { width: 15%; }
+.md-typeset .grade-table table:not([class]) th:nth-child(3),
+.md-typeset .grade-table table:not([class]) td:nth-child(3) { width: 8%; text-align: center; white-space: nowrap; }
+.md-typeset .grade-table table:not([class]) th:nth-child(4),
+.md-typeset .grade-table table:not([class]) td:nth-child(4) { width: 63%; }
+/* (bloc .armes retiré : les tables d'armes sont régies par le bloc .cj-modules.anima.armes plus bas, en !important) */
 /* Tableaux de la page Éclat (apprentissage, niveau/prestige par âge) : colonnes
    régulières, première colonne (Éclat) étroite. Ces tables ont 8 ou 9 colonnes,
    donc on neutralise au passage la règle des tables d'armes (9 colonnes) et le
@@ -850,6 +859,25 @@
 .md-typeset .comp-recap td:nth-child(2) {
   width: 20%;
 }
+/* Tables de compétences façon « armes » : même habillage sépia que les tables
+   .cj-modules.anima (en-tête crème à texte brun + zébrures crème + filets), au lieu
+   de l'en-tête vert plein par défaut. Couvre les récaps de champ (.comp-recap) et la
+   table de difficulté (.diff-table). Seules les couleurs changent ; les largeurs et
+   l'alignement propres à chaque table restent. */
+.md-typeset .comp-recap table:not([class]) th,
+.md-typeset .diff-table table:not([class]) th {
+  background: #fbf7ec;
+  color: #4a3520;
+  border-bottom: 1px solid #b39a68;
+}
+.md-typeset .comp-recap table:not([class]) td,
+.md-typeset .diff-table table:not([class]) td {
+  border-bottom: 1px solid #e6dcc1;
+}
+.md-typeset .comp-recap table:not([class]) tbody tr:nth-child(odd)  td,
+.md-typeset .diff-table table:not([class]) tbody tr:nth-child(odd)  td { background: #f5efdc; }
+.md-typeset .comp-recap table:not([class]) tbody tr:nth-child(even) td,
+.md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) td { background: #fbf7ec; }
 /* Formule (difficulté…) : ligne grise en italique sous un tableau. */
 .md-typeset p.formula {
   font-style: italic;
@@ -1219,30 +1247,7 @@
   background-color: transparent !important;
 }
 
-/* ── Tables d'armes (10 colonnes) : largeurs proportionnelles ── */
-.md-typeset table:not([class]):has(th:nth-child(10)) {
-  table-layout: fixed;
-}
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(1)  { width: 10%; } /* Archétype  */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(2)  { width: 21%; } /* Variantes  */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(3)  { width: 9%;  } /* Prix       */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(4)  { width: 6%;  } /* Illég.     */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(5)  { width: 7%;  } /* Usage      */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(6)  { width: 6%;  } /* Mains      */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(7)  { width: 6%;  } /* Dég.       */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(8)  { width: 9%;  } /* Type       */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(9)  { width: 8%;  } /* Allonge    */
-.md-typeset table:not([class]):has(th:nth-child(10)) th:nth-child(10) { width: 18%; } /* Propriétés */
-/* 2e colonne (variantes) plus discrète ; colonnes de type en petites capitales. */
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(2) {
-  font-size: 0.92em;
-  color: #4a4a4a;
-}
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(7),
-.md-typeset table:not([class]):has(th:nth-child(10)) td:nth-child(8) {
-  font-variant: small-caps;
-  letter-spacing: .03em;
-}
+/* (ancien bloc :has(th:nth-child(10)) « Archétype » supprimé : CSS mort d'avant la refonte des armes, il cassait la table Formes) */
 
 /* ---------- 6. En-tête & onglets (style 5e.tools) ---------- */
 .md-header {
@@ -1563,8 +1568,9 @@ html.book-loading .md-content__inner {
 /* Tables des familles d'armes présentées façon module de Nen (encadré sépia
    d'Anima) : l'habillage (en-tête brun, zébrures crème) vient de .cj-modules
    .anima. Ici on écarte le gabarit 6 colonnes des modules et on REMET les
-   largeurs et l'alignement d'origine des tables d'armes (10 colonnes), en
-   !important pour passer devant les règles !important des modules. */
+   largeurs et l'alignement d'origine des tables d'armes (11 colonnes, Prix
+   inséré avant Propriétés), en !important pour passer devant les règles
+   !important des modules. */
 .md-typeset .cj-modules.anima.armes table:not([class]) {
   table-layout: fixed !important;
 }
@@ -1575,16 +1581,135 @@ html.book-loading .md-content__inner {
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(3),
 .md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(3) { width: 11% !important; text-align: center !important; border-right: none !important; }   /* Portée */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(4),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 10% !important; text-align: center !important; }   /* Munitions */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 8%  !important; text-align: center !important; }   /* Munitions */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(5),
 .md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(5) { width: 8%  !important; text-align: center !important; border-right: none !important; }   /* Mains */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(6),
 .md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(6) { width: 5%  !important; text-align: center !important; }   /* Dégâts */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(7),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(7) { width: 7%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Mod. dégâts */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(7) { width: 6%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Mod. dégâts */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(8),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 8%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Type */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 7%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Type */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(9),
 .md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(9) { width: 6%  !important; text-align: center !important; }   /* Illégalité */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(10),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(10) { width: 26% !important; text-align: left !important; }   /* Propriétés */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(10) { width: 10% !important; text-align: right !important; border-right: none !important; white-space: nowrap; }   /* Prix */
+.md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(11),
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(11) { width: 20% !important; text-align: left !important; }   /* Propriétés */
+
+/* ── Page « Formes du vivant » : matrices larges, MÊME mécanisme que les tables
+   d'armes — table-layout FIXE + largeurs de colonnes explicites en %, sommées à
+   100 %, pour que la table fasse pile la largeur de la page et ne déborde jamais
+   (le texte se replie dans la cellule). On neutralise les largeurs (73/64/9 %) et
+   les filets verticaux hérités des tables de coûts. Trois gabarits selon la classe
+   du conteneur : .membres (11 colonnes), .carac (7), .sens (6). */
+.md-typeset .cj-modules.anima.formes table:not([class]) {
+  table-layout: fixed !important;
+  width: 100%;
+}
+.md-typeset .cj-modules.anima.formes table:not([class]) th,
+.md-typeset .cj-modules.anima.formes table:not([class]) td {
+  border-right: none !important;
+  text-align: center !important;
+  padding: 0.18rem 0.25rem !important;
+  font-size: 0.7rem !important;
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  vertical-align: middle;
+}
+.md-typeset .cj-modules.anima.formes table:not([class]) td {
+  color: inherit !important;
+  font-variant: normal !important;
+  letter-spacing: normal !important;
+}
+.md-typeset .cj-modules.anima.formes table:not([class]) th:first-child,
+.md-typeset .cj-modules.anima.formes table:not([class]) td:first-child {
+  text-align: left !important;
+}
+
+/* Gabarit MEMBRES (10 col) : Forme + 9 comptes. */
+.md-typeset .cj-modules.anima.formes.membres table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.formes.membres table:not([class]) td:nth-child(1) { width: 28% !important; }
+.md-typeset .cj-modules.anima.formes.membres table:not([class]) th:nth-child(n+2):nth-child(-n+10),
+.md-typeset .cj-modules.anima.formes.membres table:not([class]) td:nth-child(n+2):nth-child(-n+10) { width: 8% !important; }
+
+/* Gabarit BIO (5 col) : Forme + exemples, respiration, alimentation, propriété spéciale, tout à gauche. */
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) th,
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) td { text-align: left !important; }
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) td:nth-child(1) { width: 17% !important; }
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) th:nth-child(2),
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) td:nth-child(2) { width: 24% !important; }
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) th:nth-child(3),
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) td:nth-child(3) { width: 10% !important; }
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) th:nth-child(4),
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) td:nth-child(4) { width: 25% !important; }
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) th:nth-child(5),
+.md-typeset .cj-modules.anima.formes.bio table:not([class]) td:nth-child(5) { width: 24% !important; }
+
+/* Gabarit CARACTÉRISTIQUES (7 col) : Forme + 6 caracs centrées. */
+.md-typeset .cj-modules.anima.formes.carac table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.formes.carac table:not([class]) td:nth-child(1) { width: 28% !important; }
+.md-typeset .cj-modules.anima.formes.carac table:not([class]) th:not(:first-child),
+.md-typeset .cj-modules.anima.formes.carac table:not([class]) td:not(:first-child) { width: 12% !important; }
+
+/* Gabarit SENS (6 col) : Forme + 5 niveaux, texte à gauche. */
+.md-typeset .cj-modules.anima.formes.sens table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.formes.sens table:not([class]) td:nth-child(1) { width: 20% !important; }
+.md-typeset .cj-modules.anima.formes.sens table:not([class]) th:not(:first-child),
+.md-typeset .cj-modules.anima.formes.sens table:not([class]) td:not(:first-child) { width: 16% !important; text-align: left !important; }
+
+/* Gabarit MATRICE des sens (.sens-grille) : formes en lignes, un SENS par colonne,
+   en-têtes tournés à la verticale pour faire tenir 17 colonnes ; cases = P/S/T/L/I.
+   Deux largeurs selon le conteneur : .mat-ext (18 colonnes), .mat-int (7 colonnes). */
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) th:first-child { vertical-align: bottom !important; }
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) th:not(:first-child) {
+  vertical-align: bottom !important;
+  padding: 0.3rem 0.02rem !important;
+}
+/* Le texte vertical est porté par un <span> (rotation stable, taille strictement
+   uniforme d'une colonne à l'autre) et non par la cellule, dont la rotation +
+   largeur fractionnaire faisait varier le rendu sous-pixel. */
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) th .vh {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);          /* lecture de bas en haut */
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 0.62rem !important;
+}
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td:not(:first-child) {
+  text-align: center !important;
+  padding: 0.14rem 0.02rem !important;
+  font-weight: 600;
+}
+/* Grille de couleur continue. Couleurs OPAQUES (la transparence délavait le vert vers
+   le parchemin et laissait voir le fond aux jointures = les traits blancs). En plus de
+   border-collapse, un box-shadow de 1px de la MÊME couleur bouche toute jointure
+   sous-pixel. Vert pour les trois sens ACTIFS (primaire → tertiaire, soutenu → clair),
+   gris pour les NON-actifs (latent, puis inexistant sans lettre). Sombre : night.css. */
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+/* En-têtes SANS fond (le fond crème créait un liseré parchemin aux jointures) et
+   sans bordure. */
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) th { border: none !important; background: var(--paper) !important; box-shadow: 0 0 0 1px var(--paper); }
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td { border: none !important; }
+/* Dégradé séquentiel vert, foncé (primaire) → très clair (inexistant). box-shadow de
+   la même teinte pour souder les jointures. Texte crème sur les deux plus foncés. */
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.p { background: #3a6b47 !important; color: #f4efdf !important; box-shadow: 0 0 0 1px #3a6b47; }
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.s { background: #5e9160 !important; color: #f4efdf !important; box-shadow: 0 0 0 1px #5e9160; }
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.t { background: #92bd86 !important; box-shadow: 0 0 0 1px #92bd86; }
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.l { background: #c2d8ae !important; box-shadow: 0 0 0 1px #c2d8ae; }
+.md-typeset .cj-modules.anima.formes.sens-grille table:not([class]) td.i { background: #e6eed9 !important; box-shadow: 0 0 0 1px #e6eed9; }
+.md-typeset .cj-modules.anima.formes.mat-ext table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.formes.mat-ext table:not([class]) td:nth-child(1) { width: 24% !important; }
+.md-typeset .cj-modules.anima.formes.mat-ext table:not([class]) th:not(:first-child),
+.md-typeset .cj-modules.anima.formes.mat-ext table:not([class]) td:not(:first-child) { width: 4.47% !important; }
+/* Sens internes : peu de colonnes, on borne la largeur pour ne pas étaler sur toute la page. */
+.md-typeset .cj-modules.anima.formes.mat-int { max-width: 30rem; }
+.md-typeset .cj-modules.anima.formes.mat-int table:not([class]) th:nth-child(1),
+.md-typeset .cj-modules.anima.formes.mat-int table:not([class]) td:nth-child(1) { width: 40% !important; }
+.md-typeset .cj-modules.anima.formes.mat-int table:not([class]) th:not(:first-child),
+.md-typeset .cj-modules.anima.formes.mat-int table:not([class]) td:not(:first-child) { width: 10% !important; }

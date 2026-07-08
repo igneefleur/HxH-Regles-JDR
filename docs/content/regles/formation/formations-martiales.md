@@ -85,7 +85,7 @@ Ces formations portent sur la conduite du combat, non sur le maniement d'une arm
 <span class="prereq">Prérequis : 100 points dans une compétence d'attaque</span>
 <span class="prereq">Coût : 40 PF</span>
 
-Le personnage peut accomplir une action [Attaquer](../combat/deroulement-combat.md) de plus à chacun de ses tours, par-delà la limite d'une attaque par tour. Les compétences d'attaque sont les quatre compétences d'arme : [Armes de mêlée](../personnage/competences.md), [Armes de jet](../personnage/competences.md), [Archerie](../personnage/competences.md) et [Armes à feu](../personnage/competences.md).
+Le personnage peut accomplir une action [Attaquer](../combat/deroulement-combat.md) de plus à chacun de ses tours, par-delà la limite d'une attaque par tour. Les compétences d'attaque sont les quatre compétences d'arme : [Armes de mêlée](../personnage/competences.md), [Armes de jet](../personnage/competences.md), [Armes de trait](../personnage/competences.md) et [Armes à feu](../personnage/competences.md).
 
 Cette formation se suit une fois par tranche de 100 points dans une même compétence d'attaque, en retenant la plus haute et non la somme. Par exemple, avec 120 en Armes de mêlée et 80 en Armes de jet, le personnage n'y a droit qu'une fois, car une seule compétence franchit 100 ; il lui faut 200 dans une même compétence pour la suivre une deuxième fois.
 </div>

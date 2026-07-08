@@ -11,22 +11,26 @@ Seule la bibliothèque standard est utilisée (comme hooks/nen_atelier.py) : la 
 n'installe que mkdocs-material et le moteur PDF. Le fichier est ajouté via l'API
 Files (en mémoire) — on n'écrit PAS dans docs/.
 
-Structure d'une fiche dans armes.md :
+Structure d'une fiche dans armes.md. Le Prix et le Coût vivent dans une table (plus
+dans des spans gris) ; les spans « prereq » ne portent que Nécessite/Incompatible.
 
     <div class="mcard" markdown>
-    **Nom** <span class="prereq">Coût : +10</span> <span class="prereq">Nécessite : …</span>
+    **Nom** <span class="prereq">Nécessite : …</span>
 
     Description en une ou deux phrases…
 
-    | Palier | Coût |      (facultatif ; une ou plusieurs tables markdown)
-    |---|:---:|
-    | 3 m | +20 |
+    | Palier | Prix | Coût |     (propriété à paliers : une ou plusieurs tables)
+    |---|---|:---:|
+    | 3 m | 360 Ɉ | +20 |
     </div>
 
-La dernière colonne d'une table porte toujours le coût. Le libellé de la première
-colonne identifie le palier. La Forge (forge.js) porte la sémantique d'interface
-(curseur, choix simple, choix multiple, bascule) ; ce hook ne fournit que le
-contenu (noms, coûts, paliers, descriptions).
+Une propriété à COÛT FIXE porte une table à une seule ligne « | Prix | Coût | » ;
+_parse_card en tire fixedCost/prixLabel et la retire des tables affichables (la Forge
+la rendrait sinon comme un palier). La colonne dont l'entête commence par « Coût »
+porte le coût, celle par « Prix » le prix (ignoré au chiffrage) ; le libellé de la
+première colonne identifie le palier. La Forge (forge.js) porte la sémantique
+d'interface (curseur, choix simple, choix multiple, bascule) ; ce hook ne fournit que
+le contenu (noms, coûts, paliers, descriptions).
 """
 import html
 import json
@@ -90,15 +94,23 @@ def _tables(lines):
         if len(rows) < 2:
             continue
         header = rows[0]
+        low = [_clean(c).lower() for c in header]
+        ci = next((i for i, c in enumerate(low) if c.startswith("coût") or c.startswith("cout")), len(header) - 1)  # colonne Coût
+        pi = next((i for i, c in enumerate(low) if c.startswith("prix")), None)                                    # colonne Prix (à ignorer)
         body = [r for r in rows[2:] if any(r)]   # rows[1] = séparateur |---|
         parsed = []
         for r in body:
             if len(r) < 2:
                 continue
+            cci = ci if ci < len(r) else len(r) - 1
+            note = None
+            for j in range(1, len(r)):           # 1re colonne descriptive après le label, ni Coût ni Prix
+                if j != cci and j != pi:
+                    note = _clean(r[j]); break
             parsed.append({
                 "label": _clean(r[0]),
-                "cost": _cost(r[-1]),
-                "note": _clean(r[1]) if len(r) > 2 else None,
+                "cost": _cost(r[cci]),
+                "note": note,
             })
         if parsed:
             out.append({"cols": [_clean(c) for c in header], "rows": parsed})
@@ -113,8 +125,11 @@ def _parse_card(inner):
     spans = [_clean(s) for s in _PREREQ.findall(inner)]
     cout = next((s.split(":", 1)[1].strip() for s in spans
                  if s.lower().startswith("coût") or s.lower().startswith("cout")), "")
+    prix = next((s.split(":", 1)[1].strip() for s in spans
+                 if s.lower().startswith("prix")), "")
     prereqs = [s for s in spans if not (s.lower().startswith("coût")
-                                        or s.lower().startswith("cout"))]
+                                        or s.lower().startswith("cout")
+                                        or s.lower().startswith("prix"))]
 
     # Retire la ligne de titre (nom + spans) ; le reste = prose puis tables.
     body = inner[nm.end():]
@@ -125,10 +140,29 @@ def _parse_card(inner):
 
     tables = _tables(lines)
     fixed = _cost(cout) if re.fullmatch(r"[+-−]?\s*\d+", cout.strip()) else None
+
+    # Format des règles : le Prix et le Coût ne sont plus dans des spans gris mais
+    # dans une table. Une propriété à COÛT FIXE porte une table à une seule ligne
+    # « | Prix | Coût | » (pas de colonne de palier). On la reconnaît, on en tire le
+    # coût fixe (et le prix), et on la RETIRE des tables affichables : sinon la Forge
+    # la rendrait comme un palier au lieu d'une simple bascule. Les propriétés à
+    # paliers gardent leurs tables (première colonne = libellé de palier, fixed=None).
+    if fixed is None and not cout:
+        fi = next((i for i, t in enumerate(tables)
+                   if [c.lower() for c in t["cols"]] == ["prix", "coût"]
+                   and len(t["rows"]) == 1), None)
+        if fi is not None:
+            row = tables.pop(fi)["rows"][0]
+            fixed = row["cost"]                 # coût fixe (dernière colonne)
+            prix = row["label"]                 # 1re colonne = le Prix en Ɉ
+            if fixed is not None:
+                cout = f"+{fixed}" if fixed > 0 else (f"{MINUS}{-fixed}" if fixed < 0 else "0")
+
     return {
         "id": _slug(name),
         "name": name,
         "coutLabel": cout,
+        "prixLabel": prix,       # prix en Ɉ (jenny) du palier, si indiqué
         "fixedCost": fixed,      # coût fixe si « Coût : +10 », sinon None (var./portée)
         "prereqs": prereqs,      # « Nécessite … », « Incompatible … »
         "desc": desc,
@@ -164,7 +198,7 @@ def _armes(text):
         if not (s.startswith("|") and s.endswith("|")):
             continue
         cells = [c.strip() for c in s.strip("|").split("|")]
-        if len(cells) != 10:
+        if len(cells) != 11:
             continue
         name = cells[0]
         if name in ("Arme", "") or set(name) <= set("-: "):   # en-tête / séparateur
@@ -176,7 +210,7 @@ def _armes(text):
             "fiche": {
                 "am": cells[1], "portee": cells[2].replace("<br>", " · "), "munitions": cells[3].replace("<br>", " "), "mains": cells[4],
                 "degats": cells[5], "mod": cells[6] or "×0", "type": cells[7],
-                "illeg": cells[8], "props": cells[9] or "Aucune",
+                "illeg": cells[8], "prix": cells[9], "props": cells[10] or "Aucune",
             },
         })
     return out

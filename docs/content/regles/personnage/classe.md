@@ -69,15 +69,15 @@ Le Combattant peut tout miser sur le combat et l'effort physique, mais reste bri
 
 <div class="keep" markdown>
 
-En prenant la classe, le personnage fixe deux choix. Il porte son bonus d'attaque sur un type d'arme, [Armes de mêlée](competences.md), [Armes de jet](competences.md), [Archerie](competences.md) ou [Armes à feu](competences.md), et son bonus de défense sur la [Parade](competences.md) ou sur l'[Esquive](competences.md).
+En prenant la classe, le personnage fixe deux choix. Il porte son bonus d'attaque sur un type d'arme, [Armes de mêlée](competences.md), [Armes de jet](competences.md), [Armes de trait](competences.md) ou [Armes à feu](competences.md), et son bonus de défense sur la [Parade](competences.md) ou sur l'[Esquive](competences.md).
 
 | Bonus de classe | Effet |
 |---|:---:|
 | [Initiative](competences.md) | +10 |
-| [Armes de mêlée](competences.md), [Armes de jet](competences.md), [Archerie](competences.md) ou [Armes à feu](competences.md), au choix | +10 |
+| [Armes de mêlée](competences.md), [Armes de jet](competences.md), [Armes de trait](competences.md) ou [Armes à feu](competences.md), au choix | +10 |
 | [Parade](competences.md) ou [Esquive](competences.md), au choix | +10 |
 | [Lutte](competences.md) | +10 |
-| [Impassibilité](competences.md) | +10 |
+| [Résistance à la Douleur](competences.md) | +10 |
 
 </div>
 

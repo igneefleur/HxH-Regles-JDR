@@ -988,7 +988,7 @@ header_cell(F, f"G{row}", "Type")
 header_cell(F, f"H{row}", "Dégâts de base")
 row += 1
 label(F, f"A{row}", "")
-ARME_NOM = inp(F, f"B{row}", "Mains nues", align=AL_L)
+ARME_NOM = inp(F, f"B{row}", "Main", align=AL_L)
 ARME_FAC = inp(F, f"C{row}", 20)
 ARME_N = inp(F, f"D{row}", 1)
 ARME_FIN = inp(F, f"F{row}", "Non")
@@ -1061,7 +1061,7 @@ label(F, f"A{row}", "UAR (par round)")
 BASE_UAR = inp(F, f"B{row}", 5)
 MULT_UAR = inp(F, f"C{row}", 0)
 UAR = calc(F, f"D{row}", f"={BASE_UAR.coordinate}*({MULT_UAR.coordinate}+1)")
-# UAM = 100*Prestige + 20*achats
+# UAM = 1000*Prestige + 200*achats
 label(F, f"F{row}", "UAM (aura max)")
 # rappel prestige + achats
 row_uam = row
@@ -1076,13 +1076,13 @@ label(F, f"F{row}", "Achats UAM (tranches)")
 ACHATS_UAM = inp(F, f"G{row}", 0)
 # UAM value placed at row_uam col G
 UAM = calc(F, f"G{row_uam}",
-     f"=100*${PRESTIGE.coordinate[0]}${PRESTIGE.row}+20*{ACHATS_UAM.coordinate}")
+     f"=1000*${PRESTIGE.coordinate[0]}${PRESTIGE.row}+200*{ACHATS_UAM.coordinate}")
 row += 1
 
 label(F, f"A{row}", "Prestige (rappel)")
 calc(F, f"B{row}", f"=${PRESTIGE.coordinate[0]}${PRESTIGE.row}")
 label(F, f"C{row}", "UAD courant")
-UAD = inp(F, f"D{row}", 100)
+UAD = inp(F, f"D{row}", 1000)
 cell(F, f"F{row}", "UAD ≤ UAM ; remonte de la RUA chaque heure.",
      font=FONT_SMALL, fill=FILL_PARCHEMIN, align=AL_L, border=True)
 F.merge_cells(f"F{row}:I{row}")
@@ -1404,7 +1404,7 @@ rr = ref_table(rr, "Viser (malus à l'attaque par zone)", ["Zone", "Malus"],
 
 # Catalogue d'armes (sélection représentative)
 ARMES_REF = [
-    ["Mains nues", "20", "×1 FOR", "CON", "Indésarmable"],
+    ["Main", "20", "×1 FOR", "CON", "Indésarmable, Compatible Nen"],
     ["Dague", "30", "×1", "PER", "Finesse, Dissimulable, jet 10/20 m"],
     ["Épée courte", "40", "×1", "TRA", "Finesse, Dégainage inst."],
     ["Épée longue", "30 (50)", "×2", "TRA", "Polyvalente"],

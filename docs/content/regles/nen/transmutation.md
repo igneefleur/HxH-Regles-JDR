@@ -109,26 +109,26 @@ La forme est l'inventaire de membres que le porteur adopte : combien de têtes, 
 <tbody>
 <tr><td>Bipède à bras</td><td>5</td><td>5</td><td>20</td><td>10</td><td>—</td></tr>
 <tr><td>Bipède à bras et queue</td><td>5</td><td>5</td><td>20</td><td>10</td><td>—</td></tr>
+<tr><td>Bipède à deux ailes</td><td>15</td><td>8</td><td>40</td><td>30</td><td>—</td></tr>
+<tr><td>Quadrupède</td><td>10</td><td>6</td><td>30</td><td>20</td><td>—</td></tr>
 <tr><td>Quadrupède à queue</td><td>10</td><td>6</td><td>30</td><td>20</td><td>—</td></tr>
-<tr><td>Quadrupède sans queue</td><td>10</td><td>6</td><td>30</td><td>20</td><td>—</td></tr>
-<tr><td>Vermiforme</td><td>15</td><td>8</td><td>20</td><td>20</td><td>—</td></tr>
-<tr><td>Bipède ailé</td><td>15</td><td>8</td><td>40</td><td>30</td><td>—</td></tr>
 <tr><td>Quadrupède à trompe</td><td>15</td><td>8</td><td>40</td><td>30</td><td>—</td></tr>
+<tr><td>Vermiforme</td><td>15</td><td>8</td><td>20</td><td>20</td><td>—</td></tr>
 <tr><td>Nageur à deux nageoires</td><td>15</td><td>8</td><td>40</td><td>30</td><td>—</td></tr>
 <tr><td>Nageur à quatre nageoires</td><td>15</td><td>8</td><td>40</td><td>30</td><td>—</td></tr>
 <tr><td>Hexapode</td><td>20</td><td>10</td><td>30</td><td>20</td><td>—</td></tr>
-<tr><td>Hexapode à quatre ailes</td><td>20</td><td>10</td><td>40</td><td>30</td><td>—</td></tr>
 <tr><td>Hexapode à deux ailes</td><td>20</td><td>10</td><td>40</td><td>30</td><td>—</td></tr>
+<tr><td>Hexapode à quatre ailes</td><td>20</td><td>10</td><td>40</td><td>30</td><td>—</td></tr>
 <tr><td>Octopode</td><td>20</td><td>10</td><td>30</td><td>20</td><td>—</td></tr>
-<tr><td>Marcheur à queue</td><td>20</td><td>10</td><td>30</td><td>20</td><td>—</td></tr>
-<tr><td>Marcheur à pinces</td><td>20</td><td>10</td><td>40</td><td>20</td><td>—</td></tr>
-<tr><td>Marcheur à pinces et queue</td><td>20</td><td>10</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Octopode à pinces</td><td>20</td><td>10</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Octopode à pinces et queue</td><td>20</td><td>10</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Décapode à queue</td><td>20</td><td>10</td><td>30</td><td>20</td><td>—</td></tr>
 <tr><td>Myriapode</td><td>20</td><td>10</td><td>30</td><td>20</td><td>—</td></tr>
 <tr><td>Céphalopode à huit tentacules</td><td>25</td><td>12</td><td>50</td><td>30</td><td>—</td></tr>
 <tr><td>Céphalopode à dix tentacules</td><td>25</td><td>12</td><td>50</td><td>30</td><td>—</td></tr>
 <tr><td>Radiaire à tentacules</td><td>25</td><td>12</td><td>40</td><td>20</td><td>—</td></tr>
-<tr><td>Radiaire à bras</td><td>25</td><td>12</td><td>40</td><td>20</td><td>—</td></tr>
-<tr><td>Corps nu</td><td>25</td><td>12</td><td>60</td><td>30</td><td>—</td></tr>
+<tr><td>Radiaire à cinq bras</td><td>25</td><td>12</td><td>40</td><td>20</td><td>—</td></tr>
+<tr><td>Informe</td><td>25</td><td>12</td><td>60</td><td>30</td><td>—</td></tr>
 </tbody>
 </table>
 
@@ -138,15 +138,15 @@ La forme est l'inventaire de membres que le porteur adopte : combien de têtes, 
 
 **Bipède à bras et queue :** 1 tête, 2 pattes, 2 bras, 1 queue (kangourou, théropode).
 
+**Bipède à deux ailes :** 1 tête, 2 pattes, 2 ailes, 1 queue (oiseau, chauve-souris, ptérosaure).
+
+**Quadrupède :** 1 tête, 4 pattes (grenouille, crapaud).
+
 **Quadrupède à queue :** 1 tête, 4 pattes, 1 queue (mammifères, reptiles, dinosaures quadrupèdes).
 
-**Quadrupède sans queue :** 1 tête, 4 pattes (grenouille, crapaud).
+**Quadrupède à trompe :** 1 tête, 4 pattes, 1 trompe, 1 queue (éléphant, tapir).
 
 **Vermiforme :** 1 tête, aucun membre (ver, serpent, lamproie, escargot).
-
-**Bipède ailé :** 1 tête, 2 pattes, 2 ailes, 1 queue (oiseau, chauve-souris, ptérosaure).
-
-**Quadrupède à trompe :** 1 tête, 4 pattes, 1 trompe, 1 queue (éléphant, tapir).
 
 **Nageur à deux nageoires :** 1 tête, 2 nageoires, 1 queue (baleine, dauphin, lamantin).
 
@@ -154,17 +154,17 @@ La forme est l'inventaire de membres que le porteur adopte : combien de têtes, 
 
 **Hexapode :** 1 tête, 6 pattes (fourmi, puce).
 
-**Hexapode à quatre ailes :** 1 tête, 6 pattes, 4 ailes (papillon, coléoptère, libellule, abeille).
-
 **Hexapode à deux ailes :** 1 tête, 6 pattes, 2 ailes (mouche, moustique, drosophile).
+
+**Hexapode à quatre ailes :** 1 tête, 6 pattes, 4 ailes (papillon, coléoptère, libellule, abeille).
 
 **Octopode :** 1 tête, 8 pattes (araignée, acarien, tardigrade).
 
-**Marcheur à queue :** 1 tête, 8 pattes, 1 queue (crevette, krill, langoustine, limule).
+**Octopode à pinces :** 1 tête, 8 pattes, 2 pinces (crabe).
 
-**Marcheur à pinces :** 1 tête, 8 pattes, 2 pinces (crabe).
+**Octopode à pinces et queue :** 1 tête, 8 pattes, 2 pinces, 1 queue (scorpion, homard).
 
-**Marcheur à pinces et queue :** 1 tête, 8 pattes, 2 pinces, 1 queue (scorpion, homard).
+**Décapode à queue :** 1 tête, 10 pattes, 1 queue (crevette, krill, langoustine, limule).
 
 **Myriapode :** 1 tête, ≥ 10 pattes (mille-pattes, scolopendre).
 
@@ -174,9 +174,9 @@ La forme est l'inventaire de membres que le porteur adopte : combien de têtes, 
 
 **Radiaire à tentacules :** aucune tête, 8 tentacules en couronne radiale (méduse, anémone, hydre).
 
-**Radiaire à bras :** aucune tête, 5 bras (étoile de mer, ophiure).
+**Radiaire à cinq bras :** aucune tête, 5 bras (étoile de mer, ophiure).
 
-**Corps nu :** aucune tête, aucun membre (éponge, amibe).
+**Informe :** aucune tête, aucun membre (éponge, amibe).
 
 </div>
 

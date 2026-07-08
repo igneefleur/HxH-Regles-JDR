@@ -32,7 +32,7 @@ BONUS = {
 ZONE_TIERS = {3: 20, 5: 30, 10: 40, 20: 50}
 CONE_TIERS = {5: 20, 10: 30, 15: 40, 20: 50}   # cône : table de LONGUEUR
 CONE_ANGLE = {45: 0, 90: 10}                    # cône : table d'ANGLE (s'ajoute à la longueur)
-INEFF_TIERS = {"contact": 10, "courte": 20, "moyenne": 30, "longue": 40}
+# Inefficace de près : zone morte, deux barèmes. Mêlée = crans d'allonge (×N → −N×10). Distance = % de la portée max (20/40/60/80/100 → −10/−20/−30/−40/−50).
 CONSTRAINT = {
     # −10
     "Lourde": 10, "Rechargement lent": 10, "Bruyante": 10,
@@ -73,27 +73,27 @@ def portee_pts(cell):
         elif p.startswith("allonge"):   # allonge = mêlée étendue (portée mêlée)
             total += {2: 20, 3: 30, 4: 40, 5: 50}.get(int(re.findall(r"\d+", p)[0]), 0)
         elif p.startswith("jet"):
-            lng = int(re.findall(r"\d+", p)[-1])
-            total += 10 if lng <= 20 else 20
+            lng = int(re.findall(r"\d+", p)[-1])   # coût selon la portée max (longue), valeurs réelles : 5 crans +10→+50
+            total += 10 if lng <= 15 else 20 if lng <= 30 else 30 if lng <= 50 else 40 if lng <= 80 else 50
         elif p.startswith("tir"):
-            lng = int(re.findall(r"\d+", p)[-1])
-            total += 20 if lng <= 40 else 30 if lng <= 90 else 40 if lng <= 180 else 50 if lng <= 360 else 60
+            lng = int(re.findall(r"\d+", p)[-1])   # coût selon la portée max (longue), valeurs réelles : 5 crans +10→+50
+            total += 10 if lng <= 50 else 20 if lng <= 150 else 30 if lng <= 300 else 40 if lng <= 800 else 50
     total += max(0, len(parts) - 1) * 10   # nombre de portées : 1 → 0, 2 → +10, 3 → +20
     return total
 
 
 def portee_hors_plafond(cell):
-    # Plafonds fermes : lancer 80 m max, tir 600 m max. Aucune portée illimitée.
+    # Plafonds fermes : lancer 120 m max, tir 2500 m max. Aucune portée illimitée.
     for part in re.split(r"\s*·\s*|<br>", cell):
         p = norm(part).lower()
         nums = re.findall(r"\d+", p)
         if not nums:
             continue
         lng = int(nums[-1])
-        if p.startswith("jet") and lng > 80:
-            return f"lancer {lng} m > 80"
-        if p.startswith("tir") and lng > 600:
-            return f"tir {lng} m > 600"
+        if p.startswith("jet") and lng > 120:
+            return f"lancer {lng} m > 120"
+        if p.startswith("tir") and lng > 2500:
+            return f"tir {lng} m > 2500"
     return None
 
 
@@ -112,12 +112,12 @@ for l in lines:
     if not (l.startswith("|") and l.rstrip().endswith("|")):
         continue
     cells = [c.strip() for c in l.split("|")[1:-1]]
-    if len(cells) != 10 or not re.fullmatch(r"[✦✧]{3}", cells[1]):
+    if len(cells) != 11 or not re.fullmatch(r"[✦✧]{3}", cells[1]):
         continue                       # garde uniquement les lignes d'arme (AM en symboles)
     if cells[0] in ("Main", "Pied", "Tête", "Coude", "Genou"):
         continue                       # armes naturelles du corps : seules exemptées du système
     n += 1
-    nom, am, por, mun, mains, deg, mod, typ, il, props = cells
+    nom, am, por, mun, mains, deg, mod, typ, il, prix, props = cells   # Prix (colonne cosmetique) ignore dans le total
     deg_v = int(re.match(r"\s*(\d+)", deg).group(1))
     illeg = il.count("★") * 20
     ampts = am.count("✦") * 10
@@ -127,8 +127,14 @@ for l in lines:
     hp = portee_hors_plafond(por)
     if hp:
         hors_portee.append((nom, hp))
-    mm = re.search(r"×(\d)", mod)       # cellule vide = ×0
-    mult_pts = (int(mm.group(1)) if mm else 0) * 10   # modificateur : +10 par niveau
+    mm = re.search(r"×(\d)", mod)       # cellule vide = aucun modificateur
+    pm = re.search(r"\+(\d+)", mod)     # propulsion mécanique : dégâts fixes de l'arme
+    if mm:
+        mult_pts = int(mm.group(1)) * 10        # force du porteur : +10 par niveau ×N
+    elif pm:
+        mult_pts = int(pm.group(1)) // 2        # propulsion : coût = dégâts/2 (efficace, exclusif du ×N FOR)
+    else:
+        mult_pts = 0
     mains_pts = {"Polyvalente": -10, "2 mains": -20, "1 main": 0}.get(mains, 0)   # rebate : plus l'arme exige de mains, plus elle rembourse
     if typ in ("", "—"):
         type_pts = 0                   # 0 dégât -> pas de type (cellule vide)
@@ -157,8 +163,9 @@ for l in lines:
                 plus += zp
                 detail.append(f"Zone +{zp}")
             elif b == "Inefficace de près":
-                mb = re.search(r"\((\w+)", tok)
-                ip = INEFF_TIERS.get(mb.group(1) if mb else "", 0)
+                ma = re.search(r"[Aa]llonge\D*(\d)", tok)   # mêlée : zone morte en crans d'allonge (×1→−10 … ×5→−50)
+                mp = re.search(r"(\d+)\s*%", tok)           # distance : zone morte en % de la portée max (20→−10 … 100→−50)
+                ip = int(ma.group(1)) * 10 if ma else (int(mp.group(1)) // 2 if mp else 0)
                 minus += ip
                 detail.append(f"Inefficace de près −{ip}")
             elif b == "Perce-armure":
@@ -176,10 +183,6 @@ for l in lines:
                 dp = min(50, saign * 2)              # −5→+10 … −25→+50
                 plus += dp
                 detail.append(f"Déchirante(−{saign}) +{dp}")
-            elif b == "Propulsion mécanique":
-                mal = int(re.search(r"(\d+)", tok).group(1))   # palier de vélocité : le coût vaut le malus de défense procuré (−10→+10 … −50→+50)
-                plus += mal
-                detail.append(f"Propulsion mécanique(−{mal}) +{mal}")
             elif b in BONUS:
                 plus += BONUS[b]
                 detail.append(f"{b} +{BONUS[b]}")
@@ -205,7 +208,7 @@ if unknown:
     for k, v in unknown.items():
         print(f"  « {k} » → {', '.join(v)}")
 if hors_portee:
-    print("\nportées HORS plafond (lancer 80 m / tir 360 m max) :")
+    print("\nportées HORS plafond (lancer 120 m / tir 2500 m max) :")
     for nom, hp in hors_portee:
         print(f"  ✗ {nom} : {hp}")
 if auto_sans_reservoir:

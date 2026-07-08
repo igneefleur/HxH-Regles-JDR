@@ -30,7 +30,7 @@ Une fois ses nœuds ouverts, le pratiquant cesse de laisser son aura se dissiper
 
 Si le personnage tenait un autre état du Nen, activer le Ten le lui fait perdre. Activer, désactiver ou maintenir le Ten relève d'une même [activité](../personnage/capacites-physiques.md#activite), de même valeur pour les trois, qui s'allège à chaque palier jusqu'à devenir nulle : au plus haut, le voile tient sans effort, même endormi.
 
-Tant que le Ten est tenu, le personnage gagne +40 au Courage et au Sang-froid.
+Tant que le Ten est tenu, le personnage gagne +40 à la Résistance à la Peur.
 
 <p class="palier">Basique</p>
 
@@ -66,7 +66,7 @@ Le voile ne demande plus aucun effort : il tient au repos, jusque dans le sommei
 
 Le Zetsu est l'arrêt total du Nen : le pratiquant referme tous ses nœuds et coupe toute sortie d'aura. Sa présence devient très difficile à sentir, ce qui en fait l'état idéal pour filer ou approcher une cible sans être perçu, et la perception des auras voisines s'aiguise au point de déceler un In. Mais le corps, privé de voile, n'a plus aucune défense : la moindre attaque d'aura y inflige d'énormes dégâts. Demeurer en Zetsu repose ; y entrer ou en sortir demande un effort que la maîtrise abrège.
 
-Entrer en Zetsu fait tomber tout autre état du Nen, étant l'extinction de l'aura déployée. Maintenir le Zetsu n'est même pas une [activité](../personnage/capacites-physiques.md#activite) légère. En Zetsu, le personnage gagne +80 aux jets de discrétion, mais subit −20 au Courage et au Sang-froid.
+Entrer en Zetsu fait tomber tout autre état du Nen, étant l'extinction de l'aura déployée. Maintenir le Zetsu n'est même pas une [activité](../personnage/capacites-physiques.md#activite) légère. En Zetsu, le personnage gagne +80 aux jets de discrétion, mais subit −20 à la Résistance à la Peur.
 
 <p class="palier">Basique</p>
 

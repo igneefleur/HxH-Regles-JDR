@@ -90,11 +90,11 @@ Un personnage qui n'a pas dormi le temps requis commence sa journée avec un poi
 
 Les durées du tableau bornent l'effort d'une journée sans danger. Tant qu'un personnage reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il puise dans ses réserves sans rien risquer. Le MJ juge au cas par cas ce qui relève vraiment de chaque régime : il s'agit de borner les journées d'acharnement, pas de chronométrer chaque geste.
 
-Dès qu'il a épuisé l'une ou l'autre et qu'il en entame une malgré tout, ou qu'il s'y acharne, il force sur un corps déjà à bout. Il tente alors un jet de [Ténacité](competences.md), une première fois à l'instant où il dépasse, puis à intervalle régulier tant qu'il continue : toutes les heures pour un excès d'activité intermédiaire, toutes les dix minutes pour un excès d'activité lourde. La difficulté part de 100 et grimpe de 20 à chaque jet : Difficulté 100 + 20 × le nombre de jets de Ténacité qu'il a déjà tentés sans avoir dormi correctement entre-temps. Réussir lui permet de tenir encore ; échouer lui inflige des points de fatigue, d'autant plus nombreux qu'il rate de loin.
+Dès qu'il a épuisé l'une ou l'autre et qu'il en entame une malgré tout, ou qu'il s'y acharne, il force sur un corps déjà à bout. Il tente alors un jet de [Résistance à l'Épuisement](competences.md), une première fois à l'instant où il dépasse, puis à intervalle régulier tant qu'il continue : toutes les heures pour un excès d'activité intermédiaire, toutes les dix minutes pour un excès d'activité lourde. La difficulté part de 100 et grimpe de 20 à chaque jet : Difficulté 100 + 20 × le nombre de jets de Résistance à l'Épuisement qu'il a déjà tentés sans avoir dormi correctement entre-temps. Réussir lui permet de tenir encore ; échouer lui inflige des points de fatigue, d'autant plus nombreux qu'il rate de loin.
 
 #### Veiller sans dormir
 
-Un personnage tient éveillé un temps que fixe son Endurance avant que le manque de sommeil ne le rattrape : le temps avant d'être fatigué, égal à vingt-quatre heures moins son sommeil. Au-delà, chaque heure de veille de plus lui demande un jet de [Ténacité](competences.md), de difficulté croissante : 20 à la première heure dépassée, 40 à la deuxième, et ainsi de suite, soit 20 × le nombre d'heures déjà dépassées. Réussir le garde debout ; échouer lui inflige des points de fatigue, comme tout jet de Ténacité manqué. Il peut aussi renoncer et dormir dès qu'il en a le loisir ; sinon, l'épuisement finit par l'y contraindre.
+Un personnage tient éveillé un temps que fixe son Endurance avant que le manque de sommeil ne le rattrape : le temps avant d'être fatigué, égal à vingt-quatre heures moins son sommeil. Au-delà, chaque heure de veille de plus lui demande un jet de [Résistance à l'Épuisement](competences.md), de difficulté croissante : 20 à la première heure dépassée, 40 à la deuxième, et ainsi de suite, soit 20 × le nombre d'heures déjà dépassées. Réussir le garde debout ; échouer lui inflige des points de fatigue, comme tout jet de Résistance à l'Épuisement manqué. Il peut aussi renoncer et dormir dès qu'il en a le loisir ; sinon, l'épuisement finit par l'y contraindre.
 
 On ne se rendort pas non plus aussitôt réveillé. Après un sommeil, un personnage doit veiller un temps minimal avant de pouvoir dormir de nouveau : la moitié de sa veille sans risque, soit la moitié du temps avant d'être fatigué.
 
@@ -138,9 +138,9 @@ On ne se rendort pas non plus aussitôt réveillé. Après un sommeil, un person
 
 #### L'état de Fatigue
 
-La fatigue se compte en points. Chaque jet de Ténacité manqué en inflige un par tranche de dix points manquants au seuil : rater de 10 à 19 en donne un, de 20 à 29 deux, et ainsi de suite. Chaque point de fatigue vaut un malus de −10 à toutes les actions, et ils s'additionnent : trois points font −30, cinq points −50.
+La fatigue se compte en points. Chaque jet de Résistance à l'Épuisement manqué en inflige un par tranche de dix points manquants au seuil : rater de 10 à 19 en donne un, de 20 à 29 deux, et ainsi de suite. Chaque point de fatigue vaut un malus de −10 à toutes les actions, et ils s'additionnent : trois points font −30, cinq points −50.
 
-À dix points, le personnage s'évanouit d'épuisement et s'effondre, contraint au repos. Dormir correctement, soit le temps de sommeil qu'exige son Endurance, efface tous ses points de fatigue et remet à zéro le compte des jets de Ténacité ; le personnage repart frais.
+À dix points, le personnage s'évanouit d'épuisement et s'effondre, contraint au repos. Dormir correctement, soit le temps de sommeil qu'exige son Endurance, efface tous ses points de fatigue et remet à zéro le compte des jets de Résistance à l'Épuisement ; le personnage repart frais.
 
 </div>
 
