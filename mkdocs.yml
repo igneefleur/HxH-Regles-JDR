@@ -50,7 +50,7 @@ nav:
           - Formes du vivant: content/regles/monde/formes.md
       - Le Combat:
           - Déroulement du combat: content/regles/combat/deroulement-combat.md
-          - Manœuvres: content/regles/combat/manoeuvres.md
+          - Attaque et Défense: content/regles/combat/manoeuvres.md
           - Critique et Blessures: content/regles/combat/critique-blessures.md
           - Armes: content/regles/combat/armes.md
       - Nen:
@@ -80,7 +80,7 @@ theme:
     primary: custom
     accent: custom
   font:
-    text: EB Garamond
+    text: Alegreya
     code: Roboto Mono
   features:
     - navigation.instant  # navigation SPA : pas de rechargement complet (pas de flash)

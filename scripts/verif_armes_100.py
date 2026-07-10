@@ -20,13 +20,11 @@ BONUS = {
     "Dissimulable": 10, "Saisie": 10, "Parade": 10, "Finesse": 10, "Précise": 10,
     "Jumelable": 10, "Désarmement": 10,
     # +20
-    "Mains libres": 20, "Renversement": 20, "Assommement": 20, "Indésarmable": 20, "Nuage persistant": 20,
+    "Mains libres": 20, "Renversement": 20, "Assommement": 20, "Indésarmable": 20,
     # +30
     "Immobilisation à distance": 30,
     # +40
     "Décharge incapacitante": 40,
-    # +50
-    "Aveuglement de zone": 50,
 }
 # Propriétés à coût tiéré, parsées depuis la parenthèse (rayon / longueur, angle pour le cône)
 ZONE_TIERS = {3: 20, 5: 30, 10: 40, 20: 50}

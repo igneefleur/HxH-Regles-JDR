@@ -78,217 +78,229 @@ Chaque palier de l'échelle recouvre un ordre d'action distinct :
 ### Champ Martial
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Initiative</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Armes de mêlée</td><td>Dextérité</td><td>Physique, Attaque</td></tr>
-<tr><td>Armes de jet</td><td>Dextérité</td><td>Physique, Attaque</td></tr>
-<tr><td>Armes de trait</td><td>Dextérité</td><td>Physique, Attaque</td></tr>
-<tr><td>Armes à feu</td><td>Dextérité</td><td>Physique, Attaque</td></tr>
-<tr><td>Parade</td><td>Dextérité</td><td>Physique, Défense</td></tr>
-<tr><td>Esquive</td><td>Agilité</td><td>Physique, Défense</td></tr>
+<tr><td>Initiative</td><td>Agilité</td><td>Physique</td><td>●●●●●</td><td></td></tr>
+<tr><td>Armes de mêlée</td><td>Dextérité</td><td>Physique, Attaque</td><td>●●●●○</td><td></td></tr>
+<tr><td>Armes de jet</td><td>Dextérité</td><td>Physique, Attaque</td><td>●●●●○</td><td></td></tr>
+<tr><td>Armes de trait</td><td>Dextérité</td><td>Physique, Attaque</td><td>●●●●○</td><td></td></tr>
+<tr><td>Armes à feu</td><td>Dextérité</td><td>Physique, Attaque</td><td>●●●●○</td><td></td></tr>
+<tr><td>Parade</td><td>Dextérité</td><td>Physique, Défense</td><td>●●●●○</td><td></td></tr>
+<tr><td>Esquive</td><td>Agilité</td><td>Physique, Défense</td><td>●●●●○</td><td></td></tr>
+<tr><td>Port d'Armure</td><td>Endurance</td><td>Physique</td><td>●●●○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Athlétique
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Course</td><td>Agilité</td><td>Physique, Mouvement</td></tr>
-<tr><td>Saut</td><td>Agilité</td><td>Physique, Mouvement</td></tr>
-<tr><td>Natation</td><td>Agilité</td><td>Physique, Mouvement</td></tr>
-<tr><td>Escalade</td><td>Agilité</td><td>Physique, Mouvement</td></tr>
-<tr><td>Équilibre</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Contorsion</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Chute</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Lutte</td><td>Force</td><td>Physique</td></tr>
-<tr><td>Prouesse de Force</td><td>Force</td><td>Physique</td></tr>
-<tr><td>Apnée</td><td>Endurance</td><td>Physique</td></tr>
+<tr><td>Course</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●●○</td><td></td></tr>
+<tr><td>Saut</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●○○</td><td></td></tr>
+<tr><td>Natation</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●○○○</td><td></td></tr>
+<tr><td>Escalade</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●○○</td><td></td></tr>
+<tr><td>Équilibre</td><td>Agilité</td><td>Physique</td><td>●●○○○</td><td></td></tr>
+<tr><td>Contorsion</td><td>Agilité</td><td>Physique</td><td>●●●●○</td><td></td></tr>
+<tr><td>Chute</td><td>Agilité</td><td>Physique</td><td>●●●○○</td><td></td></tr>
+<tr><td>Lutte</td><td>Force</td><td>Physique</td><td>●●●●○</td><td></td></tr>
+<tr><td>Prouesse de Force</td><td>Force</td><td>Physique</td><td>●●●○○</td><td></td></tr>
+<tr><td>Apnée</td><td>Endurance</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Vol</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●○○</td><td>Non</td></tr>
 </tbody>
 </table>
 
 ### Champ Vital
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Résistance à la Maladie et au Poison</td><td>Endurance</td><td>Physique</td></tr>
-<tr><td>Résistance à l'Environnement</td><td>Endurance</td><td>Physique</td></tr>
-<tr><td>Résistance à l'Épuisement</td><td>Endurance</td><td>Physique</td></tr>
-<tr><td>Résistance à la Douleur</td><td>Volonté</td><td>Mental</td></tr>
-<tr><td>Résistance à la Peur</td><td>Volonté</td><td>Mental</td></tr>
-<tr><td>Résistance à l'Influence</td><td>Volonté</td><td>Mental</td></tr>
+<tr><td>Résistance à la Maladie et au Poison</td><td>Endurance</td><td>Physique</td><td>●●●○○</td><td></td></tr>
+<tr><td>Résistance à l'Environnement</td><td>Endurance</td><td>Physique</td><td>●●○○○</td><td></td></tr>
+<tr><td>Résistance à l'Épuisement</td><td>Endurance</td><td>Physique</td><td>●●●●○</td><td></td></tr>
+<tr><td>Résistance à la Douleur</td><td>Volonté</td><td>Mental</td><td>●●●●●</td><td></td></tr>
+<tr><td>Résistance à la Peur</td><td>Volonté</td><td>Mental</td><td>●●●●○</td><td></td></tr>
+<tr><td>Résistance à l'Influence</td><td>Volonté</td><td>Mental</td><td>●●●●○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Social
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Persuasion</td><td>Charisme</td><td>Social, Vocal</td></tr>
-<tr><td>Rhétorique</td><td>Charisme</td><td>Social, Mental, Vocal</td></tr>
-<tr><td>Négociation</td><td>Charisme</td><td>Social, Vocal</td></tr>
-<tr><td>Tromperie</td><td>Charisme</td><td>Social, Vocal</td></tr>
-<tr><td>Séduction</td><td>Charisme</td><td>Social, Vocal</td></tr>
-<tr><td>Intimidation</td><td>Présence</td><td>Social, Vocal</td></tr>
-<tr><td>Commandement</td><td>Présence</td><td>Social, Vocal</td></tr>
-<tr><td>Pédagogie</td><td>Charisme</td><td>Social, Mental, Vocal</td></tr>
-<tr><td>Relation</td><td>Charisme</td><td>Social, Vocal</td></tr>
-<tr><td>Étiquette</td><td>Érudition</td><td>Social, Mental, Vocal</td></tr>
-<tr><td>Style</td><td>Présence</td><td>Social</td></tr>
+<tr><td>Persuasion</td><td>Charisme</td><td>Social, Vocal</td><td>●●●○○</td><td></td></tr>
+<tr><td>Rhétorique</td><td>Charisme</td><td>Social, Mental, Vocal</td><td>●○○○○</td><td></td></tr>
+<tr><td>Négociation</td><td>Charisme</td><td>Social, Vocal</td><td>●●○○○</td><td></td></tr>
+<tr><td>Tromperie</td><td>Charisme</td><td>Social, Vocal</td><td>●●●○○</td><td></td></tr>
+<tr><td>Séduction</td><td>Charisme</td><td>Social, Vocal</td><td>●●○○○</td><td></td></tr>
+<tr><td>Intimidation</td><td>Présence</td><td>Social, Vocal</td><td>●●●○○</td><td></td></tr>
+<tr><td>Commandement</td><td>Présence</td><td>Social, Vocal</td><td>●●○○○</td><td></td></tr>
+<tr><td>Pédagogie</td><td>Charisme</td><td>Social, Mental, Vocal</td><td>●○○○○</td><td></td></tr>
+<tr><td>Relation</td><td>Charisme</td><td>Social, Vocal</td><td>●●○○○</td><td></td></tr>
+<tr><td>Étiquette</td><td>Érudition</td><td>Social, Mental, Vocal</td><td>●○○○○</td><td></td></tr>
+<tr><td>Style</td><td>Présence</td><td>Social</td><td>●○○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Intellectuel
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Histoire</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Archéologie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Géographie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Cartographie</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Économie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Estimation</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Politique</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Droit</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Langues</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Astronomie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Architecture</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Géologie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Biologie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Faune</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Flore</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Météorologie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Mémorisation</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Occultisme</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Théologie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Médecine</td><td>Érudition</td><td>Physique, Mental</td></tr>
-<tr><td>Enquête</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Psychologie</td><td>Érudition</td><td>Mental</td></tr>
-<tr><td>Perspicacité</td><td>Instinct</td><td>Mental</td></tr>
-<tr><td>Tactique</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Jeu d'argent</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Jeux de stratégie</td><td>Logique</td><td>Mental</td></tr>
+<tr><td>Histoire</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Archéologie</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Géographie</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Cartographie</td><td>Logique</td><td>Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Économie</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Estimation</td><td>Érudition</td><td>Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Politique</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Droit</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Langues</td><td>Érudition</td><td>Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Astronomie</td><td>Érudition</td><td>Mental</td><td>○○○○○</td><td></td></tr>
+<tr><td>Architecture</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Géologie</td><td>Érudition</td><td>Mental</td><td>○○○○○</td><td></td></tr>
+<tr><td>Biologie</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Faune</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Flore</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Météorologie</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Mémorisation</td><td>Érudition</td><td>Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Occultisme</td><td>Érudition</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Théologie</td><td>Érudition</td><td>Mental</td><td>○○○○○</td><td></td></tr>
+<tr><td>Médecine</td><td>Érudition</td><td>Physique, Mental</td><td>●●●○○</td><td></td></tr>
+<tr><td>Enquête</td><td>Logique</td><td>Mental</td><td>●●●○○</td><td></td></tr>
+<tr><td>Psychologie</td><td>Érudition</td><td>Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Perspicacité</td><td>Instinct</td><td>Mental</td><td>●●●○○</td><td></td></tr>
+<tr><td>Tactique</td><td>Logique</td><td>Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Jeu d'argent</td><td>Logique</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Jeux de stratégie</td><td>Logique</td><td>Mental</td><td>●○○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Naturel
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Survie</td><td>Instinct</td><td>Physique, Mental</td></tr>
-<tr><td>Pistage</td><td>Instinct</td><td>Physique, Mental</td></tr>
-<tr><td>Chasse</td><td>Instinct</td><td>Physique, Mental</td></tr>
-<tr><td>Pêche</td><td>Instinct</td><td>Physique</td></tr>
-<tr><td>Dressage</td><td>Instinct</td><td>Physique</td></tr>
-<tr><td>Élevage</td><td>Érudition</td><td>Physique, Mental</td></tr>
-<tr><td>Agriculture</td><td>Érudition</td><td>Physique, Mental</td></tr>
+<tr><td>Survie</td><td>Instinct</td><td>Physique, Mental</td><td>●●●○○</td><td></td></tr>
+<tr><td>Pistage</td><td>Instinct</td><td>Physique, Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Chasse</td><td>Instinct</td><td>Physique, Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Pêche</td><td>Instinct</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Dressage</td><td>Instinct</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Élevage</td><td>Érudition</td><td>Physique, Mental</td><td>○○○○○</td><td></td></tr>
+<tr><td>Agriculture</td><td>Érudition</td><td>Physique, Mental</td><td>○○○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Sensoriel
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Vue</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Ouïe</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Odorat</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Goût</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Toucher</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Chémesthésie</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Chronoception</td><td>Instinct</td><td>Sensoriel</td></tr>
-<tr><td>Équilibrioception</td><td>Instinct</td><td>Sensoriel</td></tr>
-<tr><td>Intéroception</td><td>Instinct</td><td>Sensoriel</td></tr>
-<tr><td>Nociception</td><td>Instinct</td><td>Sensoriel</td></tr>
-<tr><td>Proprioception</td><td>Instinct</td><td>Sensoriel</td></tr>
-<tr><td>Thermoception</td><td>Perception</td><td>Sensoriel</td></tr>
-<tr><td>Séismoréception</td><td>Perception</td><td>Sensoriel</td></tr>
+<tr><td>Vue</td><td>Perception</td><td>Sensoriel</td><td>●●●○○</td><td></td></tr>
+<tr><td>Ouïe</td><td>Perception</td><td>Sensoriel</td><td>●●●○○</td><td></td></tr>
+<tr><td>Odorat</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
+<tr><td>Goût</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
+<tr><td>Toucher</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
+<tr><td>Chémesthésie</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Chronoception</td><td>Instinct</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Équilibrioception</td><td>Instinct</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Intéroception</td><td>Instinct</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Nociception</td><td>Instinct</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Proprioception</td><td>Instinct</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
+<tr><td>Thermoception</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Séismoréception</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
+<tr><td>Magnétoréception</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Écholocation</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
+<tr><td>Vision polarisée</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Vision ultraviolette</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Infrasons & ultrasons</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Baroréception</td><td>Instinct</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Électroréception</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td>Non</td></tr>
+<tr><td>Détection infrarouge</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td>Non</td></tr>
+<tr><td>Ligne latérale</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td>Non</td></tr>
+<tr><td>Hygroréception</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td>Non</td></tr>
 </tbody>
 </table>
 
 ### Champ Technique
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Mécanique</td><td>Logique</td><td>Physique, Mental</td></tr>
-<tr><td>Électronique</td><td>Logique</td><td>Physique, Mental</td></tr>
-<tr><td>Programmation</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Cybersécurité</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Réseaux & télécoms</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Cryptographie</td><td>Logique</td><td>Mental</td></tr>
-<tr><td>Chimie</td><td>Érudition</td><td>Physique, Mental</td></tr>
-<tr><td>Pharmacologie</td><td>Érudition</td><td>Physique, Mental</td></tr>
-<tr><td>Explosifs</td><td>Érudition</td><td>Physique, Mental</td></tr>
+<tr><td>Mécanique</td><td>Logique</td><td>Physique, Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Électronique</td><td>Logique</td><td>Physique, Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Programmation</td><td>Logique</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Cybersécurité</td><td>Logique</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Réseaux & télécoms</td><td>Logique</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Cryptographie</td><td>Logique</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Chimie</td><td>Érudition</td><td>Physique, Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Pharmacologie</td><td>Érudition</td><td>Physique, Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Explosifs</td><td>Érudition</td><td>Physique, Mental</td><td>●●○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Transport
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Conduite</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Navigation</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Pilotage</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Équitation</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Glisse</td><td>Agilité</td><td>Physique, Mouvement</td></tr>
+<tr><td>Conduite</td><td>Dextérité</td><td>Physique</td><td>●●●○○</td><td></td></tr>
+<tr><td>Navigation</td><td>Dextérité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Pilotage</td><td>Dextérité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Équitation</td><td>Agilité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Glisse</td><td>Agilité</td><td>Physique, Mouvement</td><td>●○○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Furtif
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Discrétion</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Camouflage</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Filature</td><td>Perception</td><td>Physique, Mental</td></tr>
-<tr><td>Escamotage</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Crochetage</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Pièges</td><td>Dextérité</td><td>Physique, Mental</td></tr>
-<tr><td>Déguisement</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Contrefaçon</td><td>Dextérité</td><td>Physique</td></tr>
+<tr><td>Discrétion</td><td>Agilité</td><td>Physique</td><td>●●●○○</td><td></td></tr>
+<tr><td>Camouflage</td><td>Dextérité</td><td>Physique</td><td>●●○○○</td><td></td></tr>
+<tr><td>Filature</td><td>Perception</td><td>Physique, Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Escamotage</td><td>Dextérité</td><td>Physique</td><td>●●○○○</td><td></td></tr>
+<tr><td>Crochetage</td><td>Dextérité</td><td>Physique</td><td>●●●○○</td><td></td></tr>
+<tr><td>Pièges</td><td>Dextérité</td><td>Physique, Mental</td><td>●●○○○</td><td></td></tr>
+<tr><td>Déguisement</td><td>Dextérité</td><td>Physique</td><td>●●○○○</td><td></td></tr>
+<tr><td>Contrefaçon</td><td>Dextérité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Artisanal
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Forge / Métallurgie</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Travail du bois</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Travail de la pierre</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Textile</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Travail du cuir</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Poterie</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Verre</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Joaillerie</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Cuisine</td><td>Dextérité</td><td>Physique</td></tr>
-<tr><td>Brasserie & distillation</td><td>Érudition</td><td>Physique, Mental</td></tr>
-<tr><td>Parfumerie</td><td>Érudition</td><td>Physique, Mental</td></tr>
-<tr><td>Calligraphie</td><td>Dextérité</td><td>Physique</td></tr>
+<tr><td>Forge / Métallurgie</td><td>Dextérité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Travail du bois</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Travail de la pierre</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Textile</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Travail du cuir</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Poterie</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Verre</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Joaillerie</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
+<tr><td>Cuisine</td><td>Dextérité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Brasserie & distillation</td><td>Érudition</td><td>Physique, Mental</td><td>○○○○○</td><td></td></tr>
+<tr><td>Parfumerie</td><td>Érudition</td><td>Physique, Mental</td><td>○○○○○</td><td></td></tr>
+<tr><td>Calligraphie</td><td>Dextérité</td><td>Physique</td><td>○○○○○</td><td></td></tr>
 </tbody>
 </table>
 
 ### Champ Artistique
 
 <table>
-<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th></tr></thead>
+<thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
-<tr><td>Peinture & dessin</td><td>Imagination</td><td>Physique</td></tr>
-<tr><td>Écriture</td><td>Imagination</td><td>Mental</td></tr>
-<tr><td>Conte / Narration</td><td>Charisme</td><td>Social, Vocal, Sonore</td></tr>
-<tr><td>Musique</td><td>Imagination</td><td>Physique, Sonore</td></tr>
-<tr><td>Chant</td><td>Charisme</td><td>Physique, Social, Vocal, Sonore</td></tr>
-<tr><td>Danse</td><td>Agilité</td><td>Physique</td></tr>
-<tr><td>Personnification</td><td>Charisme</td><td>Social, Physique, Vocal</td></tr>
+<tr><td>Peinture & dessin</td><td>Imagination</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Écriture</td><td>Imagination</td><td>Mental</td><td>●○○○○</td><td></td></tr>
+<tr><td>Conte / Narration</td><td>Charisme</td><td>Social, Vocal, Sonore</td><td>●○○○○</td><td></td></tr>
+<tr><td>Musique</td><td>Imagination</td><td>Physique, Sonore</td><td>●○○○○</td><td></td></tr>
+<tr><td>Chant</td><td>Charisme</td><td>Physique, Social, Vocal, Sonore</td><td>●○○○○</td><td></td></tr>
+<tr><td>Danse</td><td>Agilité</td><td>Physique</td><td>●○○○○</td><td></td></tr>
+<tr><td>Personnification</td><td>Charisme</td><td>Social, Physique, Vocal</td><td>●●○○○</td><td></td></tr>
 </tbody>
 </table>
 
@@ -396,6 +408,16 @@ Bloquer ou dévier une attaque avec une arme ou un bouclier. Pour arrêter net u
 
 </div>
 
+<div class="keep" markdown>
+
+#### Port d'Armure
+
+<p class="groupes">Caractéristique : Endurance<br>Groupes : Physique</p>
+
+Porter une armure et s'y mouvoir sans entrave : en supporter le poids, garder ses gestes et son souffle. Plus la protection est lourde, plus il faut de métier pour ne pas être ralenti ni essoufflé sous la charge.
+
+</div>
+
 </div>
 
 ## Champ Athlétique
@@ -499,6 +521,16 @@ Pure puissance musculaire pour soulever, briser, plier ou forcer. Pour soulever 
 <p class="groupes">Caractéristique : Endurance<br>Groupes : Physique</p>
 
 Retenir sa respiration et fonctionner sans air. Pour traverser un bassin immergé ou tenir dans une pièce envahie par les gaz.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Vol
+
+<p class="groupes">Caractéristique : Agilité<br>Groupes : Physique, Mouvement</p>
+
+Se mouvoir dans les airs et s'y diriger : prendre de l'altitude, virer, se poser sans dommage. Hors de portée d'un corps humain ordinaire, ce déplacement suppose un moyen de voler, une aile, une aura ou un appareil.
 
 </div>
 
@@ -1159,6 +1191,106 @@ Détecter des sources de chaleur ou de froid. Pour repérer la zone encore tièd
 <p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
 
 Percevoir les vibrations qui se propagent par le sol et le substrat. Pour deviner le nombre d'assaillants au rythme de leurs pas ou sentir un éboulement lointain bien avant tout autre signe.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Magnétoréception
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir les champs magnétiques de la planète et s'orienter par eux. Pour garder le nord sans boussole, sous terre ou par nuit sans étoiles.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Écholocation
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Localiser et reconnaître ce qui entoure par l'écho des sons qu'on émet. Pour se déplacer dans le noir total ou déceler une paroi que l'œil ne voit pas.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Vision polarisée
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir le plan de polarisation de la lumière. Pour distinguer une nappe d'eau d'un mirage ou repérer le reflet qui trahit une vitre.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Vision ultraviolette
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir la lumière ultraviolette, invisible à l'œil humain. Pour suivre une trace fluorescente ou lire une marque tracée à l'encre invisible.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Infrasons & ultrasons
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Entendre les sons situés sous ou au-dessus de la bande audible humaine. Pour capter le grondement sourd d'un séisme lointain ou le sifflement d'un dispositif tenu pour silencieux.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Baroréception
+
+<p class="groupes">Caractéristique : Instinct<br>Groupes : Sensoriel</p>
+
+Percevoir la pression du sang dans ses propres vaisseaux. Pour sentir sa tension monter avant le malaise ou jauger l'effort que son cœur peut encore tenir.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Électroréception
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir les champs électriques des êtres vivants et des machines. Pour deviner une proie tapie ou un câble sous tension sans le voir. Sens propre aux créatures, hors de la physiologie humaine.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Détection infrarouge
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir à distance la chaleur rayonnée par les corps, même dans le noir total. Pour distinguer un vivant d'un décor froid ou suivre une empreinte thermique. Sens propre aux créatures, hors de la physiologie humaine.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Ligne latérale
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir les mouvements, pressions et vibrations de l'eau tout autour du corps. Pour sentir approcher ce qui nage, sans le voir ni l'entendre. Sens propre aux créatures, hors de la physiologie humaine.
+
+</div>
+
+<div class="keep" markdown>
+
+#### Hygroréception
+
+<p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
+
+Percevoir le taux d'humidité de l'air. Pour flairer la pluie qui vient ou trouver une source à la moiteur de l'air. Sens propre aux créatures, hors de la physiologie humaine.
 
 </div>
 

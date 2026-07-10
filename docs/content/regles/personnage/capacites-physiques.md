@@ -255,21 +255,30 @@ Un sol qui entrave la progression, boue, éboulis, sous-bois, neige, décombres 
 
 #### Chute
 
-Un personnage qui tombe subit les dégâts de l'impact. En chute libre, il descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round, sa vitesse plafonnant autour de 50 m/s, soit 180 km/h.
+Un personnage qui tombe subit les dégâts de l'impact. En chute libre, il descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round, sa vitesse plafonnant autour de 50 m/s, soit 180 km/h, atteinte après environ 450 mètres de chute.
 
-Les dégâts se lisent par paliers de chute, selon la hauteur totale parcourue : chaque palier en double la hauteur et les dégâts. On retient le palier le plus haut atteint ; en deçà de 3 mètres, la chute ne fait aucun mal.
+Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils croissent avec la hauteur, d'abord vite, puis de moins en moins à mesure que l'air freine. À la vitesse terminale, atteinte vers 450 mètres, la chute cesse d'accélérer : au-delà, on ne tombe pas plus vite, donc pas plus fort, et les dégâts plafonnent à 500. On retient le palier le plus haut atteint ; en deçà de 3 mètres, la chute ne fait aucun mal.
 
 | Palier | Hauteur de chute | Dégâts |
 |:---:|:---:|:---:|
-| 1 | 3 m | 20 |
-| 2 | 6 m | 40 |
-| 3 | 12 m | 80 |
-| 4 | 24 m | 160 |
-| 5 | 48 m et plus | 320 |
+| 1 | 3 m | 10 |
+| 2 | 5 m | 20 |
+| 3 | 8 m | 30 |
+| 4 | 12 m | 50 |
+| 5 | 20 m | 70 |
+| 6 | 30 m | 100 |
+| 7 | 45 m | 150 |
+| 8 | 60 m | 200 |
+| 9 | 90 m | 250 |
+| 10 | 120 m | 300 |
+| 11 | 150 m | 350 |
+| 12 | 200 m | 400 |
+| 13 | 300 m | 450 |
+| 14 | 450 m et plus | 500 |
 
-En touchant le sol, le personnage peut dépenser sa [réaction](../combat/deroulement-combat.md) pour un jet de [Chute](competences.md) : sa réussite retranche autant de paliers, et les dégâts retombent d'autant. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.
+En touchant le sol, le personnage peut dépenser sa [réaction](../combat/deroulement-combat.md) pour un jet de [Chute](competences.md) : le résultat de son jet se retranche directement des dégâts de la chute. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.
 
-> Exemple. Une chute de trente mètres relève du palier 4, soit 160 dégâts. En atteignant Absurde (240) à son jet de Chute, le personnage retranche trois paliers : il tombe au palier 1 et n'encaisse plus que 20 dégâts.
+> Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage réussit son jet de Chute à 403 : il n'en subit plus que 47. Le même jet annulerait entièrement une chute de trente mètres, qui n'inflige que 100 dégâts.
 
 #### Chuter dans l'eau
 

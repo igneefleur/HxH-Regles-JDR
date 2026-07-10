@@ -6,13 +6,13 @@ Le prix d'une arme se calcule en deux temps : on additionne le prix de chacun de
 
 | Grade | Difficulté de forge | Prix | Armes de ce grade |
 | --- | --- | :---: | --- |
-| Rudimentaire | Triviale | ×1 | Gourdin, Matraque, Nunchaku, Chaîne lestée, Bâton, Hache de jet, Boomerang, Bolas, Fronde, Arbalète de poing, Grenade à main, Grenade lacrymogène, Poing américain, Sai / Jutte |
-| Sommaire | Facile | ×2 | Dague, Katar, Masse lourde, Fléau d'armes, Kusarigama, Fouet, Lance, Javelot, Arc court, Griffes, Faucille de combat, Éventail de fer |
-| Ouvragé | Moyenne | ×4 | Épée courte, Hache à une main, Hache à deux mains, Masse d'armes, Marteau de guerre, Pique, Hallebarde, Glaive d'hast, Trident, Arc long, Arbalète légère, Arbalète à chargeur, Crochets chinois |
-| Fin | Difficile | ×7 | Épée longue, Sabre, Rapière, Falchion, Macuahuitl, Arc composite, Arbalète lourde, Pistolet à poudre noire, Derringer, Fusil à pompe |
+| Rudimentaire | Triviale | ×1 | Gourdin, Matraque, Nunchaku, Chaîne lestée, Bâton, Hache de jet, Boomerang, Bolas, Fronde, Arbalète de poing, Grenade à main, Poing américain, Sai / Jutte |
+| Sommaire | Facile | ×2 | Dague, Katar, Masse lourde, Fléau d'armes, Kusarigama, Fouet, Lance, Pique, Javelot, Arc court, Griffes, Faucille de combat, Éventail de fer |
+| Ouvragé | Moyenne | ×4 | Épée courte, Hache à une main, Hache à deux mains, Masse d'armes, Marteau de guerre, Hallebarde, Glaive d'hast, Trident, Arc long, Arbalète légère, Arbalète à chargeur, Crochets chinois |
+| Fin | Difficile | ×7 | Épée longue, Sabre, Sabre à deux mains, Rapière, Falchion, Macuahuitl, Arc composite, Arbalète lourde, Pistolet à poudre noire, Derringer, Fusil à pompe |
 | Supérieur | Très difficile | ×12 | Épée à deux mains, Arc à poulies, Mousquet, Tromblon, Pistolet semi-auto, Revolver, Derringer 4 canons, Carabine civile |
-| Avancé | Ardue | ×20 | Fusil à canon double, Lance-grenades, Lance-roquettes, Taser |
-| Élite | Experte | ×40 | Pistolet-mitrailleur, Fusil d'assaut, Fusil de combat, Fusil de précision, Lance-flammes |
+| Avancé | Ardue | ×20 | Fusil à canon double, Lance-grenades, Lance-roquettes, Lance-flammes |
+| Élite | Experte | ×40 | Pistolet-mitrailleur, Fusil d'assaut, Fusil de combat, Fusil de précision |
 | Exceptionnel | Extrême | ×80 | Fusil anti-matériel, Mitrailleuse moyenne |
 
 </div>
@@ -25,9 +25,9 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Main | ✦✦✦ | Mêlée |  | 1 main | 20 | ×1 FOR | CON | ☆☆☆☆☆ | — | Saisie, Parade, Indésarmable, Compatible Nen |
-| Pied | ✦✦✦ | Mêlée |  | Aucune | 20 | ×1 FOR | CON | ☆☆☆☆☆ | — | Poussée, Indésarmable, Compatible Nen |
-| Tête | ✦✦✦ | Mêlée |  | Aucune | 20 | ×1 FOR | CON | ☆☆☆☆☆ | — | Assommement, Indésarmable, Compatible Nen |
+| Main | ✦✦✦ | Mêlée |  | 1 main | 20 | ×1 FOR | CON | ☆☆☆☆☆ | — | Indésarmable, Parade, Saisie, Compatible Nen |
+| Pied | ✦✦✦ | Mêlée |  | Aucune | 20 | ×1 FOR | CON | ☆☆☆☆☆ | — | Indésarmable, Poussée, Compatible Nen |
+| Tête | ✦✦✦ | Mêlée |  | Aucune | 20 | ×1 FOR | CON | ☆☆☆☆☆ | — | Indésarmable, Assommement, Compatible Nen |
 
 </div>
 
@@ -37,15 +37,16 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Dague | ✦✦✧ | Mêlée<br>Jet 5/10 m |  | 1 main | 30 | ×1 FOR | PER | ★☆☆☆☆ | 8 000 Ɉ | Déchirante (−5 PV), Finesse, Parade, Jumelable, Dégainage instantané, Dissimulable |
-| Katar | ✦✦✦ | Mêlée |  | 1 main | 60 | ×1 FOR | PER | ★★☆☆☆ | 10 000 Ɉ | Perce-armure (20), Précise, Finesse, Parade, Jumelable, Dissimulable |
-| Épée courte | ✦✦✧ | Mêlée |  | 1 main | 60 | ×1 FOR | TRA / PER | ★☆☆☆☆ | 16 000 Ɉ | Finesse, Précise, Parade, Dégainage instantané |
-| Épée longue | ✦✦✧ | Mêlée |  | Polyvalente | 70 | ×2 FOR | TRA / PER | ★☆☆☆☆ | 30 000 Ɉ | Désarmement, Précise, Parade |
-| Épée à deux mains | ✦✦✧ | Mêlée |  | 2 mains | 70 | ×3 FOR | TRA | ★☆☆☆☆ | 56 000 Ɉ | Désarmement, Déchirante (−20 PV), Parade, Très lourde |
-| Sabre | ✦✦✧ | Mêlée |  | 1 main | 60 | ×1 FOR | TRA | ★☆☆☆☆ | 30 000 Ɉ | Déchirante (−10 PV), Finesse, Parade, Dégainage instantané |
-| Rapière | ✦✦✧ | Mêlée |  | 1 main | 70 | ×1 FOR | PER | ★☆☆☆☆ | 32 000 Ɉ | Désarmement, Finesse, Précise, Parade |
-| Falchion | ✦✦✧ | Mêlée |  | 1 main | 70 | ×1 FOR | TRA | ★☆☆☆☆ | 30 000 Ɉ | Déchirante (−10 PV), Parade, Dégainage instantané |
-| Macuahuitl | ✦✧✧ | Mêlée |  | 2 mains | 70 | ×2 FOR | TRA / CON | ★☆☆☆☆ | 30 000 Ɉ | Déchirante (−10 PV), Assommement, Parade |
+| Dague | ✦✦✧ | Mêlée<br>Jet 5/10 m |  | 1 main | 30 | ×1 FOR | PER | ★☆☆☆☆ | 8 000 Ɉ | Parade, Dissimulable, Déchirante (−5 PV), Finesse, Jumelable, Dégainage instantané |
+| Katar | ✦✦✦ | Mêlée |  | 1 main | 60 | ×1 FOR | PER | ★★☆☆☆ | 10 000 Ɉ | Parade, Dissimulable, Perce-armure (20), Précise, Finesse, Jumelable |
+| Épée courte | ✦✦✧ | Mêlée |  | 1 main | 60 | ×1 FOR | TRA / PER | ★☆☆☆☆ | 16 000 Ɉ | Parade, Finesse, Précise, Dégainage instantané |
+| Épée longue | ✦✦✧ | Mêlée |  | Polyvalente | 70 | ×2 FOR | TRA / PER | ★☆☆☆☆ | 30 000 Ɉ | Parade, Désarmement, Précise |
+| Épée à deux mains | ✦✦✧ | Mêlée |  | 2 mains | 80 | ×3 FOR | TRA | ★☆☆☆☆ | 62 000 Ɉ | Parade, Désarmement, Déchirante (−10 PV), Lourde |
+| Sabre | ✦✦✧ | Mêlée |  | 1 main | 60 | ×1 FOR | TRA | ★☆☆☆☆ | 30 000 Ɉ | Parade, Déchirante (−10 PV), Finesse, Dégainage instantané |
+| Sabre à deux mains | ✦✦✧ | Mêlée |  | 2 mains | 70 | ×2 FOR | TRA | ★☆☆☆☆ | 36 000 Ɉ | Parade, Déchirante (−15 PV), Renversement, Lourde |
+| Rapière | ✦✦✧ | Mêlée |  | 1 main | 70 | ×1 FOR | PER | ★☆☆☆☆ | 32 000 Ɉ | Parade, Désarmement, Finesse, Précise |
+| Falchion | ✦✦✧ | Mêlée |  | 1 main | 70 | ×1 FOR | TRA | ★☆☆☆☆ | 30 000 Ɉ | Parade, Déchirante (−10 PV), Dégainage instantané |
+| Macuahuitl | ✦✧✧ | Mêlée |  | 2 mains | 70 | ×2 FOR | TRA / CON | ★☆☆☆☆ | 30 000 Ɉ | Parade, Déchirante (−10 PV), Assommement |
 
 </div>
 
@@ -55,13 +56,13 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Hache à une main | ✦✧✧ | Mêlée |  | Polyvalente | 70 | ×2 FOR | TRA | ★☆☆☆☆ | 16 000 Ɉ | Perce-armure (20), Déchirante (−10 PV), Désarmement, Parade |
-| Hache à deux mains | ✦✧✧ | Mêlée |  | 2 mains | 70 | ×3 FOR | TRA | ★☆☆☆☆ | 22 000 Ɉ | Perce-armure (20), Déchirante (−15 PV), Renversement, Parade, Très lourde |
-| Gourdin | ✦✧✧ | Mêlée |  | 1 main | 70 | ×1 FOR | CON | ☆☆☆☆☆ | 3 500 Ɉ | Assommement, Parade |
-| Matraque | ✦✧✧ | Mêlée |  | 1 main | 70 | ×1 FOR | CON | ★☆☆☆☆ | 4 000 Ɉ | Assommement, Parade, Dégainage instantané, Dissimulable |
-| Masse d'armes | ✦✧✧ | Mêlée |  | 1 main | 50 | ×2 FOR | CON | ★☆☆☆☆ | 18 000 Ɉ | Perce-armure (40), Renversement, Assommement, Parade, Lourde |
-| Marteau de guerre | ✦✧✧ | Mêlée |  | 1 main | 50 | ×2 FOR | CON / PER | ★☆☆☆☆ | 18 000 Ɉ | Perce-armure (60), Assommement, Parade, Lourde |
-| Masse lourde | ✦✧✧ | Mêlée |  | 2 mains | 60 | ×3 FOR | CON | ★☆☆☆☆ | 12 000 Ɉ | Perce-armure (40), Renversement, Poussée, Assommement, Parade, Très lourde |
+| Hache à une main | ✦✧✧ | Mêlée |  | Polyvalente | 70 | ×2 FOR | TRA | ★☆☆☆☆ | 16 000 Ɉ | Parade, Perce-armure (20), Déchirante (−10 PV), Désarmement |
+| Hache à deux mains | ✦✧✧ | Mêlée |  | 2 mains | 70 | ×3 FOR | TRA | ★☆☆☆☆ | 22 000 Ɉ | Parade, Perce-armure (20), Déchirante (−15 PV), Renversement, Très lourde |
+| Gourdin | ✦✧✧ | Mêlée |  | 1 main | 70 | ×1 FOR | CON | ☆☆☆☆☆ | 3 500 Ɉ | Parade, Assommement |
+| Matraque | ✦✧✧ | Mêlée |  | 1 main | 70 | ×1 FOR | CON | ★☆☆☆☆ | 4 000 Ɉ | Parade, Dissimulable, Assommement, Dégainage instantané |
+| Masse d'armes | ✦✧✧ | Mêlée |  | 1 main | 50 | ×2 FOR | CON | ★☆☆☆☆ | 18 000 Ɉ | Parade, Perce-armure (40), Renversement, Assommement, Lourde |
+| Marteau de guerre | ✦✧✧ | Mêlée |  | 1 main | 50 | ×2 FOR | CON / PER | ★☆☆☆☆ | 18 000 Ɉ | Parade, Perce-armure (60), Assommement, Lourde |
+| Masse lourde | ✦✧✧ | Mêlée |  | 2 mains | 60 | ×3 FOR | CON | ★☆☆☆☆ | 12 000 Ɉ | Parade, Perce-armure (40), Renversement, Poussée, Assommement, Très lourde |
 
 </div>
 
@@ -72,10 +73,10 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Fléau d'armes | ✦✧✧ | Mêlée |  | 1 main | 60 | ×2 FOR | CON | ★☆☆☆☆ | 8 000 Ɉ | Renversement, Assommement, Désarmement |
-| Nunchaku | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 000 Ɉ | Assommement, Renversement, Finesse, Jumelable, Dissimulable |
+| Nunchaku | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 000 Ɉ | Dissimulable, Assommement, Renversement, Finesse, Jumelable |
 | Chaîne lestée | ✦✦✦ | Allonge ×3 |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 500 Ɉ | Assommement, Désarmement, Saisie, Finesse, Inefficace de près (Allonge ×1) |
 | Kusarigama | ✦✦✦ | Allonge ×3 |  | Polyvalente | 50 | ×1 FOR | TRA / CON | ★★☆☆☆ | 10 000 Ɉ | Déchirante (−5 PV), Désarmement, Saisie, Finesse |
-| Fouet | ✦✦✦ | Allonge ×4 |  | 1 main | 40 | ×1 FOR | CON | ★☆☆☆☆ | 10 000 Ɉ | Désarmement, Saisie, Finesse, Dissimulable, Inefficace de près (Allonge ×2) |
+| Fouet | ✦✦✦ | Allonge ×4 |  | 1 main | 40 | ×1 FOR | CON | ★☆☆☆☆ | 10 000 Ɉ | Dissimulable, Désarmement, Saisie, Finesse, Inefficace de près (Allonge ×2) |
 
 </div>
 
@@ -85,12 +86,12 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Lance | ✦✦✧ | Allonge ×2<br>Jet 15/30 m |  | Polyvalente | 50 | ×1 FOR | PER | ★☆☆☆☆ | 9 500 Ɉ | Perce-armure (20), Poussée, Parade, Inefficace de près (Allonge ×1) |
+| Lance | ✦✦✧ | Allonge ×2<br>Jet 15/30 m |  | Polyvalente | 50 | ×1 FOR | PER | ★☆☆☆☆ | 9 500 Ɉ | Parade, Perce-armure (20), Poussée, Inefficace de près (Allonge ×1) |
 | Pique | ✦✧✧ | Allonge ×5 |  | 2 mains | 60 | ×2 FOR | PER | ★☆☆☆☆ | 10 000 Ɉ | Perce-armure (60), Poussée, Inefficace de près (Allonge ×2) |
-| Hallebarde | ✦✦✧ | Allonge ×2 |  | 2 mains | 50 | ×2 FOR | TRA / PER | ★☆☆☆☆ | 20 000 Ɉ | Perce-armure (40), Poussée, Désarmement, Parade, Inefficace de près (Allonge ×1) |
-| Glaive d'hast | ✦✦✧ | Allonge ×2 |  | 2 mains | 50 | ×2 FOR | TRA | ★☆☆☆☆ | 20 000 Ɉ | Déchirante (−15 PV), Renversement, Parade, Inefficace de près (Allonge ×1) |
-| Trident | ✦✦✧ | Allonge ×2<br>Jet 5/15 m |  | Polyvalente | 60 | ×1 FOR | PER | ★☆☆☆☆ | 18 000 Ɉ | Désarmement, Saisie, Parade, Inefficace de près (Allonge ×1) |
-| Bâton | ✦✦✦ | Mêlée |  | 2 mains | 40 | ×2 FOR | CON | ☆☆☆☆☆ | 4 500 Ɉ | Renversement, Assommement, Parade |
+| Hallebarde | ✦✦✧ | Allonge ×2 |  | 2 mains | 50 | ×2 FOR | TRA / PER | ★☆☆☆☆ | 20 000 Ɉ | Parade, Perce-armure (40), Poussée, Désarmement, Inefficace de près (Allonge ×1) |
+| Glaive d'hast | ✦✦✧ | Allonge ×2 |  | 2 mains | 50 | ×2 FOR | TRA | ★☆☆☆☆ | 20 000 Ɉ | Parade, Déchirante (−15 PV), Renversement, Inefficace de près (Allonge ×1) |
+| Trident | ✦✦✧ | Allonge ×2<br>Jet 5/15 m |  | Polyvalente | 60 | ×1 FOR | PER | ★☆☆☆☆ | 18 000 Ɉ | Parade, Désarmement, Saisie, Inefficace de près (Allonge ×1) |
+| Bâton | ✦✦✦ | Mêlée |  | 2 mains | 40 | ×2 FOR | CON | ☆☆☆☆☆ | 4 500 Ɉ | Parade, Renversement, Assommement |
 
 </div>
 
@@ -118,7 +119,7 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Arc long | ✦✧✧ | Tir 150/300 m | 1 tir | 2 mains | 100 | ×1 FOR | PER | ☆☆☆☆☆ | 22 000 Ɉ | Perce-armure (20), Très lourde, Inefficace de près (Allonge ×1), Recharge Rapide |
 | Arc composite | ✦✧✧ | Tir 150/300 m | 1 tir | 2 mains | 90 | ×1 FOR | PER | ☆☆☆☆☆ | 32 000 Ɉ | Lourde, Recharge Rapide |
 | Arc à poulies | ✦✧✧ | Tir 50/300 m | 1 tir | 2 mains | 90 | ×1 FOR | PER | ☆☆☆☆☆ | 64 000 Ɉ | Perce-armure (20), Précise, Très lourde, Inefficace de près (Allonge ×1), Recharge Rapide |
-| Arbalète de poing | ✧✧✧ | Tir 15/45 m | 1 tir | 1 main | 80 | +20 | PER | ★☆☆☆☆ | 4 000 Ɉ | Perce-armure (20), Précise, Dégainage instantané, Dissimulable |
+| Arbalète de poing | ✧✧✧ | Tir 15/45 m | 1 tir | 1 main | 80 | +20 | PER | ★☆☆☆☆ | 4 000 Ɉ | Dissimulable, Perce-armure (20), Précise, Dégainage instantané |
 | Arbalète légère | ✧✧✧ | Tir 40/180 m | 1 tir | 2 mains | 90 | +40 | PER | ★☆☆☆☆ | 20 000 Ɉ | Perce-armure (20), Précise |
 | Arbalète lourde | ✧✧✧ | Tir 70/200 m | 1 tir | 2 mains | 100 | +60 | PER | ★☆☆☆☆ | 48 000 Ɉ | Perce-armure (40), Précise, Très lourde, Rechargement lent |
 | Arbalète à chargeur | ✧✧✧ | Tir 50/120 m | 10 tirs | 2 mains | 80 | +20 | PER | ★☆☆☆☆ | 20 000 Ɉ | Recharge Rapide |
@@ -131,8 +132,8 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Pistolet à poudre noire | ✧✧✧ | Tir 15/45 m | 1 tir | Polyvalente | 140 | +40 | CON | ★☆☆☆☆ | 48 000 Ɉ | Dégainage instantané, Dissimulable, Rechargement lent, Sensible à l'humidité, Bruyante |
-| Mousquet | ✧✧✧ | Mêlée<br>Tir 50/200 m | 1 tir | 2 mains | 130 | +60 | CON | ★☆☆☆☆ | 100 000 Ɉ | Perce-armure (20), Parade, Très lourde, Rechargement lent, Sensible à l'humidité, Bruyante |
+| Pistolet à poudre noire | ✧✧✧ | Tir 15/45 m | 1 tir | Polyvalente | 140 | +40 | CON | ★☆☆☆☆ | 48 000 Ɉ | Dissimulable, Dégainage instantané, Rechargement lent, Sensible à l'humidité, Bruyante |
+| Mousquet | ✧✧✧ | Mêlée<br>Tir 50/200 m | 1 tir | 2 mains | 130 | +60 | CON | ★☆☆☆☆ | 100 000 Ɉ | Parade, Perce-armure (20), Très lourde, Rechargement lent, Sensible à l'humidité, Bruyante |
 | Tromblon | ✧✧✧ | Tir 10/40 m<br>Cône 5 m, 45° | 1 tir | 2 mains | 150 | +40 | CON | ★☆☆☆☆ | 90 000 Ɉ | Lourde, Rechargement lent, Sensible à l'humidité, Bruyante |
 
 </div>
@@ -143,19 +144,19 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Pistolet semi-auto | ✧✧✧ | Tir 50/100 m | 15 tirs | Polyvalente | 80 | +40 | PER | ★★★☆☆ | 80 000 Ɉ | Précise, Dégainage instantané, Dissimulable, Bruyante |
-| Revolver | ✧✧✧ | Tir 50/100 m | 6 tirs | Polyvalente | 100 | +40 | PER | ★★★☆☆ | 78 000 Ɉ | Précise, Dégainage instantané, Dissimulable, Bruyante |
-| Derringer | ✧✧✧ | Tir 5/15 m | 2 tirs | 1 main | 130 | +40 | PER | ★★★☆☆ | 44 000 Ɉ | Dégainage instantané, Dissimulable, Bruyante |
-| Derringer 4 canons | ✧✧✧ | Tir 10/20 m | 4 tirs | 1 main | 120 | +40 | PER | ★★★☆☆ | 76 000 Ɉ | Dégainage instantané, Dissimulable, Bruyante |
-| Pistolet-mitrailleur | ✧✧✧ | Tir 100/200 m<br>Cône 15 m, 45° | 10 tirs<br>(3 munitions par tir) | Polyvalente | 90 | +40 | PER | ★★★★★ | 295 000 Ɉ | Éraflure (10 %), Bruyante |
-| Fusil d'assaut | ✧✧✧ | Tir 400/800 m<br>Cône 15 m, 45° | 10 tirs<br>(3 munitions par tir) | 2 mains | 60 | +60 | PER | ★★★★★ | 320 000 Ɉ | Perce-armure (40), Éraflure (10 %), Bruyante |
-| Fusil de combat | ✧✧✧ | Tir 600/800 m<br>Cône 10 m, 45° | 10 tirs<br>(2 munitions par tir) | 2 mains | 90 | +60 | PER | ★★★★★ | 380 000 Ɉ | Perce-armure (60), Très lourde, Bruyante |
+| Pistolet semi-auto | ✧✧✧ | Tir 50/100 m | 15 tirs | Polyvalente | 80 | +40 | PER | ★★★☆☆ | 80 000 Ɉ | Dissimulable, Précise, Dégainage instantané, Bruyante |
+| Revolver | ✧✧✧ | Tir 50/100 m | 6 tirs | Polyvalente | 100 | +40 | PER | ★★★☆☆ | 78 000 Ɉ | Dissimulable, Précise, Dégainage instantané, Bruyante |
+| Derringer | ✧✧✧ | Tir 5/15 m | 2 tirs | 1 main | 130 | +40 | PER | ★★★☆☆ | 44 000 Ɉ | Dissimulable, Dégainage instantané, Bruyante |
+| Derringer 4 canons | ✧✧✧ | Tir 10/20 m | 4 tirs | 1 main | 120 | +40 | PER | ★★★☆☆ | 76 000 Ɉ | Dissimulable, Dégainage instantané, Bruyante |
+| Pistolet-mitrailleur | ✧✧✧ | Tir 100/200 m<br>Cône 15 m, 45° | 10 tirs | Polyvalente | 90 | +40 | PER | ★★★★★ | 295 000 Ɉ | Éraflure (10 %), Bruyante |
+| Fusil d'assaut | ✧✧✧ | Tir 400/800 m<br>Cône 15 m, 45° | 10 tirs | 2 mains | 60 | +60 | PER | ★★★★★ | 320 000 Ɉ | Perce-armure (40), Éraflure (10 %), Bruyante |
+| Fusil de combat | ✧✧✧ | Tir 600/800 m<br>Cône 10 m, 45° | 10 tirs | 2 mains | 90 | +60 | PER | ★★★★★ | 380 000 Ɉ | Perce-armure (60), Très lourde, Bruyante |
 | Fusil de précision | ✧✧✧ | Tir 800/1500 m | 6 tirs | 2 mains | 100 | +80 | PER | ★★★☆☆ | 440 000 Ɉ | Perce-armure (60), Aggravation (10 %), Précise, Très lourde, Arme lente, Bruyante, Inefficace de près (20 %) |
 | Fusil anti-matériel | ✧✧✧ | Tir 1800/2500 m | 10 tirs | 2 mains | 110 | +100 | PER | ★★★★★ | 1 100 000 Ɉ | Perce-armure (80), Déchirante (−5 PV), Aggravation (10 %), Précise, Extrêmement lourde, Arme lente, Bruyante, Inefficace de près (20 %) |
 | Fusil à pompe | ✧✧✧ | Tir 40/50 m<br>Cône 10 m, 45° | 6 tirs | 2 mains | 100 | +60 | PER | ★★☆☆☆ | 52 000 Ɉ | Lourde, Rechargement lent, Bruyante |
 | Fusil à canon double | ✧✧✧ | Tir 40/50 m<br>Cône 10 m, 45° | 2 tirs | 2 mains | 100 | +80 | PER | ★★☆☆☆ | 150 000 Ɉ | Bruyante, Lourde |
 | Carabine civile | ✧✧✧ | Tir 200/300 m | 10 tirs | 2 mains | 70 | +60 | PER | ★★☆☆☆ | 80 000 Ɉ | Perce-armure (20), Précise, Bruyante |
-| Mitrailleuse moyenne | ✧✧✧ | Tir 800/1800 m<br>Cône 20 m, 45° | 15 tirs<br>(10 munitions par tir) | 2 mains | 60 | +80 | PER | ★★★★★ | 960 000 Ɉ | Perce-armure (60), Déchirante (−5 PV), Éraflure (10 %), Extrêmement lourde, Rechargement lent, Surchauffe, Bruyante |
+| Mitrailleuse moyenne | ✧✧✧ | Tir 800/1800 m<br>Cône 20 m, 45° | 15 tirs | 2 mains | 60 | +80 | PER | ★★★★★ | 960 000 Ɉ | Perce-armure (60), Déchirante (−5 PV), Éraflure (10 %), Extrêmement lourde, Rechargement lent, Surchauffe, Bruyante |
 
 </div>
 
@@ -168,18 +169,7 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 | Grenade à main | ✧✧✧ | Jet 30/45 m |  | 1 main | 190 |  | CON / PER | ★★★★★ | 9 000 Ɉ | Zone (rayon 10 m), Bruyante, Usage unique |
 | Lance-grenades | ✧✧✧ | Tir 150/400 m | 1 tir | 2 mains | 130 | +100 | CON / PER | ★★★★★ | 205 000 Ɉ | Zone (rayon 5 m), Perce-armure (40), Lourde, Rechargement lent, Bruyante, Inefficace de près (20 %) |
 | Lance-roquettes | ✧✧✧ | Tir 300/500 m (direct) | 1 tir | 2 mains | 150 | +100 | CON / PER | ★★★★★ | 280 000 Ɉ | Zone (rayon 5 m), Perce-armure (100), Extrêmement lourde, Arme lente, Rechargement lent, Bruyante, Inefficace de près (20 %) |
-| Lance-flammes | ✧✧✧ | Cône 15 m, 45° | 6 tirs | 2 mains | 130 | +80 | FEU | ★★★★★ | 395 000 Ɉ | Nuage persistant, Bruyante, Extrêmement lourde |
-
-</div>
-
-## Armes non létales
-
-<div class="cj-modules anima armes" markdown>
-
-| Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Taser | ✧✧✧ | Tir 5/10 m | 2 tirs | 1 main | 50 | +20 | ÉLE | ★★☆☆☆ | 80 000 Ɉ | Décharge incapacitante, Dégainage instantané, Dissimulable |
-| Grenade lacrymogène | ✧✧✧ | Jet 30/40 m |  | 1 main | 30 |  | DÉC | ★★☆☆☆ | 6 500 Ɉ | Zone (rayon 20 m), Aveuglement de zone, Nuage persistant, Usage unique |
+| Lance-flammes | ✧✧✧ | Cône 15 m, 45° | 6 tirs | 2 mains | 150 | +80 | FEU | ★★★★★ | 200 000 Ɉ | Bruyante, Extrêmement lourde |
 
 </div>
 
@@ -189,12 +179,12 @@ Attaques naturelles dont dispose tout personnage, sans rien acheter ; elles éch
 
 | Arme | AM | Portée | Munitions | Mains | Dégâts | Mod. dégâts | Type | Illégalité | Prix | Propriétés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Poing américain | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 000 Ɉ | Renversement, Assommement, Parade, Jumelable, Dissimulable |
-| Griffes | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | TRA | ★★☆☆☆ | 10 000 Ɉ | Déchirante (−5 PV), Saisie, Finesse, Parade, Jumelable, Mains libres |
-| Faucille de combat | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | TRA | ★★☆☆☆ | 10 000 Ɉ | Déchirante (−5 PV), Saisie, Désarmement, Finesse, Parade, Jumelable, Dissimulable |
-| Sai / Jutte | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 000 Ɉ | Assommement, Désarmement, Finesse, Parade, Jumelable, Dissimulable |
-| Éventail de fer | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 10 000 Ɉ | Saisie, Désarmement, Finesse, Parade, Jumelable, Dégainage instantané, Dissimulable |
-| Crochets chinois | ✦✦✦ | Mêlée |  | 1 main | 60 | ×1 FOR | TRA | ★★☆☆☆ | 20 000 Ɉ | Déchirante (−5 PV), Désarmement, Saisie, Finesse, Parade, Jumelable |
+| Poing américain | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 000 Ɉ | Parade, Dissimulable, Renversement, Assommement, Jumelable |
+| Griffes | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | TRA | ★★☆☆☆ | 10 000 Ɉ | Parade, Déchirante (−5 PV), Saisie, Finesse, Jumelable, Mains libres |
+| Faucille de combat | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | TRA | ★★☆☆☆ | 10 000 Ɉ | Parade, Dissimulable, Déchirante (−5 PV), Saisie, Désarmement, Finesse, Jumelable |
+| Sai / Jutte | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 5 000 Ɉ | Parade, Dissimulable, Assommement, Désarmement, Finesse, Jumelable |
+| Éventail de fer | ✦✦✦ | Mêlée |  | 1 main | 50 | ×1 FOR | CON | ★★☆☆☆ | 10 000 Ɉ | Parade, Dissimulable, Saisie, Désarmement, Finesse, Jumelable, Dégainage instantané |
+| Crochets chinois | ✦✦✦ | Mêlée |  | 1 main | 60 | ×1 FOR | TRA | ★★☆☆☆ | 20 000 Ɉ | Parade, Déchirante (−5 PV), Désarmement, Saisie, Finesse, Jumelable |
 
 </div>
 
@@ -499,26 +489,6 @@ Sur une touche, la cible subit l'état Immobilisé (voir États) à distance : e
 | Prix | Coût |
 |---|:---:|
 | 750 Ɉ | +30 |
-</div>
-
-<div class="mcard" markdown>
-**Aveuglement de zone** <span class="prereq">Nécessite : Zone ou Cône</span>
-
-Le nuage emplit une Zone et brûle les yeux et les voies respiratoires de qui s'y trouve. Chaque cible prise dedans subit un fort malus à l'attaque et à la défense et ne peut plus employer Viser, tant qu'elle y reste et le tour suivant sa sortie. Le gaz n'entrave pas le déplacement : on peut fuir à l'aveugle. (Les pertes de vue passent par l'acuité des sens, pas par un état ; voir Sens.)
-
-| Prix | Coût |
-|---|:---:|
-| 1 250 Ɉ | +50 |
-</div>
-
-<div class="mcard" markdown>
-**Nuage persistant** <span class="prereq">Nécessite : Zone ou Cône</span>
-
-Le nuage libéré par l'arme demeure sur la zone environ 5 rounds (une trentaine de secondes) avant de se dissiper. Tant qu'il tient, toute cible qui entre ou reste dans la zone en subit les effets à chaque tour : le porteur crée une zone d'interdiction.
-
-| Prix | Coût |
-|---|:---:|
-| 500 Ɉ | +20 |
 </div>
 
 <div class="mcard" markdown>

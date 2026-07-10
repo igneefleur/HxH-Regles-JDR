@@ -46,8 +46,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"EB Garamond";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Alegreya";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -709,24 +709,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Classes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -743,69 +725,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#points-de-vie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Points de vie
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plafonds-de-formation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plafonds de formation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bonus-de-classe" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bonus de classe
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combattant" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combattant
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1976,7 +1895,7 @@
   <span class="md-ellipsis">
     
   
-    Manœuvres
+    Attaque et Défense
   
 
     
@@ -2661,58 +2580,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#points-de-vie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Points de vie
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plafonds-de-formation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plafonds de formation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bonus-de-classe" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bonus de classe
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combattant" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combattant
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2729,120 +2596,6 @@
 
 
 <h1 id="classes">Classes</h1>
-<div class="cols">
-<p>La classe est le métier de combat d'un personnage. Là où l'<a href="../../nen/archetypes-nen/">archétype</a> règle son aura, la classe fixe sa vitalité, oriente la dépense de ses <a href="../points-formation/">points de formation</a> et lui accorde des aptitudes propres tant qu'il y appartient.</p>
-<p>À sa création, un personnage choisit une classe. Pour l'instant, une seule est ouverte, le Combattant ; d'autres suivront.</p>
-<p>Une classe définit trois choses :</p>
-<ul>
-<li>les points de vie qu'elle accorde à chaque niveau ;</li>
-<li>les plafonds de formation, champ par champ, qui bornent sa spécialisation ;</li>
-<li>les bonus de classe, des avantages chiffrés acquis tant qu'il reste dans la classe.</li>
-</ul>
-<h3 id="points-de-vie">Points de vie</h3>
-<p>Les points de vie, ou PV, mesurent ce qu'un personnage encaisse avant de tomber. La classe fixe le gain par <a href="../points-formation/">niveau</a> ; le total maximal est ce gain multiplié par le niveau.</p>
-<p class="formula">PV max = PV par niveau × niveau</p>
-<p>Quels que soient les modificateurs qui s'y appliquent, ce total ne descend jamais sous 1 : un personnage conserve toujours au moins 1 PV maximum.</p>
-<p>Les PV courants varient au fil des coups et des soins, sans jamais dépasser ce maximum. Un changement de classe recalcule aussitôt les PV maximaux sur le nouveau gain par niveau.</p>
-<h3 id="plafonds-de-formation">Plafonds de formation</h3>
-<p>Un personnage répartit librement ses points de formation, mais sa classe borne sa spécialisation : pour chaque <a href="../competences/">champ de compétence</a>, elle fixe la part maximale des PF totaux qu'il peut y investir. Les PF totaux sont la somme de tout ce qu'il a gagné, celle qui donne son <a href="../points-formation/">niveau</a>.</p>
-<p>Le plafond se calcule sur ces PF totaux, et non sur les seuls points déjà dépensés : il s'élève donc à mesure que le personnage gagne en niveau. Un champ plafonné à 40 % autorise, à 300 PF totaux, jusqu'à 120 PF placés dans ses compétences.</p>
-<p>Les plafonds diffèrent d'un champ à l'autre et dessinent le profil de la classe : où elle laisse se spécialiser, où elle bride.</p>
-<p>Les <a href="../../art/arts-martiaux/">arts martiaux</a> et les <a href="../../formation/formations-martiales/">formations</a> ne forment pas de champ à part : les PF qu'on y consacre comptent dans le champ martial.</p>
-<h3 id="bonus-de-classe">Bonus de classe</h3>
-<p>Tant qu'un personnage appartient à sa classe, cinq bonus chiffrés s'ajoutent aux jets concernés. Ils ne coûtent aucun point de formation : la classe les accorde d'office. Quitter la classe les fait perdre aussitôt.</p>
-<hr />
-<div class="keep">
-<h3 id="combattant">Combattant</h3>
-<p>Le Combattant fait du corps à corps son métier. Il frappe le premier, encaisse les coups et conclut au contact, à l'arme comme à mains nues. Peu de finesse savante, mais une endurance qui tient la ligne de front.</p>
-<p>Points de vie : 100 par niveau.</p>
-</div>
-<div class="keep">
-<p>Le Combattant peut tout miser sur le combat et l'effort physique, mais reste bridé sur les champs savants, sociaux ou techniques.</p>
-<table>
-<thead>
-<tr>
-<th>Champ</th>
-<th style="text-align: center;">Plafond</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Martial</td>
-<td style="text-align: center;">40 %</td>
-</tr>
-<tr>
-<td>Vital</td>
-<td style="text-align: center;">30 %</td>
-</tr>
-<tr>
-<td>Athlétique</td>
-<td style="text-align: center;">30 %</td>
-</tr>
-<tr>
-<td>Sensoriel</td>
-<td style="text-align: center;">20 %</td>
-</tr>
-<tr>
-<td>Furtif</td>
-<td style="text-align: center;">20 %</td>
-</tr>
-<tr>
-<td>Sauvage</td>
-<td style="text-align: center;">20 %</td>
-</tr>
-<tr>
-<td>Social</td>
-<td style="text-align: center;">10 %</td>
-</tr>
-<tr>
-<td>Intellectuel</td>
-<td style="text-align: center;">10 %</td>
-</tr>
-<tr>
-<td>Technique</td>
-<td style="text-align: center;">10 %</td>
-</tr>
-<tr>
-<td>Créatif</td>
-<td style="text-align: center;">10 %</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="keep">
-<p>En prenant la classe, le personnage fixe deux choix. Il porte son bonus d'attaque sur un type d'arme, <a href="../competences/">Armes de mêlée</a>, <a href="../competences/">Armes de jet</a>, <a href="../competences/">Armes de trait</a> ou <a href="../competences/">Armes à feu</a>, et son bonus de défense sur la <a href="../competences/">Parade</a> ou sur l'<a href="../competences/">Esquive</a>.</p>
-<table>
-<thead>
-<tr>
-<th>Bonus de classe</th>
-<th style="text-align: center;">Effet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../competences/">Initiative</a></td>
-<td style="text-align: center;">+10</td>
-</tr>
-<tr>
-<td><a href="../competences/">Armes de mêlée</a>, <a href="../competences/">Armes de jet</a>, <a href="../competences/">Armes de trait</a> ou <a href="../competences/">Armes à feu</a>, au choix</td>
-<td style="text-align: center;">+10</td>
-</tr>
-<tr>
-<td><a href="../competences/">Parade</a> ou <a href="../competences/">Esquive</a>, au choix</td>
-<td style="text-align: center;">+10</td>
-</tr>
-<tr>
-<td><a href="../competences/">Lutte</a></td>
-<td style="text-align: center;">+10</td>
-</tr>
-<tr>
-<td><a href="../competences/">Résistance à la Douleur</a></td>
-<td style="text-align: center;">+10</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <div class="gloss-defs">
 <div class="gcard gloss-card" data-key="moins d'1 kg">
 <p><strong>moins d'1 kg</strong></p>

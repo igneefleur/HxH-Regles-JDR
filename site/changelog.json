@@ -19,6 +19,45 @@
 },
 {
 "status": "modified",
+"filename": "content/regles/combat/manoeuvres.md",
+"url": "content/regles/combat/manoeuvres/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/classe.md",
+"url": "content/regles/personnage/classe/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+}
+]
+},
+{
+"short": "4f893cb",
+"author": "Théo Cavaillès",
+"date": "2026-07-08T12:13:34+02:00",
+"message": "Armes : refonte (Propulsion en dégâts, portées réelles, munitions, Inefficace de près à 2 barèmes) + passe de cohérence multiagent ; retrait de la page Véhicules",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/4f893cbd651fe6bf809da9580863b781781df763",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/art/arts-martiaux.md",
+"url": "content/regles/art/arts-martiaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/armes.md",
+"url": "content/regles/combat/armes/"
+},
+{
+"status": "modified",
 "filename": "content/regles/combat/critique-blessures.md",
 "url": "content/regles/combat/critique-blessures/"
 },
@@ -26,6 +65,11 @@
 "status": "modified",
 "filename": "content/regles/formation/formations-martiales.md",
 "url": "content/regles/formation/formations-martiales/"
+},
+{
+"status": "added",
+"filename": "content/regles/monde/formes.md",
+"url": "content/regles/monde/formes/"
 },
 {
 "status": "removed",
@@ -66,11 +110,6 @@
 "status": "modified",
 "filename": "content/regles/personnage/competences.md",
 "url": "content/regles/personnage/competences/"
-},
-{
-"status": "added",
-"filename": "content/regles/monde/formes.md",
-"url": "content/regles/monde/formes/"
 }
 ]
 },
@@ -1011,30 +1050,6 @@
 "status": "added",
 "filename": "content/livre/degats.md",
 "url": "content/livre/degats/"
-}
-]
-},
-{
-"short": "b7fe42a",
-"author": "Théo Cavaillès",
-"date": "2026-06-12T19:33:46+02:00",
-"message": "modifying structure",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/b7fe42a3c91cf6d72b235f5dd999417b63438d6a",
-"files": [
-{
-"status": "renamed",
-"filename": "content/livre/armes.md",
-"url": "content/livre/armes/"
-},
-{
-"status": "added",
-"filename": "content/livre/caracteristiques.md",
-"url": "content/livre/caracteristiques/"
-},
-{
-"status": "added",
-"filename": "content/livre/index.md",
-"url": "content/livre/"
 }
 ]
 }

@@ -501,7 +501,7 @@ Le crédit finance des propriétés bonus ou sans coût, ainsi que l'allonge qui
 | Motif | Propriétés fermées |
 |---|---|
 | Portée à distance | Lancer, Tir, Cône, Immobilisation à distance, Retour |
-| Objet, gaz ou mécanisme | Aveuglement de zone, Nuage persistant, Munitions, Recharge Rapide, Décharge incapacitante |
+| Objet ou mécanisme | Munitions, Recharge Rapide, Décharge incapacitante |
 
 Tout le reste demeure ouvert : la saisie, la projection, la poussée, le désarmement, l'assommement, la perce-armure, la déchirure qui saigne, les dégâts de zone, la finesse, la précision, la parade et les bonus de touche.
 </div>

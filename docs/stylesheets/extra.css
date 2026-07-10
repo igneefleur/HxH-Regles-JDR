@@ -14,7 +14,7 @@
     10. Page d'accueil : changelog
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 /* ---------- 1. Variables ---------- */
 :root {
@@ -56,12 +56,13 @@
 .md-typeset li,
 .md-typeset td,
 .md-typeset th {
-  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
 }
 .md-typeset {
   font-size: 0.72rem;
   line-height: 1.4;
   text-align: justify;
+  font-variant-numeric: lining-nums; /* Alegreya a des chiffres elzeviriens par defaut */
 }
 
 /* Titres en Cinzel */
@@ -244,7 +245,7 @@
   max-width: calc(100% - 14px);
   box-sizing: border-box;
   padding: 1px 5px;
-  font-family: 'EB Garamond', Garamond, serif;
+  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
   font-size: 0.5rem;
   line-height: 1.4;
   color: #fff;
@@ -676,6 +677,64 @@
 /* Entrées de définition dans une carte (façon modules de conjuration). */
 .md-typeset .mcard .defs { margin: 0.2rem 0 0.1rem; }
 .md-typeset .mcard .defs p { margin: 0.18rem 0; }
+/* Effets par zone (Agripper, Assommer…) : chaque groupe de zones en pastilles,
+   son effet dessous. Pastilles en inline-block (ni flex ni grid) : repli naturel
+   en colonne étroite et rendu sûr dans le PDF. */
+.md-typeset .zones { margin: 0.25rem 0 0.1rem; }
+.md-typeset .zones .zone {
+  padding: 0.3rem 0 0.26rem;
+  border-top: 1px solid #e8e1cf;
+}
+.md-typeset .zones .zone:last-child { padding-bottom: 0.05rem; }
+/* Filet de clôture sous le dernier groupe, seulement si du texte suit encore
+   dans la carte (si le composant clôt la carte, pas de filet). */
+.md-typeset .zones:not(:last-child) .zone:last-child {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e8e1cf;
+}
+.md-typeset .zones p { margin: 0; font-size: 0.66rem; }
+/* Retrait suspendu : les lignes repliées (pastilles ou texte) s'alignent sous la
+   première pastille / le début de l'effet, pas sous l'étiquette. */
+.md-typeset .zones .zone-chips {
+  line-height: 1.5;
+  padding-left: 3.85rem;
+  text-indent: -3.85rem;
+}
+.md-typeset .zchip {
+  display: inline-block;
+  padding: 0 0.34rem 0.03rem;
+  margin: 0 0.16rem 0.1rem 0;
+  border: 1px solid #ddd5c2;
+  border-radius: 999px;
+  background: #f3efe0;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 600;
+  font-size: 0.56rem;
+  letter-spacing: 0.05em;
+  color: #4a4436;
+  white-space: nowrap;
+}
+.md-typeset .zones .zone-effet {
+  margin-top: 0.1rem;
+  padding-left: 3.85rem;
+  text-indent: -3.85rem;
+}
+/* Micro-étiquette devant chaque ligne (« Zone saisie », « Effet ») : rend le
+   mappage zones -> effet lisible d'un coup d'œil. */
+.md-typeset .zones .zlbl {
+  display: inline-block;
+  min-width: 3.6rem;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 600;
+  font-size: 0.54rem;
+  letter-spacing: 0.05em;
+  color: #8a8478;
+  margin-right: 0.25rem;
+}
+/* text-indent s'hérite : sans remise à zéro, le retrait suspendu du paragraphe
+   décale aussi le texte À L'INTÉRIEUR des pastilles et de l'étiquette. */
+.md-typeset .zones .zlbl,
+.md-typeset .zones .zchip { text-indent: 0; }
 /* Séparateur (---) à l'intérieur d'une carte : filet simple qui NE traverse pas
    les colonnes (contrairement à .cols hr), pour cloisonner deux blocs de règle. */
 .md-typeset .mcard hr {
@@ -854,10 +913,30 @@
   padding: 0.2em 0.6em;
 }
 .md-typeset .comp-recap td:first-child {
-  width: 34%;
+  width: 30%;
 }
 .md-typeset .comp-recap td:nth-child(2) {
-  width: 20%;
+  width: 18%;
+}
+/* Colonne Utilité (4e) : note en glyphes ●○, centrée et insécable ; on aligne le
+   rendu sur les autres glyphes du livre (taille et couleur héritées, aucun
+   letter-spacing) pour ne pas jurer avec le texte. */
+.md-typeset .comp-recap th:nth-child(4),
+.md-typeset .comp-recap td:nth-child(4) {
+  width: 13%;
+  text-align: center;
+  white-space: nowrap;
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: normal;
+}
+/* Colonne Accessible (5e) : peu importante, réduite au minimum ; ne porte que
+   « Non » (les accessibles restent vides). */
+.md-typeset .comp-recap th:nth-child(5),
+.md-typeset .comp-recap td:nth-child(5) {
+  width: 7%;
+  text-align: center;
+  font-size: 0.9em;
 }
 /* Tables de compétences façon « armes » : même habillage sépia que les tables
    .cj-modules.anima (en-tête crème à texte brun + zébrures crème + filets), au lieu
@@ -1275,7 +1354,7 @@
   margin: 0 .1rem;
 }
 .md-tabs__link {
-  font-family: 'EB Garamond', Garamond, serif;
+  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
   font-size: .72rem;
   margin: 0;
   padding: .18rem .7rem;
@@ -1339,7 +1418,7 @@ html.book-loading .md-content__inner {
   visibility: hidden;
 }
 .book-nav {
-  font-family: 'EB Garamond', Garamond, serif;
+  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
   font-size: 0.7rem;
   line-height: 1.3;
   padding: 0.6rem 0.7rem;
@@ -1575,27 +1654,27 @@ html.book-loading .md-content__inner {
   table-layout: fixed !important;
 }
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(1),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(1) { width: 14% !important; text-align: left !important; }   /* Arme */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(1) { width: 13% !important; text-align: left !important; }   /* Arme */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(2),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(2) { width: 5%  !important; text-align: center !important; font-size: inherit !important; color: inherit !important; }   /* AM */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(2) { width: 4%  !important; text-align: center !important; font-size: inherit !important; color: inherit !important; }   /* AM */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(3),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(3) { width: 11% !important; text-align: center !important; border-right: none !important; }   /* Portée */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(3) { width: 10% !important; text-align: center !important; border-right: none !important; }   /* Portée */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(4),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 8%  !important; text-align: center !important; }   /* Munitions */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(4) { width: 7%  !important; text-align: center !important; }   /* Munitions */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(5),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(5) { width: 8%  !important; text-align: center !important; border-right: none !important; }   /* Mains */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(5) { width: 7%  !important; text-align: center !important; border-right: none !important; }   /* Mains */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(6),
 .md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(6) { width: 5%  !important; text-align: center !important; }   /* Dégâts */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(7),
 .md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(7) { width: 6%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Mod. dégâts */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(8),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 7%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Type */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(8) { width: 5%  !important; text-align: center !important; font-variant: normal !important; letter-spacing: normal !important; }   /* Type */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(9),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(9) { width: 6%  !important; text-align: center !important; }   /* Illégalité */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(9) { width: 8%  !important; text-align: center !important; white-space: nowrap; }   /* Illégalité */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(10),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(10) { width: 10% !important; text-align: right !important; border-right: none !important; white-space: nowrap; }   /* Prix */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(10) { width: 8% !important; text-align: center !important; border-right: none !important; white-space: nowrap; }   /* Prix */
 .md-typeset .cj-modules.anima.armes table:not([class]) th:nth-child(11),
-.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(11) { width: 20% !important; text-align: left !important; }   /* Propriétés */
+.md-typeset .cj-modules.anima.armes table:not([class]) td:nth-child(11) { width: 27% !important; text-align: left !important; }   /* Propriétés */
 
 /* ── Page « Formes du vivant » : matrices larges, MÊME mécanisme que les tables
    d'armes — table-layout FIXE + largeurs de colonnes explicites en %, sommées à
