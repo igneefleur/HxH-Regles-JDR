@@ -14,8 +14,8 @@
 <link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=EB+Garamond:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"EB Garamond";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Alegreya:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Alegreya";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../../stylesheets/extra.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
@@ -1009,7 +1009,7 @@
 <span class="md-ellipsis">
     
   
-    Manœuvres
+    Attaque et Défense
   
 
     
@@ -2208,8 +2208,8 @@
 <p>Exemple. Avec une Agilité de 5, un personnage court 16 m par round en allure intermédiaire. Sur un terrain Difficile (2), il lit sa distance deux paliers plus bas, à l'Agilité 3 : 8 m. Sur un terrain Éprouvant (3), il tombe à l'Agilité 2, soit 6 m. Sur un terrain Impraticable (5), il descend à l'Agilité 0 : il ne bouge plus.</p>
 </blockquote>
 <h4 id="chute">Chute</h4>
-<p>Un personnage qui tombe subit les dégâts de l'impact. En chute libre, il descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round, sa vitesse plafonnant autour de 50 m/s, soit 180 km/h.</p>
-<p>Les dégâts se lisent par paliers de chute, selon la hauteur totale parcourue : chaque palier en double la hauteur et les dégâts. On retient le palier le plus haut atteint ; en deçà de 3 mètres, la chute ne fait aucun mal.</p>
+<p>Un personnage qui tombe subit les dégâts de l'impact. En chute libre, il descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round, sa vitesse plafonnant autour de 50 m/s, soit 180 km/h, atteinte après environ 450 mètres de chute.</p>
+<p>Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils croissent avec la hauteur, d'abord vite, puis de moins en moins à mesure que l'air freine. À la vitesse terminale, atteinte vers 450 mètres, la chute cesse d'accélérer : au-delà, on ne tombe pas plus vite, donc pas plus fort, et les dégâts plafonnent à 500. On retient le palier le plus haut atteint ; en deçà de 3 mètres, la chute ne fait aucun mal.</p>
 <table>
 <thead>
 <tr>
@@ -2222,33 +2222,78 @@
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">3 m</td>
-<td style="text-align: center;">20</td>
+<td style="text-align: center;">10</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">6 m</td>
-<td style="text-align: center;">40</td>
+<td style="text-align: center;">5 m</td>
+<td style="text-align: center;">20</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">12 m</td>
-<td style="text-align: center;">80</td>
+<td style="text-align: center;">8 m</td>
+<td style="text-align: center;">30</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">24 m</td>
-<td style="text-align: center;">160</td>
+<td style="text-align: center;">12 m</td>
+<td style="text-align: center;">50</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">48 m et plus</td>
-<td style="text-align: center;">320</td>
+<td style="text-align: center;">20 m</td>
+<td style="text-align: center;">70</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">30 m</td>
+<td style="text-align: center;">100</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">45 m</td>
+<td style="text-align: center;">150</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">60 m</td>
+<td style="text-align: center;">200</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">90 m</td>
+<td style="text-align: center;">250</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">120 m</td>
+<td style="text-align: center;">300</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">150 m</td>
+<td style="text-align: center;">350</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">200 m</td>
+<td style="text-align: center;">400</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">300 m</td>
+<td style="text-align: center;">450</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">450 m et plus</td>
+<td style="text-align: center;">500</td>
 </tr>
 </tbody>
 </table>
-<p>En touchant le sol, le personnage peut dépenser sa <a href="../../combat/deroulement-combat/">réaction</a> pour un jet de <a href="../competences/">Chute</a> : sa réussite retranche autant de paliers, et les dégâts retombent d'autant. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.</p>
+<p>En touchant le sol, le personnage peut dépenser sa <a href="../../combat/deroulement-combat/">réaction</a> pour un jet de <a href="../competences/">Chute</a> : le résultat de son jet se retranche directement des dégâts de la chute. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.</p>
 <blockquote>
-<p>Exemple. Une chute de trente mètres relève du palier 4, soit 160 dégâts. En atteignant Absurde (240) à son jet de Chute, le personnage retranche trois paliers : il tombe au palier 1 et n'encaisse plus que 20 dégâts.</p>
+<p>Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage réussit son jet de Chute à 403 : il n'en subit plus que 47. Le même jet annulerait entièrement une chute de trente mètres, qui n'inflige que 100 dégâts.</p>
 </blockquote>
 <h4 id="chuter-dans-leau">Chuter dans l'eau</h4>
 <p>Heurter l'eau plutôt qu'une surface dure amortit la chute : les dégâts sont divisés par deux, une fois toute autre réduction appliquée.</p>

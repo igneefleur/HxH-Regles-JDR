@@ -1,5 +1,44 @@
 [
 {
+"short": "1ea2150",
+"author": "Théo Cavaillès",
+"date": "2026-07-10T17:52:39+02:00",
+"message": "Manoeuvres (attaque/defense), competences, chute recalibree ; corps du livre en Alegreya (chiffres alignes, EB Garamond gardee pour la Forge)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/1ea21504a242c7b51c6e1040d442a5228ef89d70",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/art/arts-martiaux.md",
+"url": "content/regles/art/arts-martiaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/armes.md",
+"url": "content/regles/combat/armes/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/manoeuvres.md",
+"url": "content/regles/combat/manoeuvres/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/classe.md",
+"url": "content/regles/personnage/classe/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+}
+]
+},
+{
 "short": "4f893cb",
 "author": "Théo Cavaillès",
 "date": "2026-07-08T12:13:34+02:00",
@@ -1010,30 +1049,6 @@
 "status": "added",
 "filename": "content/livre/degats.md",
 "url": "content/livre/degats/"
-}
-]
-},
-{
-"short": "b7fe42a",
-"author": "Théo Cavaillès",
-"date": "2026-06-12T19:33:46+02:00",
-"message": "modifying structure",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/b7fe42a3c91cf6d72b235f5dd999417b63438d6a",
-"files": [
-{
-"status": "renamed",
-"filename": "content/livre/armes.md",
-"url": "content/livre/armes/"
-},
-{
-"status": "added",
-"filename": "content/livre/caracteristiques.md",
-"url": "content/livre/caracteristiques/"
-},
-{
-"status": "added",
-"filename": "content/livre/index.md",
-"url": "content/livre/"
 }
 ]
 }
