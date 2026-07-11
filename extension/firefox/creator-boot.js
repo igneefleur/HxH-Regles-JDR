@@ -49,6 +49,11 @@
   // le dialogue du perso). En test à un seul niveau d'iframe, window.top === parent.
   function post(msg) { msg.ns = "hxh"; msg.charId = CHAR_ID; try { window.top.postMessage(msg, "*"); } catch (e) {} }
 
+  // Signale à creation.js qu'on est dans Roll20 : affichage condensé « fiche »
+  // (--hxh-compact) et jets envoyés au TCHAT Roll20 (au lieu du journal local).
+  window.__hxhCompact = true;
+  window.__hxhRoll = function (die, value, label) { post({ type: "roll", die: die, value: value, label: label }); };
+
   function scheduleSave() {
     if (saveTimer) clearTimeout(saveTimer);
     saveTimer = setTimeout(doSave, 400);

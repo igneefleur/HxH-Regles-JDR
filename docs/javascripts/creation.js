@@ -35,6 +35,11 @@
   var state = null;
   var rootEl = null;
   var updaters = [];   // rafraîchisseurs des valeurs affichées sur la feuille
+  // Mode « fiche » condensé, posé par l'extension Roll20 (window.__hxhCompact) : on
+  // retire du créateur ce qui n'aide qu'à LIRE les règles (utilité d'une compétence,
+  // rareté/description d'Éclat, malus de PV de la taille…). Sur le site, __hxhCompact
+  // n'existe pas -> le créateur reste complet (aide à la construction).
+  var COMPACT = typeof window !== "undefined" && window.__hxhCompact === true;
 
   // --- petites aides ---------------------------------------------------------
   function el(tag, cls, txt) {
@@ -499,17 +504,22 @@
   }
   var spendSel = null;   // « se dépasser » : points de fatigue consommés sur le prochain jet
   function doRoll(label, value) {
+    var global = modsGlobaux();   // avant dépense : le malus ne touche pas le jet qui crée les points
+    var depense = spendSel ? clamp(num(spendSel.value, 0), 0, 5) : 0;
+    if (depense) { state.fatigue = fatiguePts() - depense; if (spendSel) spendSel.value = "0"; }
+    // Dans Roll20 (creator-boot.js pose window.__hxhRoll), le jet part dans le TCHAT
+    // Roll20 — Roll20 lance les dés, résultat visible de tous — au lieu du journal
+    // local du site. Sur le site, __hxhRoll n'existe pas : jet local comme avant.
+    if (typeof window !== "undefined" && typeof window.__hxhRoll === "function") {
+      window.__hxhRoll(state.de, value + global + 15 * depense, label);
+      if (depense) refresh();
+      return;
+    }
     var d = parseDice(state.de);
     var dice = [];
     for (var i = 0; i < d.n; i++) dice.push(1 + Math.floor(Math.random() * d.faces));
     var sum = dice.reduce(function (a, b) { return a + b; }, 0) + d.plus;
-    var global = modsGlobaux();   // avant dépense : le malus ne touche pas le jet qui crée les points
-    var depense = spendSel ? clamp(num(spendSel.value, 0), 0, 5) : 0;
     var total = sum + value + global + 15 * depense;
-    if (depense) {
-      state.fatigue = fatiguePts() - depense;
-      spendSel.value = "0";
-    }
     rollHistory.unshift({
       label: label, dice: dice, sum: sum, plus: d.plus, value: value, global: global,
       depense: depense, total: total, palier: bestDifficulty(total)
@@ -744,7 +754,7 @@
     idField(grid, "c2", "Poids (kg)", state.poids, function (v) { state.poids = v; }, { placeholder: "70" });
     idField(grid, "c3", "Catégorie", state.tailleCat, function (v) { state.tailleCat = v; }, {
       options: DATA.tailles.map(function (t) {
-        return [t.name, t.name + (t.pvMod ? " (" + signed(t.pvMod) + " PV/niv)" : "")];
+        return [t.name, COMPACT ? t.name : t.name + (t.pvMod ? " (" + signed(t.pvMod) + " PV/niv)" : "")];
       }),
       tip: "La taille fixe l'espace, l'allonge et le modificateur de PV. Moyenne = référence humaine (1.4 à 2.5 m)."
     });
@@ -755,7 +765,7 @@
       var suit = state.eclatA === state.eclatN;   // l'actuel suit la naissance tant qu'on n'y a pas touché
       state.eclatN = num(v, 0);
       if (suit) state.eclatA = state.eclatN;
-    }, {
+    }, COMPACT ? { type: "number", min: 0, tip: "L'Éclat de naissance, au choix du MJ." } : {
       options: DATA.eclat.map(function (t) {
         return [t.val, "Éclat " + t.val + (t.plus ? " et au-delà" : "") + (t.naissance ? " — " + t.naissance : "")];
       }),
@@ -856,30 +866,34 @@
       });
     });
 
-    var bE = block(colA, "Éclat");
-    var desc = el("div", "pc-eclat-desc");
-    var info = el("div", "pc-eclat-info");
-    var note = el("div", "pc-block-note");
-    bE.appendChild(info); bE.appendChild(desc); bE.appendChild(note);
-    updaters.push(function () {
-      var palier = Math.floor(clamp(state.eclatA, 0, 999) / 5) * 5;
-      info.innerHTML = "";
-      [["Palier", String(palier)]].forEach(function (kv) {
-        var s = el("span"); s.appendChild(document.createTextNode(kv[0] + " "));
-        s.appendChild(el("b", null, kv[1])); info.appendChild(s);
+    // Bloc Éclat (palier + description/rareté du livre) : c'est de la lecture de
+    // règles, retiré de la fiche condensée — l'Éclat se règle dans l'en-tête.
+    if (!COMPACT) {
+      var bE = block(colA, "Éclat");
+      var desc = el("div", "pc-eclat-desc");
+      var info = el("div", "pc-eclat-info");
+      var note = el("div", "pc-block-note");
+      bE.appendChild(info); bE.appendChild(desc); bE.appendChild(note);
+      updaters.push(function () {
+        var palier = Math.floor(clamp(state.eclatA, 0, 999) / 5) * 5;
+        info.innerHTML = "";
+        [["Palier", String(palier)]].forEach(function (kv) {
+          var s = el("span"); s.appendChild(document.createTextNode(kv[0] + " "));
+          s.appendChild(el("b", null, kv[1])); info.appendChild(s);
+        });
+        var t = null;
+        for (var i = 0; i < DATA.eclat.length; i++)
+          if (DATA.eclat[i].val <= state.eclatN) t = DATA.eclat[i];
+        desc.innerHTML = "";
+        if (t) {
+          desc.appendChild(document.createTextNode(t.desc));
+          if (t.naissance) desc.appendChild(el("span", "n", "Naissance : " + t.naissance + "."));
+        }
+        note.textContent = state.eclatA > 50
+          ? "Au-delà de 50, le livre ne fixe plus de répartition de création : l'outil reprend la ligne 45-50, au cadre du MJ."
+          : "";
       });
-      var t = null;
-      for (var i = 0; i < DATA.eclat.length; i++)
-        if (DATA.eclat[i].val <= state.eclatN) t = DATA.eclat[i];
-      desc.innerHTML = "";
-      if (t) {
-        desc.appendChild(document.createTextNode(t.desc));
-        if (t.naissance) desc.appendChild(el("span", "n", "Naissance : " + t.naissance + "."));
-      }
-      note.textContent = state.eclatA > 50
-        ? "Au-delà de 50, le livre ne fixe plus de répartition de création : l'outil reprend la ligne 45-50, au cadre du MJ."
-        : "";
-    });
+    }
 
     // Avantages et handicaps : lignes libres (avantages.md est en chantier)
     var bAv = block(colA, "Avantages et handicaps", null,
@@ -1318,7 +1332,7 @@
         var row = el("div", "pc-comp-row");
         var nm = el("span", "pc-comp-name" + (k.accessible ? "" : " na"));
         nm.appendChild(document.createTextNode(k.name + (k.accessible ? " " : " * ")));
-        nm.appendChild(el("span", "u", pips(k.utilite)));
+        if (!COMPACT) nm.appendChild(el("span", "u", pips(k.utilite)));
         nm.title = k.desc + "\nGroupes : " + k.groupes.join(", ") + (k.accessible ? "" : "\nHors de portée d'un humain ordinaire.");
         row.appendChild(nm);
         var abbr = el("span", "pc-comp-carac", caracAbbr(k.carac));

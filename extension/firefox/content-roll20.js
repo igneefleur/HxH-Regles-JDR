@@ -30,6 +30,44 @@ if (typeof browser === "undefined") { var browser = chrome; }
   }
   function norm(s) { return (s || "").replace(/ /g, " ").replace(/\s+/g, " ").trim().toLowerCase(); }
 
+  // ---------- jets au tchat Roll20 (frame du haut) ----------
+  // Commande de jet : template par défaut + jet en ligne. Négatifs en « - N ».
+  function rollCommand(die, value, label) {
+    die = String(die || "1d100").trim() || "1d100";
+    var v = value >= 0 ? "+ " + value : "- " + (-value);
+    var name = String(label || "Jet").replace(/[{}]/g, "");
+    return "&{template:default} {{name=" + name + "}} {{Jet=[[" + die + " " + v + "]]}}";
+  }
+  function findChatInput(doc) {
+    var sels = ["#textchat-input textarea", "[id*='textchat-input'] textarea",
+                "[id*='textchat'] textarea", "textarea#textchat-textarea", "textarea[name='chat']"];
+    for (var i = 0; i < sels.length; i++) { var ta = doc.querySelector(sels[i]); if (ta) return ta; }
+    return null;
+  }
+  function setChatValue(ta, text) {
+    try {
+      var proto = Object.getPrototypeOf(ta);
+      var desc = Object.getOwnPropertyDescriptor(proto, "value") || Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value");
+      if (desc && desc.set) desc.set.call(ta, text); else ta.value = text;
+    } catch (e) { ta.value = text; }
+    ta.dispatchEvent(new Event("input", { bubbles: true }));
+    ta.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+  function sendToChat(doc, text) {
+    var ta = findChatInput(doc);
+    if (!ta) return false;
+    ta.focus();
+    setChatValue(ta, text);
+    var container = ta.closest("[id*='textchat-input'], [id*='textchat']") || ta.parentElement || doc;
+    var btn = container.querySelector(".btn, button, [role='button']");
+    if (btn) btn.click();
+    else ["keydown", "keypress", "keyup"].forEach(function (t) {
+      ta.dispatchEvent(new KeyboardEvent(t, { bubbles: true, cancelable: true, key: "Enter", code: "Enter", keyCode: 13, which: 13 }));
+    });
+    setChatValue(ta, "");
+    return true;
+  }
+
   // ---------- frame du haut : injecter le pont d20 dans le monde principal ----------
   function injectPageScript() {
     if (document.getElementById("hxh-page-bridge")) return;
@@ -223,8 +261,14 @@ if (typeof browser === "undefined") { var browser = chrome; }
     // FRAME DU HAUT : on n'injecte RIEN au chargement (l'injection main-world gênait
     // l'ouverture des fiches Roll20). On attend que l'utilisateur ouvre l'onglet
     // Fiche HxH (depuis une fiche déjà ouverte) : il pose alors le pont via need-bridge.
+    // Reçoit aussi les JETS de la fiche -> tchat Roll20 (le tchat vit dans cette frame).
     window.addEventListener("message", function (ev) {
-      try { var d = ev.data; if (d && d.ns === "hxh" && d.type === "need-bridge") injectPageScript(); } catch (e) {}
+      try {
+        var d = ev.data;
+        if (!d || d.ns !== "hxh") return;
+        if (d.type === "need-bridge") injectPageScript();
+        else if (d.type === "roll") sendToChat(document, rollCommand(d.die, d.value, d.label));
+      } catch (e) {}
     });
   } else {
     scan();

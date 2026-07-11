@@ -160,8 +160,6 @@ Dans la table ci-dessous, la colonne se choisit par l'allure que le personnage a
 
 </div>
 
-La marche et la course se comparent aux distances réellement lues, décalages compris ([Foncer](#foncer), [terrain difficile](#terrain-difficile)) : sur un terrain difficile, dépasser sa marche réduite suffit à passer en course. À l'inverse, qui s'en tient à sa marche réduite reste en activité légère : la lenteur imposée compense l'effort du terrain.
-
 <div class="gloss-source" markdown>
 
 | Agilité | Légère | Intermédiaire | Lourde |
@@ -208,9 +206,9 @@ Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m en marche (a
 
 #### Foncer
 
-Foncer est une [action](../combat/deroulement-combat.md). Foncer permet au personnage de se déplacer en allure lourde, le sprint, jusqu'au début de son prochain tour. C'est un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
+Foncer est une [action](../combat/deroulement-combat.md) qui permet au personnage de se déplacer en allure lourde, le sprint, jusqu'au début de son prochain tour. C'est un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
 
-En fonçant, le personnage fait un jet de la compétence de déplacement qui convient à son milieu : [Course](competences.md) pour un déplacement terrestre, [Natation](competences.md) pour un déplacement aquatique, [Vol](competences.md) pour un déplacement aérien. Ce jet ne peut pas rater : il sert seulement à gagner des paliers, donnés par la table ci-dessous, à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Agilité augmentée de ces paliers, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
+En fonçant, le personnage peut faire un jet de la compétence de déplacement qui convient à son milieu pour aller plus vite : [Course](competences.md) pour un déplacement terrestre, [Natation](competences.md) pour un déplacement aquatique, [Vol](competences.md) pour un déplacement aérien. Le jet donne des paliers, lus dans la table ci-dessous à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Agilité augmentée de ces paliers, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
 
 <div class="sepia-table" markdown>
 
