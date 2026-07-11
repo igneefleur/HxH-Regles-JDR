@@ -1,11 +1,10 @@
 [
 {
-"short": "local",
+"short": "20b362b",
 "author": "Théo Cavaillès",
-"date": null,
-"message": "Modifications en cours (non committées)",
-"url": null,
-"pending": true,
+"date": "2026-07-11T16:25:17+02:00",
+"message": "Fiche HxH éditable dans Roll20 (Attributes natifs) + refonte des caractéristiques",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/20b362beef679751bf2946d5536769a0eff050ac",
 "files": [
 {
 "status": "modified",

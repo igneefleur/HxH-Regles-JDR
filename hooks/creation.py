@@ -13,8 +13,8 @@ Files (en mémoire) — on n'écrit PAS dans docs/.
 
 Sources et formats parsés (voir chaque fonction pour le détail) :
   - personnage/caracteristiques.md : mcards « **Nom** <span class="prereq">ABR</span>
-    desc » sous ## Caractéristiques Physiques / Mentales ; tables Éclat requis,
-    Modificateurs et budgets de création (Éclat | Moyenne | Plafond | Budget).
+    desc » sous ## Caractéristiques Physiques / Mentales ; table Modificateurs
+    (Caractéristique | Modificateur). La création se fait à 60 points (3 à 9).
   - personnage/eclat.md : cartes <div class="eclat-card"> « **Éclat N** desc ».
   - personnage/competences.md : lignes <tr> des tables de récap (Compétence |
     Caractéristique | Groupes | Utilité | Accessible) sous ### Champ X, plus les
@@ -32,7 +32,7 @@ Sources et formats parsés (voir chaque fonction pour le détail) :
 Les pages encore en chantier (avantages.md, classe.md, formations non martiales,
 arts sans paliers) sont tolérées : le hook n'exige jamais leur contenu. Le
 créateur (creation.js) porte la sémantique d'interface et les règles de calcul
-prosaïques (coût des crans de caractéristique, 5 PF = +20 de base, plafond de
+prosaïques (caractéristiques : 60 points, 3 à 9 ; 5 PF = +20 de base, plafond de
 5 PF par compétence et par niveau) ; ce hook ne fournit que le contenu.
 """
 import html
@@ -150,29 +150,18 @@ def _caracteristiques(text):
                 "desc": _clean(m.group(3)),
             })
 
+    # seule la table des modificateurs est encore utilisée (le système d'Éclat requis
+    # et de budget de création a été remplacé par « 60 points, 3 à 9, 1 pt = 1 pt »).
     tables = _pipe_tables(text)
-    eclat_requis, modificateurs, budgets = [], [], []
+    modificateurs = []
     for t in tables:
         head = [_clean(h) for h in t["header"]]
-        if head[:2] == ["Caractéristique", "Éclat requis"]:
-            for r in t["rows"]:
-                rg = _range(r[0])
-                if rg:
-                    eclat_requis.append({"min": rg[0], "max": rg[1], "eclat": _int(r[1])})
-        elif head[:2] == ["Caractéristique", "Modificateur"]:
+        if head[:2] == ["Caractéristique", "Modificateur"]:
             for r in t["rows"]:
                 rg = _range(r[0])
                 if rg:
                     modificateurs.append({"min": rg[0], "max": rg[1], "mod": _int(r[1])})
-        elif head[:4] == ["Éclat", "Moyenne", "Plafond", "Budget"]:
-            for r in t["rows"]:
-                rg = _range(r[0])
-                if rg:
-                    budgets.append({"eclatMin": rg[0], "eclatMax": rg[1],
-                                    "moyenne": _int(r[1]), "plafond": _int(r[2]),
-                                    "budget": _int(r[3])})
-    return caracs, {"eclatRequis": eclat_requis, "modificateurs": modificateurs,
-                    "budgets": budgets}
+    return caracs, {"modificateurs": modificateurs}
 
 
 # ---------------------------------------------------------------------------
@@ -587,9 +576,7 @@ if __name__ == "__main__":
     print(f"caracs: {len(data['caracs'])}")
     for c in data["caracs"]:
         print(f"  {c['abbr']:4} {c['name']:12} ({c['groupe']})")
-    print(f"tables carac: eclatRequis={len(data['caracTables']['eclatRequis'])} "
-          f"modificateurs={len(data['caracTables']['modificateurs'])} "
-          f"budgets={len(data['caracTables']['budgets'])}")
+    print(f"tables carac: modificateurs={len(data['caracTables']['modificateurs'])}")
     print(f"éclat: {len(data['eclat'])} paliers")
     print(f"compétences: {len(data['competences'])} "
           f"(desc remplies: {sum(1 for c in data['competences'] if c['desc'])})")

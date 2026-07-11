@@ -11,9 +11,8 @@
  * trois colonnes de blocs à titres serif, tables rayées, gros encadrés pour
  * les valeurs finales. Ce fichier ne porte que l'interface et les règles de
  * calcul prosaïques :
- *   - achat de caractéristiques : base 3, budget/moyenne/plafond selon l'Éclat
- *     (table de caracteristiques.md), 1 pt par cran jusqu'à la moyenne puis
- *     2, 3, 4… jusqu'au plafond ;
+ *   - caractéristiques : 60 points à répartir entre les douze, chaque valeur de
+ *     3 à 9, 1 point = 1 point (le coût d'une caractéristique est sa valeur) ;
  *   - compétences : 5 PF = +20 de base, plafond de 5 PF par compétence et par
  *     niveau (points-formation.md) ; valeur = base + modificateur de carac ;
  *   - niveau = ⌈PF ÷ 100⌉ (points-formation.md) ;
