@@ -1,5 +1,39 @@
 [
 {
+"short": "c84c2c1",
+"author": "Théo Cavaillès",
+"date": "2026-07-11T02:55:41+02:00",
+"message": "Attaque et Défense : refonte des manœuvres, chute/poussée, caractéristiques en cartes",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/c84c2c1132703e6d0d5ffb6f1003bdd83e88254c",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/manoeuvres.md",
+"url": "content/regles/combat/manoeuvres/"
+},
+{
+"status": "modified",
+"filename": "content/regles/monde/tailles.md",
+"url": "content/regles/monde/tailles/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/caracteristiques.md",
+"url": "content/regles/personnage/caracteristiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
 "short": "1ea2150",
 "author": "Théo Cavaillès",
 "date": "2026-07-10T17:52:39+02:00",
@@ -1030,25 +1064,6 @@
 "status": "added",
 "filename": "content/livre/tailles.md",
 "url": "content/livre/tailles/"
-}
-]
-},
-{
-"short": "4c2c76d",
-"author": "Théo Cavaillès",
-"date": "2026-06-12T23:06:08+02:00",
-"message": "Lecteur continu du livre + page Types de Dégâts séparée",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/4c2c76de6ce1ab53be45c02a520adb90c2a77973",
-"files": [
-{
-"status": "modified",
-"filename": "content/livre/armes.md",
-"url": "content/livre/armes/"
-},
-{
-"status": "added",
-"filename": "content/livre/degats.md",
-"url": "content/livre/degats/"
 }
 ]
 }

@@ -277,22 +277,31 @@ html.night .md-typeset .cj-modules.anima table:not([class]) td:nth-child(5) {
   border-right-color: #3c3527;
 }
 
-/* Tables de compétences façon « armes » (mêmes teintes que les tables anima en
-   mode nuit) : en-tête sombre à texte clair + zébrures sombres, au lieu du vert. */
+/* Tables façon « armes » (mêmes teintes que les tables anima en mode nuit) :
+   en-tête sombre à texte clair + zébrures sombres, au lieu du vert. Couvre
+   .comp-recap, .diff-table, .gloss-source et .sepia-table. */
 html.night .md-typeset .comp-recap table:not([class]) th,
-html.night .md-typeset .diff-table table:not([class]) th {
+html.night .md-typeset .diff-table table:not([class]) th,
+html.night .md-typeset .gloss-source table:not([class]) th,
+html.night .md-typeset .sepia-table table:not([class]) th {
   background: #2a2519;
   color: #e8dfcb;
   border-bottom-color: #3c3527;
 }
 html.night .md-typeset .comp-recap table:not([class]) td,
-html.night .md-typeset .diff-table table:not([class]) td {
+html.night .md-typeset .diff-table table:not([class]) td,
+html.night .md-typeset .gloss-source table:not([class]) td,
+html.night .md-typeset .sepia-table table:not([class]) td {
   border-bottom-color: #3c3527;
 }
 html.night .md-typeset .comp-recap table:not([class]) tbody tr:nth-child(odd)  td,
-html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(odd)  td { background: #241f16; }
+html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(odd)  td,
+html.night .md-typeset .gloss-source table:not([class]) tbody tr:nth-child(odd)  td,
+html.night .md-typeset .sepia-table table:not([class]) tbody tr:nth-child(odd)  td { background: #241f16; }
 html.night .md-typeset .comp-recap table:not([class]) tbody tr:nth-child(even) td,
-html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) td { background: #2a2519; }
+html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) td,
+html.night .md-typeset .gloss-source table:not([class]) tbody tr:nth-child(even) td,
+html.night .md-typeset .sepia-table table:not([class]) tbody tr:nth-child(even) td { background: #2a2519; }
 
 /* Matrice des sens (page Formes du vivant) : dégradé vert clair (primaire) → foncé
    (inexistant), adapté au fond sombre ; box-shadow de la même couleur pour souder les

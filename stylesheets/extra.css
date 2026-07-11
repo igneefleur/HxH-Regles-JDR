@@ -938,25 +938,41 @@
   text-align: center;
   font-size: 0.9em;
 }
-/* Tables de compétences façon « armes » : même habillage sépia que les tables
-   .cj-modules.anima (en-tête crème à texte brun + zébrures crème + filets), au lieu
-   de l'en-tête vert plein par défaut. Couvre les récaps de champ (.comp-recap) et la
-   table de difficulté (.diff-table). Seules les couleurs changent ; les largeurs et
-   l'alignement propres à chaque table restent. */
+/* Tables façon « armes » : même habillage sépia que les tables .cj-modules.anima
+   (en-tête crème à texte brun + zébrures crème + filets), au lieu de l'en-tête vert
+   plein par défaut. Couvre les récaps de compétences (.comp-recap), la table de
+   difficulté (.diff-table), les tables des capacités physiques (.gloss-source) et
+   toute table enveloppée dans .sepia-table. Seules les couleurs changent ; les
+   largeurs et l'alignement propres à chaque table restent. */
 .md-typeset .comp-recap table:not([class]) th,
-.md-typeset .diff-table table:not([class]) th {
+.md-typeset .diff-table table:not([class]) th,
+.md-typeset .gloss-source table:not([class]) th,
+.md-typeset .sepia-table table:not([class]) th {
   background: #fbf7ec;
   color: #4a3520;
   border-bottom: 1px solid #b39a68;
 }
 .md-typeset .comp-recap table:not([class]) td,
-.md-typeset .diff-table table:not([class]) td {
+.md-typeset .diff-table table:not([class]) td,
+.md-typeset .gloss-source table:not([class]) td,
+.md-typeset .sepia-table table:not([class]) td {
   border-bottom: 1px solid #e6dcc1;
 }
 .md-typeset .comp-recap table:not([class]) tbody tr:nth-child(odd)  td,
-.md-typeset .diff-table table:not([class]) tbody tr:nth-child(odd)  td { background: #f5efdc; }
+.md-typeset .diff-table table:not([class]) tbody tr:nth-child(odd)  td,
+.md-typeset .gloss-source table:not([class]) tbody tr:nth-child(odd)  td,
+.md-typeset .sepia-table table:not([class]) tbody tr:nth-child(odd)  td { background: #f5efdc; }
 .md-typeset .comp-recap table:not([class]) tbody tr:nth-child(even) td,
-.md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) td { background: #fbf7ec; }
+.md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) td,
+.md-typeset .gloss-source table:not([class]) tbody tr:nth-child(even) td,
+.md-typeset .sepia-table table:not([class]) tbody tr:nth-child(even) td { background: #fbf7ec; }
+/* Table du sommeil : trait vertical séparant le bloc veille (colonnes 5-6,
+   « Avant de pouvoir redormir » et « Avant d'être fatigué », rejeté à droite)
+   du bloc sommeil / activité. */
+.md-typeset .sommeil table:not([class]) th:nth-child(5),
+.md-typeset .sommeil table:not([class]) td:nth-child(5) {
+  border-left: 2px solid #e6dcc1;
+}
 /* Formule (difficulté…) : ligne grise en italique sous un tableau. */
 .md-typeset p.formula {
   font-style: italic;
