@@ -606,7 +606,7 @@
       if (fam) socle[fam] = 1;
     });
     if (argentDepense() > state.argent) w.push("L'équipement (" + fmt(argentDepense()) + " Ɉ) dépasse la bourse (" + fmt(state.argent) + " Ɉ).");
-    if (state.eclatA !== state.eclatN) w.push("Éclat actuel ≠ Éclat de Naissance : réservé aux bascules rares en cours de vie.");
+    if (state.eclatA !== state.eclatN && !COMPACT) w.push("Éclat actuel ≠ Éclat de Naissance : réservé aux bascules rares en cours de vie.");
     if (caracVal("END") > 0 && fatiguePts() <= -caracVal("END")) w.push("Points de fatigue à −" + caracVal("END") + " : le personnage s'effondre d'épuisement (Inconscience).");
     if (pvCourant() <= 0) w.push("PV courants à 0 ou moins.");
     return w;
@@ -664,7 +664,7 @@
     t.appendChild(el("span", null, title));
     if (sub) t.appendChild(el("small", null, sub));
     b.appendChild(t);
-    if (note) b.appendChild(el("div", "pc-block-note", note));
+    if (note && !COMPACT) b.appendChild(el("div", "pc-block-note", note));   // notes = aide à lire les règles : masquées sur la fiche condensée
     parent.appendChild(b);
     return b;
   }
@@ -847,7 +847,7 @@
       head.appendChild(el("span", null, grp[1]));
       head.appendChild(el("span", "pc-cell-num", "Valeur"));
       head.appendChild(el("span", "pc-cell-num", "Mod"));
-      head.appendChild(el("span", "pc-cell-dim", "Coût"));
+      if (!COMPACT) head.appendChild(el("span", "pc-cell-dim", "Coût"));
       bC.appendChild(head);
       DATA.caracs.filter(function (k) { return k.groupe === grp[0]; }).forEach(function (k) {
         var row = el("div", "pc-trow pc-carac-row");
@@ -861,12 +861,12 @@
           function () { return CARAC_MIN; },
           function () { return caracMax(); });
         var mod = el("span", "mod");
-        var cost = el("span", "pc-cell-dim");
+        var cost = COMPACT ? null : el("span", "pc-cell-dim");
         updaters.push(function () {
           mod.textContent = signed(modOf(caracVal(k.abbr)));
-          cost.textContent = caracVal(k.abbr) + " pts";
+          if (cost) cost.textContent = caracVal(k.abbr) + " pts";
         });
-        row.appendChild(mod); row.appendChild(cost);
+        row.appendChild(mod); if (cost) row.appendChild(cost);
         bC.appendChild(row);
       });
     });
@@ -953,7 +953,7 @@
     capDefs.forEach(function (d) {
       var cap = DATA.capacites[d[0]];
       if (!cap) return;
-      var b = block(colB, d[1], "");
+      var b = block(COMPACT ? colA : colB, d[1], "");   // fiche : capacités en colonne A (équilibre)
       b.title = d[3];
       var sub = b.querySelector(".pc-block-title small");
       var labels = d[2] || cap.cols.map(function (c) { return SHORT[c] || c; });
@@ -975,6 +975,9 @@
         cells.forEach(function (cell, i) { cell.textContent = r[i] || "—"; });
       });
     });
+    // Fiche condensée : les capacités rejoignent les caractéristiques en tête de colonne A ;
+    // on redescend avantages et notes en bas (ordre naturel d'une fiche).
+    if (COMPACT) { colA.appendChild(bAv); colA.appendChild(bN); }
 
     var bF = block(colB, "Combat", null, "Valeurs = base + modificateur de carac + divers, et le modificateur à toutes les actions");
     var bigrow = el("div", "pc-bigrow");
@@ -1230,7 +1233,7 @@
       pvNote.textContent = "PV max = (PV par niveau " + (t && t.pvMod ? signed(t.pvMod) + " taille " : "") + ") × niveau " + niveau() +
         (t ? " · espace " + t.espace + " · allonge " + t.allonge : "");
     });
-    bF.appendChild(pvNote);
+    if (!COMPACT) bF.appendChild(pvNote);   // note « PV max = … » : calcul auto, masqué sur la fiche
 
     ["externe", "interne"].forEach(function (typ) {
       var b = block(colB, typ === "externe" ? "Sens externes" : "Sens internes", null,
@@ -1242,7 +1245,7 @@
       b.appendChild(head);
       var ordre = { "Primaire": 0, "Secondaire": 1, "Tertiaire": 2, "Latent": 3, "Inexistant": 4 };
       DATA.sens
-        .filter(function (s) { return s.type === typ && s.niveau !== "Inexistant"; })
+        .filter(function (s) { return s.type === typ && s.niveau !== "Inexistant" && !(COMPACT && s.niveau === "Latent"); })
         .sort(function (x, y) { return (ordre[x.niveau] || 0) - (ordre[y.niveau] || 0); })
         .forEach(function (s) {
           var row = el("div", "pc-trow pc-sens-row");
@@ -1287,7 +1290,8 @@
     tools.appendChild(champSel);
     var onlyChip = el("span", "pc-chip");
     onlyChip.textContent = "Investies seulement";
-    var only = false;
+    var only = COMPACT;   // fiche condensée : par défaut, seules les compétences investies
+    onlyChip.classList.toggle("on", only);
     onlyChip.addEventListener("click", function () { only = !only; onlyChip.classList.toggle("on", only); render(); });
     tools.appendChild(onlyChip);
     b.appendChild(tools);
@@ -1569,7 +1573,8 @@
     search.type = "search"; search.placeholder = "Filtrer les arts…";
     tools.appendChild(search);
     var onlyChip = el("span", "pc-chip", "Choisis seulement");
-    var only = false;
+    var only = COMPACT;   // fiche condensée : par défaut, seuls les arts choisis
+    onlyChip.classList.toggle("on", only);
     onlyChip.addEventListener("click", function () { only = !only; onlyChip.classList.toggle("on", only); render(); });
     tools.appendChild(onlyChip);
     b.appendChild(tools);

@@ -219,12 +219,14 @@ En fonçant, le personnage peut faire un jet de la compétence de déplacement q
 | Absurde (240) | +3 |
 | Quasi impossible (320) | +4 |
 | Impossible (400) | +5 |
+| Surhumaine (520) | +6 |
+| Prodigieuse (640) | +7 |
+| Insurmontable (780) | +8 |
+| Inimaginable (920) | +9 |
 
 </div>
 
-Au-delà, chaque degré de l'échelle de [difficulté](competences.md) ajoute un palier de plus : Surhumaine (520) donne +6, et ainsi de suite. En dessous de Difficile (120), le jet ne donne aucun palier, mais le personnage sprinte quand même.
-
-Foncer de nouveau avant la fin de l'effet remplace l'effet en cours : les paliers ne se cumulent pas. Rien n'empêche de Foncer tour après tour : c'est la durée d'activité lourde de la journée qui limite le sprint. Un personnage qui fonce à chacun de ses tours peut conserver le dernier jet de déplacement qu'il a fait, ou relancer. Quel que soit le cumul des décalages, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
+Rien n'empêche de Foncer tour après tour : c'est la durée d'activité lourde de la journée qui limite le sprint. Un personnage qui fonce à chacun de ses tours peut conserver le dernier jet de déplacement qu'il a fait, ou relancer. Quels que soient les bonus et les malus de paliers, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
 
 #### Changer d'allure ou de terrain en chemin
 
@@ -246,7 +248,7 @@ Exemple. Avec une Agilité de 5, un personnage court 16 m ou sprinte 40 m par ro
 
 #### Terrain difficile
 
-Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage applique le malus de la table à la ligne où il lit sa distance, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les deux décalages se cumulent : Foncer à +2 sur un terrain Éprouvant (−3) se lit en tout un palier plus bas.
+Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage applique le malus de la table à la ligne où il lit sa distance, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les bonus et les malus de paliers s'additionnent : +2 en fonçant et −3 de terrain Éprouvant font −1, le personnage descend d'un palier.
 
 </div>
 
@@ -271,7 +273,7 @@ On ne cumule pas plusieurs obstacles : un seul type s'applique, celui qui décri
 
 **Encombré :** gravats épars, herbes hautes, eau aux chevilles, foule clairsemée. À peine ralenti, il garde presque toute son allure.
 
-**Difficile :** boue, éboulis, broussailles, neige à mi-mollet. La progression tombe à peu près de moitié.
+**Difficile :** boue, éboulis, broussailles, neige à mi-mollet. La progression tombe de moitié.
 
 **Éprouvant :** marécage, pente d'éboulis instable, neige à mi-cuisse, ronciers. Chaque mètre demande un effort.
 
@@ -295,9 +297,11 @@ Dans l'eau, le Mouvement se lit sur la même table, avec la compétence [Natatio
 
 Un personnage qui tombe subit les dégâts de l'impact, donnés par la hauteur de la chute dans la table ci-dessous. On lit la plus grande hauteur qui ne dépasse pas celle de la chute : une chute de 10 mètres se lit à la ligne 8 m et inflige 30 dégâts. En dessous de 3 mètres, la chute n'inflige rien.
 
-En chute libre, un personnage descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round : sa vitesse plafonne autour de 50 m/s, soit 180 km/h, atteinte après environ 450 mètres de chute.
+Les dégâts de chute sont des dégâts [contondants](../monde/degats.md), et ils ignorent 100 points de réduction de dégâts de la cible, quel qu'en soit le type d'armure.
 
-Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils augmentent avec la hauteur, d'abord vite, puis de moins en moins à mesure que l'air freine. À la vitesse maximale, atteinte vers 450 mètres, la chute cesse d'accélérer : au-delà, on ne tombe pas plus vite, donc pas plus fort, et les dégâts plafonnent à 500.
+Un personnage commence à chuter instantanément, dès qu'il peut tomber. Il effectue ensuite son mouvement de chute à la fin de son tour, et ce mouvement ne s'effectue qu'une seule fois par round. Il descend de 150 mètres au premier round, puis de 300 mètres par round, sa vitesse plafonnant à 50 m/s, soit 180 km/h, atteinte après 450 mètres de chute.
+
+Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils augmentent avec la hauteur, d'abord vite, puis de moins en moins à mesure que l'air freine. À la vitesse maximale, atteinte à 450 mètres, la chute cesse d'accélérer : au-delà, on ne tombe pas plus vite, donc pas plus fort, et les dégâts plafonnent à 500.
 
 <div class="sepia-table" markdown>
 
@@ -326,17 +330,21 @@ Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils 
 
 </div>
 
-Toucher le sol déclenche une [réaction](../combat/deroulement-combat.md) : le personnage fait un jet de la compétence [Chute](competences.md), et on retire le résultat de ce jet des dégâts de la chute. En amortissant ou en roulant au sol, il change une chute brutale en réception maîtrisée. Un personnage hors d'état de réagir, [Inconscient](etats.md) par exemple, ne fait pas ce jet et subit les dégâts entiers.
+Toucher le sol déclenche une [réaction](../combat/deroulement-combat.md) : le personnage fait un jet de la compétence [Chute](competences.md), et chaque point du jet à partir de 100 retire un point aux dégâts de la chute.
+
+<p class="formula">Réduction des dégâts = résultat du jet de Chute − 100</p>
+
+Un jet de 130 retire ainsi 30 points aux dégâts ; un jet sous 100 ne retire rien. En amortissant ou en roulant au sol, le personnage change une chute brutale en réception maîtrisée. Un personnage hors d'état de réagir, [Inconscient](etats.md) par exemple, ne fait pas ce jet et subit les dégâts entiers.
 
 <div class="memo" markdown>
 
-Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage obtient 400 à son jet de Chute : il n'en subit plus que 50. Le même jet annulerait entièrement une chute de trente mètres, qui n'inflige que 100 dégâts.
+Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage obtient 400 à son jet de Chute et en retire 300 : il n'en subit plus que 150. Le même jet annulerait entièrement une chute de cent mètres, qui n'inflige que 280 dégâts.
 
 </div>
 
 #### Chuter dans l'eau
 
-Tomber dans l'eau plutôt que sur une surface dure amortit la chute, à condition que l'eau soit assez profonde : 5 m suffisent toujours pour une créature de taille [Moyenne](../monde/tailles.md), quelle que soit la hauteur de chute, car l'eau freine d'autant plus fort qu'on la frappe vite. Les dégâts sont alors divisés par deux, après le jet de Chute : on retire d'abord le jet, puis on divise ce qui reste par deux. Une eau trop peu profonde compte comme un sol dur.
+Tomber dans l'eau plutôt que sur une surface dure amortit la chute, à condition que l'eau soit assez profonde : 5 m suffisent toujours pour une créature de taille [Moyenne](../monde/tailles.md), quelle que soit la hauteur de chute, car l'eau freine d'autant plus fort qu'on la frappe vite. Les dégâts sont alors divisés par deux, après le jet de Chute : on applique d'abord la réduction du jet, puis on divise ce qui reste par deux. Une eau trop peu profonde compte comme un sol dur.
 
 </div>
 
