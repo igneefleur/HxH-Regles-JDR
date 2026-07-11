@@ -9,6 +9,8 @@
  * barre. Si aucun onglet ne peut être placé, un bouton de secours flottant ouvre la
  * fiche en plein écran. Les valeurs lançables postent un jet dans le tchat.
  */
+// compat : Chrome expose `chrome.*`, Firefox `browser.*` (les deux rendent des promesses).
+if (typeof browser === "undefined") { var browser = chrome; }
 (function () {
   "use strict";
 
@@ -54,13 +56,63 @@
     alert("Tchat Roll20 introuvable : ouvrez d'abord une partie (l'éditeur de jeu).");
   }
 
+  // Polices du livre embarquées (sheet-fonts.css). IMPORTANT : un @font-face
+  // déclaré DANS un shadow root est ignoré (Chromium ne l'enregistre pas). Les
+  // polices doivent donc être déclarées dans le DOCUMENT (light DOM) pour être
+  // utilisables par la fiche du shadow (les polices sont globales au document).
+  // On les injecte une seule fois dans <head> ; ces déclarations n'altèrent pas
+  // l'affichage de Roll20 (il n'appelle ni « Alegreya » ni « EB Garamond »).
+  var fontsDone = false;
+  function ensureBookFonts() {
+    if (fontsDone || document.getElementById("hxh-book-fonts")) { fontsDone = true; return; }
+    fontsDone = true;
+    var url; try { url = browser.runtime.getURL("sheet-fonts.css"); } catch (e) { url = "sheet-fonts.css"; }
+    fetch(url).then(function (r) { return r.text(); }).then(function (css) {
+      if (document.getElementById("hxh-book-fonts")) return;
+      var st = document.createElement("style");
+      st.id = "hxh-book-fonts";
+      st.textContent = css;
+      (document.head || document.documentElement).appendChild(st);
+    }).catch(function () {});
+  }
+
+  // CSS de la fiche du SITE (creation.css) + appoint lecture seule (sheet-extra.css) :
+  // chargés une fois depuis le paquet et injectés dans le SHADOW ROOT, pour un rendu
+  // IDENTIQUE au site tout en restant isolés du CSS de Roll20. Chargement paresseux.
+  var sheetCssPromise = null;
+  function loadSheetCss() {
+    if (sheetCssPromise) return sheetCssPromise;
+    var files = ["creation.css", "sheet-extra.css"];
+    sheetCssPromise = Promise.all(files.map(function (f) {
+      var url; try { url = browser.runtime.getURL(f); } catch (e) { url = f; }
+      return fetch(url).then(function (r) { return r.text(); }).catch(function () { return ""; });
+    })).then(function (parts) { return parts.join("\n"); });
+    return sheetCssPromise;
+  }
+
   // Panneau (barre de choix + fiche). onClose facultatif pour le mode secours.
+  // Le contenu vit dans un SHADOW ROOT : le CSS de Roll20 ne peut pas l'atteindre
+  // (et le nôtre ne fuit pas dehors). L'hôte, en lumière, ne fait que se placer
+  // dans la zone de contenu. Renvoie l'HÔTE.
   function buildPanel(key, opts) {
     opts = opts || {};
-    var cls = "hxh-panel";
-    if (opts.mode === "tab") cls += " hxh-pane tab-pane";   // pane en flux (vrai onglet)
-    else if (opts.floating) cls += " hxh-floating";          // overlay de secours
-    var panel = el("div", cls);
+    ensureBookFonts();   // polices du livre dans le document (utilisables par le shadow)
+    var host = el("div", "hxh-host" + (opts.floating ? " hxh-host-floating" : ""));
+    var box;
+    if (host.attachShadow) {
+      box = host.attachShadow({ mode: "open" });
+      var st = document.createElement("style");
+      st.textContent = (window.HxHRender && HxHRender.paneCss) || "";
+      box.appendChild(st);
+      // 2e feuille : la vraie fiche du site + ses polices (chargement paresseux)
+      var stSheet = document.createElement("style");
+      box.appendChild(stSheet);
+      loadSheetCss().then(function (css) { stSheet.textContent = css; });
+    } else {
+      box = host;   // repli : Shadow DOM indisponible (très vieux navigateur)
+    }
+    var panel = el("div", "hxh-panel" + (opts.floating ? " hxh-floating" : ""));
+    box.appendChild(panel);
     var bar = el("div", "hxh-bar");
     bar.appendChild(el("span", "hxh-bar-title", "Fiche HxH"));
     var sel = el("select", "hxh-select");
@@ -72,14 +124,15 @@
       bar.appendChild(close);
     }
     panel.appendChild(bar);
-    var body = el("div", "hxh-body");
+    var body = el("div", "hxh-body hxh-body-sheet");
     panel.appendChild(body);
 
     function render(id) {
       body.innerHTML = "";
       var c = cards[id];
       if (!c) { body.appendChild(el("div", "hxh-empty", "Aucune fiche. Créez un personnage sur le site HxH puis rouvrez ce dialogue.")); return; }
-      body.appendChild(HxHRender.card(c, function (label, value) { roll(c, label, value); }));
+      var build = (HxHRender.sheet || HxHRender.card);
+      body.appendChild(build(c, function (label, value) { roll(c, label, value); }));
     }
     function apply(id) {
       if (id && cards[id] && key) { assoc[key] = id; saveAssoc(); }
@@ -97,7 +150,7 @@
     sel.addEventListener("change", function () { apply(sel.value); });
     refresh.addEventListener("click", function () { loadState().then(function () { fill(sel.value); }); });
     fill(null);
-    return panel;
+    return host;
   }
 
   // ------- pose de l'onglet dans la barre d'onglets d'un dialogue -------
@@ -173,7 +226,7 @@
       var pane = null, hidden = null;
       function showHxh() {
         if (!contentBox) return;
-        if (!pane) { pane = buildPanel(characterKey(dialog), { mode: "tab" }); contentBox.appendChild(pane); }
+        if (!pane) { pane = buildPanel(characterKey(dialog)); contentBox.appendChild(pane); }
         hidden = [];
         for (var i = 0; i < contentBox.children.length; i++) {
           var ch = contentBox.children[i];

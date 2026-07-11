@@ -108,6 +108,7 @@ extra_javascript:
   - javascripts/night.js
   - javascripts/forge.js
   - javascripts/creation.js
+  - javascripts/copybtn.js
 hooks:
   - hooks/changelog.py
   - hooks/nen_atelier.py

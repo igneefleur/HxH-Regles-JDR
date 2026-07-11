@@ -6,6 +6,8 @@
  * lit ce localStorage et le pousse dans browser.storage.local, d'où le content
  * script Roll20 le récupère. Aucune règle n'est recopiée : rien que des cartes.
  */
+// compat : Chrome expose `chrome.*`, Firefox `browser.*` (les deux rendent des promesses).
+if (typeof browser === "undefined") { var browser = chrome; }
 (function () {
   "use strict";
 

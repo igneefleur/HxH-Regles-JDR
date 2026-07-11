@@ -1,4 +1,6 @@
 /* Popup de l'extension : liste les fiches synchronisées et choisit l'active. */
+// compat : Chrome expose `chrome.*`, Firefox `browser.*` (les deux rendent des promesses).
+if (typeof browser === "undefined") { var browser = chrome; }
 (function () {
   "use strict";
 

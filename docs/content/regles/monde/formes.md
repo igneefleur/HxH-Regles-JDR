@@ -141,7 +141,7 @@ Le plan de corps hausse ou abaisse les six caractéristiques physiques. Les vale
 
 Une forme se déplace dans trois milieux : sur terre, dans l'eau et dans les airs. Sa vitesse se lit sur la table de mouvement des [capacités physiques](../personnage/capacites-physiques.md), à l'Agilité de la créature. Selon ses membres, un milieu lui est ouvert normalement, pénalisé ou fermé ; une pénalité retranche autant de paliers sur cette table, comme un terrain difficile.
 
-Sans aile, une forme ne vole pas : le ciel lui est fermé. Sans patte ni jambe, elle rampe et lit sa vitesse terrestre quatre paliers plus bas. Sans nageoire, elle patauge et lit sa vitesse aquatique trois paliers plus bas, à moins qu'une propriété spéciale, portée par la dernière colonne du premier tableau, ne lui tienne lieu de nage.
+Sans aile, une forme ne vole pas : le ciel lui est fermé. Sans patte ni jambe, elle rampe et lit sa vitesse terrestre quatre paliers plus bas. Nageoires et tentacules permettent de nager : sans eux, une forme patauge et lit sa vitesse aquatique trois paliers plus bas, à moins qu'une propriété spéciale, portée par la dernière colonne du premier tableau, ne lui tienne lieu de nage.
 
 Se déplacer occupe les membres qui portent et propulsent le corps ; les autres agissent librement. Sur pattes, les jambes avancent et les bras demeurent libres. Quand les mêmes membres portent et agissent, comme les bras d'une étoile de mer, la propriété spéciale de la forme dit combien il en faut pour avancer.
 

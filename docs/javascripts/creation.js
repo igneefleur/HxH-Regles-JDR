@@ -198,7 +198,14 @@
         state.tailleCm ? state.tailleCm + " m" : null, state.poids ? state.poids + " kg" : null,
         "Taille " + state.tailleCat + (t0 && t0.pvMod ? " (" + signed(t0.pvMod) + " PV/niv)" : "")
       ].filter(Boolean),
-      caracs: DATA.caracs.map(function (k) { return { abbr: k.abbr, name: k.name, val: caracVal(k.abbr), mod: modOf(caracVal(k.abbr)) }; }),
+      // en-tête d'identité structuré (l'extension reproduit la grille pc-id de la fiche)
+      identity: {
+        nom: state.name || "", classe: state.classe || "", genre: state.genre || "",
+        age: state.age || "", taille: state.tailleCm || "", poids: state.poids || "",
+        categorie: state.tailleCat || "", bourse: state.argent || 0,
+        niveau: niveau(), pf: state.pfTotal, eclatA: state.eclatA, eclatN: state.eclatN
+      },
+      caracs: DATA.caracs.map(function (k) { return { abbr: k.abbr, name: k.name, groupe: k.groupe, val: caracVal(k.abbr), mod: modOf(caracVal(k.abbr)) }; }),
       combat: {
         pv: pvCourant(), pvMax: pvMax(),
         init: compTotal("Initiative") + g, esquive: compTotal("Esquive") + g, parade: compTotal("Parade") + g,

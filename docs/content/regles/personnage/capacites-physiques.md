@@ -146,7 +146,7 @@ La première heure dépassée demande donc un jet à 20, la deuxième un jet à 
 
 ### Mouvement
 
-Le Mouvement découle de l'Agilité : c'est la distance qu'un personnage franchit en un [round](../combat/deroulement-combat.md), soit environ 6 secondes. Cette distance constitue son [mouvement passif](../combat/deroulement-combat.md) : il la parcourt durant son tour sans dépenser d'action, en une ou plusieurs fois, autour de ses actions.
+Le Mouvement découle de l'Agilité : c'est la distance qu'un personnage franchit en un [round](../combat/deroulement-combat.md), soit 6 secondes. Cette distance constitue son [mouvement passif](../combat/deroulement-combat.md) : il la parcourt durant son tour sans dépenser d'action, en une ou plusieurs fois, autour de ses actions.
 
 Dans la table ci-dessous, la colonne se choisit par l'allure que le personnage adopte, et chaque allure impose son intensité d'[activité](#activite) :
 
@@ -208,9 +208,9 @@ Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m en marche (a
 
 #### Foncer
 
-Foncer est une [action](../combat/deroulement-combat.md), et un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
+Foncer est une [action](../combat/deroulement-combat.md). Foncer permet au personnage de se déplacer en allure lourde, le sprint, jusqu'au début de son prochain tour. C'est un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
 
-Le personnage fait un jet de la compétence de déplacement qui convient au milieu, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre. Ce jet ne peut pas rater : il sert seulement à gagner des paliers, donnés par la table ci-dessous, à la ligne du plus haut seuil atteint.
+En fonçant, le personnage fait un jet de la compétence de déplacement qui convient au milieu, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre. Ce jet ne peut pas rater : il sert seulement à gagner des paliers, donnés par la table ci-dessous, à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Agilité augmentée de ces paliers, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
 
 <div class="sepia-table" markdown>
 
@@ -226,30 +226,44 @@ Le personnage fait un jet de la compétence de déplacement qui convient au mili
 
 Au-delà, chaque degré de l'échelle de [difficulté](competences.md) ajoute un palier de plus : Surhumaine (520) donne +6, et ainsi de suite. En dessous de Difficile (120), le jet ne donne aucun palier, mais le personnage sprinte quand même.
 
-Dès son tour et jusqu'à la fin du prochain round, le personnage en tire deux effets : il peut sprinter, c'est-à-dire lire sa distance à la colonne Lourde ; et il lit toutes ses distances à la ligne de son Agilité augmentée des paliers du jet, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
+Foncer de nouveau avant la fin de l'effet remplace l'effet en cours : les paliers ne se cumulent pas. Rien n'empêche de Foncer tour après tour : c'est la durée d'activité lourde de la journée qui limite le sprint. Quel que soit le cumul des décalages, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
 
-Foncer de nouveau avant la fin de l'effet remplace l'effet en cours : les paliers ne se cumulent pas. Rien n'empêche de Foncer round après round : c'est la durée d'activité lourde de la journée qui limite le sprint. Enfin, quel que soit le cumul des décalages, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
+#### Changer d'allure ou de terrain en chemin
+
+Rien n'oblige à garder la même allure durant tout un round : le personnage passe de l'une à l'autre à sa guise. Quand il change d'allure, on retire tout le mouvement déjà parcouru ce round de la distance de la nouvelle allure : ce qui reste est ce qu'il peut encore parcourir.
+
+<p class="formula">Distance restante = nouvelle distance lue − mètres déjà parcourus ce round</p>
+
+S'il ne reste rien, le mouvement du round est épuisé. L'intensité d'[activité](#activite) du round est celle de l'allure la plus exigeante employée.
+
+La même soustraction s'applique chaque fois que la distance lue change en plein déplacement, quand le personnage entre sur un [terrain difficile](#terrain-difficile) ou en sort, ou quand l'effet de [Foncer](#foncer) commence ou s'arrête : on retire les mètres déjà parcourus ce round de la nouvelle distance. S'il a déjà parcouru autant ou plus, son mouvement du round est épuisé.
+
+<div class="memo" markdown>
+
+Exemple. Avec une Agilité de 5, un personnage court 16 m ou sprinte 40 m par round. S'il court 8 m puis se met à sprinter, en Fonçant, il retire ces 8 m des 40 m du sprint : il peut encore parcourir 32 m. À l'inverse, s'il entre dans la boue d'un terrain Difficile (−2) après 6 m de route, sa course s'y lit à l'Agilité 3, soit 8 m, dont il retire les 6 m déjà parcourus : il n'avance plus que de 2 m ce round.
+
+</div>
 
 <div class="keep" markdown>
 
 #### Terrain difficile
 
-Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage lit alors sa distance autant de paliers plus bas que la table l'indique, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les deux décalages se cumulent : Foncer à +2 sur un terrain Éprouvant (3 paliers plus bas) se lit en tout un palier plus bas.
+Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage applique le malus de la table à la ligne où il lit sa distance, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les deux décalages se cumulent : Foncer à +2 sur un terrain Éprouvant (−3) se lit en tout un palier plus bas.
 
 </div>
 
-On ne cumule pas plusieurs obstacles : un seul type s'applique, celui qui décrit le mieux l'ensemble du terrain. L'eau se classe de la même façon : à la nage, la distance se lit sur la même table, avec la compétence [Natation](competences.md) pour Foncer. Une eau calme compte comme un terrain Difficile ; le courant, la houle ou les vagues la rendent Éprouvante, Ardue, voire Impraticable.
+On ne cumule pas plusieurs obstacles : un seul type s'applique, celui qui décrit le mieux l'ensemble du terrain.
 
 <div class="sepia-table" markdown>
 
 | Terrain | Mouvement |
 |:---|:---:|
-| Dégagé | aucun changement |
-| Encombré | 1 palier plus bas |
-| Difficile | 2 paliers plus bas |
-| Éprouvant | 3 paliers plus bas |
-| Ardu | 4 paliers plus bas |
-| Impraticable | 5 paliers plus bas |
+| Dégagé | 0 |
+| Encombré | −1 |
+| Difficile | −2 |
+| Éprouvant | −3 |
+| Ardu | −4 |
+| Impraticable | −5 |
 
 </div>
 
@@ -274,6 +288,10 @@ On ne cumule pas plusieurs obstacles : un seul type s'applique, celui qui décri
 Exemple. Avec une Agilité de 5, un personnage court 16 m par round en activité intermédiaire. Sur un terrain Difficile, il lit sa distance deux paliers plus bas, à l'Agilité 3 : 8 m. Sur un terrain Éprouvant, il tombe à l'Agilité 2, soit 6 m. Sur un terrain Impraticable, il descend à l'Agilité 0 : il ne bouge plus.
 
 </div>
+
+#### Déplacement dans l'eau
+
+Dans l'eau, le Mouvement se lit sur la même table, avec la compétence [Natation](competences.md) pour [Foncer](#foncer). Sans paire de nageoires ni de tentacules, c'est le cas du corps humain, un personnage nage son Mouvement 3 paliers plus bas (−3), comme le veulent les [formes du vivant](../monde/formes.md).
 
 #### Chute
 
@@ -320,7 +338,7 @@ Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage ob
 
 #### Chuter dans l'eau
 
-Tomber dans l'eau plutôt que sur une surface dure amortit la chute, à condition que l'eau soit assez profonde pour s'y immerger entièrement : les dégâts sont divisés par deux, après le jet de Chute. On retire donc d'abord le jet, puis on divise ce qui reste par deux. Une eau trop peu profonde compte comme un sol dur.
+Tomber dans l'eau plutôt que sur une surface dure amortit la chute, à condition que l'eau soit assez profonde : 5 m suffisent toujours pour une créature de taille [Moyenne](../monde/tailles.md), quelle que soit la hauteur de chute, car l'eau freine d'autant plus fort qu'on la frappe vite. Les dégâts sont alors divisés par deux, après le jet de Chute : on retire d'abord le jet, puis on divise ce qui reste par deux. Une eau trop peu profonde compte comme un sol dur.
 
 </div>
 
@@ -528,7 +546,7 @@ Le personnage résiste un nombre de rounds égal à son Endurance : le décompte
 
 <div class="memo" markdown>
 
-Exemple. Avec une Endurance de 10, un personnage lutte 10 rounds avant de sombrer dans l'Inconscience, puis tient 10 rounds encore, jusqu'à −10, avant de mourir. Un round valant environ 6 secondes, c'est près d'une minute de résistance, puis une minute de sursis.
+Exemple. Avec une Endurance de 10, un personnage lutte 10 rounds avant de sombrer dans l'Inconscience, puis tient 10 rounds encore, jusqu'à −10, avant de mourir. Un round durant 6 secondes, c'est une minute de résistance, puis une minute de sursis.
 
 </div>
 

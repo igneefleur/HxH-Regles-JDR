@@ -1,23 +1,25 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Fiche HxH sur Roll20",
   "version": "1.0.0",
   "description": "Affiche vos fiches de personnage HxH (système JDR) à la place de la fiche Roll20, avec les jets envoyés dans le tchat.",
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "hxh-roll20@igneefleur",
-      "strict_min_version": "109.0"
-    }
-  },
   "permissions": ["storage"],
-  "web_accessible_resources": ["creation.css", "sheet-extra.css", "sheet-fonts.css"],
+  "web_accessible_resources": [
+    {
+      "resources": ["creation.css", "sheet-extra.css", "sheet-fonts.css"],
+      "matches": ["https://app.roll20.net/*"]
+    }
+  ],
   "icons": {
-    "48": "icons/icon.svg",
-    "96": "icons/icon.svg"
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "popup/popup.html",
-    "default_icon": "icons/icon.svg",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "96": "icons/icon96.png"
+    },
     "default_title": "Fiche HxH"
   },
   "content_scripts": [

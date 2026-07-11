@@ -26,7 +26,7 @@ L'initiative est une [compétence](../personnage/competences.md) fondée sur l'A
 
 ### Round
 
-Chaque combattant prend un tour, une seule fois. Quand tous ont agi, le round s'achève et un nouveau commence, dans le même ordre, jusqu'à la fin du combat. Un round représente environ 6 secondes.
+Chaque combattant prend un tour, une seule fois. Quand tous ont agi, le round s'achève et un nouveau commence, dans le même ordre, jusqu'à la fin du combat. Un round dure 6 secondes.
 
 </div>
 
