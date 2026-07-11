@@ -307,29 +307,14 @@
     for (var i = 0; i < rows.length; i++) if (v >= rows[i].min && v <= rows[i].max) return rows[i].mod;
     return 0;
   }
-  function budgetRow(eclat) {
-    var palier = Math.floor(clamp(eclat, 0, 999) / 5) * 5;
-    var rows = DATA.caracTables.budgets;
-    for (var i = 0; i < rows.length; i++) if (palier >= rows[i].eclatMin && palier <= rows[i].eclatMax) return rows[i];
-    return rows[rows.length - 1];   // au-delà de la table : dernière ligne
-  }
-  function eclatCap(eclat) {   // plafond général d'une carac pour cet Éclat
-    var cap = 0, rows = DATA.caracTables.eclatRequis;
-    for (var i = 0; i < rows.length; i++) if (rows[i].eclat <= eclat && rows[i].max > cap) cap = rows[i].max;
-    return cap;
-  }
-  function caracCostTo(v, moyenne) {   // coût cumulé pour porter une carac de 3 à v
-    var c = 0;
-    for (var x = 4; x <= v; x++) c += x <= moyenne ? 1 : x - moyenne + 1;
-    return c;
-  }
-  function caracMax() { return Math.min(budgetRow(state.eclatA).plafond, eclatCap(state.eclatA)); }
-  function caracSpent() {
-    var b = budgetRow(state.eclatA), s = 0;
-    for (var k in state.caracs) s += caracCostTo(state.caracs[k], b.moyenne);
+  var CARAC_POINTS = 60, CARAC_MIN = 3, CARAC_MAX = 9;   // création : 60 points à répartir, chaque caractéristique de 3 à 9 (1 point = 1 point de carac)
+  function caracMax() { return CARAC_MAX; }
+  function caracSpent() {   // coût d'une caractéristique = sa valeur (base 3 comprise), sans surcoût
+    var s = 0;
+    for (var k in state.caracs) s += state.caracs[k];
     return s;
   }
-  function caracVal(abbr) { return state.caracs[abbr] != null ? state.caracs[abbr] : 3; }
+  function caracVal(abbr) { return state.caracs[abbr] != null ? state.caracs[abbr] : CARAC_MIN; }
 
   // --- règles : PF, niveau, compétences ----------------------------------------
   function niveau() { return Math.max(1, Math.ceil((state.pfTotal || 0) / 100)); }
@@ -569,8 +554,7 @@
   // --- avertissements -----------------------------------------------------------
   function warnings() {
     var w = [];
-    var b = budgetRow(state.eclatA);
-    if (caracSpent() > b.budget) w.push("Le budget de caractéristiques est dépassé (" + caracSpent() + " / " + b.budget + " points).");
+    if (caracSpent() > CARAC_POINTS) w.push("Le budget de caractéristiques est dépassé (" + caracSpent() + " / " + CARAC_POINTS + " points).");
     var cap = caracMax();
     var over = [];
     for (var k in state.caracs) if (state.caracs[k] > cap) over.push(k);
@@ -621,8 +605,7 @@
 
     if (meterBox) {
       meterBox.innerHTML = "";
-      var b = budgetRow(state.eclatA);
-      [["Caractéristiques", caracSpent(), b.budget, "pts"],
+      [["Caractéristiques", caracSpent(), CARAC_POINTS, "pts"],
        ["Points de formation", pfSpent(), state.pfTotal, "PF"]].forEach(function (m) {
         var box = el("span", "pc-meter");
         box.appendChild(el("span", null, m[0]));
@@ -843,7 +826,7 @@
 
     // ----- colonne A : caractéristiques + éclat + notes -----
     var bC = block(colA, "Caractéristiques", null,
-      "Base 3 · 1 pt par cran jusqu'à la moyenne, puis 2, 3, 4… jusqu'au plafond");
+      "60 points à répartir · chaque caractéristique de 3 à 9 · 1 point par point");
     [["physique", "Physiques"], ["mentale", "Mentales"]].forEach(function (grp) {
       var head = el("div", "pc-trow pc-carac-row head");
       head.appendChild(el("span", null, ""));
@@ -861,14 +844,13 @@
         stepper(row,
           function () { return caracVal(k.abbr); },
           function (v) { state.caracs[k.abbr] = v; },
-          function () { return 3; },
+          function () { return CARAC_MIN; },
           function () { return caracMax(); });
         var mod = el("span", "mod");
         var cost = el("span", "pc-cell-dim");
         updaters.push(function () {
           mod.textContent = signed(modOf(caracVal(k.abbr)));
-          var b = budgetRow(state.eclatA);
-          cost.textContent = caracCostTo(caracVal(k.abbr), b.moyenne) + " pts";
+          cost.textContent = caracVal(k.abbr) + " pts";
         });
         row.appendChild(mod); row.appendChild(cost);
         bC.appendChild(row);
@@ -881,11 +863,9 @@
     var note = el("div", "pc-block-note");
     bE.appendChild(info); bE.appendChild(desc); bE.appendChild(note);
     updaters.push(function () {
-      var b = budgetRow(state.eclatA);
       var palier = Math.floor(clamp(state.eclatA, 0, 999) / 5) * 5;
       info.innerHTML = "";
-      [["Palier", String(palier)], ["Budget", b.budget + " pts"], ["Moyenne", String(b.moyenne)],
-       ["Plafond de création", String(b.plafond)], ["Plafond d'Éclat", String(eclatCap(state.eclatA))]].forEach(function (kv) {
+      [["Palier", String(palier)]].forEach(function (kv) {
         var s = el("span"); s.appendChild(document.createTextNode(kv[0] + " "));
         s.appendChild(el("b", null, kv[1])); info.appendChild(s);
       });
