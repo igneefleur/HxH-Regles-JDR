@@ -1,0 +1,18 @@
+/* Appoint pour l'iframe du créateur dans Roll20. Le créateur doit ressembler
+   EXACTEMENT à la page « Création de personnage » du site (même code, même CSS) :
+   on garde donc le plan de travail parchemin + la feuille blanche (contrairement à
+   l'ancienne fiche lecture seule). Deux ajustements seulement :
+     - reposer la police du livre (le site l'hérite du thème mkdocs ; l'iframe non) ;
+     - fixer --pc-rem à 20 px = la racine de mkdocs Material, pour des tailles
+       identiques au site (creation.css embarqué exprime ses rem en calc(--pc-rem)).
+   Les media queries responsives de creation.css fonctionnent nativement ici (vraie
+   iframe, vrai viewport) : pas besoin de container queries. */
+html, body { margin: 0; padding: 0; }
+body {
+  background: #efe9d8;   /* parchemin du plan de travail, comme sur le site (jour) */
+  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
+}
+.perso-atelier {
+  --pc-rem: 20px;
+  min-height: 100vh;
+}

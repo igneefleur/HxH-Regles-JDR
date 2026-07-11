@@ -1,31 +1,30 @@
-/* CSS EN LUMIÈRE uniquement. La fiche affichée (barre + carte) vit dans un SHADOW
-   ROOT et son CSS est injecté là (voir HxHRender.paneCss dans render.js) : le CSS
-   de Roll20 ne peut donc pas écraser l'affichage de l'extension, et le nôtre ne
-   fuit pas sur Roll20. Ici ne restent que les éléments qui DOIVENT être en lumière. */
+/* CSS EN LUMIÈRE (frame de la feuille Roll20). Le créateur lui-même vit dans une
+   iframe d'extension (creator.html) : son CSS est totalement isolé. Ici, seulement
+   l'onglet, son pane et le bouton « Créer fiche HxH ». */
 
-/* onglet « Fiche HxH » injecté dans la barre d'onglets du dialogue.
-   Actif, il porte la classe `active` native → Roll20 lui donne son fond violet ;
-   on garde juste le texte rouge à l'état inactif (repère) et blanc quand il est
-   actif (lisible sur le violet). */
-.hxh-tab { cursor: pointer; }
-.hxh-tab, .hxh-tab * { color: #d24b3a !important; }
-.hxh-tab.hxh-tab-active, .hxh-tab.hxh-tab-active * { color: #fff !important; }
+/* onglet « Fiche HxH » : un vrai <li><a> cloné des onglets natifs (il hérite donc du
+   style de Roll20, onglet actif violet compris). On n'ajoute que le curseur. */
+.hxh-tab, .hxh-tab a { cursor: pointer; }
 
-/* hôte du pane : ne fait que se positionner dans la zone de contenu, en flux
-   (la fiche elle-même est isolée dans son shadow root). */
-.hxh-host { display: block; width: 100%; }
-.hxh-host-floating { display: block; height: 100%; }
+/* pane HxH (géré comme un pane natif de Roll20 : .tab-pane.hxhfiche) */
+.hxh-pane { width: 100%; min-height: 100%; box-sizing: border-box; }
 
-/* bouton de secours flottant + wrapper plein écran (si l'onglet ne peut être posé).
-   En lumière : on force ses propriétés (!important) pour résister au CSS de Roll20. */
-.hxh-launcher {
-  position: fixed !important; right: 14px !important; bottom: 14px !important;
-  z-index: 2147483000 !important;
-  background: #a11212 !important; color: #fff !important;
-  border: 2px solid #7c0e0e !important; border-radius: 8px !important;
-  font: 700 13px/1 "Segoe UI", Arial, sans-serif !important;
-  padding: 9px 14px !important; margin: 0 !important; cursor: pointer !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,.35) !important; width: auto !important; height: auto !important;
+/* iframe du créateur : remplit le pane (plancher à 620 px si la zone n'est pas contrainte) */
+.hxh-creator-frame {
+  display: block; width: 100%; height: 100%; min-height: 620px;
+  border: 0; margin: 0; background: #efe9d8;
 }
-.hxh-launcher:hover { background: #7c0e0e !important; }
-.hxh-overlay { position: fixed; inset: 3vh 3vw; z-index: 2147483001; box-shadow: 0 8px 40px rgba(0,0,0,.5); }
+
+/* écran « pas encore de fiche » + bouton de création */
+.hxh-create {
+  padding: 26px 20px; text-align: center;
+  font: 14px/1.5 "Segoe UI", Arial, sans-serif; color: #e8e8e8;
+}
+.hxh-create-title { font-weight: 700; font-size: 18px; margin-bottom: 6px; color: #fff; }
+.hxh-create-msg { margin: 0 0 4px; color: #cfcfcf; }
+.hxh-create-btn {
+  margin-top: 12px; padding: 10px 20px; cursor: pointer;
+  background: #a11212; color: #fff; border: 2px solid #7c0e0e; border-radius: 8px;
+  font: 700 14px "Segoe UI", Arial, sans-serif;
+}
+.hxh-create-btn:hover { background: #7c0e0e; }

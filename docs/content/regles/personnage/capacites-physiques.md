@@ -210,7 +210,7 @@ Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m en marche (a
 
 Foncer est une [action](../combat/deroulement-combat.md). Foncer permet au personnage de se déplacer en allure lourde, le sprint, jusqu'au début de son prochain tour. C'est un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
 
-En fonçant, le personnage fait un jet de la compétence de déplacement qui convient au milieu, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre. Ce jet ne peut pas rater : il sert seulement à gagner des paliers, donnés par la table ci-dessous, à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Agilité augmentée de ces paliers, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
+En fonçant, le personnage fait un jet de la compétence de déplacement qui convient à son milieu : [Course](competences.md) pour un déplacement terrestre, [Natation](competences.md) pour un déplacement aquatique, [Vol](competences.md) pour un déplacement aérien. Ce jet ne peut pas rater : il sert seulement à gagner des paliers, donnés par la table ci-dessous, à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Agilité augmentée de ces paliers, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
 
 <div class="sepia-table" markdown>
 
@@ -226,7 +226,7 @@ En fonçant, le personnage fait un jet de la compétence de déplacement qui con
 
 Au-delà, chaque degré de l'échelle de [difficulté](competences.md) ajoute un palier de plus : Surhumaine (520) donne +6, et ainsi de suite. En dessous de Difficile (120), le jet ne donne aucun palier, mais le personnage sprinte quand même.
 
-Foncer de nouveau avant la fin de l'effet remplace l'effet en cours : les paliers ne se cumulent pas. Rien n'empêche de Foncer tour après tour : c'est la durée d'activité lourde de la journée qui limite le sprint. Quel que soit le cumul des décalages, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
+Foncer de nouveau avant la fin de l'effet remplace l'effet en cours : les paliers ne se cumulent pas. Rien n'empêche de Foncer tour après tour : c'est la durée d'activité lourde de la journée qui limite le sprint. Un personnage qui fonce à chacun de ses tours peut conserver le dernier jet de déplacement qu'il a fait, ou relancer. Quel que soit le cumul des décalages, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
 
 #### Changer d'allure ou de terrain en chemin
 

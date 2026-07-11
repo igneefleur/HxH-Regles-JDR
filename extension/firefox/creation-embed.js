@@ -1,3 +1,8 @@
+/* GÉNÉRÉ par build_extension.py — NE PAS ÉDITER. */
+/* creation.js du site, enveloppé pour que son `localStorage` pointe vers le
+   shim de l'iframe (persistance -> Attributes Roll20). Le paramètre masque le
+   global sur toute la source ; aucune ligne de creation.js n'est modifiée. */
+;(function (localStorage) {
 /* Création — créateur de personnage (sans le Nen), mise en page « fiche ».
  *
  * Contenu (caractéristiques, Éclat, compétences, formations, arts, sens,
@@ -1941,3 +1946,5 @@
   else if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
+
+})(window.__hxhLocalStorage || window.localStorage);

@@ -6,7 +6,12 @@
   "permissions": ["storage"],
   "web_accessible_resources": [
     {
-      "resources": ["creation.css", "sheet-extra.css", "sheet-fonts.css"],
+      "resources": [
+        "roll20-page.js",
+        "creator.html", "creator.css", "creator-boot.js",
+        "creation-embed.js", "creation.json", "attr-map.js",
+        "creation.css", "sheet-fonts.css"
+      ],
       "matches": ["https://app.roll20.net/*"]
     }
   ],
@@ -34,7 +39,7 @@
     },
     {
       "matches": ["https://app.roll20.net/*"],
-      "js": ["render.js", "content-roll20.js"],
+      "js": ["content-roll20.js"],
       "css": ["overlay.css"],
       "run_at": "document_idle",
       "all_frames": true,

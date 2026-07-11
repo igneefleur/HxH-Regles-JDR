@@ -8,19 +8,11 @@ Chaque caractéristique se note de 0 à 30. 5 est la moyenne humaine, 9 le maxim
 
 Les douze caractéristiques se répartissent en deux groupes de six, physique et mental. Chaque caractéristique mentale se rattache à une catégorie de Nen ; ces correspondances sont détaillées plus loin.
 
-Le travail seul ne suffit pas : le maximum qu'une caractéristique peut atteindre dépend de l'[Éclat](eclat.md). Sans lui, l'entraînement bute vite contre un plafond.
+### Répartir ses caractéristiques à la création
 
-| Caractéristique | Éclat requis |
-|:---:|:---:|
-| 0 – 9 | 0 |
-| 10 – 14 | 10 |
-| 15 – 19 | 20 |
-| 20 – 24 | 30 |
-| 25 – 29 | 40 |
-| 30 | 50 |
+À la création, chaque personnage dispose de 60 points à répartir entre ses douze caractéristiques, en attribuant de 3 à 9 points à chacune : 3 le minimum, 9 le maximum. Un point vaut un point, sans surcoût.
 
-Ainsi, un personnage d'Éclat 0 plafonne à 9 partout. Chaque palier d'Éclat repousse ce plafond : 10 permet d'atteindre 14, 20 d'atteindre 19, 30 d'atteindre 24, 40 d'atteindre 29, et 50 de toucher le maximum absolu de 30.
-
+<div class="keep sepia-table" markdown>
 ### Modificateurs
 
 Chaque caractéristique a un modificateur qui dépend de sa valeur. Le tableau suivant donne le modificateur de chaque valeur.
@@ -44,22 +36,7 @@ Chaque caractéristique a un modificateur qui dépend de sa valeur. Le tableau s
 | 28 – 29 | +45 |
 | 30 | +50 |
 
-### Répartir ses caractéristiques à la création
-
-La répartition se fait par achat de points. Chaque caractéristique part de 3, son minimum quel que soit l'Éclat. Le joueur dépense un budget pour les élever, d'autant plus large que l'Éclat est grand.
-
-| Éclat | Moyenne | Plafond | Budget |
-|:---:|:---:|:---:|:---:|
-| 0 – 10 | 5 | 7 | 24 |
-| 15 – 25 | 7 | 9 | 48 |
-| 30 – 40 | 9 | 11 | 72 |
-| 45 – 50 | 11 | 13 | 96 |
-
-Monter une caractéristique coûte 1 point par cran jusqu'à la moyenne de l'Éclat. Au-delà, le premier cran coûte 2 points, le second 3, et ainsi jusqu'au plafond. Aucune caractéristique ne descend sous 3 ni ne dépasse le plafond.
-
-À l'Éclat 0, atteindre 5 coûte 2 points, 6 coûte 4 points, 7 coûte 7 points. Dépenser le budget à parts égales porte chaque caractéristique à la moyenne : un personnage complet, sans faille ni sommet. Un point fort se paie de plus en plus cher et oblige à laisser d'autres caractéristiques au plus bas.
-
-Ainsi, à l'Éclat 0, porter la Force et l'Endurance à 7 coûte 7 points chacune ; les 10 points restants montent cinq autres caractéristiques à 5, et les cinq dernières demeurent à 3.
+</div>
 
 ---
 
