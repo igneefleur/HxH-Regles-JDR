@@ -1,5 +1,29 @@
 [
 {
+"short": "b1e8c5c",
+"author": "Théo Cavaillès",
+"date": "2026-07-11T14:07:50+02:00",
+"message": "Extension Roll20 (Firefox + Chrome) et refonte du mouvement",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/b1e8c5cf0fb1e94b74fd1e1af91a9f2afc471aa1",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/deroulement-combat.md",
+"url": "content/regles/combat/deroulement-combat/"
+},
+{
+"status": "modified",
+"filename": "content/regles/monde/formes.md",
+"url": "content/regles/monde/formes/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+}
+]
+},
+{
 "short": "c84c2c1",
 "author": "Théo Cavaillès",
 "date": "2026-07-11T02:55:41+02:00",
@@ -1020,50 +1044,6 @@
 "status": "added",
 "filename": "content/livre/transmutation.md",
 "url": "content/livre/transmutation/"
-}
-]
-},
-{
-"short": "cb9941a",
-"author": "Théo Cavaillès",
-"date": "2026-06-15T17:17:28+02:00",
-"message": "Pages Sens, Tailles, Manœuvres ; refonte États ; système de création d'armes",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/cb9941ad4bf7973e03b5ac1572650e431f09f5c9",
-"files": [
-{
-"status": "modified",
-"filename": "content/livre/armes.md",
-"url": "content/livre/armes/"
-},
-{
-"status": "added",
-"filename": "content/livre/creation-armes.md",
-"url": "content/livre/creation-armes/"
-},
-{
-"status": "modified",
-"filename": "content/livre/degats.md",
-"url": "content/livre/degats/"
-},
-{
-"status": "added",
-"filename": "content/livre/etats.md",
-"url": "content/livre/etats/"
-},
-{
-"status": "added",
-"filename": "content/livre/manoeuvres.md",
-"url": "content/livre/manoeuvres/"
-},
-{
-"status": "added",
-"filename": "content/livre/sens.md",
-"url": "content/livre/sens/"
-},
-{
-"status": "added",
-"filename": "content/livre/tailles.md",
-"url": "content/livre/tailles/"
 }
 ]
 }
