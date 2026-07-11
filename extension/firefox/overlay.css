@@ -1,0 +1,109 @@
+/* Bouton d'en-tête et panneau de fiche, injectés dans le dialogue de personnage
+   Roll20. Tout est préfixé .hxh- pour ne pas heurter les styles de Roll20. */
+
+/* onglet « Fiche HxH » injecté dans la barre d'onglets du dialogue.
+   Actif, il porte la classe `active` native → Roll20 lui donne son fond violet ;
+   on ne force donc AUCUN fond, on garde juste le texte rouge à l'état inactif
+   comme repère et le texte blanc quand il est actif (lisible sur le violet). */
+.hxh-tab { cursor: pointer; }
+.hxh-tab, .hxh-tab * { color: #d24b3a !important; }
+.hxh-tab.hxh-tab-active, .hxh-tab.hxh-tab-active * { color: #fff !important; }
+
+/* panneau de fiche (structure commune onglet + secours) */
+.hxh-panel {
+  background: #fff; color: #1c1c1c; display: flex; flex-direction: column;
+  font: 13px/1.35 "Segoe UI", Arial, sans-serif;
+}
+/* vrai onglet : le pane occupe la zone de contenu en flux (aucun chevauchement) ;
+   le dialogue Roll20 gère lui-même le défilement, la barre de choix reste en tête */
+.hxh-pane { width: 100%; box-sizing: border-box; }
+.hxh-pane .hxh-body { overflow: visible; }
+.hxh-pane .hxh-bar { position: sticky; top: 0; z-index: 2; }
+
+/* bouton de secours flottant + son panneau plein écran (si l'onglet échoue) */
+.hxh-launcher {
+  position: fixed; right: 14px; bottom: 14px; z-index: 2147483000;
+  background: #a11212; color: #fff; border: 2px solid #7c0e0e; border-radius: 8px;
+  font: 700 13px/1 "Segoe UI", Arial, sans-serif; padding: 9px 14px; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+.hxh-launcher:hover { background: #7c0e0e; }
+.hxh-overlay { position: fixed; inset: 3vh 3vw; z-index: 2147483001; box-shadow: 0 8px 40px rgba(0,0,0,.5); }
+.hxh-panel.hxh-floating { position: static; height: 100%; border: 2px solid #111; }
+
+.hxh-bar {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  background: #111; color: #fff; flex: 0 0 auto;
+}
+.hxh-bar-title { font-weight: 700; letter-spacing: .04em; font-size: 15px; }
+.hxh-select {
+  min-width: 220px; padding: 5px 8px; border: 1px solid #555; border-radius: 4px;
+  background: #fff; color: #111; font: inherit;
+}
+.hxh-btn {
+  margin-left: 4px; padding: 5px 12px; border: 1px solid #555; border-radius: 4px;
+  background: #f5f5f5; color: #111; font: inherit; cursor: pointer;
+}
+.hxh-btn:hover { background: #fff; }
+.hxh-close { margin-left: auto; background: #a11212; color: #fff; border-color: #7c0e0e; }
+.hxh-close:hover { background: #7c0e0e; }
+.hxh-body { flex: 1 1 auto; overflow: auto; padding: 14px 18px 24px; background: #fff; }
+
+/* ---- carte ---- */
+.hxh-card { max-width: 1180px; margin: 0 auto; }
+.hxh-head { display: flex; align-items: flex-start; gap: 12px; border-bottom: 3px double #555; padding-bottom: 8px; margin-bottom: 12px; }
+.hxh-portrait { width: 66px; height: 66px; object-fit: cover; border: 2px solid #111; }
+.hxh-name { font-size: 22px; font-weight: 700; color: #7c0e0e; }
+.hxh-sub { font-size: 12px; color: #555; margin-top: 3px; }
+
+.hxh-cols { display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 18px; align-items: start; }
+@media (max-width: 900px) { .hxh-cols { grid-template-columns: 1fr; } }
+.hxh-col { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+.hxh-sec-title {
+  margin: 0 0 6px; font-size: 15px; font-weight: 700; color: #111;
+  border-bottom: 1px solid #bbb; padding-bottom: 3px;
+}
+.hxh-kvs { display: flex; flex-direction: column; }
+.hxh-kv { display: grid; grid-template-columns: minmax(0, 10rem) 1fr; gap: 8px; padding: 2px 0; border-bottom: 1px dotted #ddd; }
+.hxh-k { color: #555; font-size: 12px; }
+.hxh-v { font-variant-numeric: tabular-nums; }
+
+.hxh-carac-grid { display: flex; flex-direction: column; }
+.hxh-carac { display: grid; grid-template-columns: 2.4rem 1fr 2.4rem 2.6rem; gap: 6px; align-items: baseline; padding: 2px 3px; }
+.hxh-carac:nth-child(even) { background: #f2f2f2; }
+.hxh-abbr { font-weight: 700; color: #7c0e0e; font-size: 12px; }
+.hxh-cn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hxh-cv { text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.hxh-cm { text-align: right; color: #7c0e0e; font-variant-numeric: tabular-nums; }
+
+.hxh-big-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+.hxh-big { border: 2px solid #111; text-align: center; padding: 6px 4px; }
+.hxh-big-k { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #333; letter-spacing: .04em; }
+.hxh-big-v { display: block; font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.hxh-arme { border-bottom: 1px dotted #ccc; padding: 5px 2px; }
+.hxh-arme-h { display: flex; align-items: baseline; gap: 8px; }
+.hxh-arme-n { font-weight: 700; }
+.hxh-arme-f { font-size: 11px; color: #777; }
+.hxh-arme-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 8px; margin-top: 4px; }
+.hxh-wchip { border: 1px solid #555; background: #f2f2f2; padding: 2px 7px; font-weight: 700; font-size: 12px; font-variant-numeric: tabular-nums; }
+.hxh-dmg { font-weight: 700; }
+
+.hxh-champ { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: .06em; color: #111; margin: 8px 0 2px; border-bottom: 1px solid #ddd; }
+.hxh-comp { display: grid; grid-template-columns: 1fr 2.6rem 3rem; gap: 8px; align-items: baseline; padding: 2px 3px; }
+.hxh-comp:nth-child(even) { background: #f7f7f7; }
+.hxh-comp-n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hxh-comp-c { font-size: 11px; color: #7c0e0e; font-weight: 700; text-align: right; }
+.hxh-comp-t { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.hxh-note { font-size: 11px; color: #777; font-style: italic; margin-top: 6px; }
+.hxh-empty { font-size: 12px; color: #777; font-style: italic; padding: 8px 2px; }
+.hxh-notes { white-space: pre-wrap; font-size: 12px; }
+
+/* ---- valeurs lançables ---- */
+.hxh-roll { cursor: pointer; }
+.hxh-roll:hover { color: #a11212; text-decoration: underline; }
+.hxh-big.hxh-roll:hover { text-decoration: none; border-color: #a11212; }
+.hxh-big.hxh-roll:hover .hxh-big-v { color: #a11212; }
+.hxh-wchip.hxh-roll:hover { border-color: #a11212; color: #a11212; }

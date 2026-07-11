@@ -2,25 +2,51 @@
 
 <div class="cols" markdown>
 
-Les capacités physiques mesurent ce que le corps accomplit : charge soulevée, distance franchie, souffle retenu. Chacune découle d'une [caractéristique](caracteristiques.md) physique notée de 0 à 30, et se lit dans un tableau sans jet de dé : on croise la valeur de la caractéristique et la colonne de l'effort fourni. C'est un repère chiffré pour le MJ.
+Les capacités physiques mesurent ce que le corps d'un personnage accomplit sans jet de dé : la distance qu'il franchit, la charge qu'il soulève, le souffle qu'il retient. Chacune découle d'une [caractéristique](caracteristiques.md) physique et se lit dans une table. Ce chapitre en définit trois : le [Mouvement](#mouvement), issu de l'Agilité ; le [Port](#port), issu de la Force ; et l'[apnée](#retenir-son-souffle), issue de l'Endurance. Il définit d'abord ce qu'elles partagent : la lecture des tables, la [Fatigue](#la-fatigue), l'[activité](#activite) et le sommeil.
 
-Sur cette échelle, 5 est la moyenne humaine et 9 le plafond humain réel. Dans l'univers, l'entraînement mène jusqu'à 19, sommet d'un corps humain ; au-delà, seul le surnaturel fait progresser, jusqu'à 30.
+Sur l'échelle des caractéristiques, notée de 0 à 30, 5 est la moyenne humaine et 9 le plafond humain réel.
 
-Toute capacité se lit à l'un des trois régimes d'[activité](#activite) : légère, intermédiaire ou lourde, selon l'intensité de l'effort. À chaque instant, le personnage ne se trouve que dans un seul régime : celui de son effort le plus intense du moment. S'il fait plusieurs choses à la fois, c'est la plus exigeante qui décide.
+<div class="keep" markdown>
+
+### Lire une capacité
+
+Chaque capacité tient dans une table de trente et une lignes, une par valeur de la caractéristique, de 0 à 30. Chaque ligne est un palier, désigné par sa valeur : le palier 5 est la ligne de la caractéristique 5. Chaque table porte trois colonnes, une par intensité d'[activité](#activite) : Légère, Intermédiaire et Lourde.
+
+Lire une capacité consiste à croiser un palier et une colonne. Par défaut, le palier est la valeur de la caractéristique du personnage ; chaque capacité précise comment se détermine la colonne. Aucun jet de dé n'intervient : la valeur lue s'applique telle quelle.
+
+</div>
+
+</div>
+
+---
+
+<div class="cols" markdown>
+
+### La Fatigue {#la-fatigue}
+
+Les points de fatigue mesurent les réserves du corps. Un personnage a un maximum de points de fatigue égal à son Endurance ; bien reposé, il les possède tous.
+
+Quand il fait un jet, un personnage peut consommer des points de fatigue pour se dépasser : chaque point consommé donne +15 au jet, jusqu'à cinq points par jet, soit +75 au plus. Il l'annonce avant de lancer les dés, et tout jet y a droit, jets de Résistance à l'Épuisement compris.
+
+Un personnage perd aussi des points de fatigue quand il rate un jet de [Résistance à l'Épuisement](competences.md) : il en perd un par tranche de vingt points manquants au seuil, sa marge d'échec. Rater de 20 à 39 en fait perdre un, de 40 à 59 deux, et ainsi de suite ; rater de moins de 20 n'en fait perdre aucun. Ce jet ne se fait pas n'importe quand : on le fait en forçant sur l'effort ou sur l'éveil, comme décrit plus bas ([Forcer l'effort](#forcer-leffort), [Veiller sans dormir](#veiller-sans-dormir)).
+
+Les points de fatigue peuvent descendre sous zéro, qu'ils soient consommés ou perdus. Chaque point sous zéro donne −10 à tous les jets du personnage, jets de Résistance à l'Épuisement compris : à −1 il subit −10, à −3 il subit −30. Ce malus vaut pour les jets suivants : il ne touche pas le jet qui vient de créer ces points.
+
+Quand ses points de fatigue tombent à son maximum en négatif, ou en dessous, le personnage s'effondre d'épuisement et sombre dans l'[Inconscience](etats.md) : avec une Endurance de 8, il s'effondre à −8. Un personnage peut se dépenser jusqu'à s'effondrer : le jet se résout d'abord, puis il tombe. L'effondrement se poursuit en sommeil : le personnage ne peut pas être réveillé avant d'avoir dormi le temps de sommeil que demande son Endurance, et ce sommeil compte comme correct.
+
+Les points de fatigue ne remontent qu'en dormant correctement. Dormir correctement, c'est dormir au moins le temps de sommeil que demande son Endurance, donné par la table du sommeil ([Sommeil et repos](#sommeil-et-repos)). Ce sommeil ramène les points de fatigue au maximum, remet à zéro le compte des jets d'effort ([Forcer l'effort](#forcer-leffort)) et redonne les durées d'activité de la journée. Le personnage repart frais.
 
 ### Activité {#activite}
 
-Une activité est tout ce qu'un personnage fait de son corps, du repos au combat. On ne classe pas chaque geste mais l'effort fourni, dans l'une de trois intensités selon son coût et le temps qu'on le tient. On la reconnaît à l'exemple plutôt qu'à une mesure : le tableau en donne le principe, les définitions le genre d'activité qui en relève.
+Une activité est tout ce qu'un personnage fait de son corps, du repos au combat. On ne classe pas le geste lui-même mais l'effort fourni, en trois intensités : légère, intermédiaire ou lourde.
 
-| Intensité | Effort |
-|:---|:---|
-| Légère | Minime, soutenu indéfiniment |
-| Intermédiaire | Moyen, tenable de longues heures avec des pauses |
-| Lourde | Maximal, limité dans le temps |
+Un personnage est toujours dans une seule intensité à la fois : celle de son effort le plus intense du moment. S'il fait plusieurs choses en même temps, seule la plus exigeante compte.
+
+Pour classer une activité, on la compare aux exemples ci-dessous ; en cas de doute, le MJ tranche.
 
 <div class="defs" markdown>
 
-**Légère :** un effort minime, soutenu indéfiniment sans peine, qui n'entame jamais les réserves. C'est le régime ordinaire d'une journée éveillée : ni heures ni fatigue à compter. Par exemple : marcher d'un pas tranquille, flâner ; cuisiner, ranger un campement, jardiner sans forcer ; lire, étudier, dessiner une carte, converser ; monter la garde, faire le guet, voyager assis ; s'étirer, répéter des gestes lents.
+**Légère :** un effort minime, soutenu toute la journée sans peine, qui n'entame jamais les réserves. C'est l'intensité ordinaire d'une journée éveillée : ni heures ni fatigue à compter. Par exemple : marcher d'un pas tranquille, flâner ; cuisiner, ranger un campement, jardiner sans forcer ; lire, étudier, dessiner une carte, converser ; monter la garde, faire le guet, voyager assis ; s'étirer, répéter des gestes lents.
 
 **Intermédiaire :** un effort moyen, tenable de longues heures avec des pauses. Le personnage transpire et fournit un travail réel sans se mettre à bout : le rythme d'une vraie journée de labeur. Par exemple : randonner sac au dos, marcher vite, trottiner longtemps ; fendre du bois, creuser, manier la pioche, charrier des charges ; travailler à la forge, aux champs ou sur un chantier ; nager, ramer, pédaler à rythme régulier.
 
@@ -28,119 +54,89 @@ Une activité est tout ce qu'un personnage fait de son corps, du repos au combat
 
 </div>
 
-<div class="memo" markdown>
+#### Sommeil et repos {#sommeil-et-repos}
 
-Pour mémoire, ces régimes recoupent la physiologie : l'effort léger n'entame jamais les réserves, et l'effort intermédiaire correspond à une journée de travail, que même les métiers les plus physiques tiennent en restant en moyenne sous la moitié de la puissance maximale du corps.
+Chaque jour, un personnage a besoin du temps de sommeil que demande son Endurance, donné par la table du sommeil, en bas de section. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.
 
-</div>
+Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue, ni durées d'activité. En revanche, un sommeil interrompu peut reprendre : on additionne tout ce que le personnage dort depuis son dernier sommeil correct, et dès que le total atteint son temps de sommeil requis, il a dormi correctement.
 
-#### Repos et fatigue
+La même table donne aussi les limites d'effort d'une journée, entre deux sommeils. La colonne Activité intermédiaire donne la durée totale d'activité intermédiaire qu'un personnage peut fournir dans sa journée sans rien risquer ; la colonne Activité lourde, la durée totale d'activité lourde. Les deux durées se dépensent séparément ; le reste de la journée se passe en activité légère, qui ne se compte pas. Dormir correctement redonne les deux durées en entier.
 
-Pour être bien reposé et entamer sa journée sans malus, un personnage a besoin chaque jour du temps de sommeil que fixe son Endurance, lu dans le tableau.
+Un personnage ne peut pas se rendormir aussitôt après un sommeil correct : il doit d'abord rester éveillé un temps minimal, la moitié de son temps avant d'être fatigué ([Veiller sans dormir](#veiller-sans-dormir)). Un sommeil trop court pour être correct n'impose pas ce délai. La table du sommeil, ci-dessous, donne les deux durées, aux colonnes Avant de pouvoir redormir et Avant d'être fatigué.
 
-<div class="gloss-source" markdown>
-
-| Endurance | Sommeil | Activité intermédiaire | Activité lourde |
-|:---:|:---:|:---:|:---:|
-| 0 | 18 h | 3 h | 1 min |
-| 1 | 16 h | 4 h | 2 min |
-| 2 | 14 h | 5 h | 3 min |
-| 3 | 12 h | 6 h | 5 min |
-| 4 | 10 h | 7 h | 10 min |
-| 5 | 8 h | 8 h | 20 min |
-| 6 | 7 h 30 | 9 h | 30 min |
-| 7 | 7 h | 10 h | 40 min |
-| 8 | 6 h 30 | 11 h | 50 min |
-| 9 | 6 h | 12 h | 1 h |
-| 10 | 5 h 30 | 12 h | 1 h 30 |
-| 11 | 5 h | 12 h | 2 h |
-| 12 | 4 h 30 | 12 h | 2 h 30 |
-| 13 | 4 h | 12 h | 3 h |
-| 14 | 3 h 30 | 12 h | 3 h 30 |
-| 15 | 3 h | 12 h | 4 h |
-| 16 | 2 h 30 | 12 h | 4 h 30 |
-| 17 | 2 h | 12 h | 5 h |
-| 18 | 1 h 30 | 12 h | 5 h 30 |
-| 19 | 1 h | 12 h | 6 h |
-| 20 | aucun | 12 h | 7 h |
-| 21 | aucun | 12 h | 8 h |
-| 22 | aucun | 12 h | 9 h |
-| 23 | aucun | 12 h | 10 h |
-| 24 | aucun | 12 h | 11 h |
-| 25 | aucun | 12 h | 12 h |
-| 26 | aucun | 11 h | 13 h |
-| 27 | aucun | 10 h | 14 h |
-| 28 | aucun | 9 h | 15 h |
-| 29 | aucun | 8 h | 16 h |
-| 30 | aucun | 6 h | 18 h |
-
-</div>
-
-> Exemple. Avec une Endurance de 5, la moyenne humaine, un personnage dort 8 heures, fournit jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée ; tout le reste se passe en activité légère. Au pic humain réel (Endurance 9), six heures de sommeil lui suffisent, il tient 12 heures d'intermédiaire et tout juste une heure de lourde.
+<p class="formula">Temps avant de pouvoir redormir = temps avant d'être fatigué ÷ 2</p>
 
 <div class="memo" markdown>
 
-Pour mémoire, ces durées suivent la physiologie réelle. Le besoin de sommeil d'un adulte tient entre 7 et 9 heures, 8 au centre ; le plancher documenté, propre à de rares constitutions, descend vers 6 heures et, à l'extrême, 4. Tout en bas de l'échelle, le sommeil rejoint celui des grands dormeurs du règne animal, lion ou opossum, qui passent jusqu'à dix-huit heures par jour assoupis ; tout en haut, le corps s'en affranchit entièrement. L'effort vraiment maximal, lui, ne se compte qu'en minutes : au-dessus de la puissance critique, l'épuisement vient en deux à quinze minutes, et en moins de deux pour un effort quasi maximal. Le cumul d'activité lourde sur une journée reste donc bref, de l'ordre du quart d'heure pour l'humain moyen et d'une heure pour un athlète d'élite ; l'activité intermédiaire, plus modérée, se soutient une journée de labeur entière, le corps restant l'essentiel du temps sous la moitié de sa puissance.
+Exemple. Avec une Endurance de 5, la moyenne humaine, un personnage dort 8 heures, fournit jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée ; tout le reste se passe en activité légère. Au pic humain réel (Endurance 9), six heures de sommeil lui suffisent, il tient 12 heures d'intermédiaire et tout juste une heure de lourde.
 
 </div>
-
-Un personnage qui n'a pas dormi le temps requis commence sa journée avec un point de fatigue (−10 à toutes ses actions), qu'il garde jusqu'à sa prochaine vraie nuit de sommeil. Ce point se cumule d'une nuit sur l'autre : chaque nuit sans le sommeil requis en ajoute un, et seule une nuit de sommeil suffisante les efface tous.
 
 #### Forcer l'effort
 
-Les durées du tableau bornent l'effort d'une journée sans danger. Tant qu'un personnage reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il puise dans ses réserves sans rien risquer. Le MJ juge au cas par cas ce qui relève vraiment de chaque régime : il s'agit de borner les journées d'acharnement, pas de chronométrer chaque geste.
+Les durées de la table donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.
 
-Dès qu'il a épuisé l'une ou l'autre et qu'il en entame une malgré tout, ou qu'il s'y acharne, il force sur un corps déjà à bout. Il tente alors un jet de [Résistance à l'Épuisement](competences.md), une première fois à l'instant où il dépasse, puis à intervalle régulier tant qu'il continue : toutes les heures pour un excès d'activité intermédiaire, toutes les dix minutes pour un excès d'activité lourde. La difficulté part de 100 et grimpe de 20 à chaque jet : Difficulté 100 + 20 × le nombre de jets de Résistance à l'Épuisement qu'il a déjà tentés sans avoir dormi correctement entre-temps. Réussir lui permet de tenir encore ; échouer lui inflige des points de fatigue, d'autant plus nombreux qu'il rate de loin.
+Quand un personnage a épuisé l'une de ces durées et continue quand même dans cette intensité, il force sur un corps déjà à bout. Il fait alors un jet de [Résistance à l'Épuisement](competences.md), une première fois au moment où il dépasse la durée, puis régulièrement tant qu'il continue : toutes les heures en activité intermédiaire, toutes les dix minutes en activité lourde. S'il s'arrête puis reprend plus tard, la durée toujours épuisée, il refait un jet aussitôt, puis aux mêmes intervalles : les pauses ne remettent rien à zéro avant le prochain sommeil correct. La difficulté augmente à chaque jet :
+
+<p class="formula">Difficulté = 100 + 20 × le nombre de jets déjà faits pour forcer l'effort depuis le dernier sommeil correct</p>
+
+Le premier jet se fait donc à 100, le deuxième à 120, et ainsi de suite ; les jets de veille ([Veiller sans dormir](#veiller-sans-dormir)) ne comptent pas dans ce total. S'il réussit, le personnage tient jusqu'au prochain jet. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec ; rien ne l'empêche de continuer, sinon la fatigue elle-même.
 
 #### Veiller sans dormir
 
-Un personnage tient éveillé un temps que fixe son Endurance avant que le manque de sommeil ne le rattrape : le temps avant d'être fatigué, égal à vingt-quatre heures moins son sommeil. Au-delà, chaque heure de veille de plus lui demande un jet de [Résistance à l'Épuisement](competences.md), de difficulté croissante : 20 à la première heure dépassée, 40 à la deuxième, et ainsi de suite, soit 20 × le nombre d'heures déjà dépassées. Réussir le garde debout ; échouer lui inflige des points de fatigue, comme tout jet de Résistance à l'Épuisement manqué. Il peut aussi renoncer et dormir dès qu'il en a le loisir ; sinon, l'épuisement finit par l'y contraindre.
+Un personnage peut rester éveillé sans risque pendant son temps avant d'être fatigué, qui dépend de son Endurance :
 
-On ne se rendort pas non plus aussitôt réveillé. Après un sommeil, un personnage doit veiller un temps minimal avant de pouvoir dormir de nouveau : la moitié de sa veille sans risque, soit la moitié du temps avant d'être fatigué.
+<p class="formula">Temps avant d'être fatigué = 24 heures − le temps de sommeil requis</p>
 
-<div class="gloss-source" markdown>
+Au-delà, chaque heure d'éveil en plus lui demande un jet de [Résistance à l'Épuisement](competences.md), de plus en plus difficile :
 
-| Endurance | Avant de pouvoir redormir | Avant d'être fatigué |
-|:---:|:---:|:---:|
-| 0 | 3 h | 6 h |
-| 1 | 4 h | 8 h |
-| 2 | 5 h | 10 h |
-| 3 | 6 h | 12 h |
-| 4 | 7 h | 14 h |
-| 5 | 8 h | 16 h |
-| 6 | 8 h 15 | 16 h 30 |
-| 7 | 8 h 30 | 17 h |
-| 8 | 8 h 45 | 17 h 30 |
-| 9 | 9 h | 18 h |
-| 10 | 9 h 15 | 18 h 30 |
-| 11 | 9 h 30 | 19 h |
-| 12 | 9 h 45 | 19 h 30 |
-| 13 | 10 h | 20 h |
-| 14 | 10 h 15 | 20 h 30 |
-| 15 | 10 h 30 | 21 h |
-| 16 | 10 h 45 | 21 h 30 |
-| 17 | 11 h | 22 h |
-| 18 | 11 h 15 | 22 h 30 |
-| 19 | 11 h 30 | 23 h |
-| 20 | 12 h | 24 h |
-| 21 | 12 h | 24 h |
-| 22 | 12 h | 24 h |
-| 23 | 12 h | 24 h |
-| 24 | 12 h | 24 h |
-| 25 | 12 h | 24 h |
-| 26 | 12 h | 24 h |
-| 27 | 12 h | 24 h |
-| 28 | 12 h | 24 h |
-| 29 | 12 h | 24 h |
-| 30 | 12 h | 24 h |
+<p class="formula">Difficulté = 20 pour la première heure dépassée, +20 par heure suivante</p>
+
+La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'activité fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.
+
+<div class="gloss-source span sommeil" markdown>
+
+| Endurance | Sommeil | Activité intermédiaire | Activité lourde | Avant de pouvoir redormir | Avant d'être fatigué |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 18 h | 3 h | 1 min | 3 h | 6 h |
+| 1 | 16 h | 4 h | 2 min | 4 h | 8 h |
+| 2 | 14 h | 5 h | 3 min | 5 h | 10 h |
+| 3 | 12 h | 6 h | 5 min | 6 h | 12 h |
+| 4 | 10 h | 7 h | 10 min | 7 h | 14 h |
+| 5 | 8 h | 8 h | 20 min | 8 h | 16 h |
+| 6 | 7 h 30 | 9 h | 30 min | 8 h 15 | 16 h 30 |
+| 7 | 7 h | 10 h | 40 min | 8 h 30 | 17 h |
+| 8 | 6 h 30 | 11 h | 50 min | 8 h 45 | 17 h 30 |
+| 9 | 6 h | 12 h | 1 h | 9 h | 18 h |
+| 10 | 5 h 30 | 12 h | 1 h 30 | 9 h 15 | 18 h 30 |
+| 11 | 5 h | 12 h | 2 h | 9 h 30 | 19 h |
+| 12 | 4 h 30 | 12 h | 2 h 30 | 9 h 45 | 19 h 30 |
+| 13 | 4 h | 12 h | 3 h | 10 h | 20 h |
+| 14 | 3 h 30 | 12 h | 3 h 30 | 10 h 15 | 20 h 30 |
+| 15 | 3 h | 12 h | 4 h | 10 h 30 | 21 h |
+| 16 | 2 h 30 | 12 h | 4 h 30 | 10 h 45 | 21 h 30 |
+| 17 | 2 h | 12 h | 5 h | 11 h | 22 h |
+| 18 | 1 h 30 | 12 h | 5 h 30 | 11 h 15 | 22 h 30 |
+| 19 | 1 h | 12 h | 6 h | 11 h 30 | 23 h |
+| 20 | aucun | 12 h | 6 h 30 | 12 h | 24 h |
+| 21 | aucun | 12 h | 7 h | 12 h | 24 h |
+| 22 | aucun | 12 h | 7 h 30 | 12 h | 24 h |
+| 23 | aucun | 12 h | 8 h | 12 h | 24 h |
+| 24 | aucun | 12 h | 8 h 30 | 12 h | 24 h |
+| 25 | aucun | 12 h | 9 h | 12 h | 24 h |
+| 26 | aucun | 12 h | 9 h 30 | 12 h | 24 h |
+| 27 | aucun | 12 h | 10 h | 12 h | 24 h |
+| 28 | aucun | 12 h | 10 h 30 | 12 h | 24 h |
+| 29 | aucun | 12 h | 11 h | 12 h | 24 h |
+| 30 | aucun | 12 h | 12 h | 12 h | 24 h |
 
 </div>
 
-#### L'état de Fatigue
+<div class="defs" markdown>
 
-La fatigue se compte en points. Chaque jet de Résistance à l'Épuisement manqué en inflige un par tranche de dix points manquants au seuil : rater de 10 à 19 en donne un, de 20 à 29 deux, et ainsi de suite. Chaque point de fatigue vaut un malus de −10 à toutes les actions, et ils s'additionnent : trois points font −30, cinq points −50.
+**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
 
-À dix points, le personnage s'évanouit d'épuisement et s'effondre, contraint au repos. Dormir correctement, soit le temps de sommeil qu'exige son Endurance, efface tous ses points de fatigue et remet à zéro le compte des jets de Résistance à l'Épuisement ; le personnage repart frais.
+</div>
 
 </div>
 
@@ -150,7 +146,21 @@ La fatigue se compte en points. Chaque jet de Résistance à l'Épuisement manqu
 
 ### Mouvement
 
-Le mouvement découle de l'Agilité : la distance franchie en un round, soit environ 6 secondes, selon l'effort fourni.
+Le Mouvement découle de l'Agilité : c'est la distance qu'un personnage franchit en un [round](../combat/deroulement-combat.md), soit environ 6 secondes. Cette distance constitue son [mouvement passif](../combat/deroulement-combat.md) : il la parcourt durant son tour sans dépenser d'action, en une ou plusieurs fois, autour de ses actions.
+
+Dans la table ci-dessous, la colonne se choisit par l'allure que le personnage adopte, et chaque allure impose son intensité d'[activité](#activite) :
+
+<div class="defs" markdown>
+
+**Légère, la marche :** la distance franchie d'un pas tranquille, toute la journée sans s'essouffler. Tant qu'un personnage ne dépasse pas cette distance dans le round, il reste en activité légère.
+
+**Intermédiaire, la course :** la distance couverte en course soutenue, pendant des heures avec des pauses. Dès qu'un personnage dépasse sa marche dans un round, il court et passe au moins en activité intermédiaire.
+
+**Lourde, le sprint :** la distance parcourue en sprint, un effort bref à pleine vitesse. Sprinter exige l'action [Foncer](#foncer) : sans elle, un personnage ne dépasse jamais sa course dans un round. Sprinter est une activité lourde.
+
+</div>
+
+La marche et la course se comparent aux distances réellement lues, décalages compris ([Foncer](#foncer), [terrain difficile](#terrain-difficile)) : sur un terrain difficile, dépasser sa marche réduite suffit à passer en course. À l'inverse, qui s'en tient à sa marche réduite reste en activité légère : la lenteur imposée compense l'effort du terrain.
 
 <div class="gloss-source" markdown>
 
@@ -174,12 +184,12 @@ Le mouvement découle de l'Agilité : la distance franchie en un round, soit env
 | 15 | 100 m | 200 m | 500 m |
 | 16 | 150 m | 300 m | 750 m |
 | 17 | 200 m | 400 m | 1 km |
-| 18 | 300 m | 600 m | 1,5 km |
+| 18 | 300 m | 600 m | 1.5 km |
 | 19 | 400 m | 800 m | 2 km |
-| 20 | 600 m | 1,2 km | 3 km |
-| 21 | 800 m | 1,6 km | 4 km |
+| 20 | 600 m | 1.2 km | 3 km |
+| 21 | 800 m | 1.6 km | 4 km |
 | 22 | 1 km | 2 km | 5 km |
-| 23 | 1,5 km | 3 km | 7,5 km |
+| 23 | 1.5 km | 3 km | 7.5 km |
 | 24 | 2 km | 4 km | 10 km |
 | 25 | 3 km | 6 km | 15 km |
 | 26 | 5 km | 10 km | 25 km |
@@ -190,50 +200,58 @@ Le mouvement découle de l'Agilité : la distance franchie en un round, soit env
 
 </div>
 
-<div class="defs" markdown>
-
-**Légère :** la distance franchie d'un pas tranquille, indéfiniment et sans s'essouffler : la marche ordinaire.
-
-**Intermédiaire :** la distance couverte en course soutenue, des heures durant mais avec des pauses. Dès qu'il dépasse sa marche en un round, le personnage adopte cette allure et passe au moins en activité intermédiaire.
-
-**Lourde :** la distance abattue en sprint, le temps d'un seul élan. Cette allure exige l'action Foncer ; sans elle, le personnage ne dépasse jamais sa course. Il passe alors en activité lourde.
-
-</div>
-
-> Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m d'un pas tranquille en allure légère, 16 m en course soutenue en allure intermédiaire, puis 40 m en sprint en allure lourde.
-
 <div class="memo" markdown>
 
-Pour mémoire, un humain marche à environ 5 km/h et sprinte au mieux autour de 45 km/h (palier 9). Le palier 19, sommet humain de l'univers, frôle le mur du son (colonne lourde : 2 km en un round, près de 1 200 km/h) ; le palier 30 atteint des vitesses de l'ordre de Mach 250.
+Exemple. Avec une Agilité de 5, un personnage couvre par round 8 m en marche (activité légère), 16 m en course (activité intermédiaire), puis 40 m en sprint (activité lourde), à condition de Foncer.
 
 </div>
-
-Plusieurs des règles qui suivent convertissent un jet en paliers, gagnés ou retranchés selon le cas. Un jet ne vaut un palier qu'à partir de [Difficile](competences.md), et en ajoute un par degré de difficulté franchi au-delà.
-
-| Jet atteint | Paliers |
-|:---:|:---:|
-| Difficile (120) | 1 |
-| Très difficile (180) | 2 |
-| Absurde (240) | 3 |
-| Quasi impossible (320) | 4 |
-| Impossible (400) | 5 |
 
 #### Foncer
 
-Foncer est une [Action](../combat/deroulement-combat.md). Le personnage tente le jet de la compétence de déplacement qui convient, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre, et hausse d'autant de paliers son mouvement jusqu'à la fin du prochain round. Sa distance par round se lit alors à ce palier supérieur.
+Foncer est une [action](../combat/deroulement-combat.md), et un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
+
+Le personnage fait un jet de la compétence de déplacement qui convient au milieu, [Course](competences.md) à pied, [Natation](competences.md) dans l'eau ou une autre. Ce jet ne peut pas rater : il sert seulement à gagner des paliers, donnés par la table ci-dessous, à la ligne du plus haut seuil atteint.
+
+<div class="sepia-table" markdown>
+
+| Jet de déplacement | Paliers de Mouvement |
+|:---:|:---:|
+| Difficile (120) | +1 |
+| Très difficile (180) | +2 |
+| Absurde (240) | +3 |
+| Quasi impossible (320) | +4 |
+| Impossible (400) | +5 |
+
+</div>
+
+Au-delà, chaque degré de l'échelle de [difficulté](competences.md) ajoute un palier de plus : Surhumaine (520) donne +6, et ainsi de suite. En dessous de Difficile (120), le jet ne donne aucun palier, mais le personnage sprinte quand même.
+
+Dès son tour et jusqu'à la fin du prochain round, le personnage en tire deux effets : il peut sprinter, c'est-à-dire lire sa distance à la colonne Lourde ; et il lit toutes ses distances à la ligne de son Agilité augmentée des paliers du jet, quelle que soit la colonne. Avec une Agilité de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
+
+Foncer de nouveau avant la fin de l'effet remplace l'effet en cours : les paliers ne se cumulent pas. Rien n'empêche de Foncer round après round : c'est la durée d'activité lourde de la journée qui limite le sprint. Enfin, quel que soit le cumul des décalages, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
+
+<div class="keep" markdown>
 
 #### Terrain difficile
 
-Un sol qui entrave la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ le note d'un palier de 0 à 5 selon ce qu'il retire à la marche comme à la course, et le personnage lit alors sa distance autant de paliers plus bas dans la table de mouvement, à la colonne du régime où il se trouve : l'exact revers de Foncer, qui la fait lire plus haut. On ne cumule pas plusieurs gênes, seul le palier qui décrit le mieux l'ensemble s'applique.
+Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage lit alors sa distance autant de paliers plus bas que la table l'indique, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les deux décalages se cumulent : Foncer à +2 sur un terrain Éprouvant (3 paliers plus bas) se lit en tout un palier plus bas.
 
-| Palier | Terrain | Mouvement |
-|:---:|:---|:---:|
-| 0 | Dégagé | aucun changement |
-| 1 | Encombré | 1 palier plus bas |
-| 2 | Difficile | 2 paliers plus bas |
-| 3 | Éprouvant | 3 paliers plus bas |
-| 4 | Ardu | 4 paliers plus bas |
-| 5 | Impraticable | 5 paliers plus bas |
+</div>
+
+On ne cumule pas plusieurs obstacles : un seul type s'applique, celui qui décrit le mieux l'ensemble du terrain. L'eau se classe de la même façon : à la nage, la distance se lit sur la même table, avec la compétence [Natation](competences.md) pour Foncer. Une eau calme compte comme un terrain Difficile ; le courant, la houle ou les vagues la rendent Éprouvante, Ardue, voire Impraticable.
+
+<div class="sepia-table" markdown>
+
+| Terrain | Mouvement |
+|:---|:---:|
+| Dégagé | aucun changement |
+| Encombré | 1 palier plus bas |
+| Difficile | 2 paliers plus bas |
+| Éprouvant | 3 paliers plus bas |
+| Ardu | 4 paliers plus bas |
+| Impraticable | 5 paliers plus bas |
+
+</div>
 
 <div class="defs" markdown>
 
@@ -243,46 +261,66 @@ Un sol qui entrave la progression, boue, éboulis, sous-bois, neige, décombres 
 
 **Difficile :** boue, éboulis, broussailles, neige à mi-mollet. La progression tombe à peu près de moitié.
 
-**Éprouvant :** marécage, pierrier instable, neige à mi-cuisse, ronciers. Chaque mètre s'arrache.
+**Éprouvant :** marécage, pente d'éboulis instable, neige à mi-cuisse, ronciers. Chaque mètre demande un effort.
 
-**Ardu :** boue profonde, congères, chaos de blocs. Il n'y gagne plus que quelques pas par round.
+**Ardu :** boue profonde, congères, amas de rochers. On n'y gagne que quelques pas par round.
 
-**Impraticable :** marécage jusqu'au torse, ronciers inextricables, éboulement. On n'y avance qu'à un train dérisoire, et un corps ordinaire s'y retrouve à l'arrêt.
+**Impraticable :** marécage jusqu'au torse, ronciers inextricables, éboulement. On n'y avance presque plus : pour un corps ordinaire, Agilité 5 ou moins, c'est l'arrêt.
 
 </div>
 
-> Exemple. Avec une Agilité de 5, un personnage court 16 m par round en allure intermédiaire. Sur un terrain Difficile (2), il lit sa distance deux paliers plus bas, à l'Agilité 3 : 8 m. Sur un terrain Éprouvant (3), il tombe à l'Agilité 2, soit 6 m. Sur un terrain Impraticable (5), il descend à l'Agilité 0 : il ne bouge plus.
+<div class="memo" markdown>
+
+Exemple. Avec une Agilité de 5, un personnage court 16 m par round en activité intermédiaire. Sur un terrain Difficile, il lit sa distance deux paliers plus bas, à l'Agilité 3 : 8 m. Sur un terrain Éprouvant, il tombe à l'Agilité 2, soit 6 m. Sur un terrain Impraticable, il descend à l'Agilité 0 : il ne bouge plus.
+
+</div>
 
 #### Chute
 
-Un personnage qui tombe subit les dégâts de l'impact. En chute libre, il descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round, sa vitesse plafonnant autour de 50 m/s, soit 180 km/h, atteinte après environ 450 mètres de chute.
+Un personnage qui tombe subit les dégâts de l'impact, donnés par la hauteur de la chute dans la table ci-dessous. On lit la plus grande hauteur qui ne dépasse pas celle de la chute : une chute de 10 mètres se lit à la ligne 8 m et inflige 30 dégâts. En dessous de 3 mètres, la chute n'inflige rien.
 
-Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils croissent avec la hauteur, d'abord vite, puis de moins en moins à mesure que l'air freine. À la vitesse terminale, atteinte vers 450 mètres, la chute cesse d'accélérer : au-delà, on ne tombe pas plus vite, donc pas plus fort, et les dégâts plafonnent à 500. On retient le palier le plus haut atteint ; en deçà de 3 mètres, la chute ne fait aucun mal.
+En chute libre, un personnage descend d'environ 150 mètres au premier round, puis d'environ 300 mètres par round : sa vitesse plafonne autour de 50 m/s, soit 180 km/h, atteinte après environ 450 mètres de chute.
 
-| Palier | Hauteur de chute | Dégâts |
-|:---:|:---:|:---:|
-| 1 | 3 m | 10 |
-| 2 | 5 m | 20 |
-| 3 | 8 m | 30 |
-| 4 | 12 m | 50 |
-| 5 | 20 m | 70 |
-| 6 | 30 m | 100 |
-| 7 | 45 m | 150 |
-| 8 | 60 m | 200 |
-| 9 | 90 m | 250 |
-| 10 | 120 m | 300 |
-| 11 | 150 m | 350 |
-| 12 | 200 m | 400 |
-| 13 | 300 m | 450 |
-| 14 | 450 m et plus | 500 |
+Les dégâts suivent l'énergie de l'impact, donc le carré de la vitesse : ils augmentent avec la hauteur, d'abord vite, puis de moins en moins à mesure que l'air freine. À la vitesse maximale, atteinte vers 450 mètres, la chute cesse d'accélérer : au-delà, on ne tombe pas plus vite, donc pas plus fort, et les dégâts plafonnent à 500.
 
-En touchant le sol, le personnage peut dépenser sa [réaction](../combat/deroulement-combat.md) pour un jet de [Chute](competences.md) : le résultat de son jet se retranche directement des dégâts de la chute. Amorti, roulé au sol ou rattrapé en route, il change une chute brutale en réception maîtrisée.
+<div class="sepia-table" markdown>
 
-> Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage réussit son jet de Chute à 403 : il n'en subit plus que 47. Le même jet annulerait entièrement une chute de trente mètres, qui n'inflige que 100 dégâts.
+| Hauteur de chute | Dégâts |
+|:---:|:---:|
+| 3 m | 10 |
+| 5 m | 20 |
+| 8 m | 30 |
+| 12 m | 50 |
+| 16 m | 60 |
+| 20 m | 70 |
+| 25 m | 90 |
+| 30 m | 100 |
+| 40 m | 140 |
+| 50 m | 160 |
+| 60 m | 190 |
+| 80 m | 240 |
+| 100 m | 280 |
+| 130 m | 320 |
+| 160 m | 360 |
+| 200 m | 400 |
+| 250 m | 430 |
+| 300 m | 450 |
+| 400 m | 480 |
+| 450 m et plus | 500 |
+
+</div>
+
+Toucher le sol déclenche une [réaction](../combat/deroulement-combat.md) : le personnage fait un jet de la compétence [Chute](competences.md), et on retire le résultat de ce jet des dégâts de la chute. En amortissant ou en roulant au sol, il change une chute brutale en réception maîtrisée. Un personnage hors d'état de réagir, [Inconscient](etats.md) par exemple, ne fait pas ce jet et subit les dégâts entiers.
+
+<div class="memo" markdown>
+
+Exemple. Une chute de trois cents mètres inflige 450 dégâts. Le personnage obtient 400 à son jet de Chute : il n'en subit plus que 50. Le même jet annulerait entièrement une chute de trente mètres, qui n'inflige que 100 dégâts.
+
+</div>
 
 #### Chuter dans l'eau
 
-Heurter l'eau plutôt qu'une surface dure amortit la chute : les dégâts sont divisés par deux, une fois toute autre réduction appliquée.
+Tomber dans l'eau plutôt que sur une surface dure amortit la chute, à condition que l'eau soit assez profonde pour s'y immerger entièrement : les dégâts sont divisés par deux, après le jet de Chute. On retire donc d'abord le jet, puis on divise ce qui reste par deux. Une eau trop peu profonde compte comme un sol dur.
 
 </div>
 
@@ -292,7 +330,17 @@ Heurter l'eau plutôt qu'une surface dure amortit la chute : les dégâts sont d
 
 ### Port
 
-L'indice de poids découle de la Force : il fixe la charge qu'un personnage porte, soulève ou brise, selon l'effort qu'il y met.
+Le Port découle de la Force : son indice de poids fixe la charge qu'un personnage porte, soulève ou brise. La colonne se détermine par la charge maniée, et la charge impose son intensité d'[activité](#activite) :
+
+<div class="defs" markdown>
+
+**Légère :** le poids porté ou déplacé sans aucune fatigue, indéfiniment. Tant qu'une charge n'excède pas cette valeur, elle ne coûte aucun effort et laisse le personnage en activité légère.
+
+**Intermédiaire :** le poids manié au prix d'un vrai effort, des heures durant mais avec des pauses. Dès qu'une charge dépasse la colonne Légère, le personnage passe au moins en activité intermédiaire.
+
+**Lourde :** le poids maximal soulevé ou brisé à pleine puissance, le temps d'un seul effort. Mouvoir une charge qui dépasse la colonne Intermédiaire exige l'action [Forcer](#forcer) : sans elle, elle reste hors de portée. Le personnage passe alors en activité lourde.
+
+</div>
 
 <div class="gloss-source" markdown>
 
@@ -332,39 +380,47 @@ L'indice de poids découle de la Force : il fixe la charge qu'un personnage port
 
 </div>
 
-<div class="defs" markdown>
-
-**Légère :** le poids porté ou déplacé sans aucune fatigue, indéfiniment. Tant qu'une charge n'excède pas cette valeur, elle ne coûte aucun effort.
-
-**Intermédiaire :** le poids manié au prix d'un vrai effort, des heures durant mais avec des pauses. Dès qu'une charge dépasse l'activité légère, le personnage bascule dans ce régime et passe au moins en activité intermédiaire.
-
-**Lourde :** le poids maximal soulevé ou brisé à pleine puissance, le temps d'un seul effort. Mouvoir une telle charge exige l'action Forcer ; sans elle, elle reste hors de portée. Le personnage passe alors en activité lourde.
-
-</div>
-
-> Exemple. Avec une Force de 5, la moyenne humaine, un personnage porte sans fatigue 10 kg en activité légère, manie 30 kg en activité intermédiaire, puis soulève jusqu'à 100 kg le temps d'un effort en activité lourde.
-
 <div class="memo" markdown>
 
-Pour mémoire, le record réel du soulevé de terre avoisine 510 kg, et la plus lourde charge jamais soulevée par un homme, deux voitures en arrière-soulevé, près de 2,4 tonnes : c'est l'ordre de grandeur du palier 9, sommet humain réel. La moyenne humaine (5) soulève une centaine de kilos au prix d'un effort maximal.
+Exemple. Avec une Force de 5, la moyenne humaine, un personnage porte sans fatigue 10 kg en activité légère, manie 30 kg en activité intermédiaire, puis soulève jusqu'à 100 kg le temps d'un effort en activité lourde.
 
 </div>
 
 #### Forcer
 
-Forcer est une [Action](../combat/deroulement-combat.md). Le personnage tente un jet de [Prouesse de Force](competences.md) et hausse d'autant de paliers la Force avec laquelle il soulève, brise ou résiste à un écrasement, jusqu'à la fin du prochain round. Le temps de ce sursaut, son indice de poids se lit à ce palier supérieur.
+Forcer est une [action](../combat/deroulement-combat.md). Le personnage fait un jet de [Prouesse de Force](competences.md). Jusqu'à la fin du prochain round, il en tire deux effets : il peut mouvoir les charges de sa colonne Lourde ; et la Force avec laquelle il soulève, brise ou résiste à un écrasement se lit plus haut, du nombre de paliers que donne son jet, lu dans la table ci-dessous. Un jet sous Difficile (120) ne donne aucun palier, mais permet tout de même de mouvoir les charges de la colonne Lourde.
+
+<div class="sepia-table" markdown>
+
+| Jet de Prouesse de Force | Paliers de Force |
+|:---:|:---:|
+| Difficile (120) | +1 |
+| Très difficile (180) | +2 |
+| Absurde (240) | +3 |
+| Quasi impossible (320) | +4 |
+| Impossible (400) | +5 |
+
+</div>
+
+Au-delà, chaque degré de difficulté franchi ajoute un palier de plus.
 
 #### Tirer et pousser
 
-Tirer ou pousser une charge suit le même indice de poids, mais toutes ses valeurs sont multipliées par dix : on tire ou pousse dix fois ce qu'on porterait. Les régimes, l'activité imposée et l'action Forcer pour la colonne lourde s'appliquent comme au soulevé. Ainsi une Force de 9, sommet humain, soulève une tonne à pleine puissance mais en tire ou pousse dix.
+Tirer ou pousser une charge suit le même indice de poids, mais toutes ses valeurs sont multipliées par dix : on tire ou pousse dix fois ce qu'on porterait. Les intensités imposées et l'action Forcer pour la colonne Lourde s'appliquent comme au soulevé. Ainsi une Force de 9, sommet humain réel, soulève une tonne à pleine puissance mais en tire ou pousse dix.
 
 #### Écrasement
 
-Une masse trop lourde qui s'abat sur le personnage, ou sous laquelle il est coincé, l'écrase. On la compare à son indice de poids : tant qu'elle n'excède pas ce qu'il lève à pleine puissance, il la supporte, quitte à rester bloqué. Au-delà, chaque palier de Force qui le sépare du palier capable de lever cette masse lui inflige 40 dégâts.
+Une masse trop lourde qui s'abat sur un personnage, ou sous laquelle il est coincé, l'écrase. On compare la masse à sa colonne Lourde : tant qu'elle n'excède pas ce qu'il lève à pleine puissance, il la supporte sans dégâts, quitte à rester bloqué. Au-delà, on cherche le palier requis, le plus petit palier de Force dont la colonne Lourde atteint la masse, et chaque palier d'écart inflige 40 dégâts :
 
-Les dégâts tombent dès l'écrasement, puis à la fin de chacun de ses tours tant qu'il reste pris. À chaque fois, il peut tenter un jet de [Prouesse de Force](competences.md) : sa réussite efface autant de paliers d'écrasement, et les dégâts du round retombent d'autant.
+<p class="formula">Dégâts par round = 40 × (palier requis − Force du personnage)</p>
 
-> Exemple. Avec une Force de 5, un personnage lève 100 kg à pleine puissance (palier 5 de la colonne lourde). Pris sous un bloc d'une tonne, que seul un palier 9 soulèverait, il est dépassé de quatre paliers, soit 160 dégâts. S'il atteint Très difficile (180) à son jet de Prouesse de Force, il en efface deux et n'en subit plus que 80 ce round-là.
+Ces dégâts tombent une première fois dès l'écrasement, puis à la fin de chacun de ses tours tant qu'il reste pris. À chaque fois, il peut faire un jet de [Prouesse de Force](competences.md) (aucune action requise) : les paliers que donne son jet, lus dans la table de [Forcer](#forcer), effacent autant de paliers d'écart, et les dégâts du round retombent de 40 par palier effacé.
+
+<div class="memo" markdown>
+
+Exemple. Avec une Force de 5, un personnage lève 100 kg à pleine puissance (palier 5 de la colonne Lourde). Pris sous un bloc d'une tonne, que seul un palier 9 soulèverait, il est dépassé de quatre paliers, soit 160 dégâts. S'il atteint Très difficile (180) à son jet de Prouesse de Force, il en efface deux et n'en subit plus que 80 ce round-là.
+
+</div>
 
 </div>
 
@@ -374,7 +430,7 @@ Les dégâts tombent dès l'écrasement, puis à la fin de chacun de ses tours t
 
 ### Retenir son souffle
 
-L'apnée découle de l'Endurance : la durée pendant laquelle le personnage retient sa respiration. À l'inverse du poids et du mouvement, un effort plus intense la raccourcit : plus le corps s'active, plus il brûle d'oxygène. On la lit à la colonne de l'activité du moment.
+L'apnée découle de l'Endurance : c'est la durée pendant laquelle un personnage retient sa respiration. À l'inverse du Mouvement et du Port, la colonne ne se choisit pas, elle se subit : l'apnée se lit à la colonne de l'intensité d'[activité](#activite) du moment, et un effort plus intense la raccourcit, car plus le corps s'active, plus il brûle d'oxygène.
 
 <div class="gloss-source" markdown>
 
@@ -424,30 +480,56 @@ L'apnée découle de l'Endurance : la durée pendant laquelle le personnage reti
 
 </div>
 
-> Exemple. Avec une Endurance de 5, un personnage retient son souffle 1 minute au repos en activité légère, 30 secondes sous un effort modéré en activité intermédiaire, puis 18 secondes en plein combat en activité lourde.
-
 <div class="memo" markdown>
 
-Pour mémoire, un humain moyen retient son souffle environ une minute au repos (5). Le record réel d'apnée statique frôle douze minutes sans préparation et près de vingt-cinq minutes après respiration d'oxygène pur : l'ordre de grandeur du palier 9, sommet humain réel. Au-delà, seul le surnaturel porte l'apnée vers des durées sans commune mesure. Les durées les plus brèves se comptent en rounds (un round dure environ 6 secondes), et « 0 s » marque qu'à très faible Endurance le souffle ne peut être retenu en plein effort.
+Exemple. Avec une Endurance de 5, un personnage retient son souffle 1 minute au repos en activité légère, 30 secondes sous un effort modéré en activité intermédiaire, puis 18 secondes en plein combat en activité lourde.
 
 </div>
 
 #### Passer en apnée
 
-Passer en apnée demande une [Action](../combat/deroulement-combat.md), le temps de bloquer sa respiration. Le personnage tient ensuite la durée que lui donne son Endurance, lue à la colonne de l'effort qu'il fournit pendant ce temps.
+Passer en apnée coûte une [action](../combat/deroulement-combat.md), le temps de bloquer sa respiration. Le personnage tient ensuite la durée que lui donne son Endurance, lue à la colonne de l'intensité d'activité qu'il fournit pendant ce temps.
+
+En bloquant sa respiration, il peut faire un jet d'[Apnée](competences.md) (aucune action requise) : son apnée se lit plus haut, du nombre de paliers que donne son jet, lu dans la table ci-dessous, pour toute la durée de ce souffle. Un jet sous Difficile (120) ne donne aucun palier.
+
+<div class="sepia-table" markdown>
+
+| Jet d'Apnée | Paliers d'apnée |
+|:---:|:---:|
+| Difficile (120) | +1 |
+| Très difficile (180) | +2 |
+| Absurde (240) | +3 |
+| Quasi impossible (320) | +4 |
+| Impossible (400) | +5 |
+
+</div>
+
+Au-delà, chaque degré de difficulté franchi ajoute un palier de plus.
 
 #### Alterner entre deux activités en apnée
 
-Rien n'oblige à garder le même effort durant toute une apnée : le personnage passe d'un régime à l'autre à sa guise. Le souffle reste une réserve unique, que chaque régime épuise plus ou moins vite.
+Rien n'oblige à garder la même intensité durant toute une apnée : le personnage passe de l'une à l'autre à sa guise. Le souffle reste une réserve unique, que chaque intensité épuise plus ou moins vite. On la suit en fractions :
 
-On la suit en fractions : le temps passé dans un régime en consomme une part de sa durée maximale, et cette même part se reporte à l'identique sur les autres colonnes.
+<p class="formula">Part consommée = temps passé dans l'intensité ÷ durée maximale de la colonne</p>
 
-> Exemple. Avec une Endurance de 10, un personnage tient 20 minutes en activité légère, 10 en intermédiaire et 5 en lourde. Une minute en activité lourde lui en coûte le cinquième, soit 4 minutes d'activité légère (un cinquième de 20). En se calmant, il ne lui reste plus que 16 minutes d'apnée légère.
+Chaque part consommée se reporte à l'identique sur les autres colonnes, et le souffle est épuisé quand la somme des parts atteint le tout.
+
+<div class="memo" markdown>
+
+Exemple. Avec une Endurance de 10, un personnage tient 20 minutes en activité légère, 10 en intermédiaire et 5 en lourde. Une minute en activité lourde lui en coûte le cinquième, soit 4 minutes d'activité légère (un cinquième de 20). En se calmant, il ne lui reste plus que 16 minutes d'apnée légère.
+
+</div>
 
 #### Suffocation
 
-Privé d'air, étranglé, noyé ou enfermé sans oxygène, un personnage suffoque. Il résiste un nombre de rounds égal à son Endurance, le décompte baissant de 1 par round. Tombé à 0, il perd connaissance ; inconscient, il poursuit sa chute au même rythme et meurt lorsque le décompte atteint l'opposé de son Endurance. La suffocation est subie de force, en pleine détresse, là où l'apnée mesure le souffle retenu de plein gré, au calme.
+Privé d'air, étranglé, noyé ou enfermé sans oxygène, un personnage suffoque. La suffocation est subie de force, en pleine détresse, là où l'apnée mesure le souffle retenu de plein gré : un personnage dont l'apnée s'épuise sans qu'il retrouve d'air se met aussitôt à suffoquer. Retrouver de l'air met fin à la suffocation.
 
-> Exemple. Avec une Endurance de 10, un personnage lutte 10 rounds avant de sombrer dans l'inconscience, puis tient 10 rounds encore, jusqu'à −10, avant de mourir. Un round valant environ 6 secondes, c'est près d'une minute de résistance, puis une minute de sursis.
+Le personnage résiste un nombre de rounds égal à son Endurance : le décompte part de son Endurance et baisse de 1 par round. À 0, il sombre dans l'[Inconscience](etats.md) ; inconscient, le décompte poursuit sa chute au même rythme, et le personnage meurt lorsqu'il atteint l'opposé de son Endurance.
+
+<div class="memo" markdown>
+
+Exemple. Avec une Endurance de 10, un personnage lutte 10 rounds avant de sombrer dans l'Inconscience, puis tient 10 rounds encore, jusqu'à −10, avant de mourir. Un round valant environ 6 secondes, c'est près d'une minute de résistance, puis une minute de sursis.
+
+</div>
 
 </div>

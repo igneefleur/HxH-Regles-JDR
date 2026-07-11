@@ -9,6 +9,40 @@
 "files": [
 {
 "status": "modified",
+"filename": "content/regles/combat/manoeuvres.md",
+"url": "content/regles/combat/manoeuvres/"
+},
+{
+"status": "modified",
+"filename": "content/regles/monde/tailles.md",
+"url": "content/regles/monde/tailles/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/caracteristiques.md",
+"url": "content/regles/personnage/caracteristiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "1ea2150",
+"author": "Théo Cavaillès",
+"date": "2026-07-10T17:52:39+02:00",
+"message": "Manoeuvres (attaque/defense), competences, chute recalibree ; corps du livre en Alegreya (chiffres alignes, EB Garamond gardee pour la Forge)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/1ea21504a242c7b51c6e1040d442a5228ef89d70",
+"files": [
+{
+"status": "modified",
 "filename": "content/regles/art/arts-martiaux.md",
 "url": "content/regles/art/arts-martiaux/"
 },
@@ -1031,25 +1065,6 @@
 "status": "added",
 "filename": "content/livre/tailles.md",
 "url": "content/livre/tailles/"
-}
-]
-},
-{
-"short": "4c2c76d",
-"author": "Théo Cavaillès",
-"date": "2026-06-12T23:06:08+02:00",
-"message": "Lecteur continu du livre + page Types de Dégâts séparée",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/4c2c76de6ce1ab53be45c02a520adb90c2a77973",
-"files": [
-{
-"status": "modified",
-"filename": "content/livre/armes.md",
-"url": "content/livre/armes/"
-},
-{
-"status": "added",
-"filename": "content/livre/degats.md",
-"url": "content/livre/degats/"
 }
 ]
 }

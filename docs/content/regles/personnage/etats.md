@@ -131,7 +131,7 @@ L'adversaire a pris l'entier contrôle de son corps, cadenassé sans le moindre 
 <div class="sblock" markdown>
 **Immobilisé**
 
-Une entrave le retient captif et le cloue sur place : liens, chaînes, membres coincés, poigne d'un adversaire ou masse du décor qui l'emprisonne. Son [mouvement](capacites-physiques.md#mouvement) tombe à 0, quel que soit le régime : il ne franchit plus la moindre distance. Selon la force de l'entrave, le palier atteint lui inflige de plus un degré de Paralysie. Il s'en libère en se défaisant de l'entrave.
+Une entrave le retient captif et le cloue sur place : liens, chaînes, membres coincés, poigne d'un adversaire ou masse du décor qui l'emprisonne. Son [mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure : il ne franchit plus la moindre distance. Selon la force de l'entrave, le palier atteint lui inflige de plus un degré de Paralysie. Il s'en libère en se défaisant de l'entrave.
 
 <p class="palier">Légère</p>
 

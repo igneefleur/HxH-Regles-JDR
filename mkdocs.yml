@@ -69,6 +69,7 @@ nav:
       - content/univers/index.md
       - Cartes du monde: content/univers/cartes.md
       - Heavens Arena: content/univers/heavens-arena.md
+  - Création: personnage/index.md
   - Forge: forge/index.md
   - Atelier: creation/index.md
 theme:
@@ -97,6 +98,7 @@ extra_css:
   - stylesheets/atelier.css
   - stylesheets/night.css
   - stylesheets/forge.css
+  - stylesheets/creation.css
 extra_javascript:
   - javascripts/changelog.js
   - javascripts/continuous.js
@@ -105,10 +107,12 @@ extra_javascript:
   - javascripts/atelier.js
   - javascripts/night.js
   - javascripts/forge.js
+  - javascripts/creation.js
 hooks:
   - hooks/changelog.py
   - hooks/nen_atelier.py
   - hooks/forge.py
+  - hooks/creation.py
 plugins:
   - search
 markdown_extensions:

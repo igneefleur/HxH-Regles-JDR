@@ -10,13 +10,13 @@ Toute créature et tout objet ont une taille, parmi onze catégories, de la micr
 
 | Catégorie | Hauteur ou Longueur | Poids | Espace | Allonge |
 |---|---|---|---|---|
-| Microscopique | jusqu'à 1 mm | jusqu'à 0,1 g | 1 mm | 1 mm |
-| Infime | 1 mm à 15 cm | 0,1 à 50 g | 10 cm | 10 cm |
+| Microscopique | jusqu'à 1 mm | jusqu'à 0.1 g | 1 mm | 1 mm |
+| Infime | 1 mm à 15 cm | 0.1 à 50 g | 10 cm | 10 cm |
 | Minuscule | 15 à 30 cm | 50 à 500 g | 20 cm | 20 cm |
-| Très petite | 30 à 60 cm | 0,5 à 5 kg | 50 cm | 50 cm |
-| Petite | 60 cm à 1,4 m | 5 à 50 kg | 75 cm | 75 cm |
-| Moyenne | 1,4 à 2,5 m | 50 à 500 kg | 1 m | 1 m |
-| Grande | 2,5 à 5 m | 500 kg à 5 t | 2 m | 2 m |
+| Très petite | 30 à 60 cm | 0.5 à 5 kg | 50 cm | 50 cm |
+| Petite | 60 cm à 1.4 m | 5 à 50 kg | 75 cm | 75 cm |
+| Moyenne | 1.4 à 2.5 m | 50 à 500 kg | 1 m | 1 m |
+| Grande | 2.5 à 5 m | 500 kg à 5 t | 2 m | 2 m |
 | Très grande | 5 à 10 m | 5 à 50 t | 5 m | 5 m |
 | Gigantesque | 10 à 20 m | 50 à 500 t | 10 m | 10 m |
 | Colossale | 20 à 100 m | 500 à 50 000 t | 20 m | 20 m |

@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/forge.css">
     
+      <link rel="stylesheet" href="stylesheets/creation.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -103,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dernieres-modifications" class="md-skip">
+        <a href="#accueil" class="md-skip">
           Aller au contenu
         </a>
       
@@ -271,6 +273,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="personnage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Création
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="forge/" class="md-tabs__link">
         
   
@@ -358,6 +379,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -374,6 +413,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extension-navigateur-la-fiche-hxh-sur-roll20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension navigateur : la fiche HxH sur Roll20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dernieres-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dernières modifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2508,6 +2588,33 @@
   
   
     <li class="md-nav__item">
+      <a href="personnage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="forge/" class="md-nav__link">
         
   
@@ -2575,6 +2682,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extension-navigateur-la-fiche-hxh-sur-roll20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension navigateur : la fiche HxH sur Roll20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dernieres-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dernières modifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2590,7 +2727,24 @@
 
 
 
-<h1 id="dernieres-modifications">Dernières modifications</h1>
+<h1 id="accueil">Accueil</h1>
+<h2 id="extension-navigateur-la-fiche-hxh-sur-roll20">Extension navigateur : la fiche HxH sur Roll20</h2>
+<p>Une extension Firefox affiche une fiche de personnage HxH à la place de la fiche
+Roll20, et envoie ses jets dans le tchat. Les personnages se créent dans le
+<a href="personnage/">créateur de personnage</a> ; l'extension les récupère et les
+présente dans une partie Roll20, d'un simple bouton.</p>
+<p><a class="cl-link" href="download/hxh-roll20-firefox.xpi" download><strong>Télécharger l'extension (Firefox)</strong></a></p>
+
+<p>Installation temporaire (le temps de la session Firefox) :</p>
+<ol>
+<li>ouvrir <code>about:debugging#/runtime/this-firefox</code> ;</li>
+<li>« Charger un module complémentaire temporaire… » ;</li>
+<li>choisir le fichier téléchargé.</li>
+</ol>
+<p>Ensuite : ouvrir le <a href="personnage/">créateur de personnage</a> une fois (les
+fiches se synchronisent), puis, dans une partie Roll20, cliquer le bouton
+« Fiche HxH » en bas à droite et choisir le personnage à afficher.</p>
+<h2 id="dernieres-modifications">Dernières modifications</h2>
 <p>Suivi des dernières mises à jour du livre de règles, directement depuis le dépôt.</p>
 <div id="changelog" class="changelog">
   <p class="cl-info">Chargement des dernières modifications…</p>
@@ -3503,6 +3657,8 @@
         <script src="javascripts/night.js"></script>
       
         <script src="javascripts/forge.js"></script>
+      
+        <script src="javascripts/creation.js"></script>
       
     
   </body>
