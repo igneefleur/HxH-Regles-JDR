@@ -303,6 +303,24 @@ html.night .md-typeset .diff-table table:not([class]) tbody tr:nth-child(even) t
 html.night .md-typeset .gloss-source table:not([class]) tbody tr:nth-child(even) td,
 html.night .md-typeset .sepia-table table:not([class]) tbody tr:nth-child(even) td { background: #2a2519; }
 
+/* Table du sommeil : le trait vertical séparateur (colonne 5) passe au ton des
+   filets sombres, au lieu du clair #e6dcc1 d'extra.css. */
+html.night .md-typeset .sommeil table:not([class]) th:nth-child(5),
+html.night .md-typeset .sommeil table:not([class]) td:nth-child(5) {
+  border-left-color: #3c3527;
+}
+
+/* Effets par zone (.zones : cartes Agripper, Maîtriser, Soumettre, Assommer) :
+   pastilles et filets clairs → sombres, texte → clair, étiquettes → secondaire. */
+html.night .md-typeset .zones .zone { border-top-color: #3c3527; }
+html.night .md-typeset .zones:not(:last-child) .zone:last-child { border-bottom-color: #3c3527; }
+html.night .md-typeset .zchip {
+  background: #241f16;
+  border-color: #3c3527;
+  color: #e8dfcb;
+}
+html.night .md-typeset .zones .zlbl { color: #a89e88; }
+
 /* Matrice des sens (page Formes du vivant) : dégradé vert clair (primaire) → foncé
    (inexistant), adapté au fond sombre ; box-shadow de la même couleur pour souder les
    jointures. Les en-têtes prennent var(--paper) via extra.css (fond page sombre). */

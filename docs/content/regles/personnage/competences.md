@@ -97,7 +97,7 @@ Chaque palier de l'échelle recouvre un ordre d'action distinct :
 <thead><tr><th>Compétence</th><th>Caractéristique</th><th>Groupes</th><th>Utilité</th><th>Accessible</th></tr></thead>
 <tbody>
 <tr><td>Course</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●●○</td><td></td></tr>
-<tr><td>Saut</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●○○</td><td></td></tr>
+<tr><td>Saut</td><td>Force</td><td>Physique, Mouvement</td><td>●●●○○</td><td></td></tr>
 <tr><td>Natation</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●○○○</td><td></td></tr>
 <tr><td>Escalade</td><td>Agilité</td><td>Physique, Mouvement</td><td>●●●○○</td><td></td></tr>
 <tr><td>Équilibre</td><td>Agilité</td><td>Physique</td><td>●●○○○</td><td></td></tr>
@@ -438,7 +438,7 @@ Vitesse de pointe et endurance à la foulée. Pour distancer un poursuivant dans
 
 #### Saut
 
-<p class="groupes">Caractéristique : Agilité<br>Groupes : Physique, Mouvement</p>
+<p class="groupes">Caractéristique : Force<br>Groupes : Physique, Mouvement</p>
 
 Franchir une distance ou une hauteur d'un bond. Pour passer d'un toit à l'autre ou bondir par-dessus un fossé.
 

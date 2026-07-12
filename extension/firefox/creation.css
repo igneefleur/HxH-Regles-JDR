@@ -59,6 +59,11 @@ body:has(#perso-atelier) .md-sidebar--primary { display: none !important; }
 .pc-btn.primary:hover { background: #46543d; color: #fff; }
 .pc-top .pc-lib { margin-left: auto; display: flex; gap: calc(.35 * var(--pc-rem, 16px)); align-items: center; }
 .pc-top .pc-lib select { max-width: 220px; padding: calc(.26 * var(--pc-rem, 16px)) calc(.45 * var(--pc-rem, 16px)); border: 1px solid #c6bca0; border-radius: 6px; background: #fdfaf2; color: #2a2820; font: inherit; font-size: calc(.76 * var(--pc-rem, 16px)); }
+/* fenêtre étroite : la bibliothèque (sélecteur + Charger/Supprimer) se replie au lieu de déborder */
+@media (max-width: 700px) {
+  .perso-atelier .pc-top .pc-lib { margin-left: 0; flex-wrap: wrap; }
+  .perso-atelier .pc-top .pc-lib select { max-width: none; min-width: 0; flex: 1 1 120px; }
+}
 
 /* ---- la feuille ---- */
 .pc-sheet {

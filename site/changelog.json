@@ -11,6 +11,30 @@
 "status": "modified",
 "filename": "content/regles/personnage/capacites-physiques.md",
 "url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/caracteristiques.md",
+"url": "content/regles/personnage/caracteristiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+}
+]
+},
+{
+"short": "6a3e6ac",
+"author": "Théo Cavaillès",
+"date": "2026-07-11T18:33:33+02:00",
+"message": "Fiche HxH Roll20 : affichage « fiche » nettement condensé",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6a3e6ac5d2e418dc575d2fc9782fa5cc7b5b5075",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
 }
 ]
 },
@@ -491,50 +515,6 @@
 "status": "modified",
 "filename": "content/regles/nen/transmutation.md",
 "url": "content/regles/nen/transmutation/"
-}
-]
-},
-{
-"short": "91e65c9",
-"author": "Théo Cavaillès",
-"date": "2026-07-01T18:53:27+02:00",
-"message": "Refonte du système d'armes ; création intégrée à armes.md",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/91e65c9092797490837356f07dbfc448ae6511df",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/armes.md",
-"url": "content/regles/combat/armes/"
-},
-{
-"status": "removed",
-"filename": "content/regles/combat/systeme-points-armes.md",
-"url": null
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/capacites-de-nen.md",
-"url": "content/regles/nen/capacites-de-nen/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/caracteristiques.md",
-"url": "content/regles/personnage/caracteristiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/eclat.md",
-"url": "content/regles/personnage/eclat/"
-},
-{
-"status": "modified",
-"filename": "content/univers/cartes.md",
-"url": "content/univers/cartes/"
 }
 ]
 }

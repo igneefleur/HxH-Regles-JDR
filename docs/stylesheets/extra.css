@@ -1808,3 +1808,49 @@ html.book-loading .md-content__inner {
 .md-typeset .cj-modules.anima.formes.mat-int table:not([class]) td:nth-child(1) { width: 40% !important; }
 .md-typeset .cj-modules.anima.formes.mat-int table:not([class]) th:not(:first-child),
 .md-typeset .cj-modules.anima.formes.mat-int table:not([class]) td:not(:first-child) { width: 10% !important; }
+
+/* ---------- 11. Fenêtre étroite (vertical / téléphone) ----------
+   Adaptation AUTOMATIQUE à la largeur de la fenêtre. Le grand écran n'est PAS modifié :
+   ces règles ne s'activent qu'en dessous de 44em (~700 px), là où deux colonnes de corps
+   de texte deviennent trop étroites pour être lues confortablement. */
+@media screen and (max-width: 44em) {
+  /* la feuille de lecture récupère de la place (marges intérieures réduites) */
+  .md-content > .md-content__inner { padding: 1rem 0.8rem 1.6rem; }
+
+  /* corps de texte en UNE colonne : on DÉSACTIVE le multi-colonnes (comme le PDF)
+     plutôt que column-count:1, qui garde un contexte multicol où les enveloppes de
+     tableaux (overflow) se placent mal et débordent. En flux de blocs simple, tout
+     coule normalement et les tables de Material défilent proprement. */
+  .md-typeset .cols {
+    columns: auto !important;
+    column-count: auto !important;
+    column-width: auto !important;
+  }
+
+  /* grilles multi-colonnes -> flux vertical (mêmes classes que l'aplatissement PDF) */
+  .md-typeset .eclat-grid, .md-typeset .eclat-tiers, .md-typeset .cj-modules,
+  .md-typeset .comp, .md-typeset .comp-recap, .md-typeset .states,
+  .md-typeset .wgrid, .md-typeset .eclat-defs {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  /* longues chaînes insécables (URLs, chemins du changelog) : coupure autorisée */
+  .md-typeset code, .md-typeset .cl-file, .md-typeset .cl-file code,
+  .md-typeset .ext-url, .md-typeset .ext-url code {
+    overflow-wrap: anywhere; word-break: break-word;
+  }
+
+  /* tableaux du corps : disposition automatique + largeurs libres + cellules
+     coupables, pour tenir dans la colonne (les tables denses d'armes ont des
+     colonnes à largeur FIXE en rem + table-layout:fixed qui les font déborder). */
+  .md-typeset .cols table:not([class]) { table-layout: auto !important; width: 100% !important; }
+  .md-typeset .cols table:not([class]) th,
+  .md-typeset .cols table:not([class]) td { white-space: normal !important; width: auto !important; }
+  /* enveloppe de tableau de Material : reste dans la largeur et DÉFILE en interne
+     (les tables denses, ex. armes, restent plus larges que l'écran du téléphone). */
+  .md-typeset .cols .md-typeset__scrollwrap {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+}

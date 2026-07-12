@@ -45,7 +45,7 @@ Chaque caractéristique a un modificateur qui dépend de sa valeur. Le tableau s
 Les caractéristiques physiques mesurent ce dont le corps est capable : puissance, aisance, résistance et finesse des sens. Elles décident de la façon dont un personnage agit sur le monde et combat.
 
 <div class="mcard" markdown>
-**Force** <span class="prereq">FOR</span> La Force mesure la puissance musculaire et le potentiel de destruction physique. Elle détermine la charge soulevée ou portée, les dégâts au corps à corps, et la capacité à briser, forcer ou maîtriser par la vigueur. Elle régit la lutte et les prouesses de force pure.
+**Force** <span class="prereq">FOR</span> La Force mesure la puissance musculaire et le potentiel de destruction physique. Elle détermine la charge soulevée ou portée, la détente d'un saut, la distance d'un lancer, les dégâts au corps à corps, et la capacité à briser, forcer ou maîtriser par la vigueur. Elle régit la lutte, le saut et les prouesses de force pure.
 </div>
 
 <div class="mcard" markdown>
@@ -53,7 +53,7 @@ Les caractéristiques physiques mesurent ce dont le corps est capable : puissanc
 </div>
 
 <div class="mcard" markdown>
-**Agilité** <span class="prereq">AGI</span> L'Agilité mesure l'aisance du corps en mouvement : équilibre, souplesse et vivacité. Elle commande l'initiative, l'esquive, la course, le saut, l'escalade, la chute, la discrétion et tout déplacement qui exige grâce et promptitude.
+**Agilité** <span class="prereq">AGI</span> L'Agilité mesure l'aisance du corps en mouvement : équilibre, souplesse et vivacité. Elle commande l'initiative, l'esquive, la course, l'escalade, la chute, la discrétion et tout déplacement qui exige grâce et promptitude.
 </div>
 
 <div class="mcard" markdown>
