@@ -1,5 +1,19 @@
 [
 {
+"short": "fc85ba1",
+"author": "Théo Cavaillès",
+"date": "2026-07-13T01:32:06+02:00",
+"message": "Glossaire au survol refait : 1 exemple précis par valeur, 6 tables de capacités couvertes",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/fc85ba16ec69368b6ad1ecbbb93922f1e3a28b6d",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+}
+]
+},
+{
 "short": "8373556",
 "author": "Théo Cavaillès",
 "date": "2026-07-12T16:26:37+02:00",
@@ -500,20 +514,6 @@
 "status": "modified",
 "filename": "content/regles/nen/manipulation.md",
 "url": "content/regles/nen/manipulation/"
-}
-]
-},
-{
-"short": "4ca47fc",
-"author": "Théo Cavaillès",
-"date": "2026-07-01T19:58:42+02:00",
-"message": "Conjuration : scinde le Stockage en deux, deplace l'Eveil au Nen en module optionnel, restaure la Conjuration d'objet",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/4ca47fc0cf6a01ae6f354e4d4f15906b71f9be69",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/nen/conjuration.md",
-"url": "content/regles/nen/conjuration/"
 }
 ]
 }
