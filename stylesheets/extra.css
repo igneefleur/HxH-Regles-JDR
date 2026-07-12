@@ -318,42 +318,45 @@
    ce garde-fou elles écraseraient les tables descriptives des autres pages qui
    emploient aussi .mcard (arts martiaux, etc. : dernière colonne longue forcée à
    2,5 rem nowrap = illisible). */
+/* min-width: 0 : Material pose min-width: 5rem sur les th, qui plancherait les
+   colonnes à 100 px dans les tables en layout auto (les 2 colonnes ci-dessous). */
 .md-typeset .cols.armes-fiches .mcard table:not([class]) th:last-child,
-.md-typeset .cols.armes-fiches .mcard table:not([class]) td:last-child { width: 2.5rem !important; text-align: right !important; white-space: nowrap; }        /* Coût (étroit : collé au Prix) */
-/* Prix : largeur fixe UNIQUEMENT sur les tables à paliers (≥ 3 colonnes), pour que la
-   colonne Prix ait la même taille d'une fiche à paliers à l'autre. */
-.md-typeset .cols.armes-fiches .mcard table:not([class]):has(th:nth-child(3)) th:nth-last-child(2),
-.md-typeset .cols.armes-fiches .mcard table:not([class]):has(th:nth-child(3)) td:nth-last-child(2) { width: 4.6rem !important; text-align: right !important; white-space: nowrap; }  /* Prix */
-/* Propriétés à coût fixe : table « Prix | Coût » (2 colonnes). Elle occupe TOUTE la
-   largeur de la fiche (comme les tables à paliers) ; la colonne Prix (flexible, auto)
-   absorbe le vide à gauche et aligne son contenu à droite, si bien que Prix et Coût
-   tombent au même bord droit que les tables à paliers (Coût = 2,5 rem partout). */
-.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) { width: 100%; }
-.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) th:first-child,
-.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) td:first-child { text-align: right !important; }
-/* Libellés (colonnes AVANT Prix/Coût), somme = 64 % pour tomber pile à 100 %. */
-/* Fiches génériques à 3 colonnes (libellé | prix | coût) : libellé = 64 %. */
+.md-typeset .cols.armes-fiches .mcard table:not([class]) td:last-child { width: 2.5rem !important; min-width: 0; text-align: right !important; white-space: nowrap; }        /* Coût (étroit : collé au Prix) */
+/* Prix : largeur fixe sur TOUTES les fiches (paliers comme coût fixe), pour que la
+   colonne Prix ait la même taille d'une fiche à l'autre. */
+.md-typeset .cols.armes-fiches .mcard table:not([class]) th:nth-last-child(2),
+.md-typeset .cols.armes-fiches .mcard table:not([class]) td:nth-last-child(2) { width: 4.6rem !important; min-width: 0; text-align: right !important; white-space: nowrap; }  /* Prix */
+/* Propriétés à coût fixe : table « Prix | Coût » (2 colonnes). Elle se réduit à ses
+   deux colonnes (Prix = 4,6 rem par la règle ci-dessus, Coût = 2,5 rem) et se cale au
+   bord droit de la fiche, si bien que Prix et Coût tombent au même bord droit que les
+   tables à paliers. width:auto : le table-layout fixed de .cols retombe en auto et les
+   largeurs de cellules deviennent la largeur de la table. Le wrapper Material
+   (.md-typeset__table, inline-block) doit être élargi à 100 % pour que le
+   margin-left: auto ait de l'espace où pousser la table contre le bord droit. */
+.md-typeset .cols.armes-fiches .mcard table:not([class]):not(:has(th:nth-child(3))) { width: auto; margin-left: auto; }
+.md-typeset .cols.armes-fiches .mcard .md-typeset__table:has(table:not([class]) th:nth-child(2):last-child) { width: 100%; }
+/* Libellés (colonnes AVANT Prix/Coût) : par table, une colonne de libellé reste
+   sans largeur (elle absorbe le mou) ou reçoit un calc() qui somme pile à 100 %.
+   Si toutes les colonnes avaient une largeur inexacte, le mou serait redistribué
+   sur toutes (Prix/Coût compris) et la colonne Prix varierait d'une fiche à l'autre. */
+/* Fiches génériques à 3 colonnes (libellé | prix | coût) : libellé = le reste.
+   PAS de colonne auto ici : la règle générique des tables 3 colonnes de .cols
+   (modules de conjuration, 30/50/20 %) reprendrait la main sur la colonne libellé. */
 .md-typeset .cols.armes-fiches .mcard:not([data-cols]) table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) th:nth-child(1),
-.md-typeset .cols.armes-fiches .mcard:not([data-cols]) table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) td:nth-child(1) { width: 64%; text-align: left; }
-/* AM : compatibilité | palier | illégalité max (libellés). */
+.md-typeset .cols.armes-fiches .mcard:not([data-cols]) table:not([class]):has(th:nth-child(3)):not(:has(th:nth-child(4))) td:nth-child(1) { width: calc(100% - 7.1rem); text-align: left; }
+/* AM : compatibilité | palier | illégalité max (libellés ; palier = auto, absorbe). */
 .md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(1),
 .md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(1) { width: 14%; }
-.md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(2),
-.md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(2) { width: 26%; }
 .md-typeset .cols [data-cols="am"] table:not([class]) th:nth-child(3),
 .md-typeset .cols [data-cols="am"] table:not([class]) td:nth-child(3) { width: 24%; }
-/* Illégalité : illégalité | statut (long) | AM max (libellés). */
+/* Illégalité : illégalité | statut (long, auto : absorbe) | AM max (libellés). */
 .md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(1),
 .md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(1) { width: 14%; white-space: nowrap; }
-.md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(2),
-.md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(2) { width: 38%; }
 .md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(3),
 .md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(3) { width: 12%; }
-/* Mains : mains | effet (long) (libellés). */
+/* Mains : mains | effet (long, auto : absorbe) (libellés). */
 .md-typeset .cols [data-cols="mains"] table:not([class]) th:nth-child(1),
 .md-typeset .cols [data-cols="mains"] table:not([class]) td:nth-child(1) { width: 16%; white-space: nowrap; }
-.md-typeset .cols [data-cols="mains"] table:not([class]) th:nth-child(2),
-.md-typeset .cols [data-cols="mains"] table:not([class]) td:nth-child(2) { width: 48%; }
 /* Table de grade (haut d'armes.md) : 4 colonnes dont la dernière (liste d'armes) très
    longue. Sans largeurs fixes, elle écrase Grade et Prix (« ×80 » se coupe en deux). */
 .md-typeset .grade-table table:not([class]) { table-layout: fixed; }
@@ -1196,32 +1199,13 @@
 @media print {
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-  /* WeasyPrint (le moteur du PDF du livre) ne sait paginer ni le multi-colonnes
-     ni les grilles/flex CSS : dès la première page riche, il interrompt le rendu
-     et tronque le livre (symptôme : un PDF de 5 pages au lieu du livre entier).
-     Pour le PDF uniquement, on aplatit donc toute la mise en page riche en simple
-     flux de blocs, qui se pagine correctement. L'affichage à l'écran n'est pas
-     touché (ces règles sont sous @media print). */
-  .md-typeset .cols {
-    columns: auto !important;
-    column-count: auto !important;
-    column-width: auto !important;
-  }
-  .md-typeset .cols h1, .md-typeset .cols h2, .md-typeset .cols h3,
-  .md-typeset .cols h4, .md-typeset .cols .span, .md-typeset .cols hr,
-  .md-typeset .cols .wounds { column-span: none !important; }
-  .md-typeset .eclat-grid, .md-typeset .eclat-tiers, .md-typeset .cj-modules,
-  .md-typeset .comp, .md-typeset .comp-recap, .md-typeset .defs,
-  .md-typeset .states, .md-typeset .mcard, .md-typeset .frieze,
-  .md-typeset .portrait, .md-typeset .frame, .md-typeset .wgrid,
-  .md-typeset .wfiche, .md-typeset .wf-head, .md-typeset .wf-soins,
-  .md-typeset .gloss-source {
-    display: block !important;
-    grid-template-columns: none !important;
-    grid-template-areas: none !important;
-  }
-  /* Un élément « insécable » plus haut qu'une page bloque aussi la pagination de
-     WeasyPrint : on autorise les coupures partout pour le PDF. */
+  /* WeasyPrint 69 (le moteur du PDF du livre) sait désormais paginer le
+     multi-colonnes, les grilles et le flex : on GARDE donc la mise en page riche
+     du livre à l'impression et dans le PDF (2 colonnes via .cols, cartes en
+     grille, etc.) au lieu de l'aplatir comme il fallait le faire pour l'ancien
+     WeasyPrint 62.3 qui tronquait le livre. On autorise seulement les coupures
+     partout : filet de sécurité contre un élément plus haut qu'une page/colonne
+     qui, sinon, bloquerait la pagination. */
   .md-typeset, .md-typeset * {
     break-inside: auto !important;
     break-after: auto !important;
