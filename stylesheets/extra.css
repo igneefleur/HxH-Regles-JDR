@@ -135,6 +135,16 @@
     padding: 1.2rem 0;
     z-index: 1;
   }
+  /* La nav fixe occupe 14rem à l'extrême gauche. Sur un écran assez large, le
+     contenu centré garde une marge plus grande que la nav et ne la touche pas.
+     Mais sur un DEMI-ÉCRAN de PC (~1220 à 1720px), cette marge devient plus
+     étroite que la nav : le texte passerait SOUS le rail et les références
+     écraseraient la page. On réserve donc la place du rail à gauche, mais
+     UNIQUEMENT quand c'est nécessaire : au-delà de 80rem de large, padding = 0
+     et le grand écran reste centré exactement comme avant. */
+  .md-content {
+    padding-left: max(0px, 80rem - 100vw);
+  }
 }
 
 /* Mise en page sur 2 colonnes — à la demande, via <div class="cols" markdown>. */
