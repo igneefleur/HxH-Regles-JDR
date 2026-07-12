@@ -162,7 +162,7 @@ Dans la table ci-dessous, la colonne se choisit par l'allure que le personnage a
 
 </div>
 
-<div class="gloss-source" markdown>
+<div class="gloss-source" data-gloss="mouvement" markdown>
 
 | Mouvement | Légère | Intermédiaire | Lourde |
 |:---:|:---:|:---:|:---:|
@@ -356,13 +356,13 @@ Tomber dans l'eau plutôt que sur une surface dure amortit la chute, à conditio
 
 ### Saut
 
-Le Saut découle de la Force : le Saut d'un personnage est égal à sa Force. C'est la hauteur qu'il atteint en sautant, donnée par la table ci-dessous. La colonne Avec élan vaut pour un saut pris en pleine course ; la colonne Sans élan, pour un saut à l'arrêt, qui s'élève moitié moins haut. L'élan demande de [Foncer](#foncer) et de courir au moins 10 mètres en ligne droite juste avant de sauter, quelle que soit la hauteur du saut. À 5, la moyenne humaine s'élève de 0.5 m sans élan et de 1 m avec ; à 9, le sommet humain réel, 3.5 m et 7 m.
+Le Saut découle de la Force : le Saut d'un personnage est égal à sa Force. C'est la distance qu'il atteint en sautant, donnée par la table ci-dessous. La colonne Avec élan vaut pour un saut pris en pleine course ; la colonne Sans élan, pour un saut à l'arrêt, qui s'élève moitié moins haut. L'élan demande de [Foncer](#foncer) et de courir au moins 10 mètres en ligne droite juste avant de sauter, quelle que soit la hauteur du saut. À 5, la moyenne humaine s'élève de 0.5 m sans élan et de 1 m avec ; à 9, le sommet humain réel, 3.5 m et 7 m.
 
 Sauter est une [action](../combat/deroulement-combat.md) et un effort à pleine puissance : le round où il saute, le personnage est en [activité](#activite) lourde. La course d'élan compte dans le [mouvement](#mouvement) du round ; le saut, lui, n'y compte pas. Un saut qui aboutit sur un sol se termine par un simple atterrissage, sans dégâts.
 
 Un personnage dont le saut le laisse en l'air y reste, là où son saut l'a porté. Il peut se laisser tomber quand il le souhaite pendant son tour (aucune action requise) ; s'il ne l'a pas fait avant la fin de son tour, il tombe alors, selon les règles de la [Chute](#chute).
 
-<div class="gloss-source" markdown>
+<div class="gloss-source" data-gloss="saut" markdown>
 
 | Saut | Sans élan | Avec élan |
 |:---:|:---:|:---:|
@@ -458,7 +458,7 @@ Le Port découle de la Force : le Port d'un personnage est égal à sa Force. So
 
 </div>
 
-<div class="gloss-source" markdown>
+<div class="gloss-source" data-gloss="port" markdown>
 
 | Port | Légère | Intermédiaire | Lourde |
 |:---:|:---:|:---:|:---:|
@@ -550,7 +550,7 @@ Le Lancer découle de la Force : le Lancer d'un personnage est égal à sa Force
 
 Le multiplicateur ne s'applique qu'aux armes que le corps propulse. Une arme à [Propulsion mécanique](../combat/armes.md) garde ses portées inchangées, quel que soit le tireur.
 
-<div class="gloss-source" markdown>
+<div class="gloss-source" data-gloss="lancer" markdown>
 
 | Lancer | Portées de lancer et de tir |
 |:---:|:---:|
@@ -606,7 +606,7 @@ L'Apnée découle de l'Endurance : l'Apnée d'un personnage est égale à son En
 
 Retenir son souffle coûte une [action](../combat/deroulement-combat.md), le temps de bloquer sa respiration. Le personnage tient ensuite la durée que lui donne son Apnée, lue à la colonne de l'intensité d'activité qu'il fournit pendant ce temps.
 
-<div class="gloss-source" markdown>
+<div class="gloss-source" data-gloss="apnee" markdown>
 
 | Apnée | Légère | Intermédiaire | Lourde |
 |:---:|:---:|:---:|:---:|
@@ -718,7 +718,7 @@ La Pression découle de l'Endurance : la Pression d'un personnage est égale à 
 
 </div>
 
-<div class="gloss-source" markdown>
+<div class="gloss-source" data-gloss="pression" markdown>
 
 | Pression | Légère | Intermédiaire | Lourde |
 |:---:|:---:|:---:|:---:|
