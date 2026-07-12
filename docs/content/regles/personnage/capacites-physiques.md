@@ -424,6 +424,20 @@ Exemple. Avec un Saut de 5, un personnage s'élève de 1 m en sautant avec élan
 
 </div>
 
+<div class="keep" markdown>
+
+#### Saut en longueur
+
+Le personnage peut augmenter son saut uniquement dans la longueur, en consommant son [mouvement](#mouvement) : chaque mètre de mouvement dépensé ajoute un mètre au saut. Il peut au mieux multiplier la distance du saut par quatre.
+
+</div>
+
+<div class="memo" markdown>
+
+Exemple. Avec un Saut de 5 et son élan, un personnage saute 1 m. En dépensant 3 m de mouvement, il franchit 4 m en longueur, son maximum (quatre fois 1 m).
+
+</div>
+
 </div>
 
 ---
@@ -508,9 +522,13 @@ Forcer est une [action](../combat/deroulement-combat.md). Le personnage fait un 
 
 </div>
 
+<div class="keep" markdown>
+
 #### Tirer et pousser
 
 Tirer ou pousser une charge suit le même indice de poids, mais toutes ses valeurs sont multipliées par dix : on tire ou pousse dix fois ce qu'on porterait. Les intensités imposées et l'action Forcer pour la colonne Lourde s'appliquent comme au soulevé. Ainsi un Port de 9, sommet humain réel, soulève une tonne à pleine puissance mais en tire ou pousse dix.
+
+</div>
 
 #### Écrasement
 
@@ -530,7 +548,7 @@ Exemple. Avec un Port de 5, un personnage lève 100 kg à pleine puissance (pali
 
 Le Lancer découle de la Force : le Lancer d'un personnage est égal à sa Force. La table ci-dessous en tire un multiplicateur, qui multiplie les portées des [armes](../combat/armes.md) que les muscles du porteur propulsent, aussi bien les armes de jet que les arcs. Chez la moyenne humaine (Lancer 5), les portées des armes se lisent telles quelles (×1) ; au sommet humain réel (Lancer 9), elles triplent (×3) : c'est l'écart réel entre un lancer ordinaire et un record du monde.
 
-Le multiplicateur ne s'applique qu'aux armes que le corps propulse. Une arme à [Propulsion mécanique](../combat/armes.md), arme à feu, arbalète ou lanceur, garde ses portées inchangées, quel que soit le tireur.
+Le multiplicateur ne s'applique qu'aux armes que le corps propulse. Une arme à [Propulsion mécanique](../combat/armes.md) garde ses portées inchangées, quel que soit le tireur.
 
 <div class="gloss-source" markdown>
 
