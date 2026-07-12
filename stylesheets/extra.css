@@ -1810,10 +1810,11 @@ html.book-loading .md-content__inner {
 .md-typeset .cj-modules.anima.formes.mat-int table:not([class]) td:not(:first-child) { width: 10% !important; }
 
 /* ---------- 11. Fenêtre étroite (vertical / téléphone) ----------
-   Adaptation AUTOMATIQUE à la largeur de la fenêtre. Le grand écran n'est PAS modifié :
-   ces règles ne s'activent qu'en dessous de 44em (~700 px), là où deux colonnes de corps
-   de texte deviennent trop étroites pour être lues confortablement. */
-@media screen and (max-width: 44em) {
+   Adaptation AUTOMATIQUE à la largeur de la fenêtre. Le grand écran n'est PAS modifié.
+   Trois paliers : téléphone (< 37.5em) = 1 colonne ; demi-écran de PC (37.5em à desktop)
+   = 2 colonnes conservées ; grand écran = 2 colonnes (inchangé). Ce bloc = le palier
+   TÉLÉPHONE (1 colonne). */
+@media screen and (max-width: 37.5em) {
   /* la feuille de lecture récupère de la place (marges intérieures réduites) */
   .md-content > .md-content__inner { padding: 1rem 0.8rem 1.6rem; }
 

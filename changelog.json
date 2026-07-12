@@ -1,5 +1,19 @@
 [
 {
+"short": "8373556",
+"author": "Théo Cavaillès",
+"date": "2026-07-12T16:26:37+02:00",
+"message": "Site responsive : le demi-écran de PC garde 2 colonnes (3 paliers)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/8373556ed3257c7967ba75efa13c8a3ed3aae646",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+}
+]
+},
+{
 "short": "85b1cbc",
 "author": "Théo Cavaillès",
 "date": "2026-07-12T16:12:48+02:00",
@@ -500,20 +514,6 @@
 "status": "modified",
 "filename": "content/regles/nen/conjuration.md",
 "url": "content/regles/nen/conjuration/"
-}
-]
-},
-{
-"short": "6d29c60",
-"author": "Théo Cavaillès",
-"date": "2026-07-01T19:26:54+02:00",
-"message": "Ajoute la Transmutation d'arme (socle special de transmutation, budget 20-400 points)",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6d29c60856ff28f63ef14cd8d52dbc112f422c59",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/nen/transmutation.md",
-"url": "content/regles/nen/transmutation/"
 }
 ]
 }
