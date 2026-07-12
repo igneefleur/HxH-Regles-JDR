@@ -50,12 +50,34 @@
     });
   }
 
+  // Enveloppe chaque table dans la structure défilante de Material
+  // (.md-typeset__scrollwrap > .md-typeset__table). Material le fait au runtime
+  // sur la page initiale, mais PAS sur le HTML qu'on injecte ici : sans enveloppe,
+  // une table plus large que l'écran déborde la page (visible au téléphone). On
+  // reproduit donc l'enveloppe sur les pages chargées en continu.
+  function wrapTables(root, doc) {
+    root.querySelectorAll("table").forEach(t => {
+      const parent = t.parentNode;
+      if (!parent || (parent.classList && parent.classList.contains("md-typeset__table"))) return;
+      const wrap = doc.createElement("div");
+      wrap.className = "md-typeset__scrollwrap";
+      const box = doc.createElement("div");
+      box.className = "md-typeset__table";
+      parent.insertBefore(wrap, t);
+      box.appendChild(t);
+      wrap.appendChild(box);
+    });
+  }
+
   async function fetchArticle(url) {
     const res = await fetch(url, { cache: "no-cache" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     const doc = new DOMParser().parseFromString(await res.text(), "text/html");
     const inner = doc.querySelector(".md-content__inner");
-    if (inner) absolutize(inner, url);   // renvois figés contre l'URL de CETTE page
+    if (inner) {
+      absolutize(inner, url);   // renvois figés contre l'URL de CETTE page
+      try { wrapTables(inner, doc); } catch (_) {}   // enveloppe défilante des tables
+    }
     return inner;
   }
 
