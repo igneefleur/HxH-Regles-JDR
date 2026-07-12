@@ -1868,111 +1868,112 @@ html.book-loading .md-content__inner {
   }
 }
 
-/* ---------- 12. Nav de référence en tiroir (bouton) ----------
-   La « table de référence » (l'arbre des chapitres) est CACHÉE par défaut à
-   TOUTES les largeurs. Le bouton hamburger (déjà présent, natif Material) l'ouvre
-   en tiroir par-dessus le contenu, avec un fond sombre cliquable pour fermer. Elle
-   n'écrase donc plus jamais les règles au demi-écran, et reste accessible partout.
-   Piloté par la checkbox native #__drawer ; limité aux pages du livre (.book-mode)
-   pour ne pas réveiller la sidebar des pages-outils (masquée par leur propre CSS).
-   La sidebar est cachée par TRANSFORM (pas display:none) car continuous.js la lit
-   pour construire l'arbre. */
+/* ---------- 12. Nav de référence : rail en grand écran, tiroir en fenêtre réduite ----------
+   En GRAND ÉCRAN (>= 90em / 1440px) la table de référence reste un rail visible à
+   gauche (§4), là où il y a la place sans rien écraser. En FENÊTRE RÉDUITE (< 90em :
+   demi-écran de PC, tablette, téléphone) elle est CACHÉE et s'ouvre en tiroir par le
+   bouton hamburger natif de Material, par-dessus un fond sombre. Elle n'écrase donc
+   plus les règles au demi-écran, tout en restant un rail permanent en plein écran.
+   Tout ce bloc (le tiroir) ne s'applique donc QUE sous 90em ; limité aux pages du
+   livre (.book-mode) pour ne pas réveiller la sidebar des pages-outils. La sidebar
+   est cachée par TRANSFORM (jamais display:none) car continuous.js la lit. */
+@media screen and (max-width: 89.9375em) {
+  /* Hamburger natif visible en fenêtre réduite (Material le masque au-delà de 76.25em ;
+     au-delà de 90em on le laisse masqué : c'est le rail qui reprend la main). */
+  .book-mode .md-header__button.md-icon[for="__drawer"] { display: inline-block; }
 
-/* Hamburger natif visible à toutes les largeurs (Material le masque au-delà de 76.25em). */
-.book-mode .md-header__button.md-icon[for="__drawer"] { display: inline-block; }
+  /* Plus de place réservée au rail : le contenu se centre normalement (annule le
+     padding-left du §4 sur les pages du livre en mode tiroir). */
+  .book-mode .md-content { padding-left: 0 !important; }
 
-/* Plus de place réservée au rail : le contenu se centre normalement (annule le
-   padding-left du §4 sur les pages du livre). */
-.book-mode .md-content { padding-left: 0 !important; }
+  /* La sidebar primaire devient un tiroir pleine hauteur hors-écran à gauche. On
+     force top/bottom en !important car Material pose un `top` inline (sticky) qui le
+     décalerait. Le tiroir passe au-dessus de tout ; on ferme via le fond, un lien, Échap. */
+  .book-mode .md-sidebar--primary {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    width: 15rem !important;
+    max-width: 84vw;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-100%);
+    transition: transform .24s cubic-bezier(.2, .7, .2, 1);
+    z-index: 41;
+    background: var(--bg-side);
+    border-right: 1px solid rgba(0, 0, 0, .12);
+    box-shadow: 3px 0 18px rgba(0, 0, 0, .32);
+    overflow: hidden;
+  }
+  .book-mode .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: 100% !important;
+    margin: 0 !important;
+    padding-top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Sous 76.25em Material transforme .md-nav--primary en pane coulissant plein cadre
+     (position:absolute, pleine hauteur, fond blanc) qui remplit le tiroir et repousse
+     l'arbre du livre hors de vue. On le neutralise pour qu'il ne fasse plus que la
+     hauteur de son titre, laissant la .book-nav couler juste dessous. */
+  .book-mode .md-sidebar--primary .md-nav--primary,
+  .book-mode .md-sidebar--primary .md-sidebar__inner {
+    position: static !important;
+    height: auto !important;
+    width: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .book-mode .book-nav { padding-bottom: 1.4rem; }
 
-/* La sidebar primaire devient un tiroir pleine hauteur hors-écran à gauche, à
-   toutes les largeurs. On force top/bottom en !important car Material pose un
-   `top` inline (sticky) qui le décalerait. Le tiroir passe au-dessus de tout ; on
-   ferme via le fond sombre, un lien, ou Échap. */
-.book-mode .md-sidebar--primary {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  bottom: 0 !important;
-  height: 100% !important;
-  width: 15rem !important;
-  max-width: 84vw;
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: translateX(-100%);
-  transition: transform .24s cubic-bezier(.2, .7, .2, 1);
-  z-index: 41;
-  background: var(--bg-side);
-  border-right: 1px solid rgba(0, 0, 0, .12);
-  box-shadow: 3px 0 18px rgba(0, 0, 0, .32);
-  overflow: hidden;
-}
-.book-mode .md-sidebar--primary .md-sidebar__scrollwrap {
-  height: 100% !important;
-  margin: 0 !important;
-  padding-top: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-/* Sous 76.25em Material transforme .md-nav--primary en pane coulissant plein cadre
-   (position:absolute, pleine hauteur, fond blanc) qui remplit le tiroir et repousse
-   l'arbre du livre hors de vue. On le neutralise pour qu'il ne fasse plus que la
-   hauteur de son titre, laissant la .book-nav couler juste dessous. */
-.book-mode .md-sidebar--primary .md-nav--primary,
-.book-mode .md-sidebar--primary .md-sidebar__inner {
-  position: static !important;
-  height: auto !important;
-  width: auto !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-.book-mode .book-nav { padding-bottom: 1.4rem; }
+  /* Barre de tête du tiroir : le titre natif Material (logo + nom du site) est un
+     label[for=__drawer], donc CLIQUER DESSUS FERME. On le rend visible (Material le
+     masque au desktop) et collant en haut, comme un en-tête de tiroir avec fermeture. */
+  .book-mode .md-sidebar--primary .md-nav__title {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0.5rem 0.8rem;
+    font-family: 'Cinzel', Garamond, serif;
+    font-size: 0.72rem;
+    color: #fff;
+    background: var(--green-title);
+    cursor: pointer;
+  }
+  .book-mode .md-sidebar--primary .md-nav__title::after {
+    content: '\00D7';   /* croix de fermeture */
+    float: right;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .book-mode .md-sidebar--primary .md-nav__title .md-nav__button.md-logo { display: none; }
 
-/* Barre de tête du tiroir : le titre natif Material (logo + nom du site) est un
-   label[for=__drawer], donc CLIQUER DESSUS FERME. On le rend visible (Material le
-   masque au desktop) et collant en haut, comme un en-tête de tiroir avec fermeture. */
-.book-mode .md-sidebar--primary .md-nav__title {
-  display: block;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  margin: 0;
-  padding: 0.5rem 0.8rem;
-  font-family: 'Cinzel', Garamond, serif;
-  font-size: 0.72rem;
-  color: #fff;
-  background: var(--green-title);
-  cursor: pointer;
-}
-.book-mode .md-sidebar--primary .md-nav__title::after {
-  content: '\00D7';   /* croix de fermeture */
-  float: right;
-  font-family: sans-serif;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-.book-mode .md-sidebar--primary .md-nav__title .md-nav__button.md-logo { display: none; }
+  /* Ouverture : la checkbox native cochée fait glisser le tiroir en vue. */
+  .book-mode #__drawer:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(0);
+  }
 
-/* Ouverture : la checkbox native cochée fait glisser le tiroir en vue. */
-.book-mode #__drawer:checked ~ .md-container .md-sidebar--primary {
-  transform: translateX(0);
-}
-
-/* Fond sombre cliquable : plein écran sous le tiroir, ferme au clic. */
-.book-mode .md-overlay {
-  display: block;
-  position: fixed;
-  inset: 0;
-  width: auto;
-  height: auto;
-  background: rgba(0, 0, 0, .5);
-  opacity: 0;
-  z-index: 40;
-  pointer-events: none;
-  transition: opacity .24s ease;
-}
-.book-mode #__drawer:checked ~ .md-overlay {
-  opacity: 1;
-  pointer-events: auto;
+  /* Fond sombre cliquable : plein écran sous le tiroir, ferme au clic. */
+  .book-mode .md-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    z-index: 40;
+    pointer-events: none;
+    transition: opacity .24s ease;
+  }
+  .book-mode #__drawer:checked ~ .md-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
