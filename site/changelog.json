@@ -1,11 +1,10 @@
 [
 {
-"short": "local",
+"short": "8373556",
 "author": "Théo Cavaillès",
-"date": null,
-"message": "Modifications en cours (non committées)",
-"url": null,
-"pending": true,
+"date": "2026-07-12T16:26:37+02:00",
+"message": "Site responsive : le demi-écran de PC garde 2 colonnes (3 paliers)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/8373556ed3257c7967ba75efa13c8a3ed3aae646",
 "files": [
 {
 "status": "modified",
