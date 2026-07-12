@@ -21,6 +21,8 @@ plugins:
       cover_subtitle: Livre de Règles
       author: Théo Cavaillès
       toc_title: Table des matières
-      exclude_pages:
-        - '^\./$'                             # exclut la page d'accueil (changelog) du PDF
-        - '^creation/'                        # exclut l'atelier de création (outil JS, hors livre)
+      exclude_pages:                          # le PDF ne contient QUE le livre (règles + univers)
+        - '^\.?/?$'                           # accueil (changelog + extension Roll20) : URL '.' ou './'
+        - '^creation/'                        # atelier de création (outil JS)
+        - '^personnage/'                      # créateur de personnage (outil JS)
+        - '^forge/'                           # forge d'armes (outil JS)
