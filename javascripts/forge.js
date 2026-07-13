@@ -117,7 +117,7 @@
 
   // --- avertissements --------------------------------------------------------
   function hasLancer() { return state.portees.some(function (p) { return /^Lancer/.test(p); }); }
-  function hasZoneOuCone() { return !!state.tiers["zone"] || !!state.cone; }
+  function hasZoneOuCone() { return !!state.tiers["sphere"] || !!state.cone; }
   function activeSupp(id) { return state.tiers[id] || state.toggles[id]; }
   function warnings() {
     var w = [];
@@ -129,7 +129,7 @@
       p.prereqs.forEach(function (pr) {
         var low = pr.toLowerCase();
         if (/incompatible/.test(low) && /2 mains/.test(low) && state.mains === "2 mains") w.push(p.name + " est incompatible avec une arme à deux mains.");
-        if (/n[ée]cessite/.test(low) && /zone ou c[oô]ne/.test(low) && !hasZoneOuCone()) w.push(p.name + " nécessite une Zone ou un Cône.");
+        if (/n[ée]cessite/.test(low) && /(zone|sph[eè]re) ou c[oô]ne/.test(low) && !hasZoneOuCone()) w.push(p.name + " nécessite une Sphère ou un Cône.");
         if (/n[ée]cessite/.test(low) && /lancer/.test(low) && !hasLancer()) w.push(p.name + " nécessite une portée de lancer.");
         if (/incompatible/.test(low) && /usage unique/.test(low) && activeSupp("usage-unique")) w.push("Retour et Usage unique sont incompatibles.");
       });
@@ -331,7 +331,7 @@
   }
   function buildCone(parent, box) {
     var chip = el("span", "fg-chip" + (state.cone ? " on" : ""));
-    chip.innerHTML = "Cône<small>zone</small>";
+    chip.innerHTML = "Cône<small>aire</small>";
     var opts = el("div", "fg-cone-opts");
     var lenS = el("select", "fg-select"), angS = el("select", "fg-select");
     ob("portee").tables[3].rows.forEach(function (r) { var o = el("option"); o.value = r.label; o.textContent = r.label + " (" + cost(r.cost) + ")"; lenS.appendChild(o); });
