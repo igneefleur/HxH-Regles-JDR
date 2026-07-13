@@ -425,7 +425,7 @@ Le krav-maga n'a qu'un but : mettre la menace hors d'état le plus vite possible
 Le premier coup qui porte sonne déjà l'adversaire et lui vole un temps.
 
 **Prérequis :** TODO<br>
-**Effet :** quand il blesse une cible, elle est sonnée et perd 1 action à son prochain tour (minimum 0), comme sous l'effet [Assommement](../combat/armes.md).
+**Effet :** quand il blesse une cible, elle est sonnée et perd 1 action à son prochain tour (minimum 0).
 
 <p class="palier">✦✦✧ Avancé</p>
 
@@ -501,9 +501,9 @@ Le crédit finance des propriétés bonus ou sans coût, ainsi que l'allonge qui
 | Motif | Propriétés fermées |
 |---|---|
 | Portée à distance | Lancer, Tir, Cône, Immobilisation à distance, Retour |
-| Objet ou mécanisme | Munitions, Recharge Rapide, Décharge incapacitante |
+| Objet ou mécanisme | Munitions, Recharge rapide |
 
-Tout le reste demeure ouvert : la saisie, la projection, la poussée, le désarmement, l'assommement, la perce-armure, la déchirure qui saigne, les dégâts de zone, la finesse, la précision, la parade et les bonus de touche.
+Tout le reste demeure ouvert : la saisie, la projection, la poussée, le désarmement, l'assommement, la perce-armure, la déchirure qui saigne, les dégâts en sphère, la finesse, la précision, la parade et les bonus de touche.
 </div>
 
 </div>

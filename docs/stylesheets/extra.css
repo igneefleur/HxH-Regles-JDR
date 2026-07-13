@@ -354,9 +354,11 @@
 .md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(1) { width: 14%; white-space: nowrap; }
 .md-typeset .cols [data-cols="illeg"] table:not([class]) th:nth-child(3),
 .md-typeset .cols [data-cols="illeg"] table:not([class]) td:nth-child(3) { width: 12%; }
-/* Mains : mains | effet (long, auto : absorbe) (libellés). */
+/* Mains : mains | effet (long, auto : absorbe) (libellés). L'effet, seul texte
+   long des tables de fiches, se justifie comme la prose. */
 .md-typeset .cols [data-cols="mains"] table:not([class]) th:nth-child(1),
 .md-typeset .cols [data-cols="mains"] table:not([class]) td:nth-child(1) { width: 16%; white-space: nowrap; }
+.md-typeset .cols [data-cols="mains"] table:not([class]) td:nth-child(2) { text-align: justify; }
 /* Table de grade (haut d'armes.md) : 4 colonnes dont la dernière (liste d'armes) très
    longue. Sans largeurs fixes, elle écrase Grade et Prix (« ×80 » se coupe en deux). */
 .md-typeset .grade-table table:not([class]) { table-layout: fixed; }

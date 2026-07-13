@@ -16,20 +16,17 @@ def norm(s):
 
 BONUS = {
     # +10
-    "Recharge Rapide": 10, "Retour": 10, "Dégainage instantané": 10, "Poussée": 10,
+    "Recharge rapide": 10, "Retour": 10, "Dégainage instantané": 10, "Poussée": 10,
     "Dissimulable": 10, "Saisie": 10, "Parade": 10, "Finesse": 10, "Précise": 10,
     "Jumelable": 10, "Désarmement": 10,
     # +20
     "Mains libres": 20, "Renversement": 20, "Assommement": 20, "Indésarmable": 20,
-    # +30
-    "Immobilisation à distance": 30,
-    # +40
-    "Décharge incapacitante": 40,
 }
-# Propriétés à coût tiéré, parsées depuis la parenthèse (rayon / longueur, angle pour le cône)
+# Propriétés à coût tiéré, parsées depuis la parenthèse (rayon de la Sphère / longueur, angle pour le cône)
 ZONE_TIERS = {3: 20, 5: 30, 10: 40, 20: 50}
 CONE_TIERS = {5: 20, 10: 30, 15: 40, 20: 50}   # cône : table de LONGUEUR
 CONE_ANGLE = {45: 0, 90: 10}                    # cône : table d'ANGLE (s'ajoute à la longueur)
+IMMOB_TIERS = {120: 10, 180: 20, 240: 30, 320: 40, 400: 50}   # Immobilisation à distance : difficulté du jet de la cible
 # Inefficace de près : zone morte, deux barèmes. Mêlée = crans d'allonge (×N → −N×10). Distance = % de la portée max (20/40/60/80/100 → −10/−20/−30/−40/−50).
 CONSTRAINT = {
     # −10
@@ -155,17 +152,22 @@ for l in lines:
     if props.strip() != "Aucune":
         for tok in split_props(props):
             b = base(tok)
-            if b == "Zone":
+            if b == "Sphère":
                 m = re.search(r"(\d+)\s*m", tok)
                 zp = zone_pts(int(m.group(1)) if m else 0)
                 plus += zp
-                detail.append(f"Zone +{zp}")
+                detail.append(f"Sphère +{zp}")
             elif b == "Inefficace de près":
                 ma = re.search(r"[Aa]llonge\D*(\d)", tok)   # mêlée : zone morte en crans d'allonge (×1→−10 … ×5→−50)
                 mp = re.search(r"(\d+)\s*%", tok)           # distance : zone morte en % de la portée max (20→−10 … 100→−50)
                 ip = int(ma.group(1)) * 10 if ma else (int(mp.group(1)) // 2 if mp else 0)
                 minus += ip
                 detail.append(f"Inefficace de près −{ip}")
+            elif b == "Immobilisation à distance":
+                m = re.search(r"\((\d+)", tok)   # difficulté du jet, entre parenthèses
+                ip = IMMOB_TIERS.get(int(m.group(1)), 0) if m else 0
+                plus += ip
+                detail.append(f"Immobilisation({m.group(1) if m else '??'}) +{ip}")
             elif b == "Perce-armure":
                 ign = int(re.search(r"\((\d+)", tok).group(1))   # part de réduction ignorée
                 pp = ign // 2                                    # ignore 20/40/60/80/100 -> +10/20/30/40/50

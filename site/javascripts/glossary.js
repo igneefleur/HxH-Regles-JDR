@@ -36,7 +36,9 @@
     }
 
     document.querySelectorAll(".gloss-source td").forEach((td) => {
-      const key = td.textContent.trim();
+      const text = td.textContent.trim();
+      const domain = (td.closest(".gloss-source").dataset.gloss || "");
+      const key = domain && defs[domain + ":" + text] ? domain + ":" + text : text;
       if (!defs[key] || td.dataset.gloss) return;
       td.dataset.gloss = "1";
       td.classList.add("gloss-trigger");
