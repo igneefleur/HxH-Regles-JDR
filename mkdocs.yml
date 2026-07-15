@@ -1,7 +1,9 @@
-site_name: HxH Système JDR
+﻿site_name: HxH Système JDR
 site_url: https://igneefleur.github.io/HxH-Regles-JDR/
 exclude_docs: |
   includes/glossaire.md
+  assets/fonts/LISEZMOI.md
+
 not_in_nav: |
   content/regles/nen/refonte_nen.md
 nav:
@@ -18,6 +20,7 @@ nav:
           - Classes: content/regles/personnage/classe.md
           - Les Sens: content/regles/personnage/sens.md
           - États: content/regles/personnage/etats.md
+          - Influence: content/regles/personnage/influence.md
       - Formation:
           - Formations martiales: content/regles/formation/formations-martiales.md
           - Formations athlétiques: content/regles/formation/formations-athletiques.md
@@ -80,9 +83,10 @@ theme:
     scheme: default
     primary: custom
     accent: custom
-  font:
-    text: Alegreya
-    code: Roboto Mono
+  # false = Material n'appelle PAS Google Fonts. Les polices sont auto-hébergées
+  # (docs/assets/fonts/ + stylesheets/fonts.css) ; les variables --md-text-font et
+  # --md-code-font sont redéclarées dans extra.css.
+  font: false
   features:
     - navigation.instant  # navigation SPA : pas de rechargement complet (pas de flash)
     - navigation.tabs        # barre horizontale en haut
@@ -94,6 +98,7 @@ theme:
 extra:
   generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
+  - stylesheets/fonts.css   # @font-face auto-hébergés : doit être chargée en premier
   - stylesheets/extra.css
   - stylesheets/atelier.css
   - stylesheets/night.css
