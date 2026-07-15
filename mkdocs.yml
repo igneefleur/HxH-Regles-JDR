@@ -1,5 +1,9 @@
 ﻿site_name: HxH Système JDR
 site_url: https://igneefleur.github.io/HxH-Regles-JDR/
+# Repris en pied de CHAQUE page du PDF (le plugin to-pdf lit ce champ). Voir
+# LICENSE.md : tous droits réservés sur les apports originaux ; œuvre de fan, sans
+# lien avec les ayants droit de Hunter × Hunter.
+copyright: © 2026 Théo Cavaillès. Tous droits réservés. Œuvre de fan, non affiliée à Shueisha.
 exclude_docs: |
   includes/glossaire.md
   assets/fonts/LISEZMOI.md
@@ -99,7 +103,7 @@ extra:
   generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
   - stylesheets/fonts.css   # @font-face auto-hébergés : doit être chargée en premier
-  - stylesheets/extra.css
+  - stylesheets/extra.css?v=2
   - stylesheets/atelier.css
   - stylesheets/night.css
   - stylesheets/forge.css
