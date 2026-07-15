@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    Thème HxH JDR — parchemin + verts, Cinzel / EB Garamond.
 
    Sommaire :
@@ -14,7 +14,10 @@
     10. Page d'accueil : changelog
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* Les polices (Alegreya, Cinzel, EB Garamond, IBM Plex Sans, Roboto Mono) sont
+   AUTO-HÉBERGÉES : leurs @font-face sont dans stylesheets/fonts.css, chargée avant
+   ce fichier. Plus aucune requête vers Google (l'IP du visiteur ne part plus chez
+   un tiers) et le build du PDF ne dépend plus du réseau. */
 
 /* ---------- 1. Variables ---------- */
 :root {
@@ -33,6 +36,12 @@
   --md-accent-fg-color:         var(--green-title);
   --md-default-bg-color:        var(--paper);
   --md-typeset-color:           var(--ink);
+
+  /* Polices de l'interface Material. mkdocs.yml pose `font: false` pour couper
+     l'auto-chargement Google Fonts ; Material n'injecte donc plus ces variables
+     et on les redéclare ici, pointant sur les polices auto-hébergées (fonts.css). */
+  --md-text-font: 'Alegreya';
+  --md-code-font: 'Roboto Mono';
 }
 
 /* ---------- 2. Fonds & feuille de lecture ---------- */
@@ -1963,3 +1972,69 @@ html.book-loading .md-content__inner {
     pointer-events: auto;
   }
 }
+
+/* Sens de chaque niveau (page Sens) : dans chaque carte de niveau, les sens de
+   l'humain en pastilles (façon zones des manœuvres), un groupe Externes et un
+   groupe Internes. Filet au-dessus, et en dessous quand du texte suit encore
+   dans la carte. L'étiquette du groupe est sur sa propre ligne : les pastilles
+   prennent toute la largeur de la carte (les noms de sens sont longs). */
+.md-typeset .sens-niveau {
+  margin: 0.4rem 0 0.1rem;
+  padding-top: 0.34rem;
+  border-top: 1px solid #e8e1cf;
+}
+.md-typeset .sens-niveau:not(:last-child) {
+  margin-bottom: 0.42rem;
+  padding-bottom: 0.34rem;
+  border-bottom: 1px solid #e8e1cf;
+}
+.md-typeset .sens-niveau p {
+  margin: 0 0 0.3rem;
+  font-size: 0.66rem;
+  line-height: 1.7;
+}
+.md-typeset .sens-niveau p:last-child { margin-bottom: 0; }
+.md-typeset .sens-niveau .zlbl {
+  display: block;
+  font-family: 'Cinzel', Garamond, serif;
+  font-weight: 600;
+  font-size: 0.54rem;
+  letter-spacing: 0.05em;
+  color: #8a8478;
+  margin: 0 0 0.12rem;
+}
+/* nowrap : un nom de sens ne se coupe jamais à l'intérieur de sa pastille. */
+.md-typeset .sens-niveau .zchip { white-space: nowrap; }
+
+/* Tables de l'influence (comportement + huit axes) : valeur | nom | description.
+   Les largeurs sont IDENTIQUES d'une table à l'autre, quel que soit l'axe :
+   valeur 3.2 rem centrée, nom 7.4 rem sur une ligne, la description prend le
+   reste. !important : le gabarit générique 30/50/20 des tables 3 colonnes de
+   .cols est plus spécifique et reprendrait la main. */
+/* L'enveloppe défilante de Material (.md-typeset__table, inline-block, posée au
+   runtime et par continuous.js) rétrécit la table à son contenu : sans 100 %,
+   les largeurs de colonnes ci-dessous ne valent rien sur la vraie page. */
+.md-typeset .cols [data-cols="axe"] .md-typeset__scrollwrap,
+.md-typeset .somme-table .md-typeset__scrollwrap,
+.md-typeset .crans-table .md-typeset__scrollwrap { margin: 0 !important; overflow-x: visible; }
+.md-typeset .cols [data-cols="axe"] .md-typeset__table,
+.md-typeset .somme-table .md-typeset__table,
+.md-typeset .crans-table .md-typeset__table { display: block !important; width: 100% !important; margin: 0 !important; padding: 0 !important; }
+.md-typeset .cols [data-cols="axe"] table:not([class]),
+.md-typeset .somme-table table:not([class]),
+.md-typeset .crans-table table:not([class]) { width: 100% !important; table-layout: fixed !important; }
+.md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(1),
+.md-typeset .cols [data-cols="axe"] table:not([class]) td:nth-child(1),
+.md-typeset .somme-table table:not([class]) th:nth-child(1),
+.md-typeset .somme-table table:not([class]) td:nth-child(1) { width: 2.3rem !important; padding-left: 0.15rem !important; padding-right: 0.15rem !important; text-align: center !important; }
+.md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(2),
+.md-typeset .cols [data-cols="axe"] table:not([class]) td:nth-child(2),
+.md-typeset .somme-table table:not([class]) th:nth-child(2),
+.md-typeset .somme-table table:not([class]) td:nth-child(2) { width: 5.5rem !important; text-align: left !important; white-space: nowrap; }
+.md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(3),
+.md-typeset .cols [data-cols="axe"] table:not([class]) td:nth-child(3),
+.md-typeset .somme-table table:not([class]) th:nth-child(3),
+.md-typeset .somme-table table:not([class]) td:nth-child(3) { width: auto !important; text-align: left !important; }
+/* Échelle des crans (page Influence) : cran étroit centré, aligné sur les autres. */
+.md-typeset .crans-table table:not([class]) th:nth-child(1),
+.md-typeset .crans-table table:not([class]) td:nth-child(1) { width: 2.6rem; text-align: center; }
