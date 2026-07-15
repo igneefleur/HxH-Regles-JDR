@@ -6,6 +6,17 @@
    Le vert du livre : titres #667861, sections #63755e, filets clairs #8a9b6e.
    ============================================================================ */
 
+/* -- En-tête courant et numéro de page : le plugin (_paging.scss) ne leur donne
+   AUCUNE police, ils tombaient donc sur une sans-serif système — Verdana sous
+   Windows, DejaVu sur le CI Linux. Résultat : hors-charte (le livre est en serif)
+   et non figé (rendu différent selon la machine qui construit le PDF). On les
+   passe sur l'Alegreya auto-hébergée. -- */
+@page {
+  @top-right     { font-family: 'Alegreya', Garamond, serif; }
+  @bottom-center { font-family: 'Alegreya', Garamond, serif; }
+  @bottom-right  { font-family: 'Alegreya', Garamond, serif; }
+}
+
 /* -- Couverture : Cinzel + verts du livre au lieu du sans-serif + filet rouge -- */
 article#doc-cover {
   h1 {

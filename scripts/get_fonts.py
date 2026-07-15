@@ -14,8 +14,10 @@ a besoin.
 
 Usage : python scripts/get_fonts.py   (depuis la racine du dépôt)
 """
+import io
 import re
 import pathlib
+import urllib.parse
 import urllib.request
 
 # Un User-Agent moderne est OBLIGATOIRE : sinon Google renvoie du TTF/EOT legacy
@@ -36,13 +38,29 @@ CSS_URL = (
 )
 SUBSETS = {"latin", "latin-ext"}
 
+# Familles du livre auxquelles il faut rattacher les symboles (voir plus bas).
+BOOK_FAMILIES = ["Alegreya", "Cinzel", "EB Garamond", "IBM Plex Sans", "Roboto Mono"]
+
+# SYMBOLES. Aucune police du livre ne contient ★ ✦ ▰ ○ etc. : sans rien, chaque
+# plateforme choisit un repli différent (Segoe UI Symbol sous Windows, DejaVu sous
+# Linux) et le PDF du CI ne rend pas comme en local. On récupère donc chez Google
+# un sous-ensemble ne contenant QUE ces caractères, et on le rattache à CHACUNE des
+# familles du livre via un unicode-range : le rendu est identique partout.
+# Deux polices sont nécessaires : Symbols 2 n'a PAS les maths (⌈⌉⌊⌋≤≥).
+SYMBOL_FONTS = [
+    ("Noto Sans Symbols 2", "○●▰▱★☆✦✧"),   # cercles, parallélogrammes, étoiles
+    ("Noto Sans Math",      "⌈⌉⌊⌋≤≥"),      # plafonds, planchers, comparaisons
+]
+
 # Licences (toutes SIL Open Font License 1.1), depuis le dépôt officiel google/fonts.
 LICENCES = {
-    "alegreya":      "ofl/alegreya/OFL.txt",
-    "cinzel":        "ofl/cinzel/OFL.txt",
-    "eb-garamond":   "ofl/ebgaramond/OFL.txt",
-    "ibm-plex-sans": "ofl/ibmplexsans/OFL.txt",
-    "roboto-mono":   "ofl/robotomono/OFL.txt",   # Roboto est passée d'Apache 2.0 à l'OFL
+    "alegreya":            "ofl/alegreya/OFL.txt",
+    "cinzel":              "ofl/cinzel/OFL.txt",
+    "eb-garamond":         "ofl/ebgaramond/OFL.txt",
+    "ibm-plex-sans":       "ofl/ibmplexsans/OFL.txt",
+    "roboto-mono":         "ofl/robotomono/OFL.txt",   # Roboto : passée d'Apache 2.0 à l'OFL
+    "noto-sans-symbols-2": "ofl/notosanssymbols2/OFL.txt",
+    "noto-sans-math":      "ofl/notosansmath/OFL.txt",
 }
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -73,6 +91,48 @@ def fetch(url, binary=False):
 
 def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+def unicode_range(chars):
+    """Construit un unicode-range CSS à partir des caractères, en groupant les
+    codepoints consécutifs. On le calcule NOUS-MÊMES : celui annoncé par Google
+    est plus large que les glyphes réellement présents dans le sous-ensemble."""
+    cps = sorted(ord(c) for c in chars)
+    groups, start, prev = [], cps[0], cps[0]
+    for cp in cps[1:]:
+        if cp == prev + 1:
+            prev = cp
+            continue
+        groups.append((start, prev))
+        start = prev = cp
+    groups.append((start, prev))
+    return ", ".join(f"U+{a:04X}" if a == b else f"U+{a:04X}-{b:04X}" for a, b in groups)
+
+
+def fetch_symbol_subset(family, chars):
+    """Récupère chez Google un sous-ensemble ne contenant QUE `chars`, et VÉRIFIE
+    que tous les glyphes y sont vraiment (Google renvoie parfois un unicode-range
+    plus large que le contenu réel : Noto Sans Symbols 2 annonce les maths mais ne
+    les a pas). Renvoie les octets woff2."""
+    from fontTools.ttLib import TTFont   # dépendance de dev uniquement
+
+    url = ("https://fonts.googleapis.com/css2?family="
+           + urllib.parse.quote(family.replace(" ", "+"), safe="+")
+           + "&text=" + urllib.parse.quote(chars))
+    css = fetch(url)
+    m = re.search(r"src:\s*url\((https://[^)]+)\)\s*format\('woff2'\)", css)
+    if not m:
+        raise RuntimeError(f"{family} : pas de woff2 renvoyé par Google")
+    data = fetch(m.group(1), binary=True)
+
+    font = TTFont(io.BytesIO(data))
+    cmap = set()
+    for t in font["cmap"].tables:
+        cmap |= set(t.cmap.keys())
+    missing = [c for c in chars if ord(c) not in cmap]
+    if missing:
+        raise RuntimeError(f"{family} ne contient pas : {''.join(missing)}")
+    return data
 
 
 def main():
@@ -113,6 +173,45 @@ def main():
             f"  unicode-range: {urange};\n"
             f"}}"
         )
+
+    # ---- Symboles : rattachés à CHAQUE famille du livre ----
+    out.append("""
+/* ---------------------------------------------------------------------------
+   SYMBOLES (★ ✦ ▰ ○ ⌈ ≤ …). Aucune police du livre ne les contient : sans ces
+   règles, chaque plateforme prend un repli différent (Segoe UI Symbol sous
+   Windows, DejaVu sous Linux) et le PDF du CI ne rend pas comme en local.
+   On rattache donc les polices de symboles à chaque famille du livre, pour les
+   SEULS codepoints concernés (unicode-range) : le reste du texte n'est pas
+   touché, et les symboles rendent à l'identique partout. Les fichiers de police
+   ne sont PAS modifiés.
+   `font-weight: normal` et PAS une plage `100 900` : sur une police non variable,
+   une plage n'est jamais sélectionnée par le navigateur (vérifié : la face reste
+   `unloaded`). Comme ces faces sont les seules candidates pour ces codepoints,
+   l'appariement de graisse retombe dessus quelle que soit la graisse du texte.
+   --------------------------------------------------------------------------- */""")
+    for family, chars in SYMBOL_FONTS:
+        name = f"{slug(family)}-symboles.woff2"
+        (FONTS / name).write_bytes(fetch_symbol_subset(family, chars))
+        urange = unicode_range(chars)
+        for book in BOOK_FAMILIES:
+            # normal ET bold, sur le MÊME fichier : sans la face bold, un symbole
+            # dans du texte gras serait « engraissé » synthétiquement par le
+            # navigateur et l'étoile vide ☆ (ou la jauge vide ▱) se remplirait,
+            # devenant indistinguable de la pleine. Le symbole n'est alors pas gras,
+            # mais il reste lisible — c'est ce qui compte pour une notation.
+            for weight in ("normal", "bold"):
+                out.append(
+                    f"\n/* {chars} -> {family}, pour '{book}' ({weight}) */\n"
+                    f"@font-face {{\n"
+                    f"  font-family: '{book}';\n"
+                    f"  font-style: normal;\n"
+                    f"  font-weight: {weight};\n"
+                    f"  font-display: swap;\n"
+                    f"  src: url('../assets/fonts/{name}') format('woff2');\n"
+                    f"  unicode-range: {urange};\n"
+                    f"}}"
+                )
+
     CSS_OUT.write_text("\n".join(out) + "\n", encoding="utf-8")
 
     for key, path in LICENCES.items():
