@@ -4,110 +4,130 @@
   {
    "zone": "Mollet",
    "de": 1,
-   "a": 9
+   "a": 7
   },
   {
    "zone": "Torse",
-   "de": 10,
-   "a": 18
+   "de": 8,
+   "a": 14
   },
   {
    "zone": "Abdomen",
-   "de": 19,
-   "a": 26
+   "de": 15,
+   "a": 21
   },
   {
    "zone": "Bras",
-   "de": 27,
-   "a": 34
+   "de": 22,
+   "a": 28
   },
   {
    "zone": "Cuisse",
-   "de": 35,
+   "de": 29,
+   "a": 35
+  },
+  {
+   "zone": "Avant-bras",
+   "de": 36,
    "a": 42
   },
   {
    "zone": "Épaule",
    "de": 43,
-   "a": 49
+   "a": 48
   },
   {
-   "zone": "Estomac",
-   "de": 50,
+   "zone": "Hanche",
+   "de": 49,
    "a": 54
   },
   {
-   "zone": "Main",
+   "zone": "Estomac",
    "de": 55,
-   "a": 59
+   "a": 58
+  },
+  {
+   "zone": "Main",
+   "de": 59,
+   "a": 62
   },
   {
    "zone": "Poignet",
-   "de": 60,
-   "a": 64
+   "de": 63,
+   "a": 66
   },
   {
    "zone": "Genou",
-   "de": 65,
-   "a": 69
+   "de": 67,
+   "a": 70
   },
   {
    "zone": "Poumon",
-   "de": 70,
+   "de": 71,
    "a": 73
   },
   {
    "zone": "Foie",
    "de": 74,
-   "a": 77
+   "a": 76
   },
   {
    "zone": "Pied",
-   "de": 78,
-   "a": 81
+   "de": 77,
+   "a": 79
+  },
+  {
+   "zone": "Cheville",
+   "de": 80,
+   "a": 82
   },
   {
    "zone": "Tête",
-   "de": 82,
-   "a": 84
+   "de": 83,
+   "a": 85
   },
   {
    "zone": "Bouche",
-   "de": 85,
-   "a": 87
+   "de": 86,
+   "a": 88
   },
   {
    "zone": "Cœur",
-   "de": 88,
+   "de": 89,
    "a": 90
   },
   {
    "zone": "Coude",
    "de": 91,
-   "a": 93
+   "a": 92
   },
   {
    "zone": "Aine",
-   "de": 94,
-   "a": 95
+   "de": 93,
+   "a": 94
   },
   {
    "zone": "Oreille",
+   "de": 95,
+   "a": 95
+  },
+  {
+   "zone": "Nez",
    "de": 96,
    "a": 96
   },
   {
-   "zone": "Nez",
+   "zone": "Parties génitales",
    "de": 97,
    "a": 97
   },
   {
-   "zone": "Parties génitales",
+   "zone": "Cou",
    "de": 98,
    "a": 98
   },
   {
-   "zone": "Cou",
+   "zone": "Doigt",
    "de": 99,
    "a": 99
   },
@@ -578,6 +598,100 @@
    ]
   },
   {
+   "perte": {
+    "type": "fiche",
+    "nom": "Ne pas avoir d'Avant-bras",
+    "effet": "L'avant-bras manque sous le coude, main comprise, de naissance ou tranché. Le personnage ne tient, ne manie ni ne saisit plus rien de ce côté, et n'emploie aucune arme à deux mains. Le coude reste : le moignon se plie, frappe et pousse, mais ne referme aucune prise. Sans ses deux avant-bras, il ne saisit plus rien et ne frappe que du coude, du pied et de la tête."
+   },
+   "degres": [
+    {
+     "degre": 1,
+     "nom": "Entaille des muscles de l'avant-bras",
+     "effet": "Une lame ouvre la masse des muscles de l'avant-bras et met la chair à nu du coude au poignet. Le blessé subit un Saignement de −5 PV et −10 à toute action.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Moyenne",
+      "description": "Le médecin comprime la plaie de l'avant-bras et la bande. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "repos",
+      "jours": 10,
+      "description": "Le médecin met l'avant-bras au repos et soigne la plaie, le temps que les muscles cicatrisent. Lève le malus de −10."
+     }
+    },
+    {
+     "degre": 2,
+     "nom": "Section des tendons fléchisseurs de l'avant-bras",
+     "effet": "La lame fend les chairs jusqu'aux tendons fléchisseurs et les tranche, si bien que les doigts s'ouvrent seuls et que la main ne serre plus rien. Le blessé subit un Saignement de −10 PV et −20 à toute action, et lâche aussitôt ce qu'il tient de cette main.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin comprime et bande l'avant-bras pour arrêter l'hémorragie. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Difficile",
+      "jours": 21,
+      "description": "Le médecin suture les tendons tranchés, puis laisse l'avant-bras cicatriser. Lève le malus de −20."
+     }
+    },
+    {
+     "degre": 3,
+     "nom": "Fracture ouverte du radius et du cubitus",
+     "effet": "Les deux os de l'avant-bras se rompent ensemble et leurs bouts percent la peau, et le membre plie là où il ne devrait pas. Le blessé subit un Saignement de −15 PV. L'avant-bras du blessé est hors d'usage. Il subit aussi −30 à toute action.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin pose un garrot et immobilise l'avant-bras fracturé dans une attelle. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Très difficile",
+      "jours": 60,
+      "description": "Le médecin réduit et fixe le radius et le cubitus, puis laisse les os consolider. Lève le malus de −30 et rend l'usage de l'avant-bras."
+     }
+    },
+    {
+     "degre": 4,
+     "nom": "Avant-bras broyé, os éclatés et artères arrachées",
+     "effet": "L'avant-bras est écrasé, les deux os éclatés et les artères radiale et cubitale arrachées dans la bouillie des chairs, et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −20 PV. L'avant-bras du blessé est hors d'usage. Il subit aussi −40 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Très difficile",
+      "description": "Le médecin pose un garrot au-dessus du coude et comprime les chairs broyées pour endiguer l'hémorragie. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "jours": 90,
+      "description": "Le médecin reconstruit les os et les vaisseaux de l'avant-bras, puis une rééducation suit. Lève le malus de −40, retire l'état Inconscience et rend l'usage de l'avant-bras."
+     }
+    },
+    {
+     "degre": 5,
+     "nom": "Avant-bras sectionné sous le coude",
+     "effet": "L'avant-bras est tranché net sous le coude et s'en va, main comprise, et la douleur fulgurante terrasse le blessé. Le blessé subit un Saignement de −25 PV. Le blessé perd définitivement l'avant-bras. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin pose un garrot serré au-dessus du coude, sur une coupure nette. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "jours": 120,
+      "description": "Le médecin régularise et referme le moignon sous le coude, puis laisse la cicatrisation se faire. Lève le malus de −50 et retire l'état Inconscience. La perte de l'avant-bras reste définitive."
+     }
+    }
+   ],
+   "titre": "Blessure à l'Avant-bras"
+  },
+  {
    "titre": "Blessure à l'Épaule",
    "perte": {
     "type": "fiche",
@@ -665,6 +779,97 @@
      }
     }
    ]
+  },
+  {
+   "degres": [
+    {
+     "degre": 1,
+     "nom": "Contusion profonde de la hanche, muscles fessiers meurtris",
+     "effet": "Le choc écrase les muscles fessiers contre l'os et l'articulation coxo-fémorale enfle au fond de son logement. Chaque appui sur la jambe réveille la douleur. Le blessé subit −20 à toute action et −2 au Mouvement.",
+     "premiersSecours": {
+      "possible": false
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "repos",
+      "description": "Le médecin met la hanche au repos et laisse les muscles meurtris se dénouer. Lève le malus de −20 et rend au blessé sa pleine vitesse.",
+      "jours": 10
+     }
+    },
+    {
+     "degre": 2,
+     "nom": "Adducteurs déchirés, arrachés de leur insertion sur l'os",
+     "effet": "Les adducteurs cèdent d'un coup et s'arrachent de leur insertion sur l'os, emportant les vaisseaux qui les nourrissent. La hanche ne supporte plus le poids du corps sans se dérober. Le blessé subit un Saignement de −5 PV, −30 à toute action et −2 au Mouvement.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Moyenne",
+      "description": "Le médecin comprime le haut de la cuisse et pose un pansement compressif sur la déchirure. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "repos",
+      "description": "Le médecin immobilise la hanche et impose un repos, le temps que les tendons se rattachent à l'os. Lève le malus de −30 et rend au blessé sa pleine vitesse.",
+      "jours": 21
+     }
+    },
+    {
+     "degre": 3,
+     "nom": "Fracture du col du fémur",
+     "effet": "Le col du fémur se rompt net : la tête reste prise dans le cotyle tandis que le reste de la jambe part de travers. L'articulation qui porte tout le poids du corps ne porte plus rien. Le blessé subit un Saignement de −10 PV, sa jambe est hors d'usage, il subit l'état À terre et −40 à toute action.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin cale la jambe contre l'autre et sangle le bassin pour bloquer le foyer de fracture, puis comprime la plaie. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Très difficile",
+      "description": "Le médecin réduit la fracture et fixe le col du fémur, puis une immobilisation laisse l'os se ressouder. Lève le malus de −40, retire l'état À terre et rend l'usage de la jambe.",
+      "jours": 60
+     }
+    },
+    {
+     "degre": 4,
+     "nom": "Tête du fémur éclatée dans le cotyle, nerf sciatique broyé",
+     "effet": "La tête du fémur éclate au fond du cotyle et les esquilles écrasent le nerf sciatique contre l'os, en arrière de l'articulation. La jambe ne répond plus et le sang s'accumule dans la hanche. Le blessé subit un Saignement de −15 PV, sa jambe est hors d'usage et il subit l'état À terre. Le nerf sciatique broyé lui inflige un malus permanent de −2 à l'Agilité. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Très difficile",
+      "description": "Le médecin cale le bassin et comprime la hanche pour contenir l'hémorragie qui gonfle sous la peau. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "description": "Le médecin reconstruit l'articulation coxo-fémorale et dégage le nerf sciatique des esquilles, puis mène une longue rééducation. Lève le malus de −50, retire l'état À terre, retire l'état Inconscience et rend l'usage de la jambe. Le malus permanent de −2 à l'Agilité reste définitif.",
+      "jours": 90
+     }
+    },
+    {
+     "degre": 5,
+     "nom": "Jambe désarticulée à la hanche, arrachée tout entière",
+     "effet": "La tête du fémur est arrachée du cotyle et la jambe se détache tout entière du bassin, ne laissant qu'un moignon ouvert à la racine du corps. Le blessé subit un Saignement de −25 PV, perd définitivement la jambe et subit l'état Immobilisé et l'état À terre. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Absurde",
+      "description": "Faute de pouvoir poser un garrot si haut, le médecin plonge la main dans le moignon et pince l'artère fémorale à sa sortie du bassin. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "description": "Le médecin comble la cavité du cotyle, assure l'hémostase des vaisseaux du bassin, referme le moignon sur les muscles fessiers et appareille la jambe. Lève le malus de −60, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte de la jambe reste définitive.",
+      "jours": 150
+     }
+    }
+   ],
+   "perte": {
+    "type": "fiche",
+    "nom": "Ne pas avoir de Hanche",
+    "effet": "La jambe manque depuis le bassin, de naissance ou arrachée. Tant que le moignon n'est pas appareillé, le personnage subit l'état Immobilisé. Appareillé, il subit −2 au Mouvement et ne peut plus Foncer : il ne reste rien au-dessus du moignon pour lancer la jambe. Sans ses deux jambes, il rampe et lit sa vitesse terrestre avec −4 au Mouvement."
+   },
+   "titre": "Blessure à la Hanche"
   },
   {
    "titre": "Blessure à l'Estomac",
@@ -1304,6 +1509,97 @@
      }
     }
    ]
+  },
+  {
+   "degres": [
+    {
+     "degre": 1,
+     "nom": "Entorse de la cheville, ligaments latéraux distendus",
+     "effet": "La cheville roule sur le côté et les ligaments latéraux s'étirent au-delà de leur course, l'articulation enfle et l'appui vacille. Le blessé subit −30 à toute action.",
+     "premiersSecours": {
+      "possible": false
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "repos",
+      "jours": 14,
+      "description": "Le médecin glace la cheville, la bande et impose du repos le temps que les ligaments se resserrent. Lève le malus de −30."
+     }
+    },
+    {
+     "degre": 2,
+     "nom": "Entorse grave de la cheville, ligaments latéraux rompus",
+     "effet": "Les ligaments latéraux cèdent d'un coup et la cheville part de travers, gonflée de sang sous la peau. Le blessé subit un Saignement de −5 PV, −40 à toute action et −2 au Mouvement.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Moyenne",
+      "description": "Le médecin comprime la cheville, la surélève et la bande fermement pour contenir l'hématome. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "repos",
+      "jours": 30,
+      "description": "Le médecin immobilise la cheville, puis mène une rééducation qui rend leur tenue aux ligaments. Lève le malus de −40 et rétablit la vitesse normale."
+     }
+    },
+    {
+     "degre": 3,
+     "nom": "Fracture bimalléolaire et luxation de la cheville",
+     "effet": "Les deux malléoles se brisent et l'astragale sort de sa mortaise, le pied pend de travers au bout de la jambe. Le blessé subit un Saignement de −10 PV, sa cheville est hors d'usage, il subit l'état À terre et −50 à toute action.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin attelle la cheville en position et comprime la plaie ouverte sur la malléole. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Très difficile",
+      "jours": 90,
+      "description": "Le médecin réduit la luxation, visse les malléoles fracturées et répare les ligaments, puis mène une rééducation. Rend l'usage de la cheville, lève le malus de −50 et retire l'état À terre."
+     }
+    },
+    {
+     "degre": 4,
+     "nom": "Cheville broyée, astragale éclaté et nerf tibial sectionné",
+     "effet": "L'astragale éclate entre le tibia et le calcanéum, et le nerf tibial tranché prive la plante du pied de toute sensation. Le blessé subit un Saignement de −15 PV, sa cheville est hors d'usage et il subit l'état À terre. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Très difficile",
+      "description": "Le médecin immobilise la jambe entière et comprime l'articulation broyée pour endiguer l'hémorragie. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "jours": 150,
+      "description": "Le médecin reconstruit l'articulation, greffe le nerf tibial et bloque les os restants, puis mène une longue rééducation. Rend l'usage de la cheville, lève le malus de −60, retire l'état À terre et retire l'état Inconscience."
+     }
+    },
+    {
+     "degre": 5,
+     "nom": "Cheville tranchée, pied séparé de la jambe",
+     "effet": "La cheville est tranchée net entre le tibia et l'astragale, et le pied se détache de la jambe. Le blessé subit un Saignement de −20 PV, perd définitivement le pied, subit l'état Immobilisé et l'état À terre : il ne se déplacera plus sans appareillage. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin pose un garrot au mollet, au-dessus du moignon net, pour couper l'hémorragie. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "jours": 180,
+      "description": "Le médecin régularise le moignon, ferme les vaisseaux et appareille la jambe, puis mène une convalescence. Lève le malus de −70, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte du pied reste définitive."
+     }
+    }
+   ],
+   "perte": {
+    "type": "fiche",
+    "nom": "Ne pas avoir de Cheville",
+    "effet": "Le pied manque, tranché à la cheville, de naissance ou perdu. Tant que le moignon n'est pas appareillé, le personnage subit l'état Immobilisé. Appareillé, il subit −1 au Mouvement et tout jet d'équilibre qui prend appui sur ce côté subit −20. Sans ses deux chevilles, il ne tient plus debout sans appareillage : il rampe, avec −4 au Mouvement."
+   },
+   "titre": "Blessure à la Cheville"
   },
   {
    "titre": "Blessure à la Tête",
@@ -2121,6 +2417,98 @@
      }
     }
    ]
+  },
+  {
+   "degres": [
+    {
+     "degre": 1,
+     "nom": "Luxation d'une phalange",
+     "effet": "Le coup prend le doigt à contresens et chasse la phalange hors de son articulation, qui gonfle aussitôt et se bloque de travers. Le doigt reste raide, impossible à replier. Le blessé subit −50 à toute action.",
+     "premiersSecours": {
+      "possible": false
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "repos",
+      "description": "Le médecin réduit la phalange et la remet en place, puis attelle le doigt et le met au repos le temps que la capsule articulaire cicatrise. Lève le malus de −50.",
+      "jours": 14
+     }
+    },
+    {
+     "degre": 2,
+     "nom": "Fracture ouverte des phalanges",
+     "effet": "L'os cède en travers sous le choc et l'esquille perce la peau au dos du doigt, qui se tord vers l'extérieur. Le sang perle le long de la main dès que le blessé tente de refermer la prise. Le blessé subit un Saignement de −5 PV et −60 à toute action.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Facile",
+      "description": "Le médecin comprime la plaie et bande le doigt contre son voisin pour le tenir droit. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Moyenne",
+      "description": "Le médecin réduit et fixe les phalanges, suture la plaie, puis une immobilisation laisse l'os se consolider. Lève le malus de −60.",
+      "jours": 45
+     }
+    },
+    {
+     "degre": 3,
+     "nom": "Doigts ouverts, tendons et nerfs digitaux tranchés",
+     "effet": "La lame ouvre les doigts jusqu'à l'os et tranche les tendons et les nerfs digitaux sur toute leur longueur. Les phalanges retombent molles, sans force et sans sensation, et ne se referment plus. Le blessé subit un Saignement de −10 PV. Ses doigts sont hors d'usage. Il subit aussi −70 à toute action.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Moyenne",
+      "description": "Le médecin comprime les doigts ouverts et serre un pansement compressif sur la main. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Difficile",
+      "description": "Le médecin suture les tendons et répare les nerfs digitaux un à un, puis une immobilisation et une rééducation rendent leur jeu aux phalanges. Lève le malus de −70 et rend l'usage des doigts.",
+      "jours": 60
+     }
+    },
+    {
+     "degre": 4,
+     "nom": "Doigt arraché, doigts voisins broyés",
+     "effet": "La prise arrache un doigt à la racine et laisse les voisins broyés, les phalanges éclatées sous la peau. La douleur remonte le bras et menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV. Il perd définitivement ce doigt et les doigts qui lui restent sont hors d'usage. Il subit aussi −80 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Difficile",
+      "description": "Le médecin comprime le moignon du doigt arraché et bande la main entière. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Très difficile",
+      "description": "Le médecin pare le moignon, reconstruit les phalanges broyées et referme les chairs, puis une convalescence achève la consolidation. Lève le malus de −80, retire l'état Inconscience et rend l'usage des doigts restants. La perte du doigt reste définitive.",
+      "jours": 90
+     }
+    },
+    {
+     "degre": 5,
+     "nom": "Pouce et doigts arrachés",
+     "effet": "Le tranchant emporte le pouce et plusieurs doigts d'un seul passage, ne laissant que des moignons alignés au bord de la paume. Plus rien ne s'oppose et la main ne serre plus rien. Le blessé subit un Saignement de −20 PV. Il perd définitivement le pouce et les doigts sectionnés, et sa main est hors d'usage. Il subit aussi −90 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "premiersSecours": {
+      "possible": true,
+      "difficulte": "Moyenne",
+      "description": "Le médecin comprime les moignons nets et serre un pansement sur la main. Retire le saignement."
+     },
+     "traitement": {
+      "possible": true,
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "description": "Le médecin pare et referme les moignons du pouce et des doigts, puis une longue convalescence et une rééducation apprennent à la main ce qu'il lui reste de prise. Lève le malus de −90, retire l'état Inconscience et rend l'usage de la main. La perte du pouce et des doigts reste définitive.",
+      "jours": 120
+     }
+    }
+   ],
+   "perte": {
+    "type": "fiche",
+    "nom": "Ne pas avoir de Doigt",
+    "effet": "Les doigts manquent au bout de la main, de naissance ou tranchés. Sans son pouce, le personnage ne referme plus la main sur quoi que ce soit : il ne tient ni arme ni objet de ce côté. S'il garde le pouce, il tient encore, mais tout jet qui demande de la finesse de cette main subit −20. La paume frappe et pousse encore."
+   },
+   "titre": "Blessure au Doigt"
   },
   {
    "titre": "Blessure à l'Œil",

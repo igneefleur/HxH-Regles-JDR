@@ -209,7 +209,7 @@ Le MJ peut choisir de n'appliquer les critiques qu'une fois le combat terminé, 
 
 ### Blessures
 
-Une fois le degré et la zone connus, on lit la blessure dans l'entrée de la zone touchée, à la ligne du degré. Quelques zones se lisent à l'entrée d'une voisine : l'Avant-bras au Bras, la Cheville au Pied, la Hanche au Genou, le Doigt à la Main, et les Testicules comme la Vulve aux Parties génitales.
+Une fois le degré et la zone connus, on lit la blessure dans l'entrée de la zone touchée, à la ligne du degré. Les Testicules comme la Vulve se lisent à l'entrée des Parties génitales.
 
 Une zone hors d'usage ne répond plus : le blessé ne peut accomplir aucune action qui l'emploie, jusqu'à ce que le traitement lui en rende l'usage. Le malus d'une blessure, lui, pèse sur les jets qu'elle indique ; il monte avec le degré, et d'autant plus haut que la zone est difficile à viser.
 
