@@ -4,7 +4,9 @@
 
 <div class="states" markdown>
 
-Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les situations de combat et les autres états du corps. Sauf mention contraire, un état dure tant que sa cause persiste.
+Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les situations de combat et les autres états du corps.
+
+Chaque état dépend de sa cause. C'est elle qui l'inflige, et l'état dure tant qu'elle persiste. Sauf mention contraire, le personnage en sort en faisant cesser cette cause. La façon d'y parvenir, et ce qu'elle coûte, dépendent donc de la cause et non de l'état : se relever coûte une action, alors que se défaire d'une entrave dépend de l'entrave.
 
 ### Situations
 
@@ -123,7 +125,7 @@ L'adversaire contrôle entièrement son corps. Comme il est tenu, le personnage 
 <div class="sblock" markdown>
 **Immobilisé**
 
-Le personnage est retenu sur place par une entrave : des liens, des chaînes, un membre coincé, la poigne d'un adversaire ou un élément du décor qui le bloque. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure : il ne parcourt plus la moindre distance. Le palier dépend de la force de l'entrave. Chaque palier inflige aussi un degré de Paralysie, qui n'ajoute que ses malus. Le personnage sort de cet état en se débarrassant de l'entrave.
+Le personnage est retenu sur place par une entrave : des liens, des chaînes, un membre coincé, la poigne d'un adversaire ou un élément du décor qui le bloque. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure : il ne parcourt plus la moindre distance. Le palier dépend de la force de l'entrave. Chaque palier inflige aussi un degré de Paralysie, qui n'ajoute que ses malus. Le personnage sort de cet état en se débarrassant de l'entrave. La façon d'y parvenir dépend de l'entrave : couper une corde, ouvrir des fers ou sortir d'un éboulis ne coûtent pas la même chose.
 
 <p class="palier">Légère</p>
 
