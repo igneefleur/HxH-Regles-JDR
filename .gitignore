@@ -12,3 +12,5 @@ scratch_*
 scratchpad_*
 # Exception : image de référence de la Terre réelle, gardée (elle ne se régénère pas).
 !scratch_ref_ocean.png
+creation.debug.json
+forge.debug.json
