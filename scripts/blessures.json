@@ -1098,7 +1098,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre le thorax, draine la plèvre et répare le poumon affaissé pour qu'il se regonfle. Retire le saignement, lève le malus de −60 et retire l'état Inconscience.",
+      "description": "Le médecin ouvre le thorax, draine la plèvre et répare le poumon affaissé pour qu'il se regonfle. Retire le saignement, lève le malus de −60, retire l'état Immobilisé et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1115,7 +1115,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pratique une chirurgie thoracique étendue, vide les poumons noyés et les remet en fonction au prix d'une longue convalescence. Retire le saignement, lève le malus de −70 et retire l'état Inconscience ; la fonction respiratoire reste durablement réduite.",
+      "description": "Le médecin pratique une chirurgie thoracique étendue, vide les poumons noyés et les remet en fonction au prix d'une longue convalescence. Retire le saignement, lève le malus de −70, retire l'état Immobilisé et retire l'état Inconscience, mais le malus permanent de −2 à l'Endurance reste définitif.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
