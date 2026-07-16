@@ -145,7 +145,7 @@
     {
      "degre": 2,
      "nom": "Lacération profonde du mollet entaillant le faisceau musculaire",
-     "effet": "La lame ouvre le mollet et tranche le faisceau musculaire en profondeur, le sang coule à flots de la plaie béante. Le blessé subit un Saignement de −10 PV et −25 aux actions d'appui sur cette jambe.",
+     "effet": "La lame ouvre le mollet et tranche le faisceau musculaire en profondeur, le sang coule à flots de la plaie béante. Le blessé subit un Saignement de −10 PV et −20 aux actions d'appui sur cette jambe.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et pose un pansement compressif pour endiguer l'hémorragie. Retire le saignement.",
@@ -153,7 +153,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les faisceaux musculaires tranchés, puis impose une immobilisation. Retire le saignement et lève le malus de −25.",
+      "description": "Le médecin suture les faisceaux musculaires tranchés, puis impose une immobilisation. Retire le saignement et lève le malus de −20.",
       "mode": "chirurgie_repos",
       "difficulte": "Difficile",
       "jours": 30
@@ -179,7 +179,7 @@
     {
      "degre": 4,
      "nom": "Tibia fracturé et muscle du mollet broyé jusqu'à l'os",
-     "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −45 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −50 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose une attelle autour de la fracture et comprime la plaie écrasée pour contenir l'hémorragie. Retire le saignement.",
@@ -187,7 +187,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit et fixe le tibia, reconstruit les muscles broyés du mollet, puis une rééducation redresse la jambe. Retire le saignement, lève le malus de −45, retire l'état À terre, retire l'état Inconscient et rend l'usage de la jambe.",
+      "description": "Le médecin réduit et fixe le tibia, reconstruit les muscles broyés du mollet, puis une rééducation redresse la jambe. Retire le saignement, lève le malus de −50, retire l'état À terre, retire l'état Inconscient et rend l'usage de la jambe.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -249,7 +249,7 @@
     {
      "degre": 3,
      "nom": "Lacération profonde de la paroi thoracique",
-     "effet": "Une entaille béante s'ouvre entre les côtes et déchire la paroi thoracique, laissant le sang couler le long du flanc. Le blessé subit un Saignement de −5 PV et −35 aux actions physiques jusqu'au traitement.",
+     "effet": "Une entaille béante s'ouvre entre les côtes et déchire la paroi thoracique, laissant le sang couler le long du flanc. Le blessé subit un Saignement de −5 PV et −40 aux actions physiques jusqu'au traitement.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et applique un pansement compressif sur le flanc. Retire le saignement.",
@@ -257,7 +257,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture la plaie et répare la paroi thoracique déchirée, puis impose un repos de convalescence. Retire le saignement et lève le malus de −35.",
+      "description": "Le médecin suture la plaie et répare la paroi thoracique déchirée, puis impose un repos de convalescence. Retire le saignement et lève le malus de −40.",
       "mode": "chirurgie_repos",
       "difficulte": "Difficile",
       "jours": 30
@@ -339,7 +339,7 @@
     {
      "degre": 3,
      "nom": "Paroi abdominale tranchée, entrailles entamées",
-     "effet": "L'attaque a tranché la paroi abdominale de part en part et entamé les entrailles, qui menacent de s'échapper de la cavité. Le choc coupe le souffle et laisse le blessé chancelant. Le blessé subit un Saignement de −10 PV. Il subit aussi −35 à toute action.",
+     "effet": "L'attaque a tranché la paroi abdominale de part en part et entamé les entrailles, qui menacent de s'échapper de la cavité. Le choc coupe le souffle et laisse le blessé chancelant. Le blessé subit un Saignement de −10 PV. Il subit aussi −40 à toute action.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et maintient les entrailles à l'intérieur de la cavité pour stopper l'hémorragie. Retire le saignement.",
@@ -347,7 +347,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin referme les couches de la paroi abdominale tranchée et remet les entrailles en place. Retire le saignement et lève le malus de −35.",
+      "description": "Le médecin referme les couches de la paroi abdominale tranchée et remet les entrailles en place. Retire le saignement et lève le malus de −40.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 45
@@ -433,7 +433,7 @@
     {
      "degre": 3,
      "nom": "Fracture ouverte de l'humérus",
-     "effet": "L'humérus rompt et perce la peau dans une plaie béante, et la douleur sidère un instant le blessé. Le blessé subit un Saignement de −15 PV. Le bras du blessé est hors d'usage. Il subit aussi −35 à toute action.",
+     "effet": "L'humérus rompt et perce la peau dans une plaie béante, et la douleur sidère un instant le blessé. Le blessé subit un Saignement de −15 PV. Le bras du blessé est hors d'usage. Il subit aussi −40 à toute action.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot et immobilise le membre fracturé dans une attelle. Retire le saignement.",
@@ -441,7 +441,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit et fixe l'humérus, puis laisse le membre consolider. Retire le saignement, lève le malus de −35 et rend l'usage du bras.",
+      "description": "Le médecin réduit et fixe l'humérus, puis laisse le membre consolider. Retire le saignement, lève le malus de −40 et rend l'usage du bras.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 45
@@ -527,7 +527,7 @@
     {
      "degre": 3,
      "nom": "Fracture du fémur, lésion s'enfonçant jusqu'à l'os",
-     "effet": "La blessure s'enfonce jusqu'à l'os et le fémur se brise net, la jambe se dérobe sous le poids du corps. Le blessé subit un Saignement de −15 PV, sa jambe est hors d'usage et il subit l'état À terre. Il subit aussi −35 à toute action.",
+     "effet": "La blessure s'enfonce jusqu'à l'os et le fémur se brise net, la jambe se dérobe sous le poids du corps. Le blessé subit un Saignement de −15 PV, sa jambe est hors d'usage et il subit l'état À terre. Il subit aussi −40 à toute action.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin immobilise le membre fracturé à l'aide d'une attelle et pose un garrot. Retire le saignement.",
@@ -535,7 +535,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit la fracture et fixe le fémur, puis une immobilisation laisse l'os se ressouder. Retire le saignement, lève le malus de −35, retire l'état À terre et rend l'usage de la jambe.",
+      "description": "Le médecin réduit la fracture et fixe le fémur, puis une immobilisation laisse l'os se ressouder. Retire le saignement, lève le malus de −40, retire l'état À terre et rend l'usage de la jambe.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 60
@@ -602,13 +602,13 @@
     {
      "degre": 2,
      "nom": "Luxation de l'épaule et déchirure de la coiffe",
-     "effet": "La tête de l'humérus jaillit hors de sa cavité et les tendons de la coiffe se déchirent, l'épaule du blessé se déforme et le bras pend de travers. Le blessé subit −45 aux actions physiques de ce bras.",
+     "effet": "La tête de l'humérus jaillit hors de sa cavité et les tendons de la coiffe se déchirent, l'épaule du blessé se déforme et le bras pend de travers. Le blessé subit −40 aux actions physiques de ce bras.",
      "premiersSecours": {
       "possible": false
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit l'articulation pour remettre la tête de l'humérus en place, puis immobilise et laisse reposer le temps que les tendons cicatrisent. Lève le malus de −45.",
+      "description": "Le médecin réduit l'articulation pour remettre la tête de l'humérus en place, puis immobilise et laisse reposer le temps que les tendons cicatrisent. Lève le malus de −40.",
       "mode": "repos",
       "jours": 30
      }
@@ -633,7 +633,7 @@
     {
      "degre": 4,
      "nom": "Plexus brachial sectionné, vaisseaux de l'aisselle ouverts",
-     "effet": "La lame tranche les nerfs du plexus brachial et ouvre les gros vaisseaux de l'aisselle, le sang jaillit et le bras du blessé ne répond plus à aucun ordre. Le blessé subit un Saignement de −15 PV, son bras est définitivement hors d'usage, et les nerfs sectionnés lui infligent un malus permanent de −2 à la Force, à l'Agilité et à la Dextérité. Il subit aussi −55 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "La lame tranche les nerfs du plexus brachial et ouvre les gros vaisseaux de l'aisselle, le sang jaillit et le bras du blessé ne répond plus à aucun ordre. Le blessé subit un Saignement de −15 PV, son bras est définitivement hors d'usage, et les nerfs sectionnés lui infligent un malus permanent de −2 à la Force, à l'Agilité et à la Dextérité. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot étroit sous l'épaule et bande la plaie béante. Retire le saignement.",
@@ -641,7 +641,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les nerfs et les vaisseaux sectionnés, puis impose une longue convalescence. Retire le saignement, lève le malus de −55 et retire l'état Inconscient, mais le bras reste hors d'usage et le malus permanent de −2 à la Force, à l'Agilité et à la Dextérité reste définitif.",
+      "description": "Le médecin suture les nerfs et les vaisseaux sectionnés, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscient, mais le bras reste hors d'usage et le malus permanent de −2 à la Force, à l'Agilité et à la Dextérité reste définitif.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -782,7 +782,7 @@
     {
      "degre": 2,
      "nom": "Entaille profonde de la paume, tendons fléchisseurs sectionnés",
-     "effet": "La lame fend la paume de part en part et tranche les tendons fléchisseurs, si bien que les doigts retombent sans force, incapables de se refermer. Le sang coule de l'entaille. Le blessé subit un Saignement de −10 PV et −45 à toute action exigeant cette main.",
+     "effet": "La lame fend la paume de part en part et tranche les tendons fléchisseurs, si bien que les doigts retombent sans force, incapables de se refermer. Le sang coule de l'entaille. Le blessé subit un Saignement de −10 PV et −40 à toute action exigeant cette main.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et serre un garrot au poignet. Retire le saignement.",
@@ -790,7 +790,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les tendons fléchisseurs tranchés, puis une immobilisation laisse les tendons se ressouder. Retire le saignement et lève le malus de −45.",
+      "description": "Le médecin suture les tendons fléchisseurs tranchés, puis une immobilisation laisse les tendons se ressouder. Retire le saignement et lève le malus de −40.",
       "mode": "chirurgie_repos",
       "difficulte": "Difficile",
       "jours": 30
@@ -816,7 +816,7 @@
     {
      "degre": 4,
      "nom": "Main broyée, plusieurs doigts sectionnés",
-     "effet": "La main est écrasée sous la violence du coup et plusieurs doigts sont arrachés net, ne laissant qu'un moignon mutilé d'où le sang jaillit. La douleur est telle qu'elle menace de faire sombrer le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement les doigts sectionnés et ce qui reste de sa main demeure hors d'usage. Il subit aussi −55 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "La main est écrasée sous la violence du coup et plusieurs doigts sont arrachés net, ne laissant qu'un moignon mutilé d'où le sang jaillit. La douleur est telle qu'elle menace de faire sombrer le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement les doigts sectionnés et ce qui reste de sa main demeure hors d'usage. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot au poignet. Retire le saignement.",
@@ -824,7 +824,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pare les chairs broyées et referme la main mutilée, suivi d'une convalescence. Retire le saignement, lève le malus de −55 et retire l'état Inconscient. La perte des doigts reste définitive.",
+      "description": "Le médecin pare les chairs broyées et referme la main mutilée, suivi d'une convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscient. La perte des doigts reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -893,7 +893,7 @@
     {
      "degre": 3,
      "nom": "Section partielle du paquet vasculo-nerveux du poignet",
-     "effet": "Le poignet est largement ouvert et la main perd sa sensibilité. Le blessé subit un Saignement de −10 PV. Il subit aussi −45 à toute action.",
+     "effet": "Le poignet est largement ouvert et la main perd sa sensibilité. Le blessé subit un Saignement de −10 PV. Il subit aussi −40 à toute action.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin surélève le bras et pose un pansement compressif sur le poignet. Retire le saignement.",
@@ -901,7 +901,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les vaisseaux et répare les nerfs sectionnés, puis une convalescence suit. Retire le saignement, lève le malus de −45.",
+      "description": "Le médecin suture les vaisseaux et répare les nerfs sectionnés, puis une convalescence suit. Retire le saignement, lève le malus de −40.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 60
@@ -968,7 +968,7 @@
     {
      "degre": 2,
      "nom": "Entorse grave du genou, ligaments distendus et épanchement articulaire",
-     "effet": "Le genou gonfle, gorgé de liquide, et la jambe se dérobe sous le poids du corps. Le blessé subit un Saignement de −5 PV, −45 aux actions physiques sollicitant cette jambe et voit sa vitesse réduite de moitié.",
+     "effet": "Le genou gonfle, gorgé de liquide, et la jambe se dérobe sous le poids du corps. Le blessé subit un Saignement de −5 PV, −40 aux actions physiques sollicitant cette jambe et voit sa vitesse réduite de moitié.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime et surélève la jambe, puis draine l'épanchement de l'articulation. Retire le saignement.",
@@ -1001,7 +1001,7 @@
     {
      "degre": 4,
      "nom": "Articulation du genou broyée, os écrasés et nerf sectionné",
-     "effet": "Les os du genou sont réduits en éclats et le nerf tranché prive la jambe de toute sensation. Le blessé subit un Saignement de −15 PV, la jambe est hors d'usage et le blessé subit l'état À terre. Il subit aussi −55 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Les os du genou sont réduits en éclats et le nerf tranché prive la jambe de toute sensation. Le blessé subit un Saignement de −15 PV, la jambe est hors d'usage et le blessé subit l'état À terre. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin immobilise le membre et comprime la plaie pour endiguer l'hémorragie. Retire le saignement.",
@@ -1009,7 +1009,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit l'articulation broyée et répare le nerf sectionné, puis mène une rééducation. Rend l'usage de la jambe, lève le malus de −55, retire l'état À terre et retire l'état Inconscient.",
+      "description": "Le médecin reconstruit l'articulation broyée et répare le nerf sectionné, puis mène une rééducation. Rend l'usage de la jambe, lève le malus de −60, retire l'état À terre et retire l'état Inconscient.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 150
@@ -1057,7 +1057,7 @@
     {
      "degre": 2,
      "nom": "Côtes brisées meurtrissant la plèvre",
-     "effet": "Les côtes cèdent et leurs pointes meurtrissent la plèvre, chaque mouvement du torse arrache une douleur fulgurante et l'essoufflement gagne au moindre effort. Le blessé subit un Saignement de −5 PV et −35 à toute action physique exigeant un effort soutenu.",
+     "effet": "Les côtes cèdent et leurs pointes meurtrissent la plèvre, chaque mouvement du torse arrache une douleur fulgurante et l'essoufflement gagne au moindre effort. Le blessé subit un Saignement de −5 PV et −40 à toute action physique exigeant un effort soutenu.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin bande le thorax et calme la plaie qui suinte le long des côtes brisées. Retire le saignement.",
@@ -1065,7 +1065,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin sangle la cage thoracique et laisse les côtes et la plèvre meurtrie cicatriser. Retire le saignement. Lève le malus de −35.",
+      "description": "Le médecin sangle la cage thoracique et laisse les côtes et la plèvre meurtrie cicatriser. Retire le saignement. Lève le malus de −40.",
       "mode": "repos",
       "jours": 21
      }
@@ -1073,7 +1073,7 @@
     {
      "degre": 3,
      "nom": "Poumon perforé, pneumothorax",
-     "effet": "Une pointe osseuse perfore le poumon et l'air s'engouffre dans la plèvre, l'organe commence à se tasser et le souffle manque vite, chaque effort devenant intenable. Le blessé subit un Saignement de −10 PV, l'état Immobilisé et −55 à toute action exigeant du souffle.",
+     "effet": "Une pointe osseuse perfore le poumon et l'air s'engouffre dans la plèvre, l'organe commence à se tasser et le souffle manque vite, chaque effort devenant intenable. Le blessé subit un Saignement de −10 PV, l'état Immobilisé et −60 à toute action exigeant du souffle.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose une aiguille de décompression entre les côtes pour évacuer l'air qui écrase le poumon. Retire le saignement.",
@@ -1081,7 +1081,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin draine la plèvre, suture la perforation du poumon et le laisse se regonfler. Retire le saignement, retire l'état Immobilisé et lève le malus de −55.",
+      "description": "Le médecin draine la plèvre, suture la perforation du poumon et le laisse se regonfler. Retire le saignement, retire l'état Immobilisé et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 30
@@ -1090,7 +1090,7 @@
     {
      "degre": 4,
      "nom": "Poumon affaissé, détresse respiratoire",
-     "effet": "Le poumon s'affaisse entièrement et la plèvre se gorge de sang et d'air, le blessé happe l'air en vain et la détresse respiratoire le submerge. Le blessé subit un Saignement de −15 PV, l'état Immobilisé et −65 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "Le poumon s'affaisse entièrement et la plèvre se gorge de sang et d'air, le blessé happe l'air en vain et la détresse respiratoire le submerge. Le blessé subit un Saignement de −15 PV, l'état Immobilisé et −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin draine d'urgence le thorax et ventile le blessé pour le maintenir en vie. Retire le saignement.",
@@ -1098,7 +1098,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre le thorax, draine la plèvre et répare le poumon affaissé pour qu'il se regonfle. Retire le saignement, lève le malus de −65 et retire l'état Inconscient.",
+      "description": "Le médecin ouvre le thorax, draine la plèvre et répare le poumon affaissé pour qu'il se regonfle. Retire le saignement, lève le malus de −60 et retire l'état Inconscient.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1132,13 +1132,13 @@
     {
      "degre": 1,
      "nom": "Foie contusionné, point de côté qui coupe le souffle",
-     "effet": "Le coup s'écrase sous les côtes droites et meurtrit le foie sans le rompre. Une douleur sourde irradie le côté, coupe le souffle et soulève le cœur à chaque mouvement du tronc. Le blessé subit −15 à toute action physique et à la nausée.",
+     "effet": "Le coup s'écrase sous les côtes droites et meurtrit le foie sans le rompre. Une douleur sourde irradie le côté, coupe le souffle et soulève le cœur à chaque mouvement du tronc. Le blessé subit −20 à toute action physique et à la nausée.",
      "premiersSecours": {
       "possible": false
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin met le blessé au repos complet et laisse le foie contus se désengorger et la douleur du côté refluer. Lève le malus de −15.",
+      "description": "Le médecin met le blessé au repos complet et laisse le foie contus se désengorger et la douleur du côté refluer. Lève le malus de −20.",
       "mode": "repos",
       "jours": 10
      }
@@ -1162,7 +1162,7 @@
     {
      "degre": 3,
      "nom": "Foie fissuré, hémorragie interne",
-     "effet": "L'attaque a fissuré le parenchyme du foie et le sang se déverse à l'intérieur de la cavité, sans plaie pour s'écouler au-dehors. La douleur devient sidérante et plie le blessé en deux. Le blessé subit un Saignement de −15 PV et −45 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "L'attaque a fissuré le parenchyme du foie et le sang se déverse à l'intérieur de la cavité, sans plaie pour s'écouler au-dehors. La douleur devient sidérante et plie le blessé en deux. Le blessé subit un Saignement de −15 PV et −40 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime le flanc et allonge le blessé pour freiner l'épanchement interne, sans pouvoir le tarir ; le saignement passe à −5 PV.",
@@ -1170,7 +1170,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre la cavité, suture la fissure du foie et évacue le sang épanché, seul geste qui stoppe vraiment l'hémorragie interne. Retire le saignement, lève le malus de −45 et retire l'état Inconscient.",
+      "description": "Le médecin ouvre la cavité, suture la fissure du foie et évacue le sang épanché, seul geste qui stoppe vraiment l'hémorragie interne. Retire le saignement, lève le malus de −40 et retire l'état Inconscient.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 30
@@ -1272,7 +1272,7 @@
     {
      "degre": 4,
      "nom": "Pied broyé, tarse et nerfs détruits",
-     "effet": "Le pied est entièrement broyé, le tarse éclate et les nerfs sont détruits, le membre ne répond plus et la jambe se dérobe complètement. Le blessé subit un Saignement de −10 PV ; son pied est hors d'usage et ne permet plus aucun appui, il ne peut se déplacer qu'en prenant appui sur l'autre jambe et il subit l'état À terre. Il subit aussi −65 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le pied est entièrement broyé, le tarse éclate et les nerfs sont détruits, le membre ne répond plus et la jambe se dérobe complètement. Le blessé subit un Saignement de −10 PV ; son pied est hors d'usage et ne permet plus aucun appui, il ne peut se déplacer qu'en prenant appui sur l'autre jambe et il subit l'état À terre. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot au-dessus de la cheville pour endiguer l'hémorragie. Retire le saignement.",
@@ -1280,7 +1280,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit le tarse et suture les nerfs et les vaisseaux. Rend l'usage du pied, lève le malus de −65, retire l'état À terre et retire l'état Inconscient.",
+      "description": "Le médecin reconstruit le tarse et suture les nerfs et les vaisseaux. Rend l'usage du pied, lève le malus de −60, retire l'état À terre et retire l'état Inconscient.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -1330,7 +1330,7 @@
     {
      "degre": 2,
      "nom": "Plaie profonde du cuir chevelu, os du crâne mis à nu",
-     "effet": "La plaie s'ouvre en grand jusqu'à laisser l'os du crâne luire à nu, et la violence du choc fait tanguer la tête du blessé. Le blessé subit un Saignement de −10 PV et −35 à toute action.",
+     "effet": "La plaie s'ouvre en grand jusqu'à laisser l'os du crâne luire à nu, et la violence du choc fait tanguer la tête du blessé. Le blessé subit un Saignement de −10 PV et −40 à toute action.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie béante puis la suture pour refermer le cuir chevelu. Retire le saignement.",
@@ -1338,7 +1338,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin nettoie, suture et panse la plaie. Retire le saignement et lève le malus de −35.",
+      "description": "Le médecin nettoie, suture et panse la plaie. Retire le saignement et lève le malus de −40.",
       "mode": "repos",
       "jours": 14
      }
@@ -1363,7 +1363,7 @@
     {
      "degre": 4,
      "nom": "Fracture du crâne avec commotion cérébrale",
-     "effet": "Le crâne se fracture franchement et le cerveau commotionné se met à vaciller : la vue se brouille, les jambes se dérobent et la conscience menace de s'éteindre. Le blessé subit un Saignement de −20 PV et −65 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le crâne se fracture franchement et le cerveau commotionné se met à vaciller : la vue se brouille, les jambes se dérobent et la conscience menace de s'éteindre. Le blessé subit un Saignement de −20 PV et −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin bande la tête et comprime la plaie pour contenir l'hémorragie. Retire le saignement.",
@@ -1371,7 +1371,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit la fracture et soulage la pression intracrânienne, puis une longue convalescence rétablit le blessé. Retire le saignement, retire l'état Inconscient et lève le malus de −65.",
+      "description": "Le médecin réduit la fracture et soulage la pression intracrânienne, puis une longue convalescence rétablit le blessé. Retire le saignement, retire l'état Inconscient et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1405,7 +1405,7 @@
     {
      "degre": 1,
      "nom": "Lèvres fendues et dent ébréchée, élocution pâteuse",
-     "effet": "Le coup fend les lèvres et ébrèche une dent, le sang emplissant la bouche et empâtant chaque mot. Le blessé subit un Saignement de −5 PV et −15 à toute action vocale et aux incantations parlées.",
+     "effet": "Le coup fend les lèvres et ébrèche une dent, le sang emplissant la bouche et empâtant chaque mot. Le blessé subit un Saignement de −5 PV et −20 à toute action vocale et aux incantations parlées.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin rince la bouche et comprime les lèvres fendues. Retire le saignement.",
@@ -1413,7 +1413,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin laisse les lèvres et la gencive cicatriser au repos, avec des bains de bouche réguliers. Lève le malus de −15.",
+      "description": "Le médecin laisse les lèvres et la gencive cicatriser au repos, avec des bains de bouche réguliers. Lève le malus de −20.",
       "mode": "repos",
       "jours": 10
      }
@@ -1438,7 +1438,7 @@
     {
      "degre": 3,
      "nom": "Mâchoire fracturée et langue entaillée, dents arrachées",
-     "effet": "La mâchoire se fracture, la langue s'entaille et plusieurs dents sont arrachées, la parole se réduisant à un magma sanglant et inintelligible. Le blessé subit un Saignement de −15 PV, la perte définitive de plusieurs dents et −45 à toute action vocale et aux incantations parlées.",
+     "effet": "La mâchoire se fracture, la langue s'entaille et plusieurs dents sont arrachées, la parole se réduisant à un magma sanglant et inintelligible. Le blessé subit un Saignement de −15 PV, la perte définitive de plusieurs dents et −40 à toute action vocale et aux incantations parlées.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin suture la langue entaillée et immobilise la mâchoire fracturée. Retire le saignement.",
@@ -1446,7 +1446,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit la fracture de la mâchoire et répare la langue, puis la convalescence laisse consolider l'os. Lève le malus de −45, mais les dents perdues restent définitives.",
+      "description": "Le médecin réduit la fracture de la mâchoire et répare la langue, puis la convalescence laisse consolider l'os. Lève le malus de −40, mais les dents perdues restent définitives.",
       "mode": "chirurgie_repos",
       "difficulte": "Difficile",
       "jours": 30
@@ -1511,7 +1511,7 @@
     {
      "degre": 2,
      "nom": "Déchirure du péricarde",
-     "effet": "L'enveloppe du cœur se déchire et le sang s'accumule autour de l'organe, comprimant peu à peu le muscle et coupant le souffle. Le blessé subit un Saignement de −5 PV et −35 aux actions physiques.",
+     "effet": "L'enveloppe du cœur se déchire et le sang s'accumule autour de l'organe, comprimant peu à peu le muscle et coupant le souffle. Le blessé subit un Saignement de −5 PV et −40 aux actions physiques.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime le thorax et draine le sang qui s'amasse dans l'enveloppe du cœur. Retire le saignement.",
@@ -1519,7 +1519,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture la déchirure du péricarde et laisse l'enveloppe cicatriser. Retire le saignement. Lève le malus de −35.",
+      "description": "Le médecin suture la déchirure du péricarde et laisse l'enveloppe cicatriser. Retire le saignement. Lève le malus de −40.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 14
@@ -1545,7 +1545,7 @@
     {
      "degre": 4,
      "nom": "Perforation d'une paroi ventriculaire",
-     "effet": "La paroi du ventricule cède et le sang gicle hors du cœur à chaque battement, vidant le blessé de ses forces. Le blessé subit un Saignement de −20 PV. Il subit aussi −65 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "La paroi du ventricule cède et le sang gicle hors du cœur à chaque battement, vidant le blessé de ses forces. Le blessé subit un Saignement de −20 PV. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie thoracique et perfuse le blessé. Retire le saignement.",
@@ -1553,7 +1553,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pratique une opération cardiaque pour refermer la perforation du ventricule. Retire le saignement, lève le malus de −65 et retire l'état Inconscient.",
+      "description": "Le médecin pratique une opération cardiaque pour refermer la perforation du ventricule. Retire le saignement, lève le malus de −60 et retire l'état Inconscient.",
       "mode": "chirurgie_repos",
       "difficulte": "Quasi impossible",
       "jours": 60
@@ -1603,13 +1603,13 @@
     {
      "degre": 2,
      "nom": "Entorse du coude, ligaments de l'articulation distendus et déchirés",
-     "effet": "Les ligaments de l'articulation se distendent et se déchirent sous la torsion. Le coude enfle et perd tout son jeu, chaque mouvement du bras réveillant une douleur vive. Le blessé subit −35 à toute action du bras.",
+     "effet": "Les ligaments de l'articulation se distendent et se déchirent sous la torsion. Le coude enfle et perd tout son jeu, chaque mouvement du bras réveillant une douleur vive. Le blessé subit −40 à toute action du bras.",
      "premiersSecours": {
       "possible": false
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin immobilise l'articulation et la met au repos jusqu'à la cicatrisation des ligaments. Lève le malus de −35.",
+      "description": "Le médecin immobilise l'articulation et la met au repos jusqu'à la cicatrisation des ligaments. Lève le malus de −40.",
       "mode": "repos",
       "jours": 21
      }
@@ -1631,7 +1631,7 @@
     {
      "degre": 4,
      "nom": "Fracture ouverte du coude, esquilles et section partielle des vaisseaux",
-     "effet": "L'os éclate à travers la peau en projetant des esquilles et les vaisseaux du pli du coude sont sectionnés en partie. Le sang gicle de la plaie béante tandis que le bras s'affaisse, inerte. Le blessé subit un Saignement de −10 PV et −65 aux actions du membre. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "L'os éclate à travers la peau en projetant des esquilles et les vaisseaux du pli du coude sont sectionnés en partie. Le sang gicle de la plaie béante tandis que le bras s'affaisse, inerte. Le blessé subit un Saignement de −10 PV et −60 aux actions du membre. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot en amont et comprime la plaie ouverte du coude. Retire le saignement.",
@@ -1639,7 +1639,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit la fracture, retire les esquilles et suture les vaisseaux, puis le membre consolide en convalescence. Retire le saignement, retire l'état Inconscient et lève le malus de −65.",
+      "description": "Le médecin réduit la fracture, retire les esquilles et suture les vaisseaux, puis le membre consolide en convalescence. Retire le saignement, retire l'état Inconscient et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 60
@@ -1687,7 +1687,7 @@
     {
      "degre": 2,
      "nom": "Déchirure de l'aine, vaisseau fémoral superficiel sectionné",
-     "effet": "Les chairs du pli de l'aine se déchirent et un vaisseau fémoral superficiel se rompt, laissant le sang couler le long de la cuisse. La hanche peine à porter le moindre appui. Le blessé subit un Saignement de −5 PV, l'état Paralysie légère et −35 à ses déplacements.",
+     "effet": "Les chairs du pli de l'aine se déchirent et un vaisseau fémoral superficiel se rompt, laissant le sang couler le long de la cuisse. La hanche peine à porter le moindre appui. Le blessé subit un Saignement de −5 PV, l'état Paralysie légère et −40 à ses déplacements.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et pose un pansement compressif au creux de l'aine pour endiguer l'écoulement. Retire le saignement.",
@@ -1695,7 +1695,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin immobilise le bassin et garde le blessé au repos. Retire l'état Paralysie légère. Lève le malus de −35.",
+      "description": "Le médecin immobilise le bassin et garde le blessé au repos. Retire l'état Paralysie légère. Lève le malus de −40.",
       "mode": "repos",
       "jours": 21
      }
@@ -1720,7 +1720,7 @@
     {
      "degre": 4,
      "nom": "Artère fémorale entaillée, nerf crural lésé",
-     "effet": "L'artère fémorale est ouverte et le nerf crural tranché : le sang fuit en nappe au pli de l'aine et la jambe cesse de porter. Le blessé subit un Saignement de −15 PV et l'état À terre. Sa jambe reste hors d'usage. Il subit aussi −65 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "L'artère fémorale est ouverte et le nerf crural tranché : le sang fuit en nappe au pli de l'aine et la jambe cesse de porter. Le blessé subit un Saignement de −15 PV et l'état À terre. Sa jambe reste hors d'usage. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot haut sur la cuisse et comprime le creux de l'aine pour juguler le flot. Retire le saignement.",
@@ -1728,7 +1728,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin répare l'artère fémorale et suture le nerf crural par microchirurgie. Retire le saignement, lève le malus de −65, retire l'état Inconscient, retire l'état À terre et rend l'usage de la jambe.",
+      "description": "Le médecin répare l'artère fémorale et suture le nerf crural par microchirurgie. Retire le saignement, lève le malus de −60, retire l'état Inconscient, retire l'état À terre et rend l'usage de la jambe.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -1796,7 +1796,7 @@
     {
      "degre": 3,
      "nom": "Tympan crevé, oreille interne ébranlée",
-     "effet": "Le tympan se crève dans une douleur fulgurante et l'oreille interne, ébranlée, déchaîne un vertige qui fait tournoyer le sol : ce côté n'entend plus rien et l'équilibre se dérobe à chaque pas. Le blessé subit un Saignement de −10 PV, la perte définitive de l'audition de cette oreille, l'état À terre et −55 à la perception auditive et à toute action physique exigeant l'équilibre.",
+     "effet": "Le tympan se crève dans une douleur fulgurante et l'oreille interne, ébranlée, déchaîne un vertige qui fait tournoyer le sol : ce côté n'entend plus rien et l'équilibre se dérobe à chaque pas. Le blessé subit un Saignement de −10 PV, la perte définitive de l'audition de cette oreille, l'état À terre et −60 à la perception auditive et à toute action physique exigeant l'équilibre.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin obture le conduit, comprime l'oreille et allonge le blessé pour calmer le vertige. Retire le saignement.",
@@ -1804,7 +1804,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin répare le tympan crevé et apaise l'oreille interne, puis une convalescence laisse le vertige refluer. Retire le saignement, retire l'état À terre et lève le malus de −55, mais la perte de l'audition de cette oreille reste définitive.",
+      "description": "Le médecin répare le tympan crevé et apaise l'oreille interne, puis une convalescence laisse le vertige refluer. Retire le saignement, retire l'état À terre et lève le malus de −60, mais la perte de l'audition de cette oreille reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 30
@@ -1889,7 +1889,7 @@
     {
      "degre": 3,
      "nom": "Cloison et sinus enfoncés, respiration nasale coupée",
-     "effet": "La cloison s'effondre et les parois des sinus s'enfoncent dans un craquement humide, obstruant les voies et coupant toute respiration par le nez. Le sang inonde la gorge sans répit. Le blessé subit un Saignement de −15 PV, ne peut plus respirer par le nez et subit −55 à toute action visée et à la perception visuelle.",
+     "effet": "La cloison s'effondre et les parois des sinus s'enfoncent dans un craquement humide, obstruant les voies et coupant toute respiration par le nez. Le sang inonde la gorge sans répit. Le blessé subit un Saignement de −15 PV, ne peut plus respirer par le nez et subit −60 à toute action visée et à la perception visuelle.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin tamponne les fosses nasales et comprime le massif pour stopper l'hémorragie. Retire le saignement.",
@@ -1897,7 +1897,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin relève la cloison enfoncée et désobstrue les sinus, puis le nez consolide en convalescence. Retire le saignement, lève le malus de −55 et rétablit la respiration nasale.",
+      "description": "Le médecin relève la cloison enfoncée et désobstrue les sinus, puis le nez consolide en convalescence. Retire le saignement, lève le malus de −60 et rétablit la respiration nasale.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 30
@@ -1980,7 +1980,7 @@
     {
      "degre": 3,
      "nom": "Déchirure des parties génitales, douleur sidérante",
-     "effet": "Les chairs des parties génitales se déchirent et le sang sourd de la plaie, tandis qu'une douleur sidérante plie le blessé en deux et lui retourne l'estomac. Le blessé subit un Saignement de −10 PV, l'état À terre, l'état Immobilisé et −55 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Les chairs des parties génitales se déchirent et le sang sourd de la plaie, tandis qu'une douleur sidérante plie le blessé en deux et lui retourne l'estomac. Le blessé subit un Saignement de −10 PV, l'état À terre, l'état Immobilisé et −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la déchirure et tamponne la plaie pour endiguer l'écoulement. Retire le saignement.",
@@ -1988,7 +1988,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture la déchirure des chairs génitales et draine l'hématome. Retire le saignement, retire l'état À terre, retire l'état Immobilisé et lève le malus de −55.",
+      "description": "Le médecin suture la déchirure des chairs génitales et draine l'hématome. Retire le saignement, retire l'état À terre, retire l'état Immobilisé et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 45
@@ -2164,7 +2164,7 @@
     {
      "degre": 3,
      "nom": "Globe perforé, l'humeur s'écoule",
-     "effet": "Le globe oculaire est percé et l'humeur s'en écoule, l'œil s'affaisse et s'éteint à jamais. Le blessé subit un Saignement de −10 PV, la perte définitive de l'œil, puis subit −55 à toute action visée et à la perception visuelle.",
+     "effet": "Le globe oculaire est percé et l'humeur s'en écoule, l'œil s'affaisse et s'éteint à jamais. Le blessé subit un Saignement de −10 PV, la perte définitive de l'œil, puis subit −60 à toute action visée et à la perception visuelle.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin protège le globe percé sous une compresse stérile et comprime l'orbite. Retire le saignement.",
@@ -2172,7 +2172,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin referme le globe perforé, puis le blessé observe une convalescence sous protection oculaire. Retire le saignement et lève le malus de −55. La perte de l'œil reste définitive.",
+      "description": "Le médecin referme le globe perforé, puis le blessé observe une convalescence sous protection oculaire. Retire le saignement et lève le malus de −60. La perte de l'œil reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 30
