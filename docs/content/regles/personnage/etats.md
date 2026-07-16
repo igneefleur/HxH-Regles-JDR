@@ -4,13 +4,15 @@
 
 <div class="states" markdown>
 
-Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les situations de combat et les autres états du corps.
+Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les situations de combat et les autres états.
 
 Chaque état dépend de sa cause. C'est elle qui l'inflige, et l'état dure tant qu'elle persiste. Sauf mention contraire, le personnage en sort en faisant cesser cette cause. La façon d'y parvenir, et ce qu'elle coûte, dépendent donc de la cause et non de l'état : se relever coûte une action, alors que se défaire d'une entrave dépend de l'entrave.
 
+Chaque puce donne un malus et ce qu'il touche. Défense désigne l'Esquive et la Parade. Presque toutes les [compétences](competences.md) de combat appartiennent aussi au groupe Physique : un jet ne subit donc qu'un seul malus par état, le plus précis qui le désigne. Un jet d'esquive prend le malus de Défense, pas celui de Physique.
+
 ### Situations
 
-Les situations ci-dessous sont des circonstances de combat. Chaque puce donne un malus et ce qu'il touche. Presque toutes les compétences de combat appartiennent aussi au groupe Physique : un jet ne subit donc qu'un seul de ces malus, le plus précis qui le désigne. Un jet d'esquive prend le malus de Défense, pas celui de Physique. Sauf mention contraire, un malus ne s'applique que contre l'adversaire qui en est la cause, et dure tant que la situation dure.
+Les situations ci-dessous sont des circonstances de combat. Sauf mention contraire, un malus ne s'applique que contre l'adversaire qui en est la cause.
 
 <div class="sblock" markdown>
 **De flanc**
@@ -41,13 +43,13 @@ Le combat se joue dans un espace très étroit : un couloir de moins d'un mètre
 
 <span class="smods"><span class="smod">Initiative <b>−120</b></span></span>
 
-Le personnage ne voit pas l'attaque venir : un ennemi sort d'une cachette, un traître frappe le premier. Le malus ne vaut que pour son jet d'initiative d'ouverture ; ensuite, il n'est plus Surpris.
+Le personnage ne voit pas l'attaque venir : un ennemi sort d'une cachette, un traître frappe le premier. Le malus ne vaut que pour son jet d'[initiative automatique](../combat/deroulement-combat.md) ; ensuite, il n'est plus Surpris.
 </div>
 
 <div class="sblock" markdown>
 **Abri**
 
-Un obstacle protège le personnage : un mur, un rocher, un pilier, ou le corps d'un allié. Par exception, le malus ne frappe pas le personnage mais celui qui l'attaque ou le cherche à travers l'abri ; ses propres jets ne s'améliorent pas. Il ne vaut que depuis le côté couvert. Seul le palier atteint s'applique.
+Un obstacle protège le personnage : un mur, un rocher, un pilier, ou le corps d'un allié. Par exception, le malus ne frappe pas le personnage mais l'adversaire qui agit contre lui à travers l'abri : ses jets d'attaque et ses jets de perception subissent le palier atteint. La défense du personnage ne s'améliore pas, et le malus ne vaut que depuis le côté couvert.
 
 <p class="palier">Léger</p>
 
@@ -82,12 +84,12 @@ Le personnage est caché derrière l'obstacle et ne laisse qu'une fente pour reg
 
 ### Autres états
 
-Les autres états sont les afflictions du corps et de l'esprit. Sauf mention contraire, un état dure tant que sa cause persiste, et ses malus ou bonus s'appliquent à tous les jets concernés.
+Les autres états tiennent au personnage lui-même : à son corps, ou à ce qui le retient.
 
 <div class="sblock" markdown>
 **Mutisme**
 
-La voix du personnage est abîmée par une maladie ou une blessure. Le palier dépend de sa gravité. Seul le palier atteint s'applique.
+La voix du personnage ne sort plus : gorge blessée, maladie, ou une main serrée sur son cou. Le palier dépend de la gravité de la cause. Seul le palier atteint s'applique.
 
 <p class="palier">Léger</p>
 
@@ -107,11 +109,11 @@ Aucun son ne sort de sa bouche, pas même un murmure. Le personnage ne peut empl
 <div class="sblock" markdown>
 **Prise**
 
-Un adversaire tient le personnage au corps à corps. Chaque palier demande le précédent et le remplace. Les [manœuvres](../combat/manoeuvres.md) Agripper, Maîtriser et Soumettre servent à infliger la prise et à s'en libérer. Seul le palier atteint s'applique.
+Un adversaire tient le personnage avec une arme dotée de la propriété [Saisie](../combat/armes.md), ses mains comprises : la prise porte donc à la portée de cette arme. Les [manœuvres](../combat/manoeuvres.md) Agripper, Maîtriser et Soumettre infligent les paliers ci-dessous, et disent comment s'en libérer. Chaque prise porte son propre palier, et un palier remplace le précédent de cette prise.
 
 <p class="palier">Agrippé</p>
 
-L'adversaire a saisi une partie de son corps. Retenu, le personnage ne se déplace plus seul, mais son adversaire peut l'entraîner à vitesse réduite de moitié. Il subit aussi une Paralysie légère.
+L'adversaire a saisi une partie de son corps. Retenu, le personnage ne se déplace plus seul, mais son adversaire peut l'entraîner avec lui, son propre déplacement réduit de moitié. Il subit aussi une Paralysie légère.
 
 <p class="palier">Maîtrisé</p>
 
@@ -119,37 +121,25 @@ Le personnage est plaqué, tordu ou bloqué. Tenu ainsi, il ne se déplace plus 
 
 <p class="palier">Soumis</p>
 
-L'adversaire contrôle entièrement son corps. Le personnage ne peut ni se déplacer, ni se dégager. Il subit aussi une Paralysie totale.
+L'adversaire contrôle entièrement son corps, jusqu'à la position de ses membres. Le personnage ne se déplace plus du tout. Il subit aussi une Paralysie totale.
 </div>
 
 <div class="sblock" markdown>
 **Immobilisé**
 
-Une entrave retient le personnage sur place : liens, chaînes, membre coincé, poigne d'un adversaire, éboulis. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure. Le palier dépend de la force de l'entrave, et chaque palier inflige aussi un degré de Paralysie. Le personnage en sort en se débarrassant de l'entrave.
-
-<p class="palier">Légère</p>
-
-L'entrave ne tient qu'une partie de son corps : une cheville enchaînée, un poignet pris. Il subit une Paralysie légère.
-
-<p class="palier">Partielle</p>
-
-Poings et pieds sont pris dans des fers. Il ne lui reste que des gestes courts. Il subit une Paralysie partielle.
-
-<p class="palier">Totale</p>
-
-Le personnage est ligoté, écrasé ou bloqué de la tête aux pieds. Il subit une Paralysie totale.
+Quelque chose empêche le personnage de se déplacer : des liens, des chaînes, un membre coincé, un éboulis, une jambe perdue, une douleur qui le cloue sur place. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure. Un adversaire qui le tient inflige une Prise, pas cet état. Selon ce qui l'immobilise, le personnage subit parfois aussi une Paralysie.
 </div>
 
 <div class="sblock" markdown>
 **Paralysie**
 
-Les muscles du personnage répondent mal à sa volonté : nerfs pincés, membres engourdis. Si plusieurs paralysies se cumulent, seule la plus grave s'applique. La paralysie ne bloque pas le déplacement : elle n'impose que les malus indiqués. Seuls des états comme Immobilisé ou Prise empêchent de se déplacer.
+Les muscles du personnage répondent mal à sa volonté : nerfs pincés, membres engourdis, corps tenu par un adversaire, ou bras occupé à le tenir. Si plusieurs paralysies se cumulent, seule la plus grave s'applique. La paralysie ne bloque pas le déplacement : elle n'impose que les malus indiqués.
 
 <p class="palier">Légère</p>
 
 <span class="smods"><span class="smod">Attaque <b>−20</b></span><span class="smod">Parade <b>−20</b></span><span class="smod">Initiative <b>−20</b></span><span class="smod">Esquive <b>−40</b></span><span class="smod">Physique <b>−40</b></span></span>
 
-Ses gestes sont lents et mal assurés. Tout son corps est engourdi.
+Ses gestes sont lents et mal assurés, et la force n'y est plus.
 
 <p class="palier">Partielle</p>
 
@@ -167,11 +157,9 @@ Plus aucun muscle ne répond correctement. Le personnage ne contrôle presque pl
 <div class="sblock" markdown>
 **À terre**
 
-<span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Défense <b>−40</b></span><span class="smod">Physique <b>−40</b></span><span class="smod">Mouvement <b>−2</b></span></span>
+<span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Défense <b>−40</b></span><span class="smod">Physique <b>−40</b></span></span>
 
-Le personnage combat au sol, couché sur le dos ou à quatre pattes. Il n'a plus d'appui ni de hauteur pour agir.
-
-Son [Mouvement](capacites-physiques.md#mouvement) subit −2. Se relever coûte une action.
+Le personnage combat au sol, couché sur le dos ou à quatre pattes. Il n'a plus d'appui ni de hauteur pour agir, et son [Mouvement](capacites-physiques.md#mouvement) subit −2. Se relever coûte une [action](../combat/deroulement-combat.md).
 </div>
 
 <div class="sblock" markdown>
@@ -181,14 +169,12 @@ Son [Mouvement](capacites-physiques.md#mouvement) subit −2. Se relever coûte 
 
 Le personnage a perdu connaissance : endormi, assommé ou évanoui.
 
-Il lâche ce qu'il tenait et tombe À terre. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0. Il n'effectue aucune [action](../combat/deroulement-combat.md) ni aucune [réaction](../combat/deroulement-combat.md), et se défend avec la manœuvre [Se laisser toucher](../combat/manoeuvres.md). Tous ses sens perdent 8 points de [clarté](sens.md).
+Il lâche ce qu'il tenait et tombe À terre. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, et tous ses sens perdent en [clarté](sens.md). Il n'effectue aucune [action](../combat/deroulement-combat.md) ni aucune [réaction](../combat/deroulement-combat.md) : il ne se défend pas, et son résultat final de défense vaut 0 contre chaque attaque.
 
 Percevoir quelque chose lui permet de reprendre connaissance, si la cause le permet : un dormeur se réveille, un assommé reste au sol.
 </div>
 
 </div>
-
-> Les états liés aux sens (cécité, surdité, aveuglement, assourdissement…) ne figurent pas ici : ils sont gérés par la clarté des [sens](sens.md).
 
 </div>
 
