@@ -117,6 +117,9 @@
 
   // --- avertissements --------------------------------------------------------
   function hasLancer() { return state.portees.some(function (p) { return /^Lancer/.test(p); }); }
+  function hasTir() { return state.portees.some(function (p) { return /^Tir/.test(p); }); }
+  function hasMelee() { return state.portees.some(function (p) { return /^(Mêlée|Allonge)/.test(p); }); }
+  function hasAllonge() { return state.portees.some(function (p) { return /^Allonge/.test(p); }); }
   function hasZoneOuCone() { return !!state.tiers["sphere"] || !!state.cone; }
   function activeSupp(id) { return state.tiers[id] || state.toggles[id]; }
   function warnings() {
@@ -124,14 +127,35 @@
     if (state.degats > 20 && !state.types.length) w.push("Une arme qui blesse doit porter au moins un type de dégâts.");
     if ((state.portees.some(function (p) { return /^Tir/.test(p); }) || state.cone) && !state.tiers["munitions"]) w.push("Une arme de tir ou de cône doit porter des Munitions.");
     if (((state.am.match(/✦/g) || []).length + (state.illeg.match(/★/g) || []).length) > 5) w.push("AM + illégalité dépasse 5 : une arme faite pour les arts martiaux ne peut pas être aussi illégale, et inversement.");
+    // Prérequis et incompatibilités : lus depuis les étiquettes des fiches. Les paires
+    // sont dédupliquées (chaque fiche liste l'autre : un seul avertissement par paire).
+    var INCOMPAT = [["retour", "retour", "Retour"], ["usage unique", "usage-unique", "Usage unique"],
+                    ["recharge rapide", "recharge-rapide", "Recharge rapide"],
+                    ["rechargement lent", "rechargement-lent", "Rechargement lent"],
+                    ["surchauffe", "surchauffe", "Surchauffe"], ["dissimulable", "dissimulable", "Dissimulable"],
+                    ["lourdeur", "lourdeur", "Lourdeur"]];
+    var vus = {};
     suppProps().forEach(function (p) {
       if (p.id === "cone" || !activeSupp(p.id)) return;
       p.prereqs.forEach(function (pr) {
         var low = pr.toLowerCase();
-        if (/incompatible/.test(low) && /2 mains/.test(low) && state.mains === "2 mains") w.push(p.name + " est incompatible avec une arme à deux mains.");
-        if (/n[ée]cessite/.test(low) && /(zone|sph[eè]re) ou c[oô]ne/.test(low) && !hasZoneOuCone()) w.push(p.name + " nécessite une Sphère ou un Cône.");
-        if (/n[ée]cessite/.test(low) && /lancer/.test(low) && !hasLancer()) w.push(p.name + " nécessite une portée de lancer.");
-        if (/incompatible/.test(low) && /usage unique/.test(low) && activeSupp("usage-unique")) w.push("Retour et Usage unique sont incompatibles.");
+        if (/incompatible/.test(low)) {
+          if (/2 mains/.test(low) && state.mains === "2 mains") w.push(p.name + " est incompatible avec une arme à deux mains.");
+          if (/c[oô]ne/.test(low) && state.cone) w.push(p.name + " est incompatible avec le Cône.");
+          INCOMPAT.forEach(function (e) {
+            if (low.indexOf(e[0]) === -1 || !activeSupp(e[1]) || e[1] === p.id) return;
+            var k = [p.id, e[1]].sort().join("|");
+            if (!vus[k]) { vus[k] = 1; w.push(p.name + " et " + e[2] + " sont incompatibles."); }
+          });
+        }
+        if (/n[ée]cessite/.test(low)) {
+          if (/lancer ou de tir/.test(low)) { if (!hasLancer() && !hasTir()) w.push(p.name + " nécessite une portée de lancer ou de tir."); }
+          else if (/allonge, lancer/.test(low)) { if (!hasAllonge() && !hasLancer() && !hasTir() && !state.cone) w.push(p.name + " nécessite une portée au-delà du contact."); }
+          else if (/m[êe]l[ée]e/.test(low)) { if (!hasMelee()) w.push(p.name + " nécessite une portée de mêlée."); }
+          else if (/lancer/.test(low)) { if (!hasLancer()) w.push(p.name + " nécessite une portée de lancer."); }
+          if (/munitions/.test(low) && !state.tiers["munitions"]) w.push(p.name + " nécessite des Munitions.");
+          if (/×1 for/.test(low) && !/^×[1-9]/.test(state.mod)) w.push(p.name + " nécessite un multiplicateur de Force, ×1 au moins.");
+        }
       });
     });
     return w;
@@ -392,15 +416,15 @@
     var cMun = card(grid, "Munitions", "", ob("munitions").desc);
     tierSelect(cMun, ob("munitions"), state.tiers["munitions"] || null, function (v) { if (v) state.tiers["munitions"] = v; else delete state.tiers["munitions"]; });
 
-    // ===== Propriétés supplémentaires =====
-    shead(grid, "Propriétés supplémentaires — paliers");
+    // ===== Propriétés optionnelles =====
+    shead(grid, "Propriétés optionnelles — paliers");
     DATA.supplementaires.forEach(function (p) {
-      if (p.id === "cone" || p.fixedCost != null) return;
+      if (p.id === "cone" || p.fixedCost != null || !p.tables.length) return;
       var c = card(grid, p.name, "", p.desc + (p.prereqs.length ? " — " + p.prereqs.join(" · ") : ""));
       tierSelect(c, p, state.tiers[p.id] || null, function (v) { if (v) state.tiers[p.id] = v; else delete state.tiers[p.id]; });
     });
 
-    shead(grid, "Propriétés supplémentaires — traits");
+    shead(grid, "Propriétés optionnelles — traits");
     var cTog = card(grid, "", "full");
     cTog.classList.add("fg-card-bare");
     var box = el("div", "fg-chips fg-chips-wide");

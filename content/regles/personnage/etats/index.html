@@ -7,14 +7,14 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://igneefleur.github.io/HxH-Regles-JDR/content/regles/personnage/etats/" rel="canonical"/>
 <link href="../sens/" rel="prev"/>
-<link href="../../formation/formations-martiales/" rel="next"/>
+<link href="../influence/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
 <title>États - HxH Système JDR</title>
 <link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/fonts.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/extra.css?v=2" rel="stylesheet"/>
+<link href="../../../../stylesheets/extra.css?v=9" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
@@ -415,7 +415,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../influence.md">
+<a class="md-nav__link" href="../influence/">
 <span class="md-ellipsis">
     
   
@@ -1063,6 +1063,44 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Annexes
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Annexes
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../annexes/conversion-magicien-dnd/">
+<span class="md-ellipsis">
+    
+  
+    Conversion Magicien D&amp;D
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1198,112 +1236,103 @@
 <h1 id="etats-du-personnage">États du personnage</h1>
 <div class="cols">
 <div class="states">
-<p>Les états sont les circonstances et afflictions qui modifient ce qu'un personnage peut faire : situations de combat d'un côté, autres états du corps de l'autre. Sauf mention contraire, un état dure tant que sa cause persiste.</p>
+<p>Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les situations de combat et les autres états.</p>
+<p>Chaque état dépend de sa cause. C'est elle qui l'inflige, et l'état dure tant qu'elle persiste. Sauf mention contraire, le personnage en sort en faisant cesser cette cause. La façon d'y parvenir, et ce qu'elle coûte, dépendent donc de la cause et non de l'état : se relever coûte une action, alors que se défaire d'une entrave dépend de l'entrave.</p>
+<p>Chaque puce donne un malus et ce qu'il touche. Défense désigne l'Esquive et la Parade. Presque toutes les <a href="../competences/">compétences</a> de combat appartiennent aussi au groupe Physique : un jet ne subit donc qu'un seul malus par état, le plus précis qui le désigne. Un jet d'esquive prend le malus de Défense, pas celui de Physique.</p>
 <h3 id="situations">Situations</h3>
-<p>Ces circonstances tactiques imposent au personnage les malus indiqués sur ses jets d'attaque, d'esquive, de parade, d'initiative et d'actions physiques. Sauf mention contraire, un malus ne s'applique qu'en opposition à l'adversaire qui en est la cause, et dure tant que la situation dure.</p>
+<p>Les situations ci-dessous sont des circonstances de combat. Sauf mention contraire, un malus ne s'applique que contre l'adversaire qui en est la cause.</p>
 <div class="sblock">
 <p><strong>De flanc</strong></p>
-<p><span class="smods"><span class="smod">Attaque <b>−10</b></span><span class="smod">Esquive <b>−30</b></span><span class="smod">Parade <b>−30</b></span></span></p>
-<p>Un adversaire se glisse sur son côté, légèrement en retrait, hors de l'axe où la garde protège naturellement. De cette position oblique, le personnage a grand-peine à parer ses coups comme à le frapper en retour : il lui faudrait sans cesse se retourner alors qu'il fait déjà face ailleurs. Un combattant de taille ordinaire tient tête à trois assaillants sans les perdre de vue ; dès qu'ils sont plus nombreux à l'encercler, le quatrième et le cinquième gagnent ses flancs, là où sa défense est la plus démunie. Ces malus ne valent que contre le quatrième et le cinquième assaillant d'un même round, ceux qui l'ont ainsi pris de côté.</p>
+<p><span class="smods"><span class="smod">Attaque <b>−10</b></span><span class="smod">Défense <b>−30</b></span></span></p>
+<p>Un adversaire attaque de côté, hors de l'axe que la garde couvre. Un combattant tient trois assaillants en vue à la fois : au-delà, le quatrième et le cinquième arrivent sur ses flancs. Ces malus ne valent que contre eux.</p>
 </div>
 <div class="sblock">
 <p><strong>De dos</strong></p>
-<p><span class="smods"><span class="smod">Attaque <b>−30</b></span><span class="smod">Esquive <b>−80</b></span><span class="smod">Parade <b>−80</b></span></span></p>
-<p>L'assaillant se dresse droit dans le dos du personnage, hors de sa vue et hors de sa garde : ses coups partent d'un angle mort où l'on ne peut ni les voir venir, ni interposer son arme à temps. Un seul ennemi derrière soi ne crée pourtant pas cette faille, car il suffit de pivoter pour lui refaire face. C'est l'encerclement qui condamne : au corps à corps, quand cinq adversaires occupent déjà tout son pourtour, le sixième se retrouve nécessairement à revers, sans que le personnage puisse se tourner vers tous à la fois. Ces malus ne valent que contre le sixième assaillant d'un même round, celui qui passe dans son dos.</p>
-</div>
-<div class="sblock">
-<p><strong>En joue</strong></p>
-<p><span class="smods"><span class="smod">Initiative <b>−50</b></span><span class="smod">Attaque <b>−20</b></span><span class="smod">Esquive <b>−120</b></span><span class="smod">Parade <b>−120</b></span><span class="smod">Physique <b>−100</b></span></span></p>
-<p>Un adversaire a déjà pris l'avantage décisif et le tient à sa merci : la lame d'un couteau contre la gorge, la pointe d'une épée appuyée sur la poitrine, le canon d'une arme collé à la tempe. Rien ne le retient à proprement parler, et il pourrait tenter n'importe quel geste ; mais le plus infime mouvement suffirait à ce que l'acier s'enfonce, et le moindre sursaut peut lui coûter la vie. Ces malus ne valent que face à l'adversaire qui le tient ainsi en joue, et durent tant qu'il le tient.</p>
+<p><span class="smods"><span class="smod">Attaque <b>−30</b></span><span class="smod">Défense <b>−80</b></span></span></p>
+<p>L'assaillant frappe dans le dos, hors de vue et hors de garde. Un seul ennemi derrière ne suffit pas : le personnage pivote pour lui faire face. Mais si cinq l'entourent déjà, le sixième est forcément dans son dos. Ces malus valent contre lui et contre les suivants.</p>
 </div>
 <div class="sblock">
 <p><strong>Espace réduit</strong></p>
-<p><span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Esquive <b>−40</b></span><span class="smod">Parade <b>−40</b></span><span class="smod">Physique <b>−20</b></span></span></p>
-<p>L'affrontement se joue dans un boyau étroit : un couloir de moins d'un mètre, l'angle d'une pièce encombrée, l'embrasure d'une porte. Les parois se referment sur les gestes, on ne peut ni prendre son élan, ni déployer un grand mouvement, ni reculer pour se dérober. Chaque coup se donne à l'étroit, retenu par la pierre toute proche. Par exception, ces malus pèsent sur toutes ses actions quel que soit l'adversaire, tant qu'il reste pris dans cet espace.</p>
+<p><span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Défense <b>−40</b></span><span class="smod">Physique <b>−20</b></span></span></p>
+<p>Le combat se joue dans un espace très étroit : un couloir de moins d'un mètre, une embrasure, un angle encombré. Le personnage ne peut ni prendre son élan, ni reculer. Par exception, ces malus valent contre tous les adversaires, tant qu'il y reste.</p>
 </div>
 <div class="sblock">
 <p><strong>Surpris</strong></p>
 <p><span class="smods"><span class="smod">Initiative <b>−120</b></span></span></p>
-<p>Le personnage ne s'attend pas à l'attaque, ou ne parvient pas à la déceler à temps : un assaut jailli de l'ombre, un traître qui frappe le premier, un danger qu'aucun de ses sens n'a su signaler. Pris de court à l'instant où l'affrontement s'ouvre, il n'a pas le temps de se mettre en garde et perd d'emblée l'initiative. Le malus ne s'applique qu'à son jet d'initiative d'ouverture ; le premier échange passé, il retrouve tous ses moyens.</p>
+<p>Le personnage ne voit pas l'attaque venir : un ennemi sort d'une cachette, un traître frappe le premier. Le malus ne vaut que pour son jet d'<a href="../../combat/deroulement-combat/">initiative automatique</a> ; ensuite, il n'est plus Surpris.</p>
 </div>
 <div class="sblock">
 <p><strong>Abri</strong></p>
-<p>Un pan de mur, l'angle d'un bâtiment, un rocher, un pilier, voire le corps d'un allié s'interpose entre le personnage et ceux qui le prennent pour cible. Par exception aux autres situations, ce n'est pas le personnage qui subit le malus, mais quiconque agit contre lui à travers l'abri : chaque jet d'attaque dirigé contre lui et chaque jet de perception (Sensoriel) cherchant à le repérer subit le malus du palier atteint. Le personnage à couvert garde tous ses moyens et sa défense n'est pas augmentée pour autant. Le malus ne joue que depuis le côté couvert : un assaillant posté dans un angle découvert l'atteint et le perçoit normalement.</p>
+<p>Un obstacle protège le personnage : un mur, un rocher, un pilier, ou le corps d'un allié. Par exception, le malus ne frappe pas le personnage mais l'adversaire qui agit contre lui à travers l'abri : ses jets d'attaque et ses jets de perception subissent le palier atteint. La défense du personnage ne s'améliore pas, et le malus ne vaut que depuis le côté couvert.</p>
 <p class="palier">Léger</p>
 <p><span class="smods"><span class="smod">Attaque <b>−20</b></span><span class="smod">Sensoriel <b>−20</b></span></span></p>
-<p>Un simple rebord, à peine de quoi s'accroupir derrière : le corps dépasse encore largement.</p>
+<p>Le personnage s'accroupit derrière un simple rebord. Son corps dépasse encore largement.</p>
 <p class="palier">Partiel</p>
 <p><span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Sensoriel <b>−40</b></span></span></p>
-<p>Un tiers du corps environ se glisse derrière l'obstacle.</p>
+<p>Un tiers du corps environ est caché derrière l'obstacle.</p>
 <p class="palier">Important</p>
 <p><span class="smods"><span class="smod">Attaque <b>−60</b></span><span class="smod">Sensoriel <b>−60</b></span></span></p>
-<p>La moitié du corps disparaît à couvert, seul le haut restant exposé.</p>
-<p class="palier">Quasi total</p>
+<p>La moitié du corps est cachée. Seul le haut du corps reste exposé.</p>
+<p class="palier">Très important</p>
 <p><span class="smods"><span class="smod">Attaque <b>−80</b></span><span class="smod">Sensoriel <b>−80</b></span></span></p>
-<p>Presque tout le corps est masqué ; seule une frange dépasse encore.</p>
-<p class="palier">Total</p>
+<p>Presque tout le corps est caché. Seule une petite partie dépasse encore.</p>
+<p class="palier">Maximal</p>
 <p><span class="smods"><span class="smod">Attaque <b>−100</b></span><span class="smod">Sensoriel <b>−100</b></span></span></p>
-<p>Le personnage se fond entièrement derrière l'obstacle, ne laissant qu'un interstice pour épier et frapper.</p>
+<p>Le personnage est caché derrière l'obstacle et ne laisse qu'une fente pour regarder et frapper. C'est cette fente qui le rend encore atteignable.</p>
 </div>
 <h3 id="autres-etats">Autres états</h3>
-<p>Les afflictions du corps et de l'esprit. Sauf mention contraire, un état dure tant que sa cause persiste, et ses malus ou bonus s'appliquent à tous les jets concernés.</p>
+<p>Les autres états tiennent au personnage lui-même : à son corps, ou à ce qui le retient.</p>
 <div class="sblock">
 <p><strong>Mutisme</strong></p>
-<p>La voix du personnage est atteinte, entamée par degrés selon la gravité du mal ou de la blessure qui la frappe. Seul le palier atteint s'applique.</p>
+<p>La voix du personnage ne sort plus : gorge blessée, maladie, ou une main serrée sur son cou. Le palier dépend de la gravité de la cause. Seul le palier atteint s'applique.</p>
 <p class="palier">Léger</p>
 <p><span class="smods"><span class="smod">Vocal <b>−80</b></span></span></p>
-<p>Sa gorge, blessée ou comprimée, ne laisse plus filtrer qu'un filet de voix rauque et pénible. Il subit −80 à tous ses jets de compétences du groupe Vocal.</p>
+<p>Sa gorge est blessée ou serrée. Sa voix est faible et rauque.</p>
 <p class="palier">Partiel</p>
-<p>Le souffle et le larynx ne répondent plus assez pour former le moindre mot : il ne peut plus parler et ne peut plus employer aucune compétence du groupe Vocal, mais il tire encore de sa gorge des sons informes, râles, grognements ou gémissements.</p>
+<p>Le personnage ne peut plus former un mot, ni employer aucune compétence du groupe Vocal. Il produit encore des sons : des râles, des grognements.</p>
 <p class="palier">Total</p>
-<p>Plus rien ne sort, ni parole, ni cri, ni le plus faible son : sa voix est réduite au silence complet. Aucune compétence du groupe Vocal, ni le moindre usage de sa voix, ne lui est possible.</p>
+<p>Aucun son ne sort de sa bouche, pas même un murmure. Le personnage ne peut employer aucune compétence du groupe Vocal.</p>
 </div>
 <div class="sblock">
 <p><strong>Prise</strong></p>
-<p>Un adversaire a refermé sur le personnage une prise de corps à corps qui se resserre par degrés, chaque cran exigeant et remplaçant le précédent. On l'inflige et l'on s'en libère par les <a href="../../combat/manoeuvres/">manœuvres</a> d'Agripper, Maîtriser et Soumettre. Seul le palier atteint s'applique.</p>
+<p>Un adversaire tient le personnage avec une arme dotée de la propriété <a href="../../combat/armes/">Saisie</a>, ses mains comprises : la prise porte donc à la portée de cette arme. Les <a href="../../combat/manoeuvres/">manœuvres</a> Agripper, Maîtriser et Soumettre infligent les paliers ci-dessous, et disent comment s'en libérer. Chaque prise porte son propre palier, et un palier remplace le précédent de cette prise.</p>
 <p class="palier">Agrippé</p>
-<p>L'adversaire a saisi une partie de son corps et l'y maintient. Le personnage ne peut plus se déplacer de lui-même, même si celui qui le tient peut l'entraîner de force, à vitesse réduite de moitié. Il subit une Paralysie légère.</p>
+<p>L'adversaire a saisi une partie de son corps. Retenu, le personnage ne se déplace plus seul, mais son adversaire peut l'entraîner avec lui, son propre déplacement réduit de moitié. Il subit aussi une Paralysie légère.</p>
 <p class="palier">Maîtrisé</p>
-<p>La prise s'est refermée et le bloque plus étroitement : plaqué, tordu ou verrouillé, il ne parvient plus à se déplacer du tout. Il subit une Paralysie partielle.</p>
+<p>Le personnage est plaqué, tordu ou bloqué. Tenu ainsi, il ne se déplace plus du tout. Il subit aussi une Paralysie partielle.</p>
 <p class="palier">Soumis</p>
-<p>L'adversaire a pris l'entier contrôle de son corps, cadenassé sans le moindre jeu. Il subit une Paralysie totale.</p>
+<p>L'adversaire contrôle entièrement son corps, jusqu'à la position de ses membres. Le personnage ne se déplace plus du tout. Il subit aussi une Paralysie totale.</p>
 </div>
 <div class="sblock">
 <p><strong>Immobilisé</strong></p>
-<p>Une entrave le retient captif et le cloue sur place : liens, chaînes, membres coincés, poigne d'un adversaire ou masse du décor qui l'emprisonne. Son <a href="../capacites-physiques/#mouvement">mouvement</a> tombe à 0, quelle que soit l'allure : il ne franchit plus la moindre distance. Selon la force de l'entrave, le palier atteint lui inflige de plus un degré de Paralysie. Il s'en libère en se défaisant de l'entrave.</p>
-<p class="palier">Légère</p>
-<p>L'entrave est partielle : une cheville enchaînée à un mur, un poignet pris, un bras que l'on retient. Il se débat encore du reste du corps, mais gauchement. Il subit une Paralysie légère.</p>
-<p class="palier">Partielle</p>
-<p>Poings et pieds pris dans les fers, il ne lui reste que des gestes brefs et contraints, jamais l'ampleur d'un vrai mouvement. Il subit une Paralysie partielle.</p>
-<p class="palier">Totale</p>
-<p>Ligoté, écrasé ou scellé de la tête aux pieds, il ne lui reste plus le moindre jeu : il ne peut absolument plus bouger. Il subit une Paralysie totale.</p>
+<p>Quelque chose empêche le personnage de se déplacer : des liens, des chaînes, un membre coincé, un éboulis, une jambe perdue, une douleur qui le cloue sur place. Son <a href="../capacites-physiques/#mouvement">Mouvement</a> tombe à 0, quelle que soit l'allure. Un adversaire qui le tient inflige une Prise, pas cet état. Selon ce qui l'immobilise, le personnage subit parfois aussi une Paralysie.</p>
 </div>
 <div class="sblock">
 <p><strong>Paralysie</strong></p>
-<p>Les commandes du corps se dérèglent, coupées entre la volonté et les muscles : nerfs pincés, membres engourdis, chair qui ne répond plus. L'atteinte se mesure en trois degrés ; si plusieurs se cumulent, seul le plus grave s'applique.</p>
+<p>Les muscles du personnage répondent mal à sa volonté : nerfs pincés, membres engourdis, corps tenu par un adversaire, ou bras occupé à le tenir. Si plusieurs paralysies se cumulent, seule la plus grave s'applique. La paralysie ne bloque pas le déplacement : elle n'impose que les malus indiqués.</p>
 <p class="palier">Légère</p>
 <p><span class="smods"><span class="smod">Attaque <b>−20</b></span><span class="smod">Parade <b>−20</b></span><span class="smod">Initiative <b>−20</b></span><span class="smod">Esquive <b>−40</b></span><span class="smod">Physique <b>−40</b></span></span></p>
-<p>Les gestes se font pâteux et mal assurés, comme alourdis par un engourdissement diffus.</p>
+<p>Ses gestes sont lents et mal assurés, et la force n'y est plus.</p>
 <p class="palier">Partielle</p>
-<p><span class="smods"><span class="smod">Attaque <b>−80</b></span><span class="smod">Parade <b>−80</b></span><span class="smod">Esquive <b>−80</b></span><span class="smod">Initiative <b>−30</b></span><span class="smod">Physique <b>−60</b></span></span></p>
-<p>Une part du corps ne répond plus du tout : un côté, un membre ou une région reste inerte tandis que le reste peine à compenser.</p>
+<p><span class="smods"><span class="smod">Attaque <b>−80</b></span><span class="smod">Défense <b>−80</b></span><span class="smod">Initiative <b>−30</b></span><span class="smod">Physique <b>−60</b></span></span></p>
+<p>Une partie de son corps ne répond plus : un côté, un membre, une zone.</p>
 <p class="palier">Totale</p>
-<p><span class="smods"><span class="smod">Attaque <b>−200</b></span><span class="smod">Parade <b>−200</b></span><span class="smod">Esquive <b>−200</b></span><span class="smod">Physique <b>−200</b></span><span class="smod">Initiative <b>−100</b></span></span></p>
-<p>Plus aucun muscle n'obéit ; figé, le personnage ne peut absolument plus bouger.</p>
+<p><span class="smods"><span class="smod">Attaque <b>−200</b></span><span class="smod">Défense <b>−200</b></span><span class="smod">Physique <b>−200</b></span><span class="smod">Initiative <b>−100</b></span></span></p>
+<p>Plus aucun muscle ne répond correctement. Le personnage ne contrôle presque plus son corps.</p>
 </div>
 <div class="sblock">
 <p><strong>À terre</strong></p>
-<p><span class="smods"><span class="smod">Actions physiques <b>−40</b></span><span class="smod">Mouvement <b>−2</b></span></span></p>
-<p>Le personnage a été jeté au sol, ou s'y est effondré, et combat désormais couché sur le dos ou à quatre pattes. Privé d'appuis et de hauteur, il frappe, se dérobe et se démène à grand-peine : toutes ses actions physiques, attaque, esquive et parade comprises, subissent −40, et son <a href="../capacites-physiques/#mouvement">mouvement</a> chute de 2 paliers, lu deux crans plus bas dans la table. Se relever coûte une action.</p>
+<p><span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Défense <b>−40</b></span><span class="smod">Physique <b>−40</b></span></span></p>
+<p>Le personnage combat au sol, couché sur le dos ou à quatre pattes. Il n'a plus d'appui ni de hauteur pour agir, et son <a href="../capacites-physiques/#mouvement">Mouvement</a> subit −2. Se relever coûte une <a href="../../combat/deroulement-combat/">action</a>.</p>
 </div>
 <div class="sblock">
 <p><strong>Inconscience</strong></p>
-<p>Assommé, sonné ou plongé dans le noir, le personnage a sombré : il gît sans connaissance, hors du combat. Il lâche ce qu'il tenait et tombe À terre. Il ne se défend plus, ne tentant aucun jet d'esquive ni de parade : toute attaque le touche donc automatiquement, et au corps à corps chaque coup porté contre lui est un coup critique. Il le reste jusqu'à ce qu'il reprenne connaissance.</p>
+<p><span class="smods"><span class="smod">Clarté des sens <b>−8</b></span></span></p>
+<p>Le personnage a perdu connaissance : endormi, assommé ou évanoui.</p>
+<p>Il lâche ce qu'il tenait et tombe À terre. Son <a href="../capacites-physiques/#mouvement">Mouvement</a> tombe à 0, et tous ses sens perdent en <a href="../sens/">clarté</a>. Il n'effectue aucune <a href="../../combat/deroulement-combat/">action</a> ni aucune <a href="../../combat/deroulement-combat/">réaction</a> : il ne se défend pas, et son résultat final de défense vaut 0 contre chaque attaque.</p>
+<p>Percevoir quelque chose lui permet de reprendre connaissance, si la cause le permet : un dormeur se réveille, un assommé reste au sol.</p>
 </div>
 </div>
-<blockquote>
-<p>Les états liés aux sens (cécité, surdité, aveuglement, assourdissement…) ne figurent pas ici : ils sont gérés par l'acuité des <a href="../sens/">sens</a>.</p>
-</blockquote>
 </div>
 </article></div>
 <div class="gloss-defs">
@@ -3000,13 +3029,13 @@
               </div>
 </div>
 </a>
-<a aria-label="Suivant: Formations martiales" class="md-footer__link md-footer__link--next" href="../../formation/formations-martiales/">
+<a aria-label="Suivant: Influence" class="md-footer__link md-footer__link--next" href="../influence/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Suivant
               </span>
 <div class="md-ellipsis">
-                Formations martiales
+                Influence
               </div>
 </div>
 <div class="md-footer__button md-icon">

@@ -171,11 +171,29 @@ html.night .md-typeset .wperte-img .wf-img {
 html.night .md-typeset .wzone-titre,
 html.night .md-typeset .wperte .wf-nom,
 html.night .md-typeset .mcard table:not([class]) tbody tr:nth-child(odd) td,
-html.night .md-typeset .mcard table:not([class]) tbody tr:nth-child(even) td {
+html.night .md-typeset .mcard table:not([class]) tbody tr:nth-child(even) td,
+html.night .md-typeset .annexe-dnd table:not([class]) tbody tr:nth-child(odd) td,
+html.night .md-typeset .annexe-dnd table:not([class]) tbody tr:nth-child(even) td {
   border-bottom-color: #3c3527;
+}
+html.night .md-typeset .annexe-dnd table:not([class]) th {
+  color: #e8dfcb;
+  border-bottom-color: #3c3527;
+}
+html.night .md-typeset .annexe-dnd table:not([class]),
+html.night .md-typeset .annexe-dnd table:not([class]) td {
+  background: none;
 }
 html.night .md-typeset .wf-soins {
   border-top-color: #3c3527;
+}
+/* Trait de groupe des paliers d'aura (arts sociaux) : version nuit */
+html.night .md-typeset .cols [data-cols="aura"] table:not([class]) tbody tr:nth-child(5) td,
+html.night .md-typeset .cols [data-cols="aura"] table:not([class]) tbody tr:nth-child(8) td,
+html.night .md-typeset .cols [data-cols="grades"] table:not([class]) tbody tr:nth-child(2) td,
+html.night .md-typeset .cols [data-cols="grades"] table:not([class]) tbody tr:nth-child(4) td,
+html.night .md-typeset .cols [data-cols="grades"] table:not([class]) tbody tr:nth-child(12) td {
+  border-top-color: #8a8a8a;
 }
 
 /* Nav / arbre du livre + changelog (filets à gauche) → bordure sombre */
@@ -320,6 +338,12 @@ html.night .md-typeset .zchip {
   color: #e8dfcb;
 }
 html.night .md-typeset .zones .zlbl { color: #a89e88; }
+
+/* Sens de chaque niveau (cartes de la page Sens) : filets clairs → sombres,
+   étiquettes → secondaire (les pastilles .zchip sont déjà couvertes ci-dessus). */
+html.night .md-typeset .sens-niveau { border-top-color: #3c3527; }
+html.night .md-typeset .sens-niveau:not(:last-child) { border-bottom-color: #3c3527; }
+html.night .md-typeset .sens-niveau .zlbl { color: #a89e88; }
 
 /* Matrice des sens (page Formes du vivant) : dégradé vert clair (primaire) → foncé
    (inexistant), adapté au fond sombre ; box-shadow de la même couleur pour souder les

@@ -19,6 +19,21 @@
    ce fichier. Plus aucune requête vers Google (l'IP du visiteur ne part plus chez
    un tiers) et le build du PDF ne dépend plus du réseau. */
 
+/* Symboles de notation du livre (● ○ utilité, ★ ☆ illégalité, ✦ ✧ paliers) :
+   absents d'Alegreya et de Cinzel, ils tombent en police système et sortent
+   trop gros face au texte. Cette face dédiée les reprend du système et les
+   réduit via size-adjust ; placée en tête de chaque pile avec un unicode-range
+   limité à ces six codes, elle ne touche aucun autre caractère.
+   RÈGLE : la taille des symboles se règle ICI (size-adjust), jamais par un
+   font-size local ; toute nouvelle notation à symboles ajoute son code au
+   unicode-range et sa police à la pile. */
+@font-face {
+  font-family: 'Symboles JDR';
+  src: local('Segoe UI Symbol'), local('Apple Symbols'), local('Noto Sans Symbols'), local('DejaVu Sans');
+  unicode-range: U+25CB, U+25CF, U+2605-2606, U+2726-2727;
+  size-adjust: 85%;
+}
+
 /* ---------- 1. Variables ---------- */
 :root {
   --green-title:   #667861;
@@ -40,7 +55,7 @@
   /* Polices de l'interface Material. mkdocs.yml pose `font: false` pour couper
      l'auto-chargement Google Fonts ; Material n'injecte donc plus ces variables
      et on les redéclare ici, pointant sur les polices auto-hébergées (fonts.css). */
-  --md-text-font: 'Alegreya';
+  --md-text-font: 'Symboles JDR', 'Alegreya';
   --md-code-font: 'Roboto Mono';
 }
 
@@ -65,7 +80,7 @@
 .md-typeset li,
 .md-typeset td,
 .md-typeset th {
-  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
+  font-family: 'Symboles JDR', 'Alegreya', 'EB Garamond', Garamond, serif;
 }
 .md-typeset {
   font-size: 0.72rem;
@@ -81,7 +96,7 @@
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-section);
 }
@@ -264,7 +279,7 @@
   max-width: calc(100% - 14px);
   box-sizing: border-box;
   padding: 1px 5px;
-  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
+  font-family: 'Symboles JDR', 'Alegreya', 'EB Garamond', Garamond, serif;
   font-size: 0.5rem;
   line-height: 1.4;
   color: #fff;
@@ -282,7 +297,7 @@
 .md-typeset .cols .portrait em {
   display: block;
   margin-top: 0.35rem;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-style: normal;
   font-size: 0.66rem;
   color: var(--green-section);
@@ -425,7 +440,7 @@
 }
 .md-typeset .eclat-card p strong:first-child {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title);
   letter-spacing: 0.02em;
@@ -446,7 +461,7 @@
   padding: 0.4rem 0;
 }
 .md-typeset .eclat-defs dt {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title);
   letter-spacing: 0.02em;
@@ -502,7 +517,7 @@
    sans fond spécial), jamais les autres tables du livre. ── */
 .md-typeset .cj-modules.anima h3,
 .md-typeset .cj-modules.anima h4 {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   color: #8a4632;
   font-variant: small-caps;
   letter-spacing: 0.06em;
@@ -569,7 +584,7 @@
 }
 .md-typeset .defs.titled p strong:first-child {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title, #5a7d2a);
   font-size: 0.82rem;
@@ -579,7 +594,7 @@
 /* Ligne de prérequis sous le nom de manœuvre : Cinzel gris, plus petit. */
 .md-typeset .defs.titled p .prereq {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 400;
   font-style: normal;
   color: #8a8478;
@@ -605,7 +620,7 @@
 .md-typeset .mcard p:last-child { margin-bottom: 0; }
 .md-typeset .mcard > p:first-child strong:first-child {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title);
   font-size: 0.84rem;
@@ -616,7 +631,7 @@
 }
 .md-typeset .mcard .prereq {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 600;
   font-style: normal;
   color: #8a8478;
@@ -642,7 +657,7 @@
 }
 .md-typeset .sblock > p:first-child strong:first-child {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.06em;
@@ -657,7 +672,7 @@
 .md-typeset .sblock > p:last-child { margin-bottom: 0.4rem; }
 /* Paliers (Prise, Paralysie, Mutisme, Immobilisé, Abri) */
 .md-typeset .sblock .palier {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   font-size: 0.68rem;
   color: var(--green-section);
@@ -685,7 +700,7 @@
   white-space: nowrap;
 }
 .md-typeset .sblock .smod b {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   font-size: 0.7rem;
   color: #a1462f;
@@ -731,7 +746,7 @@
   border: 1px solid #ddd5c2;
   border-radius: 999px;
   background: #f3efe0;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 600;
   font-size: 0.56rem;
   letter-spacing: 0.05em;
@@ -748,7 +763,7 @@
 .md-typeset .zones .zlbl {
   display: inline-block;
   min-width: 3.6rem;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 600;
   font-size: 0.54rem;
   letter-spacing: 0.05em;
@@ -795,7 +810,7 @@
    pour que le filet épouse la largeur du texte). Subordonné à l'en-tête centré. */
 .md-typeset .mcard.art p.palier {
   display: table;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -821,7 +836,7 @@
   box-shadow: 0 1px 2px rgba(60, 50, 20, 0.06);
 }
 .md-typeset .gcard > p:first-child {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title);
   font-size: 0.82rem;
@@ -1033,7 +1048,7 @@
 }
 .md-typeset .optrule > p:first-child strong:first-child {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   color: var(--green-title);
   font-size: 0.8rem;
@@ -1054,7 +1069,7 @@
   margin: 0 0 1.4rem;
 }
 .md-typeset .wzone-titre {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   color: var(--green-title);
   font-size: 0.82rem;
   margin: 0 0 0.45rem;
@@ -1136,7 +1151,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
   font-size: 0.85rem;
   color: #fdfaf1;
@@ -1146,7 +1161,7 @@
 }
 .md-typeset .wf-nom {
   grid-area: nom;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 600;
   font-size: 0.7rem;
   line-height: 1.15;
@@ -1179,7 +1194,7 @@
 .md-typeset .wf-soin:last-child { margin-bottom: 0; }
 .md-typeset .wf-lbl {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-size: 0.54rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1263,7 +1278,7 @@
 /* Ligne « TYPE : … » sous le titre : étiquette grise en Cinzel, en majuscules,
    indiquant quels types de conjuration peuvent prendre ce module. */
 .md-typeset .cj-modules .mod-type {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-size: 0.58rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1346,6 +1361,27 @@
   background: none !important;
   background-color: transparent !important;
 }
+/* Annexe Conversion Magicien D&D : tables au style des fiches d'armes (épuré,
+   sans en-tête plein ni zébrures, filets fins). */
+.md-typeset .annexe-dnd table:not([class]) { background: none; }
+.md-typeset .annexe-dnd table:not([class]) th {
+  background: none;
+  color: #4a4538;
+  text-align: left;
+  border-bottom: 1px solid #ded5c0;
+}
+.md-typeset .annexe-dnd table:not([class]) td { background: none; }
+.md-typeset .annexe-dnd table:not([class]) tbody tr:nth-child(odd)  td,
+.md-typeset .annexe-dnd table:not([class]) tbody tr:nth-child(even) td {
+  background: none;
+  border-bottom: 1px solid #ece7d8;
+}
+.md-typeset .annexe-dnd table:not([class]) tr:hover,
+.md-typeset .annexe-dnd table:not([class]) tr:hover td,
+.md-typeset .annexe-dnd table:not([class]) tr:hover th {
+  background: none !important;
+  background-color: transparent !important;
+}
 
 /* (ancien bloc :has(th:nth-child(10)) « Archétype » supprimé : CSS mort d'avant la refonte des armes, il cassait la table Formes) */
 
@@ -1355,7 +1391,7 @@
   box-shadow: none;
 }
 .md-header__title {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 700;
 }
 .md-tabs {
@@ -1375,7 +1411,7 @@
   margin: 0 .1rem;
 }
 .md-tabs__link {
-  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
+  font-family: 'Symboles JDR', 'Alegreya', 'EB Garamond', Garamond, serif;
   font-size: .72rem;
   margin: 0;
   padding: .18rem .7rem;
@@ -1413,7 +1449,7 @@
   line-height: 1.3;
 }
 .md-nav__title {
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-size: 0.7rem;
   color: var(--green-section);
 }
@@ -1441,7 +1477,7 @@ html.book-loading .md-content__inner {
   visibility: hidden;
 }
 .book-nav {
-  font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
+  font-family: 'Symboles JDR', 'Alegreya', 'EB Garamond', Garamond, serif;
   font-size: 0.7rem;
   line-height: 1.3;
   padding: 0.6rem 0.7rem;
@@ -1458,7 +1494,7 @@ html.book-loading .md-content__inner {
 .book-group-title {
   display: block;
   padding: 0.2rem 0;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 400;
   font-size: 0.72rem;
   color: var(--green-section);
@@ -1480,7 +1516,7 @@ html.book-loading .md-content__inner {
 .book-chapter > .book-link {
   display: block;
   padding: 0.2rem 0;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 400;
   font-size: 0.72rem;
   color: var(--green-section);
@@ -1934,7 +1970,7 @@ html.book-loading .md-content__inner {
     z-index: 1;
     margin: 0;
     padding: 0.5rem 0.8rem;
-    font-family: 'Cinzel', Garamond, serif;
+    font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
     font-size: 0.72rem;
     color: #fff;
     background: var(--green-title);
@@ -1996,7 +2032,7 @@ html.book-loading .md-content__inner {
 .md-typeset .sens-niveau p:last-child { margin-bottom: 0; }
 .md-typeset .sens-niveau .zlbl {
   display: block;
-  font-family: 'Cinzel', Garamond, serif;
+  font-family: 'Symboles JDR', 'Cinzel', Garamond, serif;
   font-weight: 600;
   font-size: 0.54rem;
   letter-spacing: 0.05em;
@@ -2026,15 +2062,41 @@ html.book-loading .md-content__inner {
 .md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(1),
 .md-typeset .cols [data-cols="axe"] table:not([class]) td:nth-child(1),
 .md-typeset .somme-table table:not([class]) th:nth-child(1),
-.md-typeset .somme-table table:not([class]) td:nth-child(1) { width: 2.3rem !important; padding-left: 0.15rem !important; padding-right: 0.15rem !important; text-align: center !important; }
+.md-typeset .somme-table table:not([class]) td:nth-child(1) { width: 1.9rem !important; min-width: 0 !important; padding-left: 0.1rem !important; padding-right: 0.1rem !important; text-align: center !important; }
+/* L'entête (« Cran », « Somme ») est ce qui force la largeur : police réduite. */
+.md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(1),
+.md-typeset .somme-table table:not([class]) th:nth-child(1) { font-size: 0.55rem; }
 .md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(2),
 .md-typeset .cols [data-cols="axe"] table:not([class]) td:nth-child(2),
 .md-typeset .somme-table table:not([class]) th:nth-child(2),
-.md-typeset .somme-table table:not([class]) td:nth-child(2) { width: 5.5rem !important; text-align: left !important; white-space: nowrap; }
+.md-typeset .somme-table table:not([class]) td:nth-child(2) { width: 5.5rem !important; min-width: 0 !important; text-align: left !important; white-space: nowrap; }
 .md-typeset .cols [data-cols="axe"] table:not([class]) th:nth-child(3),
 .md-typeset .cols [data-cols="axe"] table:not([class]) td:nth-child(3),
 .md-typeset .somme-table table:not([class]) th:nth-child(3),
-.md-typeset .somme-table table:not([class]) td:nth-child(3) { width: auto !important; text-align: left !important; }
+.md-typeset .somme-table table:not([class]) td:nth-child(3) { width: auto !important; min-width: 0 !important; text-align: left !important; }
 /* Échelle des crans (page Influence) : cran étroit centré, aligné sur les autres. */
 .md-typeset .crans-table table:not([class]) th:nth-child(1),
-.md-typeset .crans-table table:not([class]) td:nth-child(1) { width: 2.6rem; text-align: center; }
+.md-typeset .crans-table table:not([class]) td:nth-child(1) { width: 2.6rem; min-width: 0; text-align: center; }
+/* Table de l'aura (carte Aura farming) : palier | aura | effet, deux premières
+   colonnes étroites et centrées, mêmes contraintes d'enveloppe et de min-width
+   (Firefox) que les tables d'influence. */
+.md-typeset .cols [data-cols="aura"] .md-typeset__scrollwrap { margin: 0 !important; overflow-x: visible; }
+.md-typeset .cols [data-cols="aura"] .md-typeset__table { display: block !important; width: 100% !important; margin: 0 !important; padding: 0 !important; }
+.md-typeset .cols [data-cols="aura"] table:not([class]) { width: 100% !important; table-layout: fixed !important; }
+.md-typeset .cols [data-cols="aura"] table:not([class]) th:nth-child(1),
+.md-typeset .cols [data-cols="aura"] table:not([class]) td:nth-child(1) { width: 2.4rem !important; min-width: 0 !important; padding-left: 0.1rem !important; padding-right: 0.1rem !important; text-align: center !important; }
+.md-typeset .cols [data-cols="aura"] table:not([class]) th:nth-child(2),
+.md-typeset .cols [data-cols="aura"] table:not([class]) td:nth-child(2) { width: 3.6rem !important; min-width: 0 !important; padding-left: 0.15rem !important; padding-right: 0.15rem !important; text-align: center !important; white-space: nowrap; }
+.md-typeset .cols [data-cols="aura"] table:not([class]) th:nth-child(3),
+.md-typeset .cols [data-cols="aura"] table:not([class]) td:nth-child(3) { width: auto !important; min-width: 0 !important; text-align: left !important; }
+/* Trait plus sombre entre les groupes de paliers (Basique 1-3 / Avancé 4-6 /
+   Expert 7-9) : au-dessus des lignes des paliers 4 et 7 (ligne 1 = palier 0). */
+.md-typeset .cols [data-cols="aura"] table:not([class]) tbody tr:nth-child(5) td,
+.md-typeset .cols [data-cols="aura"] table:not([class]) tbody tr:nth-child(8) td { border-top: 1px solid #999; }
+/* Table des grades du Mage noir : même trait au-dessus des grades que l'art gravit
+   (Déchet de la société, Mage noir, Transcendant : lignes 2, 4 et 12). */
+.md-typeset .cols [data-cols="grades"] table:not([class]) tbody tr:nth-child(2) td,
+.md-typeset .cols [data-cols="grades"] table:not([class]) tbody tr:nth-child(4) td,
+.md-typeset .cols [data-cols="grades"] table:not([class]) tbody tr:nth-child(12) td { border-top: 1px solid #999; }
+.md-typeset .cols [data-cols="aura"] table:not([class]) th:nth-child(1),
+.md-typeset .cols [data-cols="aura"] table:not([class]) th:nth-child(2) { font-size: 0.55rem !important; }

@@ -1,357 +1,73 @@
 [
 {
-"short": "756057a",
+"short": "a4fe5e7",
 "author": "Théo Cavaillès",
-"date": "2026-07-13T17:39:23+02:00",
-"message": "Armes : prose refaite au registre du livre, fiches normalisées, Zone renommée Sphère, arbitrages tranchés (portée courte/longue à −10, une seule attaque en aire, cumul des manœuvres, entrave par difficulté)",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/756057a3d2e40884e11c64b282bdcd17ecbc0d34",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/art/arts-martiaux.md",
-"url": "content/regles/art/arts-martiaux/"
-},
-{
-"status": "modified",
-"filename": "content/regles/combat/armes.md",
-"url": "content/regles/combat/armes/"
-}
-]
-},
-{
-"short": "fc85ba1",
-"author": "Théo Cavaillès",
-"date": "2026-07-13T01:32:06+02:00",
-"message": "Glossaire au survol refait : 1 exemple précis par valeur, 6 tables de capacités couvertes",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/fc85ba16ec69368b6ad1ecbbb93922f1e3a28b6d",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-}
-]
-},
-{
-"short": "8373556",
-"author": "Théo Cavaillès",
-"date": "2026-07-12T16:26:37+02:00",
-"message": "Site responsive : le demi-écran de PC garde 2 colonnes (3 paliers)",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/8373556ed3257c7967ba75efa13c8a3ed3aae646",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-}
-]
-},
-{
-"short": "85b1cbc",
-"author": "Théo Cavaillès",
-"date": "2026-07-12T16:12:48+02:00",
-"message": "Site responsive : mise en page verticale (téléphone), automatique",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/85b1cbcc6bd3ce35eb1608cc7f093cb76787e5d7",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/caracteristiques.md",
-"url": "content/regles/personnage/caracteristiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/competences.md",
-"url": "content/regles/personnage/competences/"
-}
-]
-},
-{
-"short": "6a3e6ac",
-"author": "Théo Cavaillès",
-"date": "2026-07-11T18:33:33+02:00",
-"message": "Fiche HxH Roll20 : affichage « fiche » nettement condensé",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6a3e6ac5d2e418dc575d2fc9782fa5cc7b5b5075",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-}
-]
-},
-{
-"short": "bb1c8b5",
-"author": "Théo Cavaillès",
-"date": "2026-07-11T18:16:43+02:00",
-"message": "Fiche HxH Roll20 : jets au tchat + affichage « fiche » condensé",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/bb1c8b54384bd7b203def9a39197805ab2957bc3",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-}
-]
-},
-{
-"short": "20b362b",
-"author": "Théo Cavaillès",
-"date": "2026-07-11T16:25:17+02:00",
-"message": "Fiche HxH éditable dans Roll20 (Attributes natifs) + refonte des caractéristiques",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/20b362beef679751bf2946d5536769a0eff050ac",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/caracteristiques.md",
-"url": "content/regles/personnage/caracteristiques/"
-}
-]
-},
-{
-"short": "b1e8c5c",
-"author": "Théo Cavaillès",
-"date": "2026-07-11T14:07:50+02:00",
-"message": "Extension Roll20 (Firefox + Chrome) et refonte du mouvement",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/b1e8c5cf0fb1e94b74fd1e1af91a9f2afc471aa1",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/deroulement-combat.md",
-"url": "content/regles/combat/deroulement-combat/"
-},
-{
-"status": "modified",
-"filename": "content/regles/monde/formes.md",
-"url": "content/regles/monde/formes/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-}
-]
-},
-{
-"short": "c84c2c1",
-"author": "Théo Cavaillès",
-"date": "2026-07-11T02:55:41+02:00",
-"message": "Attaque et Défense : refonte des manœuvres, chute/poussée, caractéristiques en cartes",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/c84c2c1132703e6d0d5ffb6f1003bdd83e88254c",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/manoeuvres.md",
-"url": "content/regles/combat/manoeuvres/"
-},
-{
-"status": "modified",
-"filename": "content/regles/monde/tailles.md",
-"url": "content/regles/monde/tailles/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/caracteristiques.md",
-"url": "content/regles/personnage/caracteristiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
-}
-]
-},
-{
-"short": "1ea2150",
-"author": "Théo Cavaillès",
-"date": "2026-07-10T17:52:39+02:00",
-"message": "Manoeuvres (attaque/defense), competences, chute recalibree ; corps du livre en Alegreya (chiffres alignes, EB Garamond gardee pour la Forge)",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/1ea21504a242c7b51c6e1040d442a5228ef89d70",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/art/arts-martiaux.md",
-"url": "content/regles/art/arts-martiaux/"
-},
-{
-"status": "modified",
-"filename": "content/regles/combat/armes.md",
-"url": "content/regles/combat/armes/"
-},
-{
-"status": "modified",
-"filename": "content/regles/combat/manoeuvres.md",
-"url": "content/regles/combat/manoeuvres/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/classe.md",
-"url": "content/regles/personnage/classe/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/competences.md",
-"url": "content/regles/personnage/competences/"
-}
-]
-},
-{
-"short": "4f893cb",
-"author": "Théo Cavaillès",
-"date": "2026-07-08T12:13:34+02:00",
-"message": "Armes : refonte (Propulsion en dégâts, portées réelles, munitions, Inefficace de près à 2 barèmes) + passe de cohérence multiagent ; retrait de la page Véhicules",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/4f893cbd651fe6bf809da9580863b781781df763",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/art/arts-martiaux.md",
-"url": "content/regles/art/arts-martiaux/"
-},
-{
-"status": "modified",
-"filename": "content/regles/combat/armes.md",
-"url": "content/regles/combat/armes/"
-},
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
-},
-{
-"status": "modified",
-"filename": "content/regles/formation/formations-martiales.md",
-"url": "content/regles/formation/formations-martiales/"
-},
-{
-"status": "added",
-"filename": "content/regles/monde/formes.md",
-"url": "content/regles/monde/formes/"
-},
-{
-"status": "removed",
-"filename": "content/regles/monde/vehicules.md",
-"url": null
-},
-{
-"status": "removed",
-"filename": "content/regles/nen/ancienne-version.md",
-"url": null
-},
-{
-"status": "removed",
-"filename": "content/regles/nen/formes.md",
-"url": null
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/techniques-nen.md",
-"url": "content/regles/nen/techniques-nen/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/transmutation.md",
-"url": "content/regles/nen/transmutation/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/capacites-physiques.md",
-"url": "content/regles/personnage/capacites-physiques/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/classe.md",
-"url": "content/regles/personnage/classe/"
-},
-{
-"status": "modified",
-"filename": "content/regles/personnage/competences.md",
-"url": "content/regles/personnage/competences/"
-}
-]
-},
-{
-"short": "0552288",
-"author": "Théo Cavaillès",
-"date": "2026-07-06T20:31:59+02:00",
-"message": "Arts martiaux, Forge/Atelier, géopolitique et contenu",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/0552288ddc3a2bd068f3f299be639abe3b12d725",
+"date": "2026-07-16T22:13:55+02:00",
+"message": "Arts en chantier (Mage noir, Écholocation, Vigie, Déjà-vu, Lung-gom-pa, Avalanche) + annexe Conversion Magicien D&D ; symboles ● ★ ✦ recalibrés via face dédiée",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/a4fe5e7e09bedcc618fc98205746e0a6e15b0f21",
 "files": [
 {
 "status": "added",
+"filename": "content/regles/annexes/conversion-magicien-dnd.md",
+"url": "content/regles/annexes/conversion-magicien-dnd/"
+},
+{
+"status": "modified",
 "filename": "content/regles/art/arts-artisanaux.md",
 "url": "content/regles/art/arts-artisanaux/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-artistiques.md",
 "url": "content/regles/art/arts-artistiques/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-athletiques.md",
 "url": "content/regles/art/arts-athletiques/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-furtifs.md",
 "url": "content/regles/art/arts-furtifs/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-intellectuels.md",
 "url": "content/regles/art/arts-intellectuels/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-martiaux.md",
 "url": "content/regles/art/arts-martiaux/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-naturels.md",
 "url": "content/regles/art/arts-naturels/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-sensoriels.md",
 "url": "content/regles/art/arts-sensoriels/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-sociaux.md",
 "url": "content/regles/art/arts-sociaux/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-techniques.md",
 "url": "content/regles/art/arts-techniques/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-transport.md",
 "url": "content/regles/art/arts-transport/"
 },
 {
-"status": "added",
+"status": "modified",
 "filename": "content/regles/art/arts-vitaux.md",
 "url": "content/regles/art/arts-vitaux/"
 },
@@ -361,139 +77,14 @@
 "url": "content/regles/combat/armes/"
 },
 {
-"status": "removed",
-"filename": "content/regles/combat/arts-martiaux.md",
-"url": null
-},
-{
 "status": "modified",
 "filename": "content/regles/combat/critique-blessures.md",
 "url": "content/regles/combat/critique-blessures/"
 },
 {
 "status": "modified",
-"filename": "content/regles/combat/manoeuvres.md",
-"url": "content/regles/combat/manoeuvres/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-artisanales.md",
-"url": "content/regles/formation/formations-artisanales/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-artistiques.md",
-"url": "content/regles/formation/formations-artistiques/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-athletiques.md",
-"url": "content/regles/formation/formations-athletiques/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-furtives.md",
-"url": "content/regles/formation/formations-furtives/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-intellectuelles.md",
-"url": "content/regles/formation/formations-intellectuelles/"
-},
-{
-"status": "renamed",
-"filename": "content/regles/formation/formations-martiales.md",
-"url": "content/regles/formation/formations-martiales/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-naturelles.md",
-"url": "content/regles/formation/formations-naturelles/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-sensorielles.md",
-"url": "content/regles/formation/formations-sensorielles/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-sociales.md",
-"url": "content/regles/formation/formations-sociales/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-techniques.md",
-"url": "content/regles/formation/formations-techniques/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-transport.md",
-"url": "content/regles/formation/formations-transport/"
-},
-{
-"status": "added",
-"filename": "content/regles/formation/formations-vitales.md",
-"url": "content/regles/formation/formations-vitales/"
-},
-{
-"status": "added",
-"filename": "content/regles/monde/vehicules.md",
-"url": "content/regles/monde/vehicules/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/archetypes-nen.md",
-"url": "content/regles/nen/archetypes-nen/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/aura.md",
-"url": "content/regles/nen/aura/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/capacites-de-nen.md",
-"url": "content/regles/nen/capacites-de-nen/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/conjuration.md",
-"url": "content/regles/nen/conjuration/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/emission.md",
-"url": "content/regles/nen/emission/"
-},
-{
-"status": "added",
-"filename": "content/regles/nen/formes.md",
-"url": "content/regles/nen/formes/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/manipulation.md",
-"url": "content/regles/nen/manipulation/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/refonte_nen.md",
-"url": "content/regles/nen/refonte_nen/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/renforcement.md",
-"url": "content/regles/nen/renforcement/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/techniques-nen.md",
-"url": "content/regles/nen/techniques-nen/"
-},
-{
-"status": "modified",
-"filename": "content/regles/nen/transmutation.md",
-"url": "content/regles/nen/transmutation/"
+"filename": "content/regles/monde/formes.md",
+"url": "content/regles/monde/formes/"
 },
 {
 "status": "modified",
@@ -502,23 +93,172 @@
 },
 {
 "status": "modified",
-"filename": "content/regles/personnage/classe.md",
-"url": "content/regles/personnage/classe/"
-},
-{
-"status": "modified",
 "filename": "content/regles/personnage/competences.md",
 "url": "content/regles/personnage/competences/"
 },
 {
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
+"status": "added",
+"filename": "content/regles/personnage/influence.md",
+"url": "content/regles/personnage/influence/"
 },
 {
 "status": "modified",
-"filename": "content/regles/personnage/points-formation.md",
-"url": "content/regles/personnage/points-formation/"
+"filename": "content/regles/personnage/sens.md",
+"url": "content/regles/personnage/sens/"
+}
+]
+},
+{
+"short": "d7ebde5",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T21:53:39+02:00",
+"message": "Blessures : malus global, pas de 10, table dérivée de la visée",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d7ebde5d315cbcd9a4ecf8b29ccca27901a2bc11",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "6b68cb6",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T21:45:45+02:00",
+"message": "Blessures : le Poumon retire enfin l'état Immobilisé",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6b68cb6c087a5d07c47b2106bbaa840a81c213bb",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "00bd221",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T21:44:45+02:00",
+"message": "Blessures : constats de l'audit des 23 zones appliqués",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/00bd221d91cca33006ec39e2989d584cb129558a",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "39d594c",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T20:32:57+02:00",
+"message": "Blessures : malus de 10 en 10",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/39d594cb24032c8e54f24679471be12d65b2f7d7",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "af4bbd4",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T20:20:05+02:00",
+"message": "Blessures : malus recalibrés sur la visée, et passe de cohérence",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/af4bbd4a975d66ee997c03c9c0b25108d1042196",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "d7625b7",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T19:00:50+02:00",
+"message": "États : contradictions levées avec les fichiers vérifiés",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d7625b72e237687d9b9ce7126275c2be94b8c08c",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "de31589",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T18:31:38+02:00",
+"message": "États : puces Défense, abris renommés, descriptions resserrées",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/de31589064bcd2d1c963a9e6edac733bc3bd8c29",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "9c07ff2",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T18:12:49+02:00",
+"message": "États : la sortie d'un état dépend de sa cause, pas de l'état",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/9c07ff2eabc0d0fd8c581ed808b5d93d04ec7f8b",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "d9f1ffb",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T18:05:53+02:00",
+"message": "États : incohérences de règle corrigées",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d9f1ffbf80e6c9f94443e84cb777b67400bf4fb3",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "413b57c",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T17:52:51+02:00",
+"message": "États : prose reprise pour la clarté, mécaniques inchangées",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/413b57c10ddb7111ee1666e2ae3995a700c4440c",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "16cf8d9",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T17:35:40+02:00",
+"message": "États : retrait de « En joue », que rien n'employait",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/16cf8d92d3a80c81510a89ade78e6aeea1baaa7e",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
 }
 ]
 }
