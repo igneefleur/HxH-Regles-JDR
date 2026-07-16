@@ -1595,7 +1595,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin immobilise le membre et le met au repos. La contusion se résorbe et le nerf cesse d'être comprimé. Lève le malus de −30 et le malus de −10.",
+      "description": "Le médecin immobilise le membre et le met au repos. La contusion se résorbe et le nerf cesse d'être comprimé. Lève le malus de −30.",
       "mode": "repos",
       "jours": 7
      }
