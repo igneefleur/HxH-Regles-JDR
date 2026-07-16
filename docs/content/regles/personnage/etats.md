@@ -27,14 +27,6 @@ L'assaillant se dresse droit dans le dos du personnage, hors de sa vue et hors d
 </div>
 
 <div class="sblock" markdown>
-**En joue**
-
-<span class="smods"><span class="smod">Initiative <b>−50</b></span><span class="smod">Attaque <b>−20</b></span><span class="smod">Esquive <b>−120</b></span><span class="smod">Parade <b>−120</b></span><span class="smod">Physique <b>−100</b></span></span>
-
-Un adversaire a déjà pris l'avantage décisif et le tient à sa merci : la lame d'un couteau contre la gorge, la pointe d'une épée appuyée sur la poitrine, le canon d'une arme collé à la tempe. Rien ne le retient à proprement parler, et il pourrait tenter n'importe quel geste ; mais le plus infime mouvement suffirait à ce que l'acier s'enfonce, et le moindre sursaut peut lui coûter la vie. Ces malus ne valent que face à l'adversaire qui le tient ainsi en joue, et durent tant qu'il le tient.
-</div>
-
-<div class="sblock" markdown>
 **Espace réduit**
 
 <span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Esquive <b>−40</b></span><span class="smod">Parade <b>−40</b></span><span class="smod">Physique <b>−20</b></span></span>
@@ -175,18 +167,22 @@ Plus aucun muscle n'obéit ; figé, le personnage ne peut absolument plus bouger
 
 <span class="smods"><span class="smod">Actions physiques <b>−40</b></span><span class="smod">Mouvement <b>−2</b></span></span>
 
-Le personnage a été jeté au sol, ou s'y est effondré, et combat désormais couché sur le dos ou à quatre pattes. Privé d'appuis et de hauteur, il frappe, se dérobe et se démène à grand-peine : toutes ses actions physiques, attaque, esquive et parade comprises, subissent −40, et son [mouvement](capacites-physiques.md#mouvement) chute de 2 paliers, lu deux crans plus bas dans la table. Se relever coûte une action.
+Le personnage a été jeté au sol, ou s'y est effondré, et combat désormais couché sur le dos ou à quatre pattes. Privé d'appuis et de hauteur, il frappe, se dérobe et se démène à grand-peine : toutes ses actions physiques, attaque, esquive et parade comprises, subissent −40, et son [Mouvement](capacites-physiques.md#mouvement) subit −2. Se relever coûte une action.
 </div>
 
 <div class="sblock" markdown>
 **Inconscience**
 
-Assommé, sonné ou plongé dans le noir, le personnage a sombré : il gît sans connaissance, hors du combat. Il lâche ce qu'il tenait et tombe À terre. Il ne se défend plus, ne tentant aucun jet d'esquive ni de parade : toute attaque le touche donc automatiquement, et au corps à corps chaque coup porté contre lui est un coup critique. Il le reste jusqu'à ce qu'il reprenne connaissance.
+<span class="smods"><span class="smod">Clarté des sens <b>−8</b></span></span>
+
+Endormi, assommé ou évanoui, le personnage a perdu connaissance. Il lâche ce qu'il tenait et tombe À terre, et son [mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure. Durant son tour, il n'effectue aucune [action](../combat/deroulement-combat.md) ; hors de son tour, aucune [réaction](../combat/deroulement-combat.md). On considère qu'il se défend en utilisant la manœuvre [Se laisser toucher](../combat/manoeuvres.md).
+
+Tous ses sens perdent 8 points de [clarté](sens.md) tant qu'il est inconscient. Percevoir quelque chose lui permet de reprendre connaissance, si la cause de l'inconscience le permet : un dormeur se réveille, un assommé reste au sol.
 </div>
 
 </div>
 
-> Les états liés aux sens (cécité, surdité, aveuglement, assourdissement…) ne figurent pas ici : ils sont gérés par l'acuité des [sens](sens.md).
+> Les états liés aux sens (cécité, surdité, aveuglement, assourdissement…) ne figurent pas ici : ils sont gérés par la clarté des [sens](sens.md).
 
 </div>
 
