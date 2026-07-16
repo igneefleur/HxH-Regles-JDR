@@ -66,6 +66,16 @@ def loc_table():
             "<tbody>\n" + "\n".join(rows) + "\n</tbody>\n</table>")
 
 
+SEUILS = {"Triviale": 0, "Très facile": 20, "Facile": 40, "Moyenne": 80, "Difficile": 120,
+          "Très difficile": 180, "Absurde": 240, "Quasi impossible": 320, "Impossible": 400,
+          "Surhumaine": 520, "Prodigieuse": 640, "Insurmontable": 780, "Inimaginable": 920}
+
+
+def diff_txt(nom):
+    """Forme canonique du livre : « difficulté Moyenne (80) » (voir armes.md, Déchirante)."""
+    return f"difficulté {esc(nom)} ({SEUILS[nom]})"
+
+
 def jours_txt(j):
     j = int(j)
     return f"{j} {'jour' if j <= 1 else 'jours'}"
@@ -83,7 +93,7 @@ def soin(label, roll, desc=None, aucun=False):
 def secours_block(ps):
     if not ps.get("possible"):
         return soin("Secours", None, aucun=True)
-    return soin("Secours", f'Médecine (Premiers secours) Difficulté {esc(ps["difficulte"])}',
+    return soin("Secours", f'Médecine (Premiers secours), {diff_txt(ps["difficulte"])}',
                 ps["description"])
 
 
@@ -94,9 +104,9 @@ def traitement_block(tr):
     if mode == "repos":
         roll = f'Repos : {jours_txt(tr["jours"])}'
     elif mode == "chirurgie":
-        roll = f'Médecine (Chirurgie) Difficulté {esc(tr["difficulte"])}'
+        roll = f'Médecine (Chirurgie), {diff_txt(tr["difficulte"])}'
     else:  # chirurgie_repos
-        roll = (f'Médecine (Chirurgie) Difficulté {esc(tr["difficulte"])}, '
+        roll = (f'Médecine (Chirurgie), {diff_txt(tr["difficulte"])}, '
                 f'puis Repos : {jours_txt(tr["jours"])}')
     return soin("Traitement", roll, tr["description"])
 
@@ -187,7 +197,7 @@ Une plaie ouverte continue de saigner tant qu'elle n'est pas refermée. « Saign
 
 ### Soigner une blessure
 
-Chaque blessure se soigne en deux temps, indiqués sous son degré. Les premiers secours sont un geste d'urgence : un test de Médecine qui stoppe l'hémorragie et stabilise le blessé. Le traitement est la vraie réparation : un test de Médecine (Chirurgie), du repos, ou les deux quand il faut opérer puis laisser convalescer. Il lève les malus et restaure la zone, hormis les pertes définitives. Chaque degré détaille son effet, ses premiers secours et son traitement.
+Chaque blessure se soigne en deux temps, indiqués sous son degré. Les premiers secours sont un geste d'urgence : un jet de Médecine qui stoppe l'hémorragie et stabilise le blessé. Le traitement est la vraie réparation : un jet de Médecine (Chirurgie), du repos, ou les deux quand il faut opérer puis laisser convalescer. Il lève les malus et restaure la zone, hormis les pertes définitives. Chaque degré détaille son effet, ses premiers secours et son traitement.
 
 <div class="optrule" markdown>
 **Règle optionnelle**
@@ -200,6 +210,8 @@ Le MJ peut choisir de n'appliquer les critiques qu'une fois le combat terminé, 
 ### Blessures
 
 Une fois le degré et la zone connus, on lit la blessure dans l'entrée de la zone touchée, à la ligne du degré. Quelques zones se lisent à l'entrée d'une voisine : l'Avant-bras au Bras, la Cheville au Pied, la Hanche au Genou, le Doigt à la Main, et les Testicules comme la Vulve aux Parties génitales.
+
+Une zone hors d'usage ne répond plus : le blessé ne peut accomplir aucune action qui l'emploie, jusqu'à ce que le traitement lui en rende l'usage. Le malus d'une blessure, lui, pèse sur les jets qu'elle indique ; il monte avec le degré, et d'autant plus haut que la zone est difficile à viser.
 
 """
 
