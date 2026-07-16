@@ -213,6 +213,8 @@ Une fois le degré et la zone connus, on lit la blessure dans l'entrée de la zo
 
 Une zone hors d'usage ne répond plus : le blessé ne peut accomplir aucune action qui l'emploie, jusqu'à ce que le traitement lui en rende l'usage. Le malus d'une blessure, lui, pèse sur les jets qu'elle indique ; il monte avec le degré, et d'autant plus haut que la zone est difficile à viser.
 
+Toutes les créatures n'ont pas ces vingt-trois zones. C'est la [forme](../monde/formes.md) d'une créature qui dit les membres qu'elle porte, et une zone n'existe que si le membre dont elle fait partie existe : sans jambe, pas de genou. Une zone absente ne se vise pas, et un 1d100 de localisation qui la désigne se relance. Quand une forme porte plusieurs membres d'une même sorte, on tire au hasard celui que le coup atteint. Quand une zone porte une dernière entrée « Ne pas avoir de », celle-ci dit ce que change un corps qui en est dépourvu.
+
 """
 
 wounds = '<div class="wounds">\n' + "\n".join(zone_section(z) for z in ZONES) + '\n</div>'
