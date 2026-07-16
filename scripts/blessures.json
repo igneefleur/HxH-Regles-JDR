@@ -179,7 +179,7 @@
     {
      "degre": 4,
      "nom": "Tibia fracturé et muscle du mollet broyé jusqu'à l'os",
-     "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −50 à toute action physique au sol. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le tibia se brise net et le mollet est broyé jusqu'à l'os, la jambe ne porte plus rien et s'écroule sous une douleur fulgurante. Le blessé subit un Saignement de −15 PV, l'état À terre, sa jambe est hors d'usage et n'autorise plus aucun appui, et il subit −50 à toute action physique. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose une attelle autour de la fracture et comprime la plaie écrasée pour contenir l'hémorragie. Retire le saignement.",
@@ -187,7 +187,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit et fixe le tibia, reconstruit les muscles broyés du mollet, puis une rééducation redresse la jambe. Retire le saignement, lève le malus de −50, retire l'état À terre, retire l'état Inconscient et rend l'usage de la jambe.",
+      "description": "Le médecin réduit et fixe le tibia, reconstruit les muscles broyés du mollet, puis une rééducation redresse la jambe. Retire le saignement, lève le malus de −50, retire l'état À terre, retire l'état Inconscience et rend l'usage de la jambe.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -196,7 +196,7 @@
     {
      "degre": 5,
      "nom": "Membre inférieur arraché ou sectionné sous le genou",
-     "effet": "La jambe est arrachée ou tranchée net sous le genou et le moignon gicle de sang à chaque battement de cœur, la douleur terrasse le blessé au sol. Le blessé subit un Saignement de −20 PV, l'état À terre et la perte définitive de la jambe sous le genou : tout déplacement lui est impossible sans appareillage. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "La jambe est arrachée ou tranchée net sous le genou et le moignon gicle de sang à chaque battement de cœur, la douleur terrasse le blessé au sol. Le blessé subit un Saignement de −20 PV, l'état Immobilisé et l'état À terre, et perd définitivement la jambe sous le genou : il ne se déplacera plus sans appareillage. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot au-dessus du moignon pour étouffer le jet de sang. Retire le saignement.",
@@ -204,7 +204,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin régularise le moignon et assure l'hémostase des vaisseaux ouverts, puis une convalescence referme la plaie. Retire le saignement, lève le malus de −50, retire l'état À terre et retire l'état Inconscient. La perte de la jambe reste définitive.",
+      "description": "Le médecin régularise le moignon et assure l'hémostase des vaisseaux ouverts, puis une convalescence referme la plaie. Retire le saignement, lève le malus de −50, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte de la jambe reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 120
@@ -266,7 +266,7 @@
     {
      "degre": 4,
      "nom": "Côtes enfoncées perforant un poumon",
-     "effet": "Le volet thoracique s'effondre et les côtes enfoncées transpercent un poumon ; chaque respiration siffle et arrache du sang. Le blessé subit un Saignement de −10 PV, −50 aux actions physiques et a le torse hors d'usage pour tout effort intense. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le volet thoracique s'effondre et les côtes enfoncées transpercent un poumon ; chaque respiration siffle et arrache du sang. Le blessé subit un Saignement de −10 PV, −50 aux actions physiques, et son torse ne supporte plus aucune activité lourde. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin draine le foyer hémorragique et redresse le volet thoracique effondré pour rétablir le souffle. Retire le saignement.",
@@ -274,7 +274,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture le poumon perforé et reconstruit le volet thoracique, puis impose une convalescence. Retire le saignement, retire l'état Inconscient, lève le malus de −50 et rend l'usage du torse.",
+      "description": "Le médecin suture le poumon perforé et reconstruit le volet thoracique, puis impose une convalescence. Retire le saignement, retire l'état Inconscience, lève le malus de −50 et rend au torse sa pleine capacité.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 60
@@ -291,7 +291,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit la cage thoracique et referme la lésion, puis impose une convalescence. Le poumon détruit ne peut être restauré sans un poumon de remplacement viable. Retire le saignement, lève le malus de −50 et retire l'état Inconscient, mais la perte du poumon reste définitive.",
+      "description": "Le médecin reconstruit la cage thoracique et referme la lésion, puis impose une convalescence. Le poumon détruit ne peut être restauré sans un poumon de remplacement viable. Retire le saignement, lève le malus de −50 et retire l'état Inconscience, mais la perte du poumon reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -364,7 +364,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les organes perforés, recoud les intestins déchirés et reconstitue la paroi du ventre, puis le blessé observe une très longue convalescence. Retire le saignement, lève le malus de −40, retire l'état Immobilisé et retire l'état Inconscient.",
+      "description": "Le médecin suture les organes perforés, recoud les intestins déchirés et reconstitue la paroi du ventre, puis le blessé observe une très longue convalescence. Retire le saignement, lève le malus de −40, retire l'état Immobilisé et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -381,7 +381,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réalise l'hémostase de l'aorte, retire les organes détruits et reconstruit la paroi, puis le blessé observe une très longue convalescence. Le rétablissement des organes vitaux arrachés est impossible sans organes de remplacement viables. Retire le saignement, lève le malus de −50 et retire l'état Inconscient, mais la perte des organes arrachés reste définitive.",
+      "description": "Le médecin réalise l'hémostase de l'aorte, retire les organes détruits et reconstruit la paroi, puis le blessé observe une très longue convalescence. Le rétablissement des organes vitaux arrachés est impossible sans organes de remplacement viables. Retire le saignement, lève le malus de −50 et retire l'état Inconscience, mais la perte des organes arrachés reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
@@ -458,7 +458,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit l'os et les chairs du bras au fil d'une convalescence. Retire le saignement, lève le malus de −40, retire l'état Inconscient et rend l'usage du bras.",
+      "description": "Le médecin reconstruit l'os et les chairs du bras au fil d'une convalescence. Retire le saignement, lève le malus de −40, retire l'état Inconscience et rend l'usage du bras.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -467,7 +467,7 @@
     {
      "degre": 5,
      "nom": "Bras sectionné ou arraché",
-     "effet": "Le bras est tranché net ou arraché à la racine, et la douleur fulgurante terrasse le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement l'usage du bras. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "Le bras est tranché net ou arraché à la racine, et la douleur fulgurante terrasse le blessé. Le blessé subit un Saignement de −20 PV. Le blessé perd définitivement le bras. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot serré à la racine du bras pour juguler le flot de sang. Retire le saignement.",
@@ -475,7 +475,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin régularise et referme le moignon, puis laisse le bras cicatriser. Retire le saignement, lève le malus de −50 et retire l'état Inconscient, mais la perte du bras reste définitive.",
+      "description": "Le médecin régularise et referme le moignon, puis laisse le bras cicatriser. Retire le saignement, lève le malus de −50 et retire l'état Inconscience, mais la perte du bras reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -518,7 +518,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ligature le vaisseau et répare les fibres du muscle, puis une convalescence suit l'opération. Retire le saignement et lève les malus.",
+      "description": "Le médecin ligature le vaisseau et répare les fibres du muscle, puis une convalescence suit l'opération. Retire le saignement, lève les malus et rend la pleine mobilité de la jambe.",
       "mode": "chirurgie_repos",
       "difficulte": "Difficile",
       "jours": 30
@@ -547,12 +547,12 @@
      "effet": "Le fémur transperce la chair et l'artère fémorale est tranchée, le sang jaillit par saccades. Le blessé subit un Saignement de −20 PV, sa jambe est hors d'usage et il subit l'état À terre. Il subit aussi −40 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
-      "description": "Le médecin serre un garrot à la racine de la cuisse pour endiguer le flot. Retire le saignement et retire l'état Inconscient.",
+      "description": "Le médecin serre un garrot à la racine de la cuisse pour endiguer le flot. Retire le saignement et retire l'état Inconscience.",
       "difficulte": "Très difficile"
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture l'artère fémorale et consolide le fémur ouvert, puis une convalescence accompagne la guérison. Retire le saignement, lève le malus de −40, retire l'état Inconscient, retire l'état À terre et rend l'usage du membre.",
+      "description": "Le médecin suture l'artère fémorale et consolide le fémur ouvert, puis une convalescence accompagne la guérison. Retire le saignement, lève le malus de −40, retire l'état Inconscience, retire l'état À terre et rend l'usage du membre.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -561,15 +561,15 @@
     {
      "degre": 5,
      "nom": "Cuisse broyée, membre arraché à la racine",
-     "effet": "La cuisse est entièrement broyée et la jambe arrachée à la racine, ne laissant qu'un moignon béant. Le blessé subit un Saignement de −25 PV, perd définitivement sa jambe et subit l'état À terre. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "La cuisse est entièrement broyée et la jambe arrachée à la racine, ne laissant qu'un moignon béant. Le blessé subit un Saignement de −25 PV, perd définitivement sa jambe et subit l'état Immobilisé et l'état À terre. Il subit aussi −50 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
-      "description": "Le médecin pose un garrot sur la cuisse et comprime l'artère fémorale. Retire le saignement et retire l'état Inconscient.",
+      "description": "Le médecin pose un garrot sur la cuisse et comprime l'artère fémorale. Retire le saignement et retire l'état Inconscience.",
       "difficulte": "Absurde"
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin régularise le moignon et referme l'artère fémorale, puis une convalescence s'installe. Retire le saignement, lève le malus de −50 et retire l'état Inconscient. La perte de la jambe reste définitive.",
+      "description": "Le médecin régularise le moignon et referme l'artère fémorale, puis une convalescence s'installe. Retire le saignement, lève le malus de −50, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte de la jambe reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 120
@@ -641,7 +641,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les nerfs et les vaisseaux sectionnés, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscient, mais le bras reste hors d'usage et le malus permanent de −2 à la Force, à l'Agilité et à la Dextérité reste définitif.",
+      "description": "Le médecin suture les nerfs et les vaisseaux sectionnés, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience, mais le bras reste hors d'usage et le malus permanent de −2 à la Force, à l'Agilité et à la Dextérité reste définitif.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -658,7 +658,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin procède à la désarticulation et à la fermeture chirurgicale du moignon à l'épaule, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscient, mais la perte du bras reste définitive.",
+      "description": "Le médecin procède à la désarticulation et à la fermeture chirurgicale du moignon à l'épaule, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience, mais la perte du bras reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -730,7 +730,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin referme l'estomac perforé, lave la cavité souillée par le suc gastrique et juge la péritonite, puis une très longue convalescence prend le relais. Retire le saignement, lève le malus de −50, retire l'état Immobilisé et retire l'état Inconscient.",
+      "description": "Le médecin referme l'estomac perforé, lave la cavité souillée par le suc gastrique et jugule la péritonite, puis une très longue convalescence prend le relais. Retire le saignement, lève le malus de −50, retire l'état Immobilisé et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -747,7 +747,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin retire ce qui reste de l'estomac éclaté, lave la cavité ravagée par la péritonite et reconstruit le transit, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −60, retire l'état Immobilisé et retire l'état Inconscient, mais la perte de l'estomac et le malus permanent de −2 à l'Endurance restent définitifs.",
+      "description": "Le médecin retire ce qui reste de l'estomac éclaté, lave la cavité ravagée par la péritonite et reconstruit le transit, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −60, retire l'état Immobilisé et retire l'état Inconscience, mais la perte de l'estomac et le malus permanent de −2 à l'Endurance restent définitifs.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
@@ -824,7 +824,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pare les chairs broyées et referme la main mutilée, suivi d'une convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscient. La perte des doigts reste définitive.",
+      "description": "Le médecin pare les chairs broyées et referme la main mutilée, suivi d'une convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience. La perte des doigts reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -841,7 +841,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pare et referme le moignon du poignet, suivi d'une convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscient. La perte de la main reste définitive.",
+      "description": "Le médecin pare et referme le moignon du poignet, suivi d'une convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience. La perte de la main reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 90
@@ -918,7 +918,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit l'articulation et greffe les nerfs arrachés, puis une rééducation suit. Retire le saignement, lève le malus de −50, retire l'état Inconscient et rend l'usage de la main.",
+      "description": "Le médecin reconstruit l'articulation et greffe les nerfs arrachés, puis une rééducation suit. Retire le saignement, lève le malus de −50, retire l'état Inconscience et rend l'usage de la main.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -935,7 +935,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin régularise et referme le moignon, puis une convalescence suit. Retire le saignement, lève le malus de −60 et retire l'état Inconscient. La perte de la main reste définitive.",
+      "description": "Le médecin régularise et referme le moignon, puis une convalescence suit. Retire le saignement, lève le malus de −60 et retire l'état Inconscience. La perte de la main reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 120
@@ -976,7 +976,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin immobilise le genou et mène une rééducation. Lève les malus.",
+      "description": "Le médecin immobilise le genou et mène une rééducation. Lève les malus et rend au blessé sa pleine vitesse.",
       "mode": "repos",
       "jours": 30
      }
@@ -984,7 +984,7 @@
     {
      "degre": 3,
      "nom": "Fracture de la rotule et rupture des ligaments croisés",
-     "effet": "La rotule éclate et les ligaments croisés cèdent, l'articulation ne tient plus du tout et aucun appui n'est possible. Le blessé subit un Saignement de −10 PV, la jambe est hors d'usage, le blessé subit −50 à toute action physique impliquant cette jambe et subit l'état À terre.",
+     "effet": "La rotule éclate et les ligaments croisés cèdent, l'articulation ne tient plus du tout et aucun appui n'est possible. Le blessé subit un Saignement de −10 PV, sa jambe est hors d'usage, il subit l'état À terre et −50 à toute action physique.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose une attelle pour bloquer l'articulation et panse la plaie ouverte. Retire le saignement.",
@@ -1009,7 +1009,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit l'articulation broyée et répare le nerf sectionné, puis mène une rééducation. Rend l'usage de la jambe, lève le malus de −60, retire l'état À terre et retire l'état Inconscient.",
+      "description": "Le médecin reconstruit l'articulation broyée et répare le nerf sectionné, puis mène une rééducation. Rend l'usage de la jambe, lève le malus de −60, retire l'état À terre et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 150
@@ -1018,7 +1018,7 @@
     {
      "degre": 5,
      "nom": "Genou arraché, jambe sectionnée sous la cuisse",
-     "effet": "Le genou est arraché et la jambe se détache sous la cuisse, le sang jaillit du moignon. Le blessé subit un Saignement de −20 PV, perd définitivement la jambe sous le genou, subit l'état Immobilisé puis l'état À terre. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "Le genou est arraché et la jambe se détache sous la cuisse, le sang jaillit du moignon. Le blessé subit un Saignement de −20 PV, perd définitivement la jambe sous la cuisse, subit l'état Immobilisé et l'état À terre. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot sur la cuisse, au-dessus du moignon, pour couper l'hémorragie. Retire le saignement.",
@@ -1026,7 +1026,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin régularise le moignon et ferme les vaisseaux, puis mène une convalescence. Retire le saignement, lève le malus de −60, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscient. La perte de la jambe reste définitive.",
+      "description": "Le médecin régularise le moignon et ferme les vaisseaux, puis mène une convalescence. Retire le saignement, lève le malus de −60, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte de la jambe reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 180
@@ -1098,7 +1098,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre le thorax, draine la plèvre et répare le poumon affaissé pour qu'il se regonfle. Retire le saignement, lève le malus de −60 et retire l'état Inconscient.",
+      "description": "Le médecin ouvre le thorax, draine la plèvre et répare le poumon affaissé pour qu'il se regonfle. Retire le saignement, lève le malus de −60 et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1115,7 +1115,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pratique une chirurgie thoracique étendue, vide les poumons noyés et les remet en fonction au prix d'une longue convalescence. Retire le saignement, lève le malus de −70 et retire l'état Inconscient ; la fonction respiratoire reste durablement réduite.",
+      "description": "Le médecin pratique une chirurgie thoracique étendue, vide les poumons noyés et les remet en fonction au prix d'une longue convalescence. Retire le saignement, lève le malus de −70 et retire l'état Inconscience ; la fonction respiratoire reste durablement réduite.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
@@ -1132,7 +1132,7 @@
     {
      "degre": 1,
      "nom": "Foie contusionné, point de côté qui coupe le souffle",
-     "effet": "Le coup s'écrase sous les côtes droites et meurtrit le foie sans le rompre. Une douleur sourde irradie le côté, coupe le souffle et soulève le cœur à chaque mouvement du tronc. Le blessé subit −20 à toute action physique et à la nausée.",
+     "effet": "Le coup s'écrase sous les côtes droites et meurtrit le foie sans le rompre. Une douleur sourde irradie le côté, coupe le souffle et soulève le cœur à chaque mouvement du tronc. Le blessé subit −20 à toute action physique.",
      "premiersSecours": {
       "possible": false
      },
@@ -1170,7 +1170,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre la cavité, suture la fissure du foie et évacue le sang épanché, seul geste qui stoppe vraiment l'hémorragie interne. Retire le saignement, lève le malus de −40 et retire l'état Inconscient.",
+      "description": "Le médecin ouvre la cavité, suture la fissure du foie et évacue le sang épanché, seul geste qui stoppe vraiment l'hémorragie interne. Retire le saignement, lève le malus de −40 et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 30
@@ -1187,7 +1187,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre le ventre, clampe les vaisseaux du foie, suture les lacérations et évacue le sang, seul geste qui arrête l'hémorragie massive. Retire le saignement, lève le malus de −60, retire l'état Immobilisé et retire l'état Inconscient.",
+      "description": "Le médecin ouvre le ventre, clampe les vaisseaux du foie, suture les lacérations et évacue le sang, seul geste qui arrête l'hémorragie massive. Retire le saignement, lève le malus de −60, retire l'état Immobilisé et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1204,7 +1204,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ouvre la cavité en urgence, réséque la part broyée du foie, ligature les vaisseaux et évacue le sang, seul geste qui stoppe l'hémorragie cataclysmique. Retire le saignement, lève le malus de −70, retire l'état À terre et retire l'état Inconscient, mais la part de foie perdue et le malus de −2 à l'Endurance restent définitifs.",
+      "description": "Le médecin ouvre la cavité en urgence, réséque la part broyée du foie, ligature les vaisseaux et évacue le sang, seul geste qui stoppe l'hémorragie cataclysmique. Retire le saignement, lève le malus de −70, retire l'état À terre et retire l'état Inconscience, mais la part de foie perdue et le malus de −2 à l'Endurance restent définitifs.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
@@ -1280,7 +1280,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit le tarse et suture les nerfs et les vaisseaux. Rend l'usage du pied, lève le malus de −60, retire l'état À terre et retire l'état Inconscient.",
+      "description": "Le médecin reconstruit le tarse et suture les nerfs et les vaisseaux. Rend l'usage du pied, lève le malus de −60, retire l'état À terre et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -1289,7 +1289,7 @@
     {
      "degre": 5,
      "nom": "Pied sectionné, perte du membre",
-     "effet": "Le pied est tranché net et le moignon s'ouvre en grand, le blessé ne peut plus se tenir debout et s'écroule au sol. Le blessé subit un Saignement de −15 PV, la perte définitive du pied, ne peut plus se déplacer sans appareillage ou prothèse et se traîne, subit l'état Immobilisé et l'état À terre. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "Le pied est tranché net et le moignon s'ouvre en grand, le blessé ne peut plus se tenir debout et s'écroule au sol. Le blessé subit un Saignement de −15 PV, la perte définitive du pied, l'état Immobilisé et l'état À terre : il ne se déplacera plus sans appareillage ou prothèse. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot à la cheville ou au mollet, au-dessus du moignon. Retire le saignement.",
@@ -1297,7 +1297,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin régularise le moignon, ferme les vaisseaux et appareille le pied. Retire le saignement, lève le malus de −70, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscient. La perte du pied reste définitive.",
+      "description": "Le médecin régularise le moignon, ferme les vaisseaux et appareille le pied. Retire le saignement, lève le malus de −70, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte du pied reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 120
@@ -1346,7 +1346,7 @@
     {
      "degre": 3,
      "nom": "Fêlure du crâne",
-     "effet": "L'os du crâne se fêle sous l'impact dans un craquement sourd, et la tête bourdonne au point de troubler les sens. Le blessé subit un Saignement de −15 PV et −50 à la perception et à la concentration.",
+     "effet": "L'os du crâne se fêle sous l'impact dans un craquement sourd, et la tête bourdonne au point de troubler les sens. Le blessé subit un Saignement de −15 PV et −50 aux jets des groupes Sensoriel et Mental.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et bande la tête. Retire le saignement.",
@@ -1371,7 +1371,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit la fracture et soulage la pression intracrânienne, puis une longue convalescence rétablit le blessé. Retire le saignement, retire l'état Inconscient et lève le malus de −60.",
+      "description": "Le médecin réduit la fracture et soulage la pression intracrânienne, puis une longue convalescence rétablit le blessé. Retire le saignement, retire l'état Inconscience et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1388,7 +1388,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin relève la boîte crânienne enfoncée et draine l'hématome, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −70 et retire l'état Inconscient, mais le malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination reste définitif.",
+      "description": "Le médecin relève la boîte crânienne enfoncée et draine l'hématome, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −70 et retire l'état Inconscience, mais le malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination reste définitif.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 90
@@ -1405,7 +1405,7 @@
     {
      "degre": 1,
      "nom": "Lèvres fendues et dent ébréchée, élocution pâteuse",
-     "effet": "Le coup fend les lèvres et ébrèche une dent, le sang emplissant la bouche et empâtant chaque mot. Le blessé subit un Saignement de −5 PV et −20 à toute action vocale et aux incantations parlées.",
+     "effet": "Le coup fend les lèvres et ébrèche une dent, le sang emplissant la bouche et empâtant chaque mot. Le blessé subit un Saignement de −5 PV et −20 à toute action vocale.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin rince la bouche et comprime les lèvres fendues. Retire le saignement.",
@@ -1421,7 +1421,7 @@
     {
      "degre": 2,
      "nom": "Lèvres déchirées et dents brisées, articulation entravée",
-     "effet": "La bouche éclate, plusieurs dents se brisent et les lèvres se déchirent, l'articulation se noyant dans le sang et la douleur. Le blessé subit un Saignement de −10 PV et −30 à toute action vocale et aux incantations parlées.",
+     "effet": "La bouche éclate, plusieurs dents se brisent et les lèvres se déchirent, l'articulation se noyant dans le sang et la douleur. Le blessé subit un Saignement de −10 PV et −30 à toute action vocale.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin tamponne les gencives ouvertes et bande la mâchoire. Retire le saignement.",
@@ -1438,7 +1438,7 @@
     {
      "degre": 3,
      "nom": "Mâchoire fracturée et langue entaillée, dents arrachées",
-     "effet": "La mâchoire se fracture, la langue s'entaille et plusieurs dents sont arrachées, la parole se réduisant à un magma sanglant et inintelligible. Le blessé subit un Saignement de −15 PV, la perte définitive de plusieurs dents et −40 à toute action vocale et aux incantations parlées.",
+     "effet": "La mâchoire se fracture, la langue s'entaille et plusieurs dents sont arrachées, la parole se réduisant à un magma sanglant et inintelligible. Le blessé subit un Saignement de −15 PV, la perte définitive de plusieurs dents et −40 à toute action vocale.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin suture la langue entaillée et immobilise la mâchoire fracturée. Retire le saignement.",
@@ -1463,7 +1463,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin recoud la langue et reconstruit la mâchoire fracassée, puis une longue consolidation prend le relais. Retire l'état Mutisme partiel et lève le malus de −60, mais les dents perdues restent définitives.",
+      "description": "Le médecin recoud la langue et reconstruit la mâchoire fracassée, puis une longue consolidation prend le relais. Retire l'état Mutisme partiel, retire l'état Inconscience et lève le malus de −60, mais les dents perdues restent définitives.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1480,7 +1480,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ligature les vaisseaux et reconstruit la bouche. Retire le saignement, lève le malus de −70 et retire l'état Inconscient, mais le Mutisme partiel reste permanent et les dents perdues restent définitives.",
+      "description": "Le médecin ligature les vaisseaux et reconstruit la bouche. Retire le saignement, lève le malus de −70 et retire l'état Inconscience, mais le Mutisme partiel reste permanent et les dents perdues restent définitives.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
@@ -1553,7 +1553,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pratique une opération cardiaque pour refermer la perforation du ventricule. Retire le saignement, lève le malus de −60 et retire l'état Inconscient.",
+      "description": "Le médecin pratique une opération cardiaque pour refermer la perforation du ventricule. Retire le saignement, lève le malus de −60 et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Quasi impossible",
       "jours": 60
@@ -1570,7 +1570,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pratique une opération extrême, suivie d'une convalescence. Le traitement ne peut être réalisé sans un cœur de remplacement viable à transplanter. Retire le saignement, lève le malus de −70 et retire l'état Inconscient.",
+      "description": "Le médecin pratique une opération extrême, suivie d'une convalescence. Le traitement ne peut être réalisé sans un cœur de remplacement viable à transplanter. Retire le saignement, lève le malus de −70 et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 90
@@ -1589,7 +1589,7 @@
     {
      "degre": 1,
      "nom": "Contusion du coude, nerf ulnaire comprimé au passage de l'articulation",
-     "effet": "Le choc meurtrit le coude et comprime le nerf ulnaire au passage de l'articulation. Des fourmillements remontent le long de l'avant-bras et la main répond mal aux commandes. Le blessé subit −20 aux actions de la main et −10 aux actions de force du bras.",
+     "effet": "Le choc meurtrit le coude et comprime le nerf ulnaire au passage de l'articulation. Des fourmillements remontent le long de l'avant-bras et la main répond mal aux commandes. Le blessé subit −20 à toute action qui emploie cette main et −10 à toute action physique de ce bras.",
      "premiersSecours": {
       "possible": false
      },
@@ -1617,7 +1617,7 @@
     {
      "degre": 3,
      "nom": "Luxation du coude, tête radiale déboîtée et articulation bloquée",
-     "effet": "La tête radiale se déboîte et l'articulation se bloque dans une position contrainte. Le bras ne répond plus et le choc sonne le blessé. Le blessé subit −50 aux actions du membre.",
+     "effet": "La tête radiale se déboîte et l'articulation se bloque dans une position contrainte. Le bras ne répond plus et le choc sonne le blessé. Le blessé subit −50 à toute action de ce bras.",
      "premiersSecours": {
       "possible": false
      },
@@ -1631,7 +1631,7 @@
     {
      "degre": 4,
      "nom": "Fracture ouverte du coude, esquilles et section partielle des vaisseaux",
-     "effet": "L'os éclate à travers la peau en projetant des esquilles et les vaisseaux du pli du coude sont sectionnés en partie. Le sang gicle de la plaie béante tandis que le bras s'affaisse, inerte. Le blessé subit un Saignement de −10 PV et −60 aux actions du membre. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "L'os éclate à travers la peau en projetant des esquilles et les vaisseaux du pli du coude sont sectionnés en partie. Le sang gicle de la plaie béante tandis que le bras s'affaisse, inerte. Le blessé subit un Saignement de −10 PV et −60 à toute action de ce bras. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot en amont et comprime la plaie ouverte du coude. Retire le saignement.",
@@ -1639,7 +1639,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin réduit la fracture, retire les esquilles et suture les vaisseaux, puis le membre consolide en convalescence. Retire le saignement, retire l'état Inconscient et lève le malus de −60.",
+      "description": "Le médecin réduit la fracture, retire les esquilles et suture les vaisseaux, puis le membre consolide en convalescence. Retire le saignement, retire l'état Inconscience et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 60
@@ -1656,7 +1656,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin ampute le membre, ligature les vaisseaux et referme le moignon, puis vient une longue convalescence. Retire le saignement, lève le malus de −70 et retire l'état Inconscient. La perte du bras reste définitive.",
+      "description": "Le médecin ampute le membre, ligature les vaisseaux et referme le moignon, puis vient une longue convalescence. Retire le saignement, lève le malus de −70 et retire l'état Inconscience. La perte du bras reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -1728,7 +1728,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin répare l'artère fémorale et suture le nerf crural par microchirurgie. Retire le saignement, lève le malus de −60, retire l'état Inconscient, retire l'état À terre et rend l'usage de la jambe.",
+      "description": "Le médecin répare l'artère fémorale et suture le nerf crural par microchirurgie. Retire le saignement, lève le malus de −60, retire l'état Inconscience, retire l'état À terre et rend l'usage de la jambe.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -1737,7 +1737,7 @@
     {
      "degre": 5,
      "nom": "Aine broyée, hanche arrachée, jambe ne tenant plus que par les chairs",
-     "effet": "L'aine est broyée et la hanche arrachée : la jambe ne pend plus que par quelques lambeaux de chair tandis que le sang jaillit de la racine de la cuisse. Le blessé subit un Saignement de −25 PV et l'état À terre. Le blessé perd définitivement l'usage de la jambe. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
+     "effet": "L'aine est broyée et la hanche arrachée : la jambe ne pend plus que par quelques lambeaux de chair tandis que le sang jaillit de la racine de la cuisse. Le blessé subit un Saignement de −25 PV, l'état Immobilisé et l'état À terre, et perd définitivement la jambe. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin écrase l'artère fémorale contre l'os à la racine de la cuisse pour contenir le jaillissement. Retire le saignement.",
@@ -1745,7 +1745,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin procède à la désarticulation de la hanche, assure l'hémostase de la fémorale et referme le moignon. Retire le saignement, lève le malus de −70, retire l'état À terre et retire l'état Inconscient. La perte de la jambe reste définitive.",
+      "description": "Le médecin procède à la désarticulation de la hanche, assure l'hémostase de la fémorale et referme le moignon. Retire le saignement, lève le malus de −70, retire l'état Immobilisé, retire l'état À terre et retire l'état Inconscience. La perte de la jambe reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 120
@@ -1821,7 +1821,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin nettoie et reconstruit le labyrinthe détruit, puis une longue convalescence laisse le cerveau compenser le vertige. Retire le saignement, retire l'état À terre, lève le malus de −70 et retire l'état Inconscient, mais la perte de l'audition de cette oreille reste définitive.",
+      "description": "Le médecin nettoie et reconstruit le labyrinthe détruit, puis une longue convalescence laisse le cerveau compenser le vertige. Retire le saignement, retire l'état À terre, lève le malus de −70 et retire l'état Inconscience, mais la perte de l'audition de cette oreille reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1838,7 +1838,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin referme la fracture du rocher et draine l'hématome qui presse le cerveau, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −80 et retire l'état Inconscient, mais la perte de l'audition et le malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination restent définitifs.",
+      "description": "Le médecin referme la fracture du rocher et draine l'hématome qui presse le cerveau, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −80 et retire l'état Inconscience, mais la perte de l'audition et le malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination restent définitifs.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 90
@@ -1876,7 +1876,7 @@
      "effet": "Les os propres du nez se brisent et la cloison dévie sous l'impact, le sang ruisselant à gros bouillons tandis que les yeux larmoient à flots et noient la vue. Le blessé subit un Saignement de −10 PV et −40 à toute action visée et à la perception visuelle.",
      "premiersSecours": {
       "possible": true,
-      "description": "Le médecin méche les narines et comprime l'arête pour endiguer le flot. Retire le saignement.",
+      "description": "Le médecin mèche les narines et comprime l'arête pour endiguer le flot. Retire le saignement.",
       "difficulte": "Moyenne"
      },
      "traitement": {
@@ -1914,7 +1914,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit le massif facial et fixe les os effondrés, puis une longue convalescence suit l'opération. Retire le saignement, lève le malus de −70 et retire l'état Inconscient.",
+      "description": "Le médecin reconstruit le massif facial et fixe les os effondrés, puis une longue convalescence suit l'opération. Retire le saignement, lève le malus de −70 et retire l'état Inconscience.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -1931,7 +1931,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin relève la lame enfoncée et referme la brèche des enveloppes, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −80 et retire l'état Inconscient, mais le malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination reste définitif.",
+      "description": "Le médecin relève la lame enfoncée et referme la brèche des enveloppes, puis une très longue convalescence suit l'opération. Retire le saignement, lève le malus de −80 et retire l'état Inconscience, mais le malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination reste définitif.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 90
@@ -1950,7 +1950,7 @@
     {
      "degre": 1,
      "nom": "Coup sec aux parties génitales, choc douloureux",
-     "effet": "Un coup sec percute les parties génitales et une douleur fulgurante plie le blessé en deux, lui coupant le souffle dans un haut-le-cœur. Le blessé subit l'état À terre, une nausée tenace et −20 à toute action physique.",
+     "effet": "Un coup sec percute les parties génitales et une douleur fulgurante plie le blessé en deux, lui coupant le souffle dans un haut-le-cœur. Le blessé subit l'état À terre et −20 à toute action physique.",
      "premiersSecours": {
       "possible": false
      },
@@ -1964,7 +1964,7 @@
     {
      "degre": 2,
      "nom": "Contusion des parties génitales, tissus tuméfiés",
-     "effet": "Les parties génitales enflent sous la contusion et la moindre tension réveille une douleur sourde et nauséeuse qui cloue le blessé au sol. Le blessé subit un Saignement de −5 PV, l'état À terre, l'état Immobilisé, une nausée persistante et −40 à toute action physique.",
+     "effet": "Les parties génitales enflent sous la contusion et la moindre tension réveille une douleur sourde et nauséeuse qui cloue le blessé au sol. Le blessé subit un Saignement de −5 PV, l'état À terre, l'état Immobilisé et −40 à toute action physique.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin applique un froid compressif sur les tissus tuméfiés pour contenir l'hématome. Retire le saignement.",
@@ -1988,7 +1988,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture la déchirure des chairs génitales et draine l'hématome. Retire le saignement, retire l'état À terre, retire l'état Immobilisé et lève le malus de −60.",
+      "description": "Le médecin suture la déchirure des chairs génitales et draine l'hématome. Retire le saignement, retire l'état À terre, retire l'état Immobilisé, retire l'état Inconscience et lève le malus de −60.",
       "mode": "chirurgie_repos",
       "difficulte": "Très difficile",
       "jours": 45
@@ -2005,7 +2005,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin répare les chairs écrasées et reconstruit ce qui peut l'être par microchirurgie. Retire le saignement, retire l'état À terre, retire l'état Immobilisé, retire l'état Inconscient et lève le malus de −70.",
+      "description": "Le médecin répare les chairs écrasées et reconstruit ce qui peut l'être par microchirurgie. Retire le saignement, retire l'état À terre, retire l'état Immobilisé, retire l'état Inconscience et lève le malus de −70.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -2022,7 +2022,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin pare les chairs broyées et referme la zone par chirurgie, puis une très longue convalescence suit l'opération. Retire le saignement, retire l'état À terre, retire l'état Immobilisé, retire l'état Inconscient et lève le malus de −80, mais le malus permanent de −2 à l'Endurance et la perte de la fonction reproductrice restent définitifs.",
+      "description": "Le médecin pare les chairs broyées et referme la zone par chirurgie, puis une très longue convalescence suit l'opération. Retire le saignement, retire l'état À terre, retire l'état Immobilisé, retire l'état Inconscience et lève le malus de −80, mais le malus permanent de −2 à l'Endurance et la perte de la fonction reproductrice restent définitifs.",
       "mode": "chirurgie_repos",
       "difficulte": "Impossible",
       "jours": 120
@@ -2097,7 +2097,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin répare le vaisseau, reconstruit la trachée et décomprime la cervicale, puis une longue consolidation prend le relais. Retire l'état Mutisme total, retire l'état Paralysie partielle et lève le malus de −70.",
+      "description": "Le médecin répare le vaisseau, reconstruit la trachée et décomprime la cervicale, puis une longue consolidation prend le relais. Retire l'état Mutisme total, retire l'état Paralysie partielle, retire l'état Inconscience et lève le malus de −70.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -2114,7 +2114,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les vaisseaux et reconstruit le cou. Retire le saignement, lève le malus de −80 et retire l'état Inconscient, mais le Mutisme total reste permanent.",
+      "description": "Le médecin suture les vaisseaux et reconstruit le cou. Retire le saignement, lève le malus de −80 et retire l'état Inconscience, mais le Mutisme total reste permanent.",
       "mode": "chirurgie",
       "difficulte": "Absurde"
      }
@@ -2164,7 +2164,7 @@
     {
      "degre": 3,
      "nom": "Globe perforé, l'humeur s'écoule",
-     "effet": "Le globe oculaire est percé et l'humeur s'en écoule, l'œil s'affaisse et s'éteint à jamais. Le blessé subit un Saignement de −10 PV, la perte définitive de l'œil, puis subit −60 à toute action visée et à la perception visuelle.",
+     "effet": "Le globe oculaire est percé et l'humeur s'en écoule, l'œil s'affaisse et s'éteint à jamais. Le blessé subit un Saignement de −10 PV, la perte définitive de l'œil et −60 à toute action visée et à la perception visuelle.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin protège le globe percé sous une compresse stérile et comprime l'orbite. Retire le saignement.",
@@ -2189,7 +2189,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin reconstruit l'orbite défoncée et comble la cavité, puis le blessé observe une longue convalescence. Retire le saignement, retire l'état Inconscient et lève le malus de −70. La perte de l'œil reste définitive.",
+      "description": "Le médecin reconstruit l'orbite défoncée et comble la cavité, puis le blessé observe une longue convalescence. Retire le saignement, retire l'état Inconscience et lève le malus de −70. La perte de l'œil reste définitive.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 60
@@ -2206,7 +2206,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin retire la pointe et rétablit la circulation cérébrale, puis le blessé observe une très longue convalescence. Retire le saignement, lève le malus de −80 et retire l'état Inconscient, mais la perte de l'œil et le malus de −2 à l'Érudition, à la Logique et à l'Imagination restent définitifs.",
+      "description": "Le médecin retire la pointe et rétablit la circulation cérébrale, puis le blessé observe une très longue convalescence. Retire le saignement, lève le malus de −80 et retire l'état Inconscience, mais la perte de l'œil et le malus de −2 à l'Érudition, à la Logique et à l'Imagination restent définitifs.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
