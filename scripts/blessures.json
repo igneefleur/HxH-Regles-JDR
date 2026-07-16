@@ -123,7 +123,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Mollet",
-    "effet": "Le mollet pousse le corps à chaque pas. Une forme qui ne porte ni patte ni jambe n'en a pas : elle rampe et lit sa vitesse terrestre avec −4 au Mouvement. Une nageoire ou un tentacule lui permet de nager, jamais de marcher."
+    "effet": "La jambe manque sous le genou. Tant que le moignon n'est pas appareillé, le personnage subit l'état Immobilisé. Appareillé, il subit −2 au Mouvement et ne peut plus Foncer : rien ne pousse plus de ce côté. Sans ses deux jambes, il rampe et lit sa vitesse terrestre avec −4 au Mouvement."
    },
    "degres": [
     {
@@ -394,7 +394,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Bras",
-    "effet": "Une forme qui ne porte pas de bras n'a aucune de ses zones. Elle n'y perd ses actions que si rien d'autre ne lui sert à saisir : quand sa forme en porte, une pince tient ce qu'une main tiendrait et un tentacule enroule ce qu'elle saisirait. Elle y perd en revanche le partage du bipède, dont les jambes avancent pendant que les bras demeurent libres : chez une forme qui marche sur ce qui lui sert de main, se déplacer occupe ces membres, et ils cessent d'agir."
+    "effet": "Le bras manque sous l'épaule. Le personnage n'accomplit aucune action qui l'emploie : ni arme à deux mains, ni arme de ce côté, ni prise. Il ne tient qu'une arme à la fois. Sans ses deux bras, il ne saisit plus rien et ne frappe que du pied et de la tête. Une forme qui ne porte pas de bras saisit de ses pinces ou de ses tentacules, si elle en a."
    },
    "degres": [
     {
@@ -488,7 +488,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Cuisse",
-    "effet": "La cuisse est la racine de la jambe. Une forme qui ne porte ni patte ni jambe n'a ni Cuisse, ni Genou, ni Mollet, ni Pied : elle rampe, et lit sa vitesse terrestre avec −4 au Mouvement."
+    "effet": "La jambe manque à la racine, de naissance ou arrachée. Tant que le moignon n'est pas appareillé, le personnage subit l'état Immobilisé. Appareillé, il subit −2 au Mouvement et ne peut plus Foncer. Sans ses deux jambes, il rampe et lit sa vitesse terrestre avec −4 au Mouvement, comme une forme qui n'en porte aucune."
    },
    "degres": [
     {
@@ -582,7 +582,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir d'Épaule",
-    "effet": "L'épaule attache le bras au tronc. Une forme qui ne porte pas de bras n'a ni Épaule, ni Bras, ni Coude, ni Poignet, ni Main. Ce sont alors ses pattes, ses tentacules ou ses pinces qui saisissent et qui frappent, si sa forme en porte ; sinon, elle ne saisit rien."
+    "effet": "Le bras manque tout entier, arraché à la ceinture scapulaire. Le personnage n'accomplit aucune action qui l'emploie : ni arme à deux mains, ni arme de ce côté, ni prise. Il ne tient qu'une arme à la fois. Sans ses deux bras, il ne saisit plus rien et ne frappe que du pied et de la tête."
    },
    "degres": [
     {
@@ -760,7 +760,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Main",
-    "effet": "La main saisit et manie. Une forme qui ne porte pas de bras n'en a pas. Un bras qui n'est pas celui d'un bipède n'en a pas davantage : le tentacule enroule et le bras d'une étoile de mer colle, l'un et l'autre sur toute leur longueur, sans main au bout. Une pince, elle, est un membre à part entière et se vise comme tel."
+    "effet": "La main manque au bout du bras. Le personnage ne tient, ne manie ni ne saisit plus rien de ce côté, et n'emploie aucune arme à deux mains. Le bras frappe et pousse encore. Une forme qui ne porte pas de bras tient de ses pinces ou de ses tentacules, si elle en a ; sinon, elle ne tient rien."
    },
    "degres": [
     {
@@ -854,7 +854,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Poignet",
-    "effet": "Le poignet joint la main au bras et lui donne son angle. Une forme qui ne porte pas de bras n'en a pas, ni aucune autre zone du bras. Un tentacule et le bras d'une étoile de mer n'en ont pas non plus : rien n'y sépare la prise du membre."
+    "effet": "La main manque, tranchée au poignet. Le personnage ne tient plus rien de ce côté et n'emploie aucune arme à deux mains. L'avant-bras frappe, pousse et bloque encore : c'est la prise qu'il a perdue, pas le membre."
    },
    "degres": [
     {
@@ -948,7 +948,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Genou",
-    "effet": "Le genou plie la jambe. Une forme qui ne porte ni patte ni jambe n'en a pas. Une forme qui porte plus de deux pattes garde un genou par patte : chacune se vise à part, et perdre une patte sur six coûte moins que perdre une jambe sur deux."
+    "effet": "La jambe manque sous la cuisse. Tant que le moignon n'est pas appareillé, le personnage subit l'état Immobilisé. Appareillé, il subit −2 au Mouvement, ne peut plus Foncer et perd l'appui qu'il faut pour sauter de cette jambe. Sans ses deux jambes, il rampe et lit sa vitesse terrestre avec −4 au Mouvement."
    },
    "degres": [
     {
@@ -1217,7 +1217,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Pied",
-    "effet": "Le pied prend appui au sol. Une forme qui ne porte ni patte ni jambe n'en a pas : elle rampe et lit sa vitesse terrestre avec −4 au Mouvement. Une forme qui nage sans nageoire ni tentacule patauge de même, avec −3 au Mouvement dans l'eau, à moins qu'une propriété spéciale ne lui tienne lieu de nage."
+    "effet": "Le pied manque au bout de la jambe. Tant que le moignon n'est pas appareillé, le personnage subit l'état Immobilisé. Appareillé, il subit −1 au Mouvement et tout jet d'équilibre qui prend appui sur ce côté subit −20. Sans ses deux pieds, il ne tient plus debout sans appareillage : il rampe, avec −4 au Mouvement."
    },
    "degres": [
     {
@@ -1583,7 +1583,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Coude",
-    "effet": "Le coude plie le bras à un seul endroit. Une forme qui ne porte pas de bras n'en a pas. Un bras qui n'est pas celui d'un bipède n'en a pas davantage : le bras d'une étoile de mer, comme un tentacule, plie sur toute sa longueur et ne se brise nulle part."
+    "effet": "L'avant-bras et la main manquent. Le personnage ne tient plus rien de ce côté et n'emploie aucune arme à deux mains. Le moignon frappe encore, sans plus de force qu'un poing, et pousse ou bloque ce qu'un bras entier pousserait."
    },
    "degres": [
     {
@@ -1758,7 +1758,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir d'Oreille",
-    "effet": "L'oreille est l'organe de l'Ouïe du bipède à bras. D'autres formes entendent sans pavillon, par un tympan à fleur de peau ou par tout le corps : chez elles, rien ne dépasse qui puisse être tranché, et la zone ne se vise pas. Une forme dont l'Ouïe est inexistante n'a pas d'Oreille du tout."
+    "effet": "L'oreille manque, ou n'entend plus. Son Ouïe perd 3 points de clarté, définitivement : le personnage entend encore, mais ne situe plus ce qu'il entend. Sans ses deux oreilles, son Ouïe tombe à 0 : c'est la surdité."
    },
    "degres": [
     {
@@ -1851,7 +1851,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Nez",
-    "effet": "Le nez est l'organe de l'Odorat du bipède à bras. D'autres formes sentent autrement : par la trompe, par la peau, par les antennes, lesquelles servent les sens et non la forme, comme les yeux. La zone suit l'organe : on vise celui qui porte l'Odorat, au malus du Nez, et une forme qui sent par tout son corps n'offre aucune zone à viser."
+    "effet": "Le nez manque, ou ne respire plus. L'Odorat du personnage tombe à 0 de clarté : il ne sent plus rien, et son Goût perd 3 points de clarté, la saveur tenant surtout de l'odeur."
    },
    "degres": [
     {
@@ -1944,7 +1944,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir de Parties génitales",
-    "effet": "Aucune forme ne dit comment une créature se reproduit : le MJ tranche si elle porte des parties génitales, et où. Sans elles, la zone ne se vise pas, et un 1d100 qui la désigne se relance."
+    "effet": "Les parties génitales manquent, broyées ou absentes du plan de corps. Le personnage ne se reproduit plus. Aucune forme ne dit comment une créature se reproduit : le MJ tranche si elle en porte, et où."
    },
    "degres": [
     {
@@ -2127,7 +2127,7 @@
    "perte": {
     "type": "fiche",
     "nom": "Ne pas avoir d'Œil",
-    "effet": "Les yeux servent les sens, non la forme : une créature en porte autant que sa Vue le demande, et là où sa forme les place. Une forme dont la Vue est inexistante n'a pas d'Œil, et la zone ne se vise pas. Perdre un œil ne rend pas aveugle : la cécité, c'est la Vue à 0 de clarté."
+    "effet": "L'œil manque. Sa Vue perd 3 points de clarté, définitivement : le personnage voit à plat et garde un côté aveugle. Sans ses deux yeux, sa Vue tombe à 0 : c'est la cécité, et percevoir par la Vue devient impossible, sans jet, quoi qu'il tente."
    },
    "degres": [
     {
