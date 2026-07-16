@@ -256,9 +256,9 @@ def _competences(text):
 # Formations et arts (cartes mcard art)
 # ---------------------------------------------------------------------------
 _ART_CARD = re.compile(r'<div class="mcard art" markdown>(.*?)</div>', re.S)
-_NAME = re.compile(r"\*\*(.+?)\*\*\s*<span class=\"prereq\">(.*?)</span>")
+_NAME = re.compile(r"\*\*(.+?)\*\*(?:\s*<span class=\"prereq\">(.*?)</span>)?")   # tagline optionnelle (les arts n'en portent plus)
 _SPAN = re.compile(r'<span class="prereq">(.*?)</span>', re.S)
-_PALIER = re.compile(r'<p class="palier">([✦✧]+)\s*(\w+)</p>')
+_PALIER = re.compile(r'<p class="palier">([✦✧]+)\s*(\w+)(?:\s*:\s*[^<]*)?</p>')   # tolère un nom de palier (« Basique : Déchet de la société »)
 _CALIBRAGE = re.compile(
     r"\(À retirer[^)]*?frappe Basique (\d+) \+×(\d+) FOR, Avancé (\d+) \+×(\d+) FOR, "
     r"Expert (\d+) \+×(\d+) FOR\.?\)")
@@ -271,7 +271,7 @@ def _formations(text, categorie):
         nm = _NAME.search(inner)
         if not nm:
             continue
-        name, tagline = _clean(nm.group(1)), _clean(nm.group(2))
+        name, tagline = _clean(nm.group(1)), _clean(nm.group(2) or "")
         spans = [_clean(s) for s in _SPAN.findall(inner[nm.end():])]
         prereq = next((s.split(":", 1)[1].strip() for s in spans
                        if s.lower().startswith("prérequis")), "")
@@ -306,7 +306,7 @@ def _arts(text, categorie):
         nm = _NAME.search(inner)
         if not nm:
             continue
-        name, tagline = _clean(nm.group(1)), _clean(nm.group(2))
+        name, tagline = _clean(nm.group(1)), _clean(nm.group(2) or "")
         body = inner[nm.end():]
 
         frappe = None

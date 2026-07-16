@@ -12,9 +12,9 @@ Sur l'échelle des caractéristiques, notée de 0 à 30, 5 est la moyenne humain
 
 Chaque capacité est une valeur du personnage, qui porte son nom : son Mouvement, son Saut, son Port, son Lancer, son Apnée, sa Pression. Cette valeur est égale à la caractéristique dont la capacité découle : le Mouvement d'un personnage est égal à son Agilité, son Port à sa Force.
 
-Chaque capacité tient dans une table de trente et une lignes, une par valeur de la capacité, de 0 à 30. Chaque ligne est un palier, désigné par sa valeur : le palier 5 est la ligne du Mouvement 5. La plupart des tables portent trois colonnes, une par intensité d'[activité](#activite) : Légère, Intermédiaire et Lourde. Les autres portent leurs propres colonnes, que leur capacité explique.
+Chaque capacité tient dans une table de trente et une lignes, une par valeur de la capacité, de 0 à 30. Chaque ligne est désignée par sa valeur : la ligne 5 est celle du Mouvement 5. La plupart des tables portent trois colonnes, une par intensité d'[activité](#activite) : Légère, Intermédiaire et Lourde. Les autres portent leurs propres colonnes, que leur capacité explique.
 
-Lire une capacité consiste à croiser un palier et une colonne. Par défaut, le palier est la valeur de la capacité du personnage ; chaque capacité précise comment se détermine la colonne. Aucun jet de dé n'intervient : la valeur lue s'applique telle quelle. Quels que soient les bonus et les malus de paliers, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
+Lire une capacité consiste à croiser une ligne et une colonne. Par défaut, la ligne est la valeur de la capacité du personnage ; chaque capacité précise comment se détermine la colonne. Aucun jet de dé n'intervient : la valeur lue s'applique telle quelle. Quels que soient les bonus et les malus, on ne lit jamais sous la ligne 0 ni au-delà de la ligne 30.
 
 </div>
 
@@ -210,11 +210,11 @@ Exemple. Avec un Mouvement de 5, un personnage couvre par round 8 m en marche (a
 
 Foncer est une [action](../combat/deroulement-combat.md) qui permet au personnage de se déplacer en allure lourde, le sprint, jusqu'au début de son prochain tour. C'est un effort en soi : tant que son effet dure, le personnage est au moins en activité intermédiaire.
 
-En fonçant, le personnage peut faire un jet de la compétence de déplacement qui convient à son milieu pour aller plus vite : [Course](competences.md) pour un déplacement terrestre, [Natation](competences.md) pour un déplacement aquatique, [Vol](competences.md) pour un déplacement aérien. Le jet donne des paliers, lus dans la table ci-dessous à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Mouvement augmenté de ces paliers, quelle que soit la colonne. Avec un Mouvement de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
+En fonçant, le personnage peut faire un jet de la compétence de déplacement qui convient à son milieu pour aller plus vite : [Course](competences.md) pour un déplacement terrestre, [Natation](competences.md) pour un déplacement aquatique, [Vol](competences.md) pour un déplacement aérien. Le jet donne un bonus au Mouvement, lu dans la table ci-dessous à la ligne du plus haut seuil atteint. Jusqu'au début de son prochain tour, le personnage lit toutes ses distances à la ligne de son Mouvement augmenté de ce bonus, quelle que soit la colonne. Avec un Mouvement de 5 et un jet à 180 (+2), il lit la ligne 7 : 12 m en marche, 24 m en course, 60 m en sprint. La distance du round en cours est relue à la nouvelle valeur, et ce qu'il a déjà parcouru ce round s'en décompte.
 
 <div class="sepia-table" markdown>
 
-| Jet de déplacement | Paliers de Mouvement |
+| Jet de déplacement | Bonus au Mouvement |
 |:---:|:---:|
 | Difficile (120) | +1 |
 | Très difficile (180) | +2 |
@@ -250,7 +250,7 @@ Exemple. Avec un Mouvement de 5, un personnage court 16 m ou sprinte 40 m par ro
 
 #### Terrain difficile
 
-Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage applique le malus de la table à la ligne où il lit sa distance, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les bonus et les malus de paliers s'additionnent : +2 en fonçant et −3 de terrain Éprouvant font −1, le personnage descend d'un palier.
+Un sol qui gêne la progression, boue, éboulis, sous-bois, neige, décombres ou foule, ralentit le mouvement sans rien coûter d'autre. Le MJ classe le terrain parmi les six types ci-dessous, en le comparant aux exemples, et le personnage applique le malus de la table à la ligne où il lit sa distance, à la colonne de l'allure qu'il adopte : l'inverse de Foncer, qui la fait lire plus haut. Les bonus et les malus au Mouvement s'additionnent : +2 en fonçant et −3 de terrain Éprouvant font −1.
 
 </div>
 
@@ -287,13 +287,13 @@ On ne cumule pas plusieurs obstacles : un seul type s'applique, celui qui décri
 
 <div class="memo" markdown>
 
-Exemple. Avec un Mouvement de 5, un personnage court 16 m par round en activité intermédiaire. Sur un terrain Difficile, il lit sa distance deux paliers plus bas, au Mouvement 3 : 8 m. Sur un terrain Éprouvant, il tombe au Mouvement 2, soit 6 m. Sur un terrain Impraticable, il descend au Mouvement 0 : il ne bouge plus.
+Exemple. Avec un Mouvement de 5, un personnage court 16 m par round en activité intermédiaire. Sur un terrain Difficile, il lit sa distance au Mouvement 3 : 8 m. Sur un terrain Éprouvant, il tombe au Mouvement 2, soit 6 m. Sur un terrain Impraticable, il descend au Mouvement 0 : il ne bouge plus.
 
 </div>
 
 #### Déplacement dans l'eau
 
-Dans l'eau, le Mouvement se lit sur la même table, avec la compétence [Natation](competences.md) pour [Foncer](#foncer). Sans paire de nageoires ni de tentacules, c'est le cas du corps humain, un personnage nage son Mouvement 3 paliers plus bas (−3), comme le veulent les [formes du vivant](../monde/formes.md).
+Dans l'eau, le Mouvement se lit sur la même table, avec la compétence [Natation](competences.md) pour [Foncer](#foncer). Sans paire de nageoires ni de tentacules, c'est le cas du corps humain, un personnage nage avec −3 au Mouvement, comme le veulent les [formes du vivant](../monde/formes.md).
 
 #### Chute
 
@@ -400,11 +400,11 @@ Un personnage dont le saut le laisse en l'air y reste, là où son saut l'a port
 
 </div>
 
-Au moment de sauter, le personnage peut faire un jet de [Saut](competences.md) (aucune action requise) pour aller plus loin. Le jet donne des paliers, lus dans la table ci-dessous à la ligne du plus haut seuil atteint : le personnage lit alors la table à la ligne de son Saut augmenté de ces paliers. Un jet sous Difficile (120) ne donne aucun palier.
+Au moment de sauter, le personnage peut faire un jet de [Saut](competences.md) (aucune action requise) pour aller plus loin. Le jet donne un bonus au Saut, lu dans la table ci-dessous à la ligne du plus haut seuil atteint : le personnage lit alors la table à la ligne de son Saut augmenté de ce bonus. Un jet sous Difficile (120) ne donne aucun bonus.
 
 <div class="sepia-table" markdown>
 
-| Jet de Saut | Paliers de Saut |
+| Jet de Saut | Bonus au Saut |
 |:---:|:---:|
 | Difficile (120) | +1 |
 | Très difficile (180) | +2 |
@@ -504,11 +504,11 @@ Exemple. Avec un Port de 5, la moyenne humaine, un personnage porte sans fatigue
 
 #### Forcer
 
-Forcer est une [action](../combat/deroulement-combat.md). Le personnage fait un jet de [Prouesse de Force](competences.md) : le jet donne des paliers, lus dans la table ci-dessous à la ligne du plus haut seuil atteint. Jusqu'à la fin du prochain round, il en tire deux effets : il peut mouvoir les charges de sa colonne Lourde ; et pour soulever, briser ou résister à un écrasement, il lit la table à la ligne de son Port augmenté de ces paliers. Un jet sous Difficile (120) ne donne aucun palier, mais permet tout de même de mouvoir les charges de la colonne Lourde.
+Forcer est une [action](../combat/deroulement-combat.md). Le personnage fait un jet de [Prouesse de Force](competences.md) : le jet donne un bonus au Port, lu dans la table ci-dessous à la ligne du plus haut seuil atteint. Jusqu'à la fin du prochain round, il en tire deux effets : il peut mouvoir les charges de sa colonne Lourde ; et pour soulever, briser ou résister à un écrasement, il lit la table à la ligne de son Port augmenté de ce bonus. Un jet sous Difficile (120) ne donne aucun bonus, mais permet tout de même de mouvoir les charges de la colonne Lourde.
 
 <div class="sepia-table" markdown>
 
-| Jet de Prouesse de Force | Paliers de Force |
+| Jet de Prouesse de Force | Bonus au Port |
 |:---:|:---:|
 | Difficile (120) | +1 |
 | Très difficile (180) | +2 |
@@ -532,15 +532,15 @@ Tirer ou pousser une charge suit le même indice de poids, mais toutes ses valeu
 
 #### Écrasement
 
-Une masse trop lourde qui s'abat sur un personnage, ou sous laquelle il est coincé, l'écrase. On compare la masse à sa colonne Lourde : tant qu'elle n'excède pas ce qu'il lève à pleine puissance, il la supporte sans dégâts, quitte à rester bloqué. Au-delà, on cherche le palier requis, le plus petit palier de Port dont la colonne Lourde atteint la masse, et chaque palier d'écart inflige 40 dégâts :
+Une masse trop lourde qui s'abat sur un personnage, ou sous laquelle il est coincé, l'écrase. On compare la masse à sa colonne Lourde : tant qu'elle n'excède pas ce qu'il lève à pleine puissance, il la supporte sans dégâts, quitte à rester bloqué. Au-delà, on cherche le Port requis, le plus petit Port dont la colonne Lourde atteint la masse, et chaque point d'écart inflige 40 dégâts :
 
-<p class="formula">Dégâts par round = 40 × (palier requis − Port du personnage)</p>
+<p class="formula">Dégâts par round = 40 × (Port requis − Port du personnage)</p>
 
-Ces dégâts tombent une première fois dès l'écrasement, puis à la fin de chacun de ses tours tant qu'il reste pris. À chaque fois, il peut faire un jet de [Prouesse de Force](competences.md) (aucune action requise) : les paliers que donne son jet, lus dans la table de [Forcer](#forcer), effacent autant de paliers d'écart, et les dégâts du round retombent de 40 par palier effacé.
+Ces dégâts tombent une première fois dès l'écrasement, puis à la fin de chacun de ses tours tant qu'il reste pris. À chaque fois, il peut faire un jet de [Prouesse de Force](competences.md) (aucune action requise) : le bonus au Port que donne son jet, lu dans la table de [Forcer](#forcer), efface autant de points d'écart, et les dégâts du round retombent de 40 par point effacé.
 
 <div class="memo" markdown>
 
-Exemple. Avec un Port de 5, un personnage lève 100 kg à pleine puissance (palier 5 de la colonne Lourde). Pris sous un bloc d'une tonne, que seul un palier 9 soulèverait, il est dépassé de quatre paliers, soit 160 dégâts. S'il atteint Très difficile (180) à son jet de Prouesse de Force, il en efface deux et n'en subit plus que 80 ce round-là.
+Exemple. Avec un Port de 5, un personnage lève 100 kg à pleine puissance (ligne 5 de la colonne Lourde). Pris sous un bloc d'une tonne, que seul un Port de 9 soulèverait, il est dépassé de quatre points, soit 160 dégâts. S'il atteint Très difficile (180) à son jet de Prouesse de Force, il en efface deux et n'en subit plus que 80 ce round-là.
 
 </div>
 
@@ -660,11 +660,11 @@ Exemple. Avec une Apnée de 5, un personnage retient son souffle 1 minute au rep
 
 </div>
 
-En bloquant sa respiration, le personnage peut faire un jet d'[Apnée](competences.md) (aucune action requise). Le jet donne des paliers, lus dans la table ci-dessous à la ligne du plus haut seuil atteint : pour toute la durée de ce souffle, le personnage lit la table à la ligne de son Apnée augmentée de ces paliers. Un jet sous Difficile (120) ne donne aucun palier.
+En bloquant sa respiration, le personnage peut faire un jet d'[Apnée](competences.md) (aucune action requise). Le jet donne un bonus à l'Apnée, lu dans la table ci-dessous à la ligne du plus haut seuil atteint : pour toute la durée de ce souffle, le personnage lit la table à la ligne de son Apnée augmentée de ce bonus. Un jet sous Difficile (120) ne donne aucun bonus.
 
 <div class="sepia-table" markdown>
 
-| Jet d'Apnée | Paliers d'apnée |
+| Jet d'Apnée | Bonus à l'Apnée |
 |:---:|:---:|
 | Difficile (120) | +1 |
 | Très difficile (180) | +2 |
@@ -756,13 +756,13 @@ La Pression découle de l'Endurance : la Pression d'un personnage est égale à 
 
 </div>
 
-La profondeur Lourde est la limite du corps : plus bas, le poids de l'eau écrase le personnage. On cherche alors son palier requis : le plus petit palier de Pression dont la profondeur Lourde atteint celle où il se trouve. Chaque palier d'écart lui inflige 40 dégâts, comme un [Écrasement](#ecrasement) : une première fois quand il passe sous sa limite, puis à la fin de chacun de ses tours suivants tant qu'il reste à cette profondeur. Le palier requis suit la profondeur du personnage : remonter réduit les dégâts, et remonter au-dessus de sa profondeur Lourde y met fin.
+La profondeur Lourde est la limite du corps : plus bas, le poids de l'eau écrase le personnage. On cherche alors sa Pression requise : la plus petite Pression dont la profondeur Lourde atteint celle où il se trouve. Chaque point d'écart lui inflige 40 dégâts, comme un [Écrasement](#ecrasement) : une première fois quand il passe sous sa limite, puis à la fin de chacun de ses tours suivants tant qu'il reste à cette profondeur. La Pression requise suit la profondeur du personnage : remonter réduit les dégâts, et remonter au-dessus de sa profondeur Lourde y met fin.
 
-<p class="formula">Dégâts par round = 40 × (palier requis − Pression du personnage)</p>
+<p class="formula">Dégâts par round = 40 × (Pression requise − Pression du personnage)</p>
 
 <div class="memo" markdown>
 
-Exemple. Avec une Pression de 5, un personnage nage sans effort jusqu'à 2 m de fond, passe en activité intermédiaire jusqu'à 6 m, puis en activité lourde jusqu'à 20 m, sa limite. À 45 m, il faudrait une Pression de 7 (60 m) : avec deux paliers d'écart, il subit 80 dégâts en descendant, puis autant à la fin de chacun de ses tours tant qu'il reste à cette profondeur. Avec une Pression de 13, la fosse la plus profonde de l'océan (10 km) est à sa portée, à pleine puissance.
+Exemple. Avec une Pression de 5, un personnage nage sans effort jusqu'à 2 m de fond, passe en activité intermédiaire jusqu'à 6 m, puis en activité lourde jusqu'à 20 m, sa limite. À 45 m, il faudrait une Pression de 7 (60 m) : avec deux points d'écart, il subit 80 dégâts en descendant, puis autant à la fin de chacun de ses tours tant qu'il reste à cette profondeur. Avec une Pression de 13, la fosse la plus profonde de l'océan (10 km) est à sa portée, à pleine puissance.
 
 </div>
 

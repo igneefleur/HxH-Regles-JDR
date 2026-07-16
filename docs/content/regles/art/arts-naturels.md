@@ -3,31 +3,31 @@
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Bushcraft** <span class="prereq">La survie</span>
+**Bushcraft**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Kalahari** <span class="prereq">La piste lue</span>
+**Kalahari**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Vénerie** <span class="prereq">La traque du gibier</span>
+**Vénerie**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Berkutchi** <span class="prereq">Le rapace au poing</span>
+**Berkutchi**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Gaucho** <span class="prereq">Le troupeau conduit</span>
+**Gaucho**
 
 TODO
 </div>

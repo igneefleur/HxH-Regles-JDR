@@ -26,7 +26,6 @@ BONUS = {
 ZONE_TIERS = {3: 20, 5: 30, 10: 40, 20: 50}
 CONE_TIERS = {5: 20, 10: 30, 15: 40, 20: 50}   # cône : table de LONGUEUR
 CONE_ANGLE = {45: 0, 90: 10}                    # cône : table d'ANGLE (s'ajoute à la longueur)
-IMMOB_TIERS = {120: 10, 180: 20, 240: 30, 320: 40, 400: 50}   # Immobilisation à distance : difficulté du jet de la cible
 # Inefficace de près : zone morte, deux barèmes. Mêlée = crans d'allonge (×N → −N×10). Distance = % de la portée max (20/40/60/80/100 → −10/−20/−30/−40/−50).
 CONSTRAINT = {
     # −10
@@ -101,7 +100,7 @@ def base(tok):
 
 
 lines = Path("docs/content/regles/combat/armes.md").read_text(encoding="utf-8").splitlines()
-bad, unknown, hors_portee, auto_sans_reservoir, tir_sans_mun, am_illeg = [], {}, [], [], [], []
+bad, unknown, hors_portee, auto_sans_reservoir, tir_sans_mun, am_illeg, logiq = [], {}, [], [], [], [], []
 n = 0
 for l in lines:
     if not (l.startswith("|") and l.rstrip().endswith("|")):
@@ -141,6 +140,34 @@ for l in lines:
     has_cone = "cône" in norm(por).lower()
     if ("tir" in norm(por).lower() or has_cone) and not mun.strip():
         tir_sans_mun.append(nom)   # règle : arme de tir ou de cône -> munitions obligatoires (colonne dédiée)
+    # Incompatibilités et prérequis logiques, synchronisés avec les étiquettes des fiches.
+    toks = [base(t) for t in split_props(props)] if props.strip() != "Aucune" else []
+    p_low = norm(por).lower()
+    has_jet, has_tir, has_allonge = "jet" in p_low, "tir" in p_low, "allonge" in p_low
+    has_melee = "mêlée" in p_low or has_allonge
+    for a, b2 in (("Recharge rapide", "Rechargement lent"), ("Usage unique", "Recharge rapide"),
+                  ("Usage unique", "Rechargement lent"), ("Usage unique", "Surchauffe"), ("Usage unique", "Retour")):
+        if a in toks and b2 in toks:
+            logiq.append((nom, f"{a} + {b2}"))
+    if "Dissimulable" in toks and any(t in ("Lourde", "Très lourde", "Extrêmement lourde") for t in toks):
+        logiq.append((nom, "Dissimulable + Lourdeur"))
+    if mains == "2 mains" and ("Jumelable" in toks or "Mains libres" in toks):
+        logiq.append((nom, "Jumelable ou Mains libres + 2 mains"))
+    if "Sphère" in toks and has_cone:
+        logiq.append((nom, "Sphère + Cône"))
+    if "Sphère" in toks and not (has_jet or has_tir):
+        logiq.append((nom, "Sphère sans portée de lancer ni de tir"))
+    if "Finesse" in toks and not (mm and int(mm.group(1)) >= 1):
+        logiq.append((nom, "Finesse sans multiplicateur ×1 FOR ou plus"))
+    if "Saisie" in toks and not has_melee:
+        logiq.append((nom, "Saisie sans portée de mêlée"))
+    if "Retour" in toks and not has_jet:
+        logiq.append((nom, "Retour sans portée de lancer"))
+    if "Inefficace de près" in toks and not (has_allonge or has_jet or has_tir or has_cone):
+        logiq.append((nom, "Inefficace de près sans portée au-delà du contact"))
+    for t in ("Recharge rapide", "Rechargement lent", "Surchauffe"):
+        if t in toks and not mun.strip():
+            logiq.append((nom, f"{t} sans Munitions"))
     detail = [f"dég {deg_v}", f"AM +{ampts}", f"portée +{por_v}", f"type +{type_pts}", f"mod +{mult_pts}", f"mains {mains_pts:+d}"]
     if mun.strip():                                     # munitions : colonne dédiée (après Portée)
         tirs = int(re.search(r"(\d+)", mun).group(1))   # nombre de tirs avant recharge
@@ -163,11 +190,6 @@ for l in lines:
                 ip = int(ma.group(1)) * 10 if ma else (int(mp.group(1)) // 2 if mp else 0)
                 minus += ip
                 detail.append(f"Inefficace de près −{ip}")
-            elif b == "Immobilisation à distance":
-                m = re.search(r"\((\d+)", tok)   # difficulté du jet, entre parenthèses
-                ip = IMMOB_TIERS.get(int(m.group(1)), 0) if m else 0
-                plus += ip
-                detail.append(f"Immobilisation({m.group(1) if m else '??'}) +{ip}")
             elif b == "Perce-armure":
                 ign = int(re.search(r"\((\d+)", tok).group(1))   # part de réduction ignorée
                 pp = ign // 2                                    # ignore 20/40/60/80/100 -> +10/20/30/40/50
@@ -223,5 +245,9 @@ if am_illeg:
     print("\nAM + illégalité > 5 (arme trop martiale ET trop illégale) :")
     for nom, d in am_illeg:
         print(f"  ✗ {nom} : {d}")
-if not bad and not unknown and not hors_portee and not auto_sans_reservoir and not tir_sans_mun and not am_illeg:
+if logiq:
+    print("\nincompatibilités ou prérequis logiques VIOLÉS :")
+    for nom, d in logiq:
+        print(f"  ✗ {nom} : {d}")
+if not bad and not unknown and not hors_portee and not auto_sans_reservoir and not tir_sans_mun and not am_illeg and not logiq:
     print("✓ TOUTES les armes valent exactement 100 points.")

@@ -3,31 +3,31 @@
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Système D** <span class="prereq">La débrouille</span>
+**Système D**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Cheval de Troie** <span class="prereq">L'intrusion</span>
+**Cheval de Troie**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Enigma** <span class="prereq">Le chiffre</span>
+**Enigma**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Sape** <span class="prereq">La charge bien placée</span>
+**Sape**
 
 TODO
 </div>
 
 <div class="mcard art" markdown>
-**Alchimie** <span class="prereq">La réaction</span>
+**Alchimie**
 
 TODO
 </div>

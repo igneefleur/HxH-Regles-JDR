@@ -214,7 +214,7 @@ Chaque palier de l'échelle recouvre un ordre d'action distinct :
 <tr><td>Écholocation</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td></td></tr>
 <tr><td>Vision polarisée</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
 <tr><td>Vision ultraviolette</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
-<tr><td>Infrasons & ultrasons</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
+<tr><td>Infrasons et ultrasons</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
 <tr><td>Baroréception</td><td>Instinct</td><td>Sensoriel</td><td>○○○○○</td><td></td></tr>
 <tr><td>Électroréception</td><td>Perception</td><td>Sensoriel</td><td>○○○○○</td><td>Non</td></tr>
 <tr><td>Détection infrarouge</td><td>Perception</td><td>Sensoriel</td><td>●○○○○</td><td>Non</td></tr>
@@ -1230,17 +1230,17 @@ Percevoir le plan de polarisation de la lumière. Pour distinguer une nappe d'ea
 
 <p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
 
-Percevoir la lumière ultraviolette, invisible à l'œil humain. Pour suivre une trace fluorescente ou lire une marque tracée à l'encre invisible.
+Percevoir la lumière ultraviolette, normalement invisible à l'œil humain. Pour suivre une trace fluorescente ou lire une marque tracée à l'encre invisible.
 
 </div>
 
 <div class="keep" markdown>
 
-#### Infrasons & ultrasons
+#### Infrasons et ultrasons
 
 <p class="groupes">Caractéristique : Perception<br>Groupes : Sensoriel</p>
 
-Entendre les sons situés sous ou au-dessus de la bande audible humaine. Pour capter le grondement sourd d'un séisme lointain ou le sifflement d'un dispositif tenu pour silencieux.
+Entendre les sons trop graves ou trop aigus pour l'oreille humaine. Pour capter le grondement sourd d'un séisme lointain ou le sifflement d'un dispositif tenu pour silencieux.
 
 </div>
 

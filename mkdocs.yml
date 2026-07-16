@@ -72,6 +72,8 @@ nav:
           - Manipulation: content/regles/nen/manipulation.md
           - Conjuration: content/regles/nen/conjuration.md
           - Spécialisation: content/regles/nen/specialisation.md
+      - Annexes:
+          - Conversion Magicien D&D: content/regles/annexes/conversion-magicien-dnd.md
   - Univers:
       - content/univers/index.md
       - Cartes du monde: content/univers/cartes.md
@@ -103,7 +105,7 @@ extra:
   generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
   - stylesheets/fonts.css   # @font-face auto-hébergés : doit être chargée en premier
-  - stylesheets/extra.css?v=2
+  - stylesheets/extra.css?v=9
   - stylesheets/atelier.css
   - stylesheets/night.css
   - stylesheets/forge.css

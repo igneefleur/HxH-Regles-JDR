@@ -650,7 +650,7 @@
     {
      "degre": 5,
      "nom": "Épaule broyée, bras arraché de la ceinture scapulaire",
-     "effet": "L'articulation est entièrement broyée et le bras est arraché de la ceinture scapulaire, ne laissant au blessé qu'un moignon déchiqueté qui gicle de sang. Le blessé subit un Saignement de −20 PV et perd définitivement son bras. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "L'articulation est entièrement broyée et le bras est arraché de la ceinture scapulaire, ne laissant au blessé qu'un moignon déchiqueté qui gicle de sang. Le blessé subit un Saignement de −20 PV, perd définitivement son bras, et le plexus arraché lui inflige un malus permanent de −2 à la Force, à l'Agilité et à la Dextérité. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime l'artère axillaire contre la cage thoracique pour endiguer le flot. Retire le saignement.",
@@ -658,7 +658,7 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin procède à la désarticulation et à la fermeture chirurgicale du moignon à l'épaule, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience, mais la perte du bras reste définitive.",
+      "description": "Le médecin procède à la désarticulation et à la fermeture chirurgicale du moignon à l'épaule, puis impose une longue convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience, mais la perte du bras et le malus permanent de −2 à la Force, à l'Agilité et à la Dextérité restent définitifs.",
       "mode": "chirurgie_repos",
       "difficulte": "Absurde",
       "jours": 90
@@ -833,7 +833,7 @@
     {
      "degre": 5,
      "nom": "Main tranchée au poignet",
-     "effet": "Le tranchant emporte la main d'un seul coup au niveau du poignet et le moignon gicle à gros bouillons. La souffrance fulgurante terrasse le blessé. Le blessé subit un Saignement de −25 PV. Le blessé perd définitivement la main. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "Le tranchant emporte la main d'un seul coup au niveau du poignet et le moignon gicle à gros bouillons. La souffrance fulgurante terrasse le blessé. Le blessé subit un Saignement de −25 PV. Le blessé perd définitivement la main. Il subit aussi −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Absurde (240) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pose un garrot sur le moignon. Retire le saignement.",
@@ -843,8 +843,8 @@
       "possible": true,
       "description": "Le médecin pare et referme le moignon du poignet, suivi d'une convalescence. Retire le saignement, lève le malus de −60 et retire l'état Inconscience. La perte de la main reste définitive.",
       "mode": "chirurgie_repos",
-      "difficulte": "Impossible",
-      "jours": 90
+      "difficulte": "Absurde",
+      "jours": 120
      }
     }
    ]
@@ -1314,7 +1314,7 @@
     {
      "degre": 1,
      "nom": "Cuir chevelu ouvert",
-     "effet": "Le cuir chevelu se fend sous le coup et le sang chaud ruisselle aussitôt dans les yeux, brouillant la vue et collant les paupières. Le blessé subit un Saignement de −5 PV et −30 à toute action.",
+     "effet": "Le cuir chevelu se fend sous le coup et le sang chaud ruisselle aussitôt dans les yeux, brouillant la vue et collant les paupières. Le blessé subit un Saignement de −5 PV et −30 à toute action, et sa Vue perd 2 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie du cuir chevelu et la bande. Retire le saignement.",
@@ -1330,7 +1330,7 @@
     {
      "degre": 2,
      "nom": "Plaie profonde du cuir chevelu, os du crâne mis à nu",
-     "effet": "La plaie s'ouvre en grand jusqu'à laisser l'os du crâne luire à nu, et la violence du choc fait tanguer la tête du blessé. Le blessé subit un Saignement de −10 PV et −40 à toute action.",
+     "effet": "La plaie s'ouvre en grand jusqu'à laisser l'os du crâne luire à nu, et la violence du choc fait tanguer la tête du blessé. Le blessé subit un Saignement de −10 PV et −40 à toute action, et sa Vue perd 2 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie béante puis la suture pour refermer le cuir chevelu. Retire le saignement.",
@@ -1346,7 +1346,7 @@
     {
      "degre": 3,
      "nom": "Fêlure du crâne",
-     "effet": "L'os du crâne se fêle sous l'impact dans un craquement sourd, et la tête bourdonne au point de troubler les sens. Le blessé subit un Saignement de −15 PV et −50 à toute action.",
+     "effet": "L'os du crâne se fêle sous l'impact dans un craquement sourd, et la tête bourdonne au point de troubler les sens. Le blessé subit un Saignement de −15 PV et −50 à toute action, et tous ses sens perdent 2 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la plaie et bande la tête. Retire le saignement.",
@@ -1363,7 +1363,7 @@
     {
      "degre": 4,
      "nom": "Fracture du crâne avec commotion cérébrale",
-     "effet": "Le crâne se fracture franchement et le cerveau commotionné se met à vaciller : la vue se brouille, les jambes se dérobent et la conscience menace de s'éteindre. Le blessé subit un Saignement de −20 PV et −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le crâne se fracture franchement et le cerveau commotionné se met à vaciller : la vue se brouille, les jambes se dérobent et la conscience menace de s'éteindre. Le blessé subit un Saignement de −20 PV et −60 à toute action, et tous ses sens perdent 4 points de clarté. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin bande la tête et comprime la plaie pour contenir l'hémorragie. Retire le saignement.",
@@ -1380,7 +1380,7 @@
     {
      "degre": 5,
      "nom": "Enfoncement de la boîte crânienne, cerveau écrasé",
-     "effet": "La boîte crânienne cède et s'enfonce dans un fracas d'os, écrasant le cerveau sous les éclats. Le blessé subit un Saignement de −25 PV et −2 permanent à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "La boîte crânienne cède et s'enfonce dans un fracas d'os, écrasant le cerveau sous les éclats. Le blessé subit un Saignement de −25 PV et −2 permanent à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −70 à toute action, et tous ses sens perdent 4 points de clarté. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime le crâne enfoncé et bande la tête. Retire le saignement.",
@@ -1438,7 +1438,7 @@
     {
      "degre": 3,
      "nom": "Mâchoire fracturée et langue entaillée, dents arrachées",
-     "effet": "La mâchoire se fracture, la langue s'entaille et plusieurs dents sont arrachées, la parole se réduisant à un magma sanglant et inintelligible. Le blessé subit un Saignement de −15 PV, la perte définitive de plusieurs dents et −50 à toute action.",
+     "effet": "La mâchoire se fracture, la langue s'entaille et plusieurs dents sont arrachées, la parole se réduisant à un magma sanglant et inintelligible. Le blessé subit un Saignement de −15 PV, la perte définitive de plusieurs dents et −50 à toute action, et son Goût perd 3 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin suture la langue entaillée et immobilise la mâchoire fracturée. Retire le saignement.",
@@ -1455,7 +1455,7 @@
     {
      "degre": 4,
      "nom": "Langue à demi tranchée et mâchoire brisée, denture détruite",
-     "effet": "La langue est à demi tranchée et la mâchoire brisée en plusieurs fragments, la denture cédant sous le choc et toute parole s'éteignant. Le blessé subit un Saignement de −20 PV, l'état Mutisme partiel, la perte définitive de plusieurs dents et −60 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "La langue est à demi tranchée et la mâchoire brisée en plusieurs fragments, la denture cédant sous le choc et toute parole s'éteignant. Le blessé subit un Saignement de −20 PV, l'état Mutisme partiel, la perte définitive de plusieurs dents et −60 à toute action, et son Goût perd 5 points de clarté. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime la langue tranchée et bloque la mâchoire éclatée. Retire le saignement.",
@@ -1472,7 +1472,7 @@
     {
      "degre": 5,
      "nom": "Langue sectionnée, bouche fracassée",
-     "effet": "La langue est sectionnée net et la bouche fracassée, le sang inondant la gorge tandis que la parole se tarit à jamais. Le blessé subit un Saignement de −25 PV, la perte définitive de plusieurs dents et subit l'état Mutisme partiel de façon permanente. Il subit aussi −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "La langue est sectionnée net et la bouche fracassée, le sang inondant la gorge tandis que la parole se tarit à jamais. Le blessé subit un Saignement de −25 PV, la perte définitive de plusieurs dents et subit l'état Mutisme partiel de façon permanente. Il subit aussi −70 à toute action, et son Goût tombe définitivement à 0 de clarté. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime le moignon de langue et tamponne la bouche fracassée. Retire le saignement.",
@@ -1764,7 +1764,7 @@
     {
      "degre": 1,
      "nom": "Pavillon de l'oreille fendu, conduit ensanglanté",
-     "effet": "Le coup fend le pavillon de l'oreille et le sang coule dans le conduit, tandis qu'un bourdonnement aigu s'installe et noie les sons les plus fins. Le blessé subit un Saignement de −5 PV et −40 à toute action.",
+     "effet": "Le coup fend le pavillon de l'oreille et le sang coule dans le conduit, tandis qu'un bourdonnement aigu s'installe et noie les sons les plus fins. Le blessé subit un Saignement de −5 PV et −40 à toute action, et son Ouïe perd 1 point de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin nettoie le conduit et comprime le pavillon fendu avec une compresse. Retire le saignement.",
@@ -1780,7 +1780,7 @@
     {
      "degre": 2,
      "nom": "Cartilage du pavillon broyé, conduit auditif lacéré",
-     "effet": "Le cartilage du pavillon se broie et le conduit auditif se lacère, l'oreille enflant sous le sang tandis que le bourdonnement devient un sifflement permanent qui couvre les voix. Le blessé subit un Saignement de −10 PV et −50 à toute action.",
+     "effet": "Le cartilage du pavillon se broie et le conduit auditif se lacère, l'oreille enflant sous le sang tandis que le bourdonnement devient un sifflement permanent qui couvre les voix. Le blessé subit un Saignement de −10 PV et −50 à toute action, et son Ouïe perd 2 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin tamponne le conduit lacéré et bande l'oreille pour contenir l'écoulement. Retire le saignement.",
@@ -1796,7 +1796,7 @@
     {
      "degre": 3,
      "nom": "Tympan crevé, oreille interne ébranlée",
-     "effet": "Le tympan se crève dans une douleur fulgurante et l'oreille interne, ébranlée, déchaîne un vertige qui fait tournoyer le sol : ce côté n'entend plus rien et l'équilibre se dérobe à chaque pas. Le blessé subit un Saignement de −10 PV, la perte définitive de l'audition de cette oreille, l'état À terre et −60 à toute action.",
+     "effet": "Le tympan se crève dans une douleur fulgurante et l'oreille interne, ébranlée, déchaîne un vertige qui fait tournoyer le sol : ce côté n'entend plus rien et l'équilibre se dérobe à chaque pas. Le blessé subit un Saignement de −10 PV, la perte définitive de l'audition de cette oreille, l'état À terre et −60 à toute action ; son Ouïe perd 3 points de clarté, définitivement.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin obture le conduit, comprime l'oreille et allonge le blessé pour calmer le vertige. Retire le saignement.",
@@ -1813,7 +1813,7 @@
     {
      "degre": 4,
      "nom": "Oreille interne détruite, labyrinthe écrasé",
-     "effet": "L'oreille interne est détruite et le labyrinthe écrasé, plongeant le blessé dans un vertige durable où le monde bascule sans répit : ce côté est sourd à jamais et le moindre mouvement le jette au sol, l'estomac retourné. Le blessé subit un Saignement de −15 PV, la perte définitive de l'audition de cette oreille, l'état À terre et −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "L'oreille interne est détruite et le labyrinthe écrasé, plongeant le blessé dans un vertige durable où le monde bascule sans répit : ce côté est sourd à jamais et le moindre mouvement le jette au sol, l'estomac retourné. Le blessé subit un Saignement de −15 PV, la perte définitive de l'audition de cette oreille, l'état À terre et −70 à toute action ; son Ouïe perd 3 points de clarté, définitivement. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime l'oreille, immobilise la tête du blessé et l'allonge pour endiguer le vertige et l'hémorragie. Retire le saignement.",
@@ -1830,7 +1830,7 @@
     {
      "degre": 5,
      "nom": "Rocher fracturé, brèche jusqu'au cerveau",
-     "effet": "L'os du rocher se fracture et la brèche s'enfonce jusqu'au cerveau, le sang fusant du conduit dans une douleur qui foudroie la conscience. Le blessé subit un Saignement de −20 PV, la perte définitive de l'audition de cette oreille et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −80 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "L'os du rocher se fracture et la brèche s'enfonce jusqu'au cerveau, le sang fusant du conduit dans une douleur qui foudroie la conscience. Le blessé subit un Saignement de −20 PV, la perte définitive de l'audition de cette oreille et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −80 à toute action, et son Ouïe perd 3 points de clarté, définitivement. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime l'oreille et bande fermement la tête pour contenir l'écoulement issu de la fracture. Retire le saignement.",
@@ -1857,7 +1857,7 @@
     {
      "degre": 1,
      "nom": "Arête du nez fendue, épistaxis abondant",
-     "effet": "Le coup fend l'arête du nez et le sang jaillit aussitôt des narines en flot continu, tandis que les yeux se mettent à larmoyer et voilent le regard. Le blessé subit un Saignement de −5 PV et −40 à toute action.",
+     "effet": "Le coup fend l'arête du nez et le sang jaillit aussitôt des narines en flot continu, tandis que les yeux se mettent à larmoyer et voilent le regard. Le blessé subit un Saignement de −5 PV et −40 à toute action, et sa Vue perd 2 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin pince les narines et bascule la tête pour tamponner l'écoulement. Retire le saignement.",
@@ -1873,7 +1873,7 @@
     {
      "degre": 2,
      "nom": "Os propres du nez fracturés, cloison déviée",
-     "effet": "Les os propres du nez se brisent et la cloison dévie sous l'impact, le sang ruisselant à gros bouillons tandis que les yeux larmoient à flots et noient la vue. Le blessé subit un Saignement de −10 PV et −50 à toute action.",
+     "effet": "Les os propres du nez se brisent et la cloison dévie sous l'impact, le sang ruisselant à gros bouillons tandis que les yeux larmoient à flots et noient la vue. Le blessé subit un Saignement de −10 PV et −50 à toute action, et sa Vue perd 4 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin mèche les narines et comprime l'arête pour endiguer le flot. Retire le saignement.",
@@ -1889,7 +1889,7 @@
     {
      "degre": 3,
      "nom": "Cloison et sinus enfoncés, respiration nasale coupée",
-     "effet": "La cloison s'effondre et les parois des sinus s'enfoncent dans un craquement humide, obstruant les voies et coupant toute respiration par le nez. Le sang inonde la gorge sans répit. Le blessé subit un Saignement de −15 PV, ne peut plus respirer par le nez et subit −60 à toute action.",
+     "effet": "La cloison s'effondre et les parois des sinus s'enfoncent dans un craquement humide, obstruant les voies et coupant toute respiration par le nez. Le sang inonde la gorge sans répit. Le blessé subit un Saignement de −15 PV, ne peut plus respirer par le nez et subit −60 à toute action ; sa Vue perd 4 points de clarté et son Odorat tombe à 0 de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin tamponne les fosses nasales et comprime le massif pour stopper l'hémorragie. Retire le saignement.",
@@ -1906,7 +1906,7 @@
     {
      "degre": 4,
      "nom": "Massif facial défoncé, étage moyen de la face effondré",
-     "effet": "Le massif facial cède sous le choc et tout l'étage moyen de la face s'effondre vers l'intérieur, les os éclatés noyés dans un flot de sang qui aveugle le blessé. Le blessé subit un Saignement de −20 PV et −70 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "Le massif facial cède sous le choc et tout l'étage moyen de la face s'effondre vers l'intérieur, les os éclatés noyés dans un flot de sang qui aveugle le blessé. Le blessé subit un Saignement de −20 PV et −70 à toute action ; sa Vue perd 6 points de clarté et son Odorat tombe à 0 de clarté. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin tamponne le massif effondré et comprime la face pour contenir le flot. Retire le saignement.",
@@ -1923,7 +1923,7 @@
     {
      "degre": 5,
      "nom": "Lame de l'ethmoïde enfoncée vers le cerveau",
-     "effet": "La lame de l'ethmoïde cède et s'enfonce vers le cerveau, déchirant les enveloppes à la racine du nez, le sang mêlé d'un liquide clair coulant des narines. Le blessé subit un Saignement de −25 PV et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −80 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "La lame de l'ethmoïde cède et s'enfonce vers le cerveau, déchirant les enveloppes à la racine du nez, le sang mêlé d'un liquide clair coulant des narines. Le blessé subit un Saignement de −25 PV et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −80 à toute action, sa Vue perd 6 points de clarté, et son Odorat tombe définitivement à 0 de clarté. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin tamponne la racine du nez et maintient la tête surélevée pour limiter l'écoulement. Retire le saignement.",
@@ -2114,9 +2114,10 @@
      },
      "traitement": {
       "possible": true,
-      "description": "Le médecin suture les vaisseaux et reconstruit le cou. Retire le saignement, lève le malus de −80 et retire l'état Inconscience, mais le Mutisme total reste permanent.",
-      "mode": "chirurgie",
-      "difficulte": "Absurde"
+      "description": "Le médecin suture les vaisseaux et reconstruit le cou, puis une très longue convalescence prend le relais. Retire le saignement, lève le malus de −80 et retire l'état Inconscience, mais le Mutisme total reste permanent.",
+      "mode": "chirurgie_repos",
+      "difficulte": "Absurde",
+      "jours": 120
      }
     }
    ]
@@ -2132,7 +2133,7 @@
     {
      "degre": 1,
      "nom": "Arcade ouverte, le sang coule dans l'orbite",
-     "effet": "L'arcade fendue laisse couler un filet de sang qui noie l'orbite et voile le regard de rouge. Le blessé subit un Saignement de −5 PV et −50 à toute action.",
+     "effet": "L'arcade fendue laisse couler un filet de sang qui noie l'orbite et voile le regard de rouge. Le blessé subit un Saignement de −5 PV et −50 à toute action, et sa Vue perd 2 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime l'arcade ouverte et essuie l'orbite pour dégager le champ de vision. Retire le saignement.",
@@ -2148,7 +2149,7 @@
     {
      "degre": 2,
      "nom": "Cornée lacérée, œil tuméfié et larmoyant",
-     "effet": "La cornée est entaillée, l'œil enfle et larmoie sans cesse, le monde se brouille derrière un voile trouble. Le blessé subit un Saignement de −5 PV, a l'œil hors d'usage et subit −60 à toute action.",
+     "effet": "La cornée est entaillée, l'œil enfle et larmoie sans cesse, le monde se brouille derrière un voile trouble. Le blessé subit un Saignement de −5 PV et −60 à toute action, et sa Vue perd 3 points de clarté.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin irrigue l'œil pour en chasser les débris et comprime la plaie de la paupière. Retire le saignement.",
@@ -2164,7 +2165,7 @@
     {
      "degre": 3,
      "nom": "Globe perforé, l'humeur s'écoule",
-     "effet": "Le globe oculaire est percé et l'humeur s'en écoule, l'œil s'affaisse et s'éteint à jamais. Le blessé subit un Saignement de −10 PV, la perte définitive de l'œil et −70 à toute action.",
+     "effet": "Le globe oculaire est percé et l'humeur s'en écoule, l'œil s'affaisse et s'éteint à jamais. Le blessé subit un Saignement de −10 PV, la perte définitive de l'œil et −70 à toute action ; sa Vue perd 3 points de clarté, définitivement.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin protège le globe percé sous une compresse stérile et comprime l'orbite. Retire le saignement.",
@@ -2181,7 +2182,7 @@
     {
      "degre": 4,
      "nom": "Orbite défoncée, le globe est arraché",
-     "effet": "L'orbite enfoncée libère le globe arraché de sa cavité béante et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV, la perte définitive de l'œil et −80 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
+     "effet": "L'orbite enfoncée libère le globe arraché de sa cavité béante et la douleur fulgurante menace de faire sombrer le blessé. Le blessé subit un Saignement de −15 PV, la perte définitive de l'œil et −80 à toute action ; sa Vue perd 3 points de clarté, définitivement. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Très difficile (180) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin panse l'orbite vidée et comprime les vaisseaux qui giclent au fond de la cavité. Retire le saignement.",
@@ -2198,7 +2199,7 @@
     {
      "degre": 5,
      "nom": "Pointe enfoncée à travers l'orbite jusqu'au cerveau",
-     "effet": "La pointe s'enfonce à travers l'orbite et perce le crâne, fouillant les tissus profonds, et la douleur insoutenable terrasse le blessé. Le blessé subit un Saignement de −20 PV, la perte définitive de l'œil et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −90 à toute action. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
+     "effet": "La pointe s'enfonce à travers l'orbite et perce le crâne, fouillant les tissus profonds, et la douleur insoutenable terrasse le blessé. Le blessé subit un Saignement de −20 PV, la perte définitive de l'œil et une lésion cérébrale profonde qui inflige un malus permanent de −2 à l'Érudition, à la Logique et à l'Imagination. Il subit aussi −90 à toute action, et sa Vue perd 3 points de clarté, définitivement. Au début de son prochain tour, le blessé doit réussir un jet de Résistance à la Douleur de difficulté Impossible (400) ou tomber Inconscient.",
      "premiersSecours": {
       "possible": true,
       "description": "Le médecin comprime l'orbite autour du corps étranger et maintient les fonctions vitales. Retire le saignement.",
@@ -2208,7 +2209,7 @@
       "possible": true,
       "description": "Le médecin retire la pointe et rétablit la circulation cérébrale, puis le blessé observe une très longue convalescence. Retire le saignement, lève le malus de −90 et retire l'état Inconscience, mais la perte de l'œil et le malus de −2 à l'Érudition, à la Logique et à l'Imagination restent définitifs.",
       "mode": "chirurgie_repos",
-      "difficulte": "Absurde",
+      "difficulte": "Impossible",
       "jours": 90
      }
     }

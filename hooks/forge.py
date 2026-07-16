@@ -3,7 +3,7 @@
 C'est le pont de synchronisation entre les règles (armes.md) et la Forge (page
 « Forge », outil de création d'armes). Les coûts, les paliers et les descriptions
 des pièces d'une arme sont écrits une seule fois, dans les fiches « Propriétés
-obligatoires » et « Propriétés supplémentaires » d'armes.md ; ce hook les relit au
+obligatoires » et « Propriétés optionnelles » d'armes.md ; ce hook les relit au
 build et en fait un JSON que la Forge consomme. Une valeur changée dans les règles
 se répercute donc dans l'outil : aucune double saisie, aucune dérive.
 
@@ -220,7 +220,7 @@ def _extract(docs_dir):
     text = (docs_dir / ARMES).read_text(encoding="utf-8")
     return {
         "obligatoires": _cards(_section(text, "Propriétés obligatoires")),
-        "supplementaires": _cards(_section(text, "Propriétés supplémentaires")),
+        "supplementaires": _cards(_section(text, "Propriétés optionnelles")),
         "armes": _armes(text),
     }
 
