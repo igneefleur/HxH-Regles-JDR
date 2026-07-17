@@ -41,6 +41,4 @@ Une arme inflige un ou plusieurs types. Si elle en a plusieurs, l'attaquant choi
 
 Une armure a une réduction de dégâts distincte par type, physique comme élémentaire. Seule celle du type de l'attaque s'applique.
 
-> **TODO :** effets secondaires par type (saignement, brûlure…) et cas des créatures immatérielles.
-
 </div>

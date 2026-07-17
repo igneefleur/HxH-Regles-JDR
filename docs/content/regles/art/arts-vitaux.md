@@ -24,12 +24,6 @@ Le tummo est l'art du feu intérieur. En comprimant son souffle sous le nombril,
 </div>
 
 <div class="mcard art" markdown>
-**Mithridatisation**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Vipassana**
 
 Le vipassana est l'art de l'équanimité. Le pratiquant observe chaque sensation de son corps sans y réagir : la douleur devient une sensation parmi d'autres, qui naît, passe et ne commande plus rien.
@@ -48,12 +42,6 @@ Le vipassana est l'art de l'équanimité. Le pratiquant observe chaque sensation
 
 **Prérequis :** Volonté 19, Résistance à la Douleur 420, Intéroception 220<br>
 **Effet :** le personnage ignore les malus à toutes les actions que lui infligent ses blessures graves de degré 4 et 5.
-</div>
-
-<div class="mcard art" markdown>
-**Agôgê**
-
-TODO
 </div>
 
 <div class="mcard art" markdown>

@@ -25,16 +25,4 @@ Il peut revisiter une scène gravée à tout moment (aucune action requise), et 
 **Effet :** le personnage grave chaque round qu'il vit. Ses scènes gravées sont sans limite de nombre et ne s'effacent plus : tout ce qu'il a vécu depuis l'apprentissage de ce palier peut être revisité.
 </div>
 
-<div class="mcard art" markdown>
-**Méthode de Zadig**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Anzan**
-
-TODO
-</div>
-
 </div>

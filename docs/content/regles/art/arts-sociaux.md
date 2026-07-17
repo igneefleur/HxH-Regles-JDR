@@ -3,36 +3,6 @@
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Sophistique**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Éristique**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Realpolitik**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Libertinage**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Camelot**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Panache**
 
 Le panache est l'art de l'entrée en scène. Quand le pratiquant paraît, les conversations meurent, les regards convergent et le lieu entier retient son souffle.
@@ -59,18 +29,6 @@ Une créature figée ne peut pas agir durant son tour (aucune action ni déplace
 **Effet :** lorsqu'une personne le fait venir, le personnage arrive avant la fin du round, quelle que soit la distance à parcourir.
 
 Le figement ne demande plus aucun jet : toute créature autour du personnage se fige d'office, même celles dont la Présence est supérieure ou égale à la sienne.
-</div>
-
-<div class="mcard art" markdown>
-**Maïeutique**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Sprezzatura**
-
-TODO
 </div>
 
 <div class="mcard art" markdown>

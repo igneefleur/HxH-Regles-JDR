@@ -256,7 +256,7 @@ def _competences(text):
 # ---------------------------------------------------------------------------
 # Formations et arts (cartes mcard art)
 # ---------------------------------------------------------------------------
-_ART_CARD = re.compile(r'<div class="mcard art" markdown>(.*?)</div>', re.S)
+_ART_CARD = re.compile(r'<div class="mcard art" markdown[^>]*>(.*?)</div>', re.S)   # [^>]* : tolère data-cols et autres attributs
 _NAME = re.compile(r"\*\*(.+?)\*\*(?:\s*<span class=\"prereq\">(.*?)</span>)?")   # tagline optionnelle (les arts n'en portent plus)
 _SPAN = re.compile(r'<span class="prereq">(.*?)</span>', re.S)
 _PALIER = re.compile(r'<p class="palier">([✦✧]+)\s*(\w+)(?:\s*:\s*[^<]*)?</p>')   # tolère un nom de palier (« Basique : Déchet de la société »)

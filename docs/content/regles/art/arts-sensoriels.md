@@ -23,13 +23,6 @@ L'écholocation est l'art de voir par le son. Le pratiquant claque la langue, fr
 **Effet :** l'Écholocation du personnage devient un sens Primaire : il peut combattre et agir sans la Vue.
 </div>
 
-
-<div class="mcard art" markdown>
-**Oreille absolue**
-
-TODO
-</div>
-
 <div class="mcard art" markdown>
 **Vigie**
 
@@ -54,12 +47,6 @@ Lorsqu'il est inconscient, le personnage peut toujours effectuer des [réactions
 </div>
 
 <div class="mcard art" markdown>
-**Konnakol**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Décorporation**
 
 La décorporation est l'art de se percevoir du dehors. Le pratiquant regarde la scène comme s'il s'y tenait en spectateur : son propre dos, l'angle mort, la pièce entière.
@@ -79,6 +66,5 @@ La décorporation est l'art de se percevoir du dehors. Le pratiquant regarde la 
 **Prérequis :** Perception 19, Proprioception 420, Intéroception 220<br>
 **Effet :** le personnage perçoit complètement à la troisième personne, comme s'il voyait à travers une caméra placée à 2 m de lui. Il peut déplacer la caméra tant qu'elle reste dans un rayon de 2 m autour de lui (aucune action requise). Bien qu'elle n'existe pas vraiment, la caméra ne peut pas traverser ce qui est physique. Le personnage peut utiliser tous ses sens comme s'il était à la place de la caméra.
 </div>
-
 
 </div>

@@ -9,30 +9,6 @@ Chaque palier fournit aussi une valeur de dégâts de frappe, une base plus un m
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Karaté**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×2 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 120 + ×3 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 140 + ×4 (main et pied)
-</div>
-
-<div class="mcard art" markdown>
 **Judo**
 
 Le judo est l'art de la projection. Le pratiquant emprunte la force de l'adversaire, rompt son équilibre et le jette au sol.
@@ -53,54 +29,6 @@ Le judo est l'art de la projection. Le pratiquant emprunte la force de l'adversa
 
 **Prérequis :** Agilité 19, Lutte 420, Équilibre 220<br>
 **Effet :** lorsqu'une cible subit l'état À terre par la manœuvre Mettre à terre du personnage, on considère qu'elle vient de [chuter](../personnage/capacites-physiques.md#chute) de 450 m.<br>
-**Dégâts :** 80 + ×3 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Aïkido**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 40 + ×1 (main)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×2 (main)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×3 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Jiu-jitsu japonais**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 40 + ×1 (main)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×2 (main)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
 **Dégâts :** 80 + ×3 (main)
 </div>
 
@@ -161,131 +89,11 @@ Le malus sur l'action que la posture bride d'ordinaire, palier par palier :
 | Expert | aucun | aucun | attaque libre | défense libre |
 </div>
 
-<div class="mcard art" markdown>
-**Tai-chi**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 40 + ×1 (main)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×2 (main)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×3 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Wing Chun**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×1 (main)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×2 (main)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×3 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Taekwondo**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 120 + ×2 (pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 140 + ×3 (pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 160 + ×4 (pied)
-</div>
-
-<div class="mcard art" markdown>
-**Hapkido**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 40 + ×1 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×2 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×3 (main et pied)
-</div>
-
 </div>
 
 ## Asie du Sud-Est et du Sud
 
 <div class="cols" markdown>
-
-<div class="mcard art" markdown>
-**Muay Thaï**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 140 + ×2 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 160 + ×3 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 180 + ×4 (main et pied)
-</div>
 
 <div class="mcard art" markdown>
 **Lethwei**
@@ -312,30 +120,6 @@ Le lethwei est l'art du combat à poings nus. Il ne connaît qu'une seule victoi
 </div>
 
 <div class="mcard art" markdown>
-**Silat**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×1 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×2 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 120 + ×3 (main et pied)
-</div>
-
-<div class="mcard art" markdown>
 **Kali**
 
 Le kali est l'art du bâton et de la lame courte. Le pratiquant frappe la main armée avant l'homme : l'arme adverse tombe, ou change de camp.
@@ -357,30 +141,6 @@ Le kali est l'art du bâton et de la lame courte. Le pratiquant frappe la main a
 **Prérequis :** Dextérité 19, Armes de mêlée 420, Parade 220<br>
 **Effet :** le +20 au jet de l'adversaire pour un objet tenu à plusieurs mains ne s'applique plus contre le personnage. Lorsqu'il prend l'arme qu'il vient de Désarmer, le personnage peut immédiatement attaquer avec elle (aucune action requise), une seule fois par tour.<br>
 **Dégâts :** 100 + ×3 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Kalaripayattu**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 40 + ×1 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×2 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×3 (main et pied)
 </div>
 
 </div>
@@ -411,30 +171,6 @@ La boxe anglaise est l'art de la riposte. Jeu de jambes, esquive courte et contr
 **Prérequis :** Dextérité 19, Armes de mêlée 420, Esquive 220<br>
 **Effet :** le bonus au jet d'attaque de la riposte du personnage n'est plus plafonné à +100.<br>
 **Dégâts :** 180 + ×4 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Savate**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×2 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 120 + ×3 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 140 + ×4 (main et pied)
 </div>
 
 <div class="mcard art" markdown>
@@ -510,78 +246,6 @@ Le jiu-jitsu brésilien est l'art de la soumission. Au sol, chaque position pré
 </div>
 
 <div class="mcard art" markdown>
-**Capoeira**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×1 (pied et tête)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×2 (pied et tête)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×3 (pied et tête)
-</div>
-
-<div class="mcard art" markdown>
-**Krav Maga**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×1 (tout le corps)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×2 (tout le corps)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×3 (tout le corps)
-</div>
-
-<div class="mcard art" markdown>
-**Sambo**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 40 + ×1 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×2 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×3 (main et pied)
-</div>
-
-<div class="mcard art" markdown>
 **Systema**
 
 Le systema est l'art d'absorber les coups. Le corps relâché, le souffle continu, le pratiquant accompagne la frappe au lieu de la subir : elle glisse et se dissipe dans un corps qui ne lui oppose rien.
@@ -603,30 +267,6 @@ Le systema est l'art d'absorber les coups. Le corps relâché, le souffle contin
 **Prérequis :** Volonté 19, Résistance à la Douleur 420, Esquive 220<br>
 **Effet :** la manœuvre Encaisser ne subit plus aucun malus au jet de défense pour le personnage. Lorsqu'il utilise la manœuvre Encaisser, le personnage peut aussi utiliser la manœuvre [Contre-attaquer](../combat/manoeuvres.md) dans la même défense, tant qu'il en remplit le prérequis.<br>
 **Dégâts :** 80 + ×3 (main)
-</div>
-
-<div class="mcard art" markdown>
-**Pankration**
-
-TODO
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 60 + ×1 (main et pied)
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 80 + ×2 (main et pied)
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** TODO<br>
-**Effet :** TODO<br>
-**Dégâts :** 100 + ×3 (main et pied)
 </div>
 
 <div class="mcard art" markdown>

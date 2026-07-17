@@ -3,12 +3,6 @@
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Damas**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Cordon-bleu**
 
 Le cordon-bleu est l'art de la grande cuisine. Un plat du pratiquant ne nourrit pas seulement : il répare le corps comme une nuit de repos.
@@ -29,18 +23,6 @@ Consommer un mets coûte une [action](../combat/deroulement-combat.md). Une mêm
 
 **Prérequis :** Imagination 19, Cuisine 420, Goût 220<br>
 **Effet :** un mets du personnage rend à qui le mange tout ce que rend un sommeil correct : les points de fatigue remontent au maximum, le compte des jets d'effort retombe à zéro et les durées d'activité de la journée sont rendues. Le mets ne compte pas comme un sommeil correct : il ne remet pas à zéro le temps avant d'être fatigué, et le besoin de dormir demeure. Une même personne ne peut toujours en profiter qu'une fois entre deux sommeils corrects.
-</div>
-
-<div class="mcard art" markdown>
-**Murano**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Grasse**
-
-TODO
 </div>
 
 </div>

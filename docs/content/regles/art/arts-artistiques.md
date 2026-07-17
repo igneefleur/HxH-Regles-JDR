@@ -40,22 +40,4 @@ Une créature qui n'utilise que la Vue comme [sens](../personnage/sens.md) Prima
 <p class="formula">Un jour de la table représente 8 heures de travail.</p>
 </div>
 
-<div class="mcard art" markdown>
-**Bel canto**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Commedia dell'arte**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Belles-lettres**
-
-TODO
-</div>
-
 </div>

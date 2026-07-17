@@ -3,12 +3,6 @@
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Shinobi**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Prestidigitation**
 
 La prestidigitation est l'art du geste plus rapide que l'œil. Entre les mains du pratiquant, les objets disparaissent, réapparaissent et changent de mains sous le regard même de qui les fixe.
@@ -33,24 +27,6 @@ Le personnage peut aussi utiliser la manœuvre spéciale Démembrer, en [Visant]
 En cas de réussite, la cible subit une [blessure grave](../combat/critique-blessures.md) de degré 5 à la zone visée, dont elle subit tous les effets : la perte ou la destruction de la zone, ses états et les soins qu'elle exige, tels que les décrit l'entrée de la zone.
 
 La cible n'éprouve cependant aucune douleur : elle ne fait aucun jet de [Résistance à la Douleur](../personnage/competences.md) et ne subit ni Saignement ni malus à ses actions. La zone escamotée se retrouve dans la main du personnage.
-</div>
-
-<div class="mcard art" markdown>
-**Filoche**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Faussaire**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Monte-en-l'air**
-
-TODO
 </div>
 
 </div>

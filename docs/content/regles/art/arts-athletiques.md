@@ -3,12 +3,6 @@
 <div class="cols" markdown>
 
 <div class="mcard art" markdown>
-**Parkour**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Qinggong**
 
 Le qinggong est l'art de la légèreté. Le pratiquant court où rien ne devrait porter un corps : un mur, une paroi, la surface d'un étang.
@@ -27,12 +21,6 @@ Le qinggong est l'art de la légèreté. Le pratiquant court où rien ne devrait
 
 **Prérequis :** Agilité 19, Équilibre 420, Chute 220<br>
 **Effet :** le personnage se déplace sur toute surface, même un nuage, une fumée ou un feuillage, et peut désormais terminer son tour sur n'importe laquelle sans chuter.
-</div>
-
-<div class="mcard art" markdown>
-**Wuqiao**
-
-TODO
 </div>
 
 <div class="mcard art" markdown>
@@ -57,12 +45,6 @@ Le hors-piste est l'art d'avancer là où le sol se dérobe. Neige, éboulis, ma
 </div>
 
 <div class="mcard art" markdown>
-**Highline**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
 **Uran Nugaralt**
 
 L'uran nugaralt est l'art de la contorsion. Le pratiquant plie son corps au-delà de ce que les articulations promettent : épaules déboîtées à volonté, colonne nouée, membres rangés là où la place manque.
@@ -81,18 +63,6 @@ L'uran nugaralt est l'art de la contorsion. Le pratiquant plie son corps au-del�
 
 **Prérequis :** Agilité 19, Contorsion 420, Résistance à la Douleur 220<br>
 **Effet :** le personnage peut se glisser par toute ouverture assez large pour y passer un doigt.
-</div>
-
-<div class="mcard art" markdown>
-**Harri-jasotze**
-
-TODO
-</div>
-
-<div class="mcard art" markdown>
-**Ama**
-
-TODO
 </div>
 
 <div class="mcard art" markdown>
@@ -115,6 +85,5 @@ Le lung-gom-pa est l'art de la course en transe. Le pratiquant cale son souffle 
 **Prérequis :** Endurance 19, Course 420, Résistance à l'Épuisement 220<br>
 **Effet :** le personnage peut utiliser la colonne Lourde du Mouvement en restant en activité légère.
 </div>
-
 
 </div>
