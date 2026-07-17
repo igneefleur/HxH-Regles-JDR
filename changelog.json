@@ -1,5 +1,154 @@
 [
 {
+"short": "19ff693",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T12:30:13+02:00",
+"message": "Main épuré pour le site officiel : 56 cartes d'arts TODO retirées, 17 pages vides supprimées, nav allégée ; le chantier complet vit sur beta",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/19ff693131e19bde81f4a569629efd0611ec6528",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/art/arts-artisanaux.md",
+"url": "content/regles/art/arts-artisanaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-artistiques.md",
+"url": "content/regles/art/arts-artistiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-athletiques.md",
+"url": "content/regles/art/arts-athletiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-furtifs.md",
+"url": "content/regles/art/arts-furtifs/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-intellectuels.md",
+"url": "content/regles/art/arts-intellectuels/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-martiaux.md",
+"url": "content/regles/art/arts-martiaux/"
+},
+{
+"status": "removed",
+"filename": "content/regles/art/arts-naturels.md",
+"url": null
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-sensoriels.md",
+"url": "content/regles/art/arts-sensoriels/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-sociaux.md",
+"url": "content/regles/art/arts-sociaux/"
+},
+{
+"status": "removed",
+"filename": "content/regles/art/arts-techniques.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/art/arts-transport.md",
+"url": null
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-vitaux.md",
+"url": "content/regles/art/arts-vitaux/"
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-artisanales.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-artistiques.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-athletiques.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-furtives.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-intellectuelles.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-naturelles.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-sensorielles.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-sociales.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-techniques.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-transport.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/formation/formations-vitales.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/regles/index.md",
+"url": null
+},
+{
+"status": "modified",
+"filename": "content/regles/monde/degats.md",
+"url": "content/regles/monde/degats/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/avantages.md",
+"url": "content/regles/personnage/avantages/"
+},
+{
+"status": "removed",
+"filename": "content/univers/heavens-arena.md",
+"url": null
+},
+{
+"status": "removed",
+"filename": "content/univers/index.md",
+"url": null
+}
+]
+},
+{
 "short": "6111993",
 "author": "Théo Cavaillès",
 "date": "2026-07-17T12:24:22+02:00",
@@ -250,20 +399,6 @@
 "date": "2026-07-16T21:53:39+02:00",
 "message": "Blessures : malus global, pas de 10, table dérivée de la visée",
 "url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d7ebde5d315cbcd9a4ecf8b29ccca27901a2bc11",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
-}
-]
-},
-{
-"short": "6b68cb6",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T21:45:45+02:00",
-"message": "Blessures : le Poumon retire enfin l'état Immobilisé",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6b68cb6c087a5d07c47b2106bbaa840a81c213bb",
 "files": [
 {
 "status": "modified",
