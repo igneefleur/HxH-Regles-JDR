@@ -116,25 +116,5 @@ Le lung-gom-pa est l'art de la course en transe. Le pratiquant cale son souffle 
 **Effet :** le personnage peut utiliser la colonne Lourde du Mouvement en restant en activité légère.
 </div>
 
-<div class="mcard art" markdown>
-**Avalanche**
-
-L'avalanche est l'art de la poussée. Le pratiquant met son poids entier dans chaque coup et déplace ce qu'il frappe : les corps volent, traversent les portes et roulent au bas des pentes.
-
-<p class="palier">✦✧✧ Basique</p>
-
-**Prérequis :** Force 7, Lutte 100, Prouesse de Force 60<br>
-**Effet :** lorsqu'il utilise la manœuvre [Blesser](../combat/manoeuvres.md), le personnage peut utiliser la manœuvre [Pousser](../combat/manoeuvres.md) dans la même attaque ; Blesser n'inflige alors que la moitié de ses dégâts. Le malus de −40 au jet d'attaque de la manœuvre Pousser est réduit à −20.
-
-<p class="palier">✦✦✧ Avancé</p>
-
-**Prérequis :** Force 13, Lutte 260, Prouesse de Force 140<br>
-**Effet :** la manœuvre Pousser ne subit plus aucun malus au jet d'attaque. Lorsqu'il effectue une attaque sur lui-même, le personnage peut utiliser la manœuvre Pousser, alors qu'elle l'interdit normalement : il ne fait alors aucun jet et se pousse directement de la distance qu'il choisit, jusqu'à la distance que sa Force donne à la manœuvre. Blesser inflige la totalité de ses dégâts lorsqu'il est utilisé avec Pousser.
-
-<p class="palier">✦✦✦ Expert</p>
-
-**Prérequis :** Force 19, Lutte 420, Prouesse de Force 220<br>
-**Effet :** la distance de ses poussées est multipliée par 2. Lorsqu'il utilise la manœuvre [Toucher](../combat/manoeuvres.md) dans une attaque, le personnage peut aussi utiliser la manœuvre Pousser.
-</div>
 
 </div>

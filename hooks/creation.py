@@ -22,8 +22,9 @@ Sources et formats parsés (voir chaque fonction pour le détail) :
   - formation/formations-*.md : cartes <div class="mcard art"> avec spans
     « Prérequis : … » et « Coût : N PF ».
   - art/arts-*.md : mêmes cartes, plus paliers <p class="palier">✦✧✧ Basique</p>
-    avec lignes **Prérequis :** / **Effet :**, et ligne de calibrage provisoire
-    « (À retirer — … frappe Basique B +×m FOR …) » si présente.
+    avec lignes **Prérequis :** / **Effet :** et, pour les arts martiaux, une
+    ligne **Dégâts :** « 100 + ×2 (main et pied) » par palier (l'ancienne ligne
+    de calibrage « (À retirer — …) » reste tolérée).
   - personnage/sens.md : table « La grille des sens » + listes de définitions.
   - monde/tailles.md : catégories de taille + modificateur de PV par taille.
   - personnage/capacites-physiques.md : tables 0-30 (Mouvement, Port, Apnée,
@@ -262,6 +263,7 @@ _PALIER = re.compile(r'<p class="palier">([✦✧]+)\s*(\w+)(?:\s*:\s*[^<]*)?</p
 _CALIBRAGE = re.compile(
     r"\(À retirer[^)]*?frappe Basique (\d+) \+×(\d+) FOR, Avancé (\d+) \+×(\d+) FOR, "
     r"Expert (\d+) \+×(\d+) FOR\.?\)")
+_DEGATS = re.compile(r"\*\*Dégâts\s*:\*\*\s*(\d+)\s*\+\s*×(\d+)(?:\s*\(([^)]*)\))?")
 
 
 def _formations(text, categorie):
@@ -330,8 +332,11 @@ def _arts(text, categorie):
             pm = re.search(r"\*\*Prérequis\s*:\*\*\s*(.*?)(?:<br>|\n)", pbody)
             # L'effet court jusqu'à la fin du fragment de palier (certaines cartes
             # portent des paragraphes de règles APRÈS une table, ex. Krav Maga,
-            # MMA) ; seules les lignes de table en sont retranchées.
-            em = re.search(r"\*\*Effet\s*:\*\*\s*(.*)\Z", pbody, re.S)
+            # MMA), mais s'arrête avant la ligne **Dégâts :** des arts martiaux ;
+            # seules les lignes de table en sont retranchées.
+            em = re.search(r"\*\*Effet\s*:\*\*\s*(.*?)(?=\s*\*\*Dégâts\s*:\*\*|\Z)",
+                           pbody, re.S)
+            dm = _DEGATS.search(pbody)
             flavor = _clean(pbody[:pm.start()] if pm else pbody)
             effet = ""
             if em:
@@ -343,8 +348,16 @@ def _arts(text, categorie):
                 "prereq": _clean(pm.group(1)) if pm else "",
                 "effet": effet,
                 "flavor": flavor,
+                "degats": [int(dm.group(1)), int(dm.group(2))] if dm else None,
+                "degatsParties": _clean(dm.group(3) or "") if dm else "",
                 "tables": _art_tables(pbody),
             })
+        # Les lignes **Dégâts :** par palier remplacent l'ancienne ligne de
+        # calibrage : elles reconstruisent le même dict frappe {palier: [base, ×N]}.
+        if frappe is None and len(paliers) >= 3 and all(p["degats"] for p in paliers[:3]):
+            frappe = {"basique": paliers[0]["degats"],
+                      "avance": paliers[1]["degats"],
+                      "expert": paliers[2]["degats"]}
         out.append({
             "categorie": categorie,
             "name": name,
@@ -352,6 +365,8 @@ def _arts(text, categorie):
             "desc": desc,
             "todo": todo and not paliers,
             "frappe": frappe,
+            "frappeParties": next((p["degatsParties"] for p in paliers
+                                   if p["degatsParties"]), ""),
             "paliers": paliers,
         })
     return out
@@ -528,14 +543,14 @@ def _extract(docs_dir):
     arts = []
     for cat, rel in ART_PAGES:
         arts.extend(_arts(_read(docs_dir, rel), cat))
-    # Les frappes des arts martiaux ne vivent que dans les lignes de calibrage
-    # provisoires « (À retirer — ...) » : si elles disparaissent du livre sans
-    # relais pérenne, le créateur perd la mécanique. On le crie au build.
+    # Les frappes des arts martiaux vivent dans les lignes **Dégâts :** de leurs
+    # paliers : si elles disparaissent du livre, le créateur perd la mécanique.
+    # On le crie au build.
     sans_frappe = [a["name"] for a in arts
                    if a["categorie"] == "martiaux" and a["paliers"] and not a["frappe"]]
     if sans_frappe:
-        print("[creation] AVERTISSEMENT : arts martiaux à paliers SANS valeur de "
-              "frappe (ligne de calibrage retirée ?) : " + ", ".join(sans_frappe))
+        print("[creation] AVERTISSEMENT : arts martiaux à paliers SANS ligne "
+              "**Dégâts :** : " + ", ".join(sans_frappe))
     return {
         "caracs": caracs,
         "caracTables": carac_tables,
