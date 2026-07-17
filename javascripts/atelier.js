@@ -1,4 +1,4 @@
-/* Atelier de création de pouvoir — éditeur de nœuds façon ComfyUI / LiteGraph.
+﻿/* Atelier de création de pouvoir — éditeur de nœuds façon ComfyUI / LiteGraph.
  *
  * Données (modules + archétypes) issues de nen-atelier.json, produit au build par
  * hooks/nen_atelier.py depuis les règles de Nen : une seule source de vérité.
@@ -69,6 +69,12 @@
   // sous-label d'un module dans la palette/recherche : ses types, sinon « tous types »
   // pour un module non contraignant mais catégorisé (ex. Maintenir à Distance), « structurel » seulement si sans catégorie.
   function subLabel(m) { return m.types.length ? m.types.join(", ") : (m.category ? "tous types" : (m.special || "structurel")); }
+  // description d'un module : un <p> par paragraphe (le JSON préserve les \n\n du livre)
+  function descBlock(text) {
+    var d = h("div", { class: "nf-desc" });
+    String(text).split(/\n{2,}/).forEach(function (p) { if (p.trim()) d.appendChild(h("p", {}, [p.trim()])); });
+    return d;
+  }
 
   function catColor(cat) { return "var(" + (CAT_VARS[cat] || "--fg-raccord") + ")"; }
   function catName(cat) { return cat ? (CAT_LABEL[cat] || cat) : "Raccord"; }
@@ -368,18 +374,29 @@
   // Types de socle admissibles pour un ensemble de nœuds : l'intersection des
   // types acceptés par chaque module (le livre : chaque module ne se greffe que
   // sur certains types). Un module sans restriction (types vide) n'intersecte pas.
+  // La Conscience éveille l'objet en créature : sa chaîne (type objet) accepte
+  // alors aussi les modules de créature (règle du livre, module Conscience).
+  function chainAwakened(state, nodes) {
+    return nodes.some(function (id) {
+      var n = state.nodes[id]; if (!n || n.kind !== "module") return false;
+      var d = moduleDef(n.defId); return !!d && d.name === "Conscience";
+    });
+  }
   function chainTypeCheck(state, nodes) {
-    var socleType = null, allowed = null;
+    var socleType = null, allowed = null, awake = chainAwakened(state, nodes);
     nodes.forEach(function (id) {
       var n = state.nodes[id]; if (!n) return;
       if (n.kind === "start") socleType = typeOf(n.ctype);
       else if (n.kind === "module") {
         var t = moduleDef(n.defId).types;
-        if (t && t.length) allowed = allowed == null ? t.slice() : allowed.filter(function (x) { return t.indexOf(x) !== -1; });
+        if (t && t.length) {
+          if (awake && t.indexOf("créature") !== -1 && t.indexOf("objet") === -1) t = t.concat(["objet"]);
+          allowed = allowed == null ? t.slice() : allowed.filter(function (x) { return t.indexOf(x) !== -1; });
+        }
       }
     });
     if (allowed == null) allowed = TYPES.slice();
-    return { socleType: socleType, allowed: allowed };
+    return { socleType: socleType, allowed: allowed, awake: awake };
   }
   function chainCompatible(state, nodes) {
     var r = chainTypeCheck(state, nodes);
@@ -389,6 +406,7 @@
   function downstreamNodes(state, id) { var out = [], seen = {}, cur = id; while (cur && !seen[cur]) { seen[cur] = 1; out.push(cur); var e = chainSucc(state, cur); cur = e ? e.to.node : null; } return out; }
   function moduleAllowedGiven(ctx, def) {
     var t = def.types; if (!t || !t.length) return true;
+    if (ctx.awake && t.indexOf("créature") !== -1 && t.indexOf("objet") === -1) t = t.concat(["objet"]);
     if (ctx.socleType) return t.indexOf(ctx.socleType) !== -1;
     return ctx.allowed.some(function (x) { return t.indexOf(x) !== -1; });
   }
@@ -512,6 +530,7 @@
 
   function chainReport(state, start) {
     var ch = chainOf(state, start.id);
+    var awake = ch.modules.some(function (m) { var d = moduleDef(m.defId); return !!d && d.name === "Conscience"; });
     var di = 0, ua = 0, ma = 0, car = null, lines = [], warns = [], dxByCat = {}, carByCat = {};
     if (start.defId) {   // socle piloté par une fiche (bête) : son coût propre entre dans la capacité
       var sc = moduleCost(start), sk = moduleDef(start.defId).category || "raccord";
@@ -530,9 +549,16 @@
         line.eff = aff.eff; line.scaledFrom = val;
         line.scaled = val != null ? Math.round(val * aff.eff / 100) : null;
       } else if (aff.applicable) line.eff = aff.eff;
-      if (aff.applicable && aff.shifts > 100) warns.push(def.name + " : décalage plafonné à +100 %.");
-      if (def.category && def.types.length && def.types.indexOf(typeOf(start.ctype)) === -1)
-        warns.push(def.name + " ne se greffe pas sur le type « " + typeOf(start.ctype) + " ».");
+      if (aff.applicable && aff.shifts > 100) warns.push({ t: def.name + " : décalage plafonné à +100 %.", soft: true });
+      if (def.category && def.types.length && def.types.indexOf(typeOf(start.ctype)) === -1) {
+        // objet conscient : la Conscience sur la chaîne ouvre le socle objet aux modules de créature
+        if (!(awake && typeOf(start.ctype) === "objet" && def.types.indexOf("créature") !== -1)) {
+          var tw = def.name + " ne se greffe pas sur le type « " + typeOf(start.ctype) + " ».";
+          if (typeOf(start.ctype) === "objet" && def.types.indexOf("créature") !== -1)
+            tw += " Greffez la Conscience pour éveiller l'objet en créature.";
+          warns.push(tw);
+        }
+      }
       if (needsRef(def) && !refTargetOf(state, node.id)) warns.push(def.name + " : aucune capacité liée reliée.");
       lines.push(line);
     });
@@ -1038,13 +1064,13 @@
         field("Mainteneur", h("div", { class: "nf-cible" }, [mainteneurOf(state, n)])),
         field("Cible", h("div", { class: "nf-cible" }, [cibleOf(state, n)]))
       ]));
-      body.appendChild(field("Durée", selectEl([["instant", "Instantané"], ["maintien", "À maintien (round)"], ["hour", "À maintien (heure)"]], n.duree, function (v) { n.duree = v; save(); renderAll(); })));
+      body.appendChild(field("Durée", selectEl([["instant", "Instantané"], ["maintien", "À maintien (round)"], ["hour", "À maintien (minute)"]], n.duree, function (v) { n.duree = v; save(); renderAll(); })));
       // socle piloté par une fiche (bête conjurée) : ses attributs obligatoires + son coût
       var sd = n.defId ? moduleDef(n.defId) : socleDefFor(n.ctype);
       if (sd && !n.defId) { n.defId = sd.id; n.sel = defaultSel(sd); }   // migre les anciens socles de base (attaque/défense/effet)
       if (sd) {
         if (sd.category) body.appendChild(h("div", { class: "nf-modmeta" }, [catName(sd.category) + " · " + typeOf(n.ctype)]));
-        if (sd.description) body.appendChild(h("div", { class: "nf-desc" }, [sd.description]));
+        if (sd.description) body.appendChild(descBlock(sd.description));
         renderGrids(n, sd, body);
         var sc = moduleCost(n);
         body.appendChild(costStrip([[devLabel(sd.category), sc.di], [moduleUaLbl(sd), sc.ua], ["MA", sc.ma], aeStripCell(sd, sc, n)]));
@@ -1094,7 +1120,7 @@
       el.appendChild(slotRows(n));
       var body = h("div", { class: "nf-node-body" });
       body.appendChild(h("div", { class: "nf-modmeta" }, [catName(def.category) + (def.types.length ? " · " + def.types.join(", ") : (def.special ? " · " + def.special : ""))]));
-      if (def.description) body.appendChild(h("div", { class: "nf-desc" }, [def.description]));
+      if (def.description) body.appendChild(descBlock(def.description));
       renderGrids(n, def, body);
 
       if (needsRef(def)) {
@@ -1120,7 +1146,7 @@
       if (!r) body.appendChild(h("div", { class: "nf-empty-hint" }, ["Reliez une capacité à l'entrée pour voir sa fiche."]));
       else {
         body.appendChild(h("div", { class: "nf-endcap" }, [r.start.name, h("span", { class: "nf-endtag", style: "background:" + tyColor(r.start.ctype) }, [tyTag(r.start.ctype)])]));
-        var maLbl = r.instant ? "MA" : (r.start.duree === "hour" ? "MA/h" : "MA/r");
+        var maLbl = r.instant ? "MA" : (r.start.duree === "hour" ? "MA/min" : "MA/r");
         body.appendChild(devLineEl(r.dxByCat));
         body.appendChild(costStrip([["UAA", r.ua], [maLbl, r.instant ? "—" : r.maShown]].concat(caracBoxes(r.carByCat))));
         if (r.lines.length) { var box = h("div", { style: "margin-top:.5rem" }); r.lines.forEach(function (ln) { box.appendChild(modLine(ln)); }); body.appendChild(box); }
@@ -1352,12 +1378,16 @@
       card.appendChild(h("h3", {}, [r.start.name, h("span", { class: "tag", style: "background:" + tyColor(r.start.ctype) }, [tyTag(r.start.ctype)])]));
       card.appendChild(h("div", { class: "nf-cap-cible" }, ["Cible : ", h("b", {}, [cibleOf(state, r.start)])]));
       if (r.start.ctype === "objet" || r.start.ctype === "objet-t") { var _oid = objetTargetOf(state, r.start.id), _on = _oid && state.nodes[_oid] ? ((state.nodes[_oid].weapon || {}).name) : null; if (_on) card.appendChild(h("div", { class: "nf-cap-cible" }, ["Objet : ", h("b", {}, [_on + " (arme)"])])); }
-      var maLbl = r.instant ? "MA" : (r.start.duree === "hour" ? "MA/h" : "MA/r");
+      var maLbl = r.instant ? "MA" : (r.start.duree === "hour" ? "MA/min" : "MA/r");
       card.appendChild(devLineEl(r.dxByCat));
       card.appendChild(costStrip([["UAA", r.ua], [maLbl, r.instant ? "—" : r.maShown]].concat(caracBoxes(r.carByCat))));
       r.lines.forEach(function (ln) { card.appendChild(modLine(ln)); });
       if (!r.count) card.appendChild(h("div", { class: "nf-sub", style: "margin:.35rem 0 0" }, ["Aucun module chaîné."]));
-      r.warns.forEach(function (w) { card.appendChild(h("div", { class: "nf-warn" }, ["⚠ " + w])); });
+      r.warns.forEach(function (w) {
+        // Deux niveaux : rouge = erreur (chaîne invalide), jaune (soft) = simple mise en garde.
+        var soft = typeof w === "object" && w.soft;
+        card.appendChild(h("div", { class: soft ? "nf-warn nf-warn-soft" : "nf-warn" }, ["⚠ " + (soft ? w.t : w)]));
+      });
       fiche.appendChild(card);
     });
     container.appendChild(fiche);
@@ -1376,7 +1406,7 @@
     });
     tot.appendChild(brk);
     if (pr.impossible) tot.appendChild(h("div", { class: "nf-warn", style: "margin-top:.3rem" }, ["⚠ Catégorie non apprise (affinité 0) : conception impossible."]));
-    if (pr.orphans) tot.appendChild(h("div", { class: "nf-warn", style: "margin-top:.3rem" }, ["⚠ " + pr.orphans + " module(s) non reliés à un socle."]));
+    if (pr.orphans) tot.appendChild(h("div", { class: "nf-warn nf-warn-soft", style: "margin-top:.3rem" }, ["⚠ " + pr.orphans + " module(s) non reliés à un socle."]));
     container.appendChild(tot);
   }
 

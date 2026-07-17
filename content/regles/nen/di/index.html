@@ -9,16 +9,16 @@
 <link href="../aura/" rel="prev"/>
 <link href="../archetypes-nen/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Développement intérieur - HxH Système JDR</title>
-<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/fonts.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/extra.css?v=11" rel="stylesheet"/>
+<link href="../../../../stylesheets/extra.css?v=13" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -134,7 +134,7 @@
       </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../../personnage/eclat/">
+<a class="md-tabs__link" href="../../personnage/avantages/">
           
   
   
@@ -265,6 +265,18 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../personnage/avantages/">
+<span class="md-ellipsis">
+    
+  
+    Avantages
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../personnage/eclat/">
 <span class="md-ellipsis">
     
@@ -318,6 +330,18 @@
     
   
     Compétences
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../personnage/classe/">
+<span class="md-ellipsis">
+    
+  
+    Classes
   
 
     
@@ -1068,20 +1092,20 @@
 <h1 id="developpement-interieur">Développement intérieur</h1>
 <div class="cols">
 <div class="keep">
-<p>Le développement intérieur, ou DI, est la monnaie de la progression dans le Nen. Là où les <a href="../../personnage/points-formation/">points de formation</a> développent le corps et les compétences, le DI développe le Nen. On en gagne par l'entraînement et les épreuves, puis on l'investit à son gré.</p>
+<p>Le développement intérieur, ou DI, est la ressource qui paie la progression dans le Nen. Là où les <a href="../../personnage/points-formation/">points de formation</a> développent le corps et les <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétences</a>, le DI développe le Nen. Un personnage en gagne par l'entraînement et les épreuves, puis le dépense librement.</p>
 </div>
 <div class="keep">
-<p>Le DI paie deux choses : les progrès communs à tout le Nen, comme l'<a href="../aura/">aura</a>, et le développement d'une catégorie précise.</p>
+<p>Le DI paie deux choses : les progrès communs à tout le Nen, comme l'<a href="../aura/">aura</a>, et le développement d'une catégorie <a class="gloss-link" data-key="terme:precise" href="../../../content/regles/combat/armes/#gloss-precise">précise</a>.</p>
 </div>
 <div class="keep">
-<h3 id="prestige">Prestige</h3>
-<p>Le total de DI gagné fixe le prestige, le repère de maîtrise du Nen. Le personnage franchit un palier tous les 100 DI.</p>
-<p class="formula">Prestige = ⌈ DI ÷ 100 ⌉</p>
+<span class="gloss-anchor" id="gloss-prestige"></span><h3 id="prestige">Prestige</h3>
+<p>Le total de DI gagné fixe le <a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">prestige</a>, le repère de maîtrise du Nen. Le personnage franchit un palier tous les 100 DI.</p>
+<p class="formula"><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> = ⌈ DI ÷ 100 ⌉</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Développement intérieur</th>
-<th style="text-align: center;">Prestige</th>
+<th style="text-align: center;"><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1130,8 +1154,8 @@
 <p>Et ainsi de suite, 100 points par palier, sans plafond. La vitesse de gain du DI dépend de l'<a href="../../personnage/eclat/">Éclat</a>.</p>
 </div>
 <div class="keep">
-<h3 id="conversion-par-categorie">Conversion par catégorie</h3>
-<p>Le DI ne se dépense pas tel quel : on le convertit d'abord dans la catégorie de Nen à développer. Chacune des six a son propre développement, ouvert à partir du <a href="../techniques-nen/">Hatsu</a> seulement ; avant lui, le DI n'alimente aucune catégorie.</p>
+<span class="gloss-anchor" id="gloss-conversion-par-categorie"></span><h3 id="conversion-par-categorie">Conversion par catégorie</h3>
+<p>Pour développer une catégorie, le DI ne se dépense pas tel quel : on le convertit d'abord dans la catégorie de Nen à développer. Chacune des six a son propre développement, ouvert à partir du <a href="../techniques-nen/">Hatsu</a> seulement ; avant lui, le DI n'alimente aucune catégorie.</p>
 <table>
 <thead>
 <tr>
@@ -1168,20 +1192,20 @@
 </table>
 </div>
 <div class="keep">
-<p>Le taux de conversion est l'<a href="../archetypes-nen/">affinité</a> du personnage dans la catégorie visée. Avec 80 % d'affinité en émission, 10 DI donnent 8 DE ; on arrondit à l'inférieur.</p>
-<p>Le rendement varie donc beaucoup : une catégorie proche de sa nature rend presque chaque point, une catégorie éloignée n'en restitue qu'une fraction. On se développe surtout dans les catégories accordées à la sienne, puis on dépense les points obtenus (DR, DE, etc.) pour concevoir les capacités de cette catégorie.</p>
+<p>Le taux de conversion est l'<a href="../archetypes-nen/">affinité</a> du personnage dans la catégorie visée. Avec 80 % d'affinité en <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>, 10 DI donnent 8 DE ; on arrondit à l'inférieur.</p>
+<p>Le rendement suit l'affinité : une catégorie de forte affinité restitue presque chaque point, une catégorie de faible affinité n'en restitue qu'une fraction. Un personnage se développe donc surtout dans les catégories de forte affinité, puis dépense les points obtenus (DR, DE, etc.) pour concevoir les capacités de cette catégorie.</p>
 </div>
 </div>
 <hr/>
-<h3 id="vitesse-dapprentissage">Vitesse d'apprentissage</h3>
-<p>L'<a href="../../personnage/eclat/">Éclat</a> commande l'allure à laquelle on gagne du développement intérieur : à effort égal, le plus doué progresse plus vite et avance encore longtemps après que l'autre a touché son plafond. Sans Éclat, un personnage n'en tire qu'une compétence modeste, payée d'une vie entière.</p>
-<p>On lit la cadence ainsi : à la ligne de son Éclat et dans la colonne de son palier actuel, un personnage qui s'entraîne gagne dix DI par période indiquée. Le départ est rapide, puis la cadence ralentit régulièrement jusqu'à un sommet qui ne se conquiert qu'après des décennies ; le tiret marque la fin du chemin.</p>
+<span class="gloss-anchor" id="gloss-vitesse-d-apprentissage-nen"></span><h3 id="vitesse-dapprentissage">Vitesse d'apprentissage</h3>
+<p>L'<a href="../../personnage/eclat/">Éclat</a> fixe la vitesse à laquelle un personnage gagne du développement intérieur : plus l'Éclat est élevé, plus la cadence est rapide et plus le plafond est haut.</p>
+<p>On lit la cadence ainsi : à la ligne de son Éclat et dans la colonne de son <a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">prestige</a> actuel, un personnage qui s'entraîne gagne 10 DI par période indiquée. La cadence ralentit à mesure que le palier monte. Le tiret marque le plafond : à cette colonne, le personnage ne gagne plus de DI.</p>
 <!-- AUTO:di-cadence -->
 <div class="eclat-grid">
 <table>
 <thead>
 <tr><th rowspan="2">Éclat</th><th colspan="6">Développement intérieur (Nen)</th></tr>
-<tr><th>Prestige 1-3</th><th>Prestige 4-6</th><th>Prestige 7-9</th><th>Prestige 10-12</th><th>Prestige 13-15</th><th>Prestige 16-18</th></tr>
+<tr><th><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> 1-3</th><th><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> 4-6</th><th><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> 7-9</th><th><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> 10-12</th><th><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> 13-15</th><th><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a> 16-18</th></tr>
 </thead>
 <tbody>
 <tr><td>0</td><td>10/trimestre</td><td>10/semestre</td><td>10/an</td><td>10/décennie</td><td>−</td><td>−</td></tr>
@@ -1199,14 +1223,14 @@
 </table>
 </div>
 <!-- /AUTO:di-cadence -->
-<p>Au-delà du palier 16-18, la cadence continue de la même façon, perdant un cran tous les trois niveaux.</p>
+<p>Au-delà du <a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">prestige</a> 18, la cadence continue de la même façon et perd un cran tous les 3 niveaux.</p>
 <h4 id="au-fil-du-temps">Au fil du temps</h4>
-<p>Le tableau précédent donne la cadence ; celui-ci en montre le fruit, pour qui s'entraîne chaque jour sans relâche : le prestige atteint selon l'Éclat et le temps d'entraînement, compté depuis le début (vers vingt ans pour le Nen).</p>
+<p>Le tableau précédent donne la cadence ; celui-ci donne le résultat pour un personnage qui s'entraîne chaque jour : le <a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">prestige</a> atteint selon l'Éclat et le temps d'entraînement, compté depuis le début (vers 20 ans pour le Nen).</p>
 <!-- AUTO:di-temps -->
 <div class="eclat-grid">
 <table>
 <thead>
-<tr><th rowspan="2">Éclat</th><th colspan="13">Prestige</th></tr>
+<tr><th rowspan="2">Éclat</th><th colspan="13"><a class="gloss-link" data-key="terme:prestige" href="#gloss-prestige">Prestige</a></th></tr>
 <tr><th>1 mois</th><th>2 mois</th><th>3 mois</th><th>6 mois</th><th>1 an</th><th>2 ans</th><th>3 ans</th><th>5 ans</th><th>10 ans</th><th>20 ans</th><th>30 ans</th><th>50 ans</th><th>100 ans</th></tr>
 </thead>
 <tbody>
@@ -2900,7 +2924,92 @@
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
+</div><div class="gloss-defs"><div class="gcard gloss-card" data-key="terme:competence-concept">
+<p><strong>Compétence</strong></p>
+<div class="gcard-text">
+<p>Une compétence mesure ce qu'un personnage sait faire dans un domaine précis. Chaque compétence repose sur une caractéristique et se teste par un jet, comparé à un seuil de difficulté ou au jet d'un adversaire.</p>
 </div>
+</div><div class="mcard gloss-card" data-key="terme:precise">
+<p><strong>Précise</strong></p>
+<p>Arme faite pour le coup ajusté : quand le porteur emploie l'option d'attaque Viser, le malus de la zone visée est divisé par deux.</p>
+<table>
+<thead>
+<tr>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>250 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+</tbody>
+</table>
+</div><div class="gcard gloss-card" data-key="terme:prestige">
+<p><strong>Prestige</strong></p>
+<div class="gcard-text">
+<p>Le total de DI gagné fixe le prestige, le repère de maîtrise du Nen. Le personnage franchit un palier tous les 100 DI.</p>
+<p class="formula">Prestige = ⌈ DI ÷ 100 ⌉</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Développement intérieur</th>
+<th style="text-align: center;">Prestige</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1 à 100</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">101 à 200</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">201 à 300</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">301 à 400</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">401 à 500</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">501 à 600</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">601 à 700</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">701 à 800</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">801 à 900</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td style="text-align: center;">901 à 1 000</td>
+<td style="text-align: center;">10</td>
+</tr>
+</tbody>
+</table>
+<p>Et ainsi de suite, 100 points par palier, sans plafond. La vitesse de gain du DI dépend de l'Éclat.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:emission">
+<p><strong>Émission</strong></p>
+<div class="gcard-text">
+<p>projeter l'aura loin du corps.</p>
+</div>
+</div></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2950,7 +3059,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.footer", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script src="../../../../javascripts/changelog.js"></script>
 <script src="../../../../javascripts/continuous.js"></script>
 <script src="../../../../javascripts/nav-drawer.js"></script>

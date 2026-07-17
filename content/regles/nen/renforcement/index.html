@@ -9,16 +9,16 @@
 <link href="../capacites-de-nen/" rel="prev"/>
 <link href="../emission/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Renforcement - HxH Système JDR</title>
-<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/fonts.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/extra.css?v=11" rel="stylesheet"/>
+<link href="../../../../stylesheets/extra.css?v=13" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -134,7 +134,7 @@
       </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../../personnage/eclat/">
+<a class="md-tabs__link" href="../../personnage/avantages/">
           
   
   
@@ -265,6 +265,18 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../personnage/avantages/">
+<span class="md-ellipsis">
+    
+  
+    Avantages
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../personnage/eclat/">
 <span class="md-ellipsis">
     
@@ -318,6 +330,18 @@
     
   
     Compétences
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../personnage/classe/">
+<span class="md-ellipsis">
+    
+  
+    Classes
   
 
     
@@ -794,19 +818,19 @@
 <nav aria-label="Les modules de renforcement" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attaque">
+<a class="md-nav__link" href="#bonus-a-lattaque">
 <span class="md-ellipsis">
       
-        Attaque
+        Bonus à l'attaque
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attaque-complete">
+<a class="md-nav__link" href="#bonus-a-lattaque-totale">
 <span class="md-ellipsis">
       
-        Attaque complète
+        Bonus à l'attaque totale
       
     </span>
 </a>
@@ -821,64 +845,73 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#degats-complets">
+<a class="md-nav__link" href="#degats-totaux">
 <span class="md-ellipsis">
       
-        Dégâts complets
+        Dégâts totaux
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#esquive">
+<a class="md-nav__link" href="#bonus-a-la-defense">
 <span class="md-ellipsis">
       
-        Esquive
+        Bonus à la défense
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#esquive-complete">
+<a class="md-nav__link" href="#bonus-a-la-defense-totale">
 <span class="md-ellipsis">
       
-        Esquive complète
+        Bonus à la défense totale
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parade">
+<a class="md-nav__link" href="#bonus-a-la-resistance">
 <span class="md-ellipsis">
       
-        Parade
+        Bonus à la résistance
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parade-complete">
+<a class="md-nav__link" href="#bonus-a-la-resistance-totale">
 <span class="md-ellipsis">
       
-        Parade complète
+        Bonus à la résistance totale
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-degats">
+<a class="md-nav__link" href="#bonus-a-la-reduction-de-degats">
 <span class="md-ellipsis">
       
-        Résistance aux Dégâts
+        Bonus à la réduction de dégâts
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-degats-complete">
+<a class="md-nav__link" href="#bonus-a-la-reduction-de-degats-totale">
 <span class="md-ellipsis">
       
-        Résistance aux Dégâts complète
+        Bonus à la réduction de dégâts totale
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soin">
+<span class="md-ellipsis">
+      
+        Soin
       
     </span>
 </a>
@@ -1119,19 +1152,19 @@
 <nav aria-label="Les modules de renforcement" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attaque">
+<a class="md-nav__link" href="#bonus-a-lattaque">
 <span class="md-ellipsis">
       
-        Attaque
+        Bonus à l'attaque
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attaque-complete">
+<a class="md-nav__link" href="#bonus-a-lattaque-totale">
 <span class="md-ellipsis">
       
-        Attaque complète
+        Bonus à l'attaque totale
       
     </span>
 </a>
@@ -1146,64 +1179,73 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#degats-complets">
+<a class="md-nav__link" href="#degats-totaux">
 <span class="md-ellipsis">
       
-        Dégâts complets
+        Dégâts totaux
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#esquive">
+<a class="md-nav__link" href="#bonus-a-la-defense">
 <span class="md-ellipsis">
       
-        Esquive
+        Bonus à la défense
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#esquive-complete">
+<a class="md-nav__link" href="#bonus-a-la-defense-totale">
 <span class="md-ellipsis">
       
-        Esquive complète
+        Bonus à la défense totale
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parade">
+<a class="md-nav__link" href="#bonus-a-la-resistance">
 <span class="md-ellipsis">
       
-        Parade
+        Bonus à la résistance
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parade-complete">
+<a class="md-nav__link" href="#bonus-a-la-resistance-totale">
 <span class="md-ellipsis">
       
-        Parade complète
+        Bonus à la résistance totale
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-degats">
+<a class="md-nav__link" href="#bonus-a-la-reduction-de-degats">
 <span class="md-ellipsis">
       
-        Résistance aux Dégâts
+        Bonus à la réduction de dégâts
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resistance-aux-degats-complete">
+<a class="md-nav__link" href="#bonus-a-la-reduction-de-degats-totale">
 <span class="md-ellipsis">
       
-        Résistance aux Dégâts complète
+        Bonus à la réduction de dégâts totale
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soin">
+<span class="md-ellipsis">
+      
+        Soin
       
     </span>
 </a>
@@ -1247,27 +1289,79 @@
 <article class="md-content__inner md-typeset">
 <h1 id="renforcement">Renforcement</h1>
 <div class="cols">
-<p>Le renforcement emploie l'aura pour amplifier les capacités naturelles d'un corps ou d'un objet : la force, la vitesse, la dureté, l'endurance, la rapidité de guérison. L'aura ne change pas de nature ; elle pousse simplement au-delà de ses limites ce qui existe déjà.</p>
-<p>C'est la plus équilibrée des six catégories, aussi solide en défense qu'en attaque, et la base du combat rapproché. Un renforceur accompli encaisse et frappe mieux que tout autre ; beaucoup de combattants de première ligne en sont issus.</p>
+<p>Le <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a> emploie l'aura pour amplifier les capacités naturelles d'un corps ou d'un objet : la force, la vitesse, la dureté, l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">endurance</a>, la rapidité de guérison. L'aura ne change pas de nature ; elle pousse ce qui existe déjà au-delà de ses limites.</p>
+<p>C'est la plus équilibrée des six catégories, aussi solide en <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a> qu'en attaque, et la base du combat rapproché. Un <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> accompli encaisse et frappe mieux que tout autre.</p>
 <h3 id="les-modules-de-renforcement">Les modules de renforcement</h3>
-<p>Les modules qui suivent relèvent tous du renforcement. On les empile sur une capacité selon son type, attaque ou défense, en retenant un palier par module. Leurs coûts se lisent comme partout : le <a href="../capacites-de-nen/">DI</a> de conception, l'<a href="../aura/">aura</a> à l'emploi, le maintien chaque round, et la caractéristique requise.</p>
+<p>Les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> qui suivent relèvent tous du <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>. On les empile sur une capacité selon son type, en retenant une ligne par rubrique de chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>.</p>
+<p>Deux <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> identiques ne cumulent jamais leurs bonus sur un même jet : une capacité qui porte deux fois le même <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> simple applique chacun à un jet différent. Un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> simple et sa version totale ne se cumulent pas non plus : si une capacité porte les deux, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> applique à chaque jet celui des deux qu'il veut.</p>
+<p>Leurs coûts se lisent comme dans les autres catégories : le <a href="../capacites-de-nen/">DI</a> de conception, l'<a href="../aura/">aura</a> à l'emploi, le maintien chaque round, et la <a class="gloss-link" data-key="terme:caracteristique-nen" href="#gloss-caracteristique-nen">caractéristique</a> requise.</p>
 <div class="cj-modules anima">
 <div class="keep">
-<h4 id="attaque">Attaque</h4>
-<p class="mod-type">Type : attaque</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à l'une de ses attaques. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective (un +30 porté à 120 % vaut +36).</p>
+<span class="gloss-anchor" id="gloss-bonus-a-l-attaque"></span><h4 id="bonus-a-lattaque">Bonus à l'attaque</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : attaque</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à une seule de ses attaques <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> avec la <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> choisie, avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour une attaque à chaque round.</p>
+<p>Il n'existe pas de <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> d'attaque : en prenant le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> choisit dans la première rubrique la <a href="../../personnage/competences/">compétence</a> d'arme que le bonus augmente, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective (un +30 porté à 120 % vaut +36).</p>
 <table>
 <thead>
 <tr>
-<th>Bonus</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
 <tbody>
+<tr class="cat">
+<td><a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">Compétence</a> (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-de-melee" href="../../../content/regles/personnage/competences/#gloss-armes-de-melee">Armes de mêlée</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-de-jet-competence" href="../../../content/regles/personnage/competences/#gloss-armes-de-jet-competence">Armes de jet</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-de-trait" href="../../../content/regles/personnage/competences/#gloss-armes-de-trait">Armes de trait</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-a-feu" href="../../../content/regles/personnage/competences/#gloss-armes-a-feu">Armes à feu</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>+10</td>
 <td>5</td>
@@ -1432,21 +1526,71 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="attaque-complete">Attaque complète</h4>
-<p class="mod-type">Type : attaque</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à toutes ses attaques du round, et non à une seule comme Attaque. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Couvrir toutes les attaques coûte bien plus cher que d'en renforcer une, et le bonus plafonne à +100.</p>
+<span class="gloss-anchor" id="gloss-bonus-a-l-attaque-totale"></span><h4 id="bonus-a-lattaque-totale">Bonus à l'attaque totale</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : attaque</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à toutes ses attaques <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> avec la <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> choisie jusqu'au début de son prochain tour, et non à une seule ; si la capacité est maintenue, le bonus vaut à chaque round.</p>
+<p>Comme le <a class="gloss-link" data-key="terme:bonus-a-l-attaque" href="#gloss-bonus-a-l-attaque">Bonus à l'attaque</a>, le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> se règle sur une <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> d'arme, choisie dans la première rubrique, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
-<th>Bonus</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
 <tbody>
+<tr class="cat">
+<td><a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">Compétence</a> (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-de-melee" href="../../../content/regles/personnage/competences/#gloss-armes-de-melee">Armes de mêlée</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-de-jet-competence" href="../../../content/regles/personnage/competences/#gloss-armes-de-jet-competence">Armes de jet</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-de-trait" href="../../../content/regles/personnage/competences/#gloss-armes-de-trait">Armes de trait</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:armes-a-feu" href="../../../content/regles/personnage/competences/#gloss-armes-a-feu">Armes à feu</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>+10</td>
 <td>10</td>
@@ -1531,17 +1675,18 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="degats">Dégâts</h4>
-<p class="mod-type">Type : attaque</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué aux dégâts de l'une de ses attaques. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté dégâts, de l'Attaque : sa conception coûte autant, mais son aura et son maintien sont plus légers.</p>
+<span class="gloss-anchor" id="gloss-degats-nen"></span><h4 id="degats">Dégâts</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : attaque</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué aux <a class="gloss-link" data-key="terme:degats-nen" href="#gloss-degats-nen">dégâts</a> d'une seule de ses attaques, <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour une attaque à chaque round.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
 <table>
 <thead>
 <tr>
 <th>Bonus</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -1710,17 +1855,18 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="degats-complets">Dégâts complets</h4>
-<p class="mod-type">Type : attaque</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué aux dégâts de toutes ses attaques du round, et non à une seule comme Dégâts. Couvrir chaque attaque coûte bien plus cher, et le bonus plafonne à +100.</p>
+<span class="gloss-anchor" id="gloss-degats-totaux"></span><h4 id="degats-totaux">Dégâts totaux</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : attaque</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué aux <a class="gloss-link" data-key="terme:degats-nen" href="#gloss-degats-nen">dégâts</a> de toutes ses attaques jusqu'au début de son prochain tour, et non à une seule comme <a class="gloss-link" data-key="terme:degats-nen" href="#gloss-degats-nen">Dégâts</a> ; si la capacité est maintenue, le bonus vaut à chaque round.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
 <th>Bonus</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -1809,21 +1955,87 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="esquive">Esquive</h4>
-<p class="mod-type">Type : défense</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à l'une de ses esquives. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté esquive, de l'Attaque : sa conception coûte autant, mais son maintien est plus léger.</p>
+<span class="gloss-anchor" id="gloss-bonus-a-la-defense"></span><h4 id="bonus-a-la-defense">Bonus à la défense</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à un seul de ses jets de la <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> choisie, effectué avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour un jet à chaque round.</p>
+<p><a class="gloss-link" data-key="terme:en" href="../../../content/regles/nen/techniques-nen/#gloss-en">En</a> prenant le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> choisit dans la première rubrique la <a href="../../personnage/competences/">compétence</a> de <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a> que le bonus augmente, l'<a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a>, la <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a>, ou celles qui s'opposent aux <a href="../../combat/manoeuvres/">manœuvres</a> et aux <a href="../../personnage/etats/">Prises</a>, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
 <table>
 <thead>
 <tr>
-<th>Bonus</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
 <tbody>
+<tr class="cat">
+<td><a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">Compétence</a> (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:lutte" href="../../../content/regles/personnage/competences/#gloss-lutte">Lutte</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:contorsion" href="../../../content/regles/personnage/competences/#gloss-contorsion">Contorsion</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:equilibre" href="../../../content/regles/personnage/competences/#gloss-equilibre">Équilibre</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:chute-competence" href="../../../content/regles/personnage/competences/#gloss-chute-competence">Chute</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>+10</td>
 <td>5</td>
@@ -1988,21 +2200,87 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="esquive-complete">Esquive complète</h4>
-<p class="mod-type">Type : défense</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à toutes ses esquives du round, et non à une seule comme Esquive. Couvrir toutes ses esquives coûte bien plus cher, et le bonus plafonne à +100.</p>
+<h4 id="bonus-a-la-defense-totale">Bonus à la défense totale</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à tous ses jets de la <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> choisie jusqu'au début de son prochain tour, et non à un seul ; si la capacité est maintenue, le bonus vaut à chaque round.</p>
+<p>Comme le <a class="gloss-link" data-key="terme:bonus-a-la-defense" href="#gloss-bonus-a-la-defense">Bonus à la défense</a>, le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> se règle sur une <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a> de <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, choisie dans la première rubrique, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
-<th>Bonus</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
 <tbody>
+<tr class="cat">
+<td><a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">Compétence</a> (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:lutte" href="../../../content/regles/personnage/competences/#gloss-lutte">Lutte</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:contorsion" href="../../../content/regles/personnage/competences/#gloss-contorsion">Contorsion</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:equilibre" href="../../../content/regles/personnage/competences/#gloss-equilibre">Équilibre</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:chute-competence" href="../../../content/regles/personnage/competences/#gloss-chute-competence">Chute</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>+10</td>
 <td>10</td>
@@ -2087,21 +2365,87 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="parade">Parade</h4>
-<p class="mod-type">Type : défense</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à l'une de ses parades. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté parade, de l'Attaque : sa conception coûte autant, mais son maintien est plus léger.</p>
+<span class="gloss-anchor" id="gloss-bonus-a-la-resistance"></span><h4 id="bonus-a-la-resistance">Bonus à la résistance</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à un seul de ses jets de la Résistance choisie, effectué avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour un jet à chaque round.</p>
+<p><a class="gloss-link" data-key="terme:en" href="../../../content/regles/nen/techniques-nen/#gloss-en">En</a> prenant le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> choisit dans la première rubrique la <a href="../../personnage/competences/">Résistance</a> que le bonus augmente, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
 <table>
 <thead>
 <tr>
-<th>Bonus</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
 <tbody>
+<tr class="cat">
+<td><a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">Compétence</a> (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-la-douleur" href="../../../content/regles/personnage/competences/#gloss-resistance-a-la-douleur">Résistance à la Douleur</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-la-peur" href="../../../content/regles/personnage/competences/#gloss-resistance-a-la-peur">Résistance à la Peur</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-l-influence" href="../../../content/regles/personnage/competences/#gloss-resistance-a-l-influence">Résistance à l'Influence</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à la Maladie et au Poison</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-l-environnement" href="../../../content/regles/personnage/competences/#gloss-resistance-a-l-environnement">Résistance à l'Environnement</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-l-epuisement" href="../../../content/regles/personnage/competences/#gloss-resistance-a-l-epuisement">Résistance à l'Épuisement</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>+10</td>
 <td>5</td>
@@ -2266,21 +2610,87 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="parade-complete">Parade complète</h4>
-<p class="mod-type">Type : défense</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à toutes ses parades du round, et non à une seule comme Parade. Couvrir toutes ses parades coûte bien plus cher, et le bonus plafonne à +100.</p>
+<h4 id="bonus-a-la-resistance-totale">Bonus à la résistance totale</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à tous ses jets de la Résistance choisie jusqu'au début de son prochain tour, et non à un seul ; si la capacité est maintenue, le bonus vaut à chaque round.</p>
+<p>Comme le <a class="gloss-link" data-key="terme:bonus-a-la-resistance" href="#gloss-bonus-a-la-resistance">Bonus à la résistance</a>, le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> se règle sur une Résistance, choisie dans la première rubrique, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
-<th>Bonus</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
 <tbody>
+<tr class="cat">
+<td><a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">Compétence</a> (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-la-douleur" href="../../../content/regles/personnage/competences/#gloss-resistance-a-la-douleur">Résistance à la Douleur</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-la-peur" href="../../../content/regles/personnage/competences/#gloss-resistance-a-la-peur">Résistance à la Peur</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-l-influence" href="../../../content/regles/personnage/competences/#gloss-resistance-a-l-influence">Résistance à l'Influence</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à la Maladie et au Poison</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-l-environnement" href="../../../content/regles/personnage/competences/#gloss-resistance-a-l-environnement">Résistance à l'Environnement</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="gloss-link" data-key="terme:resistance-a-l-epuisement" href="../../../content/regles/personnage/competences/#gloss-resistance-a-l-epuisement">Résistance à l'Épuisement</a></td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>+10</td>
 <td>10</td>
@@ -2365,17 +2775,18 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="resistance-aux-degats">Résistance aux Dégâts</h4>
-<p class="mod-type">Type : défense</p>
-<p>Tant que la capacité est active, le renforceur retranche le montant indiqué aux dégâts d'une attaque qu'il pare ou esquive. Cet effet est chiffré : le montant est multiplié par l'affinité d'emploi effective. C'est le pendant défensif de Dégâts : ce que ce dernier ajoute en frappant, celui-ci le retranche en encaissant.</p>
+<h4 id="bonus-a-la-reduction-de-degats">Bonus à la réduction de dégâts</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> retranche le montant indiqué aux <a class="gloss-link" data-key="terme:degats-nen" href="#gloss-degats-nen">dégâts</a> d'une seule attaque qu'il subit avant le début de son prochain tour ; si la capacité est maintenue, la réduction vaut de nouveau pour une attaque à chaque round.</p>
+<p>Cet effet est chiffré : le montant est multiplié par l'affinité d'emploi effective.</p>
 <table>
 <thead>
 <tr>
 <th>Réduction</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -2544,17 +2955,18 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="resistance-aux-degats-complete">Résistance aux Dégâts complète</h4>
-<p class="mod-type">Type : défense</p>
-<p>Tant que la capacité est active, le renforceur retranche le montant indiqué aux dégâts de toutes les attaques qu'il subit le round, et non d'une seule comme Résistance aux Dégâts. Couvrir chaque attaque coûte bien plus cher, et le montant plafonne à +100.</p>
+<h4 id="bonus-a-la-reduction-de-degats-totale">Bonus à la réduction de dégâts totale</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> retranche le montant indiqué aux <a class="gloss-link" data-key="terme:degats-nen" href="#gloss-degats-nen">dégâts</a> de toutes les attaques qu'il subit jusqu'au début de son prochain tour, et non d'une seule comme le Bonus à la réduction de <a class="gloss-link" data-key="terme:degats-nen" href="#gloss-degats-nen">dégâts</a> ; si la capacité est maintenue, la réduction vaut à chaque round.</p>
+<p>Cet effet est chiffré : le montant est multiplié par l'affinité d'emploi effective. Le montant plafonne à +100.</p>
 <table>
 <thead>
 <tr>
 <th>Réduction</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -2643,17 +3055,199 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="competence">Compétence</h4>
-<p class="mod-type">Type : effet</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à ses jets dans une compétence, choisie à la conception, parmi toutes sauf l'attaque, la parade et l'esquive, que couvrent déjà leurs propres modules. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
+<span class="gloss-anchor" id="gloss-soin"></span><h4 id="soin">Soin</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : effet</p>
+<p>Le <a class="gloss-link" data-key="terme:soin" href="#gloss-soin">Soin</a> rend des points de vie. Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> en rend le montant indiqué, en une seule fois, avant le début de son prochain tour ; si la capacité est maintenue, le soin se répète à chaque round.</p>
+<p>Le soin s'applique au <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> lui-même ou, au contact, à autrui.</p>
+<p>Cet effet est chiffré : le montant est multiplié par l'affinité d'emploi effective.</p>
+<table>
+<thead>
+<tr>
+<th><a class="gloss-link" data-key="terme:soin" href="#gloss-soin">Soin</a></th>
+<th>DR</th>
+<th>VOL</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+10 PV</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20 PV</td>
+<td>5</td>
+<td>6</td>
+<td>30</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30 PV</td>
+<td>10</td>
+<td>7</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40 PV</td>
+<td>10</td>
+<td>8</td>
+<td>50</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50 PV</td>
+<td>15</td>
+<td>9</td>
+<td>60</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60 PV</td>
+<td>15</td>
+<td>10</td>
+<td>70</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70 PV</td>
+<td>20</td>
+<td>11</td>
+<td>90</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80 PV</td>
+<td>20</td>
+<td>12</td>
+<td>110</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90 PV</td>
+<td>25</td>
+<td>13</td>
+<td>130</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100 PV</td>
+<td>25</td>
+<td>14</td>
+<td>150</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110 PV</td>
+<td>30</td>
+<td>15</td>
+<td>170</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120 PV</td>
+<td>30</td>
+<td>16</td>
+<td>190</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130 PV</td>
+<td>35</td>
+<td>17</td>
+<td>210</td>
+<td>110</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140 PV</td>
+<td>35</td>
+<td>18</td>
+<td>230</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150 PV</td>
+<td>40</td>
+<td>20</td>
+<td>250</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160 PV</td>
+<td>40</td>
+<td>22</td>
+<td>280</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170 PV</td>
+<td>45</td>
+<td>24</td>
+<td>310</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180 PV</td>
+<td>45</td>
+<td>26</td>
+<td>340</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190 PV</td>
+<td>50</td>
+<td>28</td>
+<td>370</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200 PV</td>
+<td>50</td>
+<td>30</td>
+<td>400</td>
+<td>240</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep">
+<span class="gloss-anchor" id="gloss-competence-nen"></span><h4 id="competence">Compétence</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : effet</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à ses jets dans une <a class="gloss-link" data-key="terme:competence-nen" href="#gloss-competence-nen">compétence</a>, choisie à la conception, parmi toutes celles que ne couvre pas déjà un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> dédié de ce chapitre.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
 <table>
 <thead>
 <tr>
 <th>Bonus</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -2822,17 +3416,18 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="caracteristique">Caractéristique</h4>
-<p class="mod-type">Type : effet</p>
-<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à une caractéristique, choisie à la conception ; sa valeur monte d'autant, et avec elle tout ce qui en dépend. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
+<span class="gloss-anchor" id="gloss-caracteristique-nen"></span><h4 id="caracteristique">Caractéristique</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : effet</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> ajoute le bonus indiqué à une <a class="gloss-link" data-key="terme:caracteristique-nen" href="#gloss-caracteristique-nen">caractéristique</a>, choisie à la conception ; sa valeur monte d'autant, ainsi que tout ce qui en dépend.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective, arrondi à l'inférieur.</p>
 <table>
 <thead>
 <tr>
 <th>Bonus</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -2881,17 +3476,18 @@
 </table>
 </div>
 <div class="keep">
-<h4 id="actions-supplementaires">Actions supplémentaires</h4>
-<p class="mod-type">Type : effet</p>
-<p>Tant que la capacité est active, le renforceur dispose du nombre indiqué d'actions de plus durant son tour, sans malus. Elles suivent les règles ordinaires : on ne répète pas deux fois le même type d'action, elles servent donc à enchaîner des gestes différents dans un même round.</p>
+<span class="gloss-anchor" id="gloss-actions-supplementaires"></span><h4 id="actions-supplementaires">Actions supplémentaires</h4>
+<p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : effet</p>
+<p>Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> dispose du nombre indiqué d'actions de plus durant son tour, sans malus.</p>
+<p>Ces actions suivent les règles ordinaires : on ne répète pas deux fois le même type d'action.</p>
 <table>
 <thead>
 <tr>
 <th>Actions</th>
 <th>DR</th>
 <th>VOL</th>
-<th>UAA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:uaa" href="../../../content/regles/nen/capacites-de-nen/#gloss-uaa">UAA</a></th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AEL</th>
 </tr>
 </thead>
@@ -4616,7 +5212,1866 @@
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
+</div><div class="gloss-defs"><div class="gcard gloss-card" data-key="terme:renforcement">
+<p><strong>Renforcement</strong></p>
+<div class="gcard-text">
+<p>amplifier une aptitude qui existe déjà.</p>
 </div>
+</div><div class="mcard gloss-card" data-key="terme:endurance">
+<p><strong>Endurance</strong></p>
+<p><span class="prereq">END</span> L'Endurance mesure la résistance biologique et la vitalité. Elle détermine la faculté à encaisser les coups, à supporter la fatigue et l'effort prolongé, et à résister aux maladies, aux toxines et aux environnements hostiles. C'est la réserve où l'on puise pour tenir là où d'autres cèdent.</p>
+</div><div class="gcard gloss-card" data-key="terme:defense-regle">
+<p><strong>Défense</strong></p>
+<div class="gcard-text">
+<p>ce qui sert à parer ou esquiver une attaque.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:renforceur">
+<p><strong>Renforceur</strong></p>
+<div class="gcard-text">
+<p>Le Renforceur amplifie de son aura les capacités d'un corps ou d'un objet (force, vitesse, dureté, endurance, guérison). C'est la catégorie la plus équilibrée, aussi solide en défense qu'en attaque, et la mieux adaptée au corps à corps. Ses pouvoirs sont peu spectaculaires, mais aucune autre catégorie ne l'égale en puissance brute au contact.</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Base d'Affinité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Renforcement</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Émission</td>
+<td>80 %</td>
+</tr>
+<tr>
+<td>Transmutation</td>
+<td>80 %</td>
+</tr>
+<tr>
+<td>Manipulation</td>
+<td>60 %</td>
+</tr>
+<tr>
+<td>Conjuration</td>
+<td>60 %</td>
+</tr>
+<tr>
+<td>Spécialisation</td>
+<td>0 % ou 40 %*</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep portrait">
+<div class="frame">
+<p>!Gon Freecss<a class="credit" href="https://i.pinimg.com/474x/41/5b/23/415b2334fdb58e90bf98b59a7e0ddb7e.jpg" rel="noopener" target="_blank" title="Source : Pinterest">Pinterest</a></p>
+</div>
+<p><em>Gon Freecss</em></p>
+</div>
+<hr/>
+<div class="keep portrait">
+<div class="frame">
+<p>!Franklin<a class="credit" href="https://manga-imperial.fr/cdn/shop/articles/dbdoss5-89416ee7-5986-4c7e-9e23-ceab7e52fba0_be2502bf-abe6-44e2-83cf-ddc6a009533d_600x.jpg?v=1671887178" rel="noopener" target="_blank" title="Source : manga-imperial.fr">manga-imperial.fr</a></p>
+</div>
+<p><em>Franklin</em></p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:module">
+<p><strong>Module</strong></p>
+<div class="gcard-text">
+<p>la plus petite pièce ; on empile des modules sur une capacité pour lui ajouter des propriétés.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:caracteristique-nen">
+<p><strong>Caractéristique</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : effet</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à une caractéristique, choisie à la conception ; sa valeur monte d'autant, ainsi que tout ce qui en dépend.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective, arrondi à l'inférieur.</p>
+<table>
+<thead>
+<tr>
+<th>Bonus</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+1</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+2</td>
+<td>10</td>
+<td>11</td>
+<td>40</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+3</td>
+<td>15</td>
+<td>17</td>
+<td>80</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+4</td>
+<td>20</td>
+<td>23</td>
+<td>120</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+5</td>
+<td>25</td>
+<td>30</td>
+<td>160</td>
+<td>100</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:type">
+<p><strong>Type</strong></p>
+<div class="gcard-text">
+<p>le ou les types de dégâts infligés, notés par leur code : contondant (CON), tranchant (TRA), perforant (PER), ou un type élémentaire comme le feu (FEU).</p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:portee-propriete">
+<p><strong>Portée</strong></p>
+<p>La distance à laquelle l'arme atteint sa cible. Une arme porte une ou plusieurs portées, toutes listées dans sa colonne ; elle paie chacune d'elles, puis leur nombre. Les distances d'une arme sont ses valeurs réelles : le coût d'une portée se lit au premier cran dont la distance maximale atteint la sienne.</p>
+<p>La mêlée frappe au contact et ne coûte rien. L'allonge l'étend : chaque cran ×N porte la frappe à N mètres, pour un porteur de taille Moyenne.</p>
+<table>
+<thead>
+<tr>
+<th>Mêlée</th>
+<th style="text-align: center;">Portée</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mêlée / contact</td>
+<td style="text-align: center;">au contact</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>Allonge ×2</td>
+<td style="text-align: center;">2 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Allonge ×3</td>
+<td style="text-align: center;">3 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Allonge ×4</td>
+<td style="text-align: center;">4 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Allonge ×5</td>
+<td style="text-align: center;">5 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le lancer, noté Jet dans les tables, s'écrit en deux distances, la courte et la longue : une arme « Jet 5/15 m » se lance à 5 m sans malus, puis jusqu'à 15 m avec −40 à l'attaque. La longue est la portée maximale : passé cette distance, l'arme n'atteint plus rien.</p>
+<table>
+<thead>
+<tr>
+<th>Lancer</th>
+<th style="text-align: center;">Courte / Longue</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lancer courte</td>
+<td style="text-align: center;">5 / 15 m</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>Lancer moyenne</td>
+<td style="text-align: center;">15 / 30 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Lancer longue</td>
+<td style="text-align: center;">30 / 50 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Lancer très longue</td>
+<td style="text-align: center;">40 / 80 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Lancer extrême</td>
+<td style="text-align: center;">60 / 120 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le tir suit la même écriture : l'arme tire sans malus jusqu'à sa portée courte, à −40 à l'attaque au-delà, et plus du tout passé sa portée longue. Aucune portée n'est illimitée.</p>
+<table>
+<thead>
+<tr>
+<th>Tir</th>
+<th style="text-align: center;">Courte / Longue</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tir courte</td>
+<td style="text-align: center;">15 / 50 m</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>Tir moyenne</td>
+<td style="text-align: center;">50 / 150 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Tir longue</td>
+<td style="text-align: center;">150 / 300 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Tir très longue</td>
+<td style="text-align: center;">400 / 800 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Tir extrême</td>
+<td style="text-align: center;">1000 / 2500 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le cône est lui aussi une portée : l'attaque embrasse toutes les cibles d'un cône parti du porteur, noté par sa longueur et son angle (« Cône 10 m, 90° »). Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du cône y oppose sa propre défense, et chaque touche se résout avec son propre degré de touche. Son coût additionne deux tables, la longueur et l'angle.</p>
+<table>
+<thead>
+<tr>
+<th>Cône, longueur</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>15 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Cône, angle</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45°</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>90°</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+</tbody>
+</table>
+<p>Une arme paie enfin le nombre de portées qu'elle cumule : la première est comprise, chaque portée de plus coûte.</p>
+<table>
+<thead>
+<tr>
+<th>Nombre de portées</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>2</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+</tbody>
+</table>
+</div><div class="gcard gloss-card" data-key="terme:competence-nen">
+<p><strong>Compétence</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : effet</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à ses jets dans une compétence, choisie à la conception, parmi toutes celles que ne couvre pas déjà un module dédié de ce chapitre.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
+<table>
+<thead>
+<tr>
+<th>Bonus</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>5</td>
+<td>7</td>
+<td>60</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>5</td>
+<td>8</td>
+<td>80</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>10</td>
+<td>9</td>
+<td>100</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>10</td>
+<td>10</td>
+<td>120</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>10</td>
+<td>11</td>
+<td>140</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>15</td>
+<td>12</td>
+<td>160</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>15</td>
+<td>13</td>
+<td>180</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>20</td>
+<td>14</td>
+<td>200</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>20</td>
+<td>15</td>
+<td>220</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>25</td>
+<td>16</td>
+<td>240</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>25</td>
+<td>17</td>
+<td>260</td>
+<td>110</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>30</td>
+<td>18</td>
+<td>280</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>30</td>
+<td>20</td>
+<td>300</td>
+<td>130</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>35</td>
+<td>22</td>
+<td>320</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>35</td>
+<td>24</td>
+<td>350</td>
+<td>150</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>40</td>
+<td>26</td>
+<td>380</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>40</td>
+<td>28</td>
+<td>410</td>
+<td>170</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>45</td>
+<td>30</td>
+<td>440</td>
+<td>180</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:effet">
+<p><strong>Effet</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Socle : effet</p>
+<p>La capacité fait autre chose que frapper ou parer : elle amplifie, déplace, perçoit, altère ou communique. Son effet porte sur le porteur lui-même. Sans module, elle ne coûte rien : ses modules portent tout ce qu'elle fait.</p>
+</div>
+</div>
+<div class="gcard gloss-card" data-key="terme:uaa">
+<p><strong>UAA</strong></p>
+<div class="gcard-text">
+<p>l'aura accumulée : l'aura que le lanceur rassemble sur sa réserve pour déclencher la capacité, dans la limite de son UAR par round ; une capacité plus chère que l'UAR s'accumule sur plusieurs rounds.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:ma">
+<p><strong>MA</strong></p>
+<div class="gcard-text">
+<p>le maintien, l'aura payée chaque round par son mainteneur pour la garder active. À zéro pour une capacité instantanée.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:armes-de-melee">
+<p><strong>Armes de mêlée</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Frapper au corps à corps, une arme en main ou à mains nues. Pour enchaîner les passes d'épée dans un duel ou placer son poing au bon endroit dans une rixe.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:armes-de-jet-competence">
+<p><strong>Armes de jet</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Lancer avec précision couteaux, javelots, haches et autres projectiles. Pour clouer une cible d'un couteau bien placé ou abattre une sentinelle avant l'alerte.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:armes-de-trait">
+<p><strong>Armes de trait</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Tirer à l'arc et à l'arbalète. Pour viser un garde depuis un toit ou décocher une flèche à travers une meurtrière étroite.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:armes-a-feu">
+<p><strong>Armes à feu</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Manier tout ce qui tire à la poudre, du pistolet de poing au fusil lourd. Pour placer un tir précis sous la pression ou arroser une position retranchée.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:bonus-a-l-attaque">
+<p><strong>Bonus à l'attaque</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : attaque</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à une seule de ses attaques portées avec la compétence choisie, avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour une attaque à chaque round.</p>
+<p>Il n'existe pas de compétence d'attaque : en prenant le module, le renforceur choisit dans la première rubrique la compétence d'arme que le bonus augmente, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective (un +30 porté à 120 % vaut +36).</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Compétence (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Armes de mêlée</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes de jet</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes de trait</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes à feu</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>50</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>10</td>
+<td>7</td>
+<td>60</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>10</td>
+<td>8</td>
+<td>80</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>15</td>
+<td>9</td>
+<td>100</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>15</td>
+<td>10</td>
+<td>120</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>20</td>
+<td>11</td>
+<td>140</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>20</td>
+<td>12</td>
+<td>170</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>25</td>
+<td>13</td>
+<td>200</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>25</td>
+<td>14</td>
+<td>230</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>30</td>
+<td>15</td>
+<td>260</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>30</td>
+<td>16</td>
+<td>290</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>35</td>
+<td>17</td>
+<td>320</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>35</td>
+<td>18</td>
+<td>360</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>40</td>
+<td>20</td>
+<td>400</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>40</td>
+<td>22</td>
+<td>440</td>
+<td>240</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>45</td>
+<td>24</td>
+<td>480</td>
+<td>270</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>45</td>
+<td>26</td>
+<td>520</td>
+<td>300</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>50</td>
+<td>28</td>
+<td>560</td>
+<td>330</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>50</td>
+<td>30</td>
+<td>600</td>
+<td>360</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:degats-nen">
+<p><strong>Dégâts</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : attaque</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué aux dégâts d'une seule de ses attaques, portée avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour une attaque à chaque round.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
+<table>
+<thead>
+<tr>
+<th>Bonus</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>30</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>10</td>
+<td>7</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>10</td>
+<td>8</td>
+<td>50</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>15</td>
+<td>9</td>
+<td>60</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>15</td>
+<td>10</td>
+<td>70</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>20</td>
+<td>11</td>
+<td>90</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>20</td>
+<td>12</td>
+<td>110</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>25</td>
+<td>13</td>
+<td>130</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>25</td>
+<td>14</td>
+<td>150</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>30</td>
+<td>15</td>
+<td>170</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>30</td>
+<td>16</td>
+<td>190</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>35</td>
+<td>17</td>
+<td>210</td>
+<td>110</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>35</td>
+<td>18</td>
+<td>230</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>40</td>
+<td>20</td>
+<td>250</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>40</td>
+<td>22</td>
+<td>280</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>45</td>
+<td>24</td>
+<td>310</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>45</td>
+<td>26</td>
+<td>340</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>50</td>
+<td>28</td>
+<td>370</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>50</td>
+<td>30</td>
+<td>400</td>
+<td>240</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="mcard gloss-card" data-key="terme:en">
+<p><strong>En</strong></p>
+<p><span class="prereq">Circle</span></p>
+<p>L'En est une application avancée du Ten et du Ren : le personnage étend son Ren bien au-delà de sa portée ordinaire, puis emploie son Ten pour contenir cette aura en une sphère centrée sur lui. À l'intérieur de la sphère, le personnage sent la forme, la position et le mouvement de tout ce qui s'y trouve ; un utilisateur de Nen y provoque une réaction bien plus forte qu'une personne ordinaire.</p>
+<p>Le rayon de la sphère mesure la maîtrise : un pratiquant reconnu dépasse les 2 m, un maître atteint une cinquantaine de mètres, et seules de rares exceptions vont au-delà, comme Pitou et ses 2 km.</p>
+<p>Entrer en En fait tomber l'état du Nen précédent. Tant que le personnage maintient l'En, son UAR tombe à 0 : il ne projette plus rien et ne peut rien mettre en réserve. En contrepartie, il gagne +240 à tous ses jets sensoriels dans sa sphère.</p>
+<p class="palier">Basique</p>
+<p><span class="prereq">Prérequis : Ren Basique</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Entrer en En demande 10 minutes de concentration, en activité lourde ; en sortir demande 1 minute, en activité lourde aussi. Le maintenir reste une activité lourde.</p>
+<p class="palier">Avancé</p>
+<p><span class="prereq">Prérequis : En Basique</span>
+<span class="prereq">Coût : 10 DI</span></p>
+<p>Entrer en En demande 1 minute de concentration ; en sortir coûte un tour complet, soit toutes les actions du personnage. Entrer, sortir et maintenir l'En restent une activité lourde.</p>
+<p class="palier">Expert</p>
+<p><span class="prereq">Prérequis : En Avancé</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Entrer en En coûte un tour complet, soit toutes les actions du personnage ; en sortir coûte une action. Entrer, sortir et maintenir l'En ne sont plus qu'une activité intermédiaire.</p>
+<p class="palier">Maître</p>
+<p><span class="prereq">Prérequis : En Expert</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Entrer en En coûte une action, en activité intermédiaire ; le personnage peut en sortir à tout moment (aucune action requise). Le maintenir reste une activité intermédiaire.</p>
+<hr/>
+<p>Le rayon part de 1 m, compris dans l'apprentissage de l'En, et s'étend cran par cran selon le tableau ci-dessous, indépendamment des quatre paliers : chaque cran exige le précédent et coûte le DI indiqué.</p>
+<p>En entrant en En, le personnage déploie le rayon de son choix parmi ceux qu'il a débloqués. Il peut resserrer le rayon (aucune action requise) ; l'élargir jusqu'à un cran déjà débloqué coûte une action.</p>
+<p>Maintenir la sphère se paie sur la réserve : à la fin de chacun des tours du personnage, son UAD perd l'aura par tour indiquée pour le rayon déployé. Si l'UAD ne suffit plus, l'En se dissipe aussitôt.</p>
+<table>
+<thead>
+<tr>
+<th>Rayon</th>
+<th>Coût (DI)</th>
+<th>Aura par tour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 m</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2 m</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3 m</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>5 m</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>20</td>
+<td>15</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>20</td>
+<td>20</td>
+</tr>
+<tr>
+<td>30 m</td>
+<td>20</td>
+<td>30</td>
+</tr>
+<tr>
+<td>50 m</td>
+<td>20</td>
+<td>40</td>
+</tr>
+<tr>
+<td>100 m</td>
+<td>50</td>
+<td>60</td>
+</tr>
+<tr>
+<td>200 m</td>
+<td>50</td>
+<td>80</td>
+</tr>
+<tr>
+<td>300 m</td>
+<td>50</td>
+<td>100</td>
+</tr>
+<tr>
+<td>500 m</td>
+<td>50</td>
+<td>150</td>
+</tr>
+<tr>
+<td>1 km</td>
+<td>100</td>
+<td>200</td>
+</tr>
+<tr>
+<td>2 km</td>
+<td>100</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div><div class="gcard gloss-card" data-key="terme:esquive">
+<p><strong>Esquive</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Agilité<br/>Groupes : Physique, Défense</p>
+<p>Échapper à une attaque par un déplacement vif du corps. Pour se jeter hors de la trajectoire d'une balle ou pivoter sous le tranchant d'une épée.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:parade-competence">
+<p><strong>Parade</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Défense</p>
+<p>Bloquer ou dévier une attaque avec une arme ou un bouclier. Pour arrêter net une lame sur sa garde ou détourner un coup de massue.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:lutte">
+<p><strong>Lutte</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Force<br/>Groupes : Physique</p>
+<p>Empoigner, projeter, étrangler et immobiliser au corps à corps. Pour plaquer un adversaire au sol ou l'étrangler jusqu'à l'inconscience à mains nues.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:contorsion">
+<p><strong>Contorsion</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Agilité<br/>Groupes : Physique</p>
+<p>Souplesse pour se plier et se faufiler. Pour se glisser entre les barreaux d'une grille ou s'extraire de liens trop serrés.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:equilibre">
+<p><strong>Équilibre</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Agilité<br/>Groupes : Physique</p>
+<p>Rester stable sur un appui étroit ou instable. Pour traverser une poutre au-dessus du vide ou garder ses appuis sur un sol qui tangue.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:chute-competence">
+<p><strong>Chute</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Agilité<br/>Groupes : Physique</p>
+<p>Amortir un impact pour en réduire ou annuler les dégâts. Pour rouler à la réception d'un saut ou survivre à une chute de plusieurs étages.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:bonus-a-la-defense">
+<p><strong>Bonus à la défense</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : défense</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à un seul de ses jets de la compétence choisie, effectué avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour un jet à chaque round.</p>
+<p>En prenant le module, le renforceur choisit dans la première rubrique la compétence de défense que le bonus augmente, l'Esquive, la Parade, ou celles qui s'opposent aux manœuvres et aux Prises, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Compétence (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Esquive</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Parade</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Lutte</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Contorsion</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Équilibre</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Chute</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>50</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>10</td>
+<td>7</td>
+<td>60</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>10</td>
+<td>8</td>
+<td>80</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>15</td>
+<td>9</td>
+<td>100</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>15</td>
+<td>10</td>
+<td>120</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>20</td>
+<td>11</td>
+<td>140</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>20</td>
+<td>12</td>
+<td>170</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>25</td>
+<td>13</td>
+<td>200</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>25</td>
+<td>14</td>
+<td>230</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>30</td>
+<td>15</td>
+<td>260</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>30</td>
+<td>16</td>
+<td>290</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>35</td>
+<td>17</td>
+<td>320</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>35</td>
+<td>18</td>
+<td>360</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>40</td>
+<td>20</td>
+<td>400</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>40</td>
+<td>22</td>
+<td>440</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>45</td>
+<td>24</td>
+<td>480</td>
+<td>240</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>45</td>
+<td>26</td>
+<td>520</td>
+<td>260</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>50</td>
+<td>28</td>
+<td>560</td>
+<td>290</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>50</td>
+<td>30</td>
+<td>600</td>
+<td>320</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:resistance-a-la-douleur">
+<p><strong>Résistance à la Douleur</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Volonté<br/>Groupes : Mental</p>
+<p>Garder ses moyens malgré la souffrance d'une blessure. Pour serrer les dents sous une plaie atroce, ne pas s'évanouir sous le choc ou continuer à agir malgré tout. C'est elle qu'on teste lorsqu'une blessure menace de faire tomber Inconscient.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:resistance-a-la-peur">
+<p><strong>Résistance à la Peur</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Volonté<br/>Groupes : Mental</p>
+<p>Garder ses moyens devant un danger présent qui déclenche la peur. Pour ne pas se figer face à un prédateur, tenir sa position quand tout pousse à fuir ou surmonter une frayeur soudaine.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:resistance-a-l-influence">
+<p><strong>Résistance à l'Influence</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Volonté<br/>Groupes : Mental</p>
+<p>Ne pas plier face à qui cherche à le faire céder par la parole. Pour résister à une persuasion habile, repousser une tentation ou tenir bon sous l'intimidation. Elle décide si la pression prend, sans démasquer le menteur, ce qui reste affaire de Perspicacité.</p>
+</div>
+</div>
+<h2>Champ Social</h2>
+<div class="comp">
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:resistance-a-l-environnement">
+<p><strong>Résistance à l'Environnement</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Endurance<br/>Groupes : Physique</p>
+<p>Endurer les conditions d'un milieu hostile subies du dehors : froid, chaleur, altitude, noyade. Pour traverser un désert brûlant ou survivre une nuit en haute montagne sans abri.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:resistance-a-l-epuisement">
+<p><strong>Résistance à l'Épuisement</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Endurance<br/>Groupes : Physique</p>
+<p>Tenir bon quand le corps épuise ses réserves. C'est elle qu'on teste pour pousser l'effort au-delà de ce qu'on soutient dans la journée, rester éveillé quand le sommeil manque, ou endurer la faim et la soif, sans sombrer dans la Fatigue.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:bonus-a-la-resistance">
+<p><strong>Bonus à la résistance</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : défense</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à un seul de ses jets de la Résistance choisie, effectué avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour un jet à chaque round.</p>
+<p>En prenant le module, le renforceur choisit dans la première rubrique la Résistance que le bonus augmente, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective.</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Compétence (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Résistance à la Douleur</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à la Peur</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à l'Influence</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à la Maladie et au Poison</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à l'Environnement</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Résistance à l'Épuisement</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>50</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>10</td>
+<td>7</td>
+<td>60</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>10</td>
+<td>8</td>
+<td>80</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>15</td>
+<td>9</td>
+<td>100</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>15</td>
+<td>10</td>
+<td>120</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>20</td>
+<td>11</td>
+<td>140</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>20</td>
+<td>12</td>
+<td>170</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>25</td>
+<td>13</td>
+<td>200</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>25</td>
+<td>14</td>
+<td>230</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>30</td>
+<td>15</td>
+<td>260</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>30</td>
+<td>16</td>
+<td>290</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>35</td>
+<td>17</td>
+<td>320</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>35</td>
+<td>18</td>
+<td>360</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>40</td>
+<td>20</td>
+<td>400</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>40</td>
+<td>22</td>
+<td>440</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>45</td>
+<td>24</td>
+<td>480</td>
+<td>240</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>45</td>
+<td>26</td>
+<td>520</td>
+<td>260</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>50</td>
+<td>28</td>
+<td>560</td>
+<td>290</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>50</td>
+<td>30</td>
+<td>600</td>
+<td>320</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:soin">
+<p><strong>Soin</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : effet</p>
+<p>Le Soin rend des points de vie. Tant que la capacité est active, le renforceur en rend le montant indiqué, en une seule fois, avant le début de son prochain tour ; si la capacité est maintenue, le soin se répète à chaque round.</p>
+<p>Le soin s'applique au renforceur lui-même ou, au contact, à autrui.</p>
+<p>Cet effet est chiffré : le montant est multiplié par l'affinité d'emploi effective.</p>
+<table>
+<thead>
+<tr>
+<th>Soin</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+10 PV</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20 PV</td>
+<td>5</td>
+<td>6</td>
+<td>30</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30 PV</td>
+<td>10</td>
+<td>7</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40 PV</td>
+<td>10</td>
+<td>8</td>
+<td>50</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50 PV</td>
+<td>15</td>
+<td>9</td>
+<td>60</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60 PV</td>
+<td>15</td>
+<td>10</td>
+<td>70</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70 PV</td>
+<td>20</td>
+<td>11</td>
+<td>90</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80 PV</td>
+<td>20</td>
+<td>12</td>
+<td>110</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90 PV</td>
+<td>25</td>
+<td>13</td>
+<td>130</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100 PV</td>
+<td>25</td>
+<td>14</td>
+<td>150</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110 PV</td>
+<td>30</td>
+<td>15</td>
+<td>170</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120 PV</td>
+<td>30</td>
+<td>16</td>
+<td>190</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130 PV</td>
+<td>35</td>
+<td>17</td>
+<td>210</td>
+<td>110</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140 PV</td>
+<td>35</td>
+<td>18</td>
+<td>230</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150 PV</td>
+<td>40</td>
+<td>20</td>
+<td>250</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160 PV</td>
+<td>40</td>
+<td>22</td>
+<td>280</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170 PV</td>
+<td>45</td>
+<td>24</td>
+<td>310</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180 PV</td>
+<td>45</td>
+<td>26</td>
+<td>340</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190 PV</td>
+<td>50</td>
+<td>28</td>
+<td>370</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200 PV</td>
+<td>50</td>
+<td>30</td>
+<td>400</td>
+<td>240</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -4666,7 +7121,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.footer", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script src="../../../../javascripts/changelog.js"></script>
 <script src="../../../../javascripts/continuous.js"></script>
 <script src="../../../../javascripts/nav-drawer.js"></script>

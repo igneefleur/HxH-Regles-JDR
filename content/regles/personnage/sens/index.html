@@ -6,19 +6,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://igneefleur.github.io/HxH-Regles-JDR/content/regles/personnage/sens/" rel="canonical"/>
-<link href="../competences/" rel="prev"/>
+<link href="../classe/" rel="prev"/>
 <link href="../etats/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Les Sens - HxH Système JDR</title>
-<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/fonts.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/extra.css?v=11" rel="stylesheet"/>
+<link href="../../../../stylesheets/extra.css?v=13" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -134,7 +134,7 @@
       </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../eclat/">
+<a class="md-tabs__link" href="../avantages/">
           
   
   
@@ -265,6 +265,18 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../avantages/">
+<span class="md-ellipsis">
+    
+  
+    Avantages
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../eclat/">
 <span class="md-ellipsis">
     
@@ -318,6 +330,18 @@
     
   
     Compétences
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../classe/">
+<span class="md-ellipsis">
+    
+  
+    Classes
   
 
     
@@ -1228,7 +1252,7 @@
 <h1 id="les-sens">Les sens</h1>
 <div class="cols">
 <p>Un personnage perçoit le monde, et son propre corps, par ses sens. Chaque sens a sa <a href="../competences/">compétence</a> : plus elle est élevée, mieux le personnage perçoit.</p>
-<p>Quel que soit son niveau, un sens ne perçoit que ce qui lui parvient : la Vue n'atteint que ce que la lumière éclaire, l'Ouïe que ce qui émet un son, l'Écholocation que ce que touche l'écho des sons qu'elle émet. La fiche de compétence de chaque sens décrit ainsi son domaine.</p>
+<p>Quel que soit son <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, un sens ne perçoit que ce qui lui parvient : la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> n'atteint que ce que la lumière éclaire, l'<a class="gloss-link" data-key="terme:ouie" href="../../../content/regles/personnage/competences/#gloss-ouie">Ouïe</a> que ce qui émet un son, l'<a class="gloss-link" data-key="terme:echolocation-competence" href="../../../content/regles/personnage/competences/#gloss-echolocation-competence">Écholocation</a> que ce que touche l'écho des sons qu'elle émet. La fiche de <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétence</a> de chaque sens décrit ainsi son domaine.</p>
 <div class="keep">
 <h3 id="sens-externes-et-sens-internes">Sens externes et sens internes</h3>
 <p>Les sens externes perçoivent le monde autour du personnage : par eux, il se situe dans l'espace, remarque ce qui l'entoure et y réagit.</p>
@@ -1236,93 +1260,93 @@
 </div>
 <div class="keep">
 <h3 id="les-niveaux">Les niveaux</h3>
-<p>Chaque sens occupe un niveau, qui fixe ce qu'il permet de faire. Les trois premiers, Primaire, Secondaire et Tertiaire, sont les niveaux actifs : tout personnage possède les sens de ces niveaux et s'en sert librement.</p>
+<p>Chaque sens occupe un <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, qui fixe ce qu'il permet de faire. Les trois premiers, <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>, <a class="gloss-link" data-key="terme:secondaire" href="#gloss-secondaire">Secondaire</a> et <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, sont les niveaux actifs : tout personnage possède les sens de ces niveaux et s'en sert librement.</p>
 </div>
 <div class="defs">
-<p><strong>Se repérer :</strong> percevoir son environnement ou son corps dans son ensemble : s'orienter, remarquer une présence, éviter un obstacle. Aucune action requise : le sens le fait en continu.</p>
-<p><strong>Localiser :</strong> situer précisément une chose perçue : sa direction, sa distance, sa position. Localiser est une <a href="../../combat/deroulement-combat/">action</a>.</p>
-<p><strong>Identifier :</strong> reconnaître une chose perçue : sa nature, son identité. Identifier est une <a href="../../combat/deroulement-combat/">action</a>.</p>
+<span class="gloss-anchor" id="gloss-se-reperer"></span><p><strong>Se repérer :</strong> percevoir son environnement ou son corps dans son ensemble : s'orienter, remarquer une <a class="gloss-link" data-key="terme:presence" href="../../../content/regles/personnage/caracteristiques/#gloss-presence">présence</a>, éviter un obstacle. Aucune action requise : le sens le fait en continu.</p>
+<span class="gloss-anchor" id="gloss-localiser"></span><p><strong>Localiser :</strong> situer précisément une chose perçue : sa direction, sa distance, sa position. Localiser est une <a href="../../combat/deroulement-combat/">action</a>.</p>
+<span class="gloss-anchor" id="gloss-identifier"></span><p><strong>Identifier :</strong> reconnaître une chose perçue : sa nature, son identité. Identifier est une <a href="../../combat/deroulement-combat/">action</a>.</p>
 </div>
-<p>Les deux derniers niveaux sont à part : un sens Latent dort dans le corps du personnage, un sens Inexistant lui manque. Les niveaux dépendent du corps : cette page donne le classement des sens humains.</p>
-<div class="mcard">
-<p><strong>Primaire</strong> <span class="prereq">Se repérer</span> Le sens perçoit son domaine dans son ensemble. Un sens externe embrasse l'espace : le personnage s'y repère, évite les obstacles et se déplace avec aisance.</p>
+<p>Les deux derniers niveaux sont à part : un sens <a class="gloss-link" data-key="terme:latent" href="#gloss-latent">Latent</a> dort dans le corps du personnage, un sens <a class="gloss-link" data-key="terme:inexistant" href="#gloss-inexistant">Inexistant</a> lui manque. Les niveaux dépendent du corps : cette page donne le classement des sens humains.</p>
+<span class="gloss-anchor" id="gloss-primaire"></span><div class="mcard">
+<p><strong>Primaire</strong> <span class="prereq"><a class="gloss-link" data-key="terme:se-reperer" href="#gloss-se-reperer">Se repérer</a></span> Le sens perçoit son domaine dans son ensemble. Un sens externe embrasse l'espace : le personnage s'y repère, évite les obstacles et se déplace avec aisance.</p>
 <p>Un sens interne embrasse le corps : le personnage sent d'un bloc son équilibre et sa posture.</p>
 <div class="sens-niveau">
-<p><span class="zlbl">Externes</span><span class="zchip">Vue</span></p>
-<p><span class="zlbl">Internes</span><span class="zchip">Équilibrioception</span></p>
+<p><span class="zlbl">Externes</span><span class="zchip"><a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a></span></p>
+<p><span class="zlbl">Internes</span><span class="zchip"><a class="gloss-link" data-key="terme:equilibrioception" href="../../../content/regles/personnage/competences/#gloss-equilibrioception">Équilibrioception</a></span></p>
 </div>
-<p>Un sens Primaire peut effectuer tout ce qu'un sens Secondaire ou Tertiaire peut effectuer. Le personnage peut donc utiliser Localiser ou Identifier avec un sens Primaire.</p>
+<p>Un sens Primaire peut effectuer tout ce qu'un sens <a class="gloss-link" data-key="terme:secondaire" href="#gloss-secondaire">Secondaire</a> ou <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a> peut effectuer. Le personnage peut donc utiliser <a class="gloss-link" data-key="terme:localiser" href="#gloss-localiser">Localiser</a> ou <a class="gloss-link" data-key="terme:identifier" href="#gloss-identifier">Identifier</a> avec un sens Primaire.</p>
 </div>
-<div class="mcard">
-<p><strong>Secondaire</strong> <span class="prereq">Localiser</span> Le personnage localise par ce sens. Un sens externe donne la position, la distance ou la direction de ce qu'il perçoit.</p>
+<span class="gloss-anchor" id="gloss-secondaire"></span><div class="mcard">
+<p><strong>Secondaire</strong> <span class="prereq"><a class="gloss-link" data-key="terme:localiser" href="#gloss-localiser">Localiser</a></span> Le personnage localise par ce sens. Un sens externe donne la position, la distance ou la direction de ce qu'il perçoit.</p>
 <p>Un sens interne situe un membre ou l'endroit exact d'une sensation.</p>
 <div class="sens-niveau">
-<p><span class="zlbl">Externes</span><span class="zchip">Ouïe</span><span class="zchip">Toucher</span></p>
-<p><span class="zlbl">Internes</span><span class="zchip">Proprioception</span><span class="zchip">Nociception</span></p>
+<p><span class="zlbl">Externes</span><span class="zchip"><a class="gloss-link" data-key="terme:ouie" href="../../../content/regles/personnage/competences/#gloss-ouie">Ouïe</a></span><span class="zchip"><a class="gloss-link" data-key="terme:toucher-competence" href="../../../content/regles/personnage/competences/#gloss-toucher-competence">Toucher</a></span></p>
+<p><span class="zlbl">Internes</span><span class="zchip"><a class="gloss-link" data-key="terme:proprioception" href="../../../content/regles/personnage/competences/#gloss-proprioception">Proprioception</a></span><span class="zchip"><a class="gloss-link" data-key="terme:nociception" href="../../../content/regles/personnage/competences/#gloss-nociception">Nociception</a></span></p>
 </div>
-<p>Un sens Secondaire peut effectuer tout ce qu'un sens Tertiaire peut effectuer. Le personnage peut donc utiliser Identifier avec un sens Secondaire.</p>
+<p>Un sens Secondaire peut effectuer tout ce qu'un sens <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a> peut effectuer. Le personnage peut donc utiliser <a class="gloss-link" data-key="terme:identifier" href="#gloss-identifier">Identifier</a> avec un sens Secondaire.</p>
 </div>
-<div class="mcard">
-<p><strong>Tertiaire</strong> <span class="prereq">Identifier</span> Le personnage identifie par ce sens. Un sens externe reconnaît la nature ou l'identité de ce qu'il perçoit.</p>
+<span class="gloss-anchor" id="gloss-tertiaire"></span><div class="mcard">
+<p><strong>Tertiaire</strong> <span class="prereq"><a class="gloss-link" data-key="terme:identifier" href="#gloss-identifier">Identifier</a></span> Le personnage identifie par ce sens. Un sens externe reconnaît la nature ou l'identité de ce qu'il perçoit.</p>
 <p>Un sens interne met un nom sur une sensation ou un état du corps.</p>
 <div class="sens-niveau">
-<p><span class="zlbl">Externes</span><span class="zchip">Odorat</span><span class="zchip">Goût</span><span class="zchip">Chémesthésie</span><span class="zchip">Thermoception</span><span class="zchip">Séismoréception</span></p>
-<p><span class="zlbl">Internes</span><span class="zchip">Intéroception</span><span class="zchip">Chronoception</span></p>
+<p><span class="zlbl">Externes</span><span class="zchip"><a class="gloss-link" data-key="terme:odorat" href="../../../content/regles/personnage/competences/#gloss-odorat">Odorat</a></span><span class="zchip"><a class="gloss-link" data-key="terme:gout" href="../../../content/regles/personnage/competences/#gloss-gout">Goût</a></span><span class="zchip"><a class="gloss-link" data-key="terme:chemesthesie" href="../../../content/regles/personnage/competences/#gloss-chemesthesie">Chémesthésie</a></span><span class="zchip"><a class="gloss-link" data-key="terme:thermoception" href="../../../content/regles/personnage/competences/#gloss-thermoception">Thermoception</a></span><span class="zchip"><a class="gloss-link" data-key="terme:seismoreception" href="../../../content/regles/personnage/competences/#gloss-seismoreception">Séismoréception</a></span></p>
+<p><span class="zlbl">Internes</span><span class="zchip"><a class="gloss-link" data-key="terme:interoception" href="../../../content/regles/personnage/competences/#gloss-interoception">Intéroception</a></span><span class="zchip"><a class="gloss-link" data-key="terme:chronoception" href="../../../content/regles/personnage/competences/#gloss-chronoception">Chronoception</a></span></p>
 </div>
 </div>
-<div class="mcard">
-<p><strong>Latent</strong> <span class="prereq">Endormi</span> Le sens dort : il ne perçoit rien tant qu'il n'a pas été éveillé. Une fois éveillé, il perçoit ce que décrit sa <a href="../competences/">compétence</a>, mais se place un cran sous le Tertiaire : même identifier lui demande de remonter d'un niveau.</p>
+<span class="gloss-anchor" id="gloss-latent"></span><div class="mcard">
+<p><strong>Latent</strong> <span class="prereq">Endormi</span> Le sens dort : il ne perçoit rien tant qu'il n'a pas été éveillé. Une fois éveillé, il perçoit ce que décrit sa <a href="../competences/">compétence</a>, mais se place un cran sous le <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a> : même identifier lui demande de remonter d'un <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>.</p>
 <div class="sens-niveau">
-<p><span class="zlbl">Externes</span><span class="zchip">Magnétoréception</span><span class="zchip">Écholocation</span><span class="zchip">Vision polarisée</span><span class="zchip">Vision ultraviolette</span><span class="zchip">Infrasons et ultrasons</span></p>
-<p><span class="zlbl">Internes</span><span class="zchip">Baroréception</span></p>
+<p><span class="zlbl">Externes</span><span class="zchip"><a class="gloss-link" data-key="terme:magnetoreception" href="../../../content/regles/personnage/competences/#gloss-magnetoreception">Magnétoréception</a></span><span class="zchip"><a class="gloss-link" data-key="terme:echolocation-competence" href="../../../content/regles/personnage/competences/#gloss-echolocation-competence">Écholocation</a></span><span class="zchip"><a class="gloss-link" data-key="terme:vision-polarisee" href="../../../content/regles/personnage/competences/#gloss-vision-polarisee">Vision polarisée</a></span><span class="zchip"><a class="gloss-link" data-key="terme:vision-ultraviolette" href="../../../content/regles/personnage/competences/#gloss-vision-ultraviolette">Vision ultraviolette</a></span><span class="zchip"><a class="gloss-link" data-key="terme:infrasons-et-ultrasons" href="../../../content/regles/personnage/competences/#gloss-infrasons-et-ultrasons">Infrasons et ultrasons</a></span></p>
+<p><span class="zlbl">Internes</span><span class="zchip"><a class="gloss-link" data-key="terme:baroreception" href="../../../content/regles/personnage/competences/#gloss-baroreception">Baroréception</a></span></p>
 </div>
 </div>
-<div class="mcard">
-<p><strong>Inexistant</strong> <span class="prereq">Hors de portée</span> Le sens manque au corps du personnage : rien ne peut l'éveiller. Seul un corps d'une autre <a href="../../monde/formes/">forme</a> le porte.</p>
+<span class="gloss-anchor" id="gloss-inexistant"></span><div class="mcard">
+<p><strong>Inexistant</strong> <span class="prereq">Hors de <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a></span> Le sens manque au corps du personnage : rien ne peut l'éveiller. Seul un corps d'une autre <a href="../../monde/formes/">forme</a> le porte.</p>
 <div class="sens-niveau">
-<p><span class="zlbl">Externes</span><span class="zchip">Électroréception</span><span class="zchip">Détection infrarouge</span><span class="zchip">Ligne latérale</span><span class="zchip">Hygroréception</span></p>
+<p><span class="zlbl">Externes</span><span class="zchip"><a class="gloss-link" data-key="terme:electroreception" href="../../../content/regles/personnage/competences/#gloss-electroreception">Électroréception</a></span><span class="zchip"><a class="gloss-link" data-key="terme:detection-infrarouge" href="../../../content/regles/personnage/competences/#gloss-detection-infrarouge">Détection infrarouge</a></span><span class="zchip"><a class="gloss-link" data-key="terme:ligne-laterale" href="../../../content/regles/personnage/competences/#gloss-ligne-laterale">Ligne latérale</a></span><span class="zchip"><a class="gloss-link" data-key="terme:hygroreception" href="../../../content/regles/personnage/competences/#gloss-hygroreception">Hygroréception</a></span></p>
 </div>
 </div>
 <div class="keep">
 <h4 id="changer-le-niveau-dun-sens">Changer le niveau d'un sens</h4>
-<p>Le personnage peut utiliser un sens comme un sens d'un niveau plus haut que le sien : l'Odorat, sens Tertiaire, peut ainsi localiser une odeur, comme un sens Secondaire, ou se repérer par elle, comme un sens Primaire. Pour cela, il fait remonter le sens au niveau voulu : le changement coûte une <a href="../../combat/deroulement-combat/">action</a>, quel que soit le niveau visé, et le sens remonté subit −120 à ses jets par niveau remonté. Un sens Latent éveillé part d'un cran sous le Tertiaire : −120 dès le niveau Tertiaire, jusqu'à −360 au niveau Primaire. Il est impossible d'utiliser cette règle sur un sens Inexistant.</p>
+<p>Le personnage peut utiliser un sens comme un sens d'un <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> plus haut que le sien : l'<a class="gloss-link" data-key="terme:odorat" href="../../../content/regles/personnage/competences/#gloss-odorat">Odorat</a>, sens <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, peut ainsi localiser une odeur, comme un sens <a class="gloss-link" data-key="terme:secondaire" href="#gloss-secondaire">Secondaire</a>, ou se repérer par elle, comme un sens <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>. Pour cela, il fait remonter le sens au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> voulu : le changement coûte une <a href="../../combat/deroulement-combat/">action</a>, quel que soit le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> visé, et le sens remonté subit −120 à ses jets par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> remonté. Un sens <a class="gloss-link" data-key="terme:latent" href="#gloss-latent">Latent</a> éveillé part d'un cran sous le <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a> : −120 dès le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, jusqu'à −360 au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>. Il est impossible d'utiliser cette règle sur un sens <a class="gloss-link" data-key="terme:inexistant" href="#gloss-inexistant">Inexistant</a>.</p>
 <p class="formula">Malus = 120 × niveaux remontés</p>
 </div>
 </div>
 <hr/>
 <div class="cols">
 <h3 id="la-clarte-des-sens">La clarté des sens</h3>
-<p>Chaque sens a une clarté, notée de 0 à 10, qui mesure son état du moment. Un sens intact est à 10 et n'impose aucun malus. La fumée, l'éblouissement, le vacarme, l'engourdissement ou une blessure font perdre des points de clarté ; le MJ fixe la perte selon la force de la gêne. La clarté se compte sens par sens, et les pertes de sources différentes s'additionnent, sans jamais la faire descendre sous 0. Une gêne qui frappe l'organe ou le milieu touche tous les sens qui en dépendent : la fumée qui voile la Vue voile aussi la Vision ultraviolette.</p>
-<p>La clarté remonte dès que la cause de la perte disparaît : le personnage sort de la fumée, l'éblouissement passe. Les pertes dues à une blessure s'effacent à mesure qu'elle guérit. La cécité n'est pas un <a href="../etats/">état</a> : c'est la Vue à 0 de clarté ; la surdité, l'Ouïe à 0. Et quand percevoir est matériellement impossible, yeux détruits ou noir absolu, il n'y a pas de jet, quelle que soit la clarté : rien ne se perçoit.</p>
-<p>Percevoir ne demande un jet que si la perception est incertaine : élément caché, lointain, noyé dans le bruit. Le reste s'obtient sans les dés. Le MJ dit sur quels sens un jet s'appuie, et le jet ne prend que les malus de ces sens-là. Un personnage privé d'un sens se rabat donc sur le meilleur qui lui reste : un combattant aveuglé qui entend sa cible attaque par l'Ouïe et subit son malus, pas celui de la Vue.</p>
+<p>Chaque sens a une clarté, notée de 0 à 10, qui mesure son état du moment. Un sens intact est à 10 et n'impose aucun malus. La fumée, l'éblouissement, le vacarme, l'engourdissement ou une blessure font perdre des points de clarté ; le MJ fixe la perte selon la force de la gêne. La clarté se compte sens par sens, et les pertes de sources différentes s'additionnent, sans jamais la faire descendre sous 0. Une gêne qui frappe l'organe ou le milieu touche tous les sens qui en dépendent : la fumée qui voile la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> voile aussi la <a class="gloss-link" data-key="terme:vision-ultraviolette" href="../../../content/regles/personnage/competences/#gloss-vision-ultraviolette">Vision ultraviolette</a>.</p>
+<p>La clarté remonte dès que la cause de la perte disparaît : le personnage sort de la fumée, l'éblouissement passe. Les pertes dues à une blessure s'effacent à mesure qu'elle guérit. La cécité n'est pas un <a href="../etats/">état</a> : c'est la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> à 0 de clarté ; la surdité, l'<a class="gloss-link" data-key="terme:ouie" href="../../../content/regles/personnage/competences/#gloss-ouie">Ouïe</a> à 0. Et quand percevoir est matériellement impossible, yeux détruits ou noir absolu, il n'y a pas de jet, quelle que soit la clarté : rien ne se perçoit.</p>
+<p><a class="gloss-link" data-key="terme:percevoir" href="#gloss-percevoir">Percevoir</a> ne demande un jet que si la <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a> est incertaine : élément caché, lointain, noyé dans le bruit. Le reste s'obtient sans les dés. Le MJ dit sur quels sens un jet s'appuie, et le jet ne prend que les malus de ces sens-là. Un personnage privé d'un sens se rabat donc sur le meilleur qui lui reste : un combattant aveuglé qui entend sa cible attaque par l'<a class="gloss-link" data-key="terme:ouie" href="../../../content/regles/personnage/competences/#gloss-ouie">Ouïe</a> et subit son malus, pas celui de la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a>.</p>
 <p>Sous 10, le sens dégradé pénalise les jets qui s'appuient sur lui. Le malus dépend du but du jet : obtenir une information, c'est percevoir ; produire un effet, c'est agir. Un même jet subit l'un des deux malus, jamais les deux.</p>
 <div class="keep">
-<h4 id="percevoir">Percevoir</h4>
+<span class="gloss-anchor" id="gloss-percevoir"></span><h4 id="percevoir">Percevoir</h4>
 <p>Quand le jet sert à percevoir par ce sens (se repérer, localiser ou identifier), chaque point de clarté manquant inflige −20 au jet, quel que soit le sens.</p>
-<p class="formula">Malus de perception = 20 × points de clarté manquants</p>
+<p class="formula">Malus de <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a> = 20 × points de clarté manquants</p>
 </div>
 <div class="keep">
-<h4 id="agir">Agir</h4>
-<p>Quand le jet sert à agir en s'appuyant sur ce sens (attaquer, esquiver, se déplacer), chaque point de clarté manquant inflige −10 au jet, quel que soit le sens. Attaquer une cible mal vue est agir : le jet cherche à toucher, pas à obtenir une information, même si la Vue guide le coup.</p>
+<span class="gloss-anchor" id="gloss-agir"></span><h4 id="agir">Agir</h4>
+<p>Quand le jet sert à agir en s'appuyant sur ce sens (attaquer, esquiver, se déplacer), chaque point de clarté manquant inflige −10 au jet, quel que soit le sens. Attaquer une cible mal vue est agir : le jet cherche à toucher, pas à obtenir une information, même si la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> guide le coup.</p>
 <p class="formula">Malus d'action = 10 × points de clarté manquants</p>
 </div>
 <div class="keep">
-<h4 id="cumul-et-limites">Cumul et limites</h4>
-<p>Le malus ne se cumule pas d'un sens à l'autre : quand un jet s'appuie à la fois sur plusieurs sens dégradés, seul le plus fort s'applique. Si la Vue impose −40 et l'Ouïe −20, le personnage subit −40.</p>
+<span class="gloss-anchor" id="gloss-cumul-et-limites"></span><h4 id="cumul-et-limites">Cumul et limites</h4>
+<p>Le malus ne se cumule pas d'un sens à l'autre : quand un jet s'appuie à la fois sur plusieurs sens dégradés, seul le plus fort s'applique. Si la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> impose −40 et l'<a class="gloss-link" data-key="terme:ouie" href="../../../content/regles/personnage/competences/#gloss-ouie">Ouïe</a> −20, le personnage subit −40.</p>
 </div>
-<p>À 0 de clarté, tant que percevoir reste possible, le malus atteint son plafond : −200 en perception, −100 en action. Le sens n'est jamais rayé de la fiche : simplement, tout jet dont le résultat final tombe sous 0 échoue d'office. Un novice échoue ainsi dans une fumée où un maître réussit encore.</p>
+<p>À 0 de clarté, tant que percevoir reste possible, le malus atteint son plafond : −200 en <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a>, −100 en action. Le sens n'est jamais rayé de la fiche : simplement, tout jet dont le résultat final tombe sous 0 échoue d'office. Un novice échoue ainsi dans une fumée où un maître réussit encore.</p>
 <div class="memo">
-<p>Exemple. Une fumée épaisse réduit à 4 la clarté de Vue d'un personnage, soit 6 points manquants. Pour distinguer une silhouette dans la fumée, son jet de perception subit 6 × −20, soit −120. Pour attaquer un ennemi qu'il distingue mal, il subit 6 × −10, soit −60.</p>
+<p>Exemple. Une fumée épaisse réduit à 4 la clarté de <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> d'un personnage, soit 6 points manquants. Pour distinguer une silhouette dans la fumée, son jet de <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a> subit 6 × −20, soit −120. Pour attaquer un ennemi qu'il distingue mal, il subit 6 × −10, soit −60.</p>
 </div>
 </div>
 <hr/>
 <div class="cols">
 <div class="keep">
 <h3 id="modificateurs-de-clarte-de-la-vue">Modificateurs de clarté de la Vue</h3>
-<p>Les tables ci-dessous donnent la perte de clarté que les gênes courantes infligent à la Vue, une table par type de gêne. Le MJ classe les autres gênes par comparaison. Les pertes de sources différentes s'additionnent : une nuit de pleine lune sous le brouillard fait −8.</p>
+<p>Les tables ci-dessous donnent la perte de clarté que les gênes courantes infligent à la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a>, une table par type de gêne. Le MJ classe les autres gênes par comparaison. Les pertes de sources différentes s'additionnent : une nuit de pleine lune sous le brouillard fait −8.</p>
 </div>
 <div class="keep">
-<h4 id="obscurite">Obscurité</h4>
+<span class="gloss-anchor" id="gloss-obscurite"></span><h4 id="obscurite">Obscurité</h4>
 <div class="sepia-table">
 <table>
 <thead>
@@ -1361,7 +1385,7 @@
 </div>
 </div>
 <div class="keep">
-<h4 id="brouillard-et-fumee">Brouillard et fumée</h4>
+<span class="gloss-anchor" id="gloss-brouillard-et-fumee"></span><h4 id="brouillard-et-fumee">Brouillard et fumée</h4>
 <div class="sepia-table">
 <table>
 <thead>
@@ -1392,7 +1416,7 @@
 </div>
 </div>
 <div class="keep">
-<h4 id="intemperies">Intempéries</h4>
+<span class="gloss-anchor" id="gloss-intemperies"></span><h4 id="intemperies">Intempéries</h4>
 <div class="sepia-table">
 <table>
 <thead>
@@ -1422,8 +1446,8 @@
 <hr/>
 <div class="cols">
 <div class="keep">
-<h3 id="sens-speciaux">Sens spéciaux</h3>
-<p>Les sens latents et inexistants ne comptent pas parmi les compétences de perception ordinaires. Seul un sens latent peut s'acquérir, dans des conditions particulières que le MJ fixe. Le sens qui s'éveille naît avec une clarté de 10, puis s'utilise et s'entraîne comme toute autre compétence ; il perçoit ce que décrit sa <a href="../competences/">compétence</a> et remonte les <a href="#les-niveaux">niveaux</a> depuis un cran sous le Tertiaire. Un sens inexistant, lui, reste hors d'atteinte : il faudrait au personnage un corps d'une autre <a href="../../monde/formes/">forme</a>.</p>
+<span class="gloss-anchor" id="gloss-sens-speciaux"></span><h3 id="sens-speciaux">Sens spéciaux</h3>
+<p>Les sens <a class="gloss-link" data-key="terme:latent" href="#gloss-latent">latents</a> et <a class="gloss-link" data-key="terme:inexistant" href="#gloss-inexistant">inexistants</a> ne comptent pas parmi les <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétences</a> de <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a> ordinaires. Seul un sens <a class="gloss-link" data-key="terme:latent" href="#gloss-latent">latent</a> peut s'acquérir, dans des conditions particulières que le MJ fixe. Le sens qui s'éveille naît avec une clarté de 10, puis s'utilise et s'entraîne comme toute autre <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétence</a> ; il perçoit ce que décrit sa <a href="../competences/">compétence</a> et remonte les <a href="#les-niveaux">niveaux</a> depuis un cran sous le <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>. Un sens <a class="gloss-link" data-key="terme:inexistant" href="#gloss-inexistant">inexistant</a>, lui, reste hors d'atteinte : il faudrait au personnage un corps d'une autre <a href="../../monde/formes/">forme</a>.</p>
 </div>
 </div>
 <div class="gloss-defs">
@@ -3101,7 +3125,518 @@
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
+</div><div class="gloss-defs"><div class="gcard gloss-card" data-key="terme:niveau-regle">
+<p><strong>Niveau</strong></p>
+<div class="gcard-text">
+<p>Le total de PF gagné marque le niveau. Tous les 100 PF, le personnage franchit un niveau.</p>
+<p class="formula">Niveau = ⌈ PF ÷ 100 ⌉</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Points de formation</th>
+<th style="text-align: center;">Niveau</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1 à 100</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">101 à 200</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">201 à 300</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">301 à 400</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">401 à 500</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">501 à 600</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">601 à 700</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">701 à 800</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">801 à 900</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td style="text-align: center;">901 à 1 000</td>
+<td style="text-align: center;">10</td>
+</tr>
+</tbody>
+</table>
+<p>Et ainsi de suite, 100 points par niveau, sans plafond.</p>
 </div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:vue">
+<p><strong>Vue</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Capacité visuelle et intuitive à chercher une chose concrète, entrée secrète ou objet caché. Par exemple chercher une trappe sous un tapis ou repérer le reflet d'une lunette de visée au loin.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:ouie">
+<p><strong>Ouïe</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Traquer un son précis dans le silence ou le chaos urbain. Pour écouter une conversation privée à travers une cloison ou détecter le clic d'un percuteur avant un coup de feu.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:echolocation-competence">
+<p><strong>Écholocation</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Localiser et reconnaître ce qui entoure par l'écho des sons qu'on émet. Pour se déplacer dans le noir total ou déceler une paroi que l'œil ne voit pas.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:competence-concept">
+<p><strong>Compétence</strong></p>
+<div class="gcard-text">
+<p>Une compétence mesure ce qu'un personnage sait faire dans un domaine précis. Chaque compétence repose sur une caractéristique et se teste par un jet, comparé à un seuil de difficulté ou au jet d'un adversaire.</p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:primaire">
+<p><strong>Primaire</strong></p>
+<p><span class="prereq">Se repérer</span> Le sens perçoit son domaine dans son ensemble. Un sens externe embrasse l'espace : le personnage s'y repère, évite les obstacles et se déplace avec aisance.</p>
+<p>Un sens interne embrasse le corps : le personnage sent d'un bloc son équilibre et sa posture.</p>
+<div class="sens-niveau">
+<p><span class="zlbl">Externes</span><span class="zchip">Vue</span></p>
+<p><span class="zlbl">Internes</span><span class="zchip">Équilibrioception</span></p>
+</div>
+<p>Un sens Primaire peut effectuer tout ce qu'un sens Secondaire ou Tertiaire peut effectuer. Le personnage peut donc utiliser Localiser ou Identifier avec un sens Primaire.</p>
+</div><div class="mcard gloss-card" data-key="terme:secondaire">
+<p><strong>Secondaire</strong></p>
+<p><span class="prereq">Localiser</span> Le personnage localise par ce sens. Un sens externe donne la position, la distance ou la direction de ce qu'il perçoit.</p>
+<p>Un sens interne situe un membre ou l'endroit exact d'une sensation.</p>
+<div class="sens-niveau">
+<p><span class="zlbl">Externes</span><span class="zchip">Ouïe</span><span class="zchip">Toucher</span></p>
+<p><span class="zlbl">Internes</span><span class="zchip">Proprioception</span><span class="zchip">Nociception</span></p>
+</div>
+<p>Un sens Secondaire peut effectuer tout ce qu'un sens Tertiaire peut effectuer. Le personnage peut donc utiliser Identifier avec un sens Secondaire.</p>
+</div><div class="mcard gloss-card" data-key="terme:tertiaire">
+<p><strong>Tertiaire</strong></p>
+<p><span class="prereq">Identifier</span> Le personnage identifie par ce sens. Un sens externe reconnaît la nature ou l'identité de ce qu'il perçoit.</p>
+<p>Un sens interne met un nom sur une sensation ou un état du corps.</p>
+<div class="sens-niveau">
+<p><span class="zlbl">Externes</span><span class="zchip">Odorat</span><span class="zchip">Goût</span><span class="zchip">Chémesthésie</span><span class="zchip">Thermoception</span><span class="zchip">Séismoréception</span></p>
+<p><span class="zlbl">Internes</span><span class="zchip">Intéroception</span><span class="zchip">Chronoception</span></p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:presence">
+<p><strong>Présence</strong></p>
+<p><span class="prereq">PRÉ</span> La Présence mesure le magnétisme naturel et l'ascendant exercé par la seule apparition. Elle pèse sur l'intimidation, le commandement et l'allure, partout où il faut imposer sa figure plutôt que ses mots. Une Présence forte marque les esprits dès le premier regard.</p>
+</div><div class="mcard gloss-card" data-key="terme:latent">
+<p><strong>Latent</strong></p>
+<p><span class="prereq">Endormi</span> Le sens dort : il ne perçoit rien tant qu'il n'a pas été éveillé. Une fois éveillé, il perçoit ce que décrit sa compétence, mais se place un cran sous le Tertiaire : même identifier lui demande de remonter d'un niveau.</p>
+<div class="sens-niveau">
+<p><span class="zlbl">Externes</span><span class="zchip">Magnétoréception</span><span class="zchip">Écholocation</span><span class="zchip">Vision polarisée</span><span class="zchip">Vision ultraviolette</span><span class="zchip">Infrasons et ultrasons</span></p>
+<p><span class="zlbl">Internes</span><span class="zchip">Baroréception</span></p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:inexistant">
+<p><strong>Inexistant</strong></p>
+<p><span class="prereq">Hors de portée</span> Le sens manque au corps du personnage : rien ne peut l'éveiller. Seul un corps d'une autre forme le porte.</p>
+<div class="sens-niveau">
+<p><span class="zlbl">Externes</span><span class="zchip">Électroréception</span><span class="zchip">Détection infrarouge</span><span class="zchip">Ligne latérale</span><span class="zchip">Hygroréception</span></p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:se-reperer">
+<p><strong>Se repérer</strong></p>
+<div class="gcard-text">
+<p>percevoir son environnement ou son corps dans son ensemble : s'orienter, remarquer une présence, éviter un obstacle. Aucune action requise : le sens le fait en continu.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:equilibrioception">
+<p><strong>Équilibrioception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Instinct<br/>Groupes : Sensoriel</p>
+<p>Sens de l'orientation spatiale qui situe sa position par rapport à la verticale. Pour ressentir l'inclinaison subtile d'une pièce piégée ou garder ses repères lors d'une chute libre ou d'une vrille en véhicule.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:localiser">
+<p><strong>Localiser</strong></p>
+<div class="gcard-text">
+<p>situer précisément une chose perçue : sa direction, sa distance, sa position. Localiser est une action.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:identifier">
+<p><strong>Identifier</strong></p>
+<div class="gcard-text">
+<p>reconnaître une chose perçue : sa nature, son identité. Identifier est une action.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:toucher-competence">
+<p><strong>Toucher</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Analyser surfaces et vibrations mécaniques au toucher. Pour chercher des inscriptions gravées sur un mur dans le noir ou percevoir les vibrations annonçant l'approche d'un véhicule lourd.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:proprioception">
+<p><strong>Proprioception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Instinct<br/>Groupes : Sensoriel</p>
+<p>Conscience corporelle qui situe ses membres sans les regarder. Pour se faufiler dans un conduit de ventilation étroit sans heurter les parois ou réaliser un geste technique complexe à l'aveugle.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:nociception">
+<p><strong>Nociception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Instinct<br/>Groupes : Sensoriel</p>
+<p>Système d'alerte qui identifie la nature et l'emplacement exact d'une douleur. Pour déterminer si une souffrance vient d'un empoisonnement interne ou d'une hémorragie cachée sous l'armure.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:odorat">
+<p><strong>Odorat</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Identifier et suivre une signature chimique volatile. Pour remonter l'origine d'une fuite de gaz inodore ou reconnaître le parfum laissé par un suspect dans une pièce vide.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:gout">
+<p><strong>Goût</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Déceler la composition ou l'altération d'une substance. Pour identifier un sédatif dilué dans un cocktail ou reconnaître un composant chimique dans une poudre inconnue.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:chemesthesie">
+<p><strong>Chémesthésie</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir les substances chimiques comme une sensation de brûlure, de piquant ou de fraîcheur, sans odeur ni saveur. Pour sentir un gaz lacrymogène mordre les muqueuses avant qu'il ne soit visible ou reconnaître à la morsure laissée sur la peau un solvant agressif.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:thermoception">
+<p><strong>Thermoception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Détecter des sources de chaleur ou de froid. Pour repérer la zone encore tiède d'un lit et savoir si une cible vient de partir, ou ressentir le courant d'air froid d'une sortie cachée.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:seismoreception">
+<p><strong>Séismoréception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir les vibrations qui se propagent par le sol et le substrat. Pour deviner le nombre d'assaillants au rythme de leurs pas ou sentir un éboulement lointain bien avant tout autre signe.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:interoception">
+<p><strong>Intéroception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Instinct<br/>Groupes : Sensoriel</p>
+<p>Ressentir les fonctions internes du corps. Pour évaluer si une accélération cardiaque vient de la peur ou de l'injection d'un stimulant chimique à son insu.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:chronoception">
+<p><strong>Chronoception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Instinct<br/>Groupes : Sensoriel</p>
+<p>Perception intuitive du temps qui s'écoule. Pour compter les secondes avant l'explosion d'une bombe ou estimer depuis combien d'heures on est retenu prisonnier dans une cellule sans fenêtre.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:magnetoreception">
+<p><strong>Magnétoréception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir les champs magnétiques de la planète et s'orienter par eux. Pour garder le nord sans boussole, sous terre ou par nuit sans étoiles.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:vision-polarisee">
+<p><strong>Vision polarisée</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir le plan de polarisation de la lumière. Pour distinguer une nappe d'eau d'un mirage ou repérer le reflet qui trahit une vitre.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:vision-ultraviolette">
+<p><strong>Vision ultraviolette</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir la lumière ultraviolette, normalement invisible à l'œil humain. Pour suivre une trace fluorescente ou lire une marque tracée à l'encre invisible.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:infrasons-et-ultrasons">
+<p><strong>Infrasons et ultrasons</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Entendre les sons trop graves ou trop aigus pour l'oreille humaine. Pour capter le grondement sourd d'un séisme lointain ou le sifflement d'un dispositif tenu pour silencieux.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:baroreception">
+<p><strong>Baroréception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Instinct<br/>Groupes : Sensoriel</p>
+<p>Percevoir la pression du sang dans ses propres vaisseaux. Pour sentir sa tension monter avant le malaise ou jauger l'effort que son cœur peut encore tenir.</p>
+</div>
+<div class="keep"></div>
+</div><div class="mcard gloss-card" data-key="terme:portee-propriete">
+<p><strong>Portée</strong></p>
+<p>La distance à laquelle l'arme atteint sa cible. Une arme porte une ou plusieurs portées, toutes listées dans sa colonne ; elle paie chacune d'elles, puis leur nombre. Les distances d'une arme sont ses valeurs réelles : le coût d'une portée se lit au premier cran dont la distance maximale atteint la sienne.</p>
+<p>La mêlée frappe au contact et ne coûte rien. L'allonge l'étend : chaque cran ×N porte la frappe à N mètres, pour un porteur de taille Moyenne.</p>
+<table>
+<thead>
+<tr>
+<th>Mêlée</th>
+<th style="text-align: center;">Portée</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mêlée / contact</td>
+<td style="text-align: center;">au contact</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>Allonge ×2</td>
+<td style="text-align: center;">2 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Allonge ×3</td>
+<td style="text-align: center;">3 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Allonge ×4</td>
+<td style="text-align: center;">4 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Allonge ×5</td>
+<td style="text-align: center;">5 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le lancer, noté Jet dans les tables, s'écrit en deux distances, la courte et la longue : une arme « Jet 5/15 m » se lance à 5 m sans malus, puis jusqu'à 15 m avec −40 à l'attaque. La longue est la portée maximale : passé cette distance, l'arme n'atteint plus rien.</p>
+<table>
+<thead>
+<tr>
+<th>Lancer</th>
+<th style="text-align: center;">Courte / Longue</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lancer courte</td>
+<td style="text-align: center;">5 / 15 m</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>Lancer moyenne</td>
+<td style="text-align: center;">15 / 30 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Lancer longue</td>
+<td style="text-align: center;">30 / 50 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Lancer très longue</td>
+<td style="text-align: center;">40 / 80 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Lancer extrême</td>
+<td style="text-align: center;">60 / 120 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le tir suit la même écriture : l'arme tire sans malus jusqu'à sa portée courte, à −40 à l'attaque au-delà, et plus du tout passé sa portée longue. Aucune portée n'est illimitée.</p>
+<table>
+<thead>
+<tr>
+<th>Tir</th>
+<th style="text-align: center;">Courte / Longue</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tir courte</td>
+<td style="text-align: center;">15 / 50 m</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>Tir moyenne</td>
+<td style="text-align: center;">50 / 150 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Tir longue</td>
+<td style="text-align: center;">150 / 300 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Tir très longue</td>
+<td style="text-align: center;">400 / 800 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Tir extrême</td>
+<td style="text-align: center;">1000 / 2500 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le cône est lui aussi une portée : l'attaque embrasse toutes les cibles d'un cône parti du porteur, noté par sa longueur et son angle (« Cône 10 m, 90° »). Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du cône y oppose sa propre défense, et chaque touche se résout avec son propre degré de touche. Son coût additionne deux tables, la longueur et l'angle.</p>
+<table>
+<thead>
+<tr>
+<th>Cône, longueur</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>15 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Cône, angle</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45°</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>90°</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+</tbody>
+</table>
+<p>Une arme paie enfin le nombre de portées qu'elle cumule : la première est comprise, chaque portée de plus coûte.</p>
+<table>
+<thead>
+<tr>
+<th>Nombre de portées</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>2</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+</tbody>
+</table>
+</div><div class="gcard gloss-card" data-key="terme:electroreception">
+<p><strong>Électroréception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir les champs électriques des êtres vivants et des machines. Pour deviner une proie tapie ou un câble sous tension sans le voir. Sens propre aux créatures, hors de la physiologie humaine.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:detection-infrarouge">
+<p><strong>Détection infrarouge</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir à distance la chaleur rayonnée par les corps, même dans le noir total. Pour distinguer un vivant d'un décor froid ou suivre une empreinte thermique. Sens propre aux créatures, hors de la physiologie humaine.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:ligne-laterale">
+<p><strong>Ligne latérale</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir les mouvements, pressions et vibrations de l'eau tout autour du corps. Pour sentir approcher ce qui nage, sans le voir ni l'entendre. Sens propre aux créatures, hors de la physiologie humaine.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:hygroreception">
+<p><strong>Hygroréception</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Perception<br/>Groupes : Sensoriel</p>
+<p>Percevoir le taux d'humidité de l'air. Pour flairer la pluie qui vient ou trouver une source à la moiteur de l'air. Sens propre aux créatures, hors de la physiologie humaine.</p>
+</div>
+</div>
+<h2>Champ Technique</h2>
+<div class="comp">
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:percevoir">
+<p><strong>Percevoir</strong></p>
+<div class="gcard-text">
+<p>Quand le jet sert à percevoir par ce sens (se repérer, localiser ou identifier), chaque point de clarté manquant inflige −20 au jet, quel que soit le sens.</p>
+<p class="formula">Malus de perception = 20 × points de clarté manquants</p>
+</div>
+<div class="keep"></div>
+</div><div class="mcard gloss-card" data-key="terme:perception">
+<p><strong>Perception</strong></p>
+<p><span class="prereq">PER</span> La Perception mesure l'acuité des sens et la vigilance. Elle régit les sens que l'on dirige volontairement, la vue, l'ouïe, l'odorat, le goût, le toucher et la perception de la température, et décide de la capacité à déceler un signal faible : un mouvement furtif, une odeur suspecte, un craquement lointain. Elle permet de repérer ce qui passe inaperçu et de suivre une cible sans la perdre.</p>
+</div></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -3109,7 +3644,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Pied de page" class="md-footer__inner md-grid">
-<a aria-label="Précédent: Compétences" class="md-footer__link md-footer__link--prev" href="../competences/">
+<a aria-label="Précédent: Classes" class="md-footer__link md-footer__link--prev" href="../classe/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -3118,7 +3653,7 @@
                 Précédent
               </span>
 <div class="md-ellipsis">
-                Compétences
+                Classes
               </div>
 </div>
 </a>
@@ -3151,7 +3686,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.footer", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script src="../../../../javascripts/changelog.js"></script>
 <script src="../../../../javascripts/continuous.js"></script>
 <script src="../../../../javascripts/nav-drawer.js"></script>

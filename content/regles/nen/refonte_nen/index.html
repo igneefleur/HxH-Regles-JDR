@@ -7,16 +7,16 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://igneefleur.github.io/HxH-Regles-JDR/content/regles/nen/refonte_nen/" rel="canonical"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Refonte du Nen : un système de capacités modulaire - HxH Système JDR</title>
-<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/fonts.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/extra.css?v=11" rel="stylesheet"/>
+<link href="../../../../stylesheets/extra.css?v=13" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -132,7 +132,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../personnage/eclat/">
+<a class="md-tabs__link" href="../../personnage/avantages/">
           
   
   
@@ -263,6 +263,18 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../personnage/avantages/">
+<span class="md-ellipsis">
+    
+  
+    Avantages
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../personnage/eclat/">
 <span class="md-ellipsis">
     
@@ -316,6 +328,18 @@
     
   
     Compétences
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../personnage/classe/">
+<span class="md-ellipsis">
+    
+  
+    Classes
   
 
     
@@ -1347,33 +1371,33 @@
 <blockquote>
 <p>Document de travail. Il pose l'architecture de la création de capacités, sans
 aucune valeur : pas de DI, pas de DR/DE/DT/DM/DC, pas d'UA, pas de maintien,
-pas de caractéristique, pas de pourcentage. On ne fixe ici que la grammaire :
+pas de <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a>, pas de pourcentage. On ne fixe ici que la grammaire :
 ce qu'est une capacité, comment elle s'assemble, comment plusieurs capacités
 forment un pouvoir. Les pourcentages et valeurs cités plus bas (+10 %, +20 %, ou
 un bonus qui passe de +30 à +36) ne sont que des exemples d'illustration du
 fonctionnement, jamais un barème. Les chiffres viendront
-ensuite et se brancheront sur la grille déjà éprouvée en renforcement, émission
-et conjuration. Seul le banc d'essai, tout en bas, porte des valeurs concrètes,
+ensuite et se brancheront sur la grille déjà éprouvée en <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>, <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>
+et <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>. Seul le banc d'essai, tout en bas, porte des valeurs concrètes,
 pour vérifier que le modèle tient bout à bout.</p>
 </blockquote>
 <div class="cols">
 <h3 id="intention">Intention</h3>
 <p>Le Nen se construit comme une baguette de <em>Noita</em> : on part d'un socle, on
-empile des modules par-dessus, et la combinaison décide de ce que le pouvoir
-fait réellement. Les modules sont les sorts. Une bonne capacité n'est pas une
-ligne de catalogue figée, mais un assemblage que le joueur compose brique par
+empile des <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> par-dessus, et la combinaison décide de ce que le pouvoir
+fait réellement. Les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> sont les sorts. Une bonne capacité n'est pas une
+ligne de <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">catalogue</a> figée, mais un assemblage que le joueur compose brique par
 brique.</p>
 <p>L'objectif est qu'avec ce seul jeu de briques on puisse reconstruire environ
-90 % des pouvoirs de l'œuvre, la spécialisation mise à part (elle reste, par
+90 % des pouvoirs de l'œuvre, la <a class="gloss-link" data-key="terme:specialisation" href="../../../content/regles/nen/capacites-de-nen/#gloss-specialisation">spécialisation</a> mise à part (elle reste, par
 nature, l'exception qui échappe aux règles communes).</p>
-<p>On garde l'acquis (les modules déjà écrits en renforcement, émission et
-conjuration), mais on le réorganise autour de quatre idées :</p>
+<p>On garde l'acquis (les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> déjà écrits en <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>, <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a> et
+<a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>), mais on le réorganise autour de quatre idées :</p>
 <ul>
 <li>la séparation nette entre le type d'une capacité et la catégorie de chaque
-  module ;</li>
+  <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ;</li>
 <li>un modificateur d'affinité d'emploi porté à la fois par la capacité et par
-  chaque module ;</li>
-<li>des conditions qui s'attachent à une capacité ou à un module et décalent ce
+  chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ;</li>
+<li>des conditions qui s'attachent à une capacité ou à un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> et décalent ce
   modificateur ;</li>
 <li>le raccord explicite des capacités entre elles.</li>
 </ul>
@@ -1381,17 +1405,17 @@ conjuration), mais on le réorganise autour de quatre idées :</p>
 <h3 id="1-vocabulaire">1. Vocabulaire</h3>
 <p>Trois mots, du plus large au plus fin.</p>
 <ul>
-<li>Pouvoir : le Hatsu d'un personnage, son nom propre (Janjanken, Bungee Gum,
+<li><a class="gloss-link" data-key="terme:pouvoir" href="../../../content/regles/nen/capacites-de-nen/#gloss-pouvoir">Pouvoir</a> : le <a class="gloss-link" data-key="terme:hatsu" href="../../../content/regles/nen/techniques-nen/#gloss-hatsu">Hatsu</a> d'un personnage, son nom propre (Janjanken, Bungee Gum,
   Crazy Slot). C'est ce que le monde voit et nomme. Un pouvoir se compose d'une
   ou plusieurs capacités.</li>
 <li>Capacité : l'unité que l'on assemble, un effet de Nen atomique, une baguette
   complète. « Pierre », « Feuille », « Ciseaux » et « Pierre Feuille Ciseaux »
   sont quatre capacités distinctes du même pouvoir.</li>
-<li>Module : la brique, le sort. Le plus petit élément. On empile des modules sur
+<li><a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">Module</a> : la brique, le sort. Le plus petit élément. On empile des <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> sur
   une capacité pour la façonner.</li>
 </ul>
 <p>Un pouvoir est donc un ensemble de capacités raccordées entre elles ; une capacité
-est un socle plus une pile de modules, dotée d'une durée, d'un modificateur
+est un socle plus une pile de <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>, dotée d'une durée, d'un modificateur
 d'affinité d'emploi et, parfois, de conditions.</p>
 <hr/>
 <h3 id="2-les-deux-axes-type-et-categorie">2. Les deux axes : type et catégorie</h3>
@@ -1403,70 +1427,70 @@ capacité en porte exactement un.</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
+<th><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a></th>
 <th>Ce qu'il fait</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Attaque</td>
+<td><a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a></td>
 <td>elle frappe, elle blesse</td>
 </tr>
 <tr>
-<td>Défense</td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">Défense</a></td>
 <td>elle protège, elle pare, elle entrave</td>
 </tr>
 <tr>
-<td>Effet</td>
-<td>tout le reste : amplification, déplacement, perception, altération, utilitaire</td>
+<td><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></td>
+<td>tout le reste : amplification, déplacement, <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a>, altération, utilitaire</td>
 </tr>
 </tbody>
 </table>
-<p>Le type appelle ses modules naturels sans interdire les autres : une attaque
-attire les modules offensifs, une défense les défensifs, mais rien n'empêche de
-greffer un module d'une autre famille si l'assemblage le demande, à condition
-que le module accepte ce type.</p>
+<p>Le type appelle ses <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> naturels sans interdire les autres : une attaque
+attire les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> offensifs, une <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a> les défensifs, mais rien n'empêche de
+greffer un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> d'une autre famille si l'assemblage le demande, à condition
+que le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> accepte ce type.</p>
 <blockquote>
-<p>Types spéciaux reportés. La conjuration de réceptacle (créature, objet) et
+<p><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> spéciaux reportés. La <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> de réceptacle (créature, objet) et
 l'effet conjuré sont des types spéciaux, mis de côté pour cette passe et
 traités plus tard. Ils ne figurent pas dans la liste des types tant qu'ils ne
-sont pas réintroduits. Attention : seul le type conjuration est retiré ; la
-catégorie conjuration reste l'une des six écoles de module, et la persistance
-d'immobilisation de l'aura propre à la conjuration n'est pas abrogée, elle
+sont pas réintroduits. Attention : seul le type <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> est retiré ; la
+catégorie <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> reste l'une des six écoles de <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, et la persistance
+d'immobilisation de l'aura propre à la <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> n'est pas abrogée, elle
 attend simplement la réintroduction du type.</p>
 </blockquote>
 <h4 id="la-categorie-lecole-de-chaque-module">La catégorie : l'école de chaque module</h4>
-<p>Les six catégories de Nen (renforcement, émission, transmutation, manipulation,
-conjuration, spécialisation) ne sont pas des types. Ce sont les écoles auxquelles
-appartiennent les modules. Chaque module relève d'une seule catégorie, qui dit
-de quelle nature de Nen il procède (un module purement structurel n'en a aucune) :</p>
+<p>Les six catégories de Nen (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>, <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>, <a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a>, <a class="gloss-link" data-key="terme:manipulation" href="../../../content/regles/nen/capacites-de-nen/#gloss-manipulation">manipulation</a>,
+<a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>, <a class="gloss-link" data-key="terme:specialisation" href="../../../content/regles/nen/capacites-de-nen/#gloss-specialisation">spécialisation</a>) ne sont pas des types. Ce sont les écoles auxquelles
+appartiennent les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>. Chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> relève d'une seule catégorie, qui dit
+de quelle nature de Nen il procède (un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> purement structurel n'en a aucune) :</p>
 <ul>
-<li>amplifier une aptitude existante relève du renforcement ;</li>
-<li>projeter l'aura loin du corps relève de l'émission ;</li>
-<li>prêter à l'aura une propriété de matière relève de la transmutation ;</li>
-<li>soumettre un être ou un objet relève de la manipulation ;</li>
-<li>donner à l'aura une existence matérielle relève de la conjuration ;</li>
-<li>ce qui n'entre nulle part ailleurs relève de la spécialisation.</li>
+<li>amplifier une aptitude existante relève du <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a> ;</li>
+<li>projeter l'aura loin du corps relève de l'<a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a> ;</li>
+<li>prêter à l'aura une propriété de matière relève de la <a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a> ;</li>
+<li>soumettre un être ou un objet relève de la <a class="gloss-link" data-key="terme:manipulation" href="../../../content/regles/nen/capacites-de-nen/#gloss-manipulation">manipulation</a> ;</li>
+<li>donner à l'aura une existence matérielle relève de la <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> ;</li>
+<li>ce qui n'entre nulle part ailleurs relève de la <a class="gloss-link" data-key="terme:specialisation" href="../../../content/regles/nen/capacites-de-nen/#gloss-specialisation">spécialisation</a>.</li>
 </ul>
 <p>Ces deux axes sont orthogonaux. Une seule capacité de type attaque peut empiler
-un module de dégâts (renforcement), un module tranchant (transmutation) et un
-module de portée (émission) : un coup tranchant porté à distance. C'est exactement
-la logique de <em>Noita</em>, où le rôle d'un sort est une chose, et son élément une
+un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>), un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> tranchant (<a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a>) et un
+<a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> (<a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>) : un coup tranchant porté à distance. C'est exactement
+la <a class="gloss-link" data-key="terme:logique" href="../../../content/regles/personnage/caracteristiques/#gloss-logique">logique</a> de <em>Noita</em>, où le rôle d'un sort est une chose, et son élément une
 autre.</p>
-<p>La catégorie portée par chaque module est le crochet qui rebranche l'<a href="../archetypes-nen/">affinité</a>
+<p>La catégorie <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> par chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> est le crochet qui rebranche l'<a href="../archetypes-nen/">affinité</a>
 du personnage : c'est elle qui dira plus tard le coût de conception et la
-puissance d'un module, selon que le porteur est ou non dans son école. Un
-renforceur convertira son <a href="../di/">développement intérieur</a> en modules de
-renforcement à plein rendement, et en modules de conjuration à perte.</p>
+puissance d'un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, selon que le porteur est ou non dans son école. Un
+<a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> convertira son <a href="../di/">développement intérieur</a> en <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> de
+<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a> à plein rendement, et en <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> de <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> à perte.</p>
 <hr/>
 <h3 id="3-anatomie-dune-capacite">3. Anatomie d'une capacité</h3>
 <p>On assemble une capacité en posant, dans l'ordre :</p>
 <ol>
 <li>le type (le socle) ;</li>
-<li>les modules (les sorts empilés), chacun avec ses attributs ;</li>
+<li>les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> (les sorts empilés), chacun avec ses attributs ;</li>
 <li>la durée (instantané ou à maintien) ;</li>
 <li>le modificateur d'affinité d'emploi global de la capacité ;</li>
-<li>les conditions (facultatives), au niveau de la capacité ou d'un module.</li>
+<li>les conditions (facultatives), au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> de la capacité ou d'un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>.</li>
 </ol>
 <p>On notera une capacité ainsi, sans aucun chiffre à ce stade :</p>
 <pre><code>Capacité : &lt;nom&gt;
@@ -1481,20 +1505,20 @@ Conditions  :
 Raccord     : &lt;déclencheur | lien | charge utile&gt;       (facultatif)
 </code></pre>
 <h4 id="31-le-type-le-socle">3.1 Le type (le socle)</h4>
-<p>Le socle fixe la forme de la capacité avant tout module.</p>
+<p>Le socle fixe la forme de la capacité avant tout <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>.</p>
 <ul>
-<li>Attaque : la capacité vise et frappe. Par défaut au contact ; un module de
-  portée la déporte. Elle se résout par un jet d'attaque, opposé à la défense de
+<li><a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> : la capacité vise et frappe. Par défaut au contact ; un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de
+  <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> la déporte. Elle se résout par un jet d'attaque, opposé à la <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a> de
   la cible.</li>
-<li>Défense : la capacité garde, encaisse ou entrave. Elle alimente une parade, une
-  esquive, une réduction de dégâts, une barrière.</li>
-<li>Effet : la capacité fait autre chose que frapper ou parer. Elle amplifie,
+<li><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">Défense</a> : la capacité garde, encaisse ou entrave. Elle alimente une <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parade</a>, une
+  <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquive</a>, une réduction de <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>, une barrière.</li>
+<li><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a> : la capacité fait autre chose que frapper ou parer. Elle amplifie,
   déplace, perçoit, altère, communique. C'est le socle le plus ouvert.</li>
 </ul>
 <h4 id="32-la-fiche-de-module-les-sorts">3.2 La fiche de module (les sorts)</h4>
-<p>Un module ajoute une propriété à la capacité. C'est la matière du jeu. On en
+<p>Un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ajoute une propriété à la capacité. C'est la matière du jeu. On en
 empile autant qu'on veut, en suivant l'orientation du type mais sans s'y
-enchaîner. Chaque module se lit sur une fiche aux attributs fixes, toujours dans
+enchaîner. Chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> se lit sur une fiche aux attributs fixes, toujours dans
 le même ordre :</p>
 <pre><code>Nom du module
 -------------
@@ -1512,32 +1536,32 @@ Paliers (on en retient une ligne par grille) :
 <p>Les attributs se rangent en deux registres :</p>
 <ul>
 <li>L'en-tête porte ce qui ne change pas d'un palier de puissance à l'autre : la ou
-  les catégories, les types compatibles, la caractéristique requise, le
-  modificateur d'affinité d'emploi du module.</li>
+  les catégories, les types compatibles, la <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a> requise, le
+  modificateur d'affinité d'emploi du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>.</li>
 <li>Les paliers chiffrés portent ce qui monte avec la puissance : l'effet, le coût
   de conception, l'UA, le maintien. Ils se liront, le moment venu, sur la même
-  grille que les modules existants ; ici on ne nomme que les colonnes.</li>
+  grille que les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> existants ; ici on ne nomme que les colonnes.</li>
 </ul>
-<p>Un module compte presque toujours plusieurs paliers : une suite de lignes de
+<p>Un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> compte presque toujours plusieurs paliers : une suite de lignes de
 puissance croissante (par exemple +10, +25, +40 à l'attaque), dont on retient une
-seule à la conception. Certains modules s'étendent sur plusieurs tableaux, dont
-les choix se combinent : le Catalogue de la conjuration, par exemple, fixe à part
+seule à la conception. Certains <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> s'étendent sur plusieurs tableaux, dont
+les choix se combinent : le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> de la <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>, par exemple, fixe à part
 sa contenance, son extraction simultanée et sa qualité. Une fiche peut donc porter
 plusieurs grilles, et l'on en retient une ligne par grille, sauf mention de cumul.</p>
-<p>Les types compatibles sont une vraie contrainte : un module de bonus à l'attaque
-n'accepte que le type attaque, et n'a aucun sens sur un effet. Chaque module dit
+<p>Les types compatibles sont une vraie contrainte : un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de bonus à l'attaque
+n'accepte que le type attaque, et n'a aucun sens sur un effet. Chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> dit
 donc à quels types il peut se greffer.</p>
-<p>Une catégorie peut aussi manquer. Un module purement structurel, comme un module
+<p>Une catégorie peut aussi manquer. Un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> purement structurel, comme un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>
 de raccord, n'appartient à aucune école : il ne se convertit pas en points de
 catégorie mais se paie directement en DI, et aucune affinité ne le concerne.</p>
 <h4 id="33-un-module-une-categorie">3.3 Un module, une catégorie</h4>
-<p>Chaque module relève d'une seule catégorie, ou d'aucune s'il est purement
-structurel (un module de raccord). C'est plus simple, et cela permet de ranger et
-de trier les modules par école.</p>
+<p>Chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> relève d'une seule catégorie, ou d'aucune s'il est purement
+structurel (un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de raccord). C'est plus simple, et cela permet de ranger et
+de trier les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> par école.</p>
 <p>Un même concept peut toutefois exister dans plusieurs catégories : il y figure
 alors comme autant d'entrées distinctes, une par école, chacune avec ses propres
 coûts. Une attaque qui poursuit sa cible, par exemple, peut se décliner en une
-version d'émission et une version de manipulation, rangées chacune sous sa
+version d'<a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a> et une version de <a class="gloss-link" data-key="terme:manipulation" href="../../../content/regles/nen/capacites-de-nen/#gloss-manipulation">manipulation</a>, rangées chacune sous sa
 catégorie. L'affinité se lit toujours sur l'unique catégorie de l'entrée employée.</p>
 <h4 id="34-la-duree">3.4 La durée</h4>
 <p>La durée règle l'existence de la capacité dans le temps. Deux régimes
@@ -1548,11 +1572,11 @@ fondamentaux.</p>
 <li>À maintien : la capacité persiste tant que le personnage la soutient, en payant
   son maintien chaque round (la posture « Pierre Feuille Ciseaux »).</li>
 </ul>
-<p>Un troisième régime existe pour la conjuration, qui ne se paie pas round par
+<p>Un troisième régime existe pour la <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>, qui ne se paie pas round par
 round : une chose conjurée demeure tant qu'elle n'est pas congédiée ou détruite,
 en immobilisant son UA sur l'aura maximale (UAM) plutôt qu'en réclamant un
-maintien. On la dira persistante, et l'attribut maintien d'un tel module est sans
-objet. Ce régime attend la réintroduction du type conjuration.</p>
+maintien. On la dira persistante, et l'attribut maintien d'un tel <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> est sans
+objet. Ce régime attend la réintroduction du type <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>.</p>
 <h4 id="35-le-modificateur-daffinite-demploi">3.5 Le modificateur d'affinité d'emploi</h4>
 <p>C'est la nouveauté centrale, et il faut la distinguer de l'affinité existante
 pour éviter toute confusion.</p>
@@ -1564,8 +1588,8 @@ du Nen quand il emploie cette catégorie. C'est l'assise.</p>
 décale l'affinité d'emploi que l'archétype donne déjà à la catégorie
 concernée, vers le haut ou vers le bas. Il existe à deux rangs :</p>
 <ul>
-<li>global, porté par la capacité, il vaut pour tous ses modules ;</li>
-<li>local, porté par chaque module, il ne vaut que pour lui.</li>
+<li>global, porté par la capacité, il vaut pour tous ses <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> ;</li>
+<li>local, porté par chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, il ne vaut que pour lui.</li>
 </ul>
 <p>Deux bornes de périmètre, pour ne pas déborder sur le reste du système :</p>
 <ul>
@@ -1574,13 +1598,13 @@ concernée, vers le haut ou vers le bas. Il existe à deux rangs :</p>
 <li>il porte sur la puissance de l'effet, dont il multiplie la valeur, et non sur les
   coûts d'UA ou de conception, qui restent gouvernés par la grille de chiffrage.</li>
 </ul>
-<p>L'affinité ne multiplie que les effets chiffrés (un bonus, des dégâts, un seuil).
+<p>L'affinité ne multiplie que les effets chiffrés (un bonus, des <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>, un seuil).
 Un effet descriptif, comme un déclencheur, une faculté ou un nombre de capacités,
-n'en est pas multiplié, même si le module porte tout de même une valeur d'affinité ;
+n'en est pas multiplié, même si le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> porte tout de même une valeur d'affinité ;
 chaque fiche dit lequel des deux effets elle produit.</p>
 <h4 id="36-les-conditions">3.6 Les conditions</h4>
 <p>Une condition est un attribut facultatif qui s'attache soit à une capacité, soit à
-un module précis. Cet ancrage est sa donnée structurante. Elle porte deux choses,
+un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> précis. Cet ancrage est sa donnée structurante. Elle porte deux choses,
 tenues séparées :</p>
 <ul>
 <li>son énoncé : la restriction, le serment, le déclencheur (« seulement contre tel
@@ -1589,17 +1613,17 @@ tenues séparées :</p>
 <li>son effet de règle : un décalage du modificateur d'affinité d'emploi,
   exprimé en pourcentage signé.</li>
 </ul>
-<p>Plus la condition est lourde, plus le décalage lui est favorable : dans l'œuvre,
+<p>Plus la condition est <a class="gloss-link" data-key="terme:lourde" href="../../../content/regles/personnage/capacites-physiques/#gloss-lourde">lourde</a>, plus le décalage lui est favorable : dans l'œuvre,
 une capacité que son porteur s'interdit d'employer sauf cas précis frappe d'autant
 plus fort. C'est un levier de puissance, pas un coût.</p>
-<p>L'effet est strictement localisé au niveau d'attache :</p>
+<p>L'effet est strictement localisé au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> d'attache :</p>
 <ul>
 <li>une condition posée sur la capacité décale le modificateur global, donc se
-  répercute sur tous ses modules ;</li>
-<li>une condition posée sur un module ne décale que le modificateur de ce module.</li>
+  répercute sur tous ses <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> ;</li>
+<li>une condition posée sur un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ne décale que le modificateur de ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>.</li>
 </ul>
-<p>On peut cumuler plusieurs conditions au même niveau ; leurs décalages s'ajoutent
-en points de pourcentage sur le modificateur de ce niveau, comme l'expose la
+<p>On peut cumuler plusieurs conditions au même <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> ; leurs décalages s'ajoutent
+en points de pourcentage sur le modificateur de ce <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, comme l'expose la
 composition plus bas.</p>
 <p>Les conditions recouvrent deux familles, souvent combinées :</p>
 <ul>
@@ -1611,30 +1635,30 @@ composition plus bas.</p>
 condition de pur raccord décale elle aussi le modificateur, ou si seul le serment
 le fait.</p>
 <h4 id="37-la-composition-module-par-module">3.7 La composition, module par module</h4>
-<p>L'affinité d'emploi effective se lit module par module, jamais pour la
-capacité en bloc : chaque module peut relever d'une autre catégorie et porter son
-propre modificateur. Pour un module donné, on empile, du plus large au plus fin :</p>
+<p>L'affinité d'emploi effective se lit <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> par <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, jamais pour la
+capacité en bloc : chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> peut relever d'une autre catégorie et porter son
+propre modificateur. Pour un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> donné, on empile, du plus large au plus fin :</p>
 <ol>
 <li>la base : l'affinité d'emploi d'archétype du personnage dans la catégorie
-   de ce module ;</li>
-<li>le modificateur global de la capacité (partagé par tous les modules) ;</li>
-<li>le modificateur local du module (propre à lui) ;</li>
-<li>les décalages des conditions, chacune à son niveau (les conditions de capacité
-   valent pour tous les modules, celles du module ne valent que pour lui).</li>
+   de ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ;</li>
+<li>le modificateur global de la capacité (partagé par tous les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>) ;</li>
+<li>le modificateur local du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> (propre à lui) ;</li>
+<li>les décalages des conditions, chacune à son <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> (les conditions de capacité
+   valent pour tous les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>, celles du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ne valent que pour lui).</li>
 </ol>
 <p>Les décalages des niveaux 2 à 4 s'ajoutent en points de pourcentage à la base du
-niveau 1 : leur somme donne l'affinité d'emploi effective du module, exprimée
+<a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> 1 : leur somme donne l'affinité d'emploi effective du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, exprimée
 en pourcentage (100 % pour une catégorie tenue à son sommet). Cette affinité
-multiplie alors la valeur de l'effet du module. Ainsi un module de +30 à l'attaque,
-employé par un renforceur dont l'affinité effective atteint 120 % (100 % d'archétype,
+multiplie alors la valeur de l'effet du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>. Ainsi un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de +30 à l'attaque,
+employé par un <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> dont l'affinité effective atteint 120 % (100 % d'archétype,
 plus 20 % de modificateur), donne +36 au lieu de +30 ; une affinité sous 100 %
 réduit d'autant, et un modificateur négatif peut faire descendre l'effet plus bas
-encore. Deux invariants de structure : ce qui est posé au niveau capacité se
-répercute identiquement sur tous ses modules ; ce qui est posé au niveau module ne
+encore. Deux invariants de structure : ce qui est posé au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> capacité se
+répercute identiquement sur tous ses <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> ; ce qui est posé au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> ne
 touche que lui. Le total des décalages (les niveaux 2 à 4 : modificateur global de
-la capacité, modificateur du module et conditions) ne dépasse jamais +100 % : des
+la capacité, modificateur du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> et conditions) ne dépasse jamais +100 % : des
 bonus peuvent le porter au-delà, mais on n'en applique jamais plus de +100 %, et
-cela vaut pour n'importe quel module.</p>
+cela vaut pour n'importe quel <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>.</p>
 <hr/>
 <h3 id="4-composer-un-pouvoir-le-raccord">4. Composer un pouvoir : le raccord</h3>
 <p>Un pouvoir est un graphe de capacités reliées par leur raccord. On le lit comme un
@@ -1656,32 +1680,32 @@ capacités « finisseur » qui n'existent que déclenchées.</p>
   posture.</li>
 <li>Charge utile : une capacité en transporte une autre et la délivre là où elle
   aboutit (un trait émis qui, au point d'arrivée, conjure une bête ; une flèche
-  conjurée qui, à l'impact, pose une emprise de manipulation).</li>
+  conjurée qui, à l'impact, pose une emprise de <a class="gloss-link" data-key="terme:manipulation" href="../../../content/regles/nen/capacites-de-nen/#gloss-manipulation">manipulation</a>).</li>
 </ul>
 <h4 id="modules-a-capacite-imbriquee">Modules à capacité imbriquée</h4>
-<p>Certains modules ne portent pas un effet chiffré, mais une ou plusieurs autres
-capacités, bâties à part avec leur propre type, leurs modules, leur durée et leurs
-conditions. Le module dit seulement quand et comment cette capacité interne entre
+<p>Certains <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> ne portent pas un effet chiffré, mais une ou plusieurs autres
+capacités, bâties à part avec leur propre type, leurs <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>, leur durée et leurs
+conditions. Le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> dit seulement quand et comment cette capacité interne entre
 en jeu. Le système devient ainsi récursif : une capacité peut en contenir d'autres,
 et de là viennent les pouvoirs les plus riches.</p>
 <ul>
 <li>Add Trigger : sur un déclencheur donné (impact, minuterie, condition, mot-clé),
-  le module active la capacité interne qu'il porte. C'est le branchement de base
+  le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> active la capacité interne qu'il porte. C'est le branchement de base
   d'un sort à déclencheur.</li>
 <li>Charge utile : variante où la capacité interne est délivrée à l'aboutissement
-  d'une attaque ou d'une émission, au point d'impact ou d'arrivée du trait.</li>
-<li>Catalogue : le module tient un répertoire de plusieurs capacités internes, dont
+  d'une attaque ou d'une <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>, au point d'impact ou d'arrivée du trait.</li>
+<li><a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> : le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> tient un répertoire de plusieurs capacités internes, dont
   il tire l'une ou l'autre au moment voulu, et règle combien existent à la fois.
-  Ces capacités cataloguées se bâtissent à part et sans elles le Catalogue n'a rien
+  Ces capacités cataloguées se bâtissent à part et sans elles le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> n'a rien
   à invoquer.</li>
 </ul>
 <p>Une capacité imbriquée garde ses propres coûts et sa propre affinité : elle se
-résout comme n'importe quelle capacité, le module conteneur n'ajoutant que de quoi
+résout comme n'importe quelle capacité, le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> conteneur n'ajoutant que de quoi
 la tenir prête ou la déclencher.</p>
 <p>Le raccord peut s'emboîter : une capacité déclenchée par un Ajouter un Déclencheur
 peut elle-même en porter un, de sorte que les déclencheurs s'enchaînent. Le
-Catalogue, lui, ne s'emboîte pas : une capacité cataloguée ne renferme pas de
-Catalogue.</p>
+<a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>, lui, ne s'emboîte pas : une capacité cataloguée ne renferme pas de
+<a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>.</p>
 <h4 id="exemple-de-circuit-le-janken">Exemple de circuit : le Janken</h4>
 <p>Le pouvoir de Gon se lit en quatre capacités : une source à maintien, trois
 finisseurs liés. On y montre, sans chiffre, un modificateur global et une
@@ -1719,84 +1743,84 @@ Modules     :
 Raccord     : lié, exige la posture Pierre Feuille Ciseaux
 </code></pre>
 <p>On voit le circuit : la posture ne frappe pas, elle prépare. Les finisseurs ne
-sont rien sans elle. Trois écoles cohabitent dans un même pouvoir (renforcement
-pour Pierre et Ciseaux, émission pour Feuille), ce que les deux axes rendent
+sont rien sans elle. Trois écoles cohabitent dans un même pouvoir (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>
+pour Pierre et Ciseaux, <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a> pour Feuille), ce que les deux axes rendent
 naturel : chaque finisseur se résout sur l'affinité de la catégorie de ses
-modules.</p>
+<a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>.</p>
 <hr/>
 <h3 id="5-la-bibliotheque-de-modules">5. La bibliothèque de modules</h3>
-<p>Une seule bibliothèque, rangée par catégorie (l'école), où chaque module est un
+<p>Une seule bibliothèque, rangée par catégorie (l'école), où chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> est un
 sort que l'on greffe sur les types compatibles. Aucun chiffre ici : seulement le
-nom, l'effet en une ligne, et les types acceptés (parmi attaque, défense, effet).
+nom, l'effet en une ligne, et les types acceptés (parmi attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet).
 Les six attributs chiffrables de chaque fiche (UA, maintien, conception,
-caractéristique, modificateur) se brancheront ensuite.</p>
+<a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a>, modificateur) se brancheront ensuite.</p>
 <blockquote>
-<p>Les catégories marquées <em>(esquisse)</em> n'avaient pas encore de modules ; ce qui
+<p>Les catégories marquées <em>(esquisse)</em> n'avaient pas encore de <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> ; ce qui
 suit en pose le squelette, à développer.</p>
 </blockquote>
 <h4 id="51-renforcement-amplifier-lexistant">5.1 Renforcement : amplifier l'existant</h4>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Effet</th>
-<th>Types</th>
+<th><a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">Module</a></th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
+<th><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Attaque</td>
+<td><a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a></td>
 <td>bonus à une attaque</td>
 <td>attaque</td>
 </tr>
 <tr>
-<td>Attaque complète</td>
+<td><a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> complète</td>
 <td>bonus à toutes les attaques du round</td>
 <td>attaque</td>
 </tr>
 <tr>
-<td>Dégâts</td>
-<td>bonus aux dégâts infligés</td>
+<td><a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">Dégâts</a></td>
+<td>bonus aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> infligés</td>
 <td>attaque</td>
 </tr>
 <tr>
-<td>Attaques supplémentaires</td>
+<td><a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaques</a> supplémentaires</td>
 <td>attaques en plus dans le tour</td>
 <td>attaque</td>
 </tr>
 <tr>
-<td>Parade</td>
-<td>bonus aux parades</td>
-<td>défense</td>
+<td><a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a></td>
+<td>bonus aux <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parades</a></td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
-<td>Esquive</td>
-<td>bonus aux esquives</td>
-<td>défense</td>
+<td><a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a></td>
+<td>bonus aux <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquives</a></td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
-<td>Parade complète / Esquive complète</td>
-<td>bonus à toutes les parades / esquives</td>
-<td>défense</td>
+<td><a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a> complète / <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a> complète</td>
+<td>bonus à toutes les <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parades</a> / <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquives</a></td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
-<td>Réduction de dégâts</td>
-<td>encaisse une part des dégâts subis</td>
-<td>défense</td>
+<td>Réduction de <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a></td>
+<td>encaisse une part des <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> subis</td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
-<td>Caractéristique</td>
-<td>bonus à une caractéristique</td>
+<td><a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">Caractéristique</a></td>
+<td>bonus à une <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a></td>
 <td>effet</td>
 </tr>
 <tr>
-<td>Compétence</td>
-<td>bonus à une compétence</td>
+<td><a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">Compétence</a></td>
+<td>bonus à une <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétence</a></td>
 <td>effet</td>
 </tr>
 <tr>
-<td>Initiative</td>
-<td>bonus à l'initiative</td>
+<td><a class="gloss-link" data-key="terme:initiative-competence" href="../../../content/regles/personnage/competences/#gloss-initiative-competence">Initiative</a></td>
+<td>bonus à l'<a class="gloss-link" data-key="terme:initiative-competence" href="../../../content/regles/personnage/competences/#gloss-initiative-competence">initiative</a></td>
 <td>effet</td>
 </tr>
 <tr>
@@ -1805,7 +1829,7 @@ suit en pose le squelette, à développer.</p>
 <td>attaque</td>
 </tr>
 <tr>
-<td>Actions supplémentaires</td>
+<td><a class="gloss-link" data-key="terme:actions-supplementaires" href="../../../content/regles/nen/renforcement/#gloss-actions-supplementaires">Actions supplémentaires</a></td>
 <td>actions en plus dans le tour</td>
 <td>effet</td>
 </tr>
@@ -1820,21 +1844,21 @@ suit en pose le squelette, à développer.</p>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Effet</th>
-<th>Types</th>
+<th><a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">Module</a></th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
+<th><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Distance</td>
-<td>la capacité agit jusqu'à une portée donnée</td>
-<td>attaque, défense, effet</td>
+<td>la capacité agit jusqu'à une <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> donnée</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet</td>
 </tr>
 <tr>
 <td>Zone</td>
 <td>la capacité touche un rayon entier</td>
-<td>attaque, défense</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
 <td>Guidage / Poursuite</td>
@@ -1842,7 +1866,7 @@ suit en pose le squelette, à développer.</p>
 <td>attaque</td>
 </tr>
 <tr>
-<td>Téléportation</td>
+<td><a class="gloss-link" data-key="terme:teleportation" href="../../../content/regles/nen/emission/#gloss-teleportation">Téléportation</a></td>
 <td>déplace le porteur d'un point à un autre</td>
 <td>effet</td>
 </tr>
@@ -1852,14 +1876,14 @@ suit en pose le squelette, à développer.</p>
 <td>effet</td>
 </tr>
 <tr>
-<td>Retour</td>
+<td><a class="gloss-link" data-key="terme:retour" href="../../../content/regles/combat/armes/#gloss-retour">Retour</a></td>
 <td>l'aura émise revient à son point de départ</td>
 <td>attaque, effet</td>
 </tr>
 <tr>
 <td>Persistance déportée</td>
 <td>l'aura tient loin du corps sans se dissiper</td>
-<td>attaque, défense, effet</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet</td>
 </tr>
 </tbody>
 </table>
@@ -1870,36 +1894,36 @@ vraie décharge. Chaque propriété ajoute un effet annexe.</p>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Effet</th>
-<th>Types</th>
+<th><a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">Module</a></th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
+<th><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Tranchant</td>
-<td>l'aura coupe ; dégâts de type tranchant</td>
-<td>attaque, défense</td>
+<td>l'aura coupe ; <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> de type tranchant</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
 <td>Contondant</td>
-<td>l'aura durcit ; dégâts contondants, brise les gardes</td>
-<td>attaque, défense</td>
+<td>l'aura durcit ; <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> contondants, brise les gardes</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 </tr>
 <tr>
 <td>Perforant</td>
-<td>l'aura transperce ; ignore une part de la réduction de dégâts</td>
+<td>l'aura transperce ; ignore une part de la réduction de <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a></td>
 <td>attaque</td>
 </tr>
 <tr>
 <td>Élastique</td>
 <td>l'aura rebondit et s'étire ; renvoi, traction, élan</td>
-<td>attaque, défense, effet</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet</td>
 </tr>
 <tr>
 <td>Adhésif</td>
 <td>l'aura colle ; fixe, retient, accroche une cible</td>
-<td>attaque, défense, effet</td>
+<td>attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet</td>
 </tr>
 <tr>
 <td>Électrique</td>
@@ -1919,12 +1943,12 @@ vraie décharge. Chaque propriété ajoute un effet annexe.</p>
 <tr>
 <td>Fluide</td>
 <td>l'aura coule comme un liquide ; s'infiltre, enveloppe</td>
-<td>défense, effet</td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet</td>
 </tr>
 <tr>
 <td>Volatil</td>
 <td>l'aura se répand comme un gaz ; nappe, voile</td>
-<td>défense, effet</td>
+<td><a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet</td>
 </tr>
 <tr>
 <td>Texture</td>
@@ -1939,9 +1963,9 @@ contraignante, plus l'emprise est forte. Elle se résout par un jet opposé.</p>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Effet</th>
-<th>Types</th>
+<th><a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">Module</a></th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
+<th><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1972,7 +1996,7 @@ contraignante, plus l'emprise est forte. Elle se résout par un jet opposé.</p>
 </tr>
 <tr>
 <td>Altération</td>
-<td>modifie perception, mémoire ou émotion de la cible</td>
+<td>modifie <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a>, mémoire ou émotion de la cible</td>
 <td>effet</td>
 </tr>
 <tr>
@@ -1981,33 +2005,33 @@ contraignante, plus l'emprise est forte. Elle se résout par un jet opposé.</p>
 <td>effet</td>
 </tr>
 <tr>
-<td>Portée du contrôle</td>
+<td><a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">Portée</a> du contrôle</td>
 <td>nombre de cibles, distance et durée de l'emprise</td>
 <td>effet</td>
 </tr>
 </tbody>
 </table>
 <h4 id="55-conjuration-donner-corps-a-laura">5.5 Conjuration : donner corps à l'aura</h4>
-<p>Les modules de conjuration (forme, taille, autonomie, armes naturelles, vol,
-régénération, barrière de dégâts, stockage, catalogue, capacité innée, etc.)
+<p>Les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> de <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> (forme, taille, autonomie, armes naturelles, vol,
+régénération, barrière de <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>, stockage, <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">catalogue</a>, capacité innée, etc.)
 existent déjà et restent valides comme catégorie. Mais ils ne valent que sur un
-réceptacle conjuré, et le type conjuration est reporté, comme l'énonce la note de
+réceptacle conjuré, et le type <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> est reporté, comme l'énonce la note de
 la partie 2. Cette catégorie attend donc la réintroduction de son type ; on la
 laisse en l'état, sans la rebrancher pour l'instant sur les trois types
 ordinaires.</p>
 <h4 id="56-specialisation-hors-categorie">5.6 Spécialisation : hors catégorie</h4>
-<p>Par définition, la spécialisation n'a pas de modules communs : ses effets sont
+<p>Par définition, la <a class="gloss-link" data-key="terme:specialisation" href="../../../content/regles/nen/capacites-de-nen/#gloss-specialisation">spécialisation</a> n'a pas de <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> communs : ses effets sont
 uniques et propres à chacun. Elle reste hors de la bibliothèque et hors du
 périmètre des 90 %. On la mentionne pour mémoire, pas pour la cataloguer.</p>
 <h4 id="57-modules-de-raccord-la-glu">5.7 Modules de raccord : la glu</h4>
-<p>Ces modules ne décrivent pas un effet mais un branchement. Ils s'appliquent à
+<p>Ces <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> ne décrivent pas un effet mais un branchement. Ils s'appliquent à
 n'importe quel type et sont l'ossature des pouvoirs à plusieurs capacités.</p>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Effet</th>
-<th>Types</th>
+<th><a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">Module</a></th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
+<th><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a></th>
 </tr>
 </thead>
 <tbody>
@@ -2038,7 +2062,7 @@ n'importe quel type et sont l'ossature des pouvoirs à plusieurs capacités.</p>
 </tr>
 <tr>
 <td>Piège posé</td>
-<td>la capacité est posée d'avance et attend (se marie à l'In)</td>
+<td>la capacité est posée d'avance et attend (se marie à l'<a class="gloss-link" data-key="terme:in" href="../../../content/regles/nen/techniques-nen/#gloss-in">In</a>)</td>
 <td>tous</td>
 </tr>
 <tr>
@@ -2056,42 +2080,42 @@ type revienne.</p>
 <table>
 <thead>
 <tr>
-<th>Pouvoir</th>
+<th><a class="gloss-link" data-key="terme:pouvoir" href="../../../content/regles/nen/capacites-de-nen/#gloss-pouvoir">Pouvoir</a></th>
 <th>Assemblage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Coup renforcé brut</td>
-<td>attaque + dégâts (renforcement)</td>
+<td>attaque + <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>)</td>
 </tr>
 <tr>
 <td>Trait d'énergie</td>
-<td>attaque + portée (émission)</td>
+<td>attaque + <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> (<a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>)</td>
 </tr>
 <tr>
 <td>Trait à tête chercheuse</td>
-<td>attaque + portée + guidage (émission)</td>
+<td>attaque + <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> + guidage (<a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>)</td>
 </tr>
 <tr>
 <td>Posture d'amplification</td>
-<td>effet + caractéristiques (renforcement), à maintien</td>
+<td>effet + <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristiques</a> (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>), à maintien</td>
 </tr>
 <tr>
 <td>Foudre / corps électrique</td>
-<td>effet + électrique (transmutation) + actions et initiative (renforcement)</td>
+<td>effet + électrique (<a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a>) + actions et <a class="gloss-link" data-key="terme:initiative-competence" href="../../../content/regles/personnage/competences/#gloss-initiative-competence">initiative</a> (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>)</td>
 </tr>
 <tr>
 <td>Aura collante et élastique fixée à une cible</td>
-<td>effet + adhésif + élastique (transmutation) + lien (émission), à maintien</td>
+<td>effet + adhésif + élastique (<a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a>) + lien (<a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>), à maintien</td>
 </tr>
 <tr>
 <td>Illusion de texture</td>
-<td>effet + texture (transmutation)</td>
+<td>effet + texture (<a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a>)</td>
 </tr>
 <tr>
 <td>Emprise scellée par un contact</td>
-<td>effet + emprise + asservissement par condition (manipulation)</td>
+<td>effet + emprise + asservissement par condition (<a class="gloss-link" data-key="terme:manipulation" href="../../../content/regles/nen/capacites-de-nen/#gloss-manipulation">manipulation</a>)</td>
 </tr>
 <tr>
 <td>Sort à déclencheur (frappe puis libère un second effet)</td>
@@ -2099,57 +2123,57 @@ type revienne.</p>
 </tr>
 <tr>
 <td>Bête de garde autonome</td>
-<td>catégorie conjuration, type reporté</td>
+<td>catégorie <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>, type reporté</td>
 </tr>
 <tr>
 <td>Réserve de pouvoirs prêts à l'emploi</td>
-<td>catégorie conjuration, type reporté</td>
+<td>catégorie <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>, type reporté</td>
 </tr>
 </tbody>
 </table>
 <p>Les cas qui résistent (vol de pouvoir, prédiction, invisibilité parfaite, copie
-d'aptitude) relèvent tous de la spécialisation : c'est précisément le dixième
+d'aptitude) relèvent tous de la <a class="gloss-link" data-key="terme:specialisation" href="../../../content/regles/nen/capacites-de-nen/#gloss-specialisation">spécialisation</a> : c'est précisément le dixième
 qu'on laisse de côté, par cohérence avec l'œuvre.</p>
 <hr/>
 <h3 id="7-ce-qui-change-ce-quon-garde-ce-qui-reste-a-faire">7. Ce qui change, ce qu'on garde, ce qui reste à faire</h3>
 <p><em>Ce qui change.</em></p>
 <ul>
-<li>Le type se réduit à trois valeurs (attaque, défense, effet), communes à toutes
-  les catégories. Les types spéciaux (conjuration de réceptacle, effet conjuré)
+<li>Le type se réduit à trois valeurs (attaque, <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, effet), communes à toutes
+  les catégories. Les types spéciaux (<a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a> de réceptacle, effet conjuré)
   sont reportés.</li>
-<li>La fiche de module s'élargit à des attributs fixes : catégorie(s), types
-  compatibles, UA, maintien, conception, caractéristique requise, modificateur
+<li>La fiche de <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> s'élargit à des attributs fixes : catégorie(s), types
+  compatibles, UA, maintien, conception, <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a> requise, modificateur
   d'affinité d'emploi.</li>
 <li>Une fiche se lit en plusieurs paliers de puissance croissante, un retenu à la
   conception, et peut comporter plusieurs grilles combinables (par exemple le
-  Catalogue).</li>
-<li>Chaque module relève d'une seule catégorie ; un concept présent dans plusieurs
+  <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>).</li>
+<li>Chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> relève d'une seule catégorie ; un concept présent dans plusieurs
   écoles y figure comme autant d'entrées distinctes, triables par catégorie.</li>
-<li>Chaque capacité et chaque module portent un modificateur d'affinité
-  d'emploi ; les conditions le décalent au niveau où elles sont posées.</li>
-<li>Le raccord entre capacités devient un jeu de modules à part entière.</li>
-<li>Certains modules portent une ou plusieurs capacités imbriquées (Add Trigger,
-  charge utile, Catalogue), ce qui rend le système récursif.</li>
-<li>Un module peut n'avoir aucune catégorie : il se paie alors directement en DI, et
+<li>Chaque capacité et chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> portent un modificateur d'affinité
+  d'emploi ; les conditions le décalent au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> où elles sont posées.</li>
+<li>Le raccord entre capacités devient un jeu de <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> à part entière.</li>
+<li>Certains <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> portent une ou plusieurs capacités imbriquées (Add Trigger,
+  charge utile, <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>), ce qui rend le système récursif.</li>
+<li>Un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> peut n'avoir aucune catégorie : il se paie alors directement en DI, et
   aucune affinité ne le concerne.</li>
 <li>L'affinité (notée +XX% / -XX%) ne multiplie que les effets chiffrés ; les effets
   descriptifs (déclencheurs, nombres, facultés) ne sont pas multipliés, même si le
-  module porte une valeur d'affinité.</li>
+  <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> porte une valeur d'affinité.</li>
 </ul>
 <p><em>Ce qu'on garde.</em></p>
 <ul>
-<li>Tous les modules déjà écrits (renforcement, émission, conjuration) et leur
+<li>Tous les <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> déjà écrits (<a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a>, <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>, <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>) et leur
   intention.</li>
-<li>Le modèle d'archétype et d'affinité : il rebranche sur la catégorie portée par
-  chaque module, et le modificateur ne fait que le décaler.</li>
-<li>Les régimes de durée et la persistance propre à la conjuration.</li>
+<li>Le modèle d'archétype et d'affinité : il rebranche sur la catégorie <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> par
+  chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, et le modificateur ne fait que le décaler.</li>
+<li>Les régimes de durée et la persistance propre à la <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>.</li>
 </ul>
 <p><em>Ce qui reste à chiffrer.</em></p>
 <ul>
 <li>Les valeurs des attributs de chaque fiche, sur la grille déjà éprouvée.</li>
 <li>Un éventuel plancher des décalages d'affinité (le plafond est fixé : +100 % au total).</li>
 <li>Le levier des serments et restrictions (ampleur du décalage selon la gêne).</li>
-<li>Les paliers chiffrés de transmutation et de manipulation, une fois leurs effets
+<li>Les paliers chiffrés de <a class="gloss-link" data-key="terme:transmutation" href="../../../content/regles/nen/capacites-de-nen/#gloss-transmutation">transmutation</a> et de <a class="gloss-link" data-key="terme:manipulation" href="../../../content/regles/nen/capacites-de-nen/#gloss-manipulation">manipulation</a>, une fois leurs effets
   stabilisés.</li>
 </ul>
 <p><em>Ce qui reste à trancher (arbitrages).</em></p>
@@ -2163,23 +2187,23 @@ qu'on laisse de côté, par cohérence avec l'œuvre.</p>
 <blockquote>
 <p>Contrairement au reste du document, cette section porte des valeurs concrètes :
 c'est un banc d'essai pour vérifier que le modèle tient bout à bout. Les coûts se
-calquent sur le système de Ki d'<em>Anima</em>, effet par effet : chaque module, et
+calquent sur le système de Ki d'<em>Anima</em>, effet par effet : chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, et
 chaque grille, suit l'effet d'Anima dont la nature lui correspond et en reprend les
-vraies valeurs (UA = Primario × 20, DI = MK, MA = Maintien × 20). Le module
+vraies valeurs (UA = Primario × 20, DI = MK, <a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a> = Maintien × 20). Le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>
 d'attaque n'est pas un plafond : chaque effet a son propre maximum, plus haut ou
-plus bas. On lisse en progression régulière (DI multiples de 5, UA et MA multiples
-de 10) et la caractéristique requise monte de 5 à 30 selon le niveau de technique.
-Attaque suit « Habilidad de ataque » ; Attaque complète suit « Attack Ability
-(Multiple) », le bonus à toutes les attaques du round ; Dégâts et Dégâts complets reprennent « Damage Augmentation » (Single et Multiple) ; Esquive et Parade, avec leurs versions complètes, suivent « Dodge Ability » et « Block Ability » ; Ajouter un Déclencheur
-emprunte sa visée à « Combat Maneuvers / Precisión » ; le Catalogue, qui fabrique des
-capacités, porte une conception délibérément très lourde, l'un des effets les plus
+plus bas. On lisse en progression régulière (DI multiples de 5, UA et <a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a> multiples
+de 10) et la <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a> requise monte de 5 à 30 selon le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> de technique.
+<a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> suit « Habilidad de ataque » ; <a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> complète suit « Attack Ability
+(Multiple) », le bonus à toutes les attaques du round ; <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">Dégâts</a> et <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">Dégâts</a> complets reprennent « Damage Augmentation » (Single et Multiple) ; <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a> et <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a>, avec leurs versions complètes, suivent « Dodge Ability » et « Block Ability » ; Ajouter un Déclencheur
+emprunte sa visée à « Combat Maneuvers / Precisión » ; le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>, qui fabrique des
+capacités, porte une conception délibérément très <a class="gloss-link" data-key="terme:lourde" href="../../../content/regles/personnage/capacites-physiques/#gloss-lourde">lourde</a>, l'un des effets les plus
 forts du jeu ; le Stockage, simple utilitaire, reste bien moins cher.</p>
 </blockquote>
 <div class="cj-modules anima">
 <div class="keep">
 <h4 id="attaque">Attaque</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : attaque</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
 <p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à l'une de ses attaques. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective (un +30 porté à 120 % vaut +36).</p>
 <table>
 <thead>
@@ -2188,7 +2212,7 @@ Types : attaque</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -2358,9 +2382,9 @@ Types : attaque</p>
 </div>
 <div class="keep">
 <h4 id="attaque-complete">Attaque complète</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : attaque</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à toutes ses attaques du round, et non à une seule comme Attaque ; c'est l'attaque complète d'Anima. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Couvrir toutes les attaques coûte bien plus cher que d'en renforcer une, et le bonus plafonne à +100.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à toutes ses attaques du round, et non à une seule comme <a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> ; c'est l'attaque complète d'Anima. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. Couvrir toutes les attaques coûte bien plus cher que d'en renforcer une, et le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
@@ -2368,7 +2392,7 @@ Types : attaque</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -2458,9 +2482,9 @@ Types : attaque</p>
 </div>
 <div class="keep">
 <h4 id="degats">Dégâts</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : attaque</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué aux dégâts de l'une de ses attaques. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté dégâts, de l'Attaque : sa conception coûte autant, mais son aura et son maintien sont plus légers.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> de l'une de ses attaques. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>, de l'<a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> : sa conception coûte autant, mais son aura et son maintien sont plus légers.</p>
 <table>
 <thead>
 <tr>
@@ -2468,7 +2492,7 @@ Types : attaque</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -2638,9 +2662,9 @@ Types : attaque</p>
 </div>
 <div class="keep">
 <h4 id="degats-complets">Dégâts complets</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : attaque</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué aux dégâts de toutes ses attaques du round, et non à une seule comme Dégâts ; c'est l'augmentation de dégâts complète d'Anima. Couvrir chaque attaque coûte bien plus cher, et le bonus plafonne à +100.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> de toutes ses attaques du round, et non à une seule comme <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">Dégâts</a> ; c'est l'augmentation de <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> complète d'Anima. Couvrir chaque attaque coûte bien plus cher, et le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
@@ -2648,7 +2672,7 @@ Types : attaque</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -2738,9 +2762,9 @@ Types : attaque</p>
 </div>
 <div class="keep">
 <h4 id="esquive">Esquive</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : défense</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à l'une de ses esquives. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté esquive, de l'Attaque : sa conception coûte autant, mais son maintien est plus léger.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à l'une de ses <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquives</a>. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquive</a>, de l'<a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> : sa conception coûte autant, mais son maintien est plus léger.</p>
 <table>
 <thead>
 <tr>
@@ -2748,7 +2772,7 @@ Types : défense</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -2918,9 +2942,9 @@ Types : défense</p>
 </div>
 <div class="keep">
 <h4 id="esquive-complete">Esquive complète</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : défense</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à toutes ses esquives du round, et non à une seule comme Esquive ; c'est l'esquive complète d'Anima. Couvrir toutes ses esquives coûte bien plus cher, et le bonus plafonne à +100.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à toutes ses <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquives</a> du round, et non à une seule comme <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a> ; c'est l'<a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquive</a> complète d'Anima. Couvrir toutes ses <a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquives</a> coûte bien plus cher, et le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
@@ -2928,7 +2952,7 @@ Types : défense</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3018,9 +3042,9 @@ Types : défense</p>
 </div>
 <div class="keep">
 <h4 id="parade">Parade</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : défense</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à l'une de ses parades. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté parade, de l'Attaque : sa conception coûte autant, mais son maintien est plus léger.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à l'une de ses <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parades</a>. Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective. C'est le pendant, côté <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parade</a>, de l'<a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> : sa conception coûte autant, mais son maintien est plus léger.</p>
 <table>
 <thead>
 <tr>
@@ -3028,7 +3052,7 @@ Types : défense</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3198,9 +3222,9 @@ Types : défense</p>
 </div>
 <div class="keep">
 <h4 id="parade-complete">Parade complète</h4>
-<p class="mod-type">Catégorie : renforcement<br/>
-Types : défense</p>
-<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à toutes ses parades du round, et non à une seule comme Parade ; c'est la parade complète d'Anima. Couvrir toutes ses parades coûte bien plus cher, et le bonus plafonne à +100.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:renforcement" href="../../../content/regles/nen/capacites-de-nen/#gloss-renforcement">renforcement</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></p>
+<p>Tant que la capacité est active, le personnage ajoute le bonus indiqué à toutes ses <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parades</a> du round, et non à une seule comme <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a> ; c'est la <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parade</a> complète d'Anima. Couvrir toutes ses <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">parades</a> coûte bien plus cher, et le bonus plafonne à +100.</p>
 <table>
 <thead>
 <tr>
@@ -3208,7 +3232,7 @@ Types : défense</p>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3299,16 +3323,16 @@ Types : défense</p>
 <div class="keep">
 <h4 id="ajouter-un-declencheur-a-lattaque">Ajouter un Déclencheur à l'Attaque</h4>
 <p class="mod-type">Catégorie : aucune<br/>
-Types : attaque</p>
-<p>Greffé sur une attaque, ce module y attache une capacité liée, une seule, qu'il déclenche quand l'attaque aboutit selon les conditions choisies. Plus ces conditions sont dures, plus l'affinité qu'il accorde monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée. Le personnage retient obligatoirement un degré de touche et une visée, et peut y joindre une cible. Se restreindre librement pour gagner de l'affinité n'est pas propre à ce module : c'est un levier commun à toute capacité, qui se pose à son niveau, pas ici. La capacité liée paie ses propres coûts ; le module, lui, n'a pas de catégorie : il se paie en DI, et guetter puis tenir le déclencheur lui coûte une aura et un maintien propres, calés sur la finesse de sa visée. La capacité liée peut elle-même porter un déclencheur, les déclenchements s'enchaînant.</p>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
+<p>Greffé sur une attaque, ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> y attache une capacité liée, une seule, qu'il déclenche quand l'attaque aboutit selon les conditions choisies. Plus ces conditions sont dures, plus l'affinité qu'il accorde monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée. Le personnage retient obligatoirement un degré de touche et une visée, et peut y joindre une cible. Se restreindre librement pour gagner de l'affinité n'est pas propre à ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> : c'est un levier commun à toute capacité, qui se pose à son <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, pas ici. La capacité liée paie ses propres coûts ; le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, lui, n'a pas de catégorie : il se paie en DI, et guetter puis tenir le déclencheur lui coûte une aura et un maintien propres, calés sur la <a class="gloss-link" data-key="terme:finesse" href="../../../content/regles/combat/armes/#gloss-finesse">finesse</a> de sa visée. La capacité liée peut elle-même porter un déclencheur, les déclenchements s'enchaînant.</p>
 <table>
 <thead>
 <tr>
-<th>Effet</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3338,7 +3362,7 @@ Types : attaque</p>
 <td>−20%</td>
 </tr>
 <tr class="cat">
-<td>Degré de touche (obligatoire)</td>
+<td><a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">Degré de touche</a> (obligatoire)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -3434,7 +3458,7 @@ Types : attaque</p>
 <td>+80%</td>
 </tr>
 <tr class="cat">
-<td>Visée (obligatoire)</td>
+<td><a class="gloss-link" data-key="terme:visee" href="../../../content/regles/nen/capacites-de-nen/#gloss-visee">Visée</a> (obligatoire)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -3532,34 +3556,34 @@ Types : attaque</p>
 </tbody>
 </table>
 <div class="defs">
-<p><strong>Cible :</strong> qui doit être touché pour armer le déclencheur. Se déclencher sur l'attaquant (soi-même) est aisé ; toucher le défenseur applique le Nen sur autrui, plus difficile, d'où son malus d'affinité.</p>
-<p><strong>Degré de touche :</strong> marge de réussite exigée de l'attaque, de la simple touche (0 %) au coup largement réussi (200 %) ; plus la marge demandée est haute, plus l'affinité accordée monte.</p>
-<p><strong>Visée :</strong> la partie du corps visée, reprise de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus de visée fort, plus l'affinité accordée monte.</p>
-<p><strong>Affinité accordée :</strong> la somme des affinités des options retenues s'ajoute à l'affinité globale de la capacité liée. Les choix les plus faciles imposent un malus d'affinité, les plus durs un bonus ; le plafond commun de +100 % d'affinité s'y applique comme à tout module. Le personnage en retient au moins le degré de touche et la visée.</p>
-<p><strong>Coût :</strong> l'aura et le maintien du déclencheur sont repris de l'effet de visée d'Anima (<a href="../../combat/manoeuvres/">Combat Maneuvers / Precisión</a>) et portés par la visée, toujours retenue, donc tout déclencheur en a ; plus le point visé est fin, plus ils montent. Le DI grandit avec l'affinité accordée : une option neutre ou à malus ne coûte rien, sinon 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se libère.</p>
+<p><strong>Cible :</strong> qui doit être touché pour armer le déclencheur. Se déclencher sur l'attaquant (soi-même) est aisé ; toucher le défenseur applique le Nen sur autrui, plus <a class="gloss-link" data-key="terme:difficile" href="../../../content/regles/personnage/capacites-physiques/#gloss-difficile">difficile</a>, d'où son malus d'affinité.</p>
+<p><strong><a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">Degré de touche</a> :</strong> marge de réussite exigée de l'attaque, de la simple touche (0 %) au coup largement réussi (200 %) ; plus la marge demandée est haute, plus l'affinité accordée monte.</p>
+<p><strong><a class="gloss-link" data-key="terme:visee" href="../../../content/regles/nen/capacites-de-nen/#gloss-visee">Visée</a> :</strong> la partie du corps visée, reprise de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus de visée fort, plus l'affinité accordée monte.</p>
+<p><strong><a class="gloss-link" data-key="terme:affinite-accordee" href="../../../content/regles/nen/capacites-de-nen/#gloss-affinite-accordee">Affinité accordée</a> :</strong> la somme des affinités des options retenues s'ajoute à l'affinité globale de la capacité liée. Les choix les plus faciles imposent un malus d'affinité, les plus durs un bonus ; le plafond commun de +100 % d'affinité s'y applique comme à tout <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>. Le personnage en retient au moins le degré de touche et la visée.</p>
+<p><strong><a class="gloss-link" data-key="terme:cout" href="../../../content/regles/nen/capacites-de-nen/#gloss-cout">Coût</a> :</strong> l'aura et le maintien du déclencheur sont repris de l'effet de visée d'Anima (<a href="../../combat/manoeuvres/">Combat Maneuvers / Precisión</a>) et portés par la visée, toujours retenue, donc tout déclencheur en a ; plus le point visé est fin, plus ils montent. Le DI grandit avec l'affinité accordée : une option neutre ou à malus ne coûte rien, sinon 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se libère.</p>
 </div>
 </div>
 <div class="keep">
 <h4 id="catalogue">Catalogue</h4>
-<p class="mod-type">Catégorie : conjuration<br/>
-Types : à décider (réceptacle reporté)</p>
-<p>Le Catalogue renferme un répertoire d'autres capacités du personnage, prêtes à l'emploi : il en tire l'une ou l'autre au moment voulu, comme on pioche dans une réserve. C'est l'un des modules les plus puissants, et l'un des plus coûteux. On définit combien de capacités il garde, combien peuvent exister à la fois, ce qu'il a le droit de cataloguer, et leur qualité commune. Comme partout, on ne retient qu'une ligne par catégorie, sauf celles marquées <em>cumulable</em>. Son effet est descriptif, un nombre de capacités, donc l'affinité n'en multiplie pas la valeur ; il porte tout de même un malus d'affinité, ici −60 %, comme frein à un module aussi fort. Le Catalogue ne s'emboîte pas : une capacité cataloguée ne renferme pas de Catalogue.</p>
-<p><strong>Capacité</strong> : combien de capacités le Catalogue garde, et combien peuvent exister
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : à décider (réceptacle reporté)</p>
+<p>Le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> renferme un répertoire d'autres capacités du personnage, prêtes à l'emploi : il en tire l'une ou l'autre au moment voulu, comme on pioche dans une réserve. C'est l'un des <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> les plus puissants, et l'un des plus coûteux. On définit combien de capacités il garde, combien peuvent exister à la fois, ce qu'il a le droit de cataloguer, et leur qualité commune. Comme partout, on ne retient qu'une ligne par catégorie, sauf celles marquées <em>cumulable</em>. Son effet est descriptif, un nombre de capacités, donc l'affinité n'en multiplie pas la valeur ; il porte tout de même un malus d'affinité, ici −60 %, comme frein à un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> aussi fort. Le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> ne s'emboîte pas : une capacité cataloguée ne renferme pas de <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>.</p>
+<p><strong>Capacité</strong> : combien de capacités le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> garde, et combien peuvent exister
 en même temps.</p>
 <table>
 <thead>
 <tr>
-<th>Effet</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
 <tbody>
 <tr class="cat">
-<td>Capacités cataloguées</td>
+<td><a class="gloss-link" data-key="terme:capacites-cataloguees" href="../../../content/regles/nen/conjuration/#gloss-capacites-cataloguees">Capacités cataloguées</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3647,7 +3671,7 @@ en même temps.</p>
 <td>—</td>
 </tr>
 <tr class="cat">
-<td>Extraction simultanée</td>
+<td><a class="gloss-link" data-key="terme:extraction-simultanee" href="../../../content/regles/nen/conjuration/#gloss-extraction-simultanee">Extraction simultanée</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3697,18 +3721,18 @@ en même temps.</p>
 </tbody>
 </table>
 <div class="defs">
-<p><strong>Capacités cataloguées :</strong> nombre de capacités différentes que le Catalogue renferme, de une à dix. Sa conception est très lourde : fabriquer un répertoire de capacités est l'un des effets les plus forts du jeu, et c'est le DI, non l'aura, qui en marque le prix.</p>
-<p><strong>Extraction simultanée :</strong> nombre de ces capacités qui peuvent exister en même temps, de une à cinq ; les autres restent rangées. En tenir une seule ne coûte rien de plus ; chaque sortie de plus est une capacité vivante supplémentaire.</p>
+<p><strong><a class="gloss-link" data-key="terme:capacites-cataloguees" href="../../../content/regles/nen/conjuration/#gloss-capacites-cataloguees">Capacités cataloguées</a> :</strong> nombre de capacités différentes que le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> renferme, de une à dix. Sa conception est très <a class="gloss-link" data-key="terme:lourde" href="../../../content/regles/personnage/capacites-physiques/#gloss-lourde">lourde</a> : fabriquer un répertoire de capacités est l'un des effets les plus forts du jeu, et c'est le DI, non l'aura, qui en marque le prix.</p>
+<p><strong><a class="gloss-link" data-key="terme:extraction-simultanee" href="../../../content/regles/nen/conjuration/#gloss-extraction-simultanee">Extraction simultanée</a> :</strong> nombre de ces capacités qui peuvent exister en même temps, de une à cinq ; les autres restent rangées. <a class="gloss-link" data-key="terme:en" href="../../../content/regles/nen/techniques-nen/#gloss-en">En</a> tenir une seule ne coûte rien de plus ; chaque sortie de plus est une capacité vivante supplémentaire.</p>
 </div>
-<p><strong>Contenu et qualité</strong> : ce que le Catalogue a le droit de renfermer, et la puissance commune de ses capacités.</p>
+<p><strong>Contenu et qualité</strong> : ce que le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> a le droit de renfermer, et la puissance commune de ses capacités.</p>
 <table>
 <thead>
 <tr>
-<th>Effet</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3730,7 +3754,7 @@ en même temps.</p>
 <td>—</td>
 </tr>
 <tr>
-<td>Capacités de défense</td>
+<td>Capacités de <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a></td>
 <td>5</td>
 <td>10</td>
 <td>20</td>
@@ -3756,24 +3780,24 @@ en même temps.</p>
 </tbody>
 </table>
 <div class="defs">
-<p><strong>Contenu (cumulable) :</strong> les types de capacités que le Catalogue peut renfermer ; à cumuler pour en autoriser plusieurs. Chaque type ouvert coûte le même petit forfait, calé sur le plus petit effet d'Anima : DC 5, UA 20, IMA 5.</p>
-<p><strong>Qualité (VAR.) :</strong> le personnage investit librement un nombre de points de conception, X. Chaque capacité du Catalogue se bâtit avec un budget de X (base et modules compris) ; toutes partagent cette qualité. X ne se paie qu'une fois, quel que soit le nombre de capacités cataloguées. Le coût en Aura est variable lui aussi : tirer une capacité coûte l'UA de ses propres modules.</p>
+<p><strong>Contenu (cumulable) :</strong> les types de capacités que le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> peut renfermer ; à cumuler pour en autoriser plusieurs. Chaque type ouvert coûte le même petit forfait, calé sur le plus petit effet d'Anima : DC 5, UA 20, IMA 5.</p>
+<p><strong>Qualité (VAR.) :</strong> le personnage investit librement un nombre de points de conception, X. Chaque capacité du <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> se bâtit avec un budget de X (base et <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> compris) ; toutes partagent cette qualité. X ne se paie qu'une fois, quel que soit le nombre de capacités cataloguées. Le coût en Aura est variable lui aussi : tirer une capacité coûte l'UA de ses propres <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>.</p>
 </div>
 </div>
 <div class="keep">
 <h4 id="stockage">Stockage</h4>
-<p class="mod-type">Catégorie : conjuration<br/>
-Types : à décider (réceptacle reporté)</p>
-<p>La capacité renferme objets ou matière dans un espace interne ; y ranger ou en sortir un élément coûte une action. On choisit d'abord ce qu'elle accueille et ses propriétés, puis on borne sa contenance d'une seule des deux façons : par nombre d'objets, ou par espace. Dans une grille, on ne retient qu'une ligne, sauf celles marquées <em>cumulable</em> ; les coûts de toutes les lignes retenues s'additionnent. Son effet est descriptif, une contenance, que l'affinité ne multiplie pas ; comme rien ne le justifie, le module n'impose aucun malus d'affinité. C'est un utilitaire : son coût reste modéré, sans commune mesure avec le Catalogue.</p>
-<p><strong>Contenu et propriétés</strong> : ce que le contenant accueille et ses options, quelle que soit la façon dont sa contenance est bornée.</p>
+<p class="mod-type">Catégorie : <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a><br/>
+<a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : à décider (réceptacle reporté)</p>
+<p>La capacité renferme objets ou matière dans un espace interne ; y ranger ou en sortir un élément coûte une action. On choisit d'abord ce qu'elle accueille et ses <a class="gloss-link" data-key="terme:proprietes" href="../../../content/regles/combat/armes/#gloss-proprietes">propriétés</a>, puis on borne sa contenance d'une seule des deux façons : par nombre d'objets, ou par espace. Dans une grille, on ne retient qu'une ligne, sauf celles marquées <em>cumulable</em> ; les coûts de toutes les lignes retenues s'additionnent. Son effet est descriptif, une contenance, que l'affinité ne multiplie pas ; comme rien ne le justifie, le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> n'impose aucun malus d'affinité. C'est un utilitaire : son coût reste modéré, sans commune mesure avec le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>.</p>
+<p><strong>Contenu et <a class="gloss-link" data-key="terme:proprietes" href="../../../content/regles/combat/armes/#gloss-proprietes">propriétés</a></strong> : ce que le contenant accueille et ses options, quelle que soit la façon dont sa contenance est bornée.</p>
 <table>
 <thead>
 <tr>
-<th>Effet</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3803,7 +3827,7 @@ Types : à décider (réceptacle reporté)</p>
 <td>—</td>
 </tr>
 <tr class="cat">
-<td>Propriétés (cumulable)</td>
+<td><a class="gloss-link" data-key="terme:proprietes" href="../../../content/regles/combat/armes/#gloss-proprietes">Propriétés</a> (cumulable)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -3851,7 +3875,7 @@ Types : à décider (réceptacle reporté)</p>
 <td>—</td>
 </tr>
 <tr>
-<td>Temps arrêté</td>
+<td><a class="gloss-link" data-key="terme:temps-arrete" href="../../../content/regles/nen/conjuration/#gloss-temps-arrete">Temps arrêté</a></td>
 <td>30</td>
 <td>20</td>
 <td>60</td>
@@ -3865,17 +3889,17 @@ Types : à décider (réceptacle reporté)</p>
 <p><strong>Créatures :</strong> il peut renfermer des êtres vivants, qui y suffoquent faute d'air, à moins que l'intérieur ne dispose d'Air, ne soit Vivable, ou que le Temps y soit arrêté.</p>
 <p><strong>Air, Eau, Nourriture, Lumière :</strong> l'intérieur est respirable, ou une eau potable, de quoi se nourrir, ou la lumière y sont disponibles en continu.</p>
 <p><strong>Vivable :</strong> regroupe l'Air, l'Eau, la Nourriture et la Lumière pour moins cher que séparément ; l'intérieur est pleinement habitable.</p>
-<p><strong>Temps arrêté :</strong> le temps est comme figé à l'intérieur ; ni objet ni créature stockés n'y vieillissent.</p>
+<p><strong><a class="gloss-link" data-key="terme:temps-arrete" href="../../../content/regles/nen/conjuration/#gloss-temps-arrete">Temps arrêté</a> :</strong> le temps est comme figé à l'intérieur ; ni objet ni créature stockés n'y vieillissent.</p>
 </div>
 <p><strong>Par nombre d'objets</strong> : un nombre fixe d'objets, chacun ne dépassant pas une taille maximale.</p>
 <table>
 <thead>
 <tr>
-<th>Effet</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -3961,7 +3985,7 @@ Types : à décider (réceptacle reporté)</p>
 <td>—</td>
 </tr>
 <tr class="cat">
-<td>Taille maximale par objet</td>
+<td><a class="gloss-link" data-key="terme:taille-maximale" href="../../../content/regles/nen/manipulation/#gloss-taille-maximale">Taille maximale</a> par objet</td>
 <td></td>
 <td></td>
 <td></td>
@@ -4009,7 +4033,7 @@ Types : à décider (réceptacle reporté)</p>
 <td>—</td>
 </tr>
 <tr>
-<td>Très grande</td>
+<td><a class="gloss-link" data-key="terme:tres-grande" href="../../../content/regles/nen/conjuration/#gloss-tres-grande">Très grande</a></td>
 <td>45</td>
 <td>20</td>
 <td>160</td>
@@ -4046,11 +4070,11 @@ Types : à décider (réceptacle reporté)</p>
 <table>
 <thead>
 <tr>
-<th>Effet</th>
+<th><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
 <th>DI</th>
 <th>CAR</th>
 <th>UA</th>
-<th>MA</th>
+<th><a class="gloss-link" data-key="terme:ma" href="../../../content/regles/nen/capacites-de-nen/#gloss-ma">MA</a></th>
 <th>AE</th>
 </tr>
 </thead>
@@ -4221,16 +4245,16 @@ Types : à décider (réceptacle reporté)</p>
 </div>
 <h4 id="a-decider-ensemble">À décider ensemble</h4>
 <ul>
-<li>Affiner Ajouter un Déclencheur à l'Attaque et le Catalogue : valeurs posées en
+<li>Affiner Ajouter un Déclencheur à l'<a class="gloss-link" data-key="terme:attaque-regle" href="../../../content/regles/personnage/competences/#gloss-attaque-regle">Attaque</a> et le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> : valeurs posées en
   première passe (déclencheur avec aura et maintien portés par les conditions
-  obligatoires, DI à 5 par 10 % d'affinité ; Catalogue rechiffré à neuf sur l'échelle
-  Ki, de modeste à N=1 au sommet du module d'attaque à N=50), à valider.</li>
+  obligatoires, DI à 5 par 10 % d'affinité ; <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> rechiffré à neuf sur l'échelle
+  Ki, de modeste à N=1 au sommet du <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> d'attaque à N=50), à valider.</li>
 <li>Le plafond de +100 % d'affinité du déclencheur n'écrête pas encore le DI cumulé :
   empiler les conditions au-delà du plafond paie une affinité jamais reçue.</li>
-<li>Le Catalogue siège d'ordinaire sur un objet conjuré, dont le type est reporté.
-  Reste à choisir : on le rattache à ce réceptacle, ou on en fait un module d'effet
+<li>Le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> siège d'ordinaire sur un objet conjuré, dont le type est reporté.
+  Reste à choisir : on le rattache à ce réceptacle, ou on en fait un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> d'effet
   autonome qui se suffit à lui-même.</li>
-<li>Stockage : valeurs posées à un niveau utilitaire (bien sous le Catalogue), à
+<li>Stockage : valeurs posées à un <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> utilitaire (bien sous le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a>), à
   valider.</li>
 <li>Jusqu'où vont les déclencheurs en chaîne d'Ajouter un Déclencheur (profondeur de
   la récursion).</li>
@@ -5911,7 +5935,1200 @@ Types : à décider (réceptacle reporté)</p>
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
+</div><div class="gloss-defs"><div class="gcard gloss-card" data-key="terme:caracteristique-concept">
+<p><strong>Caractéristique</strong></p>
+<div class="gcard-text">
+<p>Les caractéristiques mesurent les aptitudes de base d'un personnage. Elles vont de 0 à 30, où 5 est la moyenne humaine et 9 le sommet humain réel, et fondent les compétences et les capacités.</p>
 </div>
+</div><div class="gcard gloss-card" data-key="terme:renforcement">
+<p><strong>Renforcement</strong></p>
+<div class="gcard-text">
+<p>amplifier une aptitude qui existe déjà.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:emission">
+<p><strong>Émission</strong></p>
+<div class="gcard-text">
+<p>projeter l'aura loin du corps.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:conjuration">
+<p><strong>Conjuration</strong></p>
+<div class="gcard-text">
+<p>donner à l'aura une existence matérielle.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:module">
+<p><strong>Module</strong></p>
+<div class="gcard-text">
+<p>la plus petite pièce ; on empile des modules sur une capacité pour lui ajouter des propriétés.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:catalogue">
+<p><strong>Catalogue</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Types : effet, objet</p>
+<p>Le Catalogue renferme un répertoire d'autres capacités du conjurateur, prêtes à l'emploi : le conjurateur en tire l'une ou l'autre au moment voulu. C'est l'un des modules les plus puissants, et l'un des plus coûteux.</p>
+<p>On définit combien de capacités il garde, combien peuvent exister à la fois, ce qu'il a le droit de cataloguer, et leur qualité commune. Comme partout, on ne retient qu'une ligne par catégorie, sauf celles marquées <em>cumulable</em>.</p>
+<p>Son effet est descriptif, un nombre de capacités : l'affinité n'en multiplie pas la valeur. Le malus d'affinité du module, −60 %, s'ajoute à l'affinité globale de chaque capacité cataloguée. Le Catalogue ne s'emboîte pas : une capacité cataloguée ne renferme pas de Catalogue.</p>
+<p><strong>Capacité</strong> : combien de capacités le Catalogue garde, et combien peuvent exister en même temps.</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DC</th>
+<th>IMA</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Capacités cataloguées</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>30</td>
+<td>10</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>60</td>
+<td>12</td>
+<td>30</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>100</td>
+<td>14</td>
+<td>40</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>150</td>
+<td>16</td>
+<td>50</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>210</td>
+<td>18</td>
+<td>60</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>6</td>
+<td>280</td>
+<td>20</td>
+<td>70</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>360</td>
+<td>22</td>
+<td>90</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>450</td>
+<td>24</td>
+<td>110</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>550</td>
+<td>27</td>
+<td>130</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>660</td>
+<td>30</td>
+<td>160</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Extraction simultanée</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>−60%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>60</td>
+<td>11</td>
+<td>40</td>
+<td>20</td>
+<td>−60%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>130</td>
+<td>17</td>
+<td>80</td>
+<td>40</td>
+<td>−60%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>210</td>
+<td>23</td>
+<td>120</td>
+<td>60</td>
+<td>−60%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>300</td>
+<td>30</td>
+<td>160</td>
+<td>80</td>
+<td>−60%</td>
+</tr>
+</tbody>
+</table>
+<div class="defs">
+<p><strong>Capacités cataloguées :</strong> nombre de capacités différentes que le Catalogue renferme, de 1 à 10.</p>
+<p><strong>Extraction simultanée :</strong> nombre de ces capacités qui peuvent exister en même temps, de 1 à 5 ; les autres restent rangées.</p>
+</div>
+<p><strong>Contenu et qualité</strong> : ce que le Catalogue a le droit de renfermer, et la puissance commune de ses capacités.</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DC</th>
+<th>IMA</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Contenu (cumulable)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capacités d'attaque</td>
+<td>5</td>
+<td>10</td>
+<td>20</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Capacités de défense</td>
+<td>5</td>
+<td>10</td>
+<td>20</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Capacités d'effet</td>
+<td>5</td>
+<td>10</td>
+<td>20</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="flush">
+<td>Qualité</td>
+<td>VAR.</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="defs">
+<p><strong>Contenu (cumulable) :</strong> les types de capacités que le Catalogue peut renfermer ; on cumule les lignes pour en autoriser plusieurs.</p>
+<p><strong>Qualité (VAR.) :</strong> le conjurateur investit librement un nombre de points de conception, X. Chaque capacité du Catalogue se bâtit avec un budget de X (base et modules compris) ; toutes partagent cette qualité. X ne se paie qu'une fois, quel que soit le nombre de capacités cataloguées. Le coût en aura est variable lui aussi : tirer une capacité coûte l'UAA de ses propres modules.</p>
+</div>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:specialisation">
+<p><strong>Spécialisation</strong></p>
+<div class="gcard-text">
+<p>ce qui n'entre nulle part ailleurs.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:pouvoir">
+<p><strong>Pouvoir</strong></p>
+<div class="gcard-text">
+<p>le Hatsu d'un personnage, désigné par un nom propre ; un pouvoir se compose d'une ou plusieurs capacités.</p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:hatsu">
+<p><strong>Hatsu</strong></p>
+<p><span class="prereq">Release</span></p>
+<p><span class="prereq">Prérequis : Ten Basique, Zetsu Basique, Ren Basique</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Le Hatsu est l'expression personnelle du Nen : le personnage projette son aura pour une fonction qu'il choisit, marquée par son tempérament autant que par son archétype. Une bonne capacité reflète son auteur ; mieux vaut la créer sur mesure que copier celle d'un autre.</p>
+<p>En apprenant le Hatsu, le personnage peut convertir son développement intérieur en développement de catégorie (DR, DE, DT, DM, DC, DS) et créer ses propres capacités.</p>
+</div><div class="gcard gloss-card" data-key="terme:type">
+<p><strong>Type</strong></p>
+<div class="gcard-text">
+<p>le ou les types de dégâts infligés, notés par leur code : contondant (CON), tranchant (TRA), perforant (PER), ou un type élémentaire comme le feu (FEU).</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:attaque-regle">
+<p><strong>Attaque</strong></p>
+<div class="gcard-text">
+<p>ce qui sert à frapper une cible avec une arme.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:defense-regle">
+<p><strong>Défense</strong></p>
+<div class="gcard-text">
+<p>ce qui sert à parer ou esquiver une attaque.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:effet">
+<p><strong>Effet</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Socle : effet</p>
+<p>La capacité fait autre chose que frapper ou parer : elle amplifie, déplace, perçoit, altère ou communique. Son effet porte sur le porteur lui-même. Sans module, elle ne coûte rien : ses modules portent tout ce qu'elle fait.</p>
+</div>
+</div>
+<div class="mcard gloss-card" data-key="terme:perception">
+<p><strong>Perception</strong></p>
+<p><span class="prereq">PER</span> La Perception mesure l'acuité des sens et la vigilance. Elle régit les sens que l'on dirige volontairement, la vue, l'ouïe, l'odorat, le goût, le toucher et la perception de la température, et décide de la capacité à déceler un signal faible : un mouvement furtif, une odeur suspecte, un craquement lointain. Elle permet de repérer ce qui passe inaperçu et de suivre une cible sans la perdre.</p>
+</div><div class="gcard gloss-card" data-key="terme:transmutation">
+<p><strong>Transmutation</strong></p>
+<div class="gcard-text">
+<p>prêter à l'aura une propriété de matière.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:manipulation">
+<p><strong>Manipulation</strong></p>
+<div class="gcard-text">
+<p>soumettre un être ou un objet.</p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:degats-propriete">
+<p><strong>Dégâts</strong></p>
+<p>Les dégâts que l'arme inflige avec la manœuvre Blesser, qui les proportionne au degré de touche. Toute arme reçoit 20 dégâts gratuits, le score d'une attaque à mains nues : le budget n'achète que ce qui dépasse cette base. La valeur affichée l'inclut déjà et va de 0 à 200.</p>
+<table>
+<thead>
+<tr>
+<th>Dégâts</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">−20</td>
+</tr>
+<tr>
+<td>10</td>
+<td>300 Ɉ</td>
+<td style="text-align: center;">−10</td>
+</tr>
+<tr>
+<td>20</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>30</td>
+<td>900 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1 200 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>50</td>
+<td>1 500 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>60</td>
+<td>1 800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>70</td>
+<td>2 100 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+<tr>
+<td>80</td>
+<td>2 400 Ɉ</td>
+<td style="text-align: center;">+60</td>
+</tr>
+<tr>
+<td>90</td>
+<td>2 700 Ɉ</td>
+<td style="text-align: center;">+70</td>
+</tr>
+<tr>
+<td>100</td>
+<td>3 000 Ɉ</td>
+<td style="text-align: center;">+80</td>
+</tr>
+<tr>
+<td>110</td>
+<td>3 300 Ɉ</td>
+<td style="text-align: center;">+90</td>
+</tr>
+<tr>
+<td>120</td>
+<td>3 600 Ɉ</td>
+<td style="text-align: center;">+100</td>
+</tr>
+<tr>
+<td>130</td>
+<td>3 900 Ɉ</td>
+<td style="text-align: center;">+110</td>
+</tr>
+<tr>
+<td>140</td>
+<td>4 200 Ɉ</td>
+<td style="text-align: center;">+120</td>
+</tr>
+<tr>
+<td>150</td>
+<td>4 500 Ɉ</td>
+<td style="text-align: center;">+130</td>
+</tr>
+<tr>
+<td>160</td>
+<td>4 800 Ɉ</td>
+<td style="text-align: center;">+140</td>
+</tr>
+<tr>
+<td>170</td>
+<td>5 100 Ɉ</td>
+<td style="text-align: center;">+150</td>
+</tr>
+<tr>
+<td>180</td>
+<td>5 400 Ɉ</td>
+<td style="text-align: center;">+160</td>
+</tr>
+<tr>
+<td>190</td>
+<td>5 700 Ɉ</td>
+<td style="text-align: center;">+170</td>
+</tr>
+<tr>
+<td>200</td>
+<td>6 000 Ɉ</td>
+<td style="text-align: center;">+180</td>
+</tr>
+</tbody>
+</table>
+</div><div class="mcard gloss-card" data-key="terme:portee-propriete">
+<p><strong>Portée</strong></p>
+<p>La distance à laquelle l'arme atteint sa cible. Une arme porte une ou plusieurs portées, toutes listées dans sa colonne ; elle paie chacune d'elles, puis leur nombre. Les distances d'une arme sont ses valeurs réelles : le coût d'une portée se lit au premier cran dont la distance maximale atteint la sienne.</p>
+<p>La mêlée frappe au contact et ne coûte rien. L'allonge l'étend : chaque cran ×N porte la frappe à N mètres, pour un porteur de taille Moyenne.</p>
+<table>
+<thead>
+<tr>
+<th>Mêlée</th>
+<th style="text-align: center;">Portée</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mêlée / contact</td>
+<td style="text-align: center;">au contact</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>Allonge ×2</td>
+<td style="text-align: center;">2 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Allonge ×3</td>
+<td style="text-align: center;">3 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Allonge ×4</td>
+<td style="text-align: center;">4 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Allonge ×5</td>
+<td style="text-align: center;">5 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le lancer, noté Jet dans les tables, s'écrit en deux distances, la courte et la longue : une arme « Jet 5/15 m » se lance à 5 m sans malus, puis jusqu'à 15 m avec −40 à l'attaque. La longue est la portée maximale : passé cette distance, l'arme n'atteint plus rien.</p>
+<table>
+<thead>
+<tr>
+<th>Lancer</th>
+<th style="text-align: center;">Courte / Longue</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lancer courte</td>
+<td style="text-align: center;">5 / 15 m</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>Lancer moyenne</td>
+<td style="text-align: center;">15 / 30 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Lancer longue</td>
+<td style="text-align: center;">30 / 50 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Lancer très longue</td>
+<td style="text-align: center;">40 / 80 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Lancer extrême</td>
+<td style="text-align: center;">60 / 120 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le tir suit la même écriture : l'arme tire sans malus jusqu'à sa portée courte, à −40 à l'attaque au-delà, et plus du tout passé sa portée longue. Aucune portée n'est illimitée.</p>
+<table>
+<thead>
+<tr>
+<th>Tir</th>
+<th style="text-align: center;">Courte / Longue</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tir courte</td>
+<td style="text-align: center;">15 / 50 m</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>Tir moyenne</td>
+<td style="text-align: center;">50 / 150 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Tir longue</td>
+<td style="text-align: center;">150 / 300 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>Tir très longue</td>
+<td style="text-align: center;">400 / 800 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Tir extrême</td>
+<td style="text-align: center;">1000 / 2500 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<p>Le cône est lui aussi une portée : l'attaque embrasse toutes les cibles d'un cône parti du porteur, noté par sa longueur et son angle (« Cône 10 m, 90° »). Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du cône y oppose sa propre défense, et chaque touche se résout avec son propre degré de touche. Son coût additionne deux tables, la longueur et l'angle.</p>
+<table>
+<thead>
+<tr>
+<th>Cône, longueur</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 m</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>15 m</td>
+<td>800 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>1 000 Ɉ</td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Cône, angle</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45°</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>90°</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+</tbody>
+</table>
+<p>Une arme paie enfin le nombre de portées qu'elle cumule : la première est comprise, chaque portée de plus coûte.</p>
+<table>
+<thead>
+<tr>
+<th>Nombre de portées</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>2</td>
+<td>200 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+</tbody>
+</table>
+</div><div class="mcard gloss-card" data-key="terme:logique">
+<p><strong>Logique</strong></p>
+<p><span class="prereq">LOG</span> La Logique mesure la rigueur du raisonnement et le sens de l'analyse. Elle permet de décomposer un problème, de comprendre un système et d'en tirer des conclusions justes. Elle sert l'enquête, la tactique et tous les jeux d'esprit où la déduction l'emporte.</p>
+</div><div class="gcard gloss-card" data-key="terme:renforceur">
+<p><strong>Renforceur</strong></p>
+<div class="gcard-text">
+<p>Le Renforceur amplifie de son aura les capacités d'un corps ou d'un objet (force, vitesse, dureté, endurance, guérison). C'est la catégorie la plus équilibrée, aussi solide en défense qu'en attaque, et la mieux adaptée au corps à corps. Ses pouvoirs sont peu spectaculaires, mais aucune autre catégorie ne l'égale en puissance brute au contact.</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Base d'Affinité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Renforcement</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Émission</td>
+<td>80 %</td>
+</tr>
+<tr>
+<td>Transmutation</td>
+<td>80 %</td>
+</tr>
+<tr>
+<td>Manipulation</td>
+<td>60 %</td>
+</tr>
+<tr>
+<td>Conjuration</td>
+<td>60 %</td>
+</tr>
+<tr>
+<td>Spécialisation</td>
+<td>0 % ou 40 %*</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep portrait">
+<div class="frame">
+<p>!Gon Freecss<a class="credit" href="https://i.pinimg.com/474x/41/5b/23/415b2334fdb58e90bf98b59a7e0ddb7e.jpg" rel="noopener" target="_blank" title="Source : Pinterest">Pinterest</a></p>
+</div>
+<p><em>Gon Freecss</em></p>
+</div>
+<hr/>
+<div class="keep portrait">
+<div class="frame">
+<p>!Franklin<a class="credit" href="https://manga-imperial.fr/cdn/shop/articles/dbdoss5-89416ee7-5986-4c7e-9e23-ceab7e52fba0_be2502bf-abe6-44e2-83cf-ddc6a009533d_600x.jpg?v=1671887178" rel="noopener" target="_blank" title="Source : manga-imperial.fr">manga-imperial.fr</a></p>
+</div>
+<p><em>Franklin</em></p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:niveau-regle">
+<p><strong>Niveau</strong></p>
+<div class="gcard-text">
+<p>Le total de PF gagné marque le niveau. Tous les 100 PF, le personnage franchit un niveau.</p>
+<p class="formula">Niveau = ⌈ PF ÷ 100 ⌉</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Points de formation</th>
+<th style="text-align: center;">Niveau</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1 à 100</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">101 à 200</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">201 à 300</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">301 à 400</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">401 à 500</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">501 à 600</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">601 à 700</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">701 à 800</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">801 à 900</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td style="text-align: center;">901 à 1 000</td>
+<td style="text-align: center;">10</td>
+</tr>
+</tbody>
+</table>
+<p>Et ainsi de suite, 100 points par niveau, sans plafond.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:parade-competence">
+<p><strong>Parade</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Défense</p>
+<p>Bloquer ou dévier une attaque avec une arme ou un bouclier. Pour arrêter net une lame sur sa garde ou détourner un coup de massue.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:esquive">
+<p><strong>Esquive</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Agilité<br/>Groupes : Physique, Défense</p>
+<p>Échapper à une attaque par un déplacement vif du corps. Pour se jeter hors de la trajectoire d'une balle ou pivoter sous le tranchant d'une épée.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:lourde">
+<p><strong>Lourde</strong></p>
+<div class="gcard-text">
+<p>un gros effort à pleine puissance, à l'intensité maximale du corps. Le personnage se dépense sans retenue et puise dans ses réserves : il ne tient ce rythme qu'un temps limité avant de réclamer du repos. Par exemple : combattre, en duel ou en mêlée ; sprinter, fuir, poursuivre à toutes jambes ; pousser le corps à sa limite lors d'un exploit.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:competence-concept">
+<p><strong>Compétence</strong></p>
+<div class="gcard-text">
+<p>Une compétence mesure ce qu'un personnage sait faire dans un domaine précis. Chaque compétence repose sur une caractéristique et se teste par un jet, comparé à un seuil de difficulté ou au jet d'un adversaire.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:initiative-competence">
+<p><strong>Initiative</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Agilité<br/>Groupes : Physique</p>
+<p>Vivacité de réaction qui décide qui agit en premier quand un affrontement éclate. Permet de dégainer avant un adversaire ou de réagir à une embuscade une fraction de seconde avant les autres.</p>
+</div>
+<div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:actions-supplementaires">
+<p><strong>Actions supplémentaires</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : effet</p>
+<p>Tant que la capacité est active, le renforceur dispose du nombre indiqué d'actions de plus durant son tour, sans malus.</p>
+<p>Ces actions suivent les règles ordinaires : on ne répète pas deux fois le même type d'action.</p>
+<table>
+<thead>
+<tr>
+<th>Actions</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+1</td>
+<td>5</td>
+<td>5</td>
+<td>20</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+2</td>
+<td>5</td>
+<td>11</td>
+<td>40</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+3</td>
+<td>10</td>
+<td>17</td>
+<td>60</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+4</td>
+<td>15</td>
+<td>23</td>
+<td>80</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+5</td>
+<td>20</td>
+<td>30</td>
+<td>100</td>
+<td>120</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="gcard gloss-card" data-key="terme:teleportation">
+<p><strong>Téléportation</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : effet</p>
+<p>La capacité téléporte l'émitteur jusqu'à la distance retenue, sans franchir l'espace : il disparaît d'un point et reparaît à l'autre.</p>
+<table>
+<thead>
+<tr>
+<th>Portée</th>
+<th>DE</th>
+<th>LOG</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10 m</td>
+<td>5</td>
+<td>5</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>30 m</td>
+<td>10</td>
+<td>7</td>
+<td>80</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>100 m</td>
+<td>15</td>
+<td>9</td>
+<td>120</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>300 m</td>
+<td>20</td>
+<td>11</td>
+<td>160</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1 km</td>
+<td>25</td>
+<td>13</td>
+<td>200</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3 km</td>
+<td>30</td>
+<td>15</td>
+<td>250</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10 km</td>
+<td>35</td>
+<td>17</td>
+<td>300</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>30 km</td>
+<td>40</td>
+<td>19</td>
+<td>350</td>
+<td>170</td>
+<td>—</td>
+</tr>
+<tr>
+<td>100 km</td>
+<td>45</td>
+<td>21</td>
+<td>400</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>300 km</td>
+<td>50</td>
+<td>23</td>
+<td>450</td>
+<td>230</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1 000 km</td>
+<td>55</td>
+<td>25</td>
+<td>500</td>
+<td>260</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3 000 km</td>
+<td>60</td>
+<td>27</td>
+<td>550</td>
+<td>290</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10 000 km</td>
+<td>70</td>
+<td>30</td>
+<td>600</td>
+<td>320</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
+</div><div class="mcard gloss-card" data-key="terme:retour">
+<p><strong>Retour</strong></p>
+<p><span class="prereq">Nécessite : portée de lancer</span> <span class="prereq">Incompatible : Usage unique</span></p>
+<p>Une fois lancée, l'arme revient à la main du lanceur à la fin de son tour (aucune action requise) : il peut la relancer au tour suivant sans aller la récupérer.</p>
+<table>
+<thead>
+<tr>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>250 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+</tbody>
+</table>
+</div><div class="mcard gloss-card" data-key="terme:in">
+<p><strong>In</strong></p>
+<p><span class="prereq">Conceal</span></p>
+<p>L'In masque le flux de l'aura : là où le Zetsu l'éteint, l'In la laisse active mais la rend imperceptible. Il sert à cacher le pratiquant, ses pièges et ses capacités.</p>
+<p>Activer ou désactiver l'In coûte une action ; le personnage le maintient aussi longtemps qu'il veut, sans exclure son état du Nen en cours. En l'activant, il fait un seul jet de Camouflage, qui ne se relance pas : son résultat, augmenté du bonus d'In, devient le seuil de l'In. Son aura, ses pièges et ses capacités restent indétectables à quiconque ne dépasse pas ce seuil.</p>
+<p>Ce que l'In dissimule ne peut pas être aperçu sans Gyo : seul un jet sensoriel effectué avec le Gyo peut dépasser ce seuil et percer la dissimulation.</p>
+<p class="palier">Basique</p>
+<p><span class="prereq">Prérequis : Zetsu Basique</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>L'In donne au personnage +20 à son jet de Camouflage.</p>
+<p class="palier">Avancé</p>
+<p><span class="prereq">Prérequis : In Basique</span>
+<span class="prereq">Coût : 10 DI</span></p>
+<p>Le bonus d'In au jet de Camouflage du personnage passe à +40.</p>
+<p class="palier">Expert</p>
+<p><span class="prereq">Prérequis : In Avancé</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Le bonus d'In au jet de Camouflage du personnage passe à +60.</p>
+<p class="palier">Maître</p>
+<p><span class="prereq">Prérequis : In Expert</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Le bonus d'In au jet de Camouflage du personnage passe à +80.</p>
+</div><div class="gcard gloss-card" data-key="terme:ma">
+<p><strong>MA</strong></p>
+<div class="gcard-text">
+<p>le maintien, l'aura payée chaque round par son mainteneur pour la garder active. À zéro pour une capacité instantanée.</p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:finesse">
+<p><strong>Finesse</strong></p>
+<p><span class="prereq">Nécessite : ×1 FOR ou plus</span></p>
+<p>Arme d'adresse plus que de puissance : pour le multiplicateur de dégâts « ×N FOR », le porteur peut appliquer son modificateur de Dextérité au lieu de celui de Force, au choix à chaque attaque.</p>
+<table>
+<thead>
+<tr>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>250 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+</tbody>
+</table>
+</div><div class="gcard gloss-card" data-key="terme:degre-de-touche">
+<p><strong>Degré de touche</strong></p>
+<div class="gcard-text">
+<p>la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:visee">
+<p><strong>Visée</strong></p>
+<div class="gcard-text">
+<p>la partie du corps visée, reprise de la manœuvre Viser ; plus le point est petit et son malus de visée fort, plus l'affinité accordée monte.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:difficile">
+<p><strong>Difficile</strong></p>
+<div class="gcard-text">
+<p>boue, éboulis, broussailles, neige à mi-mollet. La progression tombe de moitié.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:affinite-accordee">
+<p><strong>Affinité accordée</strong></p>
+<div class="gcard-text">
+<p>la somme des affinités des options retenues, ajoutée à l'affinité globale de la capacité liée ; le plafond commun de +100 % s'applique comme à tout module.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:cout">
+<p><strong>Coût</strong></p>
+<div class="gcard-text">
+<p>l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'affinité accordée : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:capacites-cataloguees">
+<p><strong>Capacités cataloguées</strong></p>
+<div class="gcard-text">
+<p>nombre de capacités différentes que le Catalogue renferme, de 1 à 10.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:extraction-simultanee">
+<p><strong>Extraction simultanée</strong></p>
+<div class="gcard-text">
+<p>nombre de ces capacités qui peuvent exister en même temps, de 1 à 5 ; les autres restent rangées.</p>
+</div>
+</div><div class="mcard gloss-card" data-key="terme:en">
+<p><strong>En</strong></p>
+<p><span class="prereq">Circle</span></p>
+<p>L'En est une application avancée du Ten et du Ren : le personnage étend son Ren bien au-delà de sa portée ordinaire, puis emploie son Ten pour contenir cette aura en une sphère centrée sur lui. À l'intérieur de la sphère, le personnage sent la forme, la position et le mouvement de tout ce qui s'y trouve ; un utilisateur de Nen y provoque une réaction bien plus forte qu'une personne ordinaire.</p>
+<p>Le rayon de la sphère mesure la maîtrise : un pratiquant reconnu dépasse les 2 m, un maître atteint une cinquantaine de mètres, et seules de rares exceptions vont au-delà, comme Pitou et ses 2 km.</p>
+<p>Entrer en En fait tomber l'état du Nen précédent. Tant que le personnage maintient l'En, son UAR tombe à 0 : il ne projette plus rien et ne peut rien mettre en réserve. En contrepartie, il gagne +240 à tous ses jets sensoriels dans sa sphère.</p>
+<p class="palier">Basique</p>
+<p><span class="prereq">Prérequis : Ren Basique</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Entrer en En demande 10 minutes de concentration, en activité lourde ; en sortir demande 1 minute, en activité lourde aussi. Le maintenir reste une activité lourde.</p>
+<p class="palier">Avancé</p>
+<p><span class="prereq">Prérequis : En Basique</span>
+<span class="prereq">Coût : 10 DI</span></p>
+<p>Entrer en En demande 1 minute de concentration ; en sortir coûte un tour complet, soit toutes les actions du personnage. Entrer, sortir et maintenir l'En restent une activité lourde.</p>
+<p class="palier">Expert</p>
+<p><span class="prereq">Prérequis : En Avancé</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Entrer en En coûte un tour complet, soit toutes les actions du personnage ; en sortir coûte une action. Entrer, sortir et maintenir l'En ne sont plus qu'une activité intermédiaire.</p>
+<p class="palier">Maître</p>
+<p><span class="prereq">Prérequis : En Expert</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Entrer en En coûte une action, en activité intermédiaire ; le personnage peut en sortir à tout moment (aucune action requise). Le maintenir reste une activité intermédiaire.</p>
+<hr/>
+<p>Le rayon part de 1 m, compris dans l'apprentissage de l'En, et s'étend cran par cran selon le tableau ci-dessous, indépendamment des quatre paliers : chaque cran exige le précédent et coûte le DI indiqué.</p>
+<p>En entrant en En, le personnage déploie le rayon de son choix parmi ceux qu'il a débloqués. Il peut resserrer le rayon (aucune action requise) ; l'élargir jusqu'à un cran déjà débloqué coûte une action.</p>
+<p>Maintenir la sphère se paie sur la réserve : à la fin de chacun des tours du personnage, son UAD perd l'aura par tour indiquée pour le rayon déployé. Si l'UAD ne suffit plus, l'En se dissipe aussitôt.</p>
+<table>
+<thead>
+<tr>
+<th>Rayon</th>
+<th>Coût (DI)</th>
+<th>Aura par tour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 m</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2 m</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3 m</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>5 m</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>20</td>
+<td>15</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>20</td>
+<td>20</td>
+</tr>
+<tr>
+<td>30 m</td>
+<td>20</td>
+<td>30</td>
+</tr>
+<tr>
+<td>50 m</td>
+<td>20</td>
+<td>40</td>
+</tr>
+<tr>
+<td>100 m</td>
+<td>50</td>
+<td>60</td>
+</tr>
+<tr>
+<td>200 m</td>
+<td>50</td>
+<td>80</td>
+</tr>
+<tr>
+<td>300 m</td>
+<td>50</td>
+<td>100</td>
+</tr>
+<tr>
+<td>500 m</td>
+<td>50</td>
+<td>150</td>
+</tr>
+<tr>
+<td>1 km</td>
+<td>100</td>
+<td>200</td>
+</tr>
+<tr>
+<td>2 km</td>
+<td>100</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div><div class="gcard gloss-card" data-key="terme:proprietes">
+<p><strong>Propriétés</strong></p>
+<div class="gcard-text">
+<p>les traits propres à l'arme, décrits chacun par sa fiche.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:temps-arrete">
+<p><strong>Temps arrêté</strong></p>
+<div class="gcard-text">
+<p>le temps est arrêté à l'intérieur ; ni objet ni créature stockés n'y vieillissent.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:taille-maximale">
+<p><strong>Taille maximale</strong></p>
+<div class="gcard-text">
+<p>le plus gros objet que l'emprise peut saisir ; elle meut tout objet plus petit, et un objet plus gros lui échappe.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:tres-grande">
+<p><strong>Très grande</strong></p>
+<div class="gcard-text">
+<p>un gros véhicule de transport, ou une pièce monumentale (un camion, un orgue).</p>
+</div>
+</div></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -5933,7 +7150,7 @@ Types : à décider (réceptacle reporté)</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.footer", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script src="../../../../javascripts/changelog.js"></script>
 <script src="../../../../javascripts/continuous.js"></script>
 <script src="../../../../javascripts/nav-drawer.js"></script>
