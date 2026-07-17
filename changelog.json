@@ -1,5 +1,122 @@
 [
 {
+"short": "d73a341",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T12:04:39+02:00",
+"message": "Blessures : plus aucun état de combat, seule l'Inconscience via le jet",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d73a3415c3dd4c13cbfecbd920b974be2e9e834c",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "a103212",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T10:39:51+02:00",
+"message": "Blessures : « un malus de −X à toutes les actions », Immobilisé hors des amputations",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/a10321224f581ef1df1535462b133e6dc20fcc01",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "e29a46f",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:55:46+02:00",
+"message": "Blessures : 4 zones de plus, la fusion réduite à ce qui la mérite",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/e29a46ff99710740dc7b66dd146e2e8f97de624d",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "c5513eb",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:49:59+02:00",
+"message": "Blessures : le chapitre redevient humain, et 47 constats de relecture",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/c5513eb93afbb1a0078bd671deff7817bda1d000",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "6f82c25",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:39:19+02:00",
+"message": "Blessures : les cartes « Ne pas avoir de » disent enfin une règle",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6f82c25d6eb9385ce8be50ff871776cc805f547a",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "a308ec7",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:30:32+02:00",
+"message": "Blessures : les 13 cartes « Ne pas avoir de » rédigées",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/a308ec726224dd2525b855af7c71312f58c03b92",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "dbe3555",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:10:44+02:00",
+"message": "Blessures : relecture adversariale appliquée (66 constats)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/dbe3555d2e5504dd7603eb7dfaff5e9cea314aa4",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "eaf3166",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T22:14:56+02:00",
+"message": "Blessures : les sens se chiffrent en clarté, et 4 écarts d'équilibrage",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/eaf316616d3cd9a5a7533ced24ce8579b9952014",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
 "short": "a4fe5e7",
 "author": "Théo Cavaillès",
 "date": "2026-07-16T22:13:55+02:00",
@@ -147,118 +264,6 @@
 "status": "modified",
 "filename": "content/regles/combat/critique-blessures.md",
 "url": "content/regles/combat/critique-blessures/"
-}
-]
-},
-{
-"short": "39d594c",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T20:32:57+02:00",
-"message": "Blessures : malus de 10 en 10",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/39d594cb24032c8e54f24679471be12d65b2f7d7",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
-}
-]
-},
-{
-"short": "af4bbd4",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T20:20:05+02:00",
-"message": "Blessures : malus recalibrés sur la visée, et passe de cohérence",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/af4bbd4a975d66ee997c03c9c0b25108d1042196",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
-}
-]
-},
-{
-"short": "d7625b7",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T19:00:50+02:00",
-"message": "États : contradictions levées avec les fichiers vérifiés",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d7625b72e237687d9b9ce7126275c2be94b8c08c",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
-}
-]
-},
-{
-"short": "de31589",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T18:31:38+02:00",
-"message": "États : puces Défense, abris renommés, descriptions resserrées",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/de31589064bcd2d1c963a9e6edac733bc3bd8c29",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
-}
-]
-},
-{
-"short": "9c07ff2",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T18:12:49+02:00",
-"message": "États : la sortie d'un état dépend de sa cause, pas de l'état",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/9c07ff2eabc0d0fd8c581ed808b5d93d04ec7f8b",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
-}
-]
-},
-{
-"short": "d9f1ffb",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T18:05:53+02:00",
-"message": "États : incohérences de règle corrigées",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d9f1ffbf80e6c9f94443e84cb777b67400bf4fb3",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
-}
-]
-},
-{
-"short": "413b57c",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T17:52:51+02:00",
-"message": "États : prose reprise pour la clarté, mécaniques inchangées",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/413b57c10ddb7111ee1666e2ae3995a700c4440c",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
-}
-]
-},
-{
-"short": "16cf8d9",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T17:35:40+02:00",
-"message": "États : retrait de « En joue », que rien n'employait",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/16cf8d92d3a80c81510a89ade78e6aeea1baaa7e",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/personnage/etats.md",
-"url": "content/regles/personnage/etats/"
 }
 ]
 }
