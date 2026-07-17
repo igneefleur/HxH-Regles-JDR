@@ -105,7 +105,7 @@ extra:
   generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
   - stylesheets/fonts.css   # @font-face auto-hébergés : doit être chargée en premier
-  - stylesheets/extra.css?v=10
+  - stylesheets/extra.css?v=11
   - stylesheets/atelier.css
   - stylesheets/night.css
   - stylesheets/forge.css

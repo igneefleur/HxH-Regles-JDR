@@ -68,6 +68,14 @@
   --md-code-font: 'Roboto Mono';
 }
 
+/* Badge « PDF » injecté dans l'en-tête par le plugin to-pdf (CI seulement,
+   classe héritée md-header-nav__button) : masqué, le bouton « Télécharger le
+   livre (PDF) » de print-book.js le remplace. */
+.md-header a.md-header-nav__button[title="PDF"],
+a.md-header-nav__button[href$="livre-de-regles.pdf"] {
+  display: none !important;
+}
+
 /* ---------- 2. Fonds & feuille de lecture ---------- */
 .md-main,
 .md-container {
