@@ -220,7 +220,6 @@ Les tables ci-dessous donnent la perte de clarté que les gênes courantes infli
 
 </div>
 
-
 </div>
 
 ---

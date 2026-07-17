@@ -14,28 +14,29 @@ Chaque forme, ses animaux-types et sa biologie de base : le milieu où elle resp
 
 | Forme | Exemples | Respiration | Alimentation | Propriété spéciale |
 | --- | --- | --- | --- | --- |
-| Bipède à bras | humain, grand singe | air | omnivore | — |
-| Bipède à bras et queue | kangourou, théropode | air | herbivore ou carnivore | — |
-| Bipède à deux ailes | oiseau, chauve-souris | air | herbivore, carnivore ou omnivore | — |
-| Quadrupède | grenouille | air | carnivore | — |
-| Quadrupède à queue | chien, lézard, dinosaure quadrupède | air | herbivore, carnivore ou omnivore | — |
-| Quadrupède à trompe | tapir, éléphant | air | herbivore | — |
+| Bipède à bras | humain, grand singe | air | omnivore |  |
+| Bipède à bras et queue | kangourou, théropode | air | herbivore ou carnivore |  |
+| Bipède à deux ailes | oiseau, chauve-souris | air | herbivore, carnivore ou omnivore |  |
+| Quadrupède | grenouille | air | carnivore |  |
+| Quadrupède à queue | chien, lézard, dinosaure quadrupède | air | herbivore, carnivore ou omnivore |  |
+| Quadrupède à trompe | tapir, éléphant | air | herbivore |  |
 | Vermiforme | ver, serpent | air | détritivore ou carnivore | Ondulation |
-| Nageur à deux nageoires | baleine, dauphin | air | carnivore ou filtreur | — |
-| Nageur à quatre nageoires | poisson, tortue marine | air ou eau | herbivore, carnivore ou omnivore | — |
-| Hexapode | fourmi, puce | air | omnivore ou carnivore | — |
-| Hexapode à deux ailes | mouche, moustique | air | détritivore ou carnivore | — |
-| Hexapode à quatre ailes | papillon, libellule | air | herbivore ou carnivore | — |
-| Octopode | araignée | air | carnivore | — |
-| Octopode à pinces | crabe | eau | omnivore ou détritivore | — |
-| Octopode à pinces et queue | scorpion, homard | air ou eau | carnivore ou omnivore | — |
-| Décapode à queue | crevette, limule | eau | détritivore ou omnivore | — |
-| Myriapode | mille-pattes, scolopendre | air | détritivore ou carnivore | — |
+| Nageur à deux nageoires | baleine, dauphin | air | carnivore ou filtreur |  |
+| Nageur à quatre nageoires | poisson, tortue marine | air ou eau | herbivore, carnivore ou omnivore |  |
+| Hexapode | fourmi, puce | air | omnivore ou carnivore |  |
+| Hexapode à deux ailes | mouche, moustique | air | détritivore ou carnivore |  |
+| Hexapode à quatre ailes | papillon, libellule | air | herbivore ou carnivore |  |
+| Octopode | araignée | air | carnivore |  |
+| Octopode à pinces | crabe | eau | omnivore ou détritivore |  |
+| Octopode à pinces et queue | scorpion, homard | air ou eau | carnivore ou omnivore |  |
+| Décapode à queue | crevette, limule | eau | détritivore ou omnivore |  |
+| Myriapode | mille-pattes, scolopendre | air | détritivore ou carnivore |  |
 | Céphalopode à huit tentacules | pieuvre | eau | carnivore | Propulsion à réaction |
 | Céphalopode à dix tentacules | calmar, seiche | eau | carnivore | Propulsion à réaction |
 | Radiaire à tentacules | méduse, anémone | eau | carnivore | Pulsation |
 | Radiaire à cinq bras | étoile de mer | eau | carnivore ou détritivore | Podia |
-| Informe | éponge | eau | filtreur | — |
+| Informe | éponge | eau | filtreur |  |
+| Objet conscient | lame animée, pantin | aucune | aucune |  |
 
 </div>
 
@@ -57,17 +58,17 @@ Chaque forme, ses animaux-types et sa biologie de base : le milieu où elle resp
 
 </div>
 
-Certaines formes portent une propriété spéciale qui leur tient lieu de nageoire : elles se déplacent dans l'eau à leur Agilité pleine, sans subir le malus de déplacement aquatique. Chaque légende précise aussi combien de membres cette nage occupe, car un membre qui propulse ne peut agir en même temps.
+Une propriété spéciale tient lieu de nage à la forme qui la porte : celle-ci se déplace dans l'eau à son Agilité pleine, sans le malus de déplacement aquatique. Chaque propriété dit aussi combien de membres la nage occupe, car un membre qui propulse le corps ne peut pas agir en même temps.
 
 <div class="defs" markdown>
 
-**Ondulation :** le corps allongé se propulse en ondulant d'un bout à l'autre, sans nageoire ; il n'a aucun membre à occuper.
+**Ondulation :** le corps allongé avance en ondulant d'un bout à l'autre. Aucun membre n'est occupé.
 
-**Propulsion à réaction :** la forme aspire l'eau dans son corps puis la chasse par un jet que son siphon oriente ; la poussée venant du corps, ses tentacules restent libres d'agir. En pleine fuite toutefois, à l'allure lourde, elle les plaque en fuseau derrière elle pour fendre l'eau, et ils cessent d'être libres.
+**Propulsion à réaction :** la forme aspire l'eau dans son corps et la rejette par un siphon qui l'oriente. Aux allures légère et intermédiaire, ses tentacules restent libres ; à l'allure lourde, trois d'entre eux servent à la propulsion et ne sont plus libres.
 
-**Pulsation :** la forme nage en contractant et relâchant tout son corps ; la poussée vient du corps, donc ses tentacules restent libres d'agir.
+**Pulsation :** la forme avance en contractant et relâchant tout son corps. Ses tentacules restent libres.
 
-**Podia :** des centaines de petits pieds font ramper la forme sur le fond ; avancer occupe la moitié de ses bras, arrondie au supérieur, soit trois des cinq bras de l'étoile de mer, et laisse les autres libres.
+**Podia :** des centaines de petits pieds font ramper la forme sur le fond. Avancer occupe trois de ses cinq bras et laisse les deux autres libres.
 
 </div>
 
@@ -101,6 +102,7 @@ Chaque forme porte une tête ou non, et des membres pris dans une palette : la p
 | Radiaire à tentacules |  |  |  |  |  | 8 |  |  |  |
 | Radiaire à cinq bras |  |  | 5 |  |  |  |  |  |  |
 | Informe |  |  |  |  |  |  |  |  |  |
+| Objet conscient |  |  |  |  |  |  |  |  |  |
 
 </div>
 
@@ -134,20 +136,29 @@ Le plan de corps hausse ou abaisse les six caractéristiques physiques. Les vale
 | Radiaire à tentacules | −3 | −4 | −2 | +2 | −2 | −2 |
 | Radiaire à cinq bras | −2 | −3 | −3 | +3 | −2 | −3 |
 | Informe | −4 | −4 | −4 | +4 | −4 | −4 |
+| Objet conscient | 0 | −2 | 0 | +4 | −2 | 0 |
 
 </div>
 
 ### Le déplacement
 
-Une forme se déplace dans trois milieux : sur terre, dans l'eau et dans les airs. Sa vitesse se lit sur la table de mouvement des [capacités physiques](../personnage/capacites-physiques.md), à l'Agilité de la créature. Selon ses membres, un milieu lui est ouvert normalement, pénalisé ou fermé ; une pénalité est un malus au Mouvement sur cette table, comme un terrain difficile.
+Une forme se déplace dans trois milieux : sur terre, dans l'eau et dans les airs. Sa vitesse se lit sur la table de [Mouvement](../personnage/capacites-physiques.md#mouvement), à l'Agilité de la créature. Selon ses membres, un milieu lui est ouvert, pénalisé ou fermé ; une pénalité est un malus au Mouvement, comme un [terrain difficile](../personnage/capacites-physiques.md#terrain-difficile).
 
-Sans aile, une forme ne vole pas : le ciel lui est fermé. Sans patte ni jambe, elle rampe et lit sa vitesse terrestre avec −4 au Mouvement. Nageoires et tentacules permettent de nager : sans eux, une forme patauge et lit sa vitesse aquatique avec −3 au Mouvement, à moins qu'une propriété spéciale, portée par la dernière colonne du premier tableau, ne lui tienne lieu de nage.
+<div class="defs" markdown>
 
-Se déplacer occupe les membres qui portent et propulsent le corps ; les autres agissent librement. Sur pattes, les jambes avancent et les bras demeurent libres. Quand les mêmes membres portent et agissent, comme les bras d'une étoile de mer, la propriété spéciale de la forme dit combien il en faut pour avancer.
+**Sur terre :** une forme à patte ou à jambe avance normalement. Sans aucune des deux, elle rampe, à −4 au Mouvement.
+
+**Dans l'eau :** une forme à nageoire ou à tentacule nage normalement, comme celle qu'une propriété spéciale fait nager. Sans rien de tout cela, elle patauge, à −3 au Mouvement.
+
+**Dans les airs :** une forme à aile vole. Sans aile, le ciel lui est fermé.
+
+</div>
+
+Se déplacer occupe les membres qui portent ou propulsent le corps ; les autres agissent librement. Sur pattes, les jambes avancent et les bras restent libres. Quand les mêmes membres portent et agissent, comme les bras d'une étoile de mer, la propriété spéciale de la forme dit combien il en faut pour avancer.
 
 <div class="memo" markdown>
 
-Pour mémoire, ces pénalités collent au réel pour une créature de taille et d'Agilité moyennes : ramper sans pattes ramène la course entre 1 et 6 km/h, comme un serpent, et nager sans nageoire entre un demi et deux mètres et demi par seconde, comme un humain.
+Pour mémoire, ces pénalités collent au réel pour une créature de taille et d'Agilité moyennes : sans pattes, ramper ramène la course entre 1 et 6 km/h, comme un serpent ; sans nageoire, nager la ramène entre 0.5 et 2.5 m/s, comme un humain.
 
 </div>
 
@@ -181,6 +192,7 @@ Les sens externes mesurent le monde autour. Chaque colonne est l'un des dix-sept
 <tr><td>Radiaire à tentacules</td><td class="l">L</td><td class="i"></td><td class="p">P</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="s">S</td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td></tr>
 <tr><td>Radiaire à cinq bras</td><td class="s">S</td><td class="i"></td><td class="p">P</td><td class="s">S</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="l">L</td><td class="i"></td><td class="l">L</td><td class="l">L</td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td></tr>
 <tr><td>Informe</td><td class="i"></td><td class="i"></td><td class="p">P</td><td class="t">T</td><td class="t">T</td><td class="s">S</td><td class="l">L</td><td class="l">L</td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td></tr>
+<tr><td>Objet conscient</td><td class="t">T</td><td class="s">S</td><td class="p">P</td><td class="i"></td><td class="i"></td><td class="i"></td><td class="l">L</td><td class="s">S</td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td><td class="i"></td></tr>
 </tbody>
 </table>
 </div>
@@ -215,6 +227,7 @@ Les sens internes mesurent l'état du corps même, avec la même notation (P, S,
 <tr><td>Radiaire à tentacules</td><td class="p">P</td><td class="l">L</td><td class="s">S</td><td class="t">T</td><td class="l">L</td><td class="i"></td></tr>
 <tr><td>Radiaire à cinq bras</td><td class="s">S</td><td class="p">P</td><td class="s">S</td><td class="t">T</td><td class="l">L</td><td class="i"></td></tr>
 <tr><td>Informe</td><td class="i"></td><td class="i"></td><td class="i"></td><td class="p">P</td><td class="l">L</td><td class="i"></td></tr>
+<tr><td>Objet conscient</td><td class="s">S</td><td class="p">P</td><td class="i"></td><td class="t">T</td><td class="l">L</td><td class="i"></td></tr>
 </tbody>
 </table>
 </div>

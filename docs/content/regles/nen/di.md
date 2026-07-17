@@ -4,7 +4,7 @@
 
 <div class="keep" markdown>
 
-Le développement intérieur, ou DI, est la monnaie de la progression dans le Nen. Là où les [points de formation](../personnage/points-formation.md) développent le corps et les compétences, le DI développe le Nen. On en gagne par l'entraînement et les épreuves, puis on l'investit à son gré.
+Le développement intérieur, ou DI, est la ressource qui paie la progression dans le Nen. Là où les [points de formation](../personnage/points-formation.md) développent le corps et les compétences, le DI développe le Nen. Un personnage en gagne par l'entraînement et les épreuves, puis le dépense librement.
 
 </div>
 
@@ -43,7 +43,7 @@ Et ainsi de suite, 100 points par palier, sans plafond. La vitesse de gain du DI
 
 ### Conversion par catégorie
 
-Le DI ne se dépense pas tel quel : on le convertit d'abord dans la catégorie de Nen à développer. Chacune des six a son propre développement, ouvert à partir du [Hatsu](techniques-nen.md) seulement ; avant lui, le DI n'alimente aucune catégorie.
+Pour développer une catégorie, le DI ne se dépense pas tel quel : on le convertit d'abord dans la catégorie de Nen à développer. Chacune des six a son propre développement, ouvert à partir du [Hatsu](techniques-nen.md) seulement ; avant lui, le DI n'alimente aucune catégorie.
 
 | Catégorie | Sigle |
 |:---|:---:|
@@ -60,7 +60,7 @@ Le DI ne se dépense pas tel quel : on le convertit d'abord dans la catégorie d
 
 Le taux de conversion est l'[affinité](archetypes-nen.md) du personnage dans la catégorie visée. Avec 80 % d'affinité en émission, 10 DI donnent 8 DE ; on arrondit à l'inférieur.
 
-Le rendement varie donc beaucoup : une catégorie proche de sa nature rend presque chaque point, une catégorie éloignée n'en restitue qu'une fraction. On se développe surtout dans les catégories accordées à la sienne, puis on dépense les points obtenus (DR, DE, etc.) pour concevoir les capacités de cette catégorie.
+Le rendement suit l'affinité : une catégorie de forte affinité restitue presque chaque point, une catégorie de faible affinité n'en restitue qu'une fraction. Un personnage se développe donc surtout dans les catégories de forte affinité, puis dépense les points obtenus (DR, DE, etc.) pour concevoir les capacités de cette catégorie.
 
 </div>
 
@@ -70,9 +70,9 @@ Le rendement varie donc beaucoup : une catégorie proche de sa nature rend presq
 
 ### Vitesse d'apprentissage
 
-L'[Éclat](../personnage/eclat.md) commande l'allure à laquelle on gagne du développement intérieur : à effort égal, le plus doué progresse plus vite et avance encore longtemps après que l'autre a touché son plafond. Sans Éclat, un personnage n'en tire qu'une compétence modeste, payée d'une vie entière.
+L'[Éclat](../personnage/eclat.md) fixe la vitesse à laquelle un personnage gagne du développement intérieur : plus l'Éclat est élevé, plus la cadence est rapide et plus le plafond est haut.
 
-On lit la cadence ainsi : à la ligne de son Éclat et dans la colonne de son palier actuel, un personnage qui s'entraîne gagne dix DI par période indiquée. Le départ est rapide, puis la cadence ralentit régulièrement jusqu'à un sommet qui ne se conquiert qu'après des décennies ; le tiret marque la fin du chemin.
+On lit la cadence ainsi : à la ligne de son Éclat et dans la colonne de son prestige actuel, un personnage qui s'entraîne gagne 10 DI par période indiquée. La cadence ralentit à mesure que le palier monte. Le tiret marque le plafond : à cette colonne, le personnage ne gagne plus de DI.
 
 <!-- AUTO:di-cadence -->
 <div class="eclat-grid">
@@ -98,11 +98,11 @@ On lit la cadence ainsi : à la ligne de son Éclat et dans la colonne de son pa
 </div>
 <!-- /AUTO:di-cadence -->
 
-Au-delà du palier 16-18, la cadence continue de la même façon, perdant un cran tous les trois niveaux.
+Au-delà du prestige 18, la cadence continue de la même façon et perd un cran tous les 3 niveaux.
 
 #### Au fil du temps
 
-Le tableau précédent donne la cadence ; celui-ci en montre le fruit, pour qui s'entraîne chaque jour sans relâche : le prestige atteint selon l'Éclat et le temps d'entraînement, compté depuis le début (vers vingt ans pour le Nen).
+Le tableau précédent donne la cadence ; celui-ci donne le résultat pour un personnage qui s'entraîne chaque jour : le prestige atteint selon l'Éclat et le temps d'entraînement, compté depuis le début (vers 20 ans pour le Nen).
 
 <!-- AUTO:di-temps -->
 <div class="eclat-grid">

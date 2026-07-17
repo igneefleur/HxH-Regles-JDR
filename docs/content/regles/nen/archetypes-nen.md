@@ -4,7 +4,7 @@
 
 <div class="keep" markdown>
 
-À la création, ou lorsqu'il apprend le Nen en cours de jeu, le personnage choisit un archétype parmi douze. L'archétype fixe ses aptitudes de départ dans les six catégories de Hatsu, c'est-à-dire où son aura est la plus à l'aise.
+À la création, ou lorsqu'il apprend le Nen en cours de jeu, le personnage choisit un archétype parmi douze. L'archétype fixe ses affinités de départ dans les six catégories de Hatsu.
 
 </div>
 
@@ -12,13 +12,13 @@
 
 <div class="keep" markdown>
 
-Chaque personnage a une affinité, en pourcentage, pour chacune des six catégories de Hatsu. Elles se disposent en hexagone (renforcement, émission, manipulation, spécialisation, conjuration, transmutation, puis retour au renforcement) : plus deux catégories y sont proches, plus leurs affinités se ressemblent. Sa catégorie vaut 100 %, les voisines 80 %, le cran suivant 60 %, l'opposée 40 %.
+Chaque personnage a une affinité, en pourcentage, pour chacune des six catégories de Hatsu. Elles se disposent en hexagone (renforcement, émission, manipulation, spécialisation, conjuration, transmutation, puis retour au renforcement) : plus deux catégories y sont proches, plus leurs affinités se ressemblent. Chez un archétype simple, sa catégorie vaut 100 %, les voisines 80 %, le cran suivant 60 %, l'opposée 40 %.
 
 </div>
 
 <div class="keep" markdown>
 
-Cette affinité se lit sur deux plans :
+Cette affinité joue deux rôles :
 
 | Affinité | Sigle | Ce qu'elle gouverne |
 |---|---|---|
@@ -29,7 +29,7 @@ Cette affinité se lit sur deux plans :
 
 <div class="keep" markdown>
 
-Le pourcentage fixe les deux à la fois : une affinité élevée s'acquiert vite et frappe fort, une affinité faible reste lente à développer et faible en puissance.
+Le pourcentage fixe les deux à la fois : une affinité élevée s'apprend vite et donne un Nen puissant, une affinité faible s'apprend lentement et donne un Nen faible.
 
 </div>
 
@@ -37,19 +37,19 @@ Le pourcentage fixe les deux à la fois : une affinité élevée s'acquiert vite
 
 <div class="keep" markdown>
 
-Six archétypes sont simples : ils concentrent le potentiel sur une seule catégorie, portée au maximum. Six autres sont hybrides : ils le répartissent sur deux catégories voisines, un peu en deçà du sommet.
+Six archétypes sont simples : ils concentrent le potentiel sur une seule catégorie, portée à 100 %. Six autres sont hybrides : ils le répartissent sur deux catégories voisines, à 90 % chacune.
 
 </div>
 
 <div class="keep" markdown>
 
-Le choix oppose la puissance à l'ampleur : le simple frappe le plus fort là où il excelle, l'hybride renonce à ce sommet pour deux registres voisins presque égaux, plus souples face à des situations variées.
+Le choix se fait entre puissance et polyvalence : l'archétype simple est le plus puissant dans sa catégorie ; l'archétype hybride renonce à ce maximum pour deux catégories voisines presque à égalité, plus adaptées aux situations variées.
 
 </div>
 
 <div class="keep" markdown>
 
-Les deux hybrides qui touchent à la spécialisation (manipulateur-spécialiste et conjurateur-spécialiste) restent exceptionnels : la spécialisation ne s'ouvre presque jamais par le seul entraînement, et on les réserve aux personnages au potentiel singulier.
+Les deux hybrides de la spécialisation (manipulateur-spécialiste et conjurateur-spécialiste) restent exceptionnels : la spécialisation ne s'obtient presque jamais par le seul entraînement, et ces archétypes sont réservés aux porteurs de l'avantage [Spécialiste](../personnage/avantages.md).
 
 </div>
 
@@ -57,13 +57,13 @@ Les deux hybrides qui touchent à la spécialisation (manipulateur-spécialiste 
 
 <div class="keep" markdown>
 
-Un personnage choisit librement son archétype, sauf la spécialisation et ses deux hybrides (manipulateur-spécialiste et conjurateur-spécialiste), réservés aux porteurs de l'avantage [Spécialiste](../personnage/avantages.md) : à peine 0,033 % des utilisateurs de Nen y accèdent.
+Un personnage choisit librement son archétype, sauf la spécialisation et ses deux hybrides (manipulateur-spécialiste et conjurateur-spécialiste), réservés aux porteurs de l'avantage [Spécialiste](../personnage/avantages.md) : à peine 0.033 % des utilisateurs de Nen y accèdent.
 
 </div>
 
 <div class="keep" markdown>
 
-À défaut de choisir, il s'en remet au hasard avec un d100. La spécialisation et ses deux hybrides n'y figurent pas.
+À défaut de choisir, le personnage tire son archétype avec un d100 dans la table ci-dessous. La spécialisation et ses deux hybrides n'y figurent pas.
 
 </div>
 
@@ -99,7 +99,7 @@ Un archétype simple porte sa catégorie à 100 %, et les autres décroissent se
 
 ### Renforceur
 
-Le Renforceur est le combattant de Nen le plus direct : il amplifie de son aura les capacités d'un corps ou d'un objet (force, vitesse, dureté, endurance, guérison). C'est la catégorie la plus équilibrée, aussi solide en défense qu'en attaque, taillée pour le corps à corps. Ses pouvoirs sont peu spectaculaires, mais nul ne l'égale en puissance brute au contact.
+Le Renforceur amplifie de son aura les capacités d'un corps ou d'un objet (force, vitesse, dureté, endurance, guérison). C'est la catégorie la plus équilibrée, aussi solide en défense qu'en attaque, et la mieux adaptée au corps à corps. Ses pouvoirs sont peu spectaculaires, mais aucune autre catégorie ne l'égale en puissance brute au contact.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -134,7 +134,7 @@ Le Renforceur est le combattant de Nen le plus direct : il amplifie de son aura 
 
 ### Émitteur
 
-L'Émitteur déploie son aura loin de son corps. Là où l'aura ordinaire se disperse dès qu'elle s'éloigne, la sienne reste stable et intacte à grande distance. Il frappe là où nul n'atteint, mais son aura déportée l'expose au corps à corps, qu'il préfère éviter.
+L'Émitteur déploie son aura loin de son corps. L'aura ordinaire se disperse dès qu'elle s'éloigne ; la sienne reste stable et intacte à grande distance. Il frappe à des distances qu'aucune autre catégorie n'atteint, mais son aura déportée l'expose au corps à corps, qu'il préfère éviter.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -153,7 +153,7 @@ L'Émitteur déploie son aura loin de son corps. Là où l'aura ordinaire se dis
 
 ### Transmuteur
 
-Le Transmuteur change les propriétés de son aura pour lui faire imiter une substance : tranchante, élastique, collante, électrique ou brûlante. Elle en prend les propriétés, jamais la matière réelle : une aura électrique garde les qualités d'aura et n'agit pas tout à fait comme une vraie décharge. Au contact, chaque coup porte l'effet qu'il a façonné.
+Le Transmuteur change les propriétés de son aura pour lui faire imiter une substance : tranchante, élastique, collante, électrique ou brûlante. Elle en prend les propriétés, jamais la matière réelle : une aura électrique garde les qualités d'aura et n'agit pas tout à fait comme une vraie décharge. Au contact, ses coups portent l'effet qu'il a donné à son aura.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -188,7 +188,7 @@ Le Transmuteur change les propriétés de son aura pour lui faire imiter une sub
 
 ### Manipulateur
 
-Le Manipulateur tourne son aura vers le contrôle des êtres et des objets. Son pouvoir s'assortit presque toujours de conditions fixées d'avance (marionnettes, ordres imposés, emprise scellée par un contact ou un rituel) : plus elles sont contraignantes, plus son emprise est forte. Il combat rarement de front : il prépare le terrain et retourne ses cibles pour qu'elles se battent à sa place.
+Le Manipulateur emploie son aura à contrôler des êtres et des objets. Son pouvoir s'assortit presque toujours de conditions fixées d'avance (marionnettes, ordres imposés, emprise établie par un contact ou un rituel) : plus elles sont contraignantes, plus son emprise est forte. Il combat rarement de front : il prend ses cibles sous son emprise pour qu'elles se battent à sa place.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -207,7 +207,7 @@ Le Manipulateur tourne son aura vers le contrôle des êtres et des objets. Son 
 
 ### Conjurateur
 
-Le Conjurateur donne à son aura une existence matérielle : des objets bien réels et indépendants, que l'on touche et qu'un tiers perçoit. Une fois l'objet maîtrisé, il l'invoque et le congédie à volonté, et lui attache des propriétés qu'aucune autre catégorie ne produirait. C'est là que le Nen est le plus inventif : un objet conjuré fait presque n'importe quoi, pour peu que son créateur en ait fixé les règles.
+Le Conjurateur donne à son aura une existence matérielle : il crée des objets réels et indépendants, que n'importe qui peut voir et toucher. Une fois l'objet maîtrisé, il l'invoque et le congédie à volonté, et lui attache des propriétés qu'aucune autre catégorie ne produirait. C'est la catégorie la plus inventive du Nen : un objet conjuré peut faire presque n'importe quoi, à condition que son créateur en ait fixé les règles.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -242,7 +242,7 @@ Le Conjurateur donne à son aura une existence matérielle : des objets bien ré
 
 ### Spécialiste
 
-Le Spécialiste échappe à toute classification : sa catégorie réunit les pouvoirs qui n'entrent dans aucune des cinq autres. Ses effets sont uniques, propres à chacun, sans règle commune. On naît spécialiste plus qu'on ne le devient : c'est de loin l'archétype le plus rare et le plus imprévisible.
+La spécialisation réunit les pouvoirs qui n'entrent dans aucune des cinq autres catégories. Ses effets sont uniques, propres à chaque Spécialiste, sans règle commune. Elle vient de naissance bien plus que de l'entraînement : c'est de loin l'archétype le plus rare et le plus imprévisible.
 
 Cet archétype, comme ses deux hybrides, ne peut être choisi sans l'avantage [Spécialiste](../personnage/avantages.md) : sans lui, l'affinité de spécialisation reste à 0 %.
 
@@ -262,7 +262,7 @@ Cet archétype, comme ses deux hybrides, ne peut être choisi sans l'avantage [S
 ## Archétypes hybrides
 
 <div class="span" markdown>
-Un archétype hybride répartit son potentiel entre deux catégories voisines, à 90 % chacune. Aucune n'atteint le sommet d'un archétype simple, mais deux familles de Hatsu s'ouvrent presque également : 90 % pour les deux pôles, 70 % pour leurs voisines, 50 % pour les deux dernières.
+Un archétype hybride répartit son potentiel entre deux catégories voisines : 90 % pour les deux pôles, 70 % pour leurs voisines, 50 % pour les deux dernières. Aucune des deux n'atteint les 100 % d'un archétype simple, mais l'hybride dispose de deux catégories presque au maximum.
 </div>
 
 ---
@@ -271,7 +271,7 @@ Un archétype hybride répartit son potentiel entre deux catégories voisines, �
 
 ### Renforceur-Émitteur
 
-Le Renforceur-Émitteur tient du combattant comme du tireur. Il décuple son corps comme un renforceur, puis détache cette puissance pour frapper au loin comme un émitteur. De près comme de loin, ses coups gardent la force du renforcement : un archétype très polyvalent.
+Le Renforceur-Émitteur amplifie son corps comme un renforceur, puis détache cette puissance pour frapper à distance comme un émitteur. De près comme de loin, ses coups gardent la force du renforcement : c'est un archétype très polyvalent.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -306,7 +306,7 @@ Le Renforceur-Émitteur tient du combattant comme du tireur. Il décuple son cor
 
 ### Renforceur-Transmuteur
 
-Le Renforceur-Transmuteur amplifie son corps comme un renforceur, puis prête à son aura les propriétés qu'il imagine comme un transmuteur. Il combat au contact, de coups chargés de tranchant, d'électricité ou de tout autre effet façonné dans son aura.
+Le Renforceur-Transmuteur amplifie son corps comme un renforceur, puis change les propriétés de son aura comme un transmuteur. Il combat au contact : ses coups portent le tranchant, l'électricité ou tout autre effet donné à son aura.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -325,7 +325,7 @@ Le Renforceur-Transmuteur amplifie son corps comme un renforceur, puis prête à
 
 ### Émitteur-Manipulateur
 
-L'Émitteur-Manipulateur projette son aura au loin sans en perdre la main. Il marie la portée de l'émission à l'emprise de la manipulation : ses tirs suivent les conditions qu'il leur a fixées, frappent à distance et reviennent là où on ne les attend pas.
+L'Émitteur-Manipulateur projette son aura au loin sans en perdre le contrôle. Il combine la portée de l'émission et l'emprise de la manipulation : ses tirs frappent à distance et suivent les conditions qu'il leur a fixées.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -360,7 +360,7 @@ L'Émitteur-Manipulateur projette son aura au loin sans en perdre la main. Il ma
 
 ### Transmuteur-Conjurateur
 
-Le Transmuteur-Conjurateur prête à son aura les propriétés qu'il imagine comme un transmuteur, puis lui donne une existence matérielle comme un conjurateur. Il fait surgir des objets bien réels, taillés sur mesure, porteurs des qualités de son choix : tranchant, élasticité, charge électrique.
+Le Transmuteur-Conjurateur change les propriétés de son aura comme un transmuteur, puis lui donne une existence matérielle comme un conjurateur. Il crée des objets réels, dotés des propriétés de son choix : tranchant, élasticité, charge électrique.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -379,7 +379,7 @@ Le Transmuteur-Conjurateur prête à son aura les propriétés qu'il imagine com
 
 ### Manipulateur-Spécialiste
 
-Le Manipulateur-Spécialiste joint le contrôle de la manipulation aux effets singuliers de la spécialisation. Il soumet êtres et objets à sa volonté, et son emprise s'affranchit des règles communes par un trait qui n'appartient qu'à lui. C'est l'un des deux hybrides réservés aux spécialistes.
+Le Manipulateur-Spécialiste combine le contrôle de la manipulation et les effets uniques de la spécialisation. Il contrôle des êtres et des objets, et son emprise possède un trait unique, hors des règles communes. C'est l'un des deux hybrides réservés aux spécialistes.
 
 | Catégorie | Base d'Affinité |
 |---|---|
@@ -414,7 +414,7 @@ Le Manipulateur-Spécialiste joint le contrôle de la manipulation aux effets si
 
 ### Conjurateur-Spécialiste
 
-Le Conjurateur-Spécialiste crée des objets bien réels comme un conjurateur, mais les dote de propriétés ou de fonctions qu'aucune autre catégorie ne saurait produire, à la manière d'un spécialiste. C'est le second hybride réservé aux spécialistes.
+Le Conjurateur-Spécialiste crée des objets réels comme un conjurateur, mais les dote de propriétés ou de fonctions qu'aucune autre catégorie ne produit, comme un spécialiste. C'est le second hybride réservé aux spécialistes.
 
 | Catégorie | Base d'Affinité |
 |---|---|

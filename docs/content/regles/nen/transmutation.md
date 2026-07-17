@@ -2,15 +2,15 @@
 
 <div class="cols" markdown>
 
-La transmutation prête à l'aura une propriété de matière : elle lui donne la texture, le comportement ou l'effet d'une substance, sans rien créer de tangible. L'aura reste de l'aura, mais elle colle, coupe, brûle, électrise ou rebondit comme la chose qu'elle imite.
+La transmutation donne à l'aura la texture, le comportement ou l'effet d'une substance, sans rien créer de tangible. L'aura reste de l'aura, mais elle prend les propriétés de la substance imitée : elle colle, coupe, brûle, électrise ou rebondit.
 
-C'est la plus inventive des six catégories, celle dont les effets tiennent autant à l'imagination qu'à la puissance brute. Un transmuteur accompli fait de son aura un outil aux mille usages, façonné sur mesure pour chaque situation.
+C'est la plus inventive des six catégories : ses effets dépendent autant de l'imagination du transmuteur que de sa puissance.
 
 ### La Transmutation d'objet
 
-La transmutation d'objet ne se contente pas de prêter une texture à l'aura : elle lui donne la forme entière d'une chose, taillée sur mesure. C'est un socle en soi, avec ses modules obligatoires, et comme toute transmutation, l'objet se tient à maintien, tant que son porteur le soutient. Là où la [conjuration d'objet](conjuration.md) fait exister une chose réelle et détachée que chacun peut prendre, l'objet transmuté demeure de l'aura : le prolongement façonné de son porteur, qui le manie lui-même.
+La transmutation d'objet donne à l'aura la forme entière d'une chose. C'est un socle en soi, avec ses modules obligatoires ; comme toute transmutation, l'objet se tient à maintien tant que son porteur le soutient. L'objet transmuté reste de l'aura, que son porteur manie lui-même ; la [conjuration d'objet](conjuration.md) crée au contraire une chose réelle et détachée, que chacun peut prendre.
 
-On le bâtit en retenant d'abord sa nature, ce qu'il est et l'usage auquel il se prête. Un objet fait pour blesser suit les [règles de création d'armes](../combat/armes.md), à une réserve près : là où une arme du monde tient dans un budget de cent points, l'arme transmutée s'étend de vingt à quatre cents, et elle ignore l'illégalité, car nulle loi ne restreint une arme née de l'aura. En deçà, un ustensile sommaire ; au sommet, une arme sans équivalent qu'aucun forgeron ne saurait produire.
+On choisit d'abord sa nature : ce qu'est l'objet et l'usage auquel il se prête. Un objet fait pour blesser suit les [règles de création d'armes](../combat/armes.md), avec deux différences : son budget va de 20 à 400 points, au lieu des 100 points d'une arme ordinaire, et il ignore l'illégalité.
 
 <div class="cj-modules anima" markdown>
 
@@ -22,7 +22,7 @@ On le bâtit en retenant d'abord sa nature, ce qu'il est et l'usage auquel il se
 
 L'objet transmuté est un socle à part entière : l'aura du porteur façonnée en la forme entière d'une chose, qu'il manie lui-même et tient à maintien. On le définit par sa nature ; si c'est une arme, on lui fixe en plus un budget, dépensé selon les règles de création d'armes.
 
-La nature fixe ce que l'aura devient et l'usage auquel elle se prête. Une forme simple, accessoire ou outil, se façonne pour presque rien ; une armure, qui accorde une réduction de dégâts, coûte davantage. L'arme, elle, tire son prix du budget retenu plus bas.
+La nature fixe ce que l'aura devient et l'usage auquel elle se prête ; on la choisit dans la table ci-dessous. Une arme ne coûte rien par sa nature : son prix vient du budget, choisi plus bas.
 
 <table>
 <thead><tr><th>Nature</th><th>DT</th><th>INS</th><th>UAA</th><th>MA</th><th>AEG</th></tr></thead>
@@ -42,11 +42,11 @@ La nature fixe ce que l'aura devient et l'usage auquel elle se prête. Une forme
 
 **Armure :** l'aura prend la forme d'une protection portée, qui accorde la réduction de dégâts de l'armure imitée.
 
-**Arme :** l'aura prend la forme entière d'une arme, bâtie selon les [règles de création d'armes](../combat/armes.md) dans le budget retenu ci-dessous ; son prix tient tout entier dans ce budget.
+**Arme :** l'aura prend la forme entière d'une arme, bâtie selon les [règles de création d'armes](../combat/armes.md) dans le budget choisi ci-dessous ; son prix vient entièrement de ce budget.
 
 </div>
 
-Le budget est le total de points que l'arme a le droit de dépenser pour ses dégâts, ses portées et ses propriétés, de vingt à quatre cents. Cent valent une arme ordinaire ; chaque cran au-dessus la porte au-delà de ce qu'un artisan pourrait forger, et l'alourdit d'autant, en conception comme en aura. Un objet qui n'est pas une arme n'en retient aucun.
+Le budget est le total de points que l'arme peut dépenser pour ses dégâts, ses portées et ses propriétés, de 20 à 400. Un budget de 100 points vaut une arme ordinaire ; au-delà, l'arme dépasse ce qu'un artisan peut forger. Un objet qui n'est pas une arme n'a aucun budget.
 
 <table>
 <thead><tr><th>Budget</th><th>DT</th><th>INS</th><th>UAA</th><th>MA</th><th>AEG</th></tr></thead>
@@ -77,9 +77,9 @@ Le budget est le total de points que l'arme a le droit de dépenser pour ses dé
 
 <div class="defs" markdown>
 
-**Objet sans arme :** l'objet n'est pas fait pour blesser ; il ne retient aucun budget, et sa nature seule en fixe le prix.
+**Objet sans arme :** l'objet n'est pas fait pour blesser ; il n'a aucun budget et sa nature seule fixe son prix.
 
-**Budget de l'arme :** le nombre de points à répartir selon les [règles de création d'armes](../combat/armes.md), l'illégalité mise à part. Les plafonds habituels tiennent toujours, à commencer par les deux cents dégâts affichés : au-delà de cent points, le surplus se dépense en portée, en perforation et en propriétés, non en dégâts bruts sans fin. Un même budget peut ainsi donner une arme féroce et sobre, ou une arme mesurée hérissée de traits.
+**Budget de l'arme :** le nombre de points à répartir selon les [règles de création d'armes](../combat/armes.md), l'illégalité mise à part. Les plafonds habituels s'appliquent toujours, dont le maximum de 200 dégâts affichés : au-delà de 100 points, le surplus se dépense en portée, en perforation et en propriétés.
 
 </div>
 
@@ -89,7 +89,7 @@ Le budget est le total de points que l'arme a le droit de dépenser pour ses dé
 
 ### Transmuter son propre corps
 
-Le transmuteur ne façonne pas que des choses extérieures : il tourne le même art vers lui-même et remodèle son propre corps, pièce par pièce. Ces modules se greffent sur un effet, prennent soi-même pour cible et se tiennent à maintien, le porteur reprenant sa forme dès qu'il les relâche. Armer son aura d'une lame, d'un fouet ou d'un arc électrique n'en fait pas partie : cela se fait à la [transmutation d'objet](#la-transmutation-dobjet), en lui donnant la nature d'une arme.
+Le transmuteur peut aussi remodeler son propre corps, pièce par pièce. Ces modules se greffent sur un effet, prennent soi-même pour cible et se tiennent à maintien : le porteur reprend sa forme dès qu'il les relâche. Armer son aura d'une lame, d'un fouet ou d'un arc électrique n'en fait pas partie : cela se fait à la [transmutation d'objet](#la-transmutation-dobjet), en lui donnant la nature d'une arme.
 
 <div class="cj-modules anima" markdown>
 
@@ -100,9 +100,13 @@ Le transmuteur ne façonne pas que des choses extérieures : il tourne le même 
 <p class="mod-type">Catégorie : transmutation<br>
 Types : effet</p>
 
-La métamorphose remodèle le corps du porteur sur le plan d'un autre être, comme la [conjuration de créature](conjuration.md) fixe la forme d'une créature. Elle ne livre que la silhouette et la façon de se mouvoir ; ce que ce corps suppose de plus, un membre en trop, une autre taille, des sens neufs ou une allure particulière, se pose par les autres modules de ce groupe.
+La métamorphose remodèle le corps du porteur sur le plan d'un autre être, comme la [conjuration de créature](conjuration.md) fixe la forme d'une créature. Elle ne donne que la silhouette et la façon de se mouvoir ; le reste, un membre de plus, une autre taille, des sens neufs ou une allure particulière, se pose par les autres modules de ce groupe.
 
-La forme est l'inventaire de membres que le porteur adopte : combien de têtes, et quels membres pris dans la palette du corps, la patte ou la jambe, l'aile, la nageoire, le bras, le tentacule, la pince, la trompe, la queue. Il garde ses caractéristiques et ses points de vie ; seules sa silhouette et sa base de locomotion changent. Vingt-deux plans couvrent l'essentiel du vivant animal, des vertébrés aux arthropodes jusqu'aux corps sans tête ; plus un plan s'écarte de l'humain, plus il est ardu à imaginer et lourd à tenir. Ce que la forme n'inclut pas se pose ailleurs : un membre de plus par un autre module du corps, une corne, un dard ou des défenses comme arme, une carapace ou une coquille comme armure.
+La forme est l'inventaire de membres que le porteur adopte : combien de têtes, et quels membres parmi la patte ou la jambe, l'aile, la nageoire, le bras, le tentacule, la pince, la trompe et la queue. La table ci-dessous donne 22 plans, des vertébrés aux arthropodes jusqu'aux corps sans tête.
+
+Le porteur garde ses caractéristiques et ses points de vie ; seules sa silhouette et sa base de locomotion changent.
+
+Ce que la forme n'inclut pas se pose par d'autres modules : un membre de plus par un autre module du corps, une corne, un dard ou des défenses comme arme, une carapace ou une coquille comme armure.
 
 <table>
 <thead><tr><th>Forme</th><th>DT</th><th>INS</th><th>UAA</th><th>MA</th><th>AEG</th></tr></thead>
@@ -134,7 +138,7 @@ La forme est l'inventaire de membres que le porteur adopte : combien de têtes, 
 
 <div class="defs" markdown>
 
-**Bipède à bras :** 1 tête, 2 jambes, 2 bras (humain, grand singe).
+**Bipède à bras :** 1 tête, 2 pattes, 2 bras (humain, grand singe).
 
 **Bipède à bras et queue :** 1 tête, 2 pattes, 2 bras, 1 queue (kangourou, théropode).
 

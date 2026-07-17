@@ -914,17 +914,44 @@ a.md-header-nav__button[href$="livre-de-regles.pdf"] {
 .gloss-tip {
   position: absolute;
   z-index: 2000;
-  width: 21rem;
-  max-width: 85vw;
+  width: 23rem;
+  max-width: 88vw;
+  max-height: 72vh;
+  overflow: hidden;
   pointer-events: none;
   display: none;
 }
-.gloss-tip .gcard {
+/* La carte du tooltip prend la forme de son bloc d'origine : vraie mcard d'une manœuvre,
+   sblock d'un état, ou gcard (titre + paragraphes) pour une compétence / règle. */
+.gloss-tip .gcard,
+.gloss-tip .mcard,
+.gloss-tip .sblock {
   margin: 0;
+  max-height: 72vh;
+  overflow: hidden;
   box-shadow: 0 4px 14px rgba(40, 30, 10, 0.22);
 }
 .md-typeset .gloss-source td.gloss-trigger { cursor: help; }
 .md-typeset .gloss-source td.gloss-trigger:hover { background: #f3edda; }
+
+/* Glossaire général : liens inline discrets. La couleur du corps est gardée ; seul un
+   soulignement pointillé signale le terme, pour ne pas noyer la page de bleu. */
+.md-typeset a.gloss-link,
+.md-typeset a.gloss-link:visited {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--green-header);
+  cursor: help;
+}
+.md-typeset a.gloss-link:hover {
+  color: var(--green-section);
+  border-bottom-color: var(--green-section);
+}
+/* Ancre invisible : la navigation vers un terme s'arrête un peu au-dessus du bloc. */
+.gloss-anchor {
+  display: inline;
+  scroll-margin-top: 4rem;
+}
 .md-typeset .defs li {
   font-size: 0.66rem;
   margin: 0.08rem 0;

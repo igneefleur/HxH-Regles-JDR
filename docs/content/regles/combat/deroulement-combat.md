@@ -30,7 +30,6 @@ Chaque combattant prend un tour, une seule fois. Quand tous ont agi, le round s'
 
 </div>
 
-
 <div class="keep" markdown>
 
 ### Tour
@@ -45,9 +44,7 @@ Le tour est le moment du round qui appartient à un personnage : c'est là, et n
 
 Pendant son tour, un personnage dispose d'un nombre d'actions qui lui est propre, en général de 1 à 10. Il les dépense dans l'ordre voulu, et chaque action accomplit une chose : porter une attaque, franchir une distance, utiliser une compétence, manipuler un objet. Il ne peut pas accomplir deux fois le même type d'action dans un tour, sauf mention contraire. Les actions non utilisées ne se reportent pas.
 
-
 </div>
-
 
 <div class="keep" markdown>
 
@@ -62,7 +59,6 @@ Un personnage peut se déplacer en utilisant son [mouvement passif](../personnag
 ### Réaction
 
 En plus de ses actions, un personnage dispose de réactions. Une réaction se joue à tout moment, même pendant le tour d'un autre, sans consommer d'action ; leur nombre est illimité. En contrepartie, elle n'est possible que lorsque survient son déclencheur, l'événement précis qui l'autorise. Sans déclencheur, pas de réaction.
-
 
 </div>
 </div>

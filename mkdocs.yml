@@ -14,11 +14,13 @@ nav:
   - Accueil: index.md
   - Règles:
       - Le Personnage:
+          - Avantages: content/regles/personnage/avantages.md
           - Éclat: content/regles/personnage/eclat.md
           - Caractéristiques: content/regles/personnage/caracteristiques.md
           - Capacités physiques: content/regles/personnage/capacites-physiques.md
           - Points de formation: content/regles/personnage/points-formation.md
           - Compétences: content/regles/personnage/competences.md
+          - Classes: content/regles/personnage/classe.md
           - Les Sens: content/regles/personnage/sens.md
           - États: content/regles/personnage/etats.md
           - Influence: content/regles/personnage/influence.md
@@ -86,11 +88,11 @@ extra:
   generator: false   # supprime le « Made with Material for MkDocs »
 extra_css:
   - stylesheets/fonts.css   # @font-face auto-hébergés : doit être chargée en premier
-  - stylesheets/extra.css?v=11
+  - stylesheets/extra.css?v=13
   - stylesheets/atelier.css
   - stylesheets/night.css
   - stylesheets/forge.css
-  - stylesheets/creation.css
+  - stylesheets/creation.css?v=8
 extra_javascript:
   - javascripts/changelog.js
   - javascripts/continuous.js
@@ -104,6 +106,7 @@ extra_javascript:
   - javascripts/copybtn.js
 hooks:
   - hooks/changelog.py
+  - hooks/glossaire.py
   - hooks/nen_atelier.py
   - hooks/forge.py
   - hooks/creation.py

@@ -1316,7 +1316,7 @@ Concevoir, réparer et démonter machines et mécanismes. Pour remettre un moteu
 
 <p class="groupes">Caractéristique : Logique<br>Groupes : Physique, Mental</p>
 
-Concevoir et réparer circuits et appareils. Pour réparer un émetteur endommagé ou bricoler un détonateur de fortune.
+Concevoir et réparer circuits et appareils. Pour réparer un émitteur endommagé ou bricoler un détonateur de fortune.
 
 </div>
 

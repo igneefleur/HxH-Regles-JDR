@@ -1,16 +1,16 @@
-# Aura
+﻿# Aura
 
 <div class="cols" markdown>
 
 <div class="keep" markdown>
 
-L'aura est la matière même du Nen : l'énergie vitale qu'un détenteur fait sourdre de son corps et façonne à volonté. Toute capacité y puise. On la chiffre en unités d'Aura (UA).
+L'aura est l'énergie vitale que le personnage fait sortir de son corps et façonne à volonté. Toute capacité de Nen consomme de l'aura. Elle se mesure en unités d'Aura (UA).
 
 </div>
 
 <div class="keep" markdown>
 
-Quatre mesures décrivent l'aura d'un personnage : ce que son corps peut contenir (UAM), ce qu'il lui en reste à l'instant (UAD), ce qu'il peut en déployer en un round (UAR) et ce qu'il en récupère par heure (RUA).
+Quatre mesures décrivent l'aura d'un personnage : ce que son corps peut contenir (UAM), ce qu'il lui en reste à l'instant (UAD), ce qu'il peut en déployer en un round (UAR) et ce qu'il en récupère par minute (RUA).
 
 </div>
 
@@ -18,7 +18,7 @@ Quatre mesures décrivent l'aura d'un personnage : ce que son corps peut conteni
 
 ### Aura maximale (UAM)
 
-L'UAM est le plafond de la réserve : tout ce qu'un corps peut renfermer. Un personnage a une UAM de 1000 par [prestige](../personnage/eclat.md), et peut l'augmenter en investissant du DI. Par exemple, un utilisateur de nen de prestige 3 dispose ainsi d'une UAM de 3000.
+L'UAM est le maximum d'aura que le corps du personnage peut contenir. Un personnage a une UAM de 1000 par [prestige](../personnage/eclat.md) et peut l'augmenter en investissant du DI. Par exemple, un personnage de prestige 3 dispose d'une UAM de 3000.
 
 </div>
 
@@ -26,7 +26,7 @@ L'UAM est le plafond de la réserve : tout ce qu'un corps peut renfermer. Un per
 
 ### Aura disponible (UAD)
 
-L'UAD est ce qui reste de la réserve à un instant donné : l'aura encore à dépenser.
+L'UAD est l'aura qui reste au personnage à un instant donné : c'est celle qu'il peut encore dépenser.
 
 </div>
 
@@ -34,19 +34,19 @@ L'UAD est ce qui reste de la réserve à un instant donné : l'aura encore à d�
 
 ### Aura par round (UAR)
 
-L'UAR est l'aura que le personnage peut déployer en un seul round : sa puissance réelle à l'instant. Une vaste réserve ne sert à rien sans une bonne UAR, car il ne projette jamais en un round plus d'aura que celle-ci, ni plus que l'UAD qui lui reste.
+L'UAR est l'aura que le personnage peut déployer en un seul round. En un round, le personnage ne déploie jamais plus d'aura que son UAR, ni plus que l'UAD qui lui reste.
 
-L'UAR se calcule à partir d'une base et d'un multiplicateur. Le multiplicateur multiplie la base, ce qui donne le total d'UAR. La base d'UAR d'un personnage est de 5, et elle peut être augmenté par des techniques de nen comme par exemple le Ren.
+L'UAR se calcule à partir d'une base et d'un multiplicateur. La base d'UAR d'un personnage est de 5 ; des [techniques de Nen](techniques-nen.md) comme le Ren l'augmentent.
 
 <p class="formula">UAR = base × (multiplicateur + 1)</p>
 
-Ainsi, un personnage qui possède un Ren Maître (base 25) qui a porté son multiplicateur d'UAR à 6 dispose d'une UAR de 25 × (6 + 1) = 175.
+Par exemple, un personnage au Ren Maître (base 25) qui a porté son multiplicateur d'UAR à 6 dispose d'une UAR de 25 × (6 + 1) = 175.
 
 </div>
 
 <div class="keep" markdown>
 
-Une capacité dont le coût excède l'UAR ne se déclenche pas d'un seul coup : il faut autant de rounds de concentration que son coût contient de fois l'UAR, arrondi au supérieur. Avec une UAR de 175, lancer un Hatsu à 350 UA réclame ainsi deux rounds.
+Une capacité dont le coût excède l'UAR ne se déclenche pas en un seul round : il faut un nombre de rounds de concentration égal au coût divisé par l'UAR, arrondi au supérieur. Avec une UAR de 175, lancer un Hatsu à 350 UA demande ainsi 2 rounds.
 
 </div>
 
@@ -54,7 +54,9 @@ Une capacité dont le coût excède l'UAR ne se déclenche pas d'un seul coup : 
 
 ### Régénération (RUA)
 
-La RUA dit combien d'UA le personnage récupère chaque heure. L'UAD remonte à chaque heure écoulée d'une valeur égale à la RUA totale du personnage, jusqu'à retrouver l'UAM. Elle se calcule comme l'UAR, sur sa propre base et son propre multiplicateur.
+La RUA est le nombre d'UA que le personnage récupère chaque minute. À chaque minute écoulée, l'UAD remonte d'une valeur égale à la RUA totale du personnage, jusqu'à retrouver l'UAM.
+
+La RUA se calcule comme l'UAR, sur sa propre base et son propre multiplicateur. La base de RUA d'un personnage est de 5 ; des [techniques de Nen](techniques-nen.md) comme le Ten l'augmentent.
 
 <p class="formula">RUA = base × (multiplicateur + 1)</p>
 
@@ -64,7 +66,7 @@ La RUA dit combien d'UA le personnage récupère chaque heure. L'UAD remonte à 
 
 ### Développer son aura
 
-Élargir sa réserve, sa puissance ou sa récupération se paie en [DI](di.md), sans passer par l'affinité d'une catégorie : ce sont des progrès communs à tout le Nen.
+Améliorer son UAM, son UAR ou sa RUA coûte du [DI](di.md). Ces améliorations sont communes à tout le Nen et ne passent par l'affinité d'aucune catégorie.
 
 | Amélioration | Effet | Coût |
 |:---|:---|:---:|

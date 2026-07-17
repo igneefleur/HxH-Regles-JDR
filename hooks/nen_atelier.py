@@ -171,7 +171,8 @@ def _build_groups(header, rows):
     """
     column = header[0] if header else "Effet"
     # Une seule colonne d'affinité, dont l'en-tête dit la portée : « AEG » (décalage
-    # global, socles et raccord) ou « AEL » (décalage local, modules). On la lit sur
+    # global : socles, raccords et modules qui changent la nature de la capacité,
+    # ex. Conscience) ou « AEL » (décalage local, modules). On la lit sur
     # l'en-tête et on range la valeur dans le bon champ ; le GUI choisit l'affichage
     # via aeScope.
     ae_hdr = (header[-1] if header else "").strip().upper()
@@ -282,12 +283,16 @@ def _is_scaled(name, desc):
 
 def _clean_desc(seg):
     """Texte lisible d'un segment de prose : retire les blocs de defs, les
-    balises HTML et les marqueurs gras markdown."""
+    balises HTML et les marqueurs gras markdown. Les paragraphes (lignes vides)
+    sont préservés en \\n\\n : le GUI les rend tels quels, la fiche doit rester
+    lisible dans l'atelier comme dans le livre."""
     seg = re.sub(r'<div class="defs".*?</div>', " ", seg, flags=re.S)
     seg = re.sub(r"<[^>]+>", " ", seg)
     seg = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", seg)   # liens markdown -> texte
     seg = re.sub(r"\*\*(.*?)\*\*", r"\1", seg)
-    return html.unescape(re.sub(r"\s+", " ", seg)).strip()
+    seg = html.unescape(seg)
+    paras = [re.sub(r"\s+", " ", p).strip() for p in re.split(r"\n\s*\n", seg)]
+    return "\n\n".join(p for p in paras if p)
 
 
 _DEFSBLOCK = re.compile(r'<div class="defs".*?</div>', re.S)
