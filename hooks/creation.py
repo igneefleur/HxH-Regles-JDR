@@ -25,8 +25,14 @@ Sources et formats parsés (voir chaque fonction pour le détail) :
     avec lignes **Prérequis :** / **Effet :** et, pour les arts martiaux, une
     ligne **Dégâts :** « 100 + ×2 (main et pied) » par palier (l'ancienne ligne
     de calibrage « (À retirer — …) » reste tolérée).
-  - personnage/sens.md : table « La grille des sens » + listes de définitions.
+  - personnage/sens.md : une mcard par niveau (**Primaire** … **Inexistant**),
+    sens en <span class="zchip"> rangés Externes / Internes (div.sens-niveau).
   - monde/tailles.md : catégories de taille + modificateur de PV par taille.
+  - monde/formes.md : tables bio (Forme | Exemples | Respiration | Alimentation |
+    Propriété), membres (Forme | Tête | …), caracs (Forme | FOR … PRÉ) et les
+    deux grilles HTML de sens (cases <td class="p|s|t|l|i">).
+  - personnage/avantages.md : table des points (Éclat | Points d'avantage,
+    palier inférieur) + mcards « **Nom** <span class="prereq">N points</span> ».
   - personnage/capacites-physiques.md : tables 0-30 (Mouvement, Port, Apnée,
     Sommeil/Activité) repérées par leur colonne de tête.
 
@@ -52,6 +58,8 @@ PAGES = {
     "competences": "content/regles/personnage/competences.md",
     "sens": "content/regles/personnage/sens.md",
     "tailles": "content/regles/monde/tailles.md",
+    "formes": "content/regles/monde/formes.md",
+    "avantages": "content/regles/personnage/avantages.md",
     "capacites": "content/regles/personnage/capacites-physiques.md",
     "armes": "content/regles/combat/armes.md",
     "etats": "content/regles/personnage/etats.md",
@@ -376,22 +384,28 @@ def _arts(text, categorie):
 # Sens
 # ---------------------------------------------------------------------------
 def _sens(text):
-    grille = {}   # nom -> (niveau, externe/interne)
-    for t in _pipe_tables(text):
-        head = [_clean(h) for h in t["header"]]
-        if head[0] == "Niveau" and "Externes (le monde)" in head[1]:
-            for r in t["rows"]:
-                niveau = _clean(r[0])
-                for k, typ in ((1, "externe"), (2, "interne")):
-                    for s in re.split(r"<br>", r[k]):
-                        s = html.unescape(_clean(s))
-                        if s and s != "—":
-                            grille[s] = (niveau, typ)
-    defs = {}
-    for dm in re.finditer(r"^- (.+?)\s*:\s*(.+?)\.?\s*$", text, re.M):
-        defs[html.unescape(dm.group(1).strip())] = _clean(dm.group(2))
-    return [{"name": n, "niveau": lv, "type": typ, "desc": defs.get(n, "")}
-            for n, (lv, typ) in grille.items()]
+    """Une mcard par niveau : le niveau est le **gras** de tête, les sens sont
+    les <span class="zchip"> rangés par paragraphe Externes / Internes du
+    <div class="sens-niveau">."""
+    out = []
+    for chunk in re.split(r'(?=<div class="mcard")', text):
+        mn = re.search(r"\*\*(Primaire|Secondaire|Tertiaire|Latent|Inexistant)\*\*", chunk)
+        if not mn:
+            continue
+        niveau = mn.group(1)
+        bloc = re.search(r'<div class="sens-niveau">(.*?)</div>', chunk, re.S)
+        if not bloc:
+            continue
+        for pm in re.finditer(r"<p>(.*?)</p>", bloc.group(1), re.S):
+            para = pm.group(1)
+            zl = re.search(r'<span class="zlbl">(Externes|Internes)</span>', para)
+            typ = "externe" if (zl and zl.group(1) == "Externes") else "interne"
+            for zc in re.finditer(r'<span class="zchip">(.*?)</span>', para):
+                name = html.unescape(_clean(zc.group(1)))
+                if name:
+                    out.append({"name": name, "niveau": niveau, "type": typ,
+                                "desc": ""})
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -414,6 +428,95 @@ def _tailles(text):
 
 
 # ---------------------------------------------------------------------------
+# Avantages (avantages.md)
+# ---------------------------------------------------------------------------
+def _avantages(text):
+    """Table des points d'avantage (Éclat | Points d'avantage, lue au palier
+    inférieur) + une mcard par avantage : **Nom** <span class="prereq">N
+    points</span> puis la règle."""
+    points = []
+    for t in _pipe_tables(text):
+        head = [_clean(h) for h in t["header"]]
+        if head[:2] == ["Éclat", "Points d'avantage"]:
+            for r in t["rows"]:
+                v, p = _int(r[0]), _int(r[1])
+                if v is not None and p is not None:
+                    points.append({"eclat": v, "pts": p})
+    liste = []
+    for m in re.finditer(r'<div class="mcard"[^>]*>(.*?)</div>', text, re.S):
+        inner = m.group(1)
+        nm = re.search(r'\*\*(.+?)\*\*\s*(?:<span class="prereq">(.*?)</span>)?', inner)
+        if not nm:
+            continue
+        cout_txt = _clean(nm.group(2) or "")
+        # « 2 points » -> cout 2 ; « 1 à 3 points » -> cout 1, coutMax 3 (le
+        # joueur règle le coût dépensé dans cette fourchette)
+        nums = [int(n) for n in re.findall(r"\d+", cout_txt)]
+        liste.append({"name": _clean(nm.group(1)),
+                      "cout": nums[0] if nums else 0,
+                      "coutMax": nums[-1] if nums else 0,
+                      "coutTxt": cout_txt,
+                      "desc": _clean(inner[nm.end():])})
+    return {"points": points, "liste": liste}
+
+
+# ---------------------------------------------------------------------------
+# Formes du vivant (formes.md)
+# ---------------------------------------------------------------------------
+def _formes(text):
+    """Quatre sources par forme : la table bio (exemples, respiration,
+    alimentation, propriété spéciale), la table des membres, la table des écarts
+    de caractéristiques, et les deux grilles HTML de sens (externes puis
+    internes) dont chaque case <td class="p|s|t|l|i"> donne le niveau."""
+    formes, order = {}, []
+
+    def get(name):
+        if name not in formes:
+            formes[name] = {"name": name, "exemples": "", "respiration": "",
+                            "alimentation": "", "propriete": "",
+                            "membres": {}, "caracs": {}, "sens": {}}
+            order.append(name)
+        return formes[name]
+
+    for t in _pipe_tables(text):
+        head = [_clean(h) for h in t["header"]]
+        if head[:3] == ["Forme", "Exemples", "Respiration"]:
+            for r in t["rows"]:
+                f = get(_clean(r[0]))
+                f["exemples"] = _clean(r[1]) if len(r) > 1 else ""
+                f["respiration"] = _clean(r[2]) if len(r) > 2 else ""
+                f["alimentation"] = _clean(r[3]) if len(r) > 3 else ""
+                f["propriete"] = _clean(r[4]) if len(r) > 4 else ""
+        elif head[:2] == ["Forme", "Tête"]:
+            for r in t["rows"]:
+                f = get(_clean(r[0]))
+                for i, col in enumerate(head[1:], 1):
+                    v = _clean(r[i]) if i < len(r) else ""
+                    if v:
+                        f["membres"][col] = v
+        elif head[:2] == ["Forme", "FOR"]:
+            for r in t["rows"]:
+                f = get(_clean(r[0]))
+                for i, col in enumerate(head[1:], 1):
+                    v = _int(r[i]) if i < len(r) else None
+                    f["caracs"][col] = v if v is not None else 0
+
+    niv = {"p": "Primaire", "s": "Secondaire", "t": "Tertiaire", "l": "Latent"}
+    for gm in re.finditer(r'<div class="[^"]*sens-grille[^"]*">.*?</table>',
+                          text, re.S):
+        g = gm.group(0)
+        names = [html.unescape(n) for n in
+                 re.findall(r'<span class="vh">(.*?)</span>', g)]
+        for rm in re.finditer(r"<tr><td>(.*?)</td>(.*?)</tr>", g):
+            f = get(html.unescape(_clean(rm.group(1))))
+            cells = re.findall(r'<td class="(\w)"[^>]*>', rm.group(2))
+            for name, cl in zip(names, cells):
+                if cl in niv:
+                    f["sens"][name] = niv[cl]
+    return [formes[n] for n in order]
+
+
+# ---------------------------------------------------------------------------
 # Capacités physiques (tables 0-30)
 # ---------------------------------------------------------------------------
 def _capacites(text):
@@ -425,13 +528,13 @@ def _capacites(text):
         head = [_clean(h) for h in t["header"]]
         if len(head) < 3:
             continue
-        if head[0] == "Agilité":
+        if head[0] == "Mouvement":
             key, carac = "mouvement", "AGI"
-        elif head[0] == "Force":
+        elif head[0] == "Port":
             key, carac = "port", "FOR"
-        elif head[0] == "Endurance" and head[1] == "Sommeil":
+        elif head[0] == "Repos" and head[1] == "Sommeil":
             key, carac = "sommeil", "END"
-        elif head[0] == "Endurance" and head[1] == "Légère":
+        elif head[0] == "Apnée" and head[1] == "Légère":
             key, carac = "apnee", "END"
         else:
             continue
@@ -562,6 +665,8 @@ def _extract(docs_dir):
         "arts": arts,
         "sens": _sens(_read(docs_dir, PAGES["sens"])),
         "tailles": _tailles(_read(docs_dir, PAGES["tailles"])),
+        "formes": _formes(_read(docs_dir, PAGES["formes"])),
+        "avantages": _avantages(_read(docs_dir, PAGES["avantages"])),
         "capacites": _capacites(_read(docs_dir, PAGES["capacites"])),
         "armes": _armes(_read(docs_dir, PAGES["armes"])),
         "etats": _etats(_read(docs_dir, PAGES["etats"])),
@@ -573,7 +678,9 @@ def on_files(files, config, **kwargs):
     print(f"[creation] {len(data['caracs'])} caracs, {len(data['eclat'])} paliers d'Éclat, "
           f"{len(data['competences'])} compétences, {len(data['formations'])} formations, "
           f"{len(data['arts'])} arts, {len(data['sens'])} sens, "
-          f"{len(data['tailles'])} tailles, {len(data['capacites'])} tables de capacités, "
+          f"{len(data['tailles'])} tailles, {len(data['formes'])} formes, "
+          f"{len(data['avantages']['liste'])} avantages, "
+          f"{len(data['capacites'])} tables de capacités, "
           f"{len(data['armes'])} armes, {len(data['etats'])} états")
     content = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     files.append(File.generated(config, "creation.json", content=content))

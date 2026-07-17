@@ -1,13 +1,13 @@
 /* Création — créateur de personnage (sans le Nen), mise en page « fiche ».
  *
  * Contenu (caractéristiques, Éclat, compétences, formations, arts, sens,
- * tailles, tables de capacités, catalogue d'armes) issu de creation.json,
+ * tailles, formes du vivant, tables de capacités, catalogue d'armes) issu de creation.json,
  * produit au build par hooks/creation.py depuis les pages de règles : une seule
  * source de vérité, comme la Forge et l'Atelier.
  *
  * La présentation reprend les codes de la fiche Anima Beyond Fantasy de
  * Roll20 : feuille blanche centrée, en-tête d'identité sur lignes soulignées,
- * onglets en pilules (Général / Compétences / Formations / Arts / Équipement),
+ * onglets en pilules (Général / Formations & Arts / Nen),
  * trois colonnes de blocs à titres serif, tables rayées, gros encadrés pour
  * les valeurs finales. Ce fichier ne porte que l'interface et les règles de
  * calcul prosaïques :
@@ -35,11 +35,13 @@
   var state = null;
   var rootEl = null;
   var updaters = [];   // rafraîchisseurs des valeurs affichées sur la feuille
+  var rebuildSens = null;   // re-rendu des blocs Sens (les lignes dépendent de la forme)
   // Mode « fiche » condensé, posé par l'extension Roll20 (window.__hxhCompact) : on
-  // retire du créateur ce qui n'aide qu'à LIRE les règles (utilité d'une compétence,
-  // rareté/description d'Éclat, malus de PV de la taille…). Sur le site, __hxhCompact
+  // retire du créateur ce qui n'aide qu'à LIRE les règles (rareté/description
+  // d'Éclat, malus de PV de la taille…). Sur le site, __hxhCompact
   // n'existe pas -> le créateur reste complet (aide à la construction).
   var COMPACT = typeof window !== "undefined" && window.__hxhCompact === true;
+  var SENS_NIVEAUX = ["Primaire", "Secondaire", "Tertiaire", "Latent", "Inexistant"];
 
   // --- petites aides ---------------------------------------------------------
   function el(tag, cls, txt) {
@@ -69,9 +71,11 @@
       v: 1,
       name: "", age: "", genre: "", tailleCm: "", poids: "", classe: "", notes: "",
       tailleCat: "Moyenne",
+      forme: "Bipède à bras",   // plan de corps (formes.md) ; l'humain est la référence
       pfTotal: 100, pvParNiveau: 100, argent: 0,
       eclatN: 10, eclatA: 10,
       caracs: { FOR: 3, DEX: 3, AGI: 3, END: 3, PER: 3, "PRÉ": 3, VOL: 3, LOG: 3, INS: 3, "ÉRU": 3, IMA: 3, CHA: 3 },
+      caracDivers: {},    // abbr -> bonus/malus divers à la valeur effective (ne coûte pas de points)
       comps: {},          // nom -> PF investis (multiples de 5)
       customComps: [],    // compétences personnalisées : [{ name, carac, pf, divers }]
       divers: {},         // nom de compétence -> bonus/malus divers (équipement, MJ...)
@@ -81,12 +85,17 @@
       armeDepart: "",
       armes: [],          // armes portées au combat : [{ name, forge }]
       inventaire: [],     // [{ name, prix, arme }]
-      acuite: {},         // sens -> 0..10 (défaut 10)
+      acuite: {},         // sens -> clarté 0..10 (défaut 10 ; clé historique « acuite »)
+      sensOverride: {},   // sens -> niveau forcé à la main (absent = niveau de la forme) — onglet Options
+      compAccess: {},     // compétence -> true/false : autorisation forcée à la main (absent = dérivée) — onglet Options
+      capDivers: {},      // capacité (mouvement/port/apnee/sommeil) -> ± crans sur la ligne lue
+      armesCorpsDivers: {},  // arme de corps -> ± divers (les armes portées le stockent sur leur entrée)
       de: "1d100",        // dé des jets (seul dé nommé par les règles : critique-blessures)
       pv: null,           // PV courants (null = au maximum)
       fatigue: null,      // points de fatigue courants (réserve, max = Endurance ; null = au maximum)
       etatsActifs: {},    // nom d'état -> true, ou nom du palier
-      avantages: [],      // lignes libres [{ name, note }] (la page du livre est en chantier)
+      avantages: [],      // [{ name, note }] : nom du livre (coût compté) ou ligne libre
+      avPtsDivers: 0,     // ajustement des points d'avantage (plus haut palier d'Éclat atteint, dons du MJ)
       portrait: ""        // URL d'une image de personnage
     };
   }
@@ -113,6 +122,15 @@
     var ref = blank().caracs, caracs = {};
     for (var a in ref) caracs[a] = typeof b.caracs[a] === "number" && isFinite(b.caracs[a]) ? clamp(b.caracs[a], 0, 30) : ref[a];
     b.caracs = caracs;
+    b.caracDivers = numMap(b.caracDivers, -30, 30);
+    b.capDivers = numMap(b.capDivers, -30, 30);
+    var so = {};
+    for (var so1 in b.sensOverride) if (SENS_NIVEAUX.indexOf(b.sensOverride[so1]) >= 0) so[so1] = b.sensOverride[so1];
+    b.sensOverride = so;
+    var ca = {};
+    for (var ca1 in b.compAccess) if (b.compAccess[ca1] === true || b.compAccess[ca1] === false) ca[ca1] = b.compAccess[ca1];
+    b.compAccess = ca;
+    b.armesCorpsDivers = numMap(b.armesCorpsDivers, -9999, 9999);
     b.comps = numMap(b.comps, 0, 9999);
     b.divers = numMap(b.divers, -9999, 9999);
     b.acuite = numMap(b.acuite, 0, 10);
@@ -124,9 +142,14 @@
       c.divers = typeof c.divers === "number" && isFinite(c.divers) ? c.divers : 0;
       return c;
     });
-    b.armes = b.armes.filter(function (x) { return x && typeof x.name === "string"; });
+    b.armes = b.armes.filter(function (x) { return x && typeof x.name === "string"; }).map(function (x) {
+      x.divers = typeof x.divers === "number" && isFinite(x.divers) ? x.divers : 0;
+      return x;
+    });
     b.avantages = b.avantages.filter(function (x) { return x && typeof x === "object"; }).map(function (x) {
-      return { name: typeof x.name === "string" ? x.name : "", note: typeof x.note === "string" ? x.note : "" };
+      var o = { name: typeof x.name === "string" ? x.name : "", note: typeof x.note === "string" ? x.note : "" };
+      if (typeof x.cout === "number" && isFinite(x.cout)) o.cout = x.cout;   // coût choisi (avantage à fourchette)
+      return o;
     });
     var ea = {};
     for (var e in b.etatsActifs) if (b.etatsActifs[e] === true || typeof b.etatsActifs[e] === "string") ea[e] = b.etatsActifs[e];
@@ -160,18 +183,19 @@
         total: customTotal(c), roll: customTotal(c) + g, invested: c.pf > 0 || !!c.divers, custom: true });
     });
     var portees = DATA.armes.filter(function (a) { return a.corps; }).map(function (a) { return { a: a, name: a.name }; })
-      .concat(state.armes.map(function (e) { return { a: armeByName(e.name), name: e.name, forge: e.forge }; }));
+      .concat(state.armes.map(function (e) { return { a: armeByName(e.name), name: e.name, forge: e.forge, entry: e }; }));
     var armes = portees.map(function (x) {
       if (!x.a) return { name: x.name, forge: x.forge, unknown: true };
       var lourd = lourdeurMalus(x.a);
+      var dvv = armeDivers(x.a, x.entry);
       var atk = armeTypes(x.a).map(function (ty) {
-        return { label: ty.label, roll: compTotal(ty.comp) + malusArme(x.a, ty.label) + lourd + g };
+        return { label: ty.label, roll: compTotal(ty.comp) + malusArme(x.a, ty.label) + lourd + dvv + g };
       });
       var md = modDegatsArme(x.a);
       return {
         name: x.name, corps: x.a.corps, famille: x.a.famille, am: x.a.am,
         attaques: atk,
-        parade: /\bParade\b/.test(x.a.props) ? (compTotal("Parade") + malusArme(x.a, "Parade") + g) : null,
+        parade: /\bParade\b/.test(x.a.props) ? (compTotal("Parade") + malusArme(x.a, "Parade") + dvv + g) : null,
         degats: x.a.degats, mod: md.val, modTxt: md.txt, munitions: x.a.munitions
       };
     });
@@ -200,13 +224,14 @@
         state.classe ? "Classe : " + state.classe : null,
         state.age ? state.age + " ans" : null, state.genre || null,
         state.tailleCm ? state.tailleCm + " m" : null, state.poids ? state.poids + " kg" : null,
-        "Taille " + state.tailleCat + (t0 && t0.pvMod ? " (" + signed(t0.pvMod) + " PV/niv)" : "")
+        "Taille " + state.tailleCat + (t0 && t0.pvMod ? " (" + signed(t0.pvMod) + " PV/niv)" : ""),
+        state.forme && state.forme !== "Bipède à bras" ? "Forme " + state.forme : null
       ].filter(Boolean),
       // en-tête d'identité structuré (l'extension reproduit la grille pc-id de la fiche)
       identity: {
         nom: state.name || "", classe: state.classe || "", genre: state.genre || "",
         age: state.age || "", taille: state.tailleCm || "", poids: state.poids || "",
-        categorie: state.tailleCat || "", bourse: state.argent || 0,
+        categorie: state.tailleCat || "", forme: state.forme || "", bourse: state.argent || 0,
         niveau: niveau(), pf: state.pfTotal, eclatA: state.eclatA, eclatN: state.eclatN
       },
       caracs: DATA.caracs.map(function (k) { return { abbr: k.abbr, name: k.name, groupe: k.groupe, val: caracVal(k.abbr), mod: modOf(caracVal(k.abbr)) }; }),
@@ -216,10 +241,10 @@
         fatigue: fatiguePts(), fatigueMax: caracVal("END"), modGlobal: g
       },
       capacites: {
-        mouvement: capRow("mouvement", caracVal("AGI")) || [],
-        port: capRow("port", caracVal("FOR")) || [],
-        apnee: capRow("apnee", caracVal("END")) || [],
-        sommeil: capRow("sommeil", caracVal("END")) || [],
+        mouvement: capRow("mouvement", capVal("mouvement")) || [],
+        port: capRow("port", capVal("port")) || [],
+        apnee: capRow("apnee", capVal("apnee")) || [],
+        sommeil: capRow("sommeil", capVal("sommeil")) || [],
         sommeilCols: DATA.capacites.sommeil ? DATA.capacites.sommeil.cols : []
       },
       competences: comps,
@@ -227,9 +252,15 @@
       arts: arts,
       formations: (state.armeDepart ? [{ name: "Arme de départ", info: state.armeDepart }] : []).concat(
         state.formations.map(function (f) { return { name: f.name + (f.choix ? " (" + f.choix + ")" : ""), info: "" }; })),
-      sens: DATA.sens.filter(function (s) { return s.niveau !== "Inexistant" && s.niveau !== "Latent"; })
-        .map(function (s) { return { name: s.name, niveau: s.niveau, acuite: state.acuite[s.name] != null ? state.acuite[s.name] : 10 }; }),
-      avantages: state.avantages.filter(function (a) { return (a.name || "").trim(); }).map(function (a) { return { name: a.name, note: a.note || "" }; }),
+      sens: DATA.sens.map(function (s) { return { s: s, nv: sensNiveau(s) }; })
+        .filter(function (x) { return x.nv !== "Inexistant" && x.nv !== "Latent"; })
+        .map(function (x) { return { name: x.s.name, niveau: x.nv, acuite: state.acuite[x.s.name] != null ? state.acuite[x.s.name] : 10 }; }),
+      avantages: state.avantages.filter(function (a) { return (a.name || "").trim(); }).map(function (a) {
+        var b = avByName(a.name);
+        var cout = b ? (typeof a.cout === "number" ? clamp(a.cout, b.cout, b.coutMax || b.cout) : b.cout) : null;
+        return { name: a.name, note: a.note || "", cout: cout };
+      }),
+      avPoints: { depenses: avPtsSpent(), total: avPtsTotal() },
       etats: etats,
       notes: state.notes || "",
       difficultes: DATA.difficultes
@@ -318,7 +349,94 @@
     for (var k in state.caracs) s += state.caracs[k];
     return s;
   }
-  function caracVal(abbr) { return state.caracs[abbr] != null ? state.caracs[abbr] : CARAC_MIN; }
+  function caracBase(abbr) { return state.caracs[abbr] != null ? state.caracs[abbr] : CARAC_MIN; }
+  // valeur effective = valeur achetée + écart de la forme + divers (équipement,
+  // art, décision du MJ) : ni la forme ni le divers ne coûtent de points, et la
+  // valeur effective cascade partout où caracVal est lue (modificateur,
+  // capacités, compétences, fatigue, frappes, prérequis, exports)
+  function caracVal(abbr) { return clamp(caracBase(abbr) + formeCaracMod(abbr) + (state.caracDivers[abbr] || 0), 0, 30); }
+
+  // --- règles : forme du vivant -----------------------------------------------
+  // Le plan de corps (formes.md) ajuste les caractéristiques physiques, fixe le
+  // niveau de chaque sens et les milieux de déplacement. L'humain (Bipède à
+  // bras, écarts nuls) est la référence et la valeur par défaut ; la taille se
+  // règle à part (catégorie de taille).
+  function formeCur() {
+    if (!DATA.formes) return null;
+    for (var i = 0; i < DATA.formes.length; i++) if (DATA.formes[i].name === state.forme) return DATA.formes[i];
+    return null;
+  }
+  function formeCaracMod(abbr) {
+    var f = formeCur();
+    return f && f.caracs && f.caracs[abbr] ? f.caracs[abbr] : 0;
+  }
+  function sensNiveauForme(s) {
+    var f = formeCur();
+    if (f && f.sens) return f.sens[s.name] || "Inexistant";
+    return s.niveau;   // sans forme connue : classement humain de sens.md
+  }
+  // niveau effectif d'un sens : l'override manuel (onglet Options) prime sur la forme
+  function sensNiveau(s) {
+    return state.sensOverride[s.name] || sensNiveauForme(s);
+  }
+  // Accessibilité d'une compétence. Par défaut, elle découle du corps : une
+  // compétence de sens (même nom qu'un sens) n'est accessible que si la forme
+  // porte ce sens ; « Vol » demande des ailes ; le reste suit le drapeau du
+  // livre (compétences hors de portée d'un humain ordinaire). L'onglet Options
+  // force l'un ou l'autre à la main.
+  function sensByName(name) {
+    for (var i = 0; i < DATA.sens.length; i++) if (DATA.sens[i].name === name) return DATA.sens[i];
+    return null;
+  }
+  function compAccessDefault(k) {
+    var s = sensByName(k.name);
+    if (s) return sensNiveau(s) !== "Inexistant";
+    if (k.name === "Vol") { var f = formeCur(); return !!(f && f.membres && f.membres["Aile"]); }
+    return k.accessible !== false;
+  }
+  function compAccessible(k) {
+    if (state.compAccess[k.name] === true) return true;
+    if (state.compAccess[k.name] === false) return false;
+    return compAccessDefault(k);
+  }
+  // capacité physique : ligne lue = carac effective + ± de capacité (crans)
+  function capVal(key) {
+    var cap = DATA.capacites[key];
+    return (cap ? caracVal(cap.carac) : 0) + (state.capDivers[key] || 0);
+  }
+  // ± divers propre à une arme portée (qualité, état, décision du MJ) : compté
+  // à l'attaque et à la parade ; les armes de corps, qui n'ont pas d'entrée
+  // dans state.armes, le rangent dans state.armesCorpsDivers
+  function armeDivers(a, entry) {
+    if (entry) return entry.divers || 0;
+    return (a && state.armesCorpsDivers[a.name]) || 0;
+  }
+  // --- règles : avantages (avantages.md) ---------------------------------------
+  // Les points d'avantage suivent le plus haut palier d'Éclat atteint (palier
+  // inférieur). La fiche connaît l'Éclat de Naissance et l'actuel : elle prend
+  // le plus haut des deux ; le ± couvre un palier passé plus haut encore.
+  function avByName(name) {
+    var L = (DATA.avantages && DATA.avantages.liste) || [];
+    for (var i = 0; i < L.length; i++) if (L[i].name === name) return L[i];
+    return null;
+  }
+  function avPtsTotal() {
+    var rows = (DATA.avantages && DATA.avantages.points) || [];
+    var ecl = Math.max(state.eclatN || 0, state.eclatA || 0);
+    var pts = 0;
+    for (var i = 0; i < rows.length; i++) if (rows[i].eclat <= ecl) pts = rows[i].pts;
+    return pts + (state.avPtsDivers || 0);
+  }
+  function avPtsSpent() {
+    var s = 0;
+    state.avantages.forEach(function (a) {
+      var b = avByName(a.name);
+      if (!b) return;
+      // coût variable (« 1 à 3 points ») : le joueur règle le coût dépensé sur la ligne
+      s += typeof a.cout === "number" ? clamp(a.cout, b.cout, b.coutMax || b.cout) : b.cout;
+    });
+    return s;
+  }
 
   // --- règles : PF, niveau, compétences ----------------------------------------
   function niveau() { return Math.max(1, Math.ceil((state.pfTotal || 0) / 100)); }
@@ -482,8 +600,32 @@
     if (!art.frappe) return null;
     var key = palier === "Expert" ? "expert" : palier === "Avancé" ? "avance" : "basique";
     var f = art.frappe[key];
+    if (!f) return null;
     var mod = modOf(caracVal("FOR"));
-    return f[0] + " + ×" + f[1] + " FOR = " + (f[0] + f[1] * mod);
+    return f[0] + " + ×" + f[1] + " FOR = " + (f[0] + f[1] * mod) +
+      (art.frappeParties ? " (" + art.frappeParties + ")" : "");
+  }
+  // Prérequis d'un palier d'art : « Agilité 7, Lutte 100, Équilibre 60 ». Chaque
+  // clause « Nom N » se vérifie contre la carac, la compétence, l'Éclat ou le
+  // niveau du personnage ; les clauses libres (âge, condition de vie…) restent à
+  // l'appréciation du MJ (renvoie null : ni remplie, ni manquante).
+  function prereqParts(txt) {
+    return txt.split(",").map(function (s) { return s.trim().replace(/\.$/, ""); })
+      .filter(function (s) { return s && s.toLowerCase() !== "aucun"; });
+  }
+  function prereqOk(clause) {
+    var m = clause.match(/^(.+?)\s+(\d+)$/);
+    if (!m) return null;
+    var name = m[1].trim().toLowerCase(), n = parseInt(m[2], 10);
+    if (name === "éclat") return state.eclatA >= n;
+    if (name === "niveau") return niveau() >= n;
+    for (var i = 0; i < DATA.caracs.length; i++)
+      if (DATA.caracs[i].name.toLowerCase() === name)
+        return caracVal(DATA.caracs[i].abbr) >= n;
+    for (var j = 0; j < DATA.competences.length; j++)
+      if (DATA.competences[j].name.toLowerCase() === name)
+        return compTotal(DATA.competences[j].name) >= n;
+    return null;
   }
 
   // --- lanceur de dés et journal de jets -------------------------------------------
@@ -569,6 +711,10 @@
     for (var k in state.caracs) if (state.caracs[k] > cap) over.push(k);
     if (over.length) w.push("Au-dessus du plafond de création (" + cap + ") : " + over.join(", ") + ".");
     if (pfSpent() > state.pfTotal) w.push("Les PF dépensés (" + pfSpent() + ") dépassent le capital (" + state.pfTotal + ").");
+    if (avPtsSpent() > avPtsTotal()) w.push("Les points d'avantage dépensés (" + avPtsSpent() + ") dépassent le total (" + avPtsTotal() + ").");
+    var verrou = [];
+    DATA.competences.forEach(function (k) { if (!compAccessible(k) && state.comps[k.name] > 0) verrou.push(k.name); });
+    if (verrou.length) w.push("PF investis dans une compétence verrouillée par la forme : " + verrou.join(", ") + " (onglet Options pour l'autoriser).");
     var capPf = compPfMax(), overC = [];
     for (var n in state.comps) if (state.comps[n] > capPf) overC.push(n);
     state.customComps.forEach(function (c) { if ((c.pf || 0) > capPf) overC.push(c.name); });
@@ -744,10 +890,28 @@
     head.appendChild(brand);
 
     var grid = el("div", "pc-id");
-    idField(grid, "c6", "Nom", state.name, function (v) { state.name = v; });
-    idField(grid, "c3", "Classe", state.classe, function (v) { state.classe = v; },
+    idField(grid, "c4", "Nom", state.name, function (v) { state.name = v; });
+    idField(grid, "c2", "Classe", state.classe, function (v) { state.classe = v; },
       { tip: "Les classes sont en chantier dans les règles : champ libre." });
-    idField(grid, "c3", "Genre", state.genre, function (v) { state.genre = v; });
+    idField(grid, "c2", "Genre", state.genre, function (v) { state.genre = v; });
+    if (DATA.formes && DATA.formes.length) {
+      var formeIn = idField(grid, "c4", "Forme", state.forme, function (v) {
+        state.forme = v;
+        if (rebuildSens) rebuildSens();
+      }, {
+        options: DATA.formes.map(function (f) { return [f.name, f.name]; }),
+        tip: "Le plan de corps (formes.md) : il ajuste les caractéristiques physiques, fixe le niveau de chaque sens et les milieux de déplacement. L'humain est le Bipède à bras ; la taille se règle à part."
+      });
+      updaters.push(function () {
+        var f = formeCur();
+        if (!f) return;
+        var mb = Object.keys(f.membres || {});
+        formeIn.title = (f.exemples ? "Exemples : " + f.exemples + "\n" : "") +
+          "Respiration : " + (f.respiration || "aucune") + " · alimentation : " + (f.alimentation || "aucune") +
+          (f.propriete ? " · " + f.propriete : "") +
+          (mb.length ? "\nMembres : " + mb.map(function (m) { return f.membres[m] + " " + m.toLowerCase(); }).join(", ") : "\nAucun membre");
+      });
+    }
 
     idField(grid, "c2", "Âge", state.age, function (v) { state.age = v; });
     idField(grid, "c2", "Taille (m)", state.tailleCm, function (v) { state.tailleCm = v; }, { placeholder: "1.75" });
@@ -765,12 +929,7 @@
       var suit = state.eclatA === state.eclatN;   // l'actuel suit la naissance tant qu'on n'y a pas touché
       state.eclatN = num(v, 0);
       if (suit) state.eclatA = state.eclatN;
-    }, COMPACT ? { type: "number", min: 0, tip: "L'Éclat de naissance, au choix du MJ." } : {
-      options: DATA.eclat.map(function (t) {
-        return [t.val, "Éclat " + t.val + (t.plus ? " et au-delà" : "") + (t.naissance ? " — " + t.naissance : "")];
-      }),
-      tip: "Le MJ le fixe : 10 ou 15 pour la plupart, 20-25 pour les prodiges."
-    });
+    }, { type: "number", min: 0, tip: "L'Éclat de naissance, au choix du MJ : 10 ou 15 pour la plupart, 20-25 pour les prodiges." });
     var eclatAIn = idField(grid, "c2", "Éclat actuel", state.eclatA, function (v) { state.eclatA = Math.max(0, num(v, 0)); },
       { type: "number", min: 0, tip: "Il part de l'Éclat de Naissance ; seules de rares bascules l'en écartent. Entre deux paliers, on retient le palier inférieur." });
     idField(grid, "c2", "Capital PF", state.pfTotal, function (v) { state.pfTotal = num(v, 0); },
@@ -795,7 +954,8 @@
     var defs = [
       ["general", "Général"],
       ["formations", "Formations & Arts"],
-      ["nen", "Nen"]
+      ["nen", "Nen"],
+      ["options", "Options"]
     ];
     var bar = el("div", "pc-tabs");
     var panes = {};
@@ -841,8 +1001,8 @@
       head.appendChild(el("span", null, ""));
       head.appendChild(el("span", null, grp[1]));
       head.appendChild(el("span", "pc-cell-num", "Valeur"));
+      head.appendChild(el("span", "pc-cell-num", "±"));
       head.appendChild(el("span", "pc-cell-num", "Mod"));
-      if (!COMPACT) head.appendChild(el("span", "pc-cell-dim", "Coût"));
       bC.appendChild(head);
       DATA.caracs.filter(function (k) { return k.groupe === grp[0]; }).forEach(function (k) {
         var row = el("div", "pc-trow pc-carac-row");
@@ -851,19 +1011,42 @@
         nm.title = k.desc;
         row.appendChild(nm);
         stepper(row,
-          function () { return caracVal(k.abbr); },
+          function () { return caracBase(k.abbr); },
           function (v) { state.caracs[k.abbr] = v; },
           function () { return CARAC_MIN; },
           function () { return caracMax(); });
+        var dv = el("input", "pc-comp-div");
+        dv.type = "number"; dv.placeholder = "±";
+        dv.value = state.caracDivers[k.abbr] || "";
+        dv.title = "Bonus ou malus divers à la caractéristique (équipement, art, décision du MJ) : il change la valeur effective et tout ce qui en découle, pas le coût en points.";
+        dv.addEventListener("input", function () {
+          var v = num(dv.value, 0);
+          if (v) state.caracDivers[k.abbr] = v; else delete state.caracDivers[k.abbr];
+          refresh();
+        });
+        row.appendChild(dv);
         var mod = el("span", "mod");
-        var cost = COMPACT ? null : el("span", "pc-cell-dim");
         updaters.push(function () {
           mod.textContent = signed(modOf(caracVal(k.abbr)));
-          if (cost) cost.textContent = caracVal(k.abbr) + " pts";
+          mod.title = "Valeur effective " + caracVal(k.abbr) +
+            (state.caracDivers[k.abbr] ? " (" + caracBase(k.abbr) + " " + signed(state.caracDivers[k.abbr]) + ")" : "");
         });
-        row.appendChild(mod); if (cost) row.appendChild(cost);
+        row.appendChild(mod);
         bC.appendChild(row);
       });
+    });
+    // écarts du plan de corps : comptés dans la valeur effective, rappelés ici
+    var formeNote = el("div", "pc-block-note");
+    formeNote.style.marginTop = ".25rem";
+    bC.appendChild(formeNote);
+    updaters.push(function () {
+      var f = formeCur(), parts = [];
+      if (f) DATA.caracs.forEach(function (k) {
+        if (f.caracs && f.caracs[k.abbr]) parts.push(k.abbr + " " + signed(f.caracs[k.abbr]));
+      });
+      formeNote.textContent = parts.length
+        ? "Écarts de la forme " + f.name + " : " + parts.join(" · ") + " (comptés dans la valeur effective)."
+        : "";
     });
 
     // Bloc Éclat (palier + description/rareté du livre) : c'est de la lecture de
@@ -895,20 +1078,57 @@
       });
     }
 
-    // Avantages et handicaps : lignes libres (avantages.md est en chantier)
-    var bAv = block(colA, "Avantages et handicaps", null,
-      "La page du livre est en chantier : lignes libres, à valider avec le MJ.");
+    // Avantages : catalogue du livre (avantages.md, coûts comptés) + lignes
+    // libres pour ce que la page ne couvre pas encore
+    var bAv = block(colA, "Avantages", " ",
+      "Les points d'avantage suivent le plus haut palier d'Éclat atteint (palier inférieur). La liste du livre s'étoffe : lignes libres pour le reste, à valider avec le MJ.");
+    var avSub = bAv.querySelector(".pc-block-title small");
+    // ± sur le total : un palier d'Éclat plus haut atteint dans le passé, dons du MJ
+    var avDv = el("input", "pc-comp-div");
+    avDv.type = "number"; avDv.placeholder = "±";
+    avDv.value = state.avPtsDivers || "";
+    avDv.title = "Ajustement du total de points d'avantage : plus haut palier d'Éclat atteint dans le passé, dons du MJ.";
+    avDv.addEventListener("input", function () { state.avPtsDivers = num(avDv.value, 0); refresh(); });
+    var avT = bAv.querySelector(".pc-block-title");
+    if (avT) avT.appendChild(avDv);
+    updaters.push(function () {
+      if (avSub) avSub.textContent = avPtsSpent() + " / " + avPtsTotal() + " pts";
+    });
     var avList = el("div", "pc-forma-buys");
     bAv.appendChild(avList);
     function renderAv() {
       avList.innerHTML = "";
       state.avantages.forEach(function (av) {
         var line = el("div", "pc-forma-buy");
-        var nmIn = el("input"); nmIn.type = "text"; nmIn.placeholder = "Nom";
-        nmIn.value = av.name || ""; nmIn.style.flex = "0 1 38%"; nmIn.style.fontWeight = "700";
-        nmIn.addEventListener("input", function () { av.name = nmIn.value; save(); });
-        line.appendChild(nmIn);
-        var ntIn = el("input"); ntIn.type = "text"; ntIn.placeholder = "Effet, note";
+        var book = avByName(av.name);
+        if (book) {
+          var nmSp = el("span", null, book.name);
+          nmSp.style.flex = "0 1 38%"; nmSp.style.fontWeight = "700"; nmSp.style.cursor = "help";
+          nmSp.title = book.desc;
+          line.appendChild(nmSp);
+          if ((book.coutMax || book.cout) > book.cout) {
+            // coût variable : le joueur règle les points dépensés dans la fourchette
+            var cIn = el("input", "pc-comp-div");
+            cIn.type = "number"; cIn.min = book.cout; cIn.max = book.coutMax;
+            cIn.value = typeof av.cout === "number" ? av.cout : book.cout;
+            cIn.title = "Points dépensés (" + book.coutTxt + ").";
+            cIn.style.flex = "0 0 1.8rem";
+            cIn.addEventListener("input", function () {
+              av.cout = clamp(num(cIn.value, book.cout), book.cout, book.coutMax);
+              refresh(); save();
+            });
+            line.appendChild(cIn);
+            line.appendChild(el("span", "pc-av-cout", "/ " + book.coutMax + " pts"));
+          } else {
+            line.appendChild(el("span", "pc-av-cout", book.coutTxt || book.cout + " points"));
+          }
+        } else {
+          var nmIn = el("input"); nmIn.type = "text"; nmIn.placeholder = "Nom";
+          nmIn.value = av.name || ""; nmIn.style.flex = "0 1 38%"; nmIn.style.fontWeight = "700";
+          nmIn.addEventListener("input", function () { av.name = nmIn.value; save(); });
+          line.appendChild(nmIn);
+        }
+        var ntIn = el("input"); ntIn.type = "text"; ntIn.placeholder = book ? "Note" : "Effet, note";
         ntIn.value = av.note || "";
         ntIn.addEventListener("input", function () { av.note = ntIn.value; save(); });
         line.appendChild(ntIn);
@@ -916,12 +1136,30 @@
         db.addEventListener("click", function () {
           var i = state.avantages.indexOf(av);
           if (i >= 0) state.avantages.splice(i, 1);
-          renderAv(); save();
+          renderAv(); refresh(); save();
         });
         line.appendChild(db);
         avList.appendChild(line);
       });
-      var add = el("button", "pc-mini", "+ Ajouter une ligne"); add.type = "button";
+      if (DATA.avantages && DATA.avantages.liste && DATA.avantages.liste.length) {
+        var sel = el("select", "pc-select");
+        var o0 = el("option"); o0.value = ""; o0.textContent = "— prendre un avantage du livre —";
+        sel.appendChild(o0);
+        DATA.avantages.liste.forEach(function (a) {
+          var o = el("option"); o.value = a.name;
+          o.textContent = a.name + " (" + (a.coutTxt || a.cout + " points") + ")";
+          o.title = a.desc;
+          sel.appendChild(o);
+        });
+        sel.addEventListener("change", function () {
+          if (!sel.value) return;
+          state.avantages.push({ name: sel.value, note: "" });
+          sel.value = "";
+          renderAv(); refresh(); save();
+        });
+        avList.appendChild(sel);
+      }
+      var add = el("button", "pc-mini", "+ Ajouter une ligne libre"); add.type = "button";
       add.addEventListener("click", function () { state.avantages.push({ name: "", note: "" }); renderAv(); save(); });
       avList.appendChild(add);
     }
@@ -939,18 +1177,33 @@
       "Activité intermédiaire": "Act. inter.", "Activité lourde": "Act. lourde",
       "Avant de pouvoir redormir": "Redormir", "Avant d'être fatigué": "Fatigué"
     };
+    // les étiquettes de colonnes viennent des tables du livre (cap.cols), via
+    // SHORT pour les intitulés longs : elles suivent les règles sans double saisie
     var capDefs = [
-      ["mouvement", "Mouvement", ["Marche", "Course", "Sprint"], "Distance par round (~6 s), mouvement passif."],
-      ["port", "Port", ["Sans fatigue", "Vrai effort", "Pleine puiss."], "Charge portée, maniée, soulevée."],
+      ["mouvement", "Mouvement", null, "Distance par round (~6 s) selon l'allure d'activité."],
+      ["port", "Port", null, "Charge selon l'allure d'activité : portée, maniée, soulevée."],
       ["apnee", "Apnée", null, "Souffle retenu, selon l'activité du moment."],
       ["sommeil", "Sommeil et activité", null, "Sommeil requis et durées d'activité par jour ; puis veille minimale avant de redormir et durée avant d'être fatigué."]
     ];
     capDefs.forEach(function (d) {
       var cap = DATA.capacites[d[0]];
       if (!cap) return;
-      var b = block(COMPACT ? colA : colB, d[1], "");   // fiche : capacités en colonne A (équilibre)
+      var b = block(COMPACT ? colA : colB, d[1], " ");   // fiche : capacités en colonne A (équilibre) ; sub rempli par l'updater (carac + crans)
       b.title = d[3];
       var sub = b.querySelector(".pc-block-title small");
+      // ± en crans propre à la capacité (états, arts, MJ) : décale la ligne lue
+      // dans la table 0-30 sans toucher la caractéristique ni les jets
+      var cdv = el("input", "pc-comp-div");
+      cdv.type = "number"; cdv.placeholder = "±";
+      cdv.value = state.capDivers[d[0]] || "";
+      cdv.title = "Bonus ou malus divers en crans à cette capacité (états, arts, décision du MJ) : décale la ligne lue dans la table 0-30, sans toucher la caractéristique ni les jets.";
+      cdv.addEventListener("input", function () {
+        var v = num(cdv.value, 0);
+        if (v) state.capDivers[d[0]] = v; else delete state.capDivers[d[0]];
+        refresh();
+      });
+      var tEl = b.querySelector(".pc-block-title");
+      if (tEl) tEl.appendChild(cdv);
       var labels = d[2] || cap.cols.map(function (c) { return SHORT[c] || c; });
       var row = el("div", "pc-cap3" + (labels.length > 3 ? " pc-cap5" : ""));
       var cells = [];
@@ -964,11 +1217,26 @@
       });
       b.appendChild(row);
       updaters.push(function () {
-        var val = caracVal(cap.carac);
-        if (sub) sub.textContent = cap.carac + " " + val;
-        var r = capRow(d[0], val) || [];
+        var dv = state.capDivers[d[0]] || 0;
+        if (sub) sub.textContent = cap.carac + " " + caracVal(cap.carac) + (dv ? " · " + signed(dv) + " cran" + (Math.abs(dv) > 1 ? "s" : "") : "");
+        var r = capRow(d[0], capVal(d[0])) || [];
         cells.forEach(function (cell, i) { cell.textContent = r[i] || "—"; });
       });
+      // milieux de déplacement de la forme (formes.md) : sous le Mouvement
+      if (d[0] === "mouvement") {
+        var mil = el("div", "pc-block-note");
+        mil.style.marginTop = ".25rem";
+        b.appendChild(mil);
+        updaters.push(function () {
+          var f = formeCur();
+          if (!f) { mil.textContent = ""; return; }
+          var m = f.membres || {};
+          var terre = m["Patte / jambe"] ? "normale" : "rampe (−4 au Mouvement)";
+          var eau = (m["Nageoire"] || m["Tentacule"] || f.propriete) ? "nage" : "patauge (−3 au Mouvement)";
+          var airs = m["Aile"] ? "vol" : "fermés";
+          mil.textContent = "Milieux de la forme : terre " + terre + " · eau " + eau + " · airs " + airs + ".";
+        });
+      }
     });
     // Fiche condensée : les capacités rejoignent les caractéristiques en tête de colonne A ;
     // on redescend avantages et notes en bas (ordre naturel d'une fiche).
@@ -1063,6 +1331,19 @@
       head.appendChild(nm);
       head.appendChild(el("span", "fam", a ? (a.corps ? "arme de corps · " : "") + (a.famille || "") + (a.am ? " · AM " + a.am : "")
         : (entry && entry.forge ? "arme forgée (Forge)" : "hors barème")));
+      if (a) {
+        var dv = el("input", "pc-comp-div");
+        dv.type = "number"; dv.placeholder = "±";
+        dv.value = armeDivers(a, entry) || "";
+        dv.title = "Bonus ou malus divers propre à cette arme (qualité, état, décision du MJ) : compté à l'attaque et à la parade.";
+        dv.addEventListener("change", function () {
+          var v = num(dv.value, 0);
+          if (entry) entry.divers = v;
+          else if (v) state.armesCorpsDivers[a.name] = v; else delete state.armesCorpsDivers[a.name];
+          refresh();
+        });
+        head.appendChild(dv);
+      }
       if (entry) {
         var db = el("button", "pc-mini danger", "×"); db.type = "button"; db.title = "Ne plus porter cette arme";
         db.addEventListener("click", function () {
@@ -1081,28 +1362,31 @@
       }
       var line = el("div", "pc-arme-line");
       var lourd = lourdeurMalus(a);
+      var dvv = armeDivers(a, entry);
       armeTypes(a).forEach(function (t) {
         var fam = malusArme(a, t.label);
-        var val = compTotal(t.comp) + fam + lourd + modsGlobaux();
+        var val = compTotal(t.comp) + fam + lourd + dvv + modsGlobaux();
         var chip = el("span", "pc-wchip");
         chip.textContent = t.label + " " + signed(val);
         chip.title = t.comp + " " + signed(compTotal(t.comp)) +
           (fam ? " · familiarité " + signed(fam) : "") +
           (lourd ? " · Lourdeur " + signed(lourd) : "") +
+          (dvv ? " · divers " + signed(dvv) : "") +
           (modsGlobaux() ? " · toutes actions " + signed(modsGlobaux()) : "");
         rollable(chip, function () { return (entry ? entry.name : a.name) + " (" + t.label + ")"; },
-          function () { return compTotal(t.comp) + malusArme(a, t.label) + lourdeurMalus(a); });
+          function () { return compTotal(t.comp) + malusArme(a, t.label) + lourdeurMalus(a) + armeDivers(a, entry); });
         line.appendChild(chip);
       });
       if (/\bParade\b/.test(a.props)) {
         var famP = malusArme(a, "Parade");
-        var pv = compTotal("Parade") + famP + modsGlobaux();
+        var pv = compTotal("Parade") + famP + dvv + modsGlobaux();
         var pchip = el("span", "pc-wchip");
         pchip.textContent = "Parade " + signed(pv);
         pchip.title = "Parade " + signed(compTotal("Parade")) + (famP ? " · familiarité " + signed(famP) : "") +
+          (dvv ? " · divers " + signed(dvv) : "") +
           (modsGlobaux() ? " · toutes actions " + signed(modsGlobaux()) : "");
         rollable(pchip, function () { return (entry ? entry.name : a.name) + " (Parade)"; },
-          function () { return compTotal("Parade") + malusArme(a, "Parade"); });
+          function () { return compTotal("Parade") + malusArme(a, "Parade") + armeDivers(a, entry); });
         line.appendChild(pchip);
       }
       var md = modDegatsArme(a);
@@ -1119,6 +1403,9 @@
       return box;
     }
     function renderArmes() {
+      // ne pas détruire un champ ± en cours de frappe : la liste se re-rendra
+      // au prochain rafraîchissement venu d'ailleurs
+      if (listA.contains(document.activeElement)) return;
       listA.innerHTML = "";
       DATA.armes.filter(function (a) { return a.corps; }).forEach(function (a) {
         listA.appendChild(armeRow(a, null));
@@ -1217,7 +1504,7 @@
     updaters.push(function () {
       pvV.textContent = fmt(pvCourant()) + " / " + fmt(pvMax());
       pvBox.title = "PV courants / PV max";
-      var mv = capRow("mouvement", caracVal("AGI"));
+      var mv = capRow("mouvement", capVal("mouvement"));
       mvV.textContent = mv ? mv[0] + " · " + mv[1] : "—";
       adV.textContent = state.armeDepart || "—";
     });
@@ -1230,37 +1517,49 @@
     });
     if (!COMPACT) bF.appendChild(pvNote);   // note « PV max = … » : calcul auto, masqué sur la fiche
 
+    // Les lignes dépendent de la forme du personnage (niveau par sens, sens
+    // inexistants masqués) : elles se re-rendent quand la forme change.
+    var sensBoxes = [];
     ["externe", "interne"].forEach(function (typ) {
       var b = block(colB, typ === "externe" ? "Sens externes" : "Sens internes", null,
-        "Acuité de 0 à 10, départ 10 ; elle chute en jeu, pas à la création.");
+        "Clarté de 0 à 10, départ 10 ; elle chute en jeu, pas à la création. Le niveau de chaque sens vient de la forme du personnage.");
       var head = el("div", "pc-trow pc-sens-row head");
       head.appendChild(el("span", null, "Sens"));
       head.appendChild(el("span", "niv", "Niveau"));
-      head.appendChild(el("span", "pc-cell-num", "Acuité"));
+      head.appendChild(el("span", "pc-cell-num", "Clarté"));
       b.appendChild(head);
-      var ordre = { "Primaire": 0, "Secondaire": 1, "Tertiaire": 2, "Latent": 3, "Inexistant": 4 };
-      DATA.sens
-        .filter(function (s) { return s.type === typ && s.niveau !== "Inexistant" && !(COMPACT && s.niveau === "Latent"); })
-        .sort(function (x, y) { return (ordre[x.niveau] || 0) - (ordre[y.niveau] || 0); })
-        .forEach(function (s) {
-          var row = el("div", "pc-trow pc-sens-row");
-          var latent = s.niveau === "Latent";
-          var nm = el("span", "nm" + (latent ? " latent" : ""), s.name);
-          nm.title = s.desc + (latent ? "\nFaculté endormie : s'éveille sous condition spéciale." : "");
-          row.appendChild(nm);
-          row.appendChild(el("span", "niv", s.niveau));
-          if (latent) {
-            row.appendChild(el("span", "niv", "endormi"));
-          } else {
-            stepper(row,
-              function () { return state.acuite[s.name] != null ? state.acuite[s.name] : 10; },
-              function (v) { if (v === 10) delete state.acuite[s.name]; else state.acuite[s.name] = v; },
-              function () { return 0; },
-              function () { return 10; });
-          }
-          b.appendChild(row);
-        });
+      sensBoxes.push({ typ: typ, box: b });
     });
+    var ordre = { "Primaire": 0, "Secondaire": 1, "Tertiaire": 2, "Latent": 3, "Inexistant": 4 };
+    function renderSens() {
+      sensBoxes.forEach(function (sb) {
+        sb.box.querySelectorAll(".pc-sens-row:not(.head)").forEach(function (r) { r.remove(); });
+        DATA.sens
+          .filter(function (s) { var nv = sensNiveau(s); return s.type === sb.typ && nv !== "Inexistant" && !(COMPACT && nv === "Latent"); })
+          .sort(function (x, y) { return (ordre[sensNiveau(x)] || 0) - (ordre[sensNiveau(y)] || 0); })
+          .forEach(function (s) {
+            var nv = sensNiveau(s);
+            var row = el("div", "pc-trow pc-sens-row");
+            var latent = nv === "Latent";
+            var nm = el("span", "nm" + (latent ? " latent" : ""), s.name);
+            nm.title = s.desc + (latent ? "\nFaculté endormie : s'éveille sous condition spéciale." : "");
+            row.appendChild(nm);
+            row.appendChild(el("span", "niv", nv));
+            if (latent) {
+              row.appendChild(el("span", "niv", "endormi"));
+            } else {
+              stepper(row,
+                function () { return state.acuite[s.name] != null ? state.acuite[s.name] : 10; },
+                function (v) { if (v === 10) delete state.acuite[s.name]; else state.acuite[s.name] = v; },
+                function () { return 0; },
+                function () { return 10; });
+            }
+            sb.box.appendChild(row);
+          });
+      });
+    }
+    rebuildSens = renderSens;
+    renderSens();
 
     // ----- colonne C, la grande : compétences -----
     buildCompetences(colC);
@@ -1321,7 +1620,6 @@
     var rowSync = [];
     updaters.push(function () { rowSync.forEach(function (f) { f(); }); });
 
-    function pips(u) { return "●●●●●".slice(0, u) + "○○○○○".slice(0, 5 - u); }
     function render() {
       list.innerHTML = "";
       rowSync.length = 0;
@@ -1334,15 +1632,23 @@
         if (only && !(state.comps[k.name] > 0) && !diversOf(k.name)) return;
         if (k.champ !== cur) { cur = k.champ; list.appendChild(el("div", "pc-comp-champ", "Champ " + cur)); }
         var row = el("div", "pc-comp-row");
-        var nm = el("span", "pc-comp-name" + (k.accessible ? "" : " na"));
-        nm.appendChild(document.createTextNode(k.name + (k.accessible ? " " : " * ")));
-        if (!COMPACT) nm.appendChild(el("span", "u", pips(k.utilite)));
-        nm.title = k.desc + "\nGroupes : " + k.groupes.join(", ") + (k.accessible ? "" : "\nHors de portée d'un humain ordinaire.");
+        var nm = el("span", "pc-comp-name");
+        var txt = document.createTextNode("");
+        nm.appendChild(txt);
         row.appendChild(nm);
         var abbr = el("span", "pc-comp-carac", caracAbbr(k.carac));
         abbr.title = k.carac;
         row.appendChild(abbr);
-        stepperPf(row, k.name);
+        stepperPf(row, k);
+        // l'accessibilité peut changer (forme, onglet Options) : la ligne se
+        // remet à jour à chaque rafraîchissement
+        rowSync.push(function () {
+          var acc = compAccessible(k);
+          nm.classList.toggle("na", !acc);
+          txt.textContent = k.name + (acc ? " " : " ✗ ");
+          nm.title = k.desc + "\nGroupes : " + k.groupes.join(", ") +
+            (acc ? "" : "\nHors de portée du corps du personnage : verrouillée (voir l'onglet Options).");
+        });
         var div = el("input", "pc-comp-div");
         div.type = "number"; div.placeholder = "±";
         div.value = diversOf(k.name) || "";
@@ -1426,24 +1732,30 @@
       sync();
       return row;
     }
-    function stepperPf(row, name) {   // stepper en pas de 5 PF
+    function stepperPf(row, k) {   // stepper en pas de 5 PF ; k = compétence
+      var name = k.name;
       var box = el("span", "pc-step");
       var minus = el("button", null, "−"); minus.type = "button";
       var val = el("span", "v", "0");
       var plus = el("button", null, "+"); plus.type = "button";
       function get() { return state.comps[name] || 0; }
+      function locked() { return !compAccessible(k); }
       function sync() {
+        var lk = locked();
         val.textContent = get() ? "+" + compBase(name) : "0";
-        val.title = get() + " PF investis";
-        minus.disabled = get() <= 0;
-        plus.disabled = get() >= compPfMax();
+        val.title = lk ? "Compétence verrouillée : le corps du personnage ne la porte pas (voir l'onglet Options)." : get() + " PF investis";
+        minus.disabled = lk || get() <= 0;
+        plus.disabled = lk || get() >= compPfMax();
+        box.classList.toggle("locked", lk);
       }
       minus.addEventListener("click", function () {
+        if (locked()) return;
         var v = get() - 5;
         if (v <= 0) delete state.comps[name]; else state.comps[name] = v;
         sync(); refresh();
       });
       plus.addEventListener("click", function () {
+        if (locked()) return;
         if (get() < compPfMax()) { state.comps[name] = get() + 5; sync(); refresh(); }
       });
       box.appendChild(minus); box.appendChild(val); box.appendChild(plus);
@@ -1562,7 +1874,7 @@
   // --- onglet Arts --------------------------------------------------------------------
   function buildArts(pane) {
     var b = block(pane, "Arts", null,
-      "Coûts et prérequis en chantier dans les règles : choix libre du palier, à valider avec le MJ.");
+      "Le coût des arts est en chantier dans les règles : choix libre du palier, à valider avec le MJ. Un prérequis en rouge n'est pas rempli par le personnage.");
     var tools = el("div", "pc-comp-tools");
     var search = el("input", "pc-comp-search");
     search.type = "search"; search.placeholder = "Filtrer les arts…";
@@ -1611,13 +1923,16 @@
       var seg = el("div", "pc-seg");
       var effet = el("div", "pc-art-effet");
       var frappe = el("div", "pc-art-frappe");
+      var prereq = el("div", "pc-art-prereq");
       ["Aucun"].concat(PALIERS).forEach(function (p) {
         var cur = state.arts[a.name] || "Aucun";
         var btn = el("button", "pc-seg-btn" + (cur === p ? " on" : ""));
         btn.type = "button"; btn.textContent = p === "Aucun" ? "—" : p;
         if (p !== "Aucun") {
           var pd = paliersOf(a)[p];
-          if (pd && (pd.effet || pd.flavor)) btn.title = (pd.flavor ? pd.flavor + "\n" : "") + (pd.effet ? "Effet : " + pd.effet : "");
+          if (pd && (pd.prereq || pd.effet || pd.flavor)) btn.title =
+            (pd.prereq ? "Prérequis : " + pd.prereq + "\n" : "") +
+            (pd.flavor ? pd.flavor + "\n" : "") + (pd.effet ? "Effet : " + pd.effet : "");
         }
         btn.addEventListener("click", function () {
           seg.querySelectorAll(".pc-seg-btn").forEach(function (x) { x.classList.remove("on"); });
@@ -1630,12 +1945,35 @@
       function syncDetail() {
         var p = state.arts[a.name];
         var pd = p ? paliersOf(a)[p] : null;
-        effet.textContent = pd && pd.effet ? pd.effet : "";
+        // un palier possédé inclut les paliers inférieurs : leurs effets restent
+        // affichés ; la frappe, elle, ne montre que le palier possédé (la meilleure)
+        effet.textContent = "";
+        if (p) {
+          for (var i = 0; i <= PALIERS.indexOf(p); i++) {
+            var q = paliersOf(a)[PALIERS[i]];
+            if (!q || !q.effet) continue;
+            var lig = el("div", "pc-art-palier-effet");
+            if (PALIERS.indexOf(p) > 0) lig.appendChild(el("span", "pal", PALIERS[i] + " · "));
+            lig.appendChild(document.createTextNode(q.effet));
+            effet.appendChild(lig);
+          }
+        }
         var f = p ? frappeTxt(a, p) : null;
         frappe.textContent = f ? "Frappe : " + f : "";
+        prereq.textContent = "";
+        if (pd && pd.prereq) {
+          prereq.appendChild(document.createTextNode("Prérequis : "));
+          prereqParts(pd.prereq).forEach(function (c, i) {
+            if (i) prereq.appendChild(document.createTextNode(", "));
+            var ok = prereqOk(c);
+            var sp = el("span", ok === false ? "ko" : null, c);
+            if (ok === false) sp.title = "Le personnage ne remplit pas ce prérequis : il conditionne l'apprentissage et l'utilisation de l'art.";
+            prereq.appendChild(sp);
+          });
+        }
       }
       artSync.push(syncDetail);
-      box.appendChild(seg); box.appendChild(frappe); box.appendChild(effet);
+      box.appendChild(seg); box.appendChild(prereq); box.appendChild(frappe); box.appendChild(effet);
       syncDetail();
       return box;
     }
@@ -1655,6 +1993,113 @@
     var b = block(pane, "Nen", null,
       "Cette partie de la fiche est en chantier : le raccordement du Nen (développement intérieur, catégories, capacités) viendra plus tard.");
     b.appendChild(el("div", "pc-empty", "Rien à remplir pour l'instant."));
+  }
+
+  // --- onglet Options : réglages manuels ----------------------------------------
+  // Ce que le personnage peut ou ne peut pas, au-delà de ce que sa forme lui
+  // donne : autoriser ou verrouiller une compétence hors de portée, changer le
+  // niveau d'un sens. Tout est « à valider avec le MJ » ; rien n'est imposé.
+  function buildOptions(pane) {
+    var cols = el("div", "pc-cols2");
+    var colA = el("div", "pc-col"), colB = el("div", "pc-col");
+    cols.appendChild(colA); cols.appendChild(colB);
+    pane.appendChild(cols);
+    // ---- compétences autorisées ----
+    var bC = block(colA, "Compétences autorisées", null,
+      "Par défaut, une compétence que le corps du personnage ne porte pas est verrouillée : voler sans ailes, un sens que la forme n'a pas. Ce réglage l'autorise ou la verrouille à la main. « Automatique » suit la forme.");
+    var toolsC = el("div", "pc-comp-tools");
+    var toutes = el("span", "pc-chip");
+    toutes.textContent = "Toutes les compétences";
+    var showAll = false;
+    toutes.addEventListener("click", function () { showAll = !showAll; toutes.classList.toggle("on", showAll); renderAcc(); });
+    toolsC.appendChild(toutes);
+    bC.appendChild(toolsC);
+    var accList = el("div", "pc-opt-list");
+    bC.appendChild(accList);
+    var accSync = [];
+    updaters.push(function () { accSync.forEach(function (f) { f(); }); });
+    // Par défaut, on ne montre que ce qui mérite un réglage : les compétences que
+    // la forme verrouille, et celles déjà réglées à la main. Le chip « Toutes »
+    // ouvre la liste complète.
+    function special(k) {
+      return !compAccessDefault(k) || (k.name in state.compAccess);
+    }
+    function accRow(k) {
+      var row = el("div", "pc-opt-row");
+      var nm = el("span", "pc-opt-name", k.name);
+      nm.title = k.desc;
+      row.appendChild(nm);
+      var sel = el("select", "pc-select");
+      [["auto", "Automatique"], ["on", "Autorisée"], ["off", "Verrouillée"]].forEach(function (o) {
+        var e = el("option"); e.value = o[0]; e.textContent = o[1]; sel.appendChild(e);
+      });
+      sel.value = state.compAccess[k.name] === true ? "on" : state.compAccess[k.name] === false ? "off" : "auto";
+      sel.addEventListener("change", function () {
+        if (sel.value === "on") state.compAccess[k.name] = true;
+        else if (sel.value === "off") state.compAccess[k.name] = false;
+        else delete state.compAccess[k.name];
+        refresh();
+      });
+      row.appendChild(sel);
+      var st = el("span", "pc-opt-state");
+      accSync.push(function () {
+        var acc = compAccessible(k);
+        st.textContent = acc ? "autorisée" : "verrouillée";
+        st.classList.toggle("ko", !acc);
+        st.title = "Par la forme : " + (compAccessDefault(k) ? "autorisée" : "verrouillée") + ".";
+      });
+      row.appendChild(st);
+      return row;
+    }
+    function renderAcc() {
+      accList.innerHTML = "";
+      accSync.length = 0;
+      var cur = null, n = 0;
+      DATA.competences.forEach(function (k) {
+        if (!showAll && !special(k)) return;
+        if (k.champ !== cur) { cur = k.champ; accList.appendChild(el("div", "pc-comp-champ", "Champ " + cur)); }
+        accList.appendChild(accRow(k));
+        n++;
+      });
+      if (!n) accList.appendChild(el("div", "pc-empty", "Aucune compétence à régler : la forme les autorise toutes."));
+      refresh();
+    }
+    renderAcc();
+
+    // ---- niveau des sens ----
+    var bS = block(colB, "Niveau des sens", null,
+      "Le niveau de chaque sens vient de la forme du personnage. Ce réglage le change à la main. « Automatique » suit la forme.");
+    var sList = el("div", "pc-opt-list");
+    bS.appendChild(sList);
+    var sSync = [];
+    updaters.push(function () { sSync.forEach(function (f) { f(); }); });
+    ["externe", "interne"].forEach(function (typ) {
+      sList.appendChild(el("div", "pc-comp-champ", typ === "externe" ? "Sens externes" : "Sens internes"));
+      DATA.sens.filter(function (s) { return s.type === typ; }).forEach(function (s) {
+        var row = el("div", "pc-opt-row");
+        var nm = el("span", "pc-opt-name", s.name);
+        row.appendChild(nm);
+        var sel = el("select", "pc-select");
+        var opt0 = el("option"); opt0.value = ""; opt0.textContent = "Automatique"; sel.appendChild(opt0);
+        SENS_NIVEAUX.forEach(function (nv) {
+          var e = el("option"); e.value = nv; e.textContent = nv; sel.appendChild(e);
+        });
+        sel.value = state.sensOverride[s.name] || "";
+        sel.addEventListener("change", function () {
+          if (sel.value) state.sensOverride[s.name] = sel.value; else delete state.sensOverride[s.name];
+          if (rebuildSens) rebuildSens();
+          refresh();
+        });
+        row.appendChild(sel);
+        var st = el("span", "pc-opt-state");
+        sSync.push(function () {
+          st.textContent = sensNiveau(s).toLowerCase();
+          st.title = "Par la forme : " + sensNiveauForme(s).toLowerCase() + ".";
+        });
+        row.appendChild(st);
+        sList.appendChild(row);
+      });
+    });
   }
 
   // --- fiche imprimable ---------------------------------------------------------
@@ -1682,7 +2127,8 @@
             state.classe ? "Classe : " + state.classe : null,
             state.age ? state.age + " ans" : null, state.genre || null,
             state.tailleCm ? state.tailleCm + " m" : null, state.poids ? state.poids + " kg" : null,
-            "Taille " + state.tailleCat + (t0 && t0.pvMod ? " (" + signed(t0.pvMod) + " PV/niv)" : "")
+            "Taille " + state.tailleCat + (t0 && t0.pvMod ? " (" + signed(t0.pvMod) + " PV/niv)" : ""),
+            state.forme ? "Forme " + state.forme : null
            ].filter(Boolean).join(" · "));
 
     h("h3", "Caractéristiques");
@@ -1692,10 +2138,10 @@
     table(["", "Caractéristique", "Valeur", "Modificateur"], caracRows);
 
     h("h3", "Combat et capacités");
-    var mv = capRow("mouvement", caracVal("AGI")) || [];
-    var pt = capRow("port", caracVal("FOR")) || [];
-    var ap = capRow("apnee", caracVal("END")) || [];
-    var so = capRow("sommeil", caracVal("END")) || [];
+    var mv = capRow("mouvement", capVal("mouvement")) || [];
+    var pt = capRow("port", capVal("port")) || [];
+    var ap = capRow("apnee", capVal("apnee")) || [];
+    var so = capRow("sommeil", capVal("sommeil")) || [];
     table(["PV (courants / max)", "Initiative", "Esquive", "Parade", "Points de fatigue"],
           [[fmt(pvCourant()) + " / " + fmt(pvMax()), signed(compTotal("Initiative") + modsGlobaux()), signed(compTotal("Esquive") + modsGlobaux()),
             signed(compTotal("Parade") + modsGlobaux()), fatiguePts() + " / " + caracVal("END")]]);
@@ -1751,18 +2197,20 @@
 
     h("h3", "Armes");
     var portees = DATA.armes.filter(function (a) { return a.corps; }).map(function (a) { return { a: a, name: a.name }; })
-      .concat(state.armes.map(function (e) { return { a: armeByName(e.name), name: e.name }; }));
+      .concat(state.armes.map(function (e) { return { a: armeByName(e.name), name: e.name, entry: e }; }));
     table(["Arme", "Attaque", "Parade", "Dégâts", "Notes"], portees.map(function (x) {
       if (!x.a) return [x.name, "MJ", "MJ", "MJ", "arme forgée (Forge)"];
       var lourd = lourdeurMalus(x.a);
-      var atk = armeTypes(x.a).map(function (t) { return t.label + " " + signed(compTotal(t.comp) + malusArme(x.a, t.label) + lourd); }).join(" · ");
+      var dvv = armeDivers(x.a, x.entry);
+      var atk = armeTypes(x.a).map(function (t) { return t.label + " " + signed(compTotal(t.comp) + malusArme(x.a, t.label) + lourd + dvv); }).join(" · ");
       var famP = malusArme(x.a, "Parade");
-      var par = /\bParade\b/.test(x.a.props) ? signed(compTotal("Parade") + famP) : "—";
+      var par = /\bParade\b/.test(x.a.props) ? signed(compTotal("Parade") + famP + dvv) : "—";
       var md = modDegatsArme(x.a);
       var famGen = malusArme(x.a);
       var notes = [];
       if (famGen) notes.push("familiarité " + signed(famGen));
       if (lourd) notes.push("Lourdeur " + signed(lourd) + " à l'attaque");
+      if (dvv) notes.push("divers " + signed(dvv));
       return [x.name, atk, par, String(x.a.degats) + (md.val || md.txt ? " " + signed(md.val) + (md.txt ? " (" + md.txt + ")" : "") : ""), notes.join(" · ")];
     }));
     h("p", "Le modificateur à toutes les actions n'est pas compté dans ce tableau.");
@@ -1792,16 +2240,20 @@
       }));
     }
 
-    var acRows = DATA.sens.filter(function (s) { return s.niveau !== "Inexistant" && s.niveau !== "Latent"; });
-    h("h3", "Sens (acuité de départ 10)");
-    table(["Sens", "Niveau", "Acuité"], acRows.map(function (s) {
-      return [s.name, s.niveau, state.acuite[s.name] != null ? state.acuite[s.name] : 10];
+    var acRows = DATA.sens.map(function (s) { return { s: s, nv: sensNiveau(s) }; })
+      .filter(function (x) { return x.nv !== "Inexistant" && x.nv !== "Latent"; });
+    h("h3", "Sens (clarté de départ 10)");
+    table(["Sens", "Niveau", "Clarté"], acRows.map(function (x) {
+      return [x.s.name, x.nv, state.acuite[x.s.name] != null ? state.acuite[x.s.name] : 10];
     }));
 
     var avs = state.avantages.filter(function (a) { return (a.name || "").trim(); });
     if (avs.length) {
-      h("h3", "Avantages et handicaps");
-      table(["Nom", "Effet"], avs.map(function (a) { return [a.name, a.note || ""]; }));
+      h("h3", "Avantages (" + avPtsSpent() + " / " + avPtsTotal() + " points d'avantage)");
+      table(["Nom", "Coût", "Effet"], avs.map(function (a) {
+        var b = avByName(a.name);
+        return [a.name, b ? (b.coutTxt || b.cout + " points") : "", a.note || (b ? b.desc : "")];
+      }));
     }
 
     if (state.notes) { h("h3", "Notes"); h("p", state.notes); }
@@ -1941,6 +2393,7 @@
     buildFormations(panes.formations);
     buildArts(panes.formations);
     buildNen(panes.nen);
+    buildOptions(panes.options);
     refresh();
   }
 

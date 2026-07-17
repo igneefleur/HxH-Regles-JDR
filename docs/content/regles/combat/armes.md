@@ -763,7 +763,7 @@ L'arme se consomme à l'emploi : une fois utilisée, elle est dépensée et ne s
 <div class="mcard" markdown>
 **Compatible Nen** <span class="prereq">Coût : inachetable</span>
 
-L'aura du porteur circule librement dans l'arme et ses techniques de Nen s'y appliquent, ce qu'une arme fabriquée n'obtient que par le [Shu](../nen/techniques-nen.md). La propriété ne s'achète pas : seules les armes de corps la portent.
+L'aura du porteur circule librement dans l'arme : ses techniques de Nen s'y appliquent, et ses [capacités](../nen/capacites-de-nen.md) s'emploient à travers elle. Une arme fabriquée n'obtient cette propriété que par le [Shu](../nen/techniques-nen.md) ; elle ne s'achète pas, seules les armes de corps la portent.
 </div>
 
 </div>

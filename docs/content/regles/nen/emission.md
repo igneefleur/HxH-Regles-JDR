@@ -2,15 +2,17 @@
 
 <div class="cols" markdown>
 
-L'émission projette l'aura loin du corps et la garde sous contrôle. Une aura séparée de son détenteur faiblit et se dissipe avec la distance ; l'émetteur la maintient pleine et obéissante au loin. C'est par elle qu'on frappe sans toucher, qu'on lance des traits d'énergie et qu'on agit hors de portée de la main.
+L'émission projette l'aura loin du corps et la garde sous contrôle. Une aura séparée de son détenteur faiblit et se dissipe avec la distance ; l'émitteur la maintient entière et sous son contrôle à distance. Cette catégorie permet de frapper sans contact, de lancer des traits d'énergie et d'agir hors de portée de la main.
 
-C'est la catégorie la plus directe pour porter le combat au loin. Plus l'aura voyage et persiste loin de son auteur, plus l'effort est grand. Un émetteur accompli couvre un champ de bataille entier, et frappe là où nul ne l'attend.
+C'est la catégorie la plus directe pour porter le combat au loin. Plus l'aura voyage et persiste loin de l'émitteur, plus l'effort est grand. Un émitteur accompli couvre un champ de bataille entier.
 
 ### L'Émission de créature
 
-L'émission de créature ne façonne pas une chose réelle : elle détache une part de l'aura du porteur et la tient, au loin, dans la forme d'une créature vivante. Cette créature d'aura agit d'elle-même sur le champ de bataille, mais elle n'est qu'aura : nul non-utilisateur ne la voit. C'est un socle en soi ; créature détachée du porteur, le porteur la maintient au contact, et par un relais dès qu'elle s'éloigne, à distance ou par l'Éveil au Nen.
+L'émission de créature ne façonne pas de chose réelle : elle détache une part de l'aura du porteur et la maintient à distance sous la forme d'une créature vivante. Cette créature agit sur le champ de bataille séparément du porteur, mais elle n'est faite que d'aura : les non-utilisateurs ne la voient pas. C'est un socle à part entière.
 
-On la bâtit comme toute créature, en retenant sa forme, sa taille, son niveau et son autonomie. Donner une silhouette à l'aura ne coûte presque rien ; la projeter et la soutenir loin du corps, en revanche, se règle à part, par un relais de maintien.
+Le porteur maintient la créature lui-même tant qu'elle reste à son contact ; dès qu'elle s'éloigne, un relais prend le maintien : [Maintenir à Distance](#maintenir-a-distance) ou l'[Éveil au Nen](conjuration.md).
+
+On la construit comme toute créature, en choisissant sa forme, sa taille, son niveau et son autonomie. Donner une silhouette à l'aura coûte peu en conception ; la projeter et la soutenir loin du corps se règle à part, par un relais de maintien.
 
 <div class="cj-modules anima" markdown>
 
@@ -20,9 +22,9 @@ On la bâtit comme toute créature, en retenant sa forme, sa taille, son niveau 
 
 <p class="mod-type">Socle : émission de créature</p>
 
-La créature émise est un socle à part entière : une part de l'aura du porteur, détachée et tenue au loin dans une forme vivante. On la définit par sa forme, sa taille, son niveau et son autonomie. Corps d'aura, elle échappe au regard des non-utilisateurs ; détachée du porteur, elle se maintient par un relais.
+La créature émise est un socle à part entière : une part de l'aura du porteur, détachée et maintenue à distance dans une forme vivante. On la définit par sa forme, sa taille, son niveau et son autonomie. Faite d'aura, elle est invisible pour les non-utilisateurs. Dès qu'elle s'éloigne du porteur, un relais la maintient.
 
-La forme donne à l'aura sa silhouette, calquée sur un modèle animal. L'aura épouse aisément n'importe quel plan, aussi sa conception coûte-t-elle peu ; mais un corps riche, ailé, tentaculaire ou informe, demande davantage d'aura pour tenir sa cohésion.
+La forme donne à la créature sa silhouette, calquée sur un modèle animal. La conception d'une forme coûte peu ; une forme complexe, ailée, tentaculaire ou amorphe, demande davantage d'aura pour tenir sa cohésion.
 
 <table>
 <thead><tr><th>Forme</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEG</th></tr></thead>
@@ -41,7 +43,7 @@ La forme donne à l'aura sa silhouette, calquée sur un modèle animal. L'aura �
 </tbody>
 </table>
 
-La taille situe la créature sur l'échelle des [grandeurs](../monde/tailles.md). La moyenne se façonne pour rien ; s'en écarter coûte davantage en conception, d'un côté comme de l'autre. L'aura, elle, suit la masse : plus la créature est grande, plus il en faut pour la projeter et la soutenir.
+La taille situe la créature sur l'échelle des [grandeurs](../monde/tailles.md). Les tailles Petite et Moyenne ne coûtent rien en conception ; plus la créature s'en écarte, vers le petit comme vers le grand, plus elle coûte. Le coût en aura, lui, suit la masse : plus la créature est grande, plus il faut d'aura pour la projeter et la soutenir.
 
 <table>
 <thead><tr><th>Taille</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEG</th></tr></thead>
@@ -59,7 +61,7 @@ La taille situe la créature sur l'échelle des [grandeurs](../monde/tailles.md)
 </tbody>
 </table>
 
-Le niveau fixe la puissance d'ensemble de la créature, qui agit avec les caractéristiques, les compétences et la vigueur d'un combattant de ce niveau, sans jamais dépasser de plus de deux celui de son porteur. Exprimé par rapport à ce dernier, il n'allège pas la conception en deçà de quatre niveaux d'écart ; pousser la créature vers sa propre puissance attache un frein d'affinité, nul tant qu'elle demeure loin en dessous, puis de dix points par niveau jusqu'à −60 %.
+Le niveau fixe la puissance d'ensemble de la créature : elle agit avec les caractéristiques, les compétences et les points de vie d'un combattant de ce niveau. Il s'exprime par rapport au niveau du porteur, sans jamais le dépasser de plus de deux. La ligne « Émitteur −4 ou moins » vaut pour tous les niveaux inférieurs : descendre plus bas n'allège plus la conception. Le frein d'affinité est nul à ce palier, puis augmente de 10 points par niveau, jusqu'à −60 %.
 
 <table>
 <thead><tr><th>Niveau</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEG</th></tr></thead>
@@ -94,7 +96,7 @@ L'autonomie dit si la créature doit être dirigée ou si elle agit d'elle-même
 
 **Dépendante :** la créature n'agit que sur les instructions du porteur, qui la pilote.
 
-**Indépendante :** elle agit d'elle-même, sans pilotage constant, comme un allié à part entière.
+**Indépendante :** la créature agit d'elle-même, sans pilotage constant.
 
 </div>
 
@@ -106,7 +108,7 @@ L'autonomie dit si la créature doit être dirigée ou si elle agit d'elle-même
 
 ### Les modules d'émission
 
-Les modules qui suivent projettent l'aura au loin : ils portent une attaque ou une parade jusqu'à distance, ou l'étendent à un rayon entier. On en retient un palier par module. Le guidage des traits émis viendra s'y ajouter.
+Les modules qui suivent projettent l'aura au loin : ils portent une attaque, une parade ou un effet jusqu'à la distance retenue, ou les étendent à un rayon entier. On en retient un palier par module. Le guidage des traits émis viendra s'y ajouter.
 
 <div class="cj-modules anima" markdown>
 
@@ -116,7 +118,9 @@ Les modules qui suivent projettent l'aura au loin : ils portent une attaque ou u
 
 <p class="mod-type">Type : tous</p>
 
-Maintenir à Distance tend un fil d'aura du porteur jusqu'à la capacité, où qu'elle opère, et la tient au bout : c'est l'un des deux relais qui gardent active une capacité dont la cible n'est pas soi, l'autre étant l'[Éveil au Nen](conjuration.md) dont l'entité s'entretient seule. L'aura établit le fil à l'emploi, le maintien le nourrit round après round, au forfait du palier de portée retenu à la conception, d'autant plus lourd que ce palier est lointain. Ce forfait se paie à chaque round de maintien, la cible fût-elle alors au contact : le palier n'est que la portée maximale, non un compteur qui suivrait sa distance courante. Passé la portée retenue, le fil rompt et la capacité se défait. Il se greffe sur n'importe quelle capacité.
+Maintenir à Distance relie le porteur à la capacité par un fil d'aura et la garde active à distance. C'est l'un des deux relais qui maintiennent une capacité dont la cible n'est pas le porteur lui-même ; l'autre est l'[Éveil au Nen](conjuration.md), dont l'entité s'entretient seule. Le module se greffe sur n'importe quelle capacité.
+
+Le fil s'établit à l'emploi de la capacité. Le maintien coûte ensuite, à chaque round, le forfait du palier de portée retenu à la conception. Ce forfait se paie même quand la cible est au contact : le palier fixe la portée maximale, il ne suit pas la distance courante. Au-delà de la portée retenue, le fil rompt et la capacité se défait.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -135,7 +139,7 @@ Maintenir à Distance tend un fil d'aura du porteur jusqu'à la capacité, où q
 
 <div class="defs" markdown>
 
-**Adjacente :** la cible se tient au contact du porteur ou à ses côtés. Le maintien au seul contact ne réclame aucun relais : cette ligne n'est que le point zéro de la portée, sans coût, pour une capacité qui prend le module en vue d'un éloignement à venir.
+**Adjacente :** la cible se tient au contact du porteur ou à ses côtés ; ce maintien ne demande aucun relais et cette ligne ne coûte rien.
 
 **Portée :** la distance maximale à laquelle la capacité peut s'éloigner du porteur. Au-delà, le fil d'aura rompt et elle se défait.
 
@@ -149,7 +153,9 @@ Maintenir à Distance tend un fil d'aura du porteur jusqu'à la capacité, où q
 
 <p class="mod-type">Type : tous</p>
 
-La Réserve de Nen ouvre à la capacité une réserve d'aura propre, un foyer qu'elle porte hors du corps du porteur. Sa contenance, son UAM, est celle que le porteur retient : elle ne se prend pas sur sa propre réserve, c'est un foyer à part. Elle démarre vide, à 0 d'UAD, et ne contient rien tant qu'il ne l'a pas nourrie. Il la remplit de son [UAA](techniques-nen.md), l'aura qu'il accumule, à raison de un pour un : chaque round où il accumule, il y verse tout ou partie de cette UAA, au lieu de la perdre au round suivant, sans dépenser d'action de plus. L'aura ainsi versée y demeure de round en round, jusqu'à l'UAM de la réserve, et la capacité y puise pour ses propres effets. Il se greffe sur n'importe quelle capacité.
+La Réserve de Nen donne à la capacité une réserve d'aura propre, que la capacité porte hors du corps du porteur. Cette réserve est séparée de celle du porteur et ne se prend pas sur elle ; son UAM est celle que le porteur retient à la conception. Le module se greffe sur n'importe quelle capacité.
+
+La réserve démarre vide, à 0 d'UAD. Le porteur la remplit de son [UAA](capacites-de-nen.md), l'aura qu'il accumule, à raison de 1 pour 1 : chaque round, il peut y verser l'aura qu'il accumule, dans la limite de son UAR, sans dépenser d'action de plus. L'aura versée y demeure de round en round, jusqu'à l'UAM de la réserve, et la capacité y puise pour ses propres effets.
 
 <table>
 <thead><tr><th>Réserve</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -161,7 +167,7 @@ La Réserve de Nen ouvre à la capacité une réserve d'aura propre, un foyer qu
 
 <div class="defs" markdown>
 
-**UAM de la réserve (VAR.) :** le porteur fixe l'UAM de la réserve, X, un foyer à part qui ne se prend pas sur sa propre réserve. Elle démarre à 0 d'UAD et se remplit de son UAA, à raison de un pour un et sans jamais dépasser X : chaque point d'UAA versé y devient un point d'aura disponible, qui demeure de round en round au lieu de se dissiper. La colonne UAA du tableau donne cette aura accumulée requise pour l'emplir.
+**UAM de la réserve (VAR.) :** le porteur fixe l'UAM de la réserve, X, une réserve à part qui ne se prend pas sur la sienne ; elle démarre à 0 d'UAD, chaque point d'UAA versé y devient un point d'aura disponible qui demeure de round en round, sans jamais dépasser X, et la colonne UAA du tableau donne l'aura accumulée requise pour la remplir.
 
 </div>
 
@@ -173,7 +179,11 @@ La Réserve de Nen ouvre à la capacité une réserve d'aura propre, un foyer qu
 
 <p class="mod-type">Type : effet</p>
 
-Don d'aura projette une part de l'aura du lanceur dans un allié qu'il touche, qui la reçoit comme aura disponible, la garde comme sienne et en use à son gré, sans que sa réserve passe au-delà de sa propre UAM, le lanceur ne cédant que ce qu'elle peut recevoir. Fixé une fois pour toutes à sa conception, le don porte sur l'UAD du lanceur, l'aura qui lui reste en réserve, ou sur son UAA, l'aura qu'il a accumulée ce round et qui se perdrait sinon ; ce qu'il cède, il le perd. Le don est immédiat, sans maintien. Au contact par défaut, il porte plus loin dès qu'on lui greffe l'[effet à distance](#effet-a-distance). C'est le pendant du [Vol d'aura](manipulation.md) : l'un draine et retient, l'autre confie d'un coup.
+Don d'aura transfère une part de l'aura du lanceur à un allié qu'il touche. L'allié la reçoit comme aura disponible, la garde comme sienne et en use à son gré ; sa réserve ne peut pas dépasser sa propre UAM, et le lanceur ne cède que ce que l'allié peut recevoir.
+
+Le type de don se fixe à la conception : le don porte sur l'UAD du lanceur, l'aura qui lui reste en réserve, ou sur son UAA, l'aura qu'il accumule, versée dans l'allié au lieu d'une capacité. Ce que le lanceur cède, il le perd.
+
+Le don est immédiat, sans maintien. Il s'applique au contact ; le module [effet à distance](#effet-a-distance) lui permet de porter plus loin. C'est le pendant du [Vol d'aura](manipulation.md), qui prend l'aura d'autrui au lieu d'en donner.
 
 <table>
 <thead><tr><th>Effet</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -197,9 +207,9 @@ Don d'aura projette une part de l'aura du lanceur dans un allié qu'il touche, q
 
 <div class="defs" markdown>
 
-**Type de don :** ce que le lanceur transfère. L'UAD est l'aura disponible de sa réserve, donnée durablement ; l'UAA est l'aura qu'il a accumulée ce round, qu'il verse dans l'allié plutôt que de la laisser se dissiper.
+**Type de don :** ce que le lanceur transfère. L'UAD est l'aura disponible de sa réserve, donnée durablement ; l'UAA est l'aura qu'il accumule, versée dans l'allié plutôt que dans une capacité.
 
-**Quantité :** la mesure d'aura transférée à l'allié, dans la limite de ce que le porteur possède ; elle passe telle quelle, et le porteur la perd d'autant. Elle se lit sur les lignes « Jusqu'à X UA », non sur la colonne UAA, qui chiffre le coût d'activation.
+**Quantité :** la quantité d'aura transférée à l'allié, dans la limite de ce que le lanceur possède ; elle passe telle quelle, le lanceur la perd d'autant, et elle se lit sur les lignes « Jusqu'à X UA », non sur la colonne UAA, qui chiffre le coût d'activation.
 
 </div>
 
@@ -211,7 +221,7 @@ Don d'aura projette une part de l'aura du lanceur dans un allié qu'il touche, q
 
 <p class="mod-type">Type : attaque</p>
 
-La capacité frappe à distance, non plus au contact : l'attaque porte jusqu'à la distance retenue, sans que l'aura perde de sa force en chemin. C'est le geste premier de l'émission, agir là où la main n'atteint pas.
+La capacité frappe à distance, non plus au contact : l'attaque porte jusqu'à la distance retenue, sans que l'aura perde de sa force en chemin.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -240,7 +250,7 @@ La capacité frappe à distance, non plus au contact : l'attaque porte jusqu'à 
 
 <p class="mod-type">Type : défense</p>
 
-La capacité étend la garde au-delà de la portée du bras : l'émitteur intercepte à distance un coup dirigé contre lui, ou couvre un allié éloigné, jusqu'à la distance retenue.
+La capacité défend à distance, non plus au contact : l'émitteur intercepte un coup dirigé contre lui, ou couvre un allié éloigné, jusqu'à la distance retenue.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -269,7 +279,7 @@ La capacité étend la garde au-delà de la portée du bras : l'émitteur interc
 
 <p class="mod-type">Type : effet</p>
 
-La capacité porte son effet à distance, non plus au contact : elle s'exerce jusqu'à la distance retenue, où qu'elle opère. C'est l'émission appliquée à un effet plutôt qu'à un coup.
+La capacité porte son effet à distance, non plus au contact : l'effet s'exerce jusqu'à la distance retenue.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -298,7 +308,7 @@ La capacité porte son effet à distance, non plus au contact : elle s'exerce ju
 
 <p class="mod-type">Type : attaque</p>
 
-L'attaque ne vise plus une cible isolée mais un rayon entier : tout ce qui s'y tient en subit l'effet d'un même geste.
+L'attaque ne vise plus une cible unique mais un rayon entier : une même attaque s'applique à tout ce qui s'y tient.
 
 <table>
 <thead><tr><th>Rayon</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -323,7 +333,7 @@ L'attaque ne vise plus une cible isolée mais un rayon entier : tout ce qui s'y 
 
 <p class="mod-type">Type : défense</p>
 
-La garde couvre un rayon entier : d'un même geste, la capacité protège tout ce qui se tient dans la zone retenue.
+La défense couvre un rayon entier : une même parade protège tout ce qui se tient dans la zone retenue.
 
 <table>
 <thead><tr><th>Rayon</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -348,7 +358,7 @@ La garde couvre un rayon entier : d'un même geste, la capacité protège tout c
 
 <p class="mod-type">Type : effet</p>
 
-La capacité transporte l'émitteur en un éclair jusqu'à la distance retenue, sans franchir l'espace : il disparaît d'un point pour reparaître à l'autre. C'est un outil de déplacement à part entière, qui porte jusqu'à plusieurs milliers de kilomètres.
+La capacité téléporte l'émitteur jusqu'à la distance retenue, sans franchir l'espace : il disparaît d'un point et reparaît à l'autre.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -377,7 +387,7 @@ La capacité transporte l'émitteur en un éclair jusqu'à la distance retenue, 
 
 <p class="mod-type">Type : attaque</p>
 
-Ce n'est pas l'attaque qui voyage, mais son origine : elle se téléporte jusqu'à la distance retenue et surgit au contact de la cible, sans trajet à intercepter. Là où l'attaque à distance parcourt l'espace, celle-ci l'ignore. Elle en paie le prix : la portée d'une attaque à distance, plus le saut lui-même.
+L'attaque ne parcourt pas l'espace : elle se téléporte jusqu'à la distance retenue et surgit au contact de la cible, sans trajet à intercepter. Ce mode de délivrance coûte plus cher qu'une [attaque à distance](#attaque-a-distance) de même portée.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -406,7 +416,7 @@ Ce n'est pas l'attaque qui voyage, mais son origine : elle se téléporte jusqu'
 
 <p class="mod-type">Type : effet</p>
 
-Comme l'effet à distance, mais l'effet ne traverse pas l'espace : il se téléporte jusqu'à la distance retenue et se déclenche là, sans trajet à intercepter. Il en paie le prix : la portée d'un effet à distance, plus le saut lui-même.
+L'effet ne traverse pas l'espace : la capacité le téléporte jusqu'à la distance retenue et le déclenche sur place, sans trajet à intercepter. Ce mode de délivrance coûte plus cher qu'un [effet à distance](#effet-a-distance) de même portée.
 
 <table>
 <thead><tr><th>Portée</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>
@@ -435,7 +445,11 @@ Comme l'effet à distance, mais l'effet ne traverse pas l'espace : il se télép
 
 <p class="mod-type">Type : effet</p>
 
-Le module ouvre un portail entre deux portes reliées. On pose chacune à son emplacement, au contact : l'émitteur se rend en chaque lieu et y ancre une porte, en usant de la capacité une fois par porte, une action chacune. La distance retenue est l'écart maximal admis entre les deux portes, non une portée de pose. Une fois les deux en place et tant que la capacité tient, quiconque franchit l'une ressort par l'autre, dans un sens comme dans l'autre. Le tableau donne le coût d'une porte ; un portail complet le paie donc deux fois.
+Le module ouvre un portail entre deux portes reliées. Chaque porte se pose au contact : l'émitteur se rend en chaque lieu et y ancre une porte en employant la capacité, et chaque pose coûte une action.
+
+La distance retenue est l'écart maximal admis entre les deux portes, non une portée de pose. Une fois les deux portes en place et tant que la capacité tient, quiconque franchit l'une ressort par l'autre, dans les deux sens.
+
+Le tableau donne le coût d'une porte ; un portail complet le paie donc deux fois.
 
 <table>
 <thead><tr><th>Distance</th><th>DE</th><th>LOG</th><th>UAA</th><th>MA</th><th>AEL</th></tr></thead>

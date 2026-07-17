@@ -4,7 +4,7 @@
 
 <div class="keep" markdown>
 
-Les points de formation, ou PF, paient la progression. Tout ce qui définit un personnage s'acquiert en PF : ses [caractéristiques](caracteristiques.md), ses [compétences](competences.md), ses [avantages](avantages.md), ses [formations](../formation/formations-martiales.md). Le [développement intérieur](../nen/di.md) forge le Nen ; les PF forgent le corps, le savoir et les compétences.
+Les points de formation, ou PF, paient la progression. L'essentiel de ce qui définit un personnage s'acquiert en PF : ses [caractéristiques](caracteristiques.md), ses [compétences](competences.md), ses [formations](../formation/formations-martiales.md). Le [développement intérieur](../nen/di.md) forge le Nen, les points d'avantage paient les [avantages](avantages.md) ; les PF forgent le corps, le savoir et les compétences.
 
 </div>
 

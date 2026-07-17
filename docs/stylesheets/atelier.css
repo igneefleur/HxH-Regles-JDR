@@ -208,6 +208,8 @@
 .nf-node-body { flex: 1 1 auto; min-height: 0; overflow: hidden auto; padding: .45rem .5rem .5rem; }
 /* description du module, dans le nœud */
 .nf-desc { font-size: .68rem; line-height: 1.42; color: var(--ink-2); margin: .05rem 0 .35rem; }
+.nf-desc p { margin: 0 0 .4em; }
+.nf-desc p:last-child { margin-bottom: 0; }
 /* prose descriptive d'une grille (le paragraphe qui précède son tableau) */
 .nf-griddesc { font-size: .66rem; line-height: 1.4; color: var(--ink-2); margin: .55rem 0 0; }
 /* légende de l'option choisie dans un sélecteur (defs du tableau) */
@@ -370,6 +372,8 @@ html.night .nen-atelier { --fg-arme: #8b97a6; }   /* acier plus clair sur canvas
 .nf-cap-card .nf-costs { margin-top: .3rem; }
 .nf-cap-card .nf-mod-line { padding: .14rem 0; }
 .nf-warn { display: flex; gap: .35rem; align-items: baseline; color: #8f3320; font-size: .68rem; background: #f6e6df; border: 1px solid #e8c9bc; border-radius: 6px; padding: .22rem .4rem; margin-top: .3rem; }
+/* Mise en garde non bloquante (jaune) : rouge = erreur, jaune = simple avertissement. */
+.nf-warn-soft { color: #7c5e10; background: #f7f0d6; border-color: #e4d69c; }
 
 .nf-totals { position: sticky; bottom: -1rem; margin-top: .5rem; padding: .55rem 0 0; background: linear-gradient(180deg, rgba(241,235,214,0), var(--panel) 30%); border-top: 1px solid var(--line); }
 .nf-totals .grand { display: flex; justify-content: space-between; align-items: baseline; }
