@@ -9,16 +9,16 @@
 <link href="../../combat/armes/" rel="prev"/>
 <link href="../di/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Aura - HxH Système JDR</title>
-<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/fonts.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/extra.css?v=11" rel="stylesheet"/>
+<link href="../../../../stylesheets/extra.css?v=13" rel="stylesheet"/>
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1290,43 +1290,44 @@
 <h1 id="aura">Aura</h1>
 <div class="cols">
 <div class="keep">
-<p>L'aura est la matière même du Nen : l'énergie vitale qu'un détenteur fait sourdre de son corps et façonne à volonté. Toute capacité y puise. On la chiffre en unités d'Aura (UA).</p>
+<p>L'aura est l'énergie vitale que le personnage fait sortir de son corps et façonne à <a class="gloss-link" data-key="terme:volonte" href="../../../content/regles/personnage/caracteristiques/#gloss-volonte">volonté</a>. Toute capacité de Nen consomme de l'aura. Elle se mesure en unités d'Aura (UA).</p>
 </div>
 <div class="keep">
-<p>Quatre mesures décrivent l'aura d'un personnage : ce que son corps peut contenir (UAM), ce qu'il lui en reste à l'instant (UAD), ce qu'il peut en déployer en un round (UAR) et ce qu'il en récupère par heure (RUA).</p>
+<p>Quatre mesures décrivent l'aura d'un personnage : ce que son corps peut contenir (UAM), ce qu'il lui en reste à l'instant (UAD), ce qu'il peut en déployer en un round (UAR) et ce qu'il en récupère par minute (RUA).</p>
 </div>
 <div class="keep">
-<h3 id="aura-maximale-uam">Aura maximale (UAM)</h3>
-<p>L'UAM est le plafond de la réserve : tout ce qu'un corps peut renfermer. Un personnage a une UAM de 1000 par <a href="../../personnage/eclat/">prestige</a>, et peut l'augmenter en investissant du DI. Par exemple, un utilisateur de nen de prestige 3 dispose ainsi d'une UAM de 3000.</p>
+<span class="gloss-anchor" id="gloss-aura-maximale-uam"></span><h3 id="aura-maximale-uam">Aura maximale (UAM)</h3>
+<p>L'UAM est le maximum d'aura que le corps du personnage peut contenir. Un personnage a une UAM de 1000 par <a href="../../personnage/eclat/">prestige</a> et peut l'augmenter en investissant du DI. Par exemple, un personnage de <a class="gloss-link" data-key="terme:prestige" href="../../../content/regles/nen/di/#gloss-prestige">prestige</a> 3 dispose d'une UAM de 3000.</p>
 </div>
 <div class="keep">
-<h3 id="aura-disponible-uad">Aura disponible (UAD)</h3>
-<p>L'UAD est ce qui reste de la réserve à un instant donné : l'aura encore à dépenser.</p>
+<span class="gloss-anchor" id="gloss-aura-disponible-uad"></span><h3 id="aura-disponible-uad">Aura disponible (UAD)</h3>
+<p>L'UAD est l'aura qui reste au personnage à un instant donné : c'est celle qu'il peut encore dépenser.</p>
 </div>
 <div class="keep">
-<h3 id="aura-par-round-uar">Aura par round (UAR)</h3>
-<p>L'UAR est l'aura que le personnage peut déployer en un seul round : sa puissance réelle à l'instant. Une vaste réserve ne sert à rien sans une bonne UAR, car il ne projette jamais en un round plus d'aura que celle-ci, ni plus que l'UAD qui lui reste.</p>
-<p>L'UAR se calcule à partir d'une base et d'un multiplicateur. Le multiplicateur multiplie la base, ce qui donne le total d'UAR. La base d'UAR d'un personnage est de 5, et elle peut être augmenté par des techniques de nen comme par exemple le Ren.</p>
+<span class="gloss-anchor" id="gloss-aura-par-round-uar"></span><h3 id="aura-par-round-uar">Aura par round (UAR)</h3>
+<p>L'UAR est l'aura que le personnage peut déployer en un seul round. <a class="gloss-link" data-key="terme:en" href="../../../content/regles/nen/techniques-nen/#gloss-en">En</a> un round, le personnage ne déploie jamais plus d'aura que son UAR, ni plus que l'UAD qui lui reste.</p>
+<p>L'UAR se calcule à partir d'une base et d'un multiplicateur. La base d'UAR d'un personnage est de 5 ; des <a href="../techniques-nen/">techniques de Nen</a> comme le <a class="gloss-link" data-key="terme:ren" href="../../../content/regles/nen/techniques-nen/#gloss-ren">Ren</a> l'augmentent.</p>
 <p class="formula">UAR = base × (multiplicateur + 1)</p>
-<p>Ainsi, un personnage qui possède un Ren Maître (base 25) qui a porté son multiplicateur d'UAR à 6 dispose d'une UAR de 25 × (6 + 1) = 175.</p>
+<p>Par exemple, un personnage au <a class="gloss-link" data-key="terme:ren" href="../../../content/regles/nen/techniques-nen/#gloss-ren">Ren</a> Maître (base 25) qui a porté son multiplicateur d'UAR à 6 dispose d'une UAR de 25 × (6 + 1) = 175.</p>
 </div>
 <div class="keep">
-<p>Une capacité dont le coût excède l'UAR ne se déclenche pas d'un seul coup : il faut autant de rounds de concentration que son coût contient de fois l'UAR, arrondi au supérieur. Avec une UAR de 175, lancer un Hatsu à 350 UA réclame ainsi deux rounds.</p>
+<p>Une capacité dont le coût excède l'UAR ne se déclenche pas en un seul round : il faut un nombre de rounds de concentration égal au coût divisé par l'UAR, arrondi au supérieur. Avec une UAR de 175, lancer un <a class="gloss-link" data-key="terme:hatsu" href="../../../content/regles/nen/techniques-nen/#gloss-hatsu">Hatsu</a> à 350 UA demande ainsi 2 rounds.</p>
 </div>
 <div class="keep">
-<h3 id="regeneration-rua">Régénération (RUA)</h3>
-<p>La RUA dit combien d'UA le personnage récupère chaque heure. L'UAD remonte à chaque heure écoulée d'une valeur égale à la RUA totale du personnage, jusqu'à retrouver l'UAM. Elle se calcule comme l'UAR, sur sa propre base et son propre multiplicateur.</p>
+<span class="gloss-anchor" id="gloss-regeneration-rua"></span><h3 id="regeneration-rua">Régénération (RUA)</h3>
+<p>La RUA est le nombre d'UA que le personnage récupère chaque minute. À chaque minute écoulée, l'UAD remonte d'une valeur égale à la RUA totale du personnage, jusqu'à retrouver l'UAM.</p>
+<p>La RUA se calcule comme l'UAR, sur sa propre base et son propre multiplicateur. La base de RUA d'un personnage est de 5 ; des <a href="../techniques-nen/">techniques de Nen</a> comme le <a class="gloss-link" data-key="terme:ten" href="../../../content/regles/nen/techniques-nen/#gloss-ten">Ten</a> l'augmentent.</p>
 <p class="formula">RUA = base × (multiplicateur + 1)</p>
 </div>
 <div class="keep">
-<h3 id="developper-son-aura">Développer son aura</h3>
-<p>Élargir sa réserve, sa puissance ou sa récupération se paie en <a href="../di/">DI</a>, sans passer par l'affinité d'une catégorie : ce sont des progrès communs à tout le Nen.</p>
+<span class="gloss-anchor" id="gloss-developper-son-aura"></span><h3 id="developper-son-aura">Développer son aura</h3>
+<p>Améliorer son UAM, son UAR ou sa RUA coûte du <a href="../di/">DI</a>. Ces améliorations sont communes à tout le Nen et ne passent par l'affinité d'aucune catégorie.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Amélioration</th>
-<th style="text-align: left;">Effet</th>
-<th style="text-align: center;">Coût</th>
+<th style="text-align: left;"><a class="gloss-link" data-key="terme:effet" href="../../../content/regles/nen/capacites-de-nen/#gloss-effet">Effet</a></th>
+<th style="text-align: center;"><a class="gloss-link" data-key="terme:cout" href="../../../content/regles/nen/capacites-de-nen/#gloss-cout">Coût</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1347,7 +1348,7 @@
 </tr>
 </tbody>
 </table>
-<p>Par prestige, un personnage ne peut pas consacrer plus de 60 DI à ces trois améliorations réunies.</p>
+<p>Par <a class="gloss-link" data-key="terme:prestige" href="../../../content/regles/nen/di/#gloss-prestige">prestige</a>, un personnage ne peut pas consacrer plus de 60 DI à ces trois améliorations réunies.</p>
 </div>
 </div>
 <div class="gloss-defs">
@@ -3025,7 +3026,268 @@
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
+</div><div class="gloss-defs"><div class="mcard gloss-card" data-key="terme:volonte">
+<p><strong>Volonté</strong></p>
+<p><span class="prereq">VOL</span> La Volonté mesure la fermeté de l'esprit et sa résistance aux pressions. Elle décide de la capacité à garder son sang-froid, à braver la peur, à endurer la souffrance, morale comme physique, et à repousser la tentation comme la contrainte. On l'oppose à tout ce qui cherche à plier l'esprit.</p>
+</div><div class="gcard gloss-card" data-key="terme:prestige">
+<p><strong>Prestige</strong></p>
+<div class="gcard-text">
+<p>Le total de DI gagné fixe le prestige, le repère de maîtrise du Nen. Le personnage franchit un palier tous les 100 DI.</p>
+<p class="formula">Prestige = ⌈ DI ÷ 100 ⌉</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Développement intérieur</th>
+<th style="text-align: center;">Prestige</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1 à 100</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">101 à 200</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">201 à 300</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">301 à 400</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">401 à 500</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">501 à 600</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">601 à 700</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">701 à 800</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">801 à 900</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td style="text-align: center;">901 à 1 000</td>
+<td style="text-align: center;">10</td>
+</tr>
+</tbody>
+</table>
+<p>Et ainsi de suite, 100 points par palier, sans plafond. La vitesse de gain du DI dépend de l'Éclat.</p>
 </div>
+<div class="keep"></div>
+</div><div class="mcard gloss-card" data-key="terme:en">
+<p><strong>En</strong></p>
+<p><span class="prereq">Circle</span></p>
+<p>L'En est une application avancée du Ten et du Ren : le personnage étend son Ren bien au-delà de sa portée ordinaire, puis emploie son Ten pour contenir cette aura en une sphère centrée sur lui. À l'intérieur de la sphère, le personnage sent la forme, la position et le mouvement de tout ce qui s'y trouve ; un utilisateur de Nen y provoque une réaction bien plus forte qu'une personne ordinaire.</p>
+<p>Le rayon de la sphère mesure la maîtrise : un pratiquant reconnu dépasse les 2 m, un maître atteint une cinquantaine de mètres, et seules de rares exceptions vont au-delà, comme Pitou et ses 2 km.</p>
+<p>Entrer en En fait tomber l'état du Nen précédent. Tant que le personnage maintient l'En, son UAR tombe à 0 : il ne projette plus rien et ne peut rien mettre en réserve. En contrepartie, il gagne +240 à tous ses jets sensoriels dans sa sphère.</p>
+<p class="palier">Basique</p>
+<p><span class="prereq">Prérequis : Ren Basique</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Entrer en En demande 10 minutes de concentration, en activité lourde ; en sortir demande 1 minute, en activité lourde aussi. Le maintenir reste une activité lourde.</p>
+<p class="palier">Avancé</p>
+<p><span class="prereq">Prérequis : En Basique</span>
+<span class="prereq">Coût : 10 DI</span></p>
+<p>Entrer en En demande 1 minute de concentration ; en sortir coûte un tour complet, soit toutes les actions du personnage. Entrer, sortir et maintenir l'En restent une activité lourde.</p>
+<p class="palier">Expert</p>
+<p><span class="prereq">Prérequis : En Avancé</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Entrer en En coûte un tour complet, soit toutes les actions du personnage ; en sortir coûte une action. Entrer, sortir et maintenir l'En ne sont plus qu'une activité intermédiaire.</p>
+<p class="palier">Maître</p>
+<p><span class="prereq">Prérequis : En Expert</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Entrer en En coûte une action, en activité intermédiaire ; le personnage peut en sortir à tout moment (aucune action requise). Le maintenir reste une activité intermédiaire.</p>
+<hr/>
+<p>Le rayon part de 1 m, compris dans l'apprentissage de l'En, et s'étend cran par cran selon le tableau ci-dessous, indépendamment des quatre paliers : chaque cran exige le précédent et coûte le DI indiqué.</p>
+<p>En entrant en En, le personnage déploie le rayon de son choix parmi ceux qu'il a débloqués. Il peut resserrer le rayon (aucune action requise) ; l'élargir jusqu'à un cran déjà débloqué coûte une action.</p>
+<p>Maintenir la sphère se paie sur la réserve : à la fin de chacun des tours du personnage, son UAD perd l'aura par tour indiquée pour le rayon déployé. Si l'UAD ne suffit plus, l'En se dissipe aussitôt.</p>
+<table>
+<thead>
+<tr>
+<th>Rayon</th>
+<th>Coût (DI)</th>
+<th>Aura par tour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 m</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2 m</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3 m</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>5 m</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>20</td>
+<td>15</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>20</td>
+<td>20</td>
+</tr>
+<tr>
+<td>30 m</td>
+<td>20</td>
+<td>30</td>
+</tr>
+<tr>
+<td>50 m</td>
+<td>20</td>
+<td>40</td>
+</tr>
+<tr>
+<td>100 m</td>
+<td>50</td>
+<td>60</td>
+</tr>
+<tr>
+<td>200 m</td>
+<td>50</td>
+<td>80</td>
+</tr>
+<tr>
+<td>300 m</td>
+<td>50</td>
+<td>100</td>
+</tr>
+<tr>
+<td>500 m</td>
+<td>50</td>
+<td>150</td>
+</tr>
+<tr>
+<td>1 km</td>
+<td>100</td>
+<td>200</td>
+</tr>
+<tr>
+<td>2 km</td>
+<td>100</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div><div class="mcard gloss-card" data-key="terme:ren">
+<p><strong>Ren</strong></p>
+<p><span class="prereq">Enhance</span></p>
+<p>Le Ren force les nœuds à s'ouvrir : l'aura enveloppe le corps d'un manteau dense.</p>
+<p>Le Ren est un état du Nen : l'activer ou le désactiver coûte une action, et l'adopter fait tomber l'état précédent. Ses bonus ne valent que tant que le personnage le tient.</p>
+<p>En plus de son bonus à la base d'UAR, le Ren donne au personnage un bonus fixe aux dégâts qu'il inflige et à sa réduction de dégâts, selon son palier :</p>
+<table>
+<thead>
+<tr>
+<th>Palier</th>
+<th style="text-align: center;">Dégâts</th>
+<th style="text-align: center;">Réduction de dégâts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basique</td>
+<td style="text-align: center;">+60</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>Avancé</td>
+<td style="text-align: center;">+80</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td style="text-align: center;">+100</td>
+<td style="text-align: center;">+60</td>
+</tr>
+<tr>
+<td>Maître</td>
+<td style="text-align: center;">+120</td>
+<td style="text-align: center;">+80</td>
+</tr>
+</tbody>
+</table>
+<p class="palier">Basique</p>
+<p><span class="prereq">Prérequis : Ten Basique</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Le Ren donne au personnage +5 à sa base d'UAR.</p>
+<p class="palier">Avancé</p>
+<p><span class="prereq">Prérequis : Ren Basique</span>
+<span class="prereq">Coût : 10 DI</span></p>
+<p>Le bonus de Ren à la base d'UAR du personnage passe à +10.</p>
+<p class="palier">Expert</p>
+<p><span class="prereq">Prérequis : Ren Avancé</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Le bonus de Ren à la base d'UAR du personnage passe à +15.</p>
+<p class="palier">Maître</p>
+<p><span class="prereq">Prérequis : Ren Expert</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Le bonus de Ren à la base d'UAR du personnage passe à +20.</p>
+</div><div class="mcard gloss-card" data-key="terme:hatsu">
+<p><strong>Hatsu</strong></p>
+<p><span class="prereq">Release</span></p>
+<p><span class="prereq">Prérequis : Ten Basique, Zetsu Basique, Ren Basique</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Le Hatsu est l'expression personnelle du Nen : le personnage projette son aura pour une fonction qu'il choisit, marquée par son tempérament autant que par son archétype. Une bonne capacité reflète son auteur ; mieux vaut la créer sur mesure que copier celle d'un autre.</p>
+<p>En apprenant le Hatsu, le personnage peut convertir son développement intérieur en développement de catégorie (DR, DE, DT, DM, DC, DS) et créer ses propres capacités.</p>
+</div><div class="mcard gloss-card" data-key="terme:ten">
+<p><strong>Ten</strong></p>
+<p><span class="prereq">Shroud</span></p>
+<p>Le Ten retient l'aura autour du corps en un voile mince et continu : l'aura ne se dissipe plus et sa récupération augmente.</p>
+<p>Le Ten est un état du Nen : l'activer ou le désactiver coûte une action, et l'adopter fait tomber l'état précédent. Son bonus ne vaut que tant que le personnage le tient.</p>
+<p class="palier">Basique</p>
+<p><span class="prereq">Prérequis : Initiation au Nen</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Le Ten donne au personnage +5 à sa base de RUA.</p>
+<p class="palier">Avancé</p>
+<p><span class="prereq">Prérequis : Ten Basique</span>
+<span class="prereq">Coût : 10 DI</span></p>
+<p>Le bonus de Ten à la base de RUA du personnage passe à +10.</p>
+<p class="palier">Expert</p>
+<p><span class="prereq">Prérequis : Ten Avancé</span>
+<span class="prereq">Coût : 20 DI</span></p>
+<p>Le bonus de Ten à la base de RUA du personnage passe à +15.</p>
+<p class="palier">Maître</p>
+<p><span class="prereq">Prérequis : Ten Expert</span>
+<span class="prereq">Coût : 30 DI</span></p>
+<p>Le bonus de Ten à la base de RUA du personnage passe à +20.</p>
+</div><div class="gcard gloss-card" data-key="terme:effet">
+<p><strong>Effet</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Socle : effet</p>
+<p>La capacité fait autre chose que frapper ou parer : elle amplifie, déplace, perçoit, altère ou communique. Son effet porte sur le porteur lui-même. Sans module, elle ne coûte rien : ses modules portent tout ce qu'elle fait.</p>
+</div>
+</div>
+<div class="gcard gloss-card" data-key="terme:cout">
+<p><strong>Coût</strong></p>
+<div class="gcard-text">
+<p>l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'affinité accordée : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
+</div>
+</div></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -3075,7 +3337,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.footer", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script src="../../../../javascripts/changelog.js"></script>
 <script src="../../../../javascripts/continuous.js"></script>
 <script src="../../../../javascripts/nav-drawer.js"></script>

@@ -1,5 +1,118 @@
 [
 {
+"short": "665677e",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T19:55:39+02:00",
+"message": "Chantier : refonte du Nen, armes, compétences, avantages, atelier et création",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/665677ee6098d3522842beb198e4df1492648b60",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/armes.md",
+"url": "content/regles/combat/armes/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/deroulement-combat.md",
+"url": "content/regles/combat/deroulement-combat/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/archetypes-nen.md",
+"url": "content/regles/nen/archetypes-nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/aura.md",
+"url": "content/regles/nen/aura/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/capacites-de-nen.md",
+"url": "content/regles/nen/capacites-de-nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/conjuration.md",
+"url": "content/regles/nen/conjuration/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/di.md",
+"url": "content/regles/nen/di/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/emission.md",
+"url": "content/regles/nen/emission/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/manipulation.md",
+"url": "content/regles/nen/manipulation/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/renforcement.md",
+"url": "content/regles/nen/renforcement/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/specialisation.md",
+"url": "content/regles/nen/specialisation/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/techniques-nen.md",
+"url": "content/regles/nen/techniques-nen/"
+},
+{
+"status": "modified",
+"filename": "content/regles/nen/transmutation.md",
+"url": "content/regles/nen/transmutation/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/avantages.md",
+"url": "content/regles/personnage/avantages/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/classe.md",
+"url": "content/regles/personnage/classe/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/points-formation.md",
+"url": "content/regles/personnage/points-formation/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/sens.md",
+"url": "content/regles/personnage/sens/"
+}
+]
+},
+{
+"short": "415f179",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T17:04:40+02:00",
+"message": "Formes : déplacement et propriétés spéciales réécrits en règles claires",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/415f179fabdab6f5fd1ff990923295b2a46cdf8a",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/monde/formes.md",
+"url": "content/regles/monde/formes/"
+}
+]
+},
+{
 "short": "6111993",
 "author": "Théo Cavaillès",
 "date": "2026-07-17T12:24:22+02:00",
@@ -241,34 +354,6 @@
 "status": "modified",
 "filename": "content/regles/personnage/sens.md",
 "url": "content/regles/personnage/sens/"
-}
-]
-},
-{
-"short": "d7ebde5",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T21:53:39+02:00",
-"message": "Blessures : malus global, pas de 10, table dérivée de la visée",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d7ebde5d315cbcd9a4ecf8b29ccca27901a2bc11",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
-}
-]
-},
-{
-"short": "6b68cb6",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T21:45:45+02:00",
-"message": "Blessures : le Poumon retire enfin l'état Immobilisé",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6b68cb6c087a5d07c47b2106bbaa840a81c213bb",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
 }
 ]
 }

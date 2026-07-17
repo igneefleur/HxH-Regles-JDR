@@ -481,6 +481,11 @@ html.night .nf-warn {             /* avertissement — #f6e6df + texte #8f3320 *
   color: #e08a72;
   border-color: #5a382e;
 }
+html.night .nf-warn-soft {        /* mise en garde jaune : version nuit */
+  background: #2e2a17;
+  color: #d8b95c;
+  border-color: #4a4126;
+}
 html.night .nf-btn.primary,       /* texte clair sur bouton d'accent olive */
 html.night .nf-chip.on {
   color: #1c1913;
