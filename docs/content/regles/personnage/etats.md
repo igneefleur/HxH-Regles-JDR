@@ -127,7 +127,7 @@ L'adversaire contrôle entièrement son corps, jusqu'à la position de ses membr
 <div class="sblock" markdown>
 **Immobilisé**
 
-Quelque chose empêche le personnage de se déplacer : des liens, des chaînes, un membre coincé, un éboulis, une jambe perdue, une douleur qui le cloue sur place. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure. Un adversaire qui le tient inflige une Prise, pas cet état. Selon ce qui l'immobilise, le personnage subit parfois aussi une Paralysie.
+Quelque chose retient physiquement le personnage : des liens, des chaînes, un membre coincé, un éboulis. Son [Mouvement](capacites-physiques.md#mouvement) tombe à 0, quelle que soit l'allure. Un adversaire qui le tient inflige une Prise, pas cet état.
 </div>
 
 <div class="sblock" markdown>
