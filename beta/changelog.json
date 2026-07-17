@@ -1,0 +1,270 @@
+[
+{
+"short": "d73a341",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T12:04:39+02:00",
+"message": "Blessures : plus aucun état de combat, seule l'Inconscience via le jet",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d73a3415c3dd4c13cbfecbd920b974be2e9e834c",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/etats.md",
+"url": "content/regles/personnage/etats/"
+}
+]
+},
+{
+"short": "a103212",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T10:39:51+02:00",
+"message": "Blessures : « un malus de −X à toutes les actions », Immobilisé hors des amputations",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/a10321224f581ef1df1535462b133e6dc20fcc01",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "e29a46f",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:55:46+02:00",
+"message": "Blessures : 4 zones de plus, la fusion réduite à ce qui la mérite",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/e29a46ff99710740dc7b66dd146e2e8f97de624d",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "c5513eb",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:49:59+02:00",
+"message": "Blessures : le chapitre redevient humain, et 47 constats de relecture",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/c5513eb93afbb1a0078bd671deff7817bda1d000",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "6f82c25",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:39:19+02:00",
+"message": "Blessures : les cartes « Ne pas avoir de » disent enfin une règle",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6f82c25d6eb9385ce8be50ff871776cc805f547a",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "a308ec7",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:30:32+02:00",
+"message": "Blessures : les 13 cartes « Ne pas avoir de » rédigées",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/a308ec726224dd2525b855af7c71312f58c03b92",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "dbe3555",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T23:10:44+02:00",
+"message": "Blessures : relecture adversariale appliquée (66 constats)",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/dbe3555d2e5504dd7603eb7dfaff5e9cea314aa4",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "eaf3166",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T22:14:56+02:00",
+"message": "Blessures : les sens se chiffrent en clarté, et 4 écarts d'équilibrage",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/eaf316616d3cd9a5a7533ced24ce8579b9952014",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "a4fe5e7",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T22:13:55+02:00",
+"message": "Arts en chantier (Mage noir, Écholocation, Vigie, Déjà-vu, Lung-gom-pa, Avalanche) + annexe Conversion Magicien D&D ; symboles ● ★ ✦ recalibrés via face dédiée",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/a4fe5e7e09bedcc618fc98205746e0a6e15b0f21",
+"files": [
+{
+"status": "added",
+"filename": "content/regles/annexes/conversion-magicien-dnd.md",
+"url": "content/regles/annexes/conversion-magicien-dnd/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-artisanaux.md",
+"url": "content/regles/art/arts-artisanaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-artistiques.md",
+"url": "content/regles/art/arts-artistiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-athletiques.md",
+"url": "content/regles/art/arts-athletiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-furtifs.md",
+"url": "content/regles/art/arts-furtifs/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-intellectuels.md",
+"url": "content/regles/art/arts-intellectuels/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-martiaux.md",
+"url": "content/regles/art/arts-martiaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-naturels.md",
+"url": "content/regles/art/arts-naturels/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-sensoriels.md",
+"url": "content/regles/art/arts-sensoriels/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-sociaux.md",
+"url": "content/regles/art/arts-sociaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-techniques.md",
+"url": "content/regles/art/arts-techniques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-transport.md",
+"url": "content/regles/art/arts-transport/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-vitaux.md",
+"url": "content/regles/art/arts-vitaux/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/armes.md",
+"url": "content/regles/combat/armes/"
+},
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+},
+{
+"status": "modified",
+"filename": "content/regles/monde/formes.md",
+"url": "content/regles/monde/formes/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/capacites-physiques.md",
+"url": "content/regles/personnage/capacites-physiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/competences.md",
+"url": "content/regles/personnage/competences/"
+},
+{
+"status": "added",
+"filename": "content/regles/personnage/influence.md",
+"url": "content/regles/personnage/influence/"
+},
+{
+"status": "modified",
+"filename": "content/regles/personnage/sens.md",
+"url": "content/regles/personnage/sens/"
+}
+]
+},
+{
+"short": "d7ebde5",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T21:53:39+02:00",
+"message": "Blessures : malus global, pas de 10, table dérivée de la visée",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/d7ebde5d315cbcd9a4ecf8b29ccca27901a2bc11",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "6b68cb6",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T21:45:45+02:00",
+"message": "Blessures : le Poumon retire enfin l'état Immobilisé",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6b68cb6c087a5d07c47b2106bbaa840a81c213bb",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+},
+{
+"short": "00bd221",
+"author": "Théo Cavaillès",
+"date": "2026-07-16T21:44:45+02:00",
+"message": "Blessures : constats de l'audit des 23 zones appliqués",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/00bd221d91cca33006ec39e2989d584cb129558a",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/combat/critique-blessures.md",
+"url": "content/regles/combat/critique-blessures/"
+}
+]
+}
+]
