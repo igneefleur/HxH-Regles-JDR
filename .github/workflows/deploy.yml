@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - beta
 permissions:
   contents: write
 jobs:
@@ -41,10 +42,34 @@ jobs:
           pip install mkdocs-material "mkdocs-to-pdf==0.11.2" brotli
           pip install -U "weasyprint==69.0" "pydyf==0.12.1"
 
-      # Build + déploiement avec la config CI (qui active le plugin PDF). La
-      # variable ENABLE_PDF_EXPORT déclenche réellement la génération du PDF.
-      - name: Build et déploiement (PDF activé)
+      # Build avec la config CI (qui active le plugin PDF). La variable
+      # ENABLE_PDF_EXPORT déclenche réellement la génération du PDF.
+      - name: Build (PDF activé)
         env:
           ENABLE_PDF_EXPORT: "1"
           NO_MKDOCS_2_WARNING: "1"   # coupe l'encadré promo « MkDocs 2.0 » de Material dans les logs
-        run: mkdocs gh-deploy --config-file mkdocs.ci.yml --force
+        run: mkdocs build --config-file mkdocs.ci.yml
+
+      # Un seul site GitHub Pages (branche gh-pages), deux emplacements :
+      #   main -> racine   https://igneefleur.github.io/HxH-Regles-JDR/
+      #   beta -> beta/    https://igneefleur.github.io/HxH-Regles-JDR/beta/
+      # On n'utilise plus « mkdocs gh-deploy --force », qui écraserait toute la
+      # branche gh-pages (beta/ comprise) à chaque déploiement : l'action nettoie
+      # sa zone et épargne l'autre.
+      - name: Déploiement officiel (main -> racine, beta/ épargné)
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
+          branch: gh-pages
+          clean: true
+          clean-exclude: |
+            beta
+      - name: Déploiement beta (beta -> beta/)
+        if: github.ref == 'refs/heads/beta'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
+          branch: gh-pages
+          target-folder: beta
+          clean: true
