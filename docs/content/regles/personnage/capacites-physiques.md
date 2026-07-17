@@ -100,7 +100,13 @@ Au-delà, chaque heure d'éveil en plus lui demande un jet de [Résistance à l'
 
 La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'activité fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.
 
-<div class="gloss-source span sommeil" markdown>
+</div>
+
+---
+
+<div class="cols" markdown>
+
+<div class="gloss-source sommeil keep" markdown>
 
 | Repos | Temps de sommeil | Avant de pouvoir redormir | Avant d'être fatigué |
 |:---:|:---:|:---:|:---:|
@@ -138,13 +144,7 @@ La première heure dépassée demande donc un jet à 20, la deuxième un jet à 
 
 </div>
 
-<div class="defs" markdown>
-
-**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
-
-</div>
-
-<div class="gloss-source span sommeil" markdown>
+<div class="gloss-source sommeil keep" markdown>
 
 | Fond | Activité intermédiaire | Activité lourde |
 |:---:|:---:|:---:|
@@ -179,6 +179,12 @@ La première heure dépassée demande donc un jet à 20, la deuxième un jet à 
 | 28 | 12 h | 10 h 30 |
 | 29 | 12 h | 11 h |
 | 30 | 12 h | 12 h |
+
+</div>
+
+<div class="defs span" markdown>
+
+**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
 
 </div>
 
