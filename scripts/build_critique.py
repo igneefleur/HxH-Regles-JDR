@@ -45,7 +45,6 @@ def normalize_effet(s):
     s = re.sub(r"([Ss]aignement)\s+(\d+)\b(?!\s*PV)",        # « Saignement N » sans unité
                lambda m: f"{m.group(1)} {max(5, round(int(m.group(2)) / 5) * 5)} PV par tour", s)
     s = re.sub(r"\s*(?:Aucun|Pas de|Sans) saignement\.?", "", s, flags=re.I)  # négations parasites
-    s = re.sub(r"\b[Mm]alus(?:\s+de)?\s+(?=[−-])", "", s)    # « Malus de −X » -> « −X »
     s = re.sub(r"\bÉtat ", "", s)                            # « État Mutisme » -> « Mutisme »
     s = re.sub(r"\bHors d'usage\b", "hors d'usage", s)       # pas un état défini : minuscule
     s = re.sub(r"premiers soins", "premiers secours", s)
