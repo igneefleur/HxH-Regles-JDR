@@ -1,5 +1,24 @@
 [
 {
+"short": "6111993",
+"author": "Théo Cavaillès",
+"date": "2026-07-17T12:24:22+02:00",
+"message": "État complet du chantier (arts, sens, hooks) avant séparation main/beta",
+"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6111993a341ab6a019513f471578809d24a9ab37",
+"files": [
+{
+"status": "modified",
+"filename": "content/regles/art/arts-athletiques.md",
+"url": "content/regles/art/arts-athletiques/"
+},
+{
+"status": "modified",
+"filename": "content/regles/art/arts-martiaux.md",
+"url": "content/regles/art/arts-martiaux/"
+}
+]
+},
+{
 "short": "d73a341",
 "author": "Théo Cavaillès",
 "date": "2026-07-17T12:04:39+02:00",
@@ -245,20 +264,6 @@
 "date": "2026-07-16T21:45:45+02:00",
 "message": "Blessures : le Poumon retire enfin l'état Immobilisé",
 "url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/6b68cb6c087a5d07c47b2106bbaa840a81c213bb",
-"files": [
-{
-"status": "modified",
-"filename": "content/regles/combat/critique-blessures.md",
-"url": "content/regles/combat/critique-blessures/"
-}
-]
-},
-{
-"short": "00bd221",
-"author": "Théo Cavaillès",
-"date": "2026-07-16T21:44:45+02:00",
-"message": "Blessures : constats de l'audit des 23 zones appliqués",
-"url": "https://github.com/igneefleur/HxH-Regles-JDR/commit/00bd221d91cca33006ec39e2989d584cb129558a",
 "files": [
 {
 "status": "modified",
