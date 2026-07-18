@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1821,12 +1821,12 @@
 <div class="cols">
 <p>Un coup d'une réussite exceptionnelle peut ouvrir une blessure grave, qui handicape le blessé bien au-delà des <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>. On la résout pas à pas : on calcule sa <a class="gloss-link" data-key="terme:gravite" href="#gloss-gravite">gravité</a>, on en déduit le degré, on localise la plaie, puis on lit la blessure correspondante.</p>
 <h3 id="le-coup-critique">Le coup critique</h3>
-<p>Une attaque inflige un critique lorsqu'elle atteint 200 % de son degré de touche. Le coup peut alors laisser une blessure grave, déterminée par les étapes ci-dessous.</p>
+<p>Une attaque inflige un critique lorsqu'elle atteint 200 % de son <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a>. Le coup peut alors laisser une blessure grave, déterminée par les étapes ci-dessous.</p>
 <span class="gloss-anchor" id="gloss-gravite"></span><h3 id="gravite">Gravité</h3>
 <p class="formula"><a class="gloss-link" data-key="terme:gravite" href="#gloss-gravite">Gravité</a> = <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> subis (en % des PV max, plafonné à 100) + modificateur de critique + 1d100</p>
 <p>Les <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> subis comptent pour leur part des PV maximaux : un coup qui en emporte la moitié pèse 50, un coup qui les épuise tous plafonne à 100. La <a class="gloss-link" data-key="terme:gravite" href="#gloss-gravite">gravité</a> se lit sur l'échelle de difficulté, de 120 à 400 : en deçà de 120, le coup reste une attaque ordinaire, sans séquelle ; à 120 et plus, il inflige une blessure grave, d'autant plus sévère que la <a class="gloss-link" data-key="terme:gravite" href="#gloss-gravite">gravité</a> est haute.</p>
 <span class="gloss-anchor" id="gloss-degre-de-blessure"></span><h3 id="degre-de-blessure">Degré de blessure</h3>
-<p>La <a class="gloss-link" data-key="terme:gravite" href="#gloss-gravite">gravité</a> se convertit en degré de blessure, de 1 (le plus léger) à 5 (le pire).</p>
+<p>La <a class="gloss-link" data-key="terme:gravite" href="#gloss-gravite">gravité</a> se convertit en <a class="gloss-link" data-key="terme:degre-de-blessure" href="#gloss-degre-de-blessure">degré de blessure</a>, de 1 (le plus léger) à 5 (le pire).</p>
 <div class="keep">
 <table>
 <thead>
@@ -5144,6 +5144,48 @@
 <p class="formula">Gravité = dégâts subis (en % des PV max, plafonné à 100) + modificateur de critique + 1d100</p>
 <p>Les dégâts subis comptent pour leur part des PV maximaux : un coup qui en emporte la moitié pèse 50, un coup qui les épuise tous plafonne à 100. La gravité se lit sur l'échelle de difficulté, de 120 à 400 : en deçà de 120, le coup reste une attaque ordinaire, sans séquelle ; à 120 et plus, il inflige une blessure grave, d'autant plus sévère que la gravité est haute.</p>
 </div>
+</div><div class="gcard gloss-card" data-key="terme:degre-de-touche">
+<p><strong>Degré de touche</strong></p>
+<div class="gcard-text">
+<p>la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:degre-de-blessure">
+<p><strong>Degré de blessure</strong></p>
+<div class="gcard-text">
+<p>La gravité se convertit en degré de blessure, de 1 (le plus léger) à 5 (le pire).</p>
+<div class="keep">
+<table>
+<thead>
+<tr>
+<th>Gravité</th>
+<th>Degré</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>120 à 179</td>
+<td>1</td>
+</tr>
+<tr>
+<td>180 à 239</td>
+<td>2</td>
+</tr>
+<tr>
+<td>240 à 319</td>
+<td>3</td>
+</tr>
+<tr>
+<td>320 à 399</td>
+<td>4</td>
+</tr>
+<tr>
+<td>400 et plus</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div><div class="mcard gloss-card" data-key="terme:precise">
 <p><strong>Précise</strong></p>
 <p>Arme faite pour le coup ajusté : quand le porteur emploie l'option d'attaque Viser, le malus de la zone visée est divisé par deux.</p>
@@ -5745,10 +5787,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

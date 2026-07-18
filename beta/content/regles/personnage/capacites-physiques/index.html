@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -366,6 +366,15 @@
 <span class="md-ellipsis">
       
         Sommeil et repos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#le-fond">
+<span class="md-ellipsis">
+      
+        Le Fond
       
     </span>
 </a>
@@ -1464,6 +1473,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#le-fond">
+<span class="md-ellipsis">
+      
+        Le Fond
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#forcer-leffort">
 <span class="md-ellipsis">
       
@@ -1671,7 +1689,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="capacites-physiques">Capacités physiques</h1>
 <div class="cols">
-<p>Les capacités <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">physiques</a> mesurent ce que le corps d'un personnage accomplit sans jet de dé : la distance qu'il franchit, le bond qu'il fait, la charge qu'il soulève, la <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> de son lancer, le souffle qu'il retient, la profondeur qu'il supporte. Chacune découle d'une <a href="../caracteristiques/">caractéristique</a> <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">physique</a> et se lit dans une table. Ce chapitre en définit six : le <a href="#mouvement">Mouvement</a>, issu de l'<a class="gloss-link" data-key="terme:agilite" href="../../../content/regles/personnage/caracteristiques/#gloss-agilite">Agilité</a> ; le <a href="#saut">Saut</a>, le <a href="#port">Port</a> et le <a href="#lancer">Lancer</a>, issus de la <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a> ; l'<a href="#retenir-son-souffle">Apnée</a> et la <a href="#pression-aquatique">Pression</a>, issues de l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a>. Il définit d'abord ce qu'elles partagent : la lecture des tables, la <a href="#la-fatigue">Fatigue</a>, l'<a href="#activite">activité</a> et le sommeil.</p>
+<p>Les capacités <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">physiques</a> mesurent ce que le corps d'un personnage accomplit sans jet de dé : la distance qu'il franchit, le bond qu'il fait, la charge qu'il soulève, la <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portée</a> de son lancer, le souffle qu'il retient, la profondeur qu'il supporte. Chacune découle d'une <a href="../caracteristiques/">caractéristique</a> <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">physique</a> et se lit dans une table. Ce chapitre en définit six : le <a href="#mouvement">Mouvement</a>, issu de l'<a class="gloss-link" data-key="terme:agilite" href="../../../content/regles/personnage/caracteristiques/#gloss-agilite">Agilité</a> ; le <a href="#saut">Saut</a>, le <a href="#port">Port</a> et le <a href="#lancer">Lancer</a>, issus de la <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a> ; l'<a href="#retenir-son-souffle">Apnée</a> et la <a href="#pression-aquatique">Pression</a>, issues de l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a>. Il définit d'abord ce qu'elles partagent : la lecture des tables, la <a href="#la-fatigue">Fatigue</a>, l'<a href="#activite">activité</a>, le sommeil et le fond.</p>
 <p>Sur l'échelle des <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristiques</a>, notée de 0 à 30, 5 est la moyenne humaine et 9 le plafond humain réel.</p>
 <div class="keep">
 <h3 id="lire-une-capacite">Lire une capacité</h3>
@@ -1698,34 +1716,22 @@
 <span class="gloss-anchor" id="gloss-intermediaire"></span><p><strong>Intermédiaire :</strong> un effort moyen, tenable de longues heures avec des pauses. Le personnage transpire et fournit un travail réel sans se mettre à bout : le rythme d'une vraie journée de labeur. Par exemple : randonner sac au dos, marcher vite, trottiner longtemps ; fendre du bois, creuser, manier la pioche, charrier des charges ; travailler à la forge, aux champs ou sur un chantier ; nager, ramer, pédaler à rythme régulier.</p>
 <span class="gloss-anchor" id="gloss-lourde"></span><p><strong>Lourde :</strong> un gros effort à pleine puissance, à l'intensité maximale du corps. Le personnage se dépense sans retenue et puise dans ses réserves : il ne tient ce rythme qu'un temps limité avant de réclamer du repos. Par exemple : combattre, en duel ou en mêlée ; sprinter, fuir, poursuivre à toutes jambes ; pousser le corps à sa limite lors d'un exploit.</p>
 </div>
+</div>
+<div class="cols">
+<div class="keep">
 <span class="gloss-anchor" id="gloss-sommeil-et-repos"></span><h4 id="sommeil-et-repos">Sommeil et repos</h4>
-<p>Le Repos découle de l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a> : le Repos d'un personnage est égal à son <a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a>, et c'est à sa ligne que se lit la table du sommeil, en bas de section. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.</p>
-<p>Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue, ni durées d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a>. <a class="gloss-link" data-key="terme:en" href="../../../content/regles/nen/techniques-nen/#gloss-en">En</a> revanche, un sommeil interrompu peut reprendre : on additionne tout ce que le personnage dort depuis son dernier sommeil correct, et dès que le total atteint son temps de sommeil requis, il a dormi correctement.</p>
-<p>La même table donne aussi les limites d'effort d'une journée, entre deux sommeils. La colonne <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">Activité</a> intermédiaire donne la durée totale d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire qu'un personnage peut fournir dans sa journée sans rien risquer ; la colonne <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">Activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>, la durée totale d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>. Les deux durées se dépensent séparément ; le reste de la journée se passe en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> légère, qui ne se compte pas. Dormir correctement redonne les deux durées en entier.</p>
+<p>Le Repos découle de l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a> : le Repos d'un personnage est égal à son <a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a>, et c'est à sa ligne que se lit sa table, ci-dessous. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.</p>
+<p>Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue, ni réserves d'effort. <a class="gloss-link" data-key="terme:en" href="../../../content/regles/nen/techniques-nen/#gloss-en">En</a> revanche, un sommeil interrompu peut reprendre : on additionne tout ce que le personnage dort depuis son dernier sommeil correct, et dès que le total atteint son temps de sommeil requis, il a dormi correctement.</p>
 <p>Un personnage ne peut pas se rendormir aussitôt après un sommeil correct : il doit d'abord rester éveillé un temps minimal, la moitié de son temps avant d'être fatigué (<a href="#veiller-sans-dormir">Veiller sans dormir</a>). Un sommeil trop court pour être correct n'impose pas ce délai. La table du sommeil, ci-dessous, donne les deux durées, aux colonnes Avant de pouvoir redormir et Avant d'être fatigué.</p>
 <p class="formula">Temps avant de pouvoir redormir = temps avant d'être fatigué ÷ 2</p>
-<div class="memo">
-<p>Exemple. Avec un Repos de 5, la moyenne humaine, un personnage dort 8 heures, fournit jusqu'à 8 heures d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire mais à peine une vingtaine de minutes d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a> dans sa journée ; tout le reste se passe en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> légère. Au pic humain réel (Repos 9), six heures de sommeil lui suffisent, il tient 12 heures d'intermédiaire et tout juste une heure de <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>.</p>
 </div>
-<h4 id="forcer-leffort">Forcer l'effort</h4>
-<p>Les durées de la table donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire et sous sa durée d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.</p>
-<p>Quand un personnage a épuisé l'une de ces durées et continue quand même dans cette intensité, il force sur un corps déjà à bout. Il fait alors un jet de <a href="../competences/">Résistance à l'Épuisement</a>, une première fois au moment où il dépasse la durée, puis régulièrement tant qu'il continue : toutes les heures en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire, toutes les dix minutes en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>. S'il s'arrête puis reprend plus tard, la durée toujours épuisée, il refait un jet aussitôt, puis aux mêmes intervalles : les pauses ne remettent rien à zéro avant le prochain sommeil correct. La difficulté augmente à chaque jet :</p>
-<p class="formula">Difficulté = 100 + 20 × le nombre de jets déjà faits pour forcer l'effort depuis le dernier sommeil correct</p>
-<p>Le premier jet se fait donc à 100, le deuxième à 120, et ainsi de suite ; les jets de veille (<a href="#veiller-sans-dormir">Veiller sans dormir</a>) ne comptent pas dans ce total. S'il réussit, le personnage tient jusqu'au prochain jet. S'il échoue, il perd des points de <a href="#la-fatigue">fatigue</a> selon sa marge d'échec ; rien ne l'empêche de continuer, sinon la fatigue elle-même.</p>
-<h4 id="veiller-sans-dormir">Veiller sans dormir</h4>
-<p>Un personnage peut rester éveillé sans risque pendant son temps avant d'être fatigué, qui dépend de son Repos :</p>
-<p class="formula">Temps avant d'être fatigué = 24 heures − le temps de sommeil requis</p>
-<p>Au-delà, chaque heure d'éveil en plus lui demande un jet de <a href="../competences/">Résistance à l'Épuisement</a>, de plus en plus <a class="gloss-link" data-key="terme:difficile" href="#gloss-difficile">difficile</a> :</p>
-<p class="formula">Difficulté = 20 pour la première heure dépassée, +20 par heure suivante</p>
-<p>La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de <a href="#la-fatigue">fatigue</a> selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.</p>
-<div class="gloss-source span sommeil">
+<div class="keep">
+<div class="gloss-source">
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Repos</th>
-<th style="text-align: center;">Sommeil</th>
-<th style="text-align: center;">Activité intermédiaire</th>
-<th style="text-align: center;">Activité lourde</th>
+<th style="text-align: center;">Temps de sommeil</th>
 <th style="text-align: center;">Avant de pouvoir redormir</th>
 <th style="text-align: center;">Avant d'être fatigué</th>
 </tr>
@@ -1735,15 +1741,11 @@
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">18 h</td>
 <td style="text-align: center;">3 h</td>
-<td style="text-align: center;">1 min</td>
-<td style="text-align: center;">3 h</td>
 <td style="text-align: center;">6 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">16 h</td>
-<td style="text-align: center;">4 h</td>
-<td style="text-align: center;">2 min</td>
 <td style="text-align: center;">4 h</td>
 <td style="text-align: center;">8 h</td>
 </tr>
@@ -1751,15 +1753,11 @@
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">14 h</td>
 <td style="text-align: center;">5 h</td>
-<td style="text-align: center;">3 min</td>
-<td style="text-align: center;">5 h</td>
 <td style="text-align: center;">10 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">6 h</td>
-<td style="text-align: center;">5 min</td>
 <td style="text-align: center;">6 h</td>
 <td style="text-align: center;">12 h</td>
 </tr>
@@ -1767,86 +1765,64 @@
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">10 h</td>
 <td style="text-align: center;">7 h</td>
-<td style="text-align: center;">10 min</td>
-<td style="text-align: center;">7 h</td>
 <td style="text-align: center;">14 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">8 h</td>
 <td style="text-align: center;">8 h</td>
-<td style="text-align: center;">20 min</td>
-<td style="text-align: center;">8 h</td>
 <td style="text-align: center;">16 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">7 h 30</td>
-<td style="text-align: center;">9 h</td>
-<td style="text-align: center;">30 min</td>
 <td style="text-align: center;">8 h 15</td>
 <td style="text-align: center;">16 h 30</td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">7 h</td>
-<td style="text-align: center;">10 h</td>
-<td style="text-align: center;">40 min</td>
 <td style="text-align: center;">8 h 30</td>
 <td style="text-align: center;">17 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">6 h 30</td>
-<td style="text-align: center;">11 h</td>
-<td style="text-align: center;">50 min</td>
 <td style="text-align: center;">8 h 45</td>
 <td style="text-align: center;">17 h 30</td>
 </tr>
 <tr>
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">6 h</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">1 h</td>
 <td style="text-align: center;">9 h</td>
 <td style="text-align: center;">18 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">10</td>
 <td style="text-align: center;">5 h 30</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">1 h 30</td>
 <td style="text-align: center;">9 h 15</td>
 <td style="text-align: center;">18 h 30</td>
 </tr>
 <tr>
 <td style="text-align: center;">11</td>
 <td style="text-align: center;">5 h</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">2 h</td>
 <td style="text-align: center;">9 h 30</td>
 <td style="text-align: center;">19 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">12</td>
 <td style="text-align: center;">4 h 30</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">2 h 30</td>
 <td style="text-align: center;">9 h 45</td>
 <td style="text-align: center;">19 h 30</td>
 </tr>
 <tr>
 <td style="text-align: center;">13</td>
 <td style="text-align: center;">4 h</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">3 h</td>
 <td style="text-align: center;">10 h</td>
 <td style="text-align: center;">20 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">14</td>
-<td style="text-align: center;">3 h 30</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">3 h 30</td>
 <td style="text-align: center;">10 h 15</td>
 <td style="text-align: center;">20 h 30</td>
@@ -1854,40 +1830,30 @@
 <tr>
 <td style="text-align: center;">15</td>
 <td style="text-align: center;">3 h</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">4 h</td>
 <td style="text-align: center;">10 h 30</td>
 <td style="text-align: center;">21 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">2 h 30</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">4 h 30</td>
 <td style="text-align: center;">10 h 45</td>
 <td style="text-align: center;">21 h 30</td>
 </tr>
 <tr>
 <td style="text-align: center;">17</td>
 <td style="text-align: center;">2 h</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">5 h</td>
 <td style="text-align: center;">11 h</td>
 <td style="text-align: center;">22 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">18</td>
 <td style="text-align: center;">1 h 30</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">5 h 30</td>
 <td style="text-align: center;">11 h 15</td>
 <td style="text-align: center;">22 h 30</td>
 </tr>
 <tr>
 <td style="text-align: center;">19</td>
 <td style="text-align: center;">1 h</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">6 h</td>
 <td style="text-align: center;">11 h 30</td>
 <td style="text-align: center;">23 h</td>
 </tr>
@@ -1895,15 +1861,11 @@
 <td style="text-align: center;">20</td>
 <td style="text-align: center;">aucun</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">6 h 30</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">21</td>
 <td style="text-align: center;">aucun</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">7 h</td>
 <td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
@@ -1911,15 +1873,11 @@
 <td style="text-align: center;">22</td>
 <td style="text-align: center;">aucun</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">7 h 30</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">23</td>
 <td style="text-align: center;">aucun</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">8 h</td>
 <td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
@@ -1927,15 +1885,11 @@
 <td style="text-align: center;">24</td>
 <td style="text-align: center;">aucun</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">8 h 30</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">25</td>
 <td style="text-align: center;">aucun</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">9 h</td>
 <td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
@@ -1943,15 +1897,11 @@
 <td style="text-align: center;">26</td>
 <td style="text-align: center;">aucun</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">9 h 30</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">27</td>
 <td style="text-align: center;">aucun</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">10 h</td>
 <td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
@@ -1959,23 +1909,17 @@
 <td style="text-align: center;">28</td>
 <td style="text-align: center;">aucun</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">10 h 30</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">29</td>
 <td style="text-align: center;">aucun</td>
 <td style="text-align: center;">12 h</td>
-<td style="text-align: center;">11 h</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
 <tr>
 <td style="text-align: center;">30</td>
 <td style="text-align: center;">aucun</td>
-<td style="text-align: center;">12 h</td>
-<td style="text-align: center;">12 h</td>
 <td style="text-align: center;">12 h</td>
 <td style="text-align: center;">24 h</td>
 </tr>
@@ -1985,6 +1929,198 @@
 <div class="defs">
 <p><strong>Aucun :</strong> le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> légère depuis le début de son <a href="../../combat/deroulement-combat/">tour</a> précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.</p>
 </div>
+</div>
+</div>
+<div class="cols">
+<div class="keep">
+<h4 id="le-fond">Le Fond</h4>
+<p>Le Fond découle de l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a> : le Fond d'un personnage est égal à son <a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a>. C'est l'<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">endurance</a> de son corps à l'effort soutenu, lue à sa ligne dans la table du Fond, ci-dessous : la durée d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire et la durée d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a> qu'il peut fournir dans une journée sans rien risquer.</p>
+<p>La colonne <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">Activité</a> intermédiaire donne la durée totale d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire qu'un personnage peut fournir dans sa journée ; la colonne <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">Activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>, la durée totale d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>. Les deux durées se dépensent séparément ; le reste de la journée se passe en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> légère, qui ne se compte pas. Un sommeil correct rend les deux durées en entier.</p>
+</div>
+<div class="gloss-source keep">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Fond</th>
+<th style="text-align: center;">Activité intermédiaire</th>
+<th style="text-align: center;">Activité lourde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3 h</td>
+<td style="text-align: center;">1 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4 h</td>
+<td style="text-align: center;">2 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5 h</td>
+<td style="text-align: center;">3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6 h</td>
+<td style="text-align: center;">5 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">7 h</td>
+<td style="text-align: center;">10 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">8 h</td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">9 h</td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">10 h</td>
+<td style="text-align: center;">40 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">11 h</td>
+<td style="text-align: center;">50 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">1 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">1 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">2 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">2 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">3 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">3 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">4 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">4 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">5 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">5 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">6 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">6 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">7 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">7 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">8 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">8 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">9 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">9 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">10 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">10 h 30</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">11 h</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">12 h</td>
+<td style="text-align: center;">12 h</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cols">
+<div class="memo">
+<p>Exemple. Avec une <a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a> de 5, la moyenne humaine, un personnage dort 8 heures ; son Fond lui donne jusqu'à 8 heures d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire mais à peine une vingtaine de minutes d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a> dans sa journée, tout le reste se passant en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> légère. Au pic humain réel (<a class="gloss-link" data-key="terme:endurance" href="../../../content/regles/personnage/caracteristiques/#gloss-endurance">Endurance</a> 9), six heures de sommeil lui suffisent, et son Fond tient 12 heures d'intermédiaire et tout juste une heure de <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>.</p>
+</div>
+<h4 id="forcer-leffort">Forcer l'effort</h4>
+<p>Les durées du Fond donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire et sous sa durée d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.</p>
+<p>Quand un personnage a épuisé l'une de ces durées et continue quand même dans cette intensité, il force sur un corps déjà à bout. Il fait alors un jet de <a href="../competences/">Résistance à l'Épuisement</a>, une première fois au moment où il dépasse la durée, puis régulièrement tant qu'il continue : toutes les heures en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> intermédiaire, toutes les dix minutes en <a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">lourde</a>. S'il s'arrête puis reprend plus tard, la durée toujours épuisée, il refait un jet aussitôt, puis aux mêmes intervalles : les pauses ne remettent rien à zéro avant le prochain sommeil correct. La difficulté augmente à chaque jet :</p>
+<p class="formula">Difficulté = 100 + 20 × le nombre de jets déjà faits pour forcer l'effort depuis le dernier sommeil correct</p>
+<p>Le premier jet se fait donc à 100, le deuxième à 120, et ainsi de suite ; les jets de veille (<a href="#veiller-sans-dormir">Veiller sans dormir</a>) ne comptent pas dans ce total. S'il réussit, le personnage tient jusqu'au prochain jet. S'il échoue, il perd des points de <a href="#la-fatigue">fatigue</a> selon sa marge d'échec ; rien ne l'empêche de continuer, sinon la fatigue elle-même.</p>
+<h4 id="veiller-sans-dormir">Veiller sans dormir</h4>
+<p>Un personnage peut rester éveillé sans risque pendant son temps avant d'être fatigué, qui dépend de son Repos :</p>
+<p class="formula">Temps avant d'être fatigué = 24 heures − le temps de sommeil requis</p>
+<p>Au-delà, chaque heure d'éveil en plus lui demande un jet de <a href="../competences/">Résistance à l'Épuisement</a>, de plus en plus <a class="gloss-link" data-key="terme:difficile" href="#gloss-difficile">difficile</a> :</p>
+<p class="formula">Difficulté = 20 pour la première heure dépassée, +20 par heure suivante</p>
+<p>La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'<a class="gloss-link" data-key="terme:activite" href="#gloss-activite">activité</a> fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de <a href="#la-fatigue">fatigue</a> selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.</p>
 </div>
 <hr/>
 <div class="cols">
@@ -2927,7 +3063,7 @@
 <p>Exemple. Avec un <a class="gloss-link" data-key="terme:port" href="#gloss-port">Port</a> de 5, un personnage lève 100 kg à pleine puissance (ligne 5 de la colonne <a class="gloss-link" data-key="terme:lourde" href="#gloss-lourde">Lourde</a>). Pris sous un bloc d'une tonne, que seul un <a class="gloss-link" data-key="terme:port" href="#gloss-port">Port</a> de 9 soulèverait, il est dépassé de quatre points, soit 160 <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>. S'il atteint Très <a class="gloss-link" data-key="terme:difficile" href="#gloss-difficile">difficile</a> (180) à son jet de <a class="gloss-link" data-key="terme:prouesse-de-force" href="../../../content/regles/personnage/competences/#gloss-prouesse-de-force">Prouesse de Force</a>, il en efface deux et n'en subit plus que 80 ce round-là.</p>
 </div>
 <span class="gloss-anchor" id="gloss-lancer"></span><h3 id="lancer">Lancer</h3>
-<p>Le <a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> découle de la <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a> : le <a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> d'un personnage est égal à sa <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a>. La table ci-dessous en tire un multiplicateur, qui multiplie les <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> des <a href="../../combat/armes/">armes</a> que les muscles du porteur propulsent, aussi bien les armes de jet que les arcs. Chez la moyenne humaine (<a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> 5), les <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> des armes se lisent telles quelles (×1) ; au sommet humain réel (<a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> 9), elles triplent (×3) : c'est l'écart réel entre un lancer ordinaire et un record du monde.</p>
+<p>Le <a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> découle de la <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a> : le <a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> d'un personnage est égal à sa <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a>. La table ci-dessous en tire un multiplicateur, qui multiplie les <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> des <a href="../../combat/armes/">armes</a> que les muscles du porteur propulsent, aussi bien les <a class="gloss-link" data-key="terme:armes-de-jet-competence" href="../../../content/regles/personnage/competences/#gloss-armes-de-jet-competence">armes de jet</a> que les arcs. Chez la moyenne humaine (<a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> 5), les <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> des armes se lisent telles quelles (×1) ; au sommet humain réel (<a class="gloss-link" data-key="terme:lancer" href="#gloss-lancer">Lancer</a> 9), elles triplent (×3) : c'est l'écart réel entre un lancer ordinaire et un record du monde.</p>
 <p>Le multiplicateur ne s'applique qu'aux armes que le corps propulse. Une arme à <a href="../../combat/armes/">Propulsion mécanique</a> garde ses <a class="gloss-link" data-key="terme:portee-propriete" href="../../../content/regles/combat/armes/#gloss-portee-propriete">portées</a> inchangées, quel que soit le tireur.</p>
 <div class="gloss-source" data-gloss="lancer">
 <table>
@@ -6328,6 +6464,9 @@
 <p><strong>Lourde :</strong> un gros effort à pleine puissance, à l'intensité maximale du corps. Le personnage se dépense sans retenue et puise dans ses réserves : il ne tient ce rythme qu'un temps limité avant de réclamer du repos. Par exemple : combattre, en duel ou en mêlée ; sprinter, fuir, poursuivre à toutes jambes ; pousser le corps à sa limite lors d'un exploit.</p>
 </div>
 </div>
+<div class="cols">
+<div class="keep"></div>
+</div>
 </div><div class="mcard gloss-card" data-key="terme:en">
 <p><strong>En</strong></p>
 <p><span class="prereq">Circle</span></p>
@@ -6687,6 +6826,13 @@
 <p>Pure puissance musculaire pour soulever, briser, plier ou forcer. Pour soulever une porte de fer tombée ou tordre les barreaux d'une cellule.</p>
 </div>
 <div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:armes-de-jet-competence">
+<p><strong>Armes de jet</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Lancer avec précision couteaux, javelots, haches et autres projectiles. Pour clouer une cible d'un couteau bien placé ou abattre une sentinelle avant l'alerte.</p>
+</div>
+<div class="keep"></div>
 </div><div class="gcard gloss-card" data-key="terme:suffocation">
 <p><strong>Suffocation</strong></p>
 <div class="gcard-text">
@@ -6758,10 +6904,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

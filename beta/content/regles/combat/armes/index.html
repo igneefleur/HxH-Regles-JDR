@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1652,12 +1652,12 @@
 <p>Chaque colonne des tables d'armes se lit ainsi ; les glossaires, plus bas, donnent les règles complètes et les coûts.</p>
 <div class="defs">
 <p><strong>Arme :</strong> le nom de l'arme ; la section qui la contient est sa famille.</p>
-<span class="gloss-anchor" id="gloss-am"></span><p><strong>AM :</strong> la compatibilité arts martiaux, notée en losanges de ✧✧✧ à ✦✦✦ : le palier d'arts martiaux que l'arme permet de pratiquer.</p>
+<span class="gloss-anchor" id="gloss-am"></span><p><strong>AM :</strong> la <a class="gloss-link" data-key="terme:compatibilite-arts-martiaux" href="#gloss-compatibilite-arts-martiaux">compatibilité arts martiaux</a>, notée en losanges de ✧✧✧ à ✦✦✦ : le palier d'arts martiaux que l'arme permet de pratiquer.</p>
 <span class="gloss-anchor" id="gloss-portee-regle"></span><p><strong><a class="gloss-link" data-key="terme:portee-propriete" href="#gloss-portee-propriete">Portée</a> :</strong> la ou les distances auxquelles l'arme atteint sa cible : mêlée, allonge, lancer, tir ou cône.</p>
 <span class="gloss-anchor" id="gloss-munitions-regle"></span><p><strong><a class="gloss-link" data-key="terme:munitions-propriete" href="#gloss-munitions-propriete">Munitions</a> :</strong> le nombre de tirs que l'arme enchaîne avant de recharger. La colonne reste vide pour les armes qui n'en consomment pas.</p>
 <span class="gloss-anchor" id="gloss-mains-regle"></span><p><strong><a class="gloss-link" data-key="terme:mains-propriete" href="#gloss-mains-propriete">Mains</a> :</strong> la prise qu'exige le maniement : une main, deux mains, ou l'une ou l'autre pour une arme polyvalente ; Aucune pour une arme de corps qui n'occupe pas les mains.</p>
 <span class="gloss-anchor" id="gloss-degats-regle"></span><p><strong><a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">Dégâts</a> :</strong> les <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> que l'arme inflige sur une touche.</p>
-<span class="gloss-anchor" id="gloss-mod-degats"></span><p><strong>Mod. dégâts :</strong> le modificateur de <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a>, ajouté aux <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> à chaque touche : la force du porteur (×N FOR) ou la propulsion du mécanisme (+X). Une colonne vide vaut ×0 : l'arme n'ajoute rien.</p>
+<span class="gloss-anchor" id="gloss-mod-degats"></span><p><strong>Mod. dégâts :</strong> le <a class="gloss-link" data-key="terme:modificateur-de-degats" href="#gloss-modificateur-de-degats">modificateur de dégâts</a>, ajouté aux <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> à chaque touche : la force du porteur (×N FOR) ou la propulsion du mécanisme (+X). Une colonne vide vaut ×0 : l'arme n'ajoute rien.</p>
 <span class="gloss-anchor" id="gloss-type"></span><p><strong>Type :</strong> le ou les <a href="../../monde/degats/">types de dégâts</a> infligés, notés par leur code : contondant (CON), tranchant (TRA), perforant (PER), ou un type élémentaire comme le feu (FEU).</p>
 <span class="gloss-anchor" id="gloss-illegalite-regle"></span><p><strong><a class="gloss-link" data-key="terme:illegalite-propriete" href="#gloss-illegalite-propriete">Illégalité</a> :</strong> le degré d'interdiction de l'arme, noté en étoiles de ☆☆☆☆☆ à ★★★★★.</p>
 <span class="gloss-anchor" id="gloss-prix"></span><p><strong>Prix :</strong> le prix d'achat de l'arme, en Ɉ.</p>
@@ -2875,7 +2875,7 @@
 <div class="cols armes-fiches">
 <span class="gloss-anchor" id="gloss-degats-propriete"></span><div class="mcard">
 <p><strong>Dégâts</strong></p>
-<p>Les dégâts que l'arme inflige avec la manœuvre <a href="../manoeuvres/">Blesser</a>, qui les proportionne au degré de touche. Toute arme reçoit 20 dégâts gratuits, le score d'une attaque à mains nues : le budget n'achète que ce qui dépasse cette base. La valeur affichée l'inclut déjà et va de 0 à 200.</p>
+<p>Les dégâts que l'arme inflige avec la manœuvre <a href="../manoeuvres/">Blesser</a>, qui les proportionne au <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a>. Toute arme reçoit 20 dégâts gratuits, le score d'une attaque à mains nues : le budget n'achète que ce qui dépasse cette base. La valeur affichée l'inclut déjà et va de 0 à 200.</p>
 <table>
 <thead>
 <tr>
@@ -3125,7 +3125,7 @@
 </tr>
 </tbody>
 </table>
-<p>Le cône est lui aussi une portée : l'attaque embrasse toutes les cibles d'un cône parti du porteur, noté par sa longueur et son angle (« Cône 10 m, 90° »). Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du cône y oppose sa propre <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, et chaque touche se résout avec son propre degré de touche. Son coût additionne deux tables, la longueur et l'angle.</p>
+<p>Le cône est lui aussi une portée : l'attaque embrasse toutes les cibles d'un cône parti du porteur, noté par sa longueur et son angle (« Cône 10 m, 90° »). Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du cône y oppose sa propre <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, et chaque touche se résout avec son propre <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a>. Son coût additionne deux tables, la longueur et l'angle.</p>
 <table>
 <thead>
 <tr>
@@ -3458,7 +3458,7 @@
 </div>
 <span class="gloss-anchor" id="gloss-illegalite-propriete"></span><div class="mcard" data-cols="illeg">
 <p><strong>Illégalité</strong> <span class="prereq">Limite : ✦ + ★ ≤ 5</span></p>
-<p>Le degré d'interdiction de l'arme, noté en étoiles. La colonne rembourse des points au lieu d'en coûter : porter une arme interdite expose aux fouilles, aux <a class="gloss-link" data-key="terme:saisie" href="#gloss-saisie">saisies</a> et aux peines, et le budget compense ce risque. L'illégalité limite aussi la compatibilité arts martiaux admise : le total des ★ et des ✦ d'une arme ne dépasse pas cinq.</p>
+<p>Le degré d'interdiction de l'arme, noté en étoiles. La colonne rembourse des points au lieu d'en coûter : porter une arme interdite expose aux fouilles, aux <a class="gloss-link" data-key="terme:saisie" href="#gloss-saisie">saisies</a> et aux peines, et le budget compense ce risque. L'illégalité limite aussi la <a class="gloss-link" data-key="terme:compatibilite-arts-martiaux" href="#gloss-compatibilite-arts-martiaux">compatibilité arts martiaux</a> admise : le total des ★ et des ✦ d'une arme ne dépasse pas cinq.</p>
 <table>
 <thead>
 <tr>
@@ -3567,7 +3567,7 @@
 <div class="cols armes-fiches">
 <span class="gloss-anchor" id="gloss-sphere"></span><div class="mcard">
 <p><strong>Sphère</strong> <span class="prereq">Nécessite : <a class="gloss-link" data-key="terme:portee-propriete" href="#gloss-portee-propriete">portée</a> de lancer ou de tir</span> <span class="prereq">Incompatible : Cône</span></p>
-<p>L'attaque embrasse toutes les cibles d'un rayon, précisé entre parenthèses : le porteur vise un point, non une cible, et l'effet frappe tout autour de ce point. Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du rayon y oppose sa propre <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, et chaque touche se résout avec son propre degré de touche.</p>
+<p>L'attaque embrasse toutes les cibles d'un rayon, précisé entre parenthèses : le porteur vise un point, non une cible, et l'effet frappe tout autour de ce point. Elle ne demande qu'une seule attaque : le porteur fait un seul jet d'attaque, chaque cible du rayon y oppose sa propre <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">défense</a>, et chaque touche se résout avec son propre <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a>.</p>
 <table>
 <thead>
 <tr>
@@ -3772,7 +3772,7 @@
 </div>
 <span class="gloss-anchor" id="gloss-eraflure"></span><div class="mcard">
 <p><strong>Éraflure</strong></p>
-<p>L'arme mord même sur un coup médiocre. Éraflure ajoute son bonus au degré de touche de l'attaque, à la condition que le degré sans ce bonus soit de 90 % ou moins ; un coup qui atteint déjà 100 % n'en profite pas. Le coût du palier est égal à son bonus.</p>
+<p>L'arme mord même sur un coup médiocre. Éraflure ajoute son bonus au <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a> de l'attaque, à la condition que le degré sans ce bonus soit de 90 % ou moins ; un coup qui atteint déjà 100 % n'en profite pas. Le coût du palier est égal à son bonus.</p>
 <table>
 <thead>
 <tr>
@@ -3812,7 +3812,7 @@
 </div>
 <span class="gloss-anchor" id="gloss-aggravation"></span><div class="mcard">
 <p><strong>Aggravation</strong></p>
-<p>L'arme récompense les coups déjà excellents. Aggravation ajoute son bonus au degré de touche de l'attaque, à la condition que le degré sans ce bonus atteigne 100 % ou plus ; le degré de touche reste plafonné à 200 %. Le coût du palier est égal à son bonus.</p>
+<p>L'arme récompense les coups déjà excellents. Aggravation ajoute son bonus au <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a> de l'attaque, à la condition que le degré sans ce bonus atteigne 100 % ou plus ; le <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a> reste plafonné à 200 %. Le coût du palier est égal à son bonus.</p>
 <table>
 <thead>
 <tr>
@@ -3888,7 +3888,7 @@
 </div>
 <span class="gloss-anchor" id="gloss-parade-propriete"></span><div class="mcard">
 <p><strong>Parade</strong></p>
-<p>L'arme est faite pour parer : son porteur peut se <a href="../manoeuvres/#defense">défendre</a> avec la <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétence</a> <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a>. Sans arme dotée de cette propriété, un personnage se défend à l'<a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a>. La propriété va d'ordinaire aux armes de mêlée, mais une arme d'un autre genre peut la porter.</p>
+<p>L'arme est faite pour parer : son porteur peut se <a href="../manoeuvres/#defense">défendre</a> avec la <a class="gloss-link" data-key="terme:competence-concept" href="../../../content/regles/personnage/competences/">compétence</a> <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a>. Sans arme dotée de cette propriété, un personnage se défend à l'<a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a>. La propriété va d'ordinaire aux <a class="gloss-link" data-key="terme:armes-de-melee" href="../../../content/regles/personnage/competences/#gloss-armes-de-melee">armes de mêlée</a>, mais une arme d'un autre genre peut la porter.</p>
 <table>
 <thead>
 <tr>
@@ -3906,7 +3906,7 @@
 </div>
 <span class="gloss-anchor" id="gloss-jumelable"></span><div class="mcard">
 <p><strong>Jumelable</strong> <span class="prereq">Incompatible : 2 mains</span></p>
-<p>Arme d'une main, faite pour aller par paire. Quand un personnage tient deux armes jumelables, une par main, et attaque avec la première, il peut porter une attaque supplémentaire avec la seconde (aucune action requise) : une seule attaque supplémentaire par tour, qui n'en déclenche pas d'autre.</p>
+<p>Arme d'une main, faite pour aller par paire. Quand un personnage tient deux armes jumelables, une par main, et attaque avec la première, il peut porter une <a class="gloss-link" data-key="terme:attaque-supplementaire" href="../../../content/regles/formation/formations-martiales/#gloss-attaque-supplementaire">attaque supplémentaire</a> avec la seconde (aucune action requise) : une seule <a class="gloss-link" data-key="terme:attaque-supplementaire" href="../../../content/regles/formation/formations-martiales/#gloss-attaque-supplementaire">attaque supplémentaire</a> par tour, qui n'en déclenche pas d'autre.</p>
 <table>
 <thead>
 <tr>
@@ -4264,7 +4264,7 @@
 <p>Le compte d'une arme tient en une somme :</p>
 <p class="formula"><a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">Dégâts</a> + <a class="gloss-link" data-key="terme:portee-propriete" href="#gloss-portee-propriete">portées</a> + <a class="gloss-link" data-key="terme:munitions-propriete" href="#gloss-munitions-propriete">munitions</a> + modificateur + type + compatibilité <a class="gloss-link" data-key="terme:am" href="#gloss-am">AM</a> + <a class="gloss-link" data-key="terme:proprietes" href="#gloss-proprietes">propriétés</a> − mains − contraintes − <a class="gloss-link" data-key="terme:illegalite-propriete" href="#gloss-illegalite-propriete">illégalité</a> = 100</p>
 <p>Tous les coûts sont des multiples de dix, et le barème avance par gros crans : chaque trait pèse, si bien qu'une arme se définit par quelques <a class="gloss-link" data-key="terme:proprietes" href="#gloss-proprietes">propriétés</a> fortes plutôt que par une longue liste de petites. Les 20 premiers <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> sont offerts, le score d'une attaque à mains nues : le budget n'achète que ce qui les dépasse, et les <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> affichés des tables incluent déjà cette base.</p>
-<span class="gloss-anchor" id="gloss-pas-a-pas"></span><h3 id="pas-a-pas">Pas à pas</h3>
+<span class="gloss-anchor" id="gloss-pas-a-pas-regle"></span><h3 id="pas-a-pas">Pas à pas</h3>
 <p>Une arme se bâtit en cinq temps. Un même exemple les suit d'un bout à l'autre : la dague.</p>
 <h4 id="1-poser-le-concept">1. Poser le concept</h4>
 <p>On décide ce qu'est l'arme : sa nature, sa famille, son <a class="gloss-link" data-key="terme:illegalite-propriete" href="#gloss-illegalite-propriete">illégalité</a>, le palier d'arts martiaux qu'elle ouvre. Ce cadre borne le reste, à commencer par la limite croisée : le total des ✦ et des ★ ne dépasse pas cinq.</p>
@@ -4272,7 +4272,7 @@
 <p>Exemple. Une lame courte et <a class="gloss-link" data-key="terme:dissimulable" href="#gloss-dissimulable">dissimulable</a>, faite pour l'escrime et le lancer : la dague. <a class="gloss-link" data-key="terme:illegalite-propriete" href="#gloss-illegalite-propriete">Illégalité</a> ★☆☆☆☆ ; compatibilité <a class="gloss-link" data-key="terme:am" href="#gloss-am">AM</a> ✦✦✧, celle d'un art de combat dédié.</p>
 </blockquote>
 <h4 id="2-fixer-les-degats-et-le-modificateur">2. Fixer les dégâts et le modificateur</h4>
-<p>On pose les <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> affichés, 20 de base plus ce qu'on achète, sans dépasser 200. On choisit ensuite le modificateur de <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> : le multiplicateur de <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a>, de ×0 à ×3, pour une arme que les muscles animent ; la propulsion <a class="gloss-link" data-key="terme:mecanique" href="../../../content/regles/personnage/competences/#gloss-mecanique">mécanique</a>, de +20 à +100, pour un mécanisme ou une charge. L'un ou l'autre, jamais les deux.</p>
+<p>On pose les <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> affichés, 20 de base plus ce qu'on achète, sans dépasser 200. On choisit ensuite le <a class="gloss-link" data-key="terme:modificateur-de-degats" href="#gloss-modificateur-de-degats">modificateur de dégâts</a> : le multiplicateur de <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a>, de ×0 à ×3, pour une arme que les muscles animent ; la propulsion <a class="gloss-link" data-key="terme:mecanique" href="../../../content/regles/personnage/competences/#gloss-mecanique">mécanique</a>, de +20 à +100, pour un mécanisme ou une charge. L'un ou l'autre, jamais les deux.</p>
 <blockquote>
 <p>Exemple. La dague affiche 30 <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a>, 20 offerts et 10 achetés, et multiplie par un la <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a> du porteur.</p>
 </blockquote>
@@ -4299,7 +4299,7 @@
 <p>Les <a class="gloss-link" data-key="terme:degats-propriete" href="#gloss-degats-propriete">dégâts</a> affichés des armes du chapitre s'étagent ainsi :</p>
 <ul>
 <li>de 30 à 80 pour le corps à corps fabriqué, les armes de corps restant à 20 ; le multiplicateur de <a class="gloss-link" data-key="terme:force" href="../../../content/regles/personnage/caracteristiques/#gloss-force">Force</a> les prolonge en jeu ;</li>
-<li>de 40 à 100 pour les armes de jet, les arcs et la fronde ;</li>
+<li>de 40 à 100 pour les <a class="gloss-link" data-key="terme:armes-de-jet-competence" href="../../../content/regles/personnage/competences/#gloss-armes-de-jet-competence">armes de jet</a>, les arcs et la fronde ;</li>
 <li>de 60 à 150 pour les armes <a class="gloss-link" data-key="terme:mecanique" href="../../../content/regles/personnage/competences/#gloss-mecanique">mécaniques</a> et à feu, le projectile seul : la propulsion y ajoute son forfait, et l'arme à un coup frappe plus fort que l'arme à grand chargeur ;</li>
 <li>de 190 à 250 par touche au sommet, propulsion comprise : la grenade à main, le mousquet et le tromblon (190), le fusil anti-matériel (210), le lance-flammes et le lance-grenades (230), le lance-roquettes (250).</li>
 </ul>
@@ -5979,7 +5979,52 @@
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
-</div><div class="gloss-defs"><div class="mcard gloss-card" data-key="terme:portee-propriete">
+</div><div class="gloss-defs"><div class="mcard gloss-card" data-key="terme:compatibilite-arts-martiaux">
+<p><strong>Compatibilité arts martiaux</strong></p>
+<p><span class="prereq">Limite : ✦ + ★ ≤ 5</span></p>
+<p>Le palier d'arts martiaux que l'arme permet de pratiquer, noté en losanges dans la colonne AM ; les arts martiaux montent en trois paliers, Basique, Avancé et Expert. Une arme ✧✧✧ n'en ouvre aucun ; une arme ✦✦✦ les ouvre jusqu'au palier Expert. La compatibilité limite l'illégalité admise : le total des ✦ et des ★ d'une arme ne dépasse pas cinq.</p>
+<table>
+<thead>
+<tr>
+<th>AM</th>
+<th>Palier atteignable</th>
+<th style="text-align: center;">Illégalité max</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✧✧✧</td>
+<td>Aucun</td>
+<td style="text-align: center;">★★★★★</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>✦✧✧</td>
+<td>Basique</td>
+<td style="text-align: center;">★★★★☆</td>
+<td>600 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>✦✦✧</td>
+<td>Avancé</td>
+<td style="text-align: center;">★★★☆☆</td>
+<td>1 200 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>✦✦✦</td>
+<td>Expert</td>
+<td style="text-align: center;">★★☆☆☆</td>
+<td>1 800 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+</tbody>
+</table>
+</div><div class="mcard gloss-card" data-key="terme:portee-propriete">
 <p><strong>Portée</strong></p>
 <p>La distance à laquelle l'arme atteint sa cible. Une arme porte une ou plusieurs portées, toutes listées dans sa colonne ; elle paie chacune d'elles, puis leur nombre. Les distances d'une arme sont ses valeurs réelles : le coût d'une portée se lit au premier cran dont la distance maximale atteint la sienne.</p>
 <p>La mêlée frappe au contact et ne coûte rien. L'allonge l'étend : chaque cran ×N porte la frappe à N mètres, pour un porteur de taille Moyenne.</p>
@@ -6389,6 +6434,78 @@
 <td>200</td>
 <td>6 000 Ɉ</td>
 <td style="text-align: center;">+180</td>
+</tr>
+</tbody>
+</table>
+</div><div class="mcard gloss-card" data-key="terme:modificateur-de-degats">
+<p><strong>Modificateur de dégâts</strong></p>
+<p>À chaque touche, l'arme ajoute à ses dégâts ceux d'une seule source, notée dans la colonne Mod. dégâts : la force du porteur ou la propulsion du mécanisme. Jamais les deux. Le modificateur est obligatoire : une arme qui n'ajoute rien porte le multiplicateur ×0.</p>
+<p>La force du porteur, notée « ×N FOR », ajoute N fois le modificateur de Force du porteur.</p>
+<table>
+<thead>
+<tr>
+<th>Force du porteur</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>×0</td>
+<td>0 Ɉ</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr>
+<td>×1</td>
+<td>150 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>×2</td>
+<td>300 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>×3</td>
+<td>450 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+</tbody>
+</table>
+<p>La propulsion mécanique, notée « +X », vient du mécanisme ou de la charge de l'arme, non des muscles : elle ajoute des dégâts fixes, identiques quel que soit le porteur. Les portées d'une telle arme ne doivent rien non plus au porteur : le multiplicateur de Lancer ne s'y applique pas.</p>
+<table>
+<thead>
+<tr>
+<th>Propulsion mécanique</th>
+<th>Prix</th>
+<th style="text-align: center;">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+20</td>
+<td>400 Ɉ</td>
+<td style="text-align: center;">+10</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>900 Ɉ</td>
+<td style="text-align: center;">+20</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>1 600 Ɉ</td>
+<td style="text-align: center;">+30</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>2 500 Ɉ</td>
+<td style="text-align: center;">+40</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>3 600 Ɉ</td>
+<td style="text-align: center;">+50</td>
 </tr>
 </tbody>
 </table>
@@ -7131,6 +7248,11 @@
 <div class="gcard-text">
 <p>l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'affinité accordée : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
 </div>
+</div><div class="gcard gloss-card" data-key="terme:degre-de-touche">
+<p><strong>Degré de touche</strong></p>
+<div class="gcard-text">
+<p>la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
+</div>
 </div><div class="gcard gloss-card" data-key="terme:lancer">
 <p><strong>Lancer</strong></p>
 <div class="gcard-text">
@@ -7407,6 +7529,20 @@
 <p>Échapper à une attaque par un déplacement vif du corps. Pour se jeter hors de la trajectoire d'une balle ou pivoter sous le tranchant d'une épée.</p>
 </div>
 <div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:armes-de-melee">
+<p><strong>Armes de mêlée</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Frapper au corps à corps, une arme en main ou à mains nues. Pour enchaîner les passes d'épée dans un duel ou placer son poing au bon endroit dans une rixe.</p>
+</div>
+<div class="keep"></div>
+</div><div class="mcard gloss-card" data-key="terme:attaque-supplementaire">
+<p><strong>Attaque supplémentaire</strong></p>
+<p><span class="prereq">Une attaque de plus</span></p>
+<p><span class="prereq">Prérequis : 100 points dans une compétence d'attaque</span>
+<span class="prereq">Coût : 40 PF</span></p>
+<p>Le personnage peut accomplir une action Attaquer de plus à chacun de ses tours, par-delà la limite d'une attaque par tour. Les compétences d'attaque sont les quatre compétences d'arme : Armes de mêlée, Armes de jet, Armes de trait et Armes à feu.</p>
+<p>Cette formation se suit une fois par tranche de 100 points dans une même compétence d'attaque, en retenant la plus haute et non la somme. Par exemple, avec 120 en Armes de mêlée et 80 en Armes de jet, le personnage n'y a droit qu'une fois, car une seule compétence franchit 100 ; il lui faut 200 dans une même compétence pour la suivre une deuxième fois.</p>
 </div><div class="gcard gloss-card" data-key="terme:lanceur">
 <p><strong>Lanceur</strong></p>
 <div class="gcard-text">
@@ -7564,6 +7700,13 @@
 </tr>
 </tbody>
 </table>
+</div><div class="gcard gloss-card" data-key="terme:armes-de-jet-competence">
+<p><strong>Armes de jet</strong></p>
+<div class="gcard-text">
+<p class="groupes">Caractéristique : Dextérité<br/>Groupes : Physique, Attaque</p>
+<p>Lancer avec précision couteaux, javelots, haches et autres projectiles. Pour clouer une cible d'un couteau bien placé ou abattre une sentinelle avant l'alerte.</p>
+</div>
+<div class="keep"></div>
 </div></div>
 </article>
 </div>
@@ -7620,10 +7763,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1817,12 +1817,12 @@
 <div class="defs">
 <p><strong>Conception (DR, DE, DT, DM, DC, DS) :</strong> le coût pour concevoir le palier, payé une fois dans le développement de la catégorie du <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>, lui-même acheté sur le <a href="../di/">développement intérieur</a> au taux de l'affinité d'apprentissage, par tranches de 10. Un <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> sans catégorie se paie directement en DI.</p>
 <p><strong>CAR (VOL, LOG, INS, ERU, IMA, CHA selon l'école du <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>) :</strong> la <a class="gloss-link" data-key="terme:caracteristique-concept" href="../../../content/regles/personnage/caracteristiques/">caractéristique</a> mentale minimale exigée pour concevoir le palier ; chaque école a la sienne.</p>
-<span class="gloss-anchor" id="gloss-uaa"></span><p><strong>UAA :</strong> l'aura accumulée : l'aura que le <a class="gloss-link" data-key="terme:lanceur" href="#gloss-lanceur">lanceur</a> rassemble sur sa réserve pour déclencher la capacité, dans la limite de son <a href="../aura/">UAR</a> par round ; une capacité plus chère que l'UAR s'accumule sur plusieurs rounds.</p>
+<span class="gloss-anchor" id="gloss-uaa"></span><p><strong>UAA :</strong> l'<a class="gloss-link" data-key="terme:aura-accumulee" href="../../../content/regles/nen/manipulation/#gloss-aura-accumulee">aura accumulée</a> : l'aura que le <a class="gloss-link" data-key="terme:lanceur" href="#gloss-lanceur">lanceur</a> rassemble sur sa réserve pour déclencher la capacité, dans la limite de son <a href="../aura/">UAR</a> par round ; une capacité plus chère que l'UAR s'accumule sur plusieurs rounds.</p>
 <span class="gloss-anchor" id="gloss-ma"></span><p><strong>MA :</strong> le maintien, l'aura payée chaque round par son <a class="gloss-link" data-key="terme:mainteneur" href="#gloss-mainteneur">mainteneur</a> pour la garder active. À zéro pour une capacité instantanée.</p>
 <span class="gloss-anchor" id="gloss-aeg-ael"></span><p><strong>AEG / AEL :</strong> le modificateur d'affinité d'emploi que porte le palier, un décalage en points de pourcentage ; « — » quand il est neutre. L'en-tête en dit le rang : AEG pour un décalage global, valant pour tous les <a class="gloss-link" data-key="terme:module" href="#gloss-module">modules</a> de la capacité, qu'il soit porté par le socle, par un raccord ou par un <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> qui change la nature de la capacité entière ; AEL pour un décalage local, porté par le <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> et ne valant que pour lui.</p>
 </div>
 <p>Un <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> compte presque toujours plusieurs paliers, une suite de lignes de puissance croissante, dont on retient une seule à la conception. Certains s'étendent sur plusieurs grilles combinables : on en retient une ligne par grille, sauf mention de cumul.</p>
-<p>Chaque fiche dit à quels types son <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> se greffe, et cette liste est contraignante : un <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> de bonus à l'attaque n'accepte que le type attaque.</p>
+<p>Chaque fiche dit à quels types son <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> se greffe, et cette liste est contraignante : un <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> de <a class="gloss-link" data-key="terme:bonus-a-l-attaque" href="../../../content/regles/nen/renforcement/#gloss-bonus-a-l-attaque">bonus à l'attaque</a> n'accepte que le type attaque.</p>
 <h4 id="une-categorie-par-module">Une catégorie par module</h4>
 <p>Chaque <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> relève d'une seule catégorie, ou d'aucune s'il est purement structurel. Les <a class="gloss-link" data-key="terme:module" href="#gloss-module">modules</a> se rangent ainsi par école, chacune dans son chapitre.</p>
 <p>Un même concept peut exister dans plusieurs catégories : il y figure alors comme autant d'entrées distinctes, une par école, chacune avec ses propres coûts. Une attaque qui poursuit sa cible, par exemple, se décline en une version d'<a class="gloss-link" data-key="terme:emission" href="#gloss-emission">émission</a> et une version de <a class="gloss-link" data-key="terme:manipulation" href="#gloss-manipulation">manipulation</a>. L'affinité se lit toujours sur l'unique catégorie de l'entrée employée.</p>
@@ -1888,7 +1888,7 @@
 <h4 id="6-appliquer-laffinite-aux-valeurs-deffet">6. Appliquer l'affinité aux valeurs d'effet</h4>
 <p>On lit enfin, <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> par <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>, l'affinité d'emploi effective, en empilant la base d'archétype, le modificateur global, le modificateur local et les conditions, comme l'expose la composition. Cette affinité multiplie la valeur des seuls effets chiffrés.</p>
 <blockquote>
-<p>Exemple. Le personnage est un <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> : sa catégorie de <a class="gloss-link" data-key="terme:renforcement" href="#gloss-renforcement">renforcement</a> est à 100 %. La condition posée y ajoute 20 %, portant l'affinité effective de ses deux <a class="gloss-link" data-key="terme:module" href="#gloss-module">modules</a> à 120 %. Le bonus à l'attaque passe de +60 à +72, celui aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> de +40 à +48. La capacité achevée : à maintien, 25 DR de conception (soit 30 DI), 170 d'aura à l'emploi, 90 de maintien par round, CAR 10 ; et, contre l'adversaire nommé, +72 à l'attaque et +48 aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>.</p>
+<p>Exemple. Le personnage est un <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> : sa catégorie de <a class="gloss-link" data-key="terme:renforcement" href="#gloss-renforcement">renforcement</a> est à 100 %. La condition posée y ajoute 20 %, portant l'affinité effective de ses deux <a class="gloss-link" data-key="terme:module" href="#gloss-module">modules</a> à 120 %. Le <a class="gloss-link" data-key="terme:bonus-a-l-attaque" href="../../../content/regles/nen/renforcement/#gloss-bonus-a-l-attaque">bonus à l'attaque</a> passe de +60 à +72, celui aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a> de +40 à +48. La capacité achevée : à maintien, 25 DR de conception (soit 30 DI), 170 d'aura à l'emploi, 90 de maintien par round, CAR 10 ; et, contre l'adversaire nommé, +72 à l'attaque et +48 aux <a class="gloss-link" data-key="terme:degats-propriete" href="../../../content/regles/combat/armes/#gloss-degats-propriete">dégâts</a>.</p>
 </blockquote>
 </div>
 <hr/>
@@ -1901,7 +1901,7 @@
 <p class="mod-type">Catégorie : aucune<br/>
 <a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
 <p>Greffé sur une attaque, ce <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> y attache une capacité liée, une seule, qu'il déclenche quand l'attaque aboutit selon les conditions choisies. La capacité liée peut elle-même porter un déclencheur : les déclenchements s'enchaînent.</p>
-<p>Le personnage retient obligatoirement un degré de touche et une visée dans la table ci-dessous, et peut y joindre une cible ; sans cible retenue, la capacité liée garde sa cible par défaut, le porteur. Plus les options retenues sont dures, plus l'affinité accordée monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée.</p>
+<p>Le personnage retient obligatoirement un <a class="gloss-link" data-key="terme:degre-de-touche" href="#gloss-degre-de-touche">degré de touche</a> et une visée dans la table ci-dessous, et peut y joindre une cible ; sans cible retenue, la capacité liée garde sa cible par défaut, le porteur. Plus les options retenues sont dures, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée.</p>
 <p>La capacité liée paie ses propres coûts. Le <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>, lui, se paie en DI, et le déclencheur coûte une aura et un maintien propres, lus à la ligne de la visée retenue.</p>
 <table>
 <thead>
@@ -2135,10 +2135,10 @@
 </table>
 <div class="defs">
 <p><strong>Cible :</strong> qui doit être touché pour armer le déclencheur. Celui qu'il faut toucher devient aussi la cible de la capacité liée : réglé sur le défenseur, le déclencheur la fait porter sur cet adversaire ; réglé sur l'attaquant, sur le porteur.</p>
-<span class="gloss-anchor" id="gloss-degre-de-touche"></span><p><strong>Degré de touche :</strong> la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
-<span class="gloss-anchor" id="gloss-visee"></span><p><strong>Visée :</strong> la partie du corps visée, reprise de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus de visée fort, plus l'affinité accordée monte.</p>
+<span class="gloss-anchor" id="gloss-degre-de-touche"></span><p><strong>Degré de touche :</strong> la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> monte.</p>
+<span class="gloss-anchor" id="gloss-visee"></span><p><strong>Visée :</strong> la partie du corps visée, reprise de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus de visée fort, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> monte.</p>
 <span class="gloss-anchor" id="gloss-affinite-accordee"></span><p><strong>Affinité accordée :</strong> la somme des affinités des options retenues, ajoutée à l'affinité globale de la capacité liée ; le plafond commun de +100 % s'applique comme à tout <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>.</p>
-<span class="gloss-anchor" id="gloss-cout"></span><p><strong>Coût :</strong> l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'affinité accordée : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
+<span class="gloss-anchor" id="gloss-cout"></span><p><strong>Coût :</strong> l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
 </div>
 </div>
 <div class="keep">
@@ -2146,7 +2146,7 @@
 <p class="mod-type">Catégorie : aucune<br/>
 <a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a></p>
 <p>Greffé sur une <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a>, ce <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a> y attache une capacité liée, une seule, qu'il déclenche quand la <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a> aboutit selon les conditions choisies. La capacité liée peut elle-même porter un déclencheur : les déclenchements s'enchaînent.</p>
-<p>Le personnage retient obligatoirement un degré de <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a> et une visée dans la table ci-dessous, et peut y joindre une cible ; sans cible retenue, la capacité liée garde sa cible par défaut, le porteur. Plus les options retenues sont dures, plus l'affinité accordée monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée.</p>
+<p>Le personnage retient obligatoirement un <a class="gloss-link" data-key="terme:degre-de-defense" href="#gloss-degre-de-defense">degré de défense</a> et une visée dans la table ci-dessous, et peut y joindre une cible ; sans cible retenue, la capacité liée garde sa cible par défaut, le porteur. Plus les options retenues sont dures, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée.</p>
 <p>La capacité liée paie ses propres coûts. Le <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>, lui, se paie en DI, et le déclencheur coûte une aura et un maintien propres, lus à la ligne de la visée retenue.</p>
 <table>
 <thead>
@@ -2380,10 +2380,10 @@
 </table>
 <div class="defs">
 <p><strong>Cible :</strong> qui reçoit la capacité quand la <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a> aboutit. Celui que vise le déclencheur devient la cible de la capacité liée : réglé sur l'attaquant, le déclencheur la fait porter sur cet adversaire ; réglé sur le défenseur, sur le porteur.</p>
-<span class="gloss-anchor" id="gloss-degre-de-defense"></span><p><strong>Degré de défense :</strong> la marge de réussite exigée de la <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a>, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
-<p><strong><a class="gloss-link" data-key="terme:visee" href="#gloss-visee">Visée</a> :</strong> le point par où la capacité liée atteint l'attaquant au contact de la <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a>, repris de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus fort, plus l'affinité accordée monte.</p>
+<span class="gloss-anchor" id="gloss-degre-de-defense"></span><p><strong>Degré de défense :</strong> la marge de réussite exigée de la <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a>, de 0 % à 200 % ; plus la marge exigée est haute, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> monte.</p>
+<p><strong><a class="gloss-link" data-key="terme:visee" href="#gloss-visee">Visée</a> :</strong> le point par où la capacité liée atteint l'attaquant au contact de la <a class="gloss-link" data-key="terme:defense-nen" href="#gloss-defense-nen">défense</a>, repris de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus fort, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> monte.</p>
 <p><strong><a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">Affinité accordée</a> :</strong> la somme des affinités des options retenues, ajoutée à l'affinité globale de la capacité liée ; le plafond commun de +100 % s'applique comme à tout <a class="gloss-link" data-key="terme:module" href="#gloss-module">module</a>.</p>
-<p><strong><a class="gloss-link" data-key="terme:cout" href="#gloss-cout">Coût</a> :</strong> l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'affinité accordée : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
+<p><strong><a class="gloss-link" data-key="terme:cout" href="#gloss-cout">Coût</a> :</strong> l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'<a class="gloss-link" data-key="terme:affinite-accordee" href="#gloss-affinite-accordee">affinité accordée</a> : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
 </div>
 </div>
 <div class="keep">
@@ -4757,6 +4757,242 @@
 <div class="gcard-text">
 <p>Les caractéristiques mesurent les aptitudes de base d'un personnage. Elles vont de 0 à 30, où 5 est la moyenne humaine et 9 le sommet humain réel, et fondent les compétences et les capacités.</p>
 </div>
+</div><div class="gcard gloss-card" data-key="terme:aura-accumulee">
+<p><strong>Aura accumulée</strong></p>
+<div class="gcard-text">
+<p>le lanceur détourne l'aura que la cible a accumulée pour déclencher une capacité, avant qu'elle ne l'emploie, et la retient dans sa réserve tant que l'emprise dure. Dès qu'il lâche, cette aura revient à la cible.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:bonus-a-l-attaque">
+<p><strong>Bonus à l'attaque</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : attaque</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à une seule de ses attaques portées avec la compétence choisie, avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour une attaque à chaque round.</p>
+<p>Il n'existe pas de compétence d'attaque : en prenant le module, le renforceur choisit dans la première rubrique la compétence d'arme que le bonus augmente, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective (un +30 porté à 120 % vaut +36).</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Compétence (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Armes de mêlée</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes de jet</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes de trait</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes à feu</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>50</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>10</td>
+<td>7</td>
+<td>60</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>10</td>
+<td>8</td>
+<td>80</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>15</td>
+<td>9</td>
+<td>100</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>15</td>
+<td>10</td>
+<td>120</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>20</td>
+<td>11</td>
+<td>140</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>20</td>
+<td>12</td>
+<td>170</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>25</td>
+<td>13</td>
+<td>200</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>25</td>
+<td>14</td>
+<td>230</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>30</td>
+<td>15</td>
+<td>260</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>30</td>
+<td>16</td>
+<td>290</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>35</td>
+<td>17</td>
+<td>320</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>35</td>
+<td>18</td>
+<td>360</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>40</td>
+<td>20</td>
+<td>400</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>40</td>
+<td>22</td>
+<td>440</td>
+<td>240</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>45</td>
+<td>24</td>
+<td>480</td>
+<td>270</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>45</td>
+<td>26</td>
+<td>520</td>
+<td>300</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>50</td>
+<td>28</td>
+<td>560</td>
+<td>330</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>50</td>
+<td>30</td>
+<td>600</td>
+<td>360</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
 </div><div class="gcard gloss-card" data-key="terme:eveil-au-nen">
 <p><strong>Éveil au Nen</strong></p>
 <div class="gcard-text">
@@ -5121,6 +5357,11 @@
 <div class="gcard-text">
 <p>la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
 </div>
+</div><div class="gcard gloss-card" data-key="terme:affinite-accordee">
+<p><strong>Affinité accordée</strong></p>
+<div class="gcard-text">
+<p>la somme des affinités des options retenues, ajoutée à l'affinité globale de la capacité liée ; le plafond commun de +100 % s'applique comme à tout module.</p>
+</div>
 </div><div class="gcard gloss-card" data-key="terme:visee">
 <p><strong>Visée</strong></p>
 <div class="gcard-text">
@@ -5130,11 +5371,6 @@
 <p><strong>Degré de défense</strong></p>
 <div class="gcard-text">
 <p>la marge de réussite exigée de la défense, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
-</div>
-</div><div class="gcard gloss-card" data-key="terme:affinite-accordee">
-<p><strong>Affinité accordée</strong></p>
-<div class="gcard-text">
-<p>la somme des affinités des options retenues, ajoutée à l'affinité globale de la capacité liée ; le plafond commun de +100 % s'applique comme à tout module.</p>
 </div>
 </div><div class="gcard gloss-card" data-key="terme:cout">
 <p><strong>Coût</strong></p>
@@ -5202,10 +5438,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>
