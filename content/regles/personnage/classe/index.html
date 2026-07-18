@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1030,7 +1030,7 @@
 <h1 id="classes">Classes</h1>
 <div class="cols">
 <span class="gloss-anchor" id="gloss-points-de-vie"></span><h3 id="points-de-vie">Points de vie</h3>
-<p>Les points de vie, ou PV, mesurent ce qu'un personnage encaisse avant de tomber. Chaque <a href="../points-formation/">niveau</a> lui apporte un nombre fixe de PV, ses PV par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, que le <a href="../../monde/tailles/#modificateur-de-pv-par-taille">modificateur de taille</a> ajuste.</p>
+<p>Les <a class="gloss-link" data-key="terme:points-de-vie" href="#gloss-points-de-vie">points de vie</a>, ou PV, mesurent ce qu'un personnage encaisse avant de tomber. Chaque <a href="../points-formation/">niveau</a> lui apporte un nombre fixe de PV, ses PV par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, que le <a href="../../monde/tailles/#modificateur-de-pv-par-taille">modificateur de taille</a> ajuste.</p>
 <p class="formula">PV max = (PV par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> + modificateur de taille) × <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a></p>
 <p>Les PV par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> d'un personnage valent 100.</p>
 </div>
@@ -2709,7 +2709,15 @@
 <p>20 milliards de bars, dans le Soleil non loin de son cœur, qui écrase pourtant plus de dix fois plus fort (près de 250 milliards de bars).</p>
 </div>
 </div>
-</div><div class="gloss-defs"><div class="gcard gloss-card" data-key="terme:niveau-regle">
+</div><div class="gloss-defs"><div class="gcard gloss-card" data-key="terme:points-de-vie">
+<p><strong>Points de vie</strong></p>
+<div class="gcard-text">
+<p>Les points de vie, ou PV, mesurent ce qu'un personnage encaisse avant de tomber. Chaque niveau lui apporte un nombre fixe de PV, ses PV par niveau, que le modificateur de taille ajuste.</p>
+<p class="formula">PV max = (PV par niveau + modificateur de taille) × niveau</p>
+<p>Les PV par niveau d'un personnage valent 100.</p>
+</div>
+</div>
+<div class="gcard gloss-card" data-key="terme:niveau-regle">
 <p><strong>Niveau</strong></p>
 <div class="gcard-text">
 <p>Le total de PF gagné marque le niveau. Tous les 100 PF, le personnage franchit un niveau.</p>
@@ -2823,10 +2831,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

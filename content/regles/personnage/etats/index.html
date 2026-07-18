@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1048,7 +1048,7 @@
 <h1 id="etats-du-personnage">États du personnage</h1>
 <div class="cols">
 <div class="states">
-<p>Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les <a class="gloss-link" data-key="terme:situations" href="#gloss-situations">situations</a> de combat et les autres états.</p>
+<p>Un état est une circonstance ou une affliction qui modifie ce qu'un personnage peut faire. Cette page en présente deux sortes : les <a class="gloss-link" data-key="terme:situations" href="#gloss-situations">situations</a> de combat et les <a class="gloss-link" data-key="terme:autres-etats" href="#gloss-autres-etats">autres états</a>.</p>
 <p>Chaque état dépend de sa cause. C'est elle qui l'inflige, et l'état dure tant qu'elle persiste. Sauf mention contraire, le personnage en sort en faisant cesser cette cause. La façon d'y parvenir, et ce qu'elle coûte, dépendent donc de la cause et non de l'état : se relever coûte une action, alors que se défaire d'une entrave dépend de l'entrave.</p>
 <p>Chaque puce donne un malus et ce qu'il touche. <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">Défense</a> désigne l'<a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">Esquive</a> et la <a class="gloss-link" data-key="terme:parade-competence" href="../../../content/regles/personnage/competences/#gloss-parade-competence">Parade</a>. Presque toutes les <a href="../competences/">compétences</a> de combat appartiennent aussi au groupe <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">Physique</a> : un jet ne subit donc qu'un seul malus par état, le plus précis qui le désigne. Un jet d'<a class="gloss-link" data-key="terme:esquive" href="../../../content/regles/personnage/competences/#gloss-esquive">esquive</a> prend le malus de <a class="gloss-link" data-key="terme:defense-regle" href="../../../content/regles/personnage/competences/#gloss-defense-regle">Défense</a>, pas celui de <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">Physique</a>.</p>
 <span class="gloss-anchor" id="gloss-situations"></span><h3 id="situations">Situations</h3>
@@ -1093,7 +1093,7 @@
 <p>Le personnage est caché derrière l'obstacle et ne laisse qu'une fente pour regarder et frapper. C'est cette fente qui le rend encore atteignable.</p>
 </div>
 <span class="gloss-anchor" id="gloss-autres-etats"></span><h3 id="autres-etats">Autres états</h3>
-<p>Les autres états tiennent au personnage lui-même : à son corps, ou à ce qui le retient.</p>
+<p>Les <a class="gloss-link" data-key="terme:autres-etats" href="#gloss-autres-etats">autres états</a> tiennent au personnage lui-même : à son corps, ou à ce qui le retient.</p>
 <span class="gloss-anchor" id="gloss-mutisme"></span><div class="sblock">
 <p><strong>Mutisme</strong></p>
 <p>La voix du personnage ne sort plus : gorge blessée, maladie, ou une main serrée sur son cou. Le palier dépend de la <a class="gloss-link" data-key="terme:gravite" href="../../../content/regles/combat/critique-blessures/#gloss-gravite">gravité</a> de la cause. Seul le palier atteint s'applique.</p>
@@ -2865,7 +2865,63 @@
 <p>Le personnage est caché derrière l'obstacle et ne laisse qu'une fente pour regarder et frapper. C'est cette fente qui le rend encore atteignable.</p>
 </div>
 </div>
-</div><div class="gcard gloss-card" data-key="terme:defense-regle">
+</div><div class="gcard gloss-card" data-key="terme:autres-etats">
+<p><strong>Autres états</strong></p>
+<div class="gcard-text">
+<p>Les autres états tiennent au personnage lui-même : à son corps, ou à ce qui le retient.</p>
+<div class="sblock">
+<p><strong>Mutisme</strong></p>
+<p>La voix du personnage ne sort plus : gorge blessée, maladie, ou une main serrée sur son cou. Le palier dépend de la gravité de la cause. Seul le palier atteint s'applique.</p>
+<p class="palier">Léger</p>
+<p><span class="smods"><span class="smod">Vocal <b>−80</b></span></span></p>
+<p>Sa gorge est blessée ou serrée. Sa voix est faible et rauque.</p>
+<p class="palier">Partiel</p>
+<p>Le personnage ne peut plus former un mot, ni employer aucune compétence du groupe Vocal. Il produit encore des sons : des râles, des grognements.</p>
+<p class="palier">Total</p>
+<p>Aucun son ne sort de sa bouche, pas même un murmure. Le personnage ne peut employer aucune compétence du groupe Vocal.</p>
+</div>
+<div class="sblock">
+<p><strong>Prise</strong></p>
+<p>Un adversaire tient le personnage avec une arme dotée de la propriété Saisie, ses mains comprises : la prise porte donc à la portée de cette arme. Les manœuvres Agripper, Maîtriser et Soumettre infligent les paliers ci-dessous, et disent comment s'en libérer. Chaque prise porte son propre palier, et un palier remplace le précédent de cette prise.</p>
+<p class="palier">Agrippé</p>
+<p>L'adversaire a saisi une partie de son corps. Retenu, le personnage ne se déplace plus seul, mais son adversaire peut l'entraîner avec lui, son propre déplacement réduit de moitié. Il subit aussi une Paralysie légère.</p>
+<p class="palier">Maîtrisé</p>
+<p>Le personnage est plaqué, tordu ou bloqué. Tenu ainsi, il ne se déplace plus du tout. Il subit aussi une Paralysie partielle.</p>
+<p class="palier">Soumis</p>
+<p>L'adversaire contrôle entièrement son corps, jusqu'à la position de ses membres. Le personnage ne se déplace plus du tout. Il subit aussi une Paralysie totale.</p>
+</div>
+<div class="sblock">
+<p><strong>Immobilisé</strong></p>
+<p>Quelque chose retient physiquement le personnage : des liens, des chaînes, un membre coincé, un éboulis. Son Mouvement tombe à 0, quelle que soit l'allure. Un adversaire qui le tient inflige une Prise, pas cet état.</p>
+</div>
+<div class="sblock">
+<p><strong>Paralysie</strong></p>
+<p>Les muscles du personnage répondent mal à sa volonté : nerfs pincés, membres engourdis, corps tenu par un adversaire, ou bras occupé à le tenir. Si plusieurs paralysies se cumulent, seule la plus grave s'applique. La paralysie ne bloque pas le déplacement : elle n'impose que les malus indiqués.</p>
+<p class="palier">Légère</p>
+<p><span class="smods"><span class="smod">Attaque <b>−20</b></span><span class="smod">Parade <b>−20</b></span><span class="smod">Initiative <b>−20</b></span><span class="smod">Esquive <b>−40</b></span><span class="smod">Physique <b>−40</b></span></span></p>
+<p>Ses gestes sont lents et mal assurés, et la force n'y est plus.</p>
+<p class="palier">Partielle</p>
+<p><span class="smods"><span class="smod">Attaque <b>−80</b></span><span class="smod">Défense <b>−80</b></span><span class="smod">Initiative <b>−30</b></span><span class="smod">Physique <b>−60</b></span></span></p>
+<p>Une partie de son corps ne répond plus : un côté, un membre, une zone.</p>
+<p class="palier">Totale</p>
+<p><span class="smods"><span class="smod">Attaque <b>−200</b></span><span class="smod">Défense <b>−200</b></span><span class="smod">Physique <b>−200</b></span><span class="smod">Initiative <b>−100</b></span></span></p>
+<p>Plus aucun muscle ne répond correctement. Le personnage ne contrôle presque plus son corps.</p>
+</div>
+<div class="sblock">
+<p><strong>À terre</strong></p>
+<p><span class="smods"><span class="smod">Attaque <b>−40</b></span><span class="smod">Défense <b>−40</b></span><span class="smod">Physique <b>−40</b></span></span></p>
+<p>Le personnage combat au sol, couché sur le dos ou à quatre pattes. Il n'a plus d'appui ni de hauteur pour agir, et son Mouvement subit −2. Se relever coûte une action.</p>
+</div>
+<div class="sblock">
+<p><strong>Inconscience</strong></p>
+<p><span class="smods"><span class="smod">Clarté des sens <b>−8</b></span></span></p>
+<p>Le personnage a perdu connaissance : endormi, assommé ou évanoui.</p>
+<p>Il lâche ce qu'il tenait et tombe À terre. Son Mouvement tombe à 0, et tous ses sens perdent en clarté. Il n'effectue aucune action ni aucune réaction : il ne se défend pas, et son résultat final de défense vaut 0 contre chaque attaque.</p>
+<p>Percevoir quelque chose lui permet de reprendre connaissance, si la cause le permet : un dormeur se réveille, un assommé reste au sol.</p>
+</div>
+</div>
+</div>
+<div class="gcard gloss-card" data-key="terme:defense-regle">
 <p><strong>Défense</strong></p>
 <div class="gcard-text">
 <p>ce qui sert à parer ou esquiver une attaque.</p>
@@ -3302,10 +3358,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

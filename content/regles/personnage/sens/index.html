@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1309,7 +1309,7 @@
 </div>
 <div class="keep">
 <h4 id="changer-le-niveau-dun-sens">Changer le niveau d'un sens</h4>
-<p>Le personnage peut utiliser un sens comme un sens d'un <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> plus haut que le sien : l'<a class="gloss-link" data-key="terme:odorat" href="../../../content/regles/personnage/competences/#gloss-odorat">Odorat</a>, sens <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, peut ainsi localiser une odeur, comme un sens <a class="gloss-link" data-key="terme:secondaire" href="#gloss-secondaire">Secondaire</a>, ou se repérer par elle, comme un sens <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>. Pour cela, il fait remonter le sens au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> voulu : le changement coûte une <a href="../../combat/deroulement-combat/">action</a>, quel que soit le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> visé, et le sens remonté subit −120 à ses jets par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> remonté. Un sens <a class="gloss-link" data-key="terme:latent" href="#gloss-latent">Latent</a> éveillé part d'un cran sous le <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a> : −120 dès le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, jusqu'à −360 au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>. Il est impossible d'utiliser cette règle sur un sens <a class="gloss-link" data-key="terme:inexistant" href="#gloss-inexistant">Inexistant</a>.</p>
+<p>Le personnage peut utiliser un sens comme un sens d'un <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> plus haut que le sien : l'<a class="gloss-link" data-key="terme:odorat" href="../../../content/regles/personnage/competences/#gloss-odorat">Odorat</a>, sens <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, peut ainsi localiser une odeur, comme un sens <a class="gloss-link" data-key="terme:secondaire" href="#gloss-secondaire">Secondaire</a>, ou <a class="gloss-link" data-key="terme:se-reperer" href="#gloss-se-reperer">se repérer</a> par elle, comme un sens <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>. Pour cela, il fait remonter le sens au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> voulu : le changement coûte une <a href="../../combat/deroulement-combat/">action</a>, quel que soit le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> visé, et le sens remonté subit −120 à ses jets par <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> remonté. Un sens <a class="gloss-link" data-key="terme:latent" href="#gloss-latent">Latent</a> éveillé part d'un cran sous le <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a> : −120 dès le <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:tertiaire" href="#gloss-tertiaire">Tertiaire</a>, jusqu'à −360 au <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a> <a class="gloss-link" data-key="terme:primaire" href="#gloss-primaire">Primaire</a>. Il est impossible d'utiliser cette règle sur un sens <a class="gloss-link" data-key="terme:inexistant" href="#gloss-inexistant">Inexistant</a>.</p>
 <p class="formula">Malus = 120 × niveaux remontés</p>
 </div>
 </div>
@@ -1322,12 +1322,13 @@
 <p>Sous 10, le sens dégradé pénalise les jets qui s'appuient sur lui. Le malus dépend du but du jet : obtenir une information, c'est percevoir ; produire un effet, c'est agir. Un même jet subit l'un des deux malus, jamais les deux.</p>
 <div class="keep">
 <span class="gloss-anchor" id="gloss-percevoir"></span><h4 id="percevoir">Percevoir</h4>
-<p>Quand le jet sert à percevoir par ce sens (se repérer, localiser ou identifier), chaque point de clarté manquant inflige −20 au jet, quel que soit le sens.</p>
+<p>Quand le jet sert à percevoir par ce sens (<a class="gloss-link" data-key="terme:se-reperer" href="#gloss-se-reperer">se repérer</a>, localiser ou identifier), chaque point de clarté manquant inflige −20 au jet, quel que soit le sens.</p>
 <p class="formula">Malus de <a class="gloss-link" data-key="terme:perception" href="../../../content/regles/personnage/caracteristiques/#gloss-perception">perception</a> = 20 × points de clarté manquants</p>
 </div>
 <div class="keep">
 <span class="gloss-anchor" id="gloss-agir"></span><h4 id="agir">Agir</h4>
 <p>Quand le jet sert à agir en s'appuyant sur ce sens (attaquer, esquiver, se déplacer), chaque point de clarté manquant inflige −10 au jet, quel que soit le sens. Attaquer une cible mal vue est agir : le jet cherche à toucher, pas à obtenir une information, même si la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> guide le coup.</p>
+<p>Par défaut, agir physiquement s'appuie sur la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a> : toute <a href="../competences/">compétence</a> du groupe <a class="gloss-link" data-key="terme:physique" href="../../../content/regles/personnage/competences/#gloss-physique">Physique</a> subit le malus d'action de la <a class="gloss-link" data-key="terme:vue" href="../../../content/regles/personnage/competences/#gloss-vue">Vue</a>. Un personnage qui ne voit pas se rabat sur un autre sens, au choix du MJ.</p>
 <p class="formula">Malus d'action = 10 × points de clarté manquants</p>
 </div>
 <div class="keep">
@@ -3636,6 +3637,11 @@
 </div><div class="mcard gloss-card" data-key="terme:perception">
 <p><strong>Perception</strong></p>
 <p><span class="prereq">PER</span> La Perception mesure l'acuité des sens et la vigilance. Elle régit les sens que l'on dirige volontairement, la vue, l'ouïe, l'odorat, le goût, le toucher et la perception de la température, et décide de la capacité à déceler un signal faible : un mouvement furtif, une odeur suspecte, un craquement lointain. Elle permet de repérer ce qui passe inaperçu et de suivre une cible sans la perdre.</p>
+</div><div class="gcard gloss-card" data-key="terme:physique">
+<p><strong>Physique</strong></p>
+<div class="gcard-text">
+<p>ce qui sollicite le corps et ses gestes.</p>
+</div>
 </div></div>
 </article>
 </div>
@@ -3692,10 +3698,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

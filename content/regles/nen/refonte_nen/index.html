@@ -16,7 +16,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -1546,9 +1546,9 @@ Paliers (on en retient une ligne par grille) :
 puissance croissante (par exemple +10, +25, +40 à l'attaque), dont on retient une
 seule à la conception. Certains <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> s'étendent sur plusieurs tableaux, dont
 les choix se combinent : le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> de la <a class="gloss-link" data-key="terme:conjuration" href="../../../content/regles/nen/capacites-de-nen/#gloss-conjuration">conjuration</a>, par exemple, fixe à part
-sa contenance, son extraction simultanée et sa qualité. Une fiche peut donc porter
+sa contenance, son <a class="gloss-link" data-key="terme:extraction-simultanee" href="../../../content/regles/nen/conjuration/#gloss-extraction-simultanee">extraction simultanée</a> et sa qualité. Une fiche peut donc porter
 plusieurs grilles, et l'on en retient une ligne par grille, sauf mention de cumul.</p>
-<p>Les types compatibles sont une vraie contrainte : un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de bonus à l'attaque
+<p>Les types compatibles sont une vraie contrainte : un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> de <a class="gloss-link" data-key="terme:bonus-a-l-attaque" href="../../../content/regles/nen/renforcement/#gloss-bonus-a-l-attaque">bonus à l'attaque</a>
 n'accepte que le type attaque, et n'a aucun sens sur un effet. Chaque <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> dit
 donc à quels types il peut se greffer.</p>
 <p>Une catégorie peut aussi manquer. Un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> purement structurel, comme un <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>
@@ -1673,7 +1673,7 @@ capacités « finisseur » qui n'existent que déclenchées.</p>
 <li>À retardement : la capacité part après un délai (une minuterie, un compte à
   rebours).</li>
 <li>Conditionnel : la capacité part quand une condition énoncée devient vraie (la
-  cible prononce un mot, une créature meurt, un seuil de points de vie est
+  cible prononce un mot, une créature meurt, un seuil de <a class="gloss-link" data-key="terme:points-de-vie" href="../../../content/regles/personnage/classe/#gloss-points-de-vie">points de vie</a> est
   franchi).</li>
 <li>Lié : la capacité ne peut partir que pendant qu'une autre capacité du même
   pouvoir est active. C'est le lien du Janken : les trois finisseurs exigent la
@@ -1696,7 +1696,7 @@ et de là viennent les pouvoirs les plus riches.</p>
   d'une attaque ou d'une <a class="gloss-link" data-key="terme:emission" href="../../../content/regles/nen/capacites-de-nen/#gloss-emission">émission</a>, au point d'impact ou d'arrivée du trait.</li>
 <li><a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> : le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> tient un répertoire de plusieurs capacités internes, dont
   il tire l'une ou l'autre au moment voulu, et règle combien existent à la fois.
-  Ces capacités cataloguées se bâtissent à part et sans elles le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> n'a rien
+  Ces <a class="gloss-link" data-key="terme:capacites-cataloguees" href="../../../content/regles/nen/conjuration/#gloss-capacites-cataloguees">capacités cataloguées</a> se bâtissent à part et sans elles le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> n'a rien
   à invoquer.</li>
 </ul>
 <p>Une capacité imbriquée garde ses propres coûts et sa propre affinité : elle se
@@ -1835,7 +1835,7 @@ suit en pose le squelette, à développer.</p>
 </tr>
 <tr>
 <td>Guérison de soi</td>
-<td>regagne des points de vie dans la durée</td>
+<td>regagne des <a class="gloss-link" data-key="terme:points-de-vie" href="../../../content/regles/personnage/classe/#gloss-points-de-vie">points de vie</a> dans la durée</td>
 <td>effet</td>
 </tr>
 </tbody>
@@ -3324,7 +3324,7 @@ forts du jeu ; le Stockage, simple utilitaire, reste bien moins cher.</p>
 <h4 id="ajouter-un-declencheur-a-lattaque">Ajouter un Déclencheur à l'Attaque</h4>
 <p class="mod-type">Catégorie : aucune<br/>
 <a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Types</a> : attaque</p>
-<p>Greffé sur une attaque, ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> y attache une capacité liée, une seule, qu'il déclenche quand l'attaque aboutit selon les conditions choisies. Plus ces conditions sont dures, plus l'affinité qu'il accorde monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée. Le personnage retient obligatoirement un degré de touche et une visée, et peut y joindre une cible. Se restreindre librement pour gagner de l'affinité n'est pas propre à ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> : c'est un levier commun à toute capacité, qui se pose à son <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, pas ici. La capacité liée paie ses propres coûts ; le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, lui, n'a pas de catégorie : il se paie en DI, et guetter puis tenir le déclencheur lui coûte une aura et un maintien propres, calés sur la <a class="gloss-link" data-key="terme:finesse" href="../../../content/regles/combat/armes/#gloss-finesse">finesse</a> de sa visée. La capacité liée peut elle-même porter un déclencheur, les déclenchements s'enchaînant.</p>
+<p>Greffé sur une attaque, ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> y attache une capacité liée, une seule, qu'il déclenche quand l'attaque aboutit selon les conditions choisies. Plus ces conditions sont dures, plus l'affinité qu'il accorde monte ; cette affinité s'ajoute à l'affinité globale de la capacité liée. Le personnage retient obligatoirement un <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a> et une visée, et peut y joindre une cible. Se restreindre librement pour gagner de l'affinité n'est pas propre à ce <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a> : c'est un levier commun à toute capacité, qui se pose à son <a class="gloss-link" data-key="terme:niveau-regle" href="../../../content/regles/personnage/points-formation/#gloss-niveau-regle">niveau</a>, pas ici. La capacité liée paie ses propres coûts ; le <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>, lui, n'a pas de catégorie : il se paie en DI, et guetter puis tenir le déclencheur lui coûte une aura et un maintien propres, calés sur la <a class="gloss-link" data-key="terme:finesse" href="../../../content/regles/combat/armes/#gloss-finesse">finesse</a> de sa visée. La capacité liée peut elle-même porter un déclencheur, les déclenchements s'enchaînant.</p>
 <table>
 <thead>
 <tr>
@@ -3557,10 +3557,10 @@ forts du jeu ; le Stockage, simple utilitaire, reste bien moins cher.</p>
 </table>
 <div class="defs">
 <p><strong>Cible :</strong> qui doit être touché pour armer le déclencheur. Se déclencher sur l'attaquant (soi-même) est aisé ; toucher le défenseur applique le Nen sur autrui, plus <a class="gloss-link" data-key="terme:difficile" href="../../../content/regles/personnage/capacites-physiques/#gloss-difficile">difficile</a>, d'où son malus d'affinité.</p>
-<p><strong><a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">Degré de touche</a> :</strong> marge de réussite exigée de l'attaque, de la simple touche (0 %) au coup largement réussi (200 %) ; plus la marge demandée est haute, plus l'affinité accordée monte.</p>
-<p><strong><a class="gloss-link" data-key="terme:visee" href="../../../content/regles/nen/capacites-de-nen/#gloss-visee">Visée</a> :</strong> la partie du corps visée, reprise de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus de visée fort, plus l'affinité accordée monte.</p>
-<p><strong><a class="gloss-link" data-key="terme:affinite-accordee" href="../../../content/regles/nen/capacites-de-nen/#gloss-affinite-accordee">Affinité accordée</a> :</strong> la somme des affinités des options retenues s'ajoute à l'affinité globale de la capacité liée. Les choix les plus faciles imposent un malus d'affinité, les plus durs un bonus ; le plafond commun de +100 % d'affinité s'y applique comme à tout <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>. Le personnage en retient au moins le degré de touche et la visée.</p>
-<p><strong><a class="gloss-link" data-key="terme:cout" href="../../../content/regles/nen/capacites-de-nen/#gloss-cout">Coût</a> :</strong> l'aura et le maintien du déclencheur sont repris de l'effet de visée d'Anima (<a href="../../combat/manoeuvres/">Combat Maneuvers / Precisión</a>) et portés par la visée, toujours retenue, donc tout déclencheur en a ; plus le point visé est fin, plus ils montent. Le DI grandit avec l'affinité accordée : une option neutre ou à malus ne coûte rien, sinon 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se libère.</p>
+<p><strong><a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">Degré de touche</a> :</strong> marge de réussite exigée de l'attaque, de la simple touche (0 %) au coup largement réussi (200 %) ; plus la marge demandée est haute, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="../../../content/regles/nen/capacites-de-nen/#gloss-affinite-accordee">affinité accordée</a> monte.</p>
+<p><strong><a class="gloss-link" data-key="terme:visee" href="../../../content/regles/nen/capacites-de-nen/#gloss-visee">Visée</a> :</strong> la partie du corps visée, reprise de la manœuvre <a href="../../combat/manoeuvres/">Viser</a> ; plus le point est petit et son malus de visée fort, plus l'<a class="gloss-link" data-key="terme:affinite-accordee" href="../../../content/regles/nen/capacites-de-nen/#gloss-affinite-accordee">affinité accordée</a> monte.</p>
+<p><strong><a class="gloss-link" data-key="terme:affinite-accordee" href="../../../content/regles/nen/capacites-de-nen/#gloss-affinite-accordee">Affinité accordée</a> :</strong> la somme des affinités des options retenues s'ajoute à l'affinité globale de la capacité liée. Les choix les plus faciles imposent un malus d'affinité, les plus durs un bonus ; le plafond commun de +100 % d'affinité s'y applique comme à tout <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">module</a>. Le personnage en retient au moins le <a class="gloss-link" data-key="terme:degre-de-touche" href="../../../content/regles/nen/capacites-de-nen/#gloss-degre-de-touche">degré de touche</a> et la visée.</p>
+<p><strong><a class="gloss-link" data-key="terme:cout" href="../../../content/regles/nen/capacites-de-nen/#gloss-cout">Coût</a> :</strong> l'aura et le maintien du déclencheur sont repris de l'effet de visée d'Anima (<a href="../../combat/manoeuvres/">Combat Maneuvers / Precisión</a>) et portés par la visée, toujours retenue, donc tout déclencheur en a ; plus le point visé est fin, plus ils montent. Le DI grandit avec l'<a class="gloss-link" data-key="terme:affinite-accordee" href="../../../content/regles/nen/capacites-de-nen/#gloss-affinite-accordee">affinité accordée</a> : une option neutre ou à malus ne coûte rien, sinon 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se libère.</p>
 </div>
 </div>
 <div class="keep">
@@ -3781,7 +3781,7 @@ en même temps.</p>
 </table>
 <div class="defs">
 <p><strong>Contenu (cumulable) :</strong> les types de capacités que le <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> peut renfermer ; à cumuler pour en autoriser plusieurs. Chaque type ouvert coûte le même petit forfait, calé sur le plus petit effet d'Anima : DC 5, UA 20, IMA 5.</p>
-<p><strong>Qualité (VAR.) :</strong> le personnage investit librement un nombre de points de conception, X. Chaque capacité du <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> se bâtit avec un budget de X (base et <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> compris) ; toutes partagent cette qualité. X ne se paie qu'une fois, quel que soit le nombre de capacités cataloguées. Le coût en Aura est variable lui aussi : tirer une capacité coûte l'UA de ses propres <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>.</p>
+<p><strong>Qualité (VAR.) :</strong> le personnage investit librement un nombre de points de conception, X. Chaque capacité du <a class="gloss-link" data-key="terme:catalogue" href="../../../content/regles/nen/conjuration/#gloss-catalogue">Catalogue</a> se bâtit avec un budget de X (base et <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a> compris) ; toutes partagent cette qualité. X ne se paie qu'une fois, quel que soit le nombre de <a class="gloss-link" data-key="terme:capacites-cataloguees" href="../../../content/regles/nen/conjuration/#gloss-capacites-cataloguees">capacités cataloguées</a>. Le coût en Aura est variable lui aussi : tirer une capacité coûte l'UA de ses propres <a class="gloss-link" data-key="terme:module" href="../../../content/regles/nen/capacites-de-nen/#gloss-module">modules</a>.</p>
 </div>
 </div>
 <div class="keep">
@@ -3891,7 +3891,7 @@ en même temps.</p>
 <p><strong>Vivable :</strong> regroupe l'Air, l'Eau, la Nourriture et la Lumière pour moins cher que séparément ; l'intérieur est pleinement habitable.</p>
 <p><strong><a class="gloss-link" data-key="terme:temps-arrete" href="../../../content/regles/nen/conjuration/#gloss-temps-arrete">Temps arrêté</a> :</strong> le temps est comme figé à l'intérieur ; ni objet ni créature stockés n'y vieillissent.</p>
 </div>
-<p><strong>Par nombre d'objets</strong> : un nombre fixe d'objets, chacun ne dépassant pas une taille maximale.</p>
+<p><strong>Par nombre d'objets</strong> : un nombre fixe d'objets, chacun ne dépassant pas une <a class="gloss-link" data-key="terme:taille-maximale" href="../../../content/regles/nen/manipulation/#gloss-taille-maximale">taille maximale</a>.</p>
 <table>
 <thead>
 <tr>
@@ -6699,10 +6699,259 @@ en même temps.</p>
 <p>Échapper à une attaque par un déplacement vif du corps. Pour se jeter hors de la trajectoire d'une balle ou pivoter sous le tranchant d'une épée.</p>
 </div>
 <div class="keep"></div>
+</div><div class="gcard gloss-card" data-key="terme:extraction-simultanee">
+<p><strong>Extraction simultanée</strong></p>
+<div class="gcard-text">
+<p>nombre de ces capacités qui peuvent exister en même temps, de 1 à 5 ; les autres restent rangées.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:bonus-a-l-attaque">
+<p><strong>Bonus à l'attaque</strong></p>
+<div class="gcard-text">
+<p class="mod-type">Type : attaque</p>
+<p>Tant que la capacité est active, le renforceur ajoute le bonus indiqué à une seule de ses attaques portées avec la compétence choisie, avant le début de son prochain tour ; si la capacité est maintenue, le bonus vaut de nouveau pour une attaque à chaque round.</p>
+<p>Il n'existe pas de compétence d'attaque : en prenant le module, le renforceur choisit dans la première rubrique la compétence d'arme que le bonus augmente, puis le bonus dans la seconde, une ligne par rubrique.</p>
+<p>Cet effet est chiffré : le bonus est multiplié par l'affinité d'emploi effective (un +30 porté à 120 % vaut +36).</p>
+<table>
+<thead>
+<tr>
+<th>Effet</th>
+<th>DR</th>
+<th>VOL</th>
+<th>UAA</th>
+<th>MA</th>
+<th>AEL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cat">
+<td>Compétence (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Armes de mêlée</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes de jet</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes de trait</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Armes à feu</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="cat">
+<td>Bonus (obligatoire)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+10</td>
+<td>5</td>
+<td>5</td>
+<td>40</td>
+<td>20</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+20</td>
+<td>5</td>
+<td>6</td>
+<td>50</td>
+<td>30</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+30</td>
+<td>10</td>
+<td>7</td>
+<td>60</td>
+<td>40</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+40</td>
+<td>10</td>
+<td>8</td>
+<td>80</td>
+<td>50</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+50</td>
+<td>15</td>
+<td>9</td>
+<td>100</td>
+<td>60</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+60</td>
+<td>15</td>
+<td>10</td>
+<td>120</td>
+<td>70</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+70</td>
+<td>20</td>
+<td>11</td>
+<td>140</td>
+<td>80</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+80</td>
+<td>20</td>
+<td>12</td>
+<td>170</td>
+<td>90</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+90</td>
+<td>25</td>
+<td>13</td>
+<td>200</td>
+<td>100</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+100</td>
+<td>25</td>
+<td>14</td>
+<td>230</td>
+<td>120</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+110</td>
+<td>30</td>
+<td>15</td>
+<td>260</td>
+<td>140</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+120</td>
+<td>30</td>
+<td>16</td>
+<td>290</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+130</td>
+<td>35</td>
+<td>17</td>
+<td>320</td>
+<td>180</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+140</td>
+<td>35</td>
+<td>18</td>
+<td>360</td>
+<td>200</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+150</td>
+<td>40</td>
+<td>20</td>
+<td>400</td>
+<td>220</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+160</td>
+<td>40</td>
+<td>22</td>
+<td>440</td>
+<td>240</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+170</td>
+<td>45</td>
+<td>24</td>
+<td>480</td>
+<td>270</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+180</td>
+<td>45</td>
+<td>26</td>
+<td>520</td>
+<td>300</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+190</td>
+<td>50</td>
+<td>28</td>
+<td>560</td>
+<td>330</td>
+<td>—</td>
+</tr>
+<tr>
+<td>+200</td>
+<td>50</td>
+<td>30</td>
+<td>600</td>
+<td>360</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keep"></div>
 </div><div class="gcard gloss-card" data-key="terme:lourde">
 <p><strong>Lourde</strong></p>
 <div class="gcard-text">
 <p>un gros effort à pleine puissance, à l'intensité maximale du corps. Le personnage se dépense sans retenue et puise dans ses réserves : il ne tient ce rythme qu'un temps limité avant de réclamer du repos. Par exemple : combattre, en duel ou en mêlée ; sprinter, fuir, poursuivre à toutes jambes ; pousser le corps à sa limite lors d'un exploit.</p>
+</div>
+</div><div class="gcard gloss-card" data-key="terme:points-de-vie">
+<p><strong>Points de vie</strong></p>
+<div class="gcard-text">
+<p>Les points de vie, ou PV, mesurent ce qu'un personnage encaisse avant de tomber. Chaque niveau lui apporte un nombre fixe de PV, ses PV par niveau, que le modificateur de taille ajuste.</p>
+<p class="formula">PV max = (PV par niveau + modificateur de taille) × niveau</p>
+<p>Les PV par niveau d'un personnage valent 100.</p>
+</div>
+</div>
+<div class="gcard gloss-card" data-key="terme:capacites-cataloguees">
+<p><strong>Capacités cataloguées</strong></p>
+<div class="gcard-text">
+<p>nombre de capacités différentes que le Catalogue renferme, de 1 à 10.</p>
 </div>
 </div><div class="gcard gloss-card" data-key="terme:competence-concept">
 <p><strong>Compétence</strong></p>
@@ -6948,6 +7197,11 @@ en même temps.</p>
 <div class="gcard-text">
 <p>le maintien, l'aura payée chaque round par son mainteneur pour la garder active. À zéro pour une capacité instantanée.</p>
 </div>
+</div><div class="gcard gloss-card" data-key="terme:degre-de-touche">
+<p><strong>Degré de touche</strong></p>
+<div class="gcard-text">
+<p>la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
+</div>
 </div><div class="mcard gloss-card" data-key="terme:finesse">
 <p><strong>Finesse</strong></p>
 <p><span class="prereq">Nécessite : ×1 FOR ou plus</span></p>
@@ -6966,11 +7220,6 @@ en même temps.</p>
 </tr>
 </tbody>
 </table>
-</div><div class="gcard gloss-card" data-key="terme:degre-de-touche">
-<p><strong>Degré de touche</strong></p>
-<div class="gcard-text">
-<p>la marge de réussite exigée de l'attaque, de 0 % à 200 % ; plus la marge exigée est haute, plus l'affinité accordée monte.</p>
-</div>
 </div><div class="gcard gloss-card" data-key="terme:visee">
 <p><strong>Visée</strong></p>
 <div class="gcard-text">
@@ -6990,16 +7239,6 @@ en même temps.</p>
 <p><strong>Coût</strong></p>
 <div class="gcard-text">
 <p>l'aura et le maintien du déclencheur se lisent à la ligne de la visée retenue. Le DI suit l'affinité accordée : une option neutre ou à malus ne coûte rien, une option à bonus coûte 5 DI par tranche de 20 % accordée. La capacité liée paie ses propres coûts quand elle se déclenche.</p>
-</div>
-</div><div class="gcard gloss-card" data-key="terme:capacites-cataloguees">
-<p><strong>Capacités cataloguées</strong></p>
-<div class="gcard-text">
-<p>nombre de capacités différentes que le Catalogue renferme, de 1 à 10.</p>
-</div>
-</div><div class="gcard gloss-card" data-key="terme:extraction-simultanee">
-<p><strong>Extraction simultanée</strong></p>
-<div class="gcard-text">
-<p>nombre de ces capacités qui peuvent exister en même temps, de 1 à 5 ; les autres restent rangées.</p>
 </div>
 </div><div class="mcard gloss-card" data-key="terme:en">
 <p><strong>En</strong></p>
@@ -7156,10 +7395,10 @@ en même temps.</p>
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>

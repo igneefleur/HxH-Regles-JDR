@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/atelier.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/night.css" rel="stylesheet"/>
 <link href="../../../../stylesheets/forge.css" rel="stylesheet"/>
-<link href="../../../../stylesheets/creation.css?v=8" rel="stylesheet"/>
+<link href="../../../../stylesheets/creation.css?v=38" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>
     (function () {
@@ -3057,7 +3057,7 @@
 <div class="keep">
 <span class="gloss-anchor" id="gloss-soin"></span><h4 id="soin">Soin</h4>
 <p class="mod-type"><a class="gloss-link" data-key="terme:type" href="../../../content/regles/combat/armes/#gloss-type">Type</a> : effet</p>
-<p>Le <a class="gloss-link" data-key="terme:soin" href="#gloss-soin">Soin</a> rend des points de vie. Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> en rend le montant indiqué, en une seule fois, avant le début de son prochain tour ; si la capacité est maintenue, le soin se répète à chaque round.</p>
+<p>Le <a class="gloss-link" data-key="terme:soin" href="#gloss-soin">Soin</a> rend des <a class="gloss-link" data-key="terme:points-de-vie" href="../../../content/regles/personnage/classe/#gloss-points-de-vie">points de vie</a>. Tant que la capacité est active, le <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> en rend le montant indiqué, en une seule fois, avant le début de son prochain tour ; si la capacité est maintenue, le soin se répète à chaque round.</p>
 <p>Le soin s'applique au <a class="gloss-link" data-key="terme:renforceur" href="../../../content/regles/nen/archetypes-nen/#gloss-renforceur">renforceur</a> lui-même ou, au contact, à autrui.</p>
 <p>Cet effet est chiffré : le montant est multiplié par l'affinité d'emploi effective.</p>
 <table>
@@ -7071,7 +7071,15 @@
 </table>
 </div>
 <div class="keep"></div>
-</div></div>
+</div><div class="gcard gloss-card" data-key="terme:points-de-vie">
+<p><strong>Points de vie</strong></p>
+<div class="gcard-text">
+<p>Les points de vie, ou PV, mesurent ce qu'un personnage encaisse avant de tomber. Chaque niveau lui apporte un nombre fixe de PV, ses PV par niveau, que le modificateur de taille ajuste.</p>
+<p class="formula">PV max = (PV par niveau + modificateur de taille) × niveau</p>
+<p>Les PV par niveau d'un personnage valent 100.</p>
+</div>
+</div>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -7127,10 +7135,10 @@
 <script src="../../../../javascripts/nav-drawer.js"></script>
 <script src="../../../../javascripts/glossary.js"></script>
 <script src="../../../../javascripts/print-book.js"></script>
-<script src="../../../../javascripts/atelier.js"></script>
+<script src="../../../../javascripts/atelier.js?v=2"></script>
 <script src="../../../../javascripts/night.js"></script>
 <script src="../../../../javascripts/forge.js"></script>
-<script src="../../../../javascripts/creation.js"></script>
+<script src="../../../../javascripts/creation.js?v=24"></script>
 <script src="../../../../javascripts/copybtn.js"></script>
 </body>
 </html>
