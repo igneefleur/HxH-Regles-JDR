@@ -131,7 +131,7 @@ Le sumo est l'art de la poussée. Le pratiquant met son poids entier dans chaque
 <div class="mcard art" markdown>
 **Kung-fu**
 
-Le kung-fu n'est pas un style, mais cent : le pratiquant passe d'une forme à l'autre au fil du combat, empruntant à chacune ce qu'elle offre. Souple comme le serpent l'instant d'esquiver, dur comme le tigre celui de frapper, il n'oppose jamais deux fois la même garde et change de posture aussi vite que la situation tourne.
+Le kung-fu est l'art des postures. Le pratiquant passe d'une garde à l'autre au fil du combat et tire parti de chacune sans en subir les entraves.
 
 <p class="palier">✦✧✧ Basique</p>
 
@@ -632,7 +632,7 @@ TODO
 <div class="mcard art" markdown>
 **MMA**
 
-Le MMA ne s'attache pas à un seul geste : il fait de chaque membre une arme, l'un après l'autre. En montant en grade, le pratiquant arme un membre de plus de son corps, ou pousse un membre déjà travaillé au-delà de ce que la loi tolère chez un homme désarmé. Chaque arme ainsi forgée gagne un degré d'illégalité, et ce surcroît de restriction rouvre en retour des points à réinvestir dans ses propriétés.
+Le MMA est l'art de faire de chaque membre une arme. Le pratiquant aiguise ses armes de corps l'une après l'autre, main, pied et tête.
 
 <p class="palier">✦✧✧ Basique</p>
 

@@ -32,6 +32,7 @@
 
   var DATA = null;
   var teardown = null;
+  var handoff = null;   // relais depuis le créateur de personnage (capacité à créer/modifier)
   var SCHEMA = 4;   // format d'état (prises {node,slot} ; lien de référence module→capacité)
   var ARMES = [];   // armes du livre (armes.md), chargées depuis forge.json
 
@@ -651,7 +652,9 @@
   //  INSTANCE
   // ======================================================================
   function mount(root) {
-    var state = load() || newState();
+    // En mode fiche (relais du créateur), on ouvre la capacité transmise sans
+    // écraser le brouillon d'atelier ; sinon, comportement habituel.
+    var state = (handoff ? (migrate(handoff.state) || newState()) : load()) || newState();
 
     var world = h("div", { class: "nf-world" });
     // Couche d'arêtes HORS du monde transformé (Chromium ne peint pas un <svg>
@@ -1248,6 +1251,29 @@
       bar.archetype.value = state.archetype; renderAll();
     });
     bar.exportBtn.addEventListener("click", function () { doExport(state); });
+    if (bar.toSheet) bar.toSheet.addEventListener("click", function () {
+      var rep = powerReport(state);
+      var first = rep.reports[0];
+      var name = (first && first.start && first.start.name) || (handoff && handoff.name) || "Capacité";
+      var sum = function (f) { return rep.reports.reduce(function (a, r) { return a + (f(r) || 0); }, 0); };
+      var summary = {
+        name: name,
+        type: first ? (TY_LABEL[first.start.ctype] || "") : "",
+        archetype: state.archetype,
+        di: rep.diTotal === Infinity ? null : rep.diTotal,
+        uaa: sum(function (r) { return r.ua; }),
+        ma: sum(function (r) { return r.maShown; }),
+        car: rep.reports.reduce(function (a, r) { return Math.max(a, r.car || 0); }, 0),
+        count: rep.starts.length
+      };
+      var back = (handoff && handoff.returnTo) || (siteBase() + "personnage/");
+      try {
+        localStorage.setItem(RETURN, JSON.stringify({ capId: handoff.capId, name: name, state: strip(state), report: summary }));
+        localStorage.removeItem(HANDOFF);
+      } catch (e) {}
+      handoff = null;
+      location.href = back;
+    });
     bar.importInput.addEventListener("change", function (e) {
       var f = e.target.files[0]; if (!f) return;
       var rd = new FileReader();
@@ -1261,7 +1287,15 @@
     });
 
     if (!Object.keys(state.nodes).length) addStart(state, "attaque", 60, 60);
-    function save() { try { localStorage.setItem("nen-atelier", JSON.stringify(strip(state))); } catch (e) {} }
+    function save() {
+      // en mode fiche, on autosauve dans le relais (reprise après rechargement)
+      // sans toucher au brouillon autonome de l'Atelier
+      if (handoff) {
+        try { var hs = readHandoff() || handoff; hs.state = strip(state); localStorage.setItem(HANDOFF, JSON.stringify(hs)); } catch (e) {}
+        return;
+      }
+      try { localStorage.setItem("nen-atelier", JSON.stringify(strip(state))); } catch (e) {}
+    }
     function load() { try { return migrate(JSON.parse(localStorage.getItem("nen-atelier"))); } catch (e) { return null; } }
 
     renderAll(); applyTransform();
@@ -1346,13 +1380,18 @@
     var exportBtn = h("button", { class: "nf-btn" }, ["Exporter"]);
     var importInput = h("input", { type: "file", accept: "application/json", style: "display:none" });
     var importBtn = h("button", { class: "nf-btn", onclick: function () { importInput.click(); } }, ["Importer"]);
-    var el = h("div", { class: "nf-bar" }, [
-      h("span", { class: "nf-title" }, ["Atelier de pouvoir"]),
+    // Mode fiche : bouton d'enregistrement vers la fiche de personnage
+    var toSheet = handoff ? h("button", { class: "nf-btn primary" }, ["Enregistrer dans la fiche"]) : null;
+    var kids = [
+      h("span", { class: "nf-title" }, [handoff ? "Atelier — capacité de la fiche" : "Atelier de pouvoir"]),
       h("label", {}, ["Archétype :"]), archetype,
       h("span", { class: "nf-hint" }, ["Glissez un socle depuis la palette →"]),
-      h("span", { class: "nf-spacer" }), exportBtn, importBtn, importInput, reset
-    ]);
-    return { el: el, archetype: archetype, reset: reset, exportBtn: exportBtn, importInput: importInput };
+      h("span", { class: "nf-spacer" })
+    ];
+    if (toSheet) kids.push(toSheet);
+    kids.push(exportBtn, importBtn, importInput, reset);
+    var el = h("div", { class: "nf-bar" }, kids);
+    return { el: el, archetype: archetype, reset: reset, exportBtn: exportBtn, importInput: importInput, toSheet: toSheet };
   }
 
   function renderInspector(container, state) {
@@ -1419,10 +1458,20 @@
   // ======================================================================
   //  BOOTSTRAP
   // ======================================================================
+  // Relais depuis le créateur de personnage (page /personnage/) : il dépose une
+  // capacité à créer ou modifier dans localStorage puis navigue ici. On l'ouvre,
+  // et un bouton « Enregistrer dans la fiche » réécrit le retour et renavigue.
+  var HANDOFF = "nen-atelier-handoff", RETURN = "nen-atelier-return";
+  function readHandoff() {
+    var raw; try { raw = localStorage.getItem(HANDOFF); } catch (e) { return null; }
+    if (!raw) return null;
+    try { return JSON.parse(raw); } catch (e) { return null; }
+  }
   function init() {
     var root = document.getElementById("nen-atelier");
     if (teardown) { try { teardown(); } catch (e) {} teardown = null; }
     if (!root) return;
+    handoff = readHandoff();
     if (DATA) { mount(root); return; }
     Promise.all([
       fetch(siteBase() + "nen-atelier.json", { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }),

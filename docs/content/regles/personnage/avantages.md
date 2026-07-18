@@ -70,6 +70,10 @@ Exemple. Un personnage à l'Éclat de 5 dispose de 3 PA. Une épreuve fait chute
 </div>
 
 <div class="mcard" markdown>
+**Caractéristique supérieure** <span class="prereq">1 PA / +1 caract</span> Le personnage gagne +1 à une [caractéristique](caracteristiques.md) au choix, sans jamais la porter au-dessus de 20. Cet avantage peut être pris plusieurs fois, y compris sur la même caractéristique.
+</div>
+
+<div class="mcard" markdown>
 **Artiste incompris** <span class="prereq">1 à 3 PA</span> Le personnage gagne un bonus à la [compatibilité arts martiaux](../combat/armes.md) de toutes les armes quand c'est lui qui les utilise, sans jamais dépasser ✦✦✦. La table ci-dessous donne le coût de chaque bonus.
 
 | Bonus de compatibilité arts martiaux | Coût |
@@ -256,5 +260,67 @@ Exemple. Un personnage à l'Éclat de 5 dispose de 3 PA. Une épreuve fait chute
 <div class="cols" markdown>
 
 Un personnage n'achète ses avantages de race qu'à la création : sa race lui vient à la naissance. Il peut en prendre autant qu'il veut, et devient un hybride s'il en cumule plusieurs.
+
+</div>
+
+---
+
+## Construire une race
+
+<div class="cols" markdown>
+
+Une race se conçoit dans un budget, fixé par son coût en PA, de 1 à 3. Ce coût lui donne des bonus de caractéristiques et des pouvoirs ; tout défaut qu'elle accepte lui en rend d'autres.
+
+| Coût | Caractéristiques | Pouvoirs |
+|:---:|:---:|:---:|
+| 1 PA | +2 | 1 majeur |
+| 2 PA | +4 | 2 majeurs |
+| 3 PA | +6 | 3 majeurs |
+
+Le bonus de caractéristiques se répartit librement, sans jamais dépasser +2 sur une même. Un pouvoir majeur vaut deux pouvoirs mineurs : la race peut échanger chaque majeur contre deux mineurs, ou panacher les deux.
+
+Un pouvoir majeur donne un nouveau moyen d'agir : une métamorphose, le vol, une transformation, une immunité large, un sens hors norme. Un pouvoir mineur n'est qu'un petit atout passif : une arme naturelle, voir dans le noir, guérir plus vite, dormir moins, résister à un poison précis, débloquer un sens, tomber sans dégâts.
+
+### Se financer par un défaut
+
+Une race peut s'alourdir pour gagner des pouvoirs de plus, jusqu'à doubler leur nombre. La table se lit comme celle du budget : à chaque PA, la race sacrifie des caractéristiques et gagne des pouvoirs.
+
+| Coût | Caractéristiques | Pouvoirs |
+|:---:|:---:|:---:|
+| 1 PA | −2 | +1 majeur |
+| 2 PA | −4 | +2 majeurs |
+| 3 PA | −6 | +3 majeurs |
+
+Le malus ne dépasse jamais −2 sur une même caractéristique : un malus de −1 rend un pouvoir mineur, un malus de −2 un majeur. À la place, la race peut prendre un défaut, un pouvoir négatif. Un défaut majeur, lourde vulnérabilité ou forte contrainte, comme une allergie à une matière courante, une faiblesse marquée à un type de dégâts ou un serment qui lie, rend un pouvoir majeur ; un défaut mineur en rend un mineur.
+
+> Exemple. Une race de 2 PA a droit à deux pouvoirs majeurs. Pour un troisième, elle accepte un malus de −2 en Endurance, qui le lui rend.
+
+### Pas à pas
+
+Une race se bâtit en quatre temps. Un même exemple les suit d'un bout à l'autre : le Kiriko, une bête magique métamorphe jouée sous sa forme humaine.
+
+#### 1. Poser le concept
+
+On décide ce qu'est la race et son coût, de 1 à 3 PA.
+
+> Exemple. Le Kiriko est fixé à 3 PA : il ouvre donc +6 de caractéristiques et trois pouvoirs majeurs.
+
+#### 2. Répartir les caractéristiques
+
+On dépense le bonus, sans dépasser +2 sur une même caractéristique.
+
+> Exemple. Le Kiriko porte +2 en Force, +2 en Agilité et +2 en Dextérité. Aucun bonus mental : son intelligence vaut celle d'un humain.
+
+#### 3. Choisir les pouvoirs
+
+On choisit les pouvoirs, majeurs ou mineurs, et l'on ajoute les défauts éventuels.
+
+> Exemple. Le Kiriko a droit à trois pouvoirs majeurs. Il en prend deux, Métamorphe et Vol, et échange le troisième contre deux mineurs, Griffes et Flair. Aucun défaut.
+
+#### 4. Vérifier le compte
+
+Le bonus de caractéristiques et les pouvoirs atteignent chacun leur budget, une fois les défauts déduits.
+
+> Exemple. +6 de caractéristiques, deux pouvoirs majeurs et deux mineurs, l'équivalent de trois majeurs, sans défaut : le compte du 3 PA tombe juste. Le Kiriko est prêt.
 
 </div>

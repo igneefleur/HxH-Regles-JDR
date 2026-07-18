@@ -56,9 +56,15 @@ Pour classer une activité, on la compare aux exemples ci-dessous ; en cas de do
 
 </div>
 
+</div>
+
+<div class="cols" markdown>
+
+<div class="keep" markdown>
+
 #### Sommeil et repos {#sommeil-et-repos}
 
-Le Repos découle de l'Endurance : le Repos d'un personnage est égal à son Endurance, et c'est à sa ligne que se lit sa table, en bas de section. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.
+Le Repos découle de l'Endurance : le Repos d'un personnage est égal à son Endurance, et c'est à sa ligne que se lit sa table, ci-dessous. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.
 
 Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue, ni réserves d'effort. En revanche, un sommeil interrompu peut reprendre : on additionne tout ce que le personnage dort depuis son dernier sommeil correct, et dès que le total atteint son temps de sommeil requis, il a dormi correctement.
 
@@ -66,47 +72,11 @@ Un personnage ne peut pas se rendormir aussitôt après un sommeil correct : il 
 
 <p class="formula">Temps avant de pouvoir redormir = temps avant d'être fatigué ÷ 2</p>
 
-#### Le Fond {#le-fond}
-
-Le Fond découle de l'Endurance : le Fond d'un personnage est égal à son Endurance. C'est l'endurance de son corps à l'effort soutenu, lue à sa ligne dans la table du Fond, en bas de section : la durée d'activité intermédiaire et la durée d'activité lourde qu'il peut fournir dans une journée sans rien risquer.
-
-La colonne Activité intermédiaire donne la durée totale d'activité intermédiaire qu'un personnage peut fournir dans sa journée ; la colonne Activité lourde, la durée totale d'activité lourde. Les deux durées se dépensent séparément ; le reste de la journée se passe en activité légère, qui ne se compte pas. Un sommeil correct rend les deux durées en entier.
-
-<div class="memo" markdown>
-
-Exemple. Avec une Endurance de 5, la moyenne humaine, un personnage dort 8 heures ; son Fond lui donne jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée, tout le reste se passant en activité légère. Au pic humain réel (Endurance 9), six heures de sommeil lui suffisent, et son Fond tient 12 heures d'intermédiaire et tout juste une heure de lourde.
-
 </div>
 
-#### Forcer l'effort
+<div class="keep" markdown>
 
-Les durées du Fond donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.
-
-Quand un personnage a épuisé l'une de ces durées et continue quand même dans cette intensité, il force sur un corps déjà à bout. Il fait alors un jet de [Résistance à l'Épuisement](competences.md), une première fois au moment où il dépasse la durée, puis régulièrement tant qu'il continue : toutes les heures en activité intermédiaire, toutes les dix minutes en activité lourde. S'il s'arrête puis reprend plus tard, la durée toujours épuisée, il refait un jet aussitôt, puis aux mêmes intervalles : les pauses ne remettent rien à zéro avant le prochain sommeil correct. La difficulté augmente à chaque jet :
-
-<p class="formula">Difficulté = 100 + 20 × le nombre de jets déjà faits pour forcer l'effort depuis le dernier sommeil correct</p>
-
-Le premier jet se fait donc à 100, le deuxième à 120, et ainsi de suite ; les jets de veille ([Veiller sans dormir](#veiller-sans-dormir)) ne comptent pas dans ce total. S'il réussit, le personnage tient jusqu'au prochain jet. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec ; rien ne l'empêche de continuer, sinon la fatigue elle-même.
-
-#### Veiller sans dormir
-
-Un personnage peut rester éveillé sans risque pendant son temps avant d'être fatigué, qui dépend de son Repos :
-
-<p class="formula">Temps avant d'être fatigué = 24 heures − le temps de sommeil requis</p>
-
-Au-delà, chaque heure d'éveil en plus lui demande un jet de [Résistance à l'Épuisement](competences.md), de plus en plus difficile :
-
-<p class="formula">Difficulté = 20 pour la première heure dépassée, +20 par heure suivante</p>
-
-La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'activité fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.
-
-</div>
-
----
-
-<div class="cols" markdown>
-
-<div class="gloss-source sommeil keep" markdown>
+<div class="gloss-source" markdown>
 
 | Repos | Temps de sommeil | Avant de pouvoir redormir | Avant d'être fatigué |
 |:---:|:---:|:---:|:---:|
@@ -144,7 +114,29 @@ La première heure dépassée demande donc un jet à 20, la deuxième un jet à 
 
 </div>
 
-<div class="gloss-source sommeil keep" markdown>
+<div class="defs" markdown>
+
+**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cols" markdown>
+
+<div class="keep" markdown>
+
+#### Le Fond {#le-fond}
+
+Le Fond découle de l'Endurance : le Fond d'un personnage est égal à son Endurance. C'est l'endurance de son corps à l'effort soutenu, lue à sa ligne dans la table du Fond, ci-dessous : la durée d'activité intermédiaire et la durée d'activité lourde qu'il peut fournir dans une journée sans rien risquer.
+
+La colonne Activité intermédiaire donne la durée totale d'activité intermédiaire qu'un personnage peut fournir dans sa journée ; la colonne Activité lourde, la durée totale d'activité lourde. Les deux durées se dépensent séparément ; le reste de la journée se passe en activité légère, qui ne se compte pas. Un sommeil correct rend les deux durées en entier.
+
+</div>
+
+<div class="gloss-source keep" markdown>
 
 | Fond | Activité intermédiaire | Activité lourde |
 |:---:|:---:|:---:|
@@ -182,11 +174,37 @@ La première heure dépassée demande donc un jet à 20, la deuxième un jet à 
 
 </div>
 
-<div class="defs span" markdown>
+</div>
 
-**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
+<div class="cols" markdown>
+
+<div class="memo" markdown>
+
+Exemple. Avec une Endurance de 5, la moyenne humaine, un personnage dort 8 heures ; son Fond lui donne jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée, tout le reste se passant en activité légère. Au pic humain réel (Endurance 9), six heures de sommeil lui suffisent, et son Fond tient 12 heures d'intermédiaire et tout juste une heure de lourde.
 
 </div>
+
+#### Forcer l'effort
+
+Les durées du Fond donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.
+
+Quand un personnage a épuisé l'une de ces durées et continue quand même dans cette intensité, il force sur un corps déjà à bout. Il fait alors un jet de [Résistance à l'Épuisement](competences.md), une première fois au moment où il dépasse la durée, puis régulièrement tant qu'il continue : toutes les heures en activité intermédiaire, toutes les dix minutes en activité lourde. S'il s'arrête puis reprend plus tard, la durée toujours épuisée, il refait un jet aussitôt, puis aux mêmes intervalles : les pauses ne remettent rien à zéro avant le prochain sommeil correct. La difficulté augmente à chaque jet :
+
+<p class="formula">Difficulté = 100 + 20 × le nombre de jets déjà faits pour forcer l'effort depuis le dernier sommeil correct</p>
+
+Le premier jet se fait donc à 100, le deuxième à 120, et ainsi de suite ; les jets de veille ([Veiller sans dormir](#veiller-sans-dormir)) ne comptent pas dans ce total. S'il réussit, le personnage tient jusqu'au prochain jet. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec ; rien ne l'empêche de continuer, sinon la fatigue elle-même.
+
+#### Veiller sans dormir
+
+Un personnage peut rester éveillé sans risque pendant son temps avant d'être fatigué, qui dépend de son Repos :
+
+<p class="formula">Temps avant d'être fatigué = 24 heures − le temps de sommeil requis</p>
+
+Au-delà, chaque heure d'éveil en plus lui demande un jet de [Résistance à l'Épuisement](competences.md), de plus en plus difficile :
+
+<p class="formula">Difficulté = 20 pour la première heure dépassée, +20 par heure suivante</p>
+
+La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'activité fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.
 
 </div>
 

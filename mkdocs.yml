@@ -109,17 +109,17 @@ extra_css:
   - stylesheets/atelier.css
   - stylesheets/night.css
   - stylesheets/forge.css
-  - stylesheets/creation.css?v=8
+  - stylesheets/creation.css?v=38
 extra_javascript:
   - javascripts/changelog.js
   - javascripts/continuous.js
   - javascripts/nav-drawer.js
   - javascripts/glossary.js
   - javascripts/print-book.js
-  - javascripts/atelier.js
+  - javascripts/atelier.js?v=2
   - javascripts/night.js
   - javascripts/forge.js
-  - javascripts/creation.js
+  - javascripts/creation.js?v=24
   - javascripts/copybtn.js
 hooks:
   - hooks/changelog.py
