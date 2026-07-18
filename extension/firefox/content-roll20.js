@@ -131,7 +131,36 @@ if (typeof browser === "undefined") { var browser = chrome; }
     f.setAttribute("allow", "clipboard-write");
     return f;
   }
-  function fillCreator(host, charId) { host.innerHTML = ""; host.appendChild(creatorFrame(charId)); }
+  // La fiche doit ÉPOUSER la fenêtre de la feuille Roll20 (dialogue de perso) et suivre
+  // ses redimensionnements. Ce content-script tourne DANS la frame de la feuille, donc
+  // window.innerHeight = hauteur utile du dialogue. On règle la hauteur de l'iframe pour
+  // qu'elle remplisse de son sommet jusqu'au bas du dialogue ; l'iframe interne défile
+  // pour une feuille plus haute. On recalcule à chaque resize / changement de layout.
+  var currentFrame = null, resizeBound = false;
+  function refitFrame() {
+    var fr = currentFrame;
+    if (!fr || !fr.isConnected || !fr.offsetParent) return;   // caché -> rien à faire
+    var top = fr.getBoundingClientRect().top;
+    var vh = window.innerHeight || document.documentElement.clientHeight || 620;
+    fr.style.height = Math.max(400, Math.round(vh - top - 6)) + "px";
+  }
+  function fitCreatorHeight(iframe) {
+    currentFrame = iframe;
+    refitFrame();
+    // le layout se stabilise après l'affichage de l'onglet : passes de rattrapage
+    setTimeout(refitFrame, 60); setTimeout(refitFrame, 250); setTimeout(refitFrame, 800);
+    if (!resizeBound) {
+      resizeBound = true;
+      window.addEventListener("resize", refitFrame);
+      try { new ResizeObserver(refitFrame).observe(document.documentElement); } catch (e) {}
+    }
+  }
+  function fillCreator(host, charId) {
+    host.innerHTML = "";
+    var f = creatorFrame(charId);
+    host.appendChild(f);
+    fitCreatorHeight(f);
+  }
   function fillButton(host, charId, exists) {
     host.innerHTML = "";
     var wrap = el("div", "hxh-create");
@@ -232,6 +261,7 @@ if (typeof browser === "undefined") { var browser = chrome; }
         for (var j = 0; j < panes.length; j++) panes[j].style.display = (panes[j] === pane) ? "block" : "none";
         for (var k = 0; k < strip.children.length; k++) strip.children[k].classList.remove("active");
         tab.classList.add("active");
+        refitFrame();   // l'iframe redevient visible : réajuster sa hauteur au dialogue
       }
       function hideOurPane() { pane.style.display = "none"; tab.classList.remove("active"); }
 
