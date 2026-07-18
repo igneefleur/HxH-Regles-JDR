@@ -487,9 +487,9 @@ Tant que l'aura est cédée, l'UAM du porteur en est réduite d'autant.
 
 <div class="defs" markdown>
 
-**Multiplicateur d'UAR (VAR.) :** chaque point se paie 40 DI et se prend librement, sans plafond ; l'UAR de la créature vaut 5 × (multiplicateur + 1). Chaque point accroît aussi d'un point son multiplicateur de récupération.
+**Multiplicateur d'UAR (VAR.) :** chaque point se paie 20 DI et se prend librement, sans plafond ; l'UAR de la créature vaut 5 × (multiplicateur + 1). Chaque point accroît aussi d'un point son multiplicateur de récupération.
 
-**Multiplicateur de RUA (VAR.) :** chaque point se paie 20 DI et se prend librement ; la RUA de la créature vaut 5 × (multiplicateur + 1), et l'aura cédée se reconstitue à ce rythme.
+**Multiplicateur de RUA (VAR.) :** chaque point se paie 10 DI et se prend librement ; la RUA de la créature vaut 5 × (multiplicateur + 1), et l'aura cédée se reconstitue à ce rythme.
 
 </div>
 

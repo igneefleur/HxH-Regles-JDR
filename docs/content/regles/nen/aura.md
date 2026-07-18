@@ -70,11 +70,11 @@ Améliorer son UAM, son UAR ou sa RUA coûte du [DI](di.md). Ces améliorations 
 
 | Amélioration | Effet | Coût |
 |:---|:---|:---:|
-| Multiplicateur d'UAR | +1 Mul UAR et RUA | 40 DI |
-| Multiplicateur de RUA | +1 Mul RUA | 20 DI |
+| Multiplicateur d'UAR | +1 Mul UAR et RUA | 20 DI |
+| Multiplicateur de RUA | +1 Mul RUA | 10 DI |
 | Aura maximale | +200 à l'UAM | 5 DI |
 
-Par prestige, un personnage ne peut pas consacrer plus de 60 DI à ces trois améliorations réunies.
+Par prestige, un personnage ne peut pas consacrer plus de 30 DI à ces trois améliorations réunies.
 
 </div>
 

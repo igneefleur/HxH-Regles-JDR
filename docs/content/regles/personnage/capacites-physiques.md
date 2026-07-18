@@ -56,12 +56,6 @@ Pour classer une activité, on la compare aux exemples ci-dessous ; en cas de do
 
 </div>
 
-</div>
-
-<div class="cols" markdown>
-
-<div class="keep" markdown>
-
 #### Sommeil et repos {#sommeil-et-repos}
 
 Le Repos découle de l'Endurance : le Repos d'un personnage est égal à son Endurance, et c'est à sa ligne que se lit sa table, ci-dessous. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.
@@ -71,8 +65,6 @@ Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue
 Un personnage ne peut pas se rendormir aussitôt après un sommeil correct : il doit d'abord rester éveillé un temps minimal, la moitié de son temps avant d'être fatigué ([Veiller sans dormir](#veiller-sans-dormir)). Un sommeil trop court pour être correct n'impose pas ce délai. La table du sommeil, ci-dessous, donne les deux durées, aux colonnes Avant de pouvoir redormir et Avant d'être fatigué.
 
 <p class="formula">Temps avant de pouvoir redormir = temps avant d'être fatigué ÷ 2</p>
-
-</div>
 
 <div class="keep" markdown>
 
@@ -122,21 +114,13 @@ Un personnage ne peut pas se rendormir aussitôt après un sommeil correct : il 
 
 </div>
 
-</div>
-
-<div class="cols" markdown>
-
-<div class="keep" markdown>
-
 #### Le Fond {#le-fond}
 
 Le Fond découle de l'Endurance : le Fond d'un personnage est égal à son Endurance. C'est l'endurance de son corps à l'effort soutenu, lue à sa ligne dans la table du Fond, ci-dessous : la durée d'activité intermédiaire et la durée d'activité lourde qu'il peut fournir dans une journée sans rien risquer.
 
 La colonne Activité intermédiaire donne la durée totale d'activité intermédiaire qu'un personnage peut fournir dans sa journée ; la colonne Activité lourde, la durée totale d'activité lourde. Les deux durées se dépensent séparément ; le reste de la journée se passe en activité légère, qui ne se compte pas. Un sommeil correct rend les deux durées en entier.
 
-</div>
-
-<div class="gloss-source keep" markdown>
+<div class="gloss-source" markdown>
 
 | Fond | Activité intermédiaire | Activité lourde |
 |:---:|:---:|:---:|
@@ -173,10 +157,6 @@ La colonne Activité intermédiaire donne la durée totale d'activité interméd
 | 30 | 12 h | 12 h |
 
 </div>
-
-</div>
-
-<div class="cols" markdown>
 
 <div class="memo" markdown>
 
@@ -215,6 +195,8 @@ La première heure dépassée demande donc un jet à 20, la deuxième un jet à 
 ### Mouvement
 
 Le Mouvement découle de l'Agilité : le Mouvement d'un personnage est égal à son Agilité. C'est la distance qu'il franchit en un [round](../combat/deroulement-combat.md), soit 6 secondes. Cette distance constitue son [mouvement passif](../combat/deroulement-combat.md) : il la parcourt durant son tour sans dépenser d'action, en une ou plusieurs fois, autour de ses actions. Tout mouvement qu'il n'utilise pas durant son tour reste disponible pour ses [réactions](../combat/deroulement-combat.md), jusqu'au début de son prochain tour.
+
+Ce Mouvement se lit dans trois milieux, sur terre, dans l'eau et dans les airs : le personnage a donc un mouvement terrestre, un mouvement aquatique et un mouvement aérien, qui peuvent différer. Sa [forme](../monde/formes.md#le-deplacement) donne l'accès à chaque milieu. Un milieu ouvert se lit au Mouvement plein ; un milieu pénalisé applique un malus au Mouvement, comme un [terrain difficile](#terrain-difficile) ; un milieu fermé interdit tout déplacement. Un corps humain court sur terre à son Mouvement plein, patauge dans l'eau à 3 de moins et, faute d'ailes, ne vole pas.
 
 Dans la table ci-dessous, la colonne se choisit par l'allure que le personnage adopte, et chaque allure impose son intensité d'[activité](#activite) :
 
@@ -359,7 +341,11 @@ Exemple. Avec un Mouvement de 5, un personnage court 16 m par round en activité
 
 #### Déplacement dans l'eau
 
-Dans l'eau, le Mouvement se lit sur la même table, avec la compétence [Natation](competences.md) pour [Foncer](#foncer). Sans paire de nageoires ni de tentacules, c'est le cas du corps humain, un personnage nage avec −3 au Mouvement, comme le veulent les [formes du vivant](../monde/formes.md).
+Dans l'eau, le Mouvement se lit sur la même table, avec la compétence [Natation](competences.md) pour [Foncer](#foncer). Sans paire de nageoires ni de tentacules, c'est le cas du corps humain, un personnage nage avec −3 au Mouvement, comme le veulent les [formes du vivant](../monde/formes.md#le-deplacement).
+
+#### Déplacement dans les airs
+
+Dans les airs, le Mouvement se lit sur la même table, avec la compétence [Vol](competences.md) pour [Foncer](#foncer). Seule une forme pourvue d'ailes vole ; sans aile, les airs lui sont fermés et il n'y a pas de mouvement aérien, comme le veulent les [formes du vivant](../monde/formes.md#le-deplacement).
 
 #### Chute
 
