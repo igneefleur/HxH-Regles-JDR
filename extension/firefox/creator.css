@@ -13,12 +13,9 @@ body {
   font-family: 'Alegreya', 'EB Garamond', Garamond, serif;
 }
 .perso-atelier {
-  --pc-rem: 20px;
+  /* 22 px = la racine de la page « Création » du site (html:has(#perso-atelier)),
+     pour des tailles IDENTIQUES au site (creation.css embarqué exprime ses rem en
+     calc(--pc-rem)). L'ancienne valeur 20 px rendait la fiche 10 % plus petite. */
+  --pc-rem: 22px;
   min-height: 100vh;
-}
-
-/* Fiche condensée (Roll20) : la colonne « Coût » des caractéristiques est retirée
-   (creation.js en mode COMPACT) -> la grille passe à 4 colonnes. */
-.pc-carac-row {
-  grid-template-columns: calc(2.4 * var(--pc-rem)) minmax(0, 1fr) auto calc(2.6 * var(--pc-rem));
 }
