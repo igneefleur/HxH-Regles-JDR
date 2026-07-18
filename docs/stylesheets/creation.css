@@ -85,6 +85,10 @@ body:has(#perso-atelier) .md-sidebar--primary { display: none !important; }
 .pc-btn:hover { background: #fff; border-color: #a99e7f; color: #2a2820; }
 .pc-btn.primary { background: #5d6f57; border-color: #46543d; color: #fbf8ee; }
 .pc-btn.primary:hover { background: #46543d; color: #fff; }
+.pc-btn.danger { color: var(--red); }
+.pc-btn.danger:hover { border-color: var(--red); background: var(--wash); color: var(--red-deep); }
+/* rangée d'actions de fiche dans l'onglet Options */
+.pc-opt-actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .1rem; }
 .pc-top .pc-lib { margin-left: auto; display: flex; gap: .35rem; align-items: center; }
 .pc-top .pc-lib select { max-width: 220px; padding: .3rem .5rem; border: 1px solid #cabf9f; border-radius: 7px; background: #fdfaf1; color: #2a2820; font: inherit; font-size: .75rem; }
 @media (max-width: 700px) {
@@ -235,8 +239,9 @@ body:has(#perso-atelier) .md-sidebar--primary { display: none !important; }
 }
 .pc-cmod:hover { border-color: var(--red); color: var(--red); }
 .pc-cmod.neg { color: var(--red); }
-.pc-cmod small { position: absolute; top: -.4rem; right: -.3rem; font-size: .5rem; font-weight: 700; color: #fff; background: var(--red); border-radius: 999px; padding: .02rem .26rem; line-height: 1.25; }
-.pc-cmod small:empty { display: none; }
+/* valeur effective (score final) à gauche du modificateur : bien lisible */
+.pc-carac-top .pc-cval { flex: 0 0 auto; min-width: 1.4rem; text-align: right; font-size: .84rem; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.pc-carac-top .pc-cval.adj { color: var(--red-deep); }
 
 /* ---- stepper −/valeur/+ : boutons fantômes unifiés ---- */
 .pc-step { display: inline-flex; align-items: center; gap: .25rem; }
@@ -528,6 +533,13 @@ body:has(#perso-atelier) .md-sidebar--primary { display: none !important; }
 .pc-aff-row .bar i.zero { background: var(--line-2); }
 .pc-aff-row .v { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
 .pc-tech-cost { margin-left: auto; font-size: .66rem; font-weight: 700; color: var(--red-deep); white-space: nowrap; align-self: center; }
+/* rayon de l'En : contrôle de déblocage par crans, sous les paliers */
+.pc-en-rayon { grid-column: 1 / -1; display: flex; align-items: center; gap: .5rem; margin-top: .4rem; padding-top: .34rem; border-top: 1px dashed var(--line-2); }
+.pc-en-rayon .l { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-3); }
+.pc-en-rayon .pc-step .v { min-width: 3.2ch; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pc-en-cost { margin-left: auto; font-size: .62rem; font-weight: 700; color: var(--red-deep); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pc-en-rayon.off { opacity: .5; }
+.pc-en-rayon.off .pc-en-cost { color: var(--ink-3); }
 .pc-warn-inline { color: var(--red-deep) !important; font-weight: 700; }
 .pc-cap-line { display: flex; align-items: center; gap: .5rem; padding: .35rem .1rem; border-bottom: 1px solid var(--hair); }
 .pc-cap-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .1rem; }
