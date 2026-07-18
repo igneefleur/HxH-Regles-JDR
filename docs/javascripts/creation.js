@@ -90,6 +90,7 @@
       sensOverride: {},   // sens -> niveau forcé à la main (absent = niveau de la forme) — onglet Options
       compAccess: {},     // compétence -> true/false : autorisation forcée à la main (absent = dérivée) — onglet Options
       capDivers: {},      // capacité (mouvement/port/apnee/sommeil) -> ± crans sur la ligne lue
+      mvtDivers: {},      // milieu (terre/eau/air) -> ± crans propres à ce milieu de déplacement
       armesCorpsDivers: {},  // arme de corps -> ± divers (les armes portées le stockent sur leur entrée)
       armesCorpsDmgDivers: {}, // arme de corps -> ± dégâts (idem : armes portées sur leur entrée)
       de: "1d100",        // dé des jets (seul dé nommé par les règles : critique-blessures)
@@ -134,11 +135,27 @@
       for (var k2 in m) if (typeof m[k2] === "number" && isFinite(m[k2])) o[k2] = clamp(m[k2], lo, hi);
       return o;
     }
+    // modificateurs MULTIPLES : chaque clé porte un TABLEAU de modificateurs (une
+    // source par slot) ; un ancien nombre unique devient [nombre]. Clé écartée si tout est nul.
+    function modArrMap(m, lo, hi, maxLen) {
+      var o = {};
+      for (var k2 in m) {
+        var v = m[k2];
+        var src = Array.isArray(v) ? v : (v != null ? [v] : []);
+        var out = [];
+        for (var i = 0; i < src.length && out.length < maxLen; i++) {
+          out.push(typeof src[i] === "number" && isFinite(src[i]) ? clamp(src[i], lo, hi) : 0);
+        }
+        if (out.some(function (x) { return x; })) o[k2] = out;
+      }
+      return o;
+    }
     var ref = blank().caracs, caracs = {};
     for (var a in ref) caracs[a] = typeof b.caracs[a] === "number" && isFinite(b.caracs[a]) ? clamp(b.caracs[a], 0, 30) : ref[a];
     b.caracs = caracs;
-    b.caracDivers = numMap(b.caracDivers, -30, 30);
-    b.capDivers = numMap(b.capDivers, -30, 30);
+    b.caracDivers = modArrMap(b.caracDivers, -30, 30, 3);
+    b.capDivers = modArrMap(b.capDivers, -30, 30, 3);
+    b.mvtDivers = modArrMap(b.mvtDivers, -30, 30, 3);   // trois ± par milieu (terre/eau/air)
     // Nen : techniques = map nom -> palier(chaîne) | true ; diCat/auraDev = nombres
     var tk = {};
     for (var tn in b.techniques) {
@@ -176,7 +193,7 @@
     b.armesCorpsDivers = numMap(b.armesCorpsDivers, -9999, 9999);
     b.armesCorpsDmgDivers = numMap(b.armesCorpsDmgDivers, -9999, 9999);
     b.comps = numMap(b.comps, 0, 9999);
-    b.divers = numMap(b.divers, -9999, 9999);
+    b.divers = modArrMap(b.divers, -9999, 9999, 3);
     b.acuite = numMap(b.acuite, 0, 10);
     b.formations = b.formations.filter(function (f) { return f && typeof f.name === "string"; });
     b.customComps = b.customComps.filter(function (c) {
@@ -416,7 +433,14 @@
   // art, décision du MJ) : ni la forme ni le divers ne coûtent de points, et la
   // valeur effective cascade partout où caracVal est lue (modificateur,
   // capacités, compétences, fatigue, frappes, prérequis, exports)
-  function caracVal(abbr) { return clamp(caracBase(abbr) + formeCaracMod(abbr) + (state.caracDivers[abbr] || 0), 0, 30); }
+  // somme d'un modificateur multi-sources (tableau) ou d'un ancien nombre unique
+  function modSum(v) {
+    if (Array.isArray(v)) { var s = 0; for (var i = 0; i < v.length; i++) s += v[i] || 0; return s; }
+    return v || 0;
+  }
+  // nom de compétence affiché : « Résistance à … » abrégé en « Rés. à … » (gain de place)
+  function compDisplayName(name) { return name.replace(/^Résistance à /, "Rés. à "); }
+  function caracVal(abbr) { return clamp(caracBase(abbr) + formeCaracMod(abbr) + modSum(state.caracDivers[abbr]), 0, 30); }
 
   // --- règles : forme du vivant -----------------------------------------------
   // Le plan de corps (formes.md) ajuste les caractéristiques physiques, fixe le
@@ -464,7 +488,7 @@
   // capacité physique : ligne lue = carac effective + ± de capacité (crans)
   function capVal(key) {
     var cap = DATA.capacites[key];
-    return (cap ? caracVal(cap.carac) : 0) + (state.capDivers[key] || 0);
+    return (cap ? caracVal(cap.carac) : 0) + modSum(state.capDivers[key]);
   }
   // ± divers propre à une arme portée (qualité, état, décision du MJ) : compté
   // à l'attaque et à la parade ; les armes de corps, qui n'ont pas d'entrée
@@ -523,7 +547,7 @@
     "conjuration":    { sigle: "DC", carac: "IMA" },
     "spécialisation": { sigle: "DS", carac: "CHA" }
   };
-  var AURA_COSTS = { uar: 40, rua: 20, uam: 5 };   // DI par achat (aura.md)
+  var AURA_COSTS = { uar: 20, rua: 10, uam: 5 };   // DI par achat (aura.md)
 
   function techByName(name) {
     for (var i = 0; i < (DATA.techniques || []).length; i++) if (DATA.techniques[i].name === name) return DATA.techniques[i];
@@ -586,7 +610,7 @@
   function uar() { return state.auraOverride.uar != null ? state.auraOverride.uar : uarAuto(); }
   function rua() { return state.auraOverride.rua != null ? state.auraOverride.rua : ruaAuto(); }
   function auraDiSpent() { return AURA_COSTS.uar * (state.auraDev.uar || 0) + AURA_COSTS.rua * (state.auraDev.rua || 0) + AURA_COSTS.uam * (state.auraDev.uam || 0); }
-  function auraDiCap() { return 60 * prestige(); }   // plafond 60 DI/prestige sur l'aura
+  function auraDiCap() { return 30 * prestige(); }   // plafond 30 DI/prestige sur l'aura
   // DI dépensé : techniques apprises + achats d'aura + conversion en catégories + conception des capacités
   function techDiSpent() {
     var s = 0;
@@ -649,7 +673,7 @@
     return null;
   }
   function compBase(name) { return ((state.comps[name] || 0) / 5) * 20; }
-  function diversOf(name) { return state.divers[name] || 0; }
+  function diversOf(name) { return modSum(state.divers[name]); }
   function compTotal(name) {
     var c = compByName(name);
     if (!c) return 0;
@@ -982,7 +1006,7 @@
     if (pfSpent() > state.pfTotal) w.push("Les PF dépensés (" + pfSpent() + ") dépassent le capital (" + state.pfTotal + ").");
     if (avPtsSpent() > avPtsTotal()) w.push("Les points d'avantage dépensés (" + avPtsSpent() + ") dépassent le total (" + avPtsTotal() + ").");
     if (diSpent() > (state.diTotal || 0)) w.push("Le DI dépensé (" + diSpent() + ") dépasse le capital de développement intérieur (" + (state.diTotal || 0) + ").");
-    if (auraDiSpent() > auraDiCap()) w.push("Développement de l'aura : " + auraDiSpent() + " DI dépassent le plafond de " + auraDiCap() + " DI (60 par prestige).");
+    if (auraDiSpent() > auraDiCap()) w.push("Développement de l'aura : " + auraDiSpent() + " DI dépassent le plafond de " + auraDiCap() + " DI (30 par prestige).");
     (DATA.techniques || []).forEach(function (t) {
       if (!state.techniques[t.name]) return;
       if (t.bloc) { if (!prereqAllMet(t.prereq)) w.push("Technique « " + t.name + " » : prérequis non rempli (" + t.prereq + ")."); return; }
@@ -1143,6 +1167,32 @@
     parent.appendChild(box);
     updaters.push(sync);
     return box;
+  }
+
+  // Modificateurs MULTIPLES : rend `count` petits champs ± liés au tableau
+  // obj[key] (une source par slot) ; le total effectif = somme (modSum). Un ancien
+  // nombre unique est absorbé dans le slot 0. La clé est retirée si tout est nul.
+  function multiMod(parent, obj, key, count, opts) {
+    opts = opts || {};
+    for (var i = 0; i < count; i++) {
+      (function (idx) {
+        var inp = el("input", "pc-comp-div pc-cdiv pc-mmod");
+        inp.type = "number"; inp.placeholder = opts.ph || "±";
+        inp.title = (opts.title || "Bonus ou malus divers (équipement, art, décision du MJ).") + " — modificateur " + (idx + 1) + " sur " + count + " ; les modificateurs s'additionnent.";
+        var arr = obj[key];
+        inp.value = (Array.isArray(arr) && arr[idx]) ? arr[idx] : "";
+        inp.addEventListener("input", function () {
+          var a = Array.isArray(obj[key]) ? obj[key] : (obj[key] ? [obj[key]] : []);
+          while (a.length <= idx) a.push(0);
+          a[idx] = num(inp.value, 0);
+          obj[key] = a;
+          var any = false; for (var j = 0; j < a.length; j++) if (a[j]) any = true;
+          if (!any) delete obj[key];
+          refresh();
+        });
+        parent.appendChild(inp);
+      })(i);
+    }
   }
 
   // --- en-tête d'identité ---------------------------------------------------------
@@ -1307,16 +1357,9 @@
           function (v) { state.caracs[k.abbr] = v; },
           function () { return CARAC_MIN; },
           function () { return caracMax(); });
-        var dv = el("input", "pc-comp-div pc-cdiv");
-        dv.type = "number"; dv.placeholder = "±";
-        dv.value = state.caracDivers[k.abbr] || "";
-        dv.title = "Bonus ou malus divers à la caractéristique (équipement, art, décision du MJ) : il change la valeur effective, pas le coût en points.";
-        dv.addEventListener("input", function () {
-          var v = num(dv.value, 0);
-          if (v) state.caracDivers[k.abbr] = v; else delete state.caracDivers[k.abbr];
-          refresh();
-        });
-        bot.appendChild(dv);
+        // trois zones de modificateurs (équipement, art, MJ…), sommées dans la valeur effective
+        multiMod(bot, state.caracDivers, k.abbr, 3,
+          { title: "Modificateur divers à la caractéristique (équipement, art, décision du MJ) : change la valeur effective, pas le coût en points." });
         row.appendChild(bot);
         var mod = el("span", "pc-cmod");
         var modV = el("b", null, "");
@@ -1377,17 +1420,21 @@
     var bAv = block(colA, "Avantages", " ",
       "Les points d'avantage suivent le plus haut palier d'Éclat atteint (palier inférieur). La liste du livre s'étoffe : lignes libres pour le reste, à valider avec le MJ.");
     var avSub = bAv.querySelector(".pc-block-title small");
-    // ± sur le total : un palier d'Éclat plus haut atteint dans le passé, dons du MJ
+    updaters.push(function () {
+      if (avSub) avSub.textContent = avPtsSpent() + " / " + avPtsTotal() + " pts";
+    });
+    // ± sur le TOTAL de points (plus haut palier d'Éclat atteint dans le passé, dons
+    // du MJ) : ligne étiquetée dédiée dans le corps, pas entassée dans le titre (elle
+    // y écrasait le compteur, qui se cassait sur trois lignes).
+    var avAdj = el("div", "pc-av-adj");
+    avAdj.appendChild(el("span", "l", "Ajuster le total"));
     var avDv = el("input", "pc-comp-div");
     avDv.type = "number"; avDv.placeholder = "±";
     avDv.value = state.avPtsDivers || "";
     avDv.title = "Ajustement du total de points d'avantage : plus haut palier d'Éclat atteint dans le passé, dons du MJ.";
     avDv.addEventListener("input", function () { state.avPtsDivers = num(avDv.value, 0); refresh(); });
-    var avT = bAv.querySelector(".pc-block-title");
-    if (avT) avT.appendChild(avDv);
-    updaters.push(function () {
-      if (avSub) avSub.textContent = avPtsSpent() + " / " + avPtsTotal() + " pts";
-    });
+    avAdj.appendChild(avDv);
+    bAv.appendChild(avAdj);
     var avList = el("div", "pc-forma-buys");
     bAv.appendChild(avList);
     function renderAv() {
@@ -1491,22 +1538,81 @@
     capDefs.forEach(function (d) {
       var cap = DATA.capacites[d[0]];
       if (!cap) return;
+      // MOUVEMENT À TROIS MILIEUX : le bloc Mouvement d'origine (nom + 3 modificateurs
+      // en crans + tuiles de distance) est répliqué tel quel une fois par milieu
+      // (Terrestre / Aquatique / Aérien). Chaque milieu se lit à SA ligne = Agilité +
+      // accès de la forme (formes.md §Le déplacement : rampe −4, patauge −3, vol si
+      // aile) + ses trois modificateurs propres. Terre et eau toujours praticables ;
+      // les airs sont fermés à une forme sans aile.
+      if (d[0] === "mouvement") {
+        var MIL = [
+          { key: "terre", lbl: "Terrestre",
+            access: function (m, f) { return m["Patte / jambe"] ? { mod: 0, note: "" } : { mod: -4, note: "rampe" }; } },
+          { key: "eau", lbl: "Aquatique",
+            access: function (m, f) { return (m["Nageoire"] || m["Tentacule"] || f.propriete) ? { mod: 0, note: "" } : { mod: -3, note: "patauge" }; } },
+          { key: "air", lbl: "Aérien",
+            access: function (m, f) { return m["Aile"] ? { mod: 0, note: "" } : { closed: true }; } }
+        ];
+        var mvtLabels = cap.cols.map(function (c) { return SHORT[c] || c; });
+        // en-tête de groupe : les trois sous-sections qui suivent sont le Mouvement
+        bCap.appendChild(el("div", "pc-comp-champ", "Mouvement"));
+        MIL.forEach(function (mi) {
+          var sec = el("div", "pc-capsec");
+          sec.title = "Mouvement " + mi.lbl.toLowerCase() + " : distance franchie par round selon l'allure.";
+          var h = el("div", "pc-capsec-head");
+          h.appendChild(el("span", "nm", mi.lbl));
+          var sub = el("span", "sub", "");
+          h.appendChild(sub);
+          var cdvWrap = el("span", "pc-capsec-mods");
+          multiMod(cdvWrap, state.mvtDivers, mi.key, 3,
+            { ph: "±", title: "Modificateur en crans au mouvement " + mi.lbl.toLowerCase() + " (art, Nen, terrain, décision du MJ) : décale la ligne lue pour ce seul milieu." });
+          h.appendChild(cdvWrap);
+          sec.appendChild(h);
+          var row = el("div", "pc-cap3");
+          var cells = [];
+          mvtLabels.forEach(function (lbl) {
+            var c = el("div", "c");
+            c.appendChild(el("span", "k", lbl));
+            var v = el("span", "v", "");
+            c.appendChild(v);
+            cells.push(v);
+            row.appendChild(c);
+          });
+          sec.appendChild(row);
+          updaters.push(function () {
+            var f = formeCur() || {};
+            var acc = mi.access(f.membres || {}, f);
+            var base = caracVal(cap.carac);
+            var extra = modSum(state.mvtDivers[mi.key]);
+            if (acc.closed) {
+              sec.classList.add("closed");
+              sub.textContent = cap.carac + " " + base;
+              cells.forEach(function (c) { c.textContent = "—"; });
+              return;
+            }
+            sec.classList.remove("closed");
+            var line = base + acc.mod + extra;
+            var r = capRow("mouvement", line) || [];
+            cells.forEach(function (c, i) { c.textContent = r[i] || "—"; });
+            sub.textContent = cap.carac + " " + base +
+              (extra ? " · " + signed(extra) + " cran" + (Math.abs(extra) > 1 ? "s" : "") : "");
+          });
+          bCap.appendChild(sec);
+        });
+        return;
+      }
+
       var sec = el("div", "pc-capsec");
       sec.title = d[3];
       var h = el("div", "pc-capsec-head");
       h.appendChild(el("span", "nm", d[1]));
       var sub = el("span", "sub", "");
       h.appendChild(sub);
-      var cdv = el("input", "pc-comp-div pc-cdiv");
-      cdv.type = "number"; cdv.placeholder = "±";
-      cdv.value = state.capDivers[d[0]] || "";
-      cdv.title = "Bonus ou malus divers en crans à cette capacité (états, arts, décision du MJ) : décale la ligne lue dans la table 0-30, sans toucher la caractéristique ni les jets.";
-      cdv.addEventListener("input", function () {
-        var v = num(cdv.value, 0);
-        if (v) state.capDivers[d[0]] = v; else delete state.capDivers[d[0]];
-        refresh();
-      });
-      h.appendChild(cdv);
+      // trois zones de modificateurs en crans (états, arts, MJ), sommées : décalent la ligne lue
+      var cdvWrap = el("span", "pc-capsec-mods");
+      multiMod(cdvWrap, state.capDivers, d[0], 3,
+        { ph: "±", title: "Modificateur en crans à cette capacité (états, arts, décision du MJ) : décale la ligne lue dans la table 0-30, sans toucher la caractéristique ni les jets." });
+      h.appendChild(cdvWrap);
       sec.appendChild(h);
       var labels = d[2] || cap.cols.map(function (c) { return SHORT[c] || c; });
       var row = el("div", "pc-cap3" + (labels.length > 3 ? " pc-cap5" : labels.length === 2 ? " pc-cap2" : labels.length === 1 ? " pc-cap1" : ""));
@@ -1521,26 +1627,11 @@
       });
       sec.appendChild(row);
       updaters.push(function () {
-        var dv = state.capDivers[d[0]] || 0;
+        var dv = modSum(state.capDivers[d[0]]);
         sub.textContent = cap.carac + " " + caracVal(cap.carac) + (dv ? " · " + signed(dv) + " cran" + (Math.abs(dv) > 1 ? "s" : "") : "");
         var r = capRow(d[0], capVal(d[0])) || [];
         cells.forEach(function (cell, i) { cell.textContent = r[i] || "—"; });
       });
-      // milieux de déplacement de la forme (formes.md) : sous le Mouvement
-      if (d[0] === "mouvement") {
-        var mil = el("div", "pc-block-note");
-        mil.style.margin = ".2rem 0 0";
-        sec.appendChild(mil);
-        updaters.push(function () {
-          var f = formeCur();
-          if (!f) { mil.textContent = ""; return; }
-          var m = f.membres || {};
-          var terre = m["Patte / jambe"] ? "normale" : "rampe (−4 au Mouvement)";
-          var eau = (m["Nageoire"] || m["Tentacule"] || f.propriete) ? "nage" : "patauge (−3 au Mouvement)";
-          var airs = m["Aile"] ? "vol" : "fermés";
-          mil.textContent = "Milieux de la forme : terre " + terre + " · eau " + eau + " · airs " + airs + ".";
-        });
-      }
       bCap.appendChild(sec);
     });
     // Fiche condensée : les capacités rejoignent les caractéristiques en tête de colonne A ;
@@ -1667,7 +1758,12 @@
     // seule la réduction du type de l'attaque s'applique. Valeurs au choix du MJ.
     bF.appendChild(el("div", "pc-kv-head", "Réduction de dégâts"));
     var rdGrid = el("div", "pc-rd");
-    [["CON", "Contondant"], ["TRA", "Tranchant"], ["PER", "Perforant"], ["FEU", "Feu"], ["FRO", "Froid"], ["ÉLE", "Électricité"], ["DÉC", "Décomposition"]].forEach(function (d) {
+    // deux familles (degats.md) : physiques (CON/TRA/PER) sur une ligne centrée,
+    // élémentaires (FEU/FRO/ÉLE/DÉC) en dessous.
+    var rdPhys = el("div", "pc-rd-row phys"), rdElem = el("div", "pc-rd-row elem");
+    rdGrid.appendChild(rdPhys); rdGrid.appendChild(rdElem);
+    [["CON", "Contondant", 0], ["TRA", "Tranchant", 0], ["PER", "Perforant", 0],
+     ["FEU", "Feu", 1], ["FRO", "Froid", 1], ["ÉLE", "Électricité", 1], ["DÉC", "Décomposition", 1]].forEach(function (d) {
       var cell = el("label", "pc-rd-cell");
       var lb = el("span", "l", d[0]); lb.title = d[1];
       cell.appendChild(lb);
@@ -1676,7 +1772,7 @@
       inp.value = state.reduction[d[0]] || "";
       inp.addEventListener("input", function () { var v = num(inp.value, 0); if (v) state.reduction[d[0]] = v; else delete state.reduction[d[0]]; refresh(); });
       cell.appendChild(inp);
-      rdGrid.appendChild(cell);
+      (d[2] ? rdElem : rdPhys).appendChild(cell);
     });
     bF.appendChild(rdGrid);
 
@@ -1816,70 +1912,77 @@
     }
     updaters.push(renderArmes);
 
-    // États (etats.md) : cocher pour les appliquer. Les « Autres états » sont
-    // répercutés AUTOMATIQUEMENT sur les totaux de compétence (etatMalus dans
-    // compTotal) ; seules les « Situations » ne valent qu'en opposition et ne
-    // sont donc pas appliquées aux propres jets.
+    // États (etats.md) : REFONTE — une carte par état, avec un sélecteur de palier
+    // segmenté (—/paliers, ou —/Actif pour un état binaire) comme les arts et
+    // techniques ; l'effet chiffré s'affiche dès qu'un palier est choisi. Groupés
+    // par catégorie. Les « Autres états » sont appliqués AUTOMATIQUEMENT aux totaux
+    // de compétence (etatMalus dans compTotal) ; les « Situations » ne valent qu'en
+    // opposition (elles pénalisent l'adversaire, pas les propres jets).
     if (DATA.etats && DATA.etats.length) {
-      var bEt = block(colB, "États", null,
-        "Cliquer un état pour le noter (re-cliquer pour changer de palier ou l'ôter). Les Situations ne valent qu'en opposition à l'adversaire qui les cause ; les autres états sont appliqués automatiquement aux jets concernés.");
-      var chipBox = el("div", "pc-chips");
-      var summary = el("div", "pc-etat-sum");
-      function modsTxt(mods) {
+      var bEt = block(colB, "États");
+      var etatSync = [];
+      updaters.push(function () { etatSync.forEach(function (f) { f(); }); });
+      function etatModsTxt(mods) {
         return mods.map(function (m) { return m.cible + " " + signed(m.val); }).join(" · ");
       }
-      DATA.etats.forEach(function (e) {
-        var chip = el("span", "pc-chip");
-        function curPalier() {
-          var v = state.etatsActifs[e.name];
-          if (!v || v === true) return null;
-          for (var i = 0; i < e.paliers.length; i++) if (e.paliers[i].name === v) return e.paliers[i];
-          return null;
-        }
-        function sync() {
-          var v = state.etatsActifs[e.name];
-          chip.textContent = e.name + (v && v !== true ? " · " + v : "");
-          chip.classList.toggle("on", !!v);
-          var p = curPalier();
-          var mods = p ? p.mods : e.mods;
-          // la description générale porte souvent la règle d'application (ex.
-          // Abri : le malus est subi par l'assaillant) : on la garde toujours
-          chip.title = (p && p.desc ? p.desc + "\n" : "") + (e.desc || "") + (mods.length ? "\n" + modsTxt(mods) : "");
-        }
-        chip.addEventListener("click", function () {
-          var v = state.etatsActifs[e.name];
-          if (e.paliers.length) {
-            var names = e.paliers.map(function (p) { return p.name; });
-            var i = v && v !== true ? names.indexOf(v) : -1;
-            if (i + 1 < names.length) state.etatsActifs[e.name] = names[i + 1];
-            else delete state.etatsActifs[e.name];
-          } else {
-            if (v) delete state.etatsActifs[e.name]; else state.etatsActifs[e.name] = true;
-          }
-          sync(); refresh();
-        });
-        sync();
-        chipBox.appendChild(chip);
-      });
-      bEt.appendChild(chipBox);
-      bEt.appendChild(summary);
-      updaters.push(function () {
-        summary.innerHTML = "";
-        DATA.etats.forEach(function (e) {
-          var v = state.etatsActifs[e.name];
-          if (!v) return;
-          var p = null;
-          if (v !== true) e.paliers.forEach(function (x) { if (x.name === v) p = x; });
-          var mods = p ? p.mods : e.mods;
-          var line = el("div", "pc-etat-line");
-          line.appendChild(el("b", null, e.name + (p ? " (" + p.name + ")" : "") + " : "));
-          // Abri inverse le sens : c'est l'assaillant qui subit les malus
-          var prefix = e.name === "Abri" ? "subi par l'assaillant : " : "";
-          var suffix = /situation/i.test(e.categorie || "") ? " — en opposition" : " — sur ses propres jets";
-          line.appendChild(document.createTextNode(prefix + (mods.length ? modsTxt(mods) : "voir la règle") + suffix));
-          summary.appendChild(line);
+      var etatCats = [];
+      DATA.etats.forEach(function (e) { if (etatCats.indexOf(e.categorie) < 0) etatCats.push(e.categorie); });
+      etatCats.forEach(function (cat) {
+        bEt.appendChild(el("div", "pc-comp-champ", cat));
+        var list = el("div", "pc-etat-list");
+        bEt.appendChild(list);
+        DATA.etats.filter(function (e) { return e.categorie === cat; }).forEach(function (e) {
+          list.appendChild(etatRow(e));
         });
       });
+      function etatRow(e) {
+        var isSit = /situation/i.test(e.categorie || "");
+        var graded = e.paliers.length > 0;
+        var row = el("div", "pc-etat");
+        var top = el("div", "pc-etat-top");
+        var name = el("span", "pc-etat-name", e.name);
+        name.title = e.desc || "";
+        top.appendChild(name);
+        var fx = el("div", "pc-etat-fx");
+        function setActive(v) {
+          if (v == null || v === false) delete state.etatsActifs[e.name];
+          else state.etatsActifs[e.name] = v;
+          syncEtat(); refresh();
+        }
+        var ctrl;
+        if (graded) {
+          ctrl = el("select", "pc-etat-sel");
+          var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "—"; ctrl.appendChild(o0);
+          e.paliers.forEach(function (p) {
+            var o = document.createElement("option"); o.value = p.name; o.textContent = p.name; ctrl.appendChild(o);
+          });
+          ctrl.addEventListener("change", function () { setActive(ctrl.value || null); });
+        } else {
+          ctrl = el("button", "pc-etat-tog"); ctrl.type = "button";
+          ctrl.setAttribute("role", "switch"); ctrl.setAttribute("aria-label", e.name);
+          ctrl.appendChild(el("span", "pc-etat-knob"));
+          ctrl.addEventListener("click", function () { setActive(state.etatsActifs[e.name] ? null : true); });
+        }
+        top.appendChild(ctrl);
+        row.appendChild(top); row.appendChild(fx);
+        function syncEtat() {
+          var v = state.etatsActifs[e.name];
+          var active = !!v, p = null;
+          if (v && v !== true) e.paliers.forEach(function (x) { if (x.name === v) p = x; });
+          if (graded) ctrl.value = (v && v !== true) ? v : "";
+          else { ctrl.classList.toggle("on", active); ctrl.setAttribute("aria-checked", active ? "true" : "false"); }
+          row.classList.toggle("active", active);
+          var mods = p ? p.mods : e.mods;
+          if (active) {
+            var head = p ? p.name + " : " : "";
+            var prefix = e.name === "Abri" ? "assaillant " : "";
+            fx.textContent = head + prefix + (mods.length ? etatModsTxt(mods) : "voir la règle") +
+              (isSit ? " · en opposition" : "");
+          } else fx.textContent = "";
+        }
+        etatSync.push(syncEtat); syncEtat();
+        return row;
+      }
     }
     // arme de départ (le PV et le Mouvement ont leurs propres tuiles/blocs)
     var adKv = el("div", "pc-kv");
@@ -1906,7 +2009,7 @@
     // inexistants masqués) : elles se re-rendent quand la forme change.
     var sensBoxes = [];
     ["externe", "interne"].forEach(function (typ) {
-      var b = block(colB, typ === "externe" ? "Sens externes" : "Sens internes", null,
+      var b = block(colA, typ === "externe" ? "Sens externes" : "Sens internes", null,
         "Clarté de 0 à 10, départ 10 ; elle chute en jeu, pas à la création. Le niveau de chaque sens vient de la forme du personnage.");
       var head = el("div", "pc-trow pc-sens-row head");
       head.appendChild(el("span", null, "Sens"));
@@ -1914,6 +2017,8 @@
       b.appendChild(head);
       sensBoxes.push({ typ: typ, box: b });
     });
+    // Sens en colonne A : on remet Notes en dernier pour qu'il reste le bloc final.
+    colA.appendChild(bN);
     var ordre = { "Primaire": 0, "Secondaire": 1, "Tertiaire": 2, "Latent": 3, "Inexistant": 4 };
     function renderSens() {
       sensBoxes.forEach(function (sb) {
@@ -1982,10 +2087,8 @@
     tools.appendChild(addChip);
     b.appendChild(tools);
 
-    // en-tête de colonnes collant (reste visible en défilant les 133 lignes)
-    var chead = el("div", "pc-comp-row pc-comp-head");
-    ["Compétence", "PF", "±", "Total"].forEach(function (t) { chead.appendChild(el("span", null, t)); });
-    b.appendChild(chead);
+    // (pas d'en-tête de colonnes : mal alignée avec les steppers de largeur variable
+    //  et redondante — les colonnes se comprennent d'elles-mêmes)
 
     var list = el("div", "pc-comp-list one");
     b.appendChild(list);
@@ -2044,20 +2147,15 @@
       rowSync.push(function () {
         var acc = compAccessible(k);
         nm.classList.toggle("na", !acc);
-        txt.textContent = k.name + (acc ? "" : " ✗");
-        nm.title = k.desc + "\nGroupes : " + k.groupes.join(", ") +
+        txt.textContent = compDisplayName(k.name) + (acc ? "" : " ✗");
+        nm.title = k.name + " — " + k.desc + "\nGroupes : " + k.groupes.join(", ") +
           (acc ? "" : "\nHors de portée du corps du personnage : verrouillée (voir l'onglet Options).");
       });
-      var div = el("input", "pc-comp-div pc-cdiv");
-      div.type = "number"; div.placeholder = "±";
-      div.value = diversOf(k.name) || "";
-      div.title = "Bonus ou malus divers (équipement, circonstance, décision du MJ)";
-      div.addEventListener("input", function () {
-        var v = num(div.value, 0);
-        if (v) state.divers[k.name] = v; else delete state.divers[k.name];
-        refresh();
-      });
-      row.appendChild(div);
+      // trois zones de modificateurs (équipement, circonstance, MJ), sommées
+      var divWrap = el("span", "pc-comp-mods");
+      multiMod(divWrap, state.divers, k.name, 3,
+        { title: "Modificateur divers à la compétence (équipement, circonstance, décision du MJ)." });
+      row.appendChild(divWrap);
       var tot = el("span", "pc-comp-total");
       rowSync.push(function () {
         var t = compTotal(k.name);
@@ -2525,7 +2623,7 @@
 
     // --- Aura ---
     var bAura = block(colA, "Aura", null,
-      "L'aura se mesure en unités (UA). Développer l'aura coûte du DI, plafonné à 60 DI par prestige.");
+      "L'aura se mesure en unités (UA). Développer l'aura coûte du DI, plafonné à 30 DI par prestige.");
     var auraBig = el("div", "pc-bigrow");
     var boxUAM = auraBigBox("UAM", "aura maximale"), boxUAR = auraBigBox("UAR", "aura par round"), boxRUA = auraBigBox("RUA", "régénération / min");
     auraBig.appendChild(boxUAM.box); auraBig.appendChild(boxUAR.box); auraBig.appendChild(boxRUA.box);
@@ -2558,13 +2656,13 @@
     bAura.appendChild(auraOv);
     var auraSteps = el("div", "pc-opt-list");
     bAura.appendChild(auraSteps);
-    auraStep(auraSteps, "Multiplicateur d'UAR", "40 DI · +1 UAR et +1 RUA", "uar");
-    auraStep(auraSteps, "Multiplicateur de RUA", "20 DI · +1 RUA", "rua");
+    auraStep(auraSteps, "Multiplicateur d'UAR", "20 DI · +1 UAR et +1 RUA", "uar");
+    auraStep(auraSteps, "Multiplicateur de RUA", "10 DI · +1 RUA", "rua");
     auraStep(auraSteps, "Aura maximale", "5 DI · +200 UAM", "uam");
     var auraNote = el("div", "pc-block-note");
     bAura.appendChild(auraNote);
     updaters.push(function () {
-      auraNote.textContent = "Aura développée : " + auraDiSpent() + " / " + auraDiCap() + " DI (60 par prestige).";
+      auraNote.textContent = "Aura développée : " + auraDiSpent() + " / " + auraDiCap() + " DI (30 par prestige).";
       auraNote.classList.toggle("pc-warn-inline", auraDiSpent() > auraDiCap());
     });
 
