@@ -6,10 +6,14 @@
  *   - stateToAttrs(state, card) : décompose l'état en attributs Roll20.
  *   - attrsToState(attrs)       : reconstruit l'état depuis les attributs.
  *
- * TOUS les attributs produits commencent par « hxh_ » (consigne). Deux familles :
- *   - ROUND-TRIP : un attribut par valeur/collection, relu pour reconstruire
- *     l'état (scalaires, 12 caractéristiques natives, collections en JSON, et
- *     l'état courant PV/fatigue). Sans eux, impossible de rééditer la fiche.
+ * TOUS les attributs produits commencent par « hxh_ » (consigne). Trois familles :
+ *   - SOURCE DE VÉRITÉ : `hxh_state` porte l'état ENTIER en JSON. C'est lui qu'on
+ *     relit pour reconstruire la fiche : il ne dérive JAMAIS quand creation.js gagne
+ *     un champ (Nen, forme, rayon de l'En, divers/override…). attrsToState le préfère
+ *     à tout le reste ; la reconstruction champ par champ n'est qu'un repli legacy.
+ *   - NATIFS (round-trip legacy + macros) : un attribut par valeur/collection
+ *     (scalaires, 12 caractéristiques, collections en JSON) ; utiles aux macros
+ *     (@{perso|FOR}) et au repli pour les fiches d'avant `hxh_state`.
  *   - MIROIR (écrits seulement si `card` fourni) : valeurs DÉRIVÉES pour les
  *     macros et barres de jetons Roll20 — modificateurs de carac (dans le `max`
  *     de la carac : @{perso|FOR} = valeur, @{perso|FOR|max} = mod), PV courant/max,
@@ -78,6 +82,13 @@
       out[PREFIX + suffix] = { current: str(current), max: str(max == null ? "" : max) };
     }
 
+    // ROUND-TRIP COMPLET : l'état entier en un attribut, source de vérité pour la
+    // reconstruction. Il NE DÉRIVE JAMAIS quand la fiche du site gagne des champs
+    // (Nen, forme, rayon de l'En, divers/override…) : tout ce que creation.js met
+    // dans `state` revient tel quel. Les attributs natifs ci-dessous ne servent plus
+    // qu'aux MACROS et barres de jetons Roll20 (@{perso|FOR}, PV, Initiative…).
+    put("state", JSON.stringify(state));
+
     SCALARS.forEach(function (d) { put(d[1], state[d[0]]); });
     CARACS.forEach(function (d) { put(d[1], (state.caracs || {})[d[0]]); });
     COLLECTIONS.forEach(function (d) { put(d[1], JSON.stringify(state[d[0]] == null ? blank()[d[0]] : state[d[0]])); });
@@ -111,6 +122,13 @@
       var a = attrs[PREFIX + suffix];
       if (a == null) return undefined;
       return (typeof a === "object" && a !== null) ? a.current : a;
+    }
+    // Priorité : l'état complet round-trip (hxh_state), qui porte TOUS les champs de
+    // la fiche du site. Repli sur la reconstruction champ par champ ci-dessous pour
+    // les fiches enregistrées avant hxh_state (creation.js re-normalise dans tous les cas).
+    var full = cur("state");
+    if (full !== undefined && full !== "") {
+      try { var fs = JSON.parse(full); if (fs && typeof fs === "object") return fs; } catch (e) {}
     }
     var s = blank();
 
@@ -153,6 +171,7 @@
       .concat(CARACS.map(function (d) { return PREFIX + d[1]; }))
       .concat(COLLECTIONS.map(function (d) { return PREFIX + d[1]; }));
     out.push(PREFIX + "etat_courant");
+    out.push(PREFIX + "state");
     return out;
   }
 
