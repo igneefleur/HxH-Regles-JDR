@@ -1258,9 +1258,18 @@
       var sum = function (f) { return rep.reports.reduce(function (a, r) { return a + (f(r) || 0); }, 0); };
       var summary = {
         name: name,
-        type: first ? (TY_LABEL[first.start.ctype] || "") : "",
+        // « socle » de la capacité (le nœud de départ) : Attaque/Défense/Effet ou un
+        // socle d'école (« Conjuration d'objet »…). Ce n'est PAS l'un des trois types
+        // au sens strict ; la fiche l'affiche sous « Socle », pas « Type ».
+        socle: first ? (TY_LABEL[first.start.ctype] || "") : "",
+        type: first ? (TY_LABEL[first.start.ctype] || "") : "",   // compat ascendante
         archetype: state.archetype,
         di: rep.diTotal === Infinity ? null : rep.diTotal,
+        // Ventilation du développement PAR CATÉGORIE, en points de dev (DR/DE/…),
+        // AVANT conversion en DI : le créateur la reconvertit avec SA propre affinité
+        // (le pool poolCat). La clé « raccord » porte le développement structurel, sans
+        // catégorie, compté 1:1 en DI. Permet d'imputer la capacité au bon pool.
+        dxByCat: rep.dxByCat || {},
         uaa: sum(function (r) { return r.ua; }),
         ma: sum(function (r) { return r.maShown; }),
         car: rep.reports.reduce(function (a, r) { return Math.max(a, r.car || 0); }, 0),

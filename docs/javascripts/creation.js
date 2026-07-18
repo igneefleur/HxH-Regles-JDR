@@ -107,6 +107,7 @@
       archetype: "",      // archétype choisi (une des 12 valeurs de DATA.archetypes) : fixe les 6 affinités
       diTotal: 0,         // capital de développement intérieur (comme pfTotal ; prestige = ⌈DI ÷ 100⌉)
       techniques: {},     // nom de technique -> palier ("Basique".."Maître") pour les techniques à paliers, true pour un bloc
+      enRayon: 0,         // rayon de l'En : indice du plus haut cran débloqué (0 = 1 m, compris dans l'En)
       auraDev: { uar: 0, rua: 0, uam: 0 },  // achats d'aura payés en DI (mult UAR, mult RUA en plus, achats +200 UAM)
       auraOverride: { uam: null, uar: null, rua: null },  // valeurs d'aura forcées à la main (null = calculé)
       affiniteDivers: {}, // catégorie -> ± affinité (avantage, race, don du MJ)
@@ -163,6 +164,7 @@
       if (tv === true || ["Basique", "Avancé", "Expert", "Maître"].indexOf(tv) >= 0) tk[tn] = tv;
     }
     b.techniques = tk;
+    b.enRayon = (typeof b.enRayon === "number" && isFinite(b.enRayon)) ? Math.max(0, Math.floor(b.enRayon)) : 0;
     b.diCat = numMap(b.diCat, 0, 999999);
     var ad = blank().auraDev;
     if (b.auraDev && typeof b.auraDev === "object") {
@@ -611,7 +613,9 @@
   function rua() { return state.auraOverride.rua != null ? state.auraOverride.rua : ruaAuto(); }
   function auraDiSpent() { return AURA_COSTS.uar * (state.auraDev.uar || 0) + AURA_COSTS.rua * (state.auraDev.rua || 0) + AURA_COSTS.uam * (state.auraDev.uam || 0); }
   function auraDiCap() { return 30 * prestige(); }   // plafond 30 DI/prestige sur l'aura
-  // DI dépensé : techniques apprises + achats d'aura + conversion en catégories + conception des capacités
+  // DI dépensé : techniques (paliers + crans de rayon de l'En) + achats d'aura +
+  // conversion en catégories (pool) + raccords des capacités. Le développement de
+  // catégorie des capacités NE se compte PAS ici : il se paie sur le pool (diCatSpent).
   function techDiSpent() {
     var s = 0;
     for (var name in state.techniques) {
@@ -623,13 +627,59 @@
         for (var i = 0; i <= r; i++) s += (t.paliers[i] && t.paliers[i].cout) || 0;
       }
     }
+    return s + enRayonDiSpent();
+  }
+  // Rayon de l'En (techniques-nen.md) : chaque cran au-delà du 1 m (compris dans
+  // l'apprentissage) exige le précédent et coûte son DI ; débloqué seulement si l'En
+  // est appris. L'« aura par tour » du cran est un drain d'UAD en jeu, PAS un coût.
+  function enRayons() { var t = techByName("En"); return (t && t.rayons) || []; }
+  function enRayonMax() { return Math.max(0, enRayons().length - 1); }
+  function enRayonIdx() { return techRank("En") >= 0 ? clamp(state.enRayon || 0, 0, enRayonMax()) : 0; }
+  function enRayonDiSpent() {
+    if (techRank("En") < 0) return 0;
+    var ry = enRayons(), s = 0;
+    for (var i = 1; i <= enRayonIdx() && i < ry.length; i++) s += ry[i].coutDI || 0;
     return s;
   }
   function diCatSpent() { var s = 0; for (var k in state.diCat) s += state.diCat[k] || 0; return s; }
-  function capacitesDi() { var s = 0; state.capacites.forEach(function (c) { if (c.report && c.report.di) s += c.report.di; }); return s; }
-  function diSpent() { return techDiSpent() + auraDiSpent() + diCatSpent() + capacitesDi(); }
+  // Développement de catégorie exigé par les capacités : points DR/DE… (dxByCat, calculés
+  // dans l'Atelier), consommés sur le pool poolCat de la catégorie. La clé « raccord »
+  // n'est pas une catégorie (modules structurels, comptés en DI brut à part).
+  function capDevByCat(cat) {
+    var s = 0;
+    state.capacites.forEach(function (c) {
+      if (c.report && c.report.dxByCat) s += c.report.dxByCat[cat] || 0;
+    });
+    return s;
+  }
+  // DI brut versé par les capacités = uniquement les modules SANS catégorie (raccords,
+  // payés 1:1). Le développement de catégorie se paie via le pool (diCatSpent) que les
+  // capacités consomment (capDevByCat), pas une 2e fois en DI. Repli : une capacité
+  // enregistrée avant la ventilation (report.dxByCat absent) retombe sur son report.di
+  // pour ne pas devenir gratuite (à ré-enregistrer depuis l'Atelier).
+  function capRaccordDi() {
+    var s = 0;
+    state.capacites.forEach(function (c) {
+      if (!c.report) return;
+      if (c.report.dxByCat) s += c.report.dxByCat.raccord || 0;
+      else s += c.report.di || 0;
+    });
+    return s;
+  }
+  function diSpent() { return techDiSpent() + auraDiSpent() + diCatSpent() + capRaccordDi(); }
   // pool développé dans une catégorie = DI investi × affinité d'apprentissage (arrondi inférieur)
   function poolCat(cat) { return Math.floor((state.diCat[cat] || 0) * affiniteCat(cat) / 100); }
+  // libellé du coût d'une capacité = ventilation par catégorie (DR/DE… puisés au pool)
+  // + le raccord en DI ; repli sur l'ancien report.di si la ventilation manque.
+  function capCostLabel(r) {
+    if (r && r.dxByCat) {
+      var parts = [];
+      DATA.nenCats.forEach(function (cat) { if (r.dxByCat[cat]) parts.push(r.dxByCat[cat] + " " + NEN_CAT_META[cat].sigle); });
+      if (r.dxByCat.raccord) parts.push(r.dxByCat.raccord + " DI");
+      return parts.join(" · ") || "0 DI";
+    }
+    return r && r.di != null ? r.di + " DI" : "";
+  }
   function capId() { return "cap" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
   // --- pont vers l'Atelier (page /creation/) ----------------------------------
   // On dépose un relais dans localStorage puis on navigue vers l'Atelier ; celui-ci
@@ -1019,7 +1069,17 @@
       var m = NEN_CAT_META[cat];
       if ((state.diCat[cat] || 0) > 0 && affiniteCat(cat) === 0)
         w.push("DI investi en " + cat + " sans affinité (archétype ou avantage Spécialiste manquant).");
+      // Le développement de catégorie exigé par les capacités doit tenir dans le pool
+      // converti (di.md : on dépense les points DR/DE… obtenus pour concevoir).
+      var need = capDevByCat(cat);
+      if (need > poolCat(cat))
+        w.push("Développement " + m.sigle + " : les capacités exigent " + need + " " + m.sigle +
+          " mais le pool converti n'est que de " + poolCat(cat) + " " + m.sigle + " (investir plus de DI en " + cat + ").");
     });
+    // Archétypes de spécialisation : réservés à l'avantage Spécialiste (archetypes-nen.md).
+    var aoSpe = archetypeObj();
+    if (aoSpe && aoSpe.spe && !hasSpecialiste())
+      w.push("Archétype « " + aoSpe.name + " » réservé à l'avantage Spécialiste : il ne peut pas être choisi sans lui.");
     var verrou = [];
     DATA.competences.forEach(function (k) { if (!compAccessible(k) && state.comps[k.name] > 0) verrou.push(k.name); });
     if (verrou.length) w.push("PF investis dans une compétence verrouillée par la forme : " + verrou.join(", ") + " (onglet Options pour l'autoriser).");
@@ -1361,19 +1421,25 @@
         multiMod(bot, state.caracDivers, k.abbr, 3,
           { title: "Modificateur divers à la caractéristique (équipement, art, décision du MJ) : change la valeur effective, pas le coût en points." });
         row.appendChild(bot);
+        // valeur effective (score final, base + forme + divers) affichée en clair à
+        // gauche, puis le modificateur de jet à droite ; l'effective passe en accent
+        // quand elle diffère de la base achetée
+        var cval = el("span", "pc-cval");
+        cval.title = "Valeur effective de la caractéristique (base + forme + divers).";
         var mod = el("span", "pc-cmod");
         var modV = el("b", null, "");
-        var modE = el("small", null, "");   // valeur effective, badge affiché quand elle est ajustée
-        mod.appendChild(modV); mod.appendChild(modE);
+        mod.appendChild(modV);
         rollable(mod, function () { return "Modificateur de " + k.name; }, function () { return modOf(caracVal(k.abbr)); });
         updaters.push(function () {
           var eff = caracVal(k.abbr), m = modOf(eff), adj = eff !== caracBase(k.abbr);
+          cval.textContent = String(eff);
+          cval.classList.toggle("adj", adj);
           modV.textContent = signed(m);
           mod.classList.toggle("neg", m < 0);
-          modE.textContent = adj ? String(eff) : "";
-          mod.title = "Modificateur (ajouté aux jets) · valeur effective " + eff +
-            (adj ? " (" + caracBase(k.abbr) + " ajusté par la forme ou le divers)" : "") + "\n" + ROLL_HINT;
+          mod.title = "Modificateur ajouté aux jets · valeur effective " + eff +
+            (adj ? " (base " + caracBase(k.abbr) + " ajustée par la forme ou le divers)" : "") + "\n" + ROLL_HINT;
         });
+        top.appendChild(cval);
         top.appendChild(mod);
         bC.appendChild(row);
       });
@@ -2538,7 +2604,7 @@
     }));
     idField(grid, "c6", "Archétype", state.archetype, function (v) { state.archetype = v; }, {
       options: archOpts,
-      tip: "L'archétype fixe les six affinités. Les archétypes marqués * (Spécialiste et hybrides) exigent l'avantage Spécialiste, sinon leur affinité de spécialisation reste à 0 %."
+      tip: "L'archétype fixe les six affinités. Les archétypes marqués * (Spécialiste et ses deux hybrides) ne peuvent pas être choisis sans l'avantage Spécialiste."
     });
     idField(grid, "c3", "Capital DI", state.diTotal, function (v) { state.diTotal = num(v, 0); },
       { type: "number", min: 0, tip: "Le développement intérieur gagné, au choix du MJ (cadence selon l'Éclat). Il paie techniques, aura, catégories et capacités." });
@@ -2560,7 +2626,7 @@
       var inp = el("input", "pc-comp-div");
       inp.type = "number"; inp.min = 0; inp.placeholder = "DI";
       inp.value = state.diCat[cat] || "";
-      inp.title = "DI investi dans la conversion vers " + meta.sigle + ".";
+      inp.title = "DI investi dans la conversion vers " + meta.sigle + " : chaque DI rend l'affinité d'apprentissage en points de développement (" + meta.sigle + "), que les capacités de cette catégorie consomment.";
       inp.addEventListener("input", function () {
         var v = Math.max(0, num(inp.value, 0));
         if (v) state.diCat[cat] = v; else delete state.diCat[cat];
@@ -2569,9 +2635,11 @@
       row.appendChild(inp);
       var out = el("span", "pc-opt-state");
       updaters.push(function () {
-        var aff = affiniteCat(cat);
-        out.textContent = meta.sigle + " " + poolCat(cat) + " · " + aff + "%";
-        out.classList.toggle("ko", aff === 0);
+        var aff = affiniteCat(cat), pool = poolCat(cat), used = capDevByCat(cat), rem = pool - used;
+        // « consommé / pool » en points de développement (DR/DE…) + affinité
+        out.textContent = meta.sigle + " " + used + "/" + pool + (rem < 0 ? " (−" + (-rem) + ")" : "") + " · " + aff + "%";
+        out.classList.toggle("ko", aff === 0 || used > pool);
+        out.title = "Pool développé : " + pool + " " + meta.sigle + " (DI investi × affinité). Consommé par les capacités : " + used + " " + meta.sigle + ". Restant : " + rem + " " + meta.sigle + ".";
         inp.disabled = !hasHatsu();
       });
       row.appendChild(out);
@@ -2624,14 +2692,18 @@
     // --- Aura ---
     var bAura = block(colA, "Aura", null,
       "L'aura se mesure en unités (UA). Développer l'aura coûte du DI, plafonné à 30 DI par prestige.");
-    var auraBig = el("div", "pc-bigrow");
-    var boxUAM = auraBigBox("UAM", "aura maximale"), boxUAR = auraBigBox("UAR", "aura par round"), boxRUA = auraBigBox("RUA", "régénération / min");
-    auraBig.appendChild(boxUAM.box); auraBig.appendChild(boxUAR.box); auraBig.appendChild(boxRUA.box);
+    // Quatre mesures d'aura (aura.md) dans l'ordre canonique : UAM, UAD, UAR, RUA.
+    var auraBig = el("div", "pc-bigrow pc-bigrow-4");
+    var boxUAM = auraBigBox("UAM", "aura maximale"), boxUAD = auraBigBox("UAD", "aura disponible"),
+        boxUAR = auraBigBox("UAR", "aura par round"), boxRUA = auraBigBox("RUA", "régénération / min");
+    auraBig.appendChild(boxUAM.box); auraBig.appendChild(boxUAD.box); auraBig.appendChild(boxUAR.box); auraBig.appendChild(boxRUA.box);
     bAura.appendChild(auraBig);
     updaters.push(function () {
       boxUAM.v.textContent = fmt(uam());
+      boxUAD.v.textContent = fmt(uam());   // à la création, réserve pleine : UAD = UAM
       boxUAR.v.textContent = fmt(uar());
       boxRUA.v.textContent = fmt(rua());
+      boxUAD.box.title = "Aura disponible : ce qu'il reste à dépenser à l'instant. À la création, réserve pleine, elle égale l'UAM ; en jeu elle décroît de l'aura dépensée et remonte de la RUA par minute jusqu'à l'UAM.";
       boxUAR.box.title = "UAR = base " + baseUAR() + " × (mult " + mulUAR() + " + 1)";
       boxRUA.box.title = "RUA = base " + baseRUA() + " × (mult " + mulRUA() + " + 1)";
     });
@@ -2775,7 +2847,7 @@
           pb.type = "button"; pb.textContent = lb;
           pb.title = lb;
           pb.addEventListener("click", function () {
-            if (i === 0) { delete state.techniques[t.name]; }
+            if (i === 0) { delete state.techniques[t.name]; if (t.name === "En") state.enRayon = 0; }
             else {
               var pal = t.paliers[i - 1];
               if (!prereqAllMet(pal.prereq)) return;
@@ -2804,6 +2876,43 @@
       }
       box.appendChild(seg);
       box.appendChild(detail);
+      // Rayon de l'En : déblocage cran par cran (le 1 m est compris dans l'En, puis
+      // chaque cran coûte son DI et exige le précédent). Grisé tant que l'En n'est pas
+      // appris ; le coût DI cumulé passe dans techDiSpent, l'aura par tour est le drain
+      // d'UAD en jeu (info seule).
+      if (t.rayons && t.rayons.length) {
+        var ry = t.rayons;
+        var rbox = el("div", "pc-en-rayon");
+        rbox.appendChild(el("span", "l", "Rayon"));
+        var rstep = el("span", "pc-step");
+        var rminus = el("button", null, "−"); rminus.type = "button";
+        var rval = el("span", "v", "");
+        var rplus = el("button", null, "+"); rplus.type = "button";
+        rminus.addEventListener("click", function () {
+          if (techRank(t.name) < 0) return;
+          state.enRayon = Math.max(0, enRayonIdx() - 1); refresh();
+        });
+        rplus.addEventListener("click", function () {
+          if (techRank(t.name) < 0) return;
+          state.enRayon = Math.min(enRayonMax(), enRayonIdx() + 1); refresh();
+        });
+        rstep.appendChild(rminus); rstep.appendChild(rval); rstep.appendChild(rplus);
+        rbox.appendChild(rstep);
+        var rcost = el("span", "pc-en-cost", "");
+        rbox.appendChild(rcost);
+        box.appendChild(rbox);
+        updaters.push(function () {
+          var on = techRank(t.name) >= 0, idx = enRayonIdx();
+          rbox.classList.toggle("off", !on);
+          rminus.disabled = !on || idx <= 0;
+          rplus.disabled = !on || idx >= enRayonMax();
+          rval.textContent = on ? ry[idx].rayon : "—";
+          rcost.textContent = on
+            ? (enRayonDiSpent() + " DI · " + ry[idx].auraTour + " aura/tour")
+            : "apprendre l'En d'abord";
+          rbox.title = "Chaque cran au-delà de 1 m coûte son DI (le 1 m est compris dans l'En) ; l'aura par tour est le drain d'UAD quand l'En est déployé à ce rayon.";
+        });
+      }
       return box;
     }
   }
@@ -2826,8 +2935,10 @@
         main.appendChild(nm);
         if (cap.report) {
           var meta = [];
-          if (cap.report.type) meta.push(cap.report.type);
-          if (cap.report.di != null) meta.push(cap.report.di + " DI");
+          var soc = cap.report.socle || cap.report.type;
+          if (soc) meta.push(soc);
+          var cost = capCostLabel(cap.report);
+          if (cost) meta.push(cost);
           if (cap.report.uaa != null) meta.push(cap.report.uaa + " UAA");
           if (cap.report.ma) meta.push(cap.report.ma + " MA");
           main.appendChild(el("span", "meta", meta.join(" · ")));
@@ -2872,6 +2983,11 @@
     var colA = el("div", "pc-col"), colB = el("div", "pc-col");
     cols.appendChild(colA); cols.appendChild(colB);
     pane.appendChild(cols);
+    // ---- actions sur la fiche (imprimer / exporter / importer / réinitialiser) ----
+    var bAct = block(colB, "Fiche");
+    var actWrap = el("div", "pc-opt-actions");
+    buildActionsInto(actWrap);
+    bAct.appendChild(actWrap);
     // ---- compétences autorisées ----
     var bC = block(colA, "Compétences autorisées", null,
       "Par défaut, une compétence que le corps du personnage ne porte pas est verrouillée : voler sans ailes, un sens que la forme n'a pas. Ce réglage l'autorise ou la verrouille à la main. « Automatique » suit la forme.");
@@ -3100,21 +3216,25 @@
     if (hasNen()) {
       h("h3", "Nen" + (state.archetype ? " — " + state.archetype : ""));
       h("p", "Prestige " + prestige() + " · développement intérieur " + diSpent() + " / " + (state.diTotal || 0) + " DI · "
-        + "UAM " + fmt(uam()) + " · UAR " + uar() + " · RUA " + rua()
+        + "UAM " + fmt(uam()) + " · UAD " + fmt(uam()) + " · UAR " + uar() + " · RUA " + rua()
         + (state.archetype ? " · affinités " + affinites().map(function (v, i) { return NEN_CAT_META[DATA.nenCats[i]].sigle + " " + v + "%"; }).join(", ") : ""));
       var techRows = [];
       (DATA.techniques || []).forEach(function (t) {
         if (!state.techniques[t.name]) return;
         var v = state.techniques[t.name];
-        techRows.push([t.name, v === true ? "apprise" : v]);
+        var pal = v === true ? "apprise" : v;
+        // rayon de l'En : cran déployable + DI cumulé
+        if (t.name === "En" && t.rayons && t.rayons[enRayonIdx()])
+          pal += " · rayon " + t.rayons[enRayonIdx()].rayon + " (" + enRayonDiSpent() + " DI)";
+        techRows.push([t.name, pal]);
       });
       if (techRows.length) table(["Technique", "Palier"], techRows);
-      var poolRows = DATA.nenCats.filter(function (c) { return (state.diCat[c] || 0) > 0; })
-        .map(function (c) { return [c, NEN_CAT_META[c].sigle + " " + poolCat(c), (state.diCat[c] || 0) + " DI · " + affiniteCat(c) + "%"]; });
-      if (poolRows.length) table(["Catégorie", "Développement", "Investi"], poolRows);
-      if (state.capacites.length) table(["Capacité", "Type", "Coûts"], state.capacites.map(function (c) {
+      var poolRows = DATA.nenCats.filter(function (c) { return (state.diCat[c] || 0) > 0 || capDevByCat(c) > 0; })
+        .map(function (c) { return [c, NEN_CAT_META[c].sigle + " " + capDevByCat(c) + "/" + poolCat(c), (state.diCat[c] || 0) + " DI · " + affiniteCat(c) + "%"]; });
+      if (poolRows.length) table(["Catégorie", "Dév. utilisé / pool", "Investi"], poolRows);
+      if (state.capacites.length) table(["Capacité", "Socle", "Coûts"], state.capacites.map(function (c) {
         var r = c.report || {};
-        return [c.name, r.type || "", [r.di != null ? r.di + " DI" : "", r.uaa != null ? r.uaa + " UAA" : "", r.ma ? r.ma + " MA" : ""].filter(Boolean).join(" · ")];
+        return [c.name, r.socle || r.type || "", [capCostLabel(r), r.uaa != null ? r.uaa + " UAA" : "", r.ma ? r.ma + " MA" : ""].filter(Boolean).join(" · ")];
       }));
     }
 
@@ -3172,29 +3292,17 @@
     a.click();
   }
 
-  // --- montage ---------------------------------------------------------------
-  function mount(root) {
-    rootEl = root;
-    updaters = [];
-    warnBox = meterBox = libSelect = null;
-    root.innerHTML = "";
-    var app = el("div", "perso-atelier");
-
-    // barre d'outils (chrome du site, hors de la feuille)
-    var top = el("div", "pc-top");
-    top.appendChild(el("span", "pc-top-title", "Création"));
-    top.appendChild(el("span", "pc-top-hint", "Un personnage de A à Z, sans le Nen."));
-    var saveB = el("button", "pc-btn primary"); saveB.type = "button"; saveB.textContent = "Enregistrer";
-    saveB.addEventListener("click", saveCurrentPerso);
-    top.appendChild(saveB);
+  // Actions sur la fiche (imprimer / exporter / importer / réinitialiser) : posées
+  // dans l'onglet Options plutôt qu'en tête de page, à la demande de l'utilisateur.
+  function buildActionsInto(container) {
     var printB = el("button", "pc-btn"); printB.type = "button"; printB.textContent = "Imprimer la fiche";
     printB.addEventListener("click", printSheet);
-    top.appendChild(printB);
-    var expB = el("button", "pc-btn"); expB.type = "button"; expB.textContent = "Exporter";
+    container.appendChild(printB);
+    var expB = el("button", "pc-btn"); expB.type = "button"; expB.textContent = "Exporter (JSON)";
     expB.addEventListener("click", exportJson);
-    top.appendChild(expB);
+    container.appendChild(expB);
     var impIn = el("input"); impIn.type = "file"; impIn.accept = "application/json"; impIn.style.display = "none";
-    var impB = el("button", "pc-btn"); impB.type = "button"; impB.textContent = "Importer";
+    var impB = el("button", "pc-btn"); impB.type = "button"; impB.textContent = "Importer (JSON)";
     impB.addEventListener("click", function () { impIn.click(); });
     impIn.addEventListener("change", function () {
       var f = impIn.files && impIn.files[0];
@@ -3204,37 +3312,57 @@
         try {
           var s = normalize(JSON.parse(rd.result));
           if (!s) { alert("Format de personnage non reconnu."); return; }
-          state = s; mount(root);
+          state = s; mount(rootEl);
         } catch (e) { alert("Fichier illisible : " + e.message); }
       };
       rd.readAsText(f);
       impIn.value = "";   // permet de re-sélectionner le même fichier
     });
-    top.appendChild(impB); top.appendChild(impIn);
-    var reset = el("button", "pc-btn"); reset.type = "button"; reset.textContent = "Réinitialiser";
+    container.appendChild(impB); container.appendChild(impIn);
+    var reset = el("button", "pc-btn danger"); reset.type = "button"; reset.textContent = "Réinitialiser";
     reset.addEventListener("click", function () {
-      if (confirm("Repartir d'un personnage vierge ?")) { state = blank(); mount(root); }
+      if (confirm("Repartir d'un personnage vierge ?")) { state = blank(); mount(rootEl); }
     });
-    top.appendChild(reset);
+    container.appendChild(reset);
+  }
 
-    // bibliothèque : menu + charger / supprimer
-    var lib = el("span", "pc-lib");
-    libSelect = el("select");
-    lib.appendChild(libSelect);
-    var loadB = el("button", "pc-btn"); loadB.type = "button"; loadB.textContent = "Charger";
-    loadB.addEventListener("click", function () {
-      var p = loadPersos().filter(function (x) { return x.id === libSelect.value; })[0];
-      if (p) loadPersoInto(p);
-    });
-    lib.appendChild(loadB);
-    var delB = el("button", "pc-btn"); delB.type = "button"; delB.textContent = "Supprimer";
-    delB.addEventListener("click", function () {
-      var p = loadPersos().filter(function (x) { return x.id === libSelect.value; })[0];
-      if (p && confirm("Supprimer « " + p.name + " » ?")) deletePerso(p.id);
-    });
-    lib.appendChild(delB);
-    top.appendChild(lib);
-    app.appendChild(top);
+  // --- montage ---------------------------------------------------------------
+  function mount(root) {
+    rootEl = root;
+    updaters = [];
+    warnBox = meterBox = libSelect = null;
+    root.innerHTML = "";
+    var app = el("div", "perso-atelier");
+
+    // Barre d'outils (chrome du site, hors de la feuille) : titre + enregistrer +
+    // bibliothèque. MASQUÉE dans l'embed Roll20 (COMPACT), qui gère lui-même la
+    // persistance via les Attributes du personnage. Les actions imprimer / exporter /
+    // importer / réinitialiser vivent désormais dans l'onglet Options.
+    if (!COMPACT) {
+      var top = el("div", "pc-top");
+      top.appendChild(el("span", "pc-top-title", "Création"));
+      var saveB = el("button", "pc-btn primary"); saveB.type = "button"; saveB.textContent = "Enregistrer";
+      saveB.addEventListener("click", saveCurrentPerso);
+      top.appendChild(saveB);
+      // bibliothèque : menu + charger / supprimer
+      var lib = el("span", "pc-lib");
+      libSelect = el("select");
+      lib.appendChild(libSelect);
+      var loadB = el("button", "pc-btn"); loadB.type = "button"; loadB.textContent = "Charger";
+      loadB.addEventListener("click", function () {
+        var p = loadPersos().filter(function (x) { return x.id === libSelect.value; })[0];
+        if (p) loadPersoInto(p);
+      });
+      lib.appendChild(loadB);
+      var delB = el("button", "pc-btn"); delB.type = "button"; delB.textContent = "Supprimer";
+      delB.addEventListener("click", function () {
+        var p = loadPersos().filter(function (x) { return x.id === libSelect.value; })[0];
+        if (p && confirm("Supprimer « " + p.name + " » ?")) deletePerso(p.id);
+      });
+      lib.appendChild(delB);
+      top.appendChild(lib);
+      app.appendChild(top);
+    }
 
     // la feuille
     var sheet = el("div", "pc-sheet");

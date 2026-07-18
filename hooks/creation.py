@@ -658,7 +658,8 @@ def _tech_meta(chunk):
     cm = re.search(r"(\d+)\s*DI", cout_s)
     body = _SPAN.sub("", chunk)
     desc = _clean("\n".join(l for l in body.splitlines()
-                            if not l.lstrip().startswith("|")))
+                            if not l.lstrip().startswith("|")
+                            and not re.match(r"^\s*(-{3,}|\*{3,})\s*$", l)))
     return prereq, (int(cm.group(1)) if cm else None), desc
 
 
@@ -674,9 +675,35 @@ def _techniques(text):
             continue
         name, tag = _clean(nm.group(1)), _clean(nm.group(2) or "")
         rest = inner[nm.end():]
-        parts = _TECH_PALIER.split(rest)
+        # Bloc indépendant qui suit un hr « --- » autonome (la carte En : extension du
+        # rayon, « indépendamment des quatre paliers ») : on le retranche du corps des
+        # paliers pour ne pas le coller au palier Maître. Sûr car seul l'En en porte un
+        # (les séparateurs de table « |---| » commencent par « | » et ne matchent pas).
+        mhr = re.search(r"(?m)^[ \t]*---[ \t]*$", rest)
+        rest_paliers = rest[:mhr.start()] if mhr else rest
+        parts = _TECH_PALIER.split(rest_paliers)
         tables = _art_tables(inner)
+        # L'En : la table des rayons (« Rayon | Coût (DI) | Aura par tour ») devient un
+        # champ structuré `rayons` (crans payants) et sort de `tables` pour ne pas être
+        # affichée deux fois. Les autres techniques gardent leurs tables informatives.
+        rayons = []
+        if name == "En":
+            kept = []
+            for t in tables:
+                cols = [c.lower() for c in t["cols"]]
+                if cols and cols[0].startswith("rayon"):
+                    for r in t["rows"]:
+                        di = re.search(r"\d+", r[1]) if len(r) > 1 else None
+                        au = re.search(r"\d+", r[2]) if len(r) > 2 else None
+                        rayons.append({"rayon": r[0],
+                                       "coutDI": int(di.group()) if di else 0,
+                                       "auraTour": int(au.group()) if au else 0})
+                else:
+                    kept.append(t)
+            tables = kept
         entry = {"name": name, "tag": tag, "tables": tables}
+        if rayons:
+            entry["rayons"] = rayons
         if len(parts) == 1:
             # technique d'un bloc : prérequis/coût directement sous le nom
             prereq, cout, desc = _tech_meta(rest)
