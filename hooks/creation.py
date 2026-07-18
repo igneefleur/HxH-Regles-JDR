@@ -33,6 +33,9 @@ Sources et formats parsés (voir chaque fonction pour le détail) :
     deux grilles HTML de sens (cases <td class="p|s|t|l|i">).
   - personnage/avantages.md : table des points (Éclat | Points d'avantage,
     palier inférieur) + mcards « **Nom** <span class="prereq">N points</span> ».
+  - nen/techniques-nen.md : cartes mcard art des techniques ; paliers sans pips
+    (<p class="palier">Basique</p>) + Prérequis/Coût en spans (comme les
+    formations) ; certaines cartes portent des tables (bonus, rayons d'En).
   - personnage/capacites-physiques.md : tables 0-30 (Mouvement, Port, Apnée,
     Sommeil/Activité) repérées par leur colonne de tête.
 
@@ -60,6 +63,7 @@ PAGES = {
     "tailles": "content/regles/monde/tailles.md",
     "formes": "content/regles/monde/formes.md",
     "avantages": "content/regles/personnage/avantages.md",
+    "techniques": "content/regles/nen/techniques-nen.md",
     "capacites": "content/regles/personnage/capacites-physiques.md",
     "armes": "content/regles/combat/armes.md",
     "etats": "content/regles/personnage/etats.md",
@@ -526,14 +530,22 @@ def _capacites(text):
     caps = {}
     for t in _pipe_tables(text):
         head = [_clean(h) for h in t["header"]]
-        if len(head) < 3:
+        if len(head) < 2:                 # au moins une colonne de valeurs (Lancer n'en a qu'une)
             continue
         if head[0] == "Mouvement":
             key, carac = "mouvement", "AGI"
         elif head[0] == "Port":
             key, carac = "port", "FOR"
-        elif head[0] == "Repos" and head[1] == "Sommeil":
-            key, carac = "sommeil", "END"
+        elif head[0] == "Saut":           # Saut (FOR) : sans élan / avec élan
+            key, carac = "saut", "FOR"
+        elif head[0] == "Lancer":         # Lancer (FOR) : multiplicateur des portées de jet et de tir
+            key, carac = "lancer", "FOR"
+        elif head[0] == "Repos":          # Repos (sommeil) : Temps de sommeil / redormir / fatigue
+            key, carac = "repos", "END"
+        elif head[0] == "Fond":           # Fond (effort) : durées d'activité intermédiaire / lourde
+            key, carac = "fond", "END"
+        elif head[0] == "Pression":       # Pression aquatique : profondeur supportée selon l'allure
+            key, carac = "pression", "END"
         elif head[0] == "Apnée" and head[1] == "Légère":
             key, carac = "apnee", "END"
         else:
@@ -630,6 +642,90 @@ def _armes(text):
 
 
 # ---------------------------------------------------------------------------
+# Nen — techniques (techniques-nen.md) et archétypes
+# ---------------------------------------------------------------------------
+# Paliers de technique : <p class="palier">Basique</p> SANS pips (contrairement
+# aux arts). On ne retient que les quatre noms canoniques.
+_TECH_PALIER = re.compile(r'<p class="palier">\s*(Basique|Avancé|Expert|Maître)\s*</p>')
+
+
+def _tech_meta(chunk):
+    """(prérequis, coût DI, description) d'un fragment de carte ou de palier."""
+    spans = [_clean(s) for s in _SPAN.findall(chunk)]
+    prereq = next((s.split(":", 1)[1].strip() for s in spans
+                   if s.lower().startswith("prérequis")), "")
+    cout_s = next((s for s in spans if s.lower().startswith("coût")), "")
+    cm = re.search(r"(\d+)\s*DI", cout_s)
+    body = _SPAN.sub("", chunk)
+    desc = _clean("\n".join(l for l in body.splitlines()
+                            if not l.lstrip().startswith("|")))
+    return prereq, (int(cm.group(1)) if cm else None), desc
+
+
+def _techniques(text):
+    """Une carte mcard art par technique. Bloc (Initiation, Hatsu, Shu, Ken, Ko,
+    Ryu) = un seul coût ; à paliers (Ten, Zetsu, Ren, Gyo, En, In) = quatre. Les
+    tables internes (bonus, rayons d'En) sont jointes telles quelles."""
+    out = []
+    for m in _ART_CARD.finditer(text):
+        inner = m.group(1)
+        nm = _NAME.search(inner)
+        if not nm:
+            continue
+        name, tag = _clean(nm.group(1)), _clean(nm.group(2) or "")
+        rest = inner[nm.end():]
+        parts = _TECH_PALIER.split(rest)
+        tables = _art_tables(inner)
+        entry = {"name": name, "tag": tag, "tables": tables}
+        if len(parts) == 1:
+            # technique d'un bloc : prérequis/coût directement sous le nom
+            prereq, cout, desc = _tech_meta(rest)
+            entry.update({"bloc": True, "prereq": prereq, "cout": cout,
+                          "desc": desc, "paliers": []})
+        else:
+            head_prereq, head_cout, head_desc = _tech_meta(parts[0])
+            paliers = []
+            for k in range(1, len(parts), 2):
+                niveau, pbody = parts[k], parts[k + 1]
+                prereq, cout, desc = _tech_meta(pbody)
+                paliers.append({"niveau": niveau, "prereq": prereq,
+                                "cout": cout, "desc": desc})
+            entry.update({"bloc": False, "prereq": head_prereq,
+                          "cout": head_cout, "desc": head_desc,
+                          "paliers": paliers})
+        out.append(entry)
+    return out
+
+
+# Affinités d'emploi/apprentissage par archétype (AE % par catégorie), copiées de
+# hooks/nen_atelier.py pour ne pas dépendre de l'ordre de chargement des hooks.
+# Ordre des catégories : renforcement, émission, transmutation, manipulation,
+# conjuration, spécialisation. La valeur de spécialisation n'est atteinte qu'avec
+# l'avantage Spécialiste (drapeau `spe`) ; sans lui, 0.
+_NEN_CATS = ["renforcement", "émission", "transmutation", "manipulation",
+             "conjuration", "spécialisation"]
+_ARCHETYPES = [
+    ("Renforceur",               [100, 80, 80, 60, 60, 40], False),
+    ("Émitteur",                 [80, 100, 60, 80, 40, 60], False),
+    ("Transmuteur",              [80, 60, 100, 40, 80, 60], False),
+    ("Manipulateur",             [60, 80, 40, 100, 60, 80], False),
+    ("Conjurateur",              [60, 40, 80, 60, 100, 80], False),
+    ("Spécialiste",              [40, 60, 60, 80, 80, 100], True),
+    ("Renforceur-Émitteur",      [90, 90, 70, 70, 50, 50], False),
+    ("Renforceur-Transmuteur",   [90, 70, 90, 50, 70, 50], False),
+    ("Émitteur-Manipulateur",    [70, 90, 50, 90, 50, 70], False),
+    ("Transmuteur-Conjurateur",  [70, 50, 90, 50, 90, 70], False),
+    ("Manipulateur-Spécialiste", [50, 70, 50, 90, 70, 90], True),
+    ("Conjurateur-Spécialiste",  [50, 50, 70, 70, 90, 90], True),
+]
+
+
+def _archetypes():
+    return [{"name": n, "affinites": aff, "spe": spe}
+            for n, aff, spe in _ARCHETYPES]
+
+
+# ---------------------------------------------------------------------------
 # Assemblage
 # ---------------------------------------------------------------------------
 def _read(docs_dir, rel):
@@ -670,6 +766,9 @@ def _extract(docs_dir):
         "capacites": _capacites(_read(docs_dir, PAGES["capacites"])),
         "armes": _armes(_read(docs_dir, PAGES["armes"])),
         "etats": _etats(_read(docs_dir, PAGES["etats"])),
+        "techniques": _techniques(_read(docs_dir, PAGES["techniques"])),
+        "nenCats": _NEN_CATS,
+        "archetypes": _archetypes(),
     }
 
 
@@ -681,7 +780,8 @@ def on_files(files, config, **kwargs):
           f"{len(data['tailles'])} tailles, {len(data['formes'])} formes, "
           f"{len(data['avantages']['liste'])} avantages, "
           f"{len(data['capacites'])} tables de capacités, "
-          f"{len(data['armes'])} armes, {len(data['etats'])} états")
+          f"{len(data['armes'])} armes, {len(data['etats'])} états, "
+          f"{len(data['techniques'])} techniques, {len(data['archetypes'])} archétypes")
     content = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     files.append(File.generated(config, "creation.json", content=content))
     return files

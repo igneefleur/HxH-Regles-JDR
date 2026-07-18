@@ -2,7 +2,7 @@
 
 <div class="cols" markdown>
 
-Les capacités physiques mesurent ce que le corps d'un personnage accomplit sans jet de dé : la distance qu'il franchit, le bond qu'il fait, la charge qu'il soulève, la portée de son lancer, le souffle qu'il retient, la profondeur qu'il supporte. Chacune découle d'une [caractéristique](caracteristiques.md) physique et se lit dans une table. Ce chapitre en définit six : le [Mouvement](#mouvement), issu de l'Agilité ; le [Saut](#saut), le [Port](#port) et le [Lancer](#lancer), issus de la Force ; l'[Apnée](#retenir-son-souffle) et la [Pression](#pression-aquatique), issues de l'Endurance. Il définit d'abord ce qu'elles partagent : la lecture des tables, la [Fatigue](#la-fatigue), l'[activité](#activite) et le sommeil.
+Les capacités physiques mesurent ce que le corps d'un personnage accomplit sans jet de dé : la distance qu'il franchit, le bond qu'il fait, la charge qu'il soulève, la portée de son lancer, le souffle qu'il retient, la profondeur qu'il supporte. Chacune découle d'une [caractéristique](caracteristiques.md) physique et se lit dans une table. Ce chapitre en définit six : le [Mouvement](#mouvement), issu de l'Agilité ; le [Saut](#saut), le [Port](#port) et le [Lancer](#lancer), issus de la Force ; l'[Apnée](#retenir-son-souffle) et la [Pression](#pression-aquatique), issues de l'Endurance. Il définit d'abord ce qu'elles partagent : la lecture des tables, la [Fatigue](#la-fatigue), l'[activité](#activite), le sommeil et le fond.
 
 Sur l'échelle des caractéristiques, notée de 0 à 30, 5 est la moyenne humaine et 9 le plafond humain réel.
 
@@ -56,27 +56,137 @@ Pour classer une activité, on la compare aux exemples ci-dessous ; en cas de do
 
 </div>
 
+</div>
+
+<div class="cols" markdown>
+
+<div class="keep" markdown>
+
 #### Sommeil et repos {#sommeil-et-repos}
 
-Le Repos découle de l'Endurance : le Repos d'un personnage est égal à son Endurance, et c'est à sa ligne que se lit la table du sommeil, en bas de section. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.
+Le Repos découle de l'Endurance : le Repos d'un personnage est égal à son Endurance, et c'est à sa ligne que se lit sa table, ci-dessous. Chaque jour, un personnage a besoin du temps de sommeil que demande son Repos. Un personnage qui a dormi correctement commence sa journée bien reposé, sans malus.
 
-Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue, ni durées d'activité. En revanche, un sommeil interrompu peut reprendre : on additionne tout ce que le personnage dort depuis son dernier sommeil correct, et dès que le total atteint son temps de sommeil requis, il a dormi correctement.
-
-La même table donne aussi les limites d'effort d'une journée, entre deux sommeils. La colonne Activité intermédiaire donne la durée totale d'activité intermédiaire qu'un personnage peut fournir dans sa journée sans rien risquer ; la colonne Activité lourde, la durée totale d'activité lourde. Les deux durées se dépensent séparément ; le reste de la journée se passe en activité légère, qui ne se compte pas. Dormir correctement redonne les deux durées en entier.
+Un sommeil plus court que le temps requis ne redonne rien : ni points de fatigue, ni réserves d'effort. En revanche, un sommeil interrompu peut reprendre : on additionne tout ce que le personnage dort depuis son dernier sommeil correct, et dès que le total atteint son temps de sommeil requis, il a dormi correctement.
 
 Un personnage ne peut pas se rendormir aussitôt après un sommeil correct : il doit d'abord rester éveillé un temps minimal, la moitié de son temps avant d'être fatigué ([Veiller sans dormir](#veiller-sans-dormir)). Un sommeil trop court pour être correct n'impose pas ce délai. La table du sommeil, ci-dessous, donne les deux durées, aux colonnes Avant de pouvoir redormir et Avant d'être fatigué.
 
 <p class="formula">Temps avant de pouvoir redormir = temps avant d'être fatigué ÷ 2</p>
 
+</div>
+
+<div class="keep" markdown>
+
+<div class="gloss-source" markdown>
+
+| Repos | Temps de sommeil | Avant de pouvoir redormir | Avant d'être fatigué |
+|:---:|:---:|:---:|:---:|
+| 0 | 18 h | 3 h | 6 h |
+| 1 | 16 h | 4 h | 8 h |
+| 2 | 14 h | 5 h | 10 h |
+| 3 | 12 h | 6 h | 12 h |
+| 4 | 10 h | 7 h | 14 h |
+| 5 | 8 h | 8 h | 16 h |
+| 6 | 7 h 30 | 8 h 15 | 16 h 30 |
+| 7 | 7 h | 8 h 30 | 17 h |
+| 8 | 6 h 30 | 8 h 45 | 17 h 30 |
+| 9 | 6 h | 9 h | 18 h |
+| 10 | 5 h 30 | 9 h 15 | 18 h 30 |
+| 11 | 5 h | 9 h 30 | 19 h |
+| 12 | 4 h 30 | 9 h 45 | 19 h 30 |
+| 13 | 4 h | 10 h | 20 h |
+| 14 | 3 h 30 | 10 h 15 | 20 h 30 |
+| 15 | 3 h | 10 h 30 | 21 h |
+| 16 | 2 h 30 | 10 h 45 | 21 h 30 |
+| 17 | 2 h | 11 h | 22 h |
+| 18 | 1 h 30 | 11 h 15 | 22 h 30 |
+| 19 | 1 h | 11 h 30 | 23 h |
+| 20 | aucun | 12 h | 24 h |
+| 21 | aucun | 12 h | 24 h |
+| 22 | aucun | 12 h | 24 h |
+| 23 | aucun | 12 h | 24 h |
+| 24 | aucun | 12 h | 24 h |
+| 25 | aucun | 12 h | 24 h |
+| 26 | aucun | 12 h | 24 h |
+| 27 | aucun | 12 h | 24 h |
+| 28 | aucun | 12 h | 24 h |
+| 29 | aucun | 12 h | 24 h |
+| 30 | aucun | 12 h | 24 h |
+
+</div>
+
+<div class="defs" markdown>
+
+**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cols" markdown>
+
+<div class="keep" markdown>
+
+#### Le Fond {#le-fond}
+
+Le Fond découle de l'Endurance : le Fond d'un personnage est égal à son Endurance. C'est l'endurance de son corps à l'effort soutenu, lue à sa ligne dans la table du Fond, ci-dessous : la durée d'activité intermédiaire et la durée d'activité lourde qu'il peut fournir dans une journée sans rien risquer.
+
+La colonne Activité intermédiaire donne la durée totale d'activité intermédiaire qu'un personnage peut fournir dans sa journée ; la colonne Activité lourde, la durée totale d'activité lourde. Les deux durées se dépensent séparément ; le reste de la journée se passe en activité légère, qui ne se compte pas. Un sommeil correct rend les deux durées en entier.
+
+</div>
+
+<div class="gloss-source keep" markdown>
+
+| Fond | Activité intermédiaire | Activité lourde |
+|:---:|:---:|:---:|
+| 0 | 3 h | 1 min |
+| 1 | 4 h | 2 min |
+| 2 | 5 h | 3 min |
+| 3 | 6 h | 5 min |
+| 4 | 7 h | 10 min |
+| 5 | 8 h | 20 min |
+| 6 | 9 h | 30 min |
+| 7 | 10 h | 40 min |
+| 8 | 11 h | 50 min |
+| 9 | 12 h | 1 h |
+| 10 | 12 h | 1 h 30 |
+| 11 | 12 h | 2 h |
+| 12 | 12 h | 2 h 30 |
+| 13 | 12 h | 3 h |
+| 14 | 12 h | 3 h 30 |
+| 15 | 12 h | 4 h |
+| 16 | 12 h | 4 h 30 |
+| 17 | 12 h | 5 h |
+| 18 | 12 h | 5 h 30 |
+| 19 | 12 h | 6 h |
+| 20 | 12 h | 6 h 30 |
+| 21 | 12 h | 7 h |
+| 22 | 12 h | 7 h 30 |
+| 23 | 12 h | 8 h |
+| 24 | 12 h | 8 h 30 |
+| 25 | 12 h | 9 h |
+| 26 | 12 h | 9 h 30 |
+| 27 | 12 h | 10 h |
+| 28 | 12 h | 10 h 30 |
+| 29 | 12 h | 11 h |
+| 30 | 12 h | 12 h |
+
+</div>
+
+</div>
+
+<div class="cols" markdown>
+
 <div class="memo" markdown>
 
-Exemple. Avec un Repos de 5, la moyenne humaine, un personnage dort 8 heures, fournit jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée ; tout le reste se passe en activité légère. Au pic humain réel (Repos 9), six heures de sommeil lui suffisent, il tient 12 heures d'intermédiaire et tout juste une heure de lourde.
+Exemple. Avec une Endurance de 5, la moyenne humaine, un personnage dort 8 heures ; son Fond lui donne jusqu'à 8 heures d'activité intermédiaire mais à peine une vingtaine de minutes d'activité lourde dans sa journée, tout le reste se passant en activité légère. Au pic humain réel (Endurance 9), six heures de sommeil lui suffisent, et son Fond tient 12 heures d'intermédiaire et tout juste une heure de lourde.
 
 </div>
 
 #### Forcer l'effort
 
-Les durées de la table donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.
+Les durées du Fond donnent ce qu'un personnage peut faire dans sa journée sans danger : tant qu'il reste sous sa durée d'activité intermédiaire et sous sa durée d'activité lourde, il ne risque rien. Le MJ juge au cas par cas ce qui compte dans chaque intensité : le but est de limiter les journées où l'on force trop, pas de chronométrer chaque geste.
 
 Quand un personnage a épuisé l'une de ces durées et continue quand même dans cette intensité, il force sur un corps déjà à bout. Il fait alors un jet de [Résistance à l'Épuisement](competences.md), une première fois au moment où il dépasse la durée, puis régulièrement tant qu'il continue : toutes les heures en activité intermédiaire, toutes les dix minutes en activité lourde. S'il s'arrête puis reprend plus tard, la durée toujours épuisée, il refait un jet aussitôt, puis aux mêmes intervalles : les pauses ne remettent rien à zéro avant le prochain sommeil correct. La difficulté augmente à chaque jet :
 
@@ -95,50 +205,6 @@ Au-delà, chaque heure d'éveil en plus lui demande un jet de [Résistance à l'
 <p class="formula">Difficulté = 20 pour la première heure dépassée, +20 par heure suivante</p>
 
 La première heure dépassée demande donc un jet à 20, la deuxième un jet à 40, et ainsi de suite. Ces jets suivent leur propre compte, séparé de celui de Forcer l'effort : un personnage qui force à la fois sur l'éveil et sur ses durées d'activité fait les deux séries de jets. Les heures dormies ne comptent pas comme heures d'éveil, et le compte d'heures dépassées ne repart de zéro qu'après un sommeil correct. S'il réussit, le personnage reste debout jusqu'à l'heure suivante. S'il échoue, il perd des points de [fatigue](#la-fatigue) selon sa marge d'échec. Il peut renoncer et dormir dès qu'il le peut ; sinon, la fatigue finit par le faire tomber : arrivé à son maximum en négatif, il s'effondre d'épuisement.
-
-<div class="gloss-source span sommeil" markdown>
-
-| Repos | Sommeil | Activité intermédiaire | Activité lourde | Avant de pouvoir redormir | Avant d'être fatigué |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| 0 | 18 h | 3 h | 1 min | 3 h | 6 h |
-| 1 | 16 h | 4 h | 2 min | 4 h | 8 h |
-| 2 | 14 h | 5 h | 3 min | 5 h | 10 h |
-| 3 | 12 h | 6 h | 5 min | 6 h | 12 h |
-| 4 | 10 h | 7 h | 10 min | 7 h | 14 h |
-| 5 | 8 h | 8 h | 20 min | 8 h | 16 h |
-| 6 | 7 h 30 | 9 h | 30 min | 8 h 15 | 16 h 30 |
-| 7 | 7 h | 10 h | 40 min | 8 h 30 | 17 h |
-| 8 | 6 h 30 | 11 h | 50 min | 8 h 45 | 17 h 30 |
-| 9 | 6 h | 12 h | 1 h | 9 h | 18 h |
-| 10 | 5 h 30 | 12 h | 1 h 30 | 9 h 15 | 18 h 30 |
-| 11 | 5 h | 12 h | 2 h | 9 h 30 | 19 h |
-| 12 | 4 h 30 | 12 h | 2 h 30 | 9 h 45 | 19 h 30 |
-| 13 | 4 h | 12 h | 3 h | 10 h | 20 h |
-| 14 | 3 h 30 | 12 h | 3 h 30 | 10 h 15 | 20 h 30 |
-| 15 | 3 h | 12 h | 4 h | 10 h 30 | 21 h |
-| 16 | 2 h 30 | 12 h | 4 h 30 | 10 h 45 | 21 h 30 |
-| 17 | 2 h | 12 h | 5 h | 11 h | 22 h |
-| 18 | 1 h 30 | 12 h | 5 h 30 | 11 h 15 | 22 h 30 |
-| 19 | 1 h | 12 h | 6 h | 11 h 30 | 23 h |
-| 20 | aucun | 12 h | 6 h 30 | 12 h | 24 h |
-| 21 | aucun | 12 h | 7 h | 12 h | 24 h |
-| 22 | aucun | 12 h | 7 h 30 | 12 h | 24 h |
-| 23 | aucun | 12 h | 8 h | 12 h | 24 h |
-| 24 | aucun | 12 h | 8 h 30 | 12 h | 24 h |
-| 25 | aucun | 12 h | 9 h | 12 h | 24 h |
-| 26 | aucun | 12 h | 9 h 30 | 12 h | 24 h |
-| 27 | aucun | 12 h | 10 h | 12 h | 24 h |
-| 28 | aucun | 12 h | 10 h 30 | 12 h | 24 h |
-| 29 | aucun | 12 h | 11 h | 12 h | 24 h |
-| 30 | aucun | 12 h | 12 h | 12 h | 24 h |
-
-</div>
-
-<div class="defs" markdown>
-
-**Aucun :** le personnage n'a pas besoin de dormir. On considère qu'il se repose quand il est capable de dormir (son délai Avant de pouvoir redormir écoulé), qu'il est en activité légère depuis le début de son [tour](../combat/deroulement-combat.md) précédent et qu'il l'annonce (aucune action requise) : ce repos compte comme un sommeil correct.
-
-</div>
 
 </div>
 

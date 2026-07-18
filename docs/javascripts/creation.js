@@ -36,6 +36,7 @@
   var rootEl = null;
   var updaters = [];   // rafraîchisseurs des valeurs affichées sur la feuille
   var rebuildSens = null;   // re-rendu des blocs Sens (les lignes dépendent de la forme)
+  var capacitesRender = null;   // re-rendu de la liste des capacités (retour de l'Atelier)
   // Mode « fiche » condensé, posé par l'extension Roll20 (window.__hxhCompact) : on
   // retire du créateur ce qui n'aide qu'à LIRE les règles (rareté/description
   // d'Éclat, malus de PV de la taille…). Sur le site, __hxhCompact
@@ -90,12 +91,26 @@
       compAccess: {},     // compétence -> true/false : autorisation forcée à la main (absent = dérivée) — onglet Options
       capDivers: {},      // capacité (mouvement/port/apnee/sommeil) -> ± crans sur la ligne lue
       armesCorpsDivers: {},  // arme de corps -> ± divers (les armes portées le stockent sur leur entrée)
+      armesCorpsDmgDivers: {}, // arme de corps -> ± dégâts (idem : armes portées sur leur entrée)
       de: "1d100",        // dé des jets (seul dé nommé par les règles : critique-blessures)
       pv: null,           // PV courants (null = au maximum)
+      pvMaxOverride: null, // PV max forcés à la main (null = valeur calculée)
       fatigue: null,      // points de fatigue courants (réserve, max = Endurance ; null = au maximum)
+      fatigueBonus: 0,    // bonus à la fatigue max (avantage « Fatigue supérieure », don du MJ)
+      reduction: {},      // réduction de dégâts d'armure par type (CON/TRA/PER/FEU/FRO/ÉLE/DÉC)
+      actions: null,      // nombre d'actions par tour (null = au choix du MJ, non fixé)
       etatsActifs: {},    // nom d'état -> true, ou nom du palier
       avantages: [],      // [{ name, note }] : nom du livre (coût compté) ou ligne libre
       avPtsDivers: 0,     // ajustement des points d'avantage (plus haut palier d'Éclat atteint, dons du MJ)
+      // --- Nen ---
+      archetype: "",      // archétype choisi (une des 12 valeurs de DATA.archetypes) : fixe les 6 affinités
+      diTotal: 0,         // capital de développement intérieur (comme pfTotal ; prestige = ⌈DI ÷ 100⌉)
+      techniques: {},     // nom de technique -> palier ("Basique".."Maître") pour les techniques à paliers, true pour un bloc
+      auraDev: { uar: 0, rua: 0, uam: 0 },  // achats d'aura payés en DI (mult UAR, mult RUA en plus, achats +200 UAM)
+      auraOverride: { uam: null, uar: null, rua: null },  // valeurs d'aura forcées à la main (null = calculé)
+      affiniteDivers: {}, // catégorie -> ± affinité (avantage, race, don du MJ)
+      diCat: {},          // sigle de catégorie (DR/DE/DT/DM/DC/DS) -> DI investi dans la conversion (après Hatsu)
+      capacites: [],      // capacités de Nen du perso : [{ id, name, atelier: <état Atelier>, report: <résumé> }]
       portrait: ""        // URL d'une image de personnage
     };
   }
@@ -124,6 +139,34 @@
     b.caracs = caracs;
     b.caracDivers = numMap(b.caracDivers, -30, 30);
     b.capDivers = numMap(b.capDivers, -30, 30);
+    // Nen : techniques = map nom -> palier(chaîne) | true ; diCat/auraDev = nombres
+    var tk = {};
+    for (var tn in b.techniques) {
+      var tv = b.techniques[tn];
+      if (tv === true || ["Basique", "Avancé", "Expert", "Maître"].indexOf(tv) >= 0) tk[tn] = tv;
+    }
+    b.techniques = tk;
+    b.diCat = numMap(b.diCat, 0, 999999);
+    var ad = blank().auraDev;
+    if (b.auraDev && typeof b.auraDev === "object") {
+      for (var ak in ad) if (typeof b.auraDev[ak] === "number" && isFinite(b.auraDev[ak])) ad[ak] = Math.max(0, b.auraDev[ak]);
+    }
+    b.auraDev = ad;
+    var ao = { uam: null, uar: null, rua: null };
+    if (b.auraOverride && typeof b.auraOverride === "object") {
+      ["uam", "uar", "rua"].forEach(function (k) {
+        if (typeof b.auraOverride[k] === "number" && isFinite(b.auraOverride[k])) ao[k] = b.auraOverride[k];
+      });
+    }
+    b.auraOverride = ao;
+    b.affiniteDivers = numMap(b.affiniteDivers, -999, 999);
+    b.capacites = (Array.isArray(b.capacites) ? b.capacites : []).filter(function (c) {
+      return c && typeof c === "object" && typeof c.name === "string" && c.atelier && typeof c.atelier === "object";
+    }).map(function (c) {
+      return { id: typeof c.id === "string" && c.id ? c.id : capId(),
+               name: c.name, atelier: c.atelier,
+               report: c.report && typeof c.report === "object" ? c.report : null };
+    });
     var so = {};
     for (var so1 in b.sensOverride) if (SENS_NIVEAUX.indexOf(b.sensOverride[so1]) >= 0) so[so1] = b.sensOverride[so1];
     b.sensOverride = so;
@@ -131,6 +174,7 @@
     for (var ca1 in b.compAccess) if (b.compAccess[ca1] === true || b.compAccess[ca1] === false) ca[ca1] = b.compAccess[ca1];
     b.compAccess = ca;
     b.armesCorpsDivers = numMap(b.armesCorpsDivers, -9999, 9999);
+    b.armesCorpsDmgDivers = numMap(b.armesCorpsDmgDivers, -9999, 9999);
     b.comps = numMap(b.comps, 0, 9999);
     b.divers = numMap(b.divers, -9999, 9999);
     b.acuite = numMap(b.acuite, 0, 10);
@@ -140,10 +184,12 @@
     }).map(function (c) {
       c.pf = typeof c.pf === "number" && isFinite(c.pf) ? Math.max(0, c.pf) : 0;
       c.divers = typeof c.divers === "number" && isFinite(c.divers) ? c.divers : 0;
+      c.champ = typeof c.champ === "string" && c.champ ? c.champ : "Personnalisé";
       return c;
     });
     b.armes = b.armes.filter(function (x) { return x && typeof x.name === "string"; }).map(function (x) {
       x.divers = typeof x.divers === "number" && isFinite(x.divers) ? x.divers : 0;
+      x.dmgDivers = typeof x.dmgDivers === "number" && isFinite(x.dmgDivers) ? x.dmgDivers : 0;
       return x;
     });
     b.avantages = b.avantages.filter(function (x) { return x && typeof x === "object"; }).map(function (x) {
@@ -155,6 +201,10 @@
     for (var e in b.etatsActifs) if (b.etatsActifs[e] === true || typeof b.etatsActifs[e] === "string") ea[e] = b.etatsActifs[e];
     b.etatsActifs = ea;
     if (typeof s.pv === "number" && isFinite(s.pv)) b.pv = s.pv;           // null par défaut : le test de type l'aurait écarté
+    if (typeof s.pvMaxOverride === "number" && isFinite(s.pvMaxOverride)) b.pvMaxOverride = s.pvMaxOverride;
+    if (typeof s.fatigueBonus === "number" && isFinite(s.fatigueBonus)) b.fatigueBonus = s.fatigueBonus;
+    if (typeof s.actions === "number" && isFinite(s.actions)) b.actions = s.actions;
+    b.reduction = numMap(b.reduction, -9999, 9999);
     if (typeof s.fatigue === "number" && isFinite(s.fatigue)) b.fatigue = clamp(s.fatigue, -30, 30);
     else b.fatigue = null;
     return b;
@@ -238,14 +288,18 @@
       combat: {
         pv: pvCourant(), pvMax: pvMax(),
         init: compTotal("Initiative") + g, esquive: compTotal("Esquive") + g, parade: compTotal("Parade") + g,
-        fatigue: fatiguePts(), fatigueMax: caracVal("END"), modGlobal: g
+        fatigue: fatiguePts(), fatigueMax: fatigueMax(), modGlobal: g
       },
       capacites: {
         mouvement: capRow("mouvement", capVal("mouvement")) || [],
         port: capRow("port", capVal("port")) || [],
         apnee: capRow("apnee", capVal("apnee")) || [],
-        sommeil: capRow("sommeil", capVal("sommeil")) || [],
-        sommeilCols: DATA.capacites.sommeil ? DATA.capacites.sommeil.cols : []
+        repos: capRow("repos", capVal("repos")) || [],
+        reposCols: DATA.capacites.repos ? DATA.capacites.repos.cols : [],
+        fond: capRow("fond", capVal("fond")) || [],
+        fondCols: DATA.capacites.fond ? DATA.capacites.fond.cols : [],
+        pression: capRow("pression", capVal("pression")) || [],
+        pressionCols: DATA.capacites.pression ? DATA.capacites.pression.cols : []
       },
       competences: comps,
       armes: armes,
@@ -262,6 +316,14 @@
       }),
       avPoints: { depenses: avPtsSpent(), total: avPtsTotal() },
       etats: etats,
+      nen: hasNen() ? {
+        archetype: state.archetype, prestige: prestige(),
+        di: diSpent(), diTotal: state.diTotal || 0,
+        uam: uam(), uar: uar(), rua: rua(),
+        affinites: DATA.nenCats.map(function (c, i) { return { cat: c, pct: affinites()[i] }; }),
+        techniques: Object.keys(state.techniques).map(function (n) { return { name: n, palier: state.techniques[n] === true ? "" : state.techniques[n] }; }),
+        capacites: state.capacites.map(function (c) { return { name: c.name, report: c.report || null }; })
+      } : null,
       notes: state.notes || "",
       difficultes: DATA.difficultes
     };
@@ -411,6 +473,12 @@
     if (entry) return entry.divers || 0;
     return (a && state.armesCorpsDivers[a.name]) || 0;
   }
+  // ± dégâts propre à une arme (avantage « Armes de corps supérieures », tranchant
+  // de Nen ou d'art, décision du MJ) : ajouté aux dégâts, jamais à l'attaque.
+  function armeDmgDivers(a, entry) {
+    if (entry) return entry.dmgDivers || 0;
+    return (a && state.armesCorpsDmgDivers[a.name]) || 0;
+  }
   // --- règles : avantages (avantages.md) ---------------------------------------
   // Les points d'avantage suivent le plus haut palier d'Éclat atteint (palier
   // inférieur). La fiche connaît l'Éclat de Naissance et l'actuel : elle prend
@@ -438,6 +506,141 @@
     return s;
   }
 
+  // --- règles : Nen -----------------------------------------------------------
+  // Constantes des règles (aura.md, di.md, techniques-nen.md) : formules stables,
+  // codées ici comme le reste des calculs du créateur ; le catalogue (techniques,
+  // archétypes) vient de creation.json.
+  var NEN_PALIERS = ["Basique", "Avancé", "Expert", "Maître"];
+  var NEN_ETATS = ["Ten", "Ren", "Ken", "En", "Zetsu", "Ko", "Ryu"];   // exclusifs (techniques-nen.md)
+  var TEN_RUA = { "Basique": 5, "Avancé": 10, "Expert": 15, "Maître": 20 };   // Ten -> base de RUA
+  var REN_UAR = { "Basique": 5, "Avancé": 10, "Expert": 15, "Maître": 20 };   // Ren -> base d'UAR
+  // catégorie de Nen -> { sigle du pool, carac mentale requise } (di.md, capacites-de-nen.md)
+  var NEN_CAT_META = {
+    "renforcement":   { sigle: "DR", carac: "VOL" },
+    "émission":       { sigle: "DE", carac: "LOG" },
+    "transmutation":  { sigle: "DT", carac: "INS" },
+    "manipulation":   { sigle: "DM", carac: "ÉRU" },
+    "conjuration":    { sigle: "DC", carac: "IMA" },
+    "spécialisation": { sigle: "DS", carac: "CHA" }
+  };
+  var AURA_COSTS = { uar: 40, rua: 20, uam: 5 };   // DI par achat (aura.md)
+
+  function techByName(name) {
+    for (var i = 0; i < (DATA.techniques || []).length; i++) if (DATA.techniques[i].name === name) return DATA.techniques[i];
+    return null;
+  }
+  function hasNen() { return !!state.techniques["Initiation au Nen"]; }
+  function hasHatsu() { return !!state.techniques["Hatsu"]; }
+  function hasSpecialiste() {
+    for (var i = 0; i < state.avantages.length; i++) if (state.avantages[i].name === "Spécialiste") return true;
+    return false;
+  }
+  function prestige() { return Math.ceil((state.diTotal || 0) / 100); }
+  // niveau de maîtrise atteint pour une technique : indice de palier (0..3), ou
+  // -1 si non apprise ; un bloc appris renvoie 0
+  function techRank(name) {
+    var v = state.techniques[name];
+    if (!v) return -1;
+    return v === true ? 0 : NEN_PALIERS.indexOf(v);
+  }
+  // une clause de prérequis « Ten Basique » / « Initiation au Nen » / « aucun »
+  function prereqMet(clause) {
+    clause = clause.trim();
+    if (!clause || /^aucun$/i.test(clause)) return true;
+    var m = clause.match(/^(.*?)\s+(Basique|Avancé|Expert|Maître)$/);
+    if (m) return techRank(m[1].trim()) >= NEN_PALIERS.indexOf(m[2]);
+    return techRank(clause) >= 0;   // technique d'un bloc (nom seul)
+  }
+  function prereqAllMet(prereqStr) {
+    return (prereqStr || "").split(",").every(function (c) { return prereqMet(c); });
+  }
+  // affinités du personnage : tableau de 6 (ordre renf, émi, trans, mani, conj,
+  // spé) ; la spécialisation n'existe qu'avec l'avantage Spécialiste
+  function archetypeObj() {
+    for (var i = 0; i < (DATA.archetypes || []).length; i++) if (DATA.archetypes[i].name === state.archetype) return DATA.archetypes[i];
+    return null;
+  }
+  function affinites() {
+    // affinité = archétype + ajustement par catégorie (avantage « Affinité
+    // supérieure », race, don du MJ) ; la spécialisation reste à 0 sans Spécialiste.
+    var a = archetypeObj();
+    return DATA.nenCats.map(function (cat, i) {
+      if (cat === "spécialisation" && !hasSpecialiste()) return 0;
+      var base = a ? (a.affinites[i] || 0) : 0;
+      return Math.max(0, base + (state.affiniteDivers[cat] || 0));
+    });
+  }
+  function affiniteCat(cat) { return affinites()[DATA.nenCats.indexOf(cat)] || 0; }
+  // aura dérivée (aura.md)
+  function tenBonus() { var v = state.techniques["Ten"]; return v && v !== true ? (TEN_RUA[v] || 0) : 0; }
+  function renBonus() { var v = state.techniques["Ren"]; return v && v !== true ? (REN_UAR[v] || 0) : 0; }
+  function baseRUA() { return 5 + tenBonus(); }
+  function baseUAR() { return 5 + renBonus(); }
+  function mulUAR() { return state.auraDev.uar || 0; }
+  function mulRUA() { return (state.auraDev.rua || 0) + (state.auraDev.uar || 0); }   // acheter un Mul UAR monte aussi le Mul RUA
+  function uamAuto() { return 1000 * prestige() + 200 * (state.auraDev.uam || 0); }
+  function uarAuto() { return baseUAR() * (mulUAR() + 1); }
+  function ruaAuto() { return baseRUA() * (mulRUA() + 1); }
+  // valeurs d'aura : override manuel (don du MJ, avantage, règle maison) sinon calcul
+  function uam() { return state.auraOverride.uam != null ? state.auraOverride.uam : uamAuto(); }
+  function uar() { return state.auraOverride.uar != null ? state.auraOverride.uar : uarAuto(); }
+  function rua() { return state.auraOverride.rua != null ? state.auraOverride.rua : ruaAuto(); }
+  function auraDiSpent() { return AURA_COSTS.uar * (state.auraDev.uar || 0) + AURA_COSTS.rua * (state.auraDev.rua || 0) + AURA_COSTS.uam * (state.auraDev.uam || 0); }
+  function auraDiCap() { return 60 * prestige(); }   // plafond 60 DI/prestige sur l'aura
+  // DI dépensé : techniques apprises + achats d'aura + conversion en catégories + conception des capacités
+  function techDiSpent() {
+    var s = 0;
+    for (var name in state.techniques) {
+      var t = techByName(name);
+      if (!t) continue;
+      if (t.bloc) { s += t.cout || 0; }
+      else {
+        var r = techRank(name);
+        for (var i = 0; i <= r; i++) s += (t.paliers[i] && t.paliers[i].cout) || 0;
+      }
+    }
+    return s;
+  }
+  function diCatSpent() { var s = 0; for (var k in state.diCat) s += state.diCat[k] || 0; return s; }
+  function capacitesDi() { var s = 0; state.capacites.forEach(function (c) { if (c.report && c.report.di) s += c.report.di; }); return s; }
+  function diSpent() { return techDiSpent() + auraDiSpent() + diCatSpent() + capacitesDi(); }
+  // pool développé dans une catégorie = DI investi × affinité d'apprentissage (arrondi inférieur)
+  function poolCat(cat) { return Math.floor((state.diCat[cat] || 0) * affiniteCat(cat) / 100); }
+  function capId() { return "cap" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  // --- pont vers l'Atelier (page /creation/) ----------------------------------
+  // On dépose un relais dans localStorage puis on navigue vers l'Atelier ; celui-ci
+  // le lit au montage, ouvre le schéma, et à l'enregistrement réécrit un retour que
+  // le créateur absorbe. Même famille de partage que forge-weapons / creation-cards.
+  var HANDOFF = "nen-atelier-handoff", RETURN = "nen-atelier-return";
+  function openAtelier(cap) {
+    try {
+      localStorage.setItem(HANDOFF, JSON.stringify({
+        capId: cap.id, name: cap.name || "",
+        returnTo: location.pathname + location.search,
+        state: cap.atelier || null
+      }));
+    } catch (e) {}
+    save();
+    location.href = siteBase() + "creation/";
+  }
+  function absorbAtelierReturn() {
+    var raw;
+    try { raw = localStorage.getItem(RETURN); } catch (e) { return; }
+    if (!raw) return;
+    try { localStorage.removeItem(RETURN); } catch (e) {}
+    var ret;
+    try { ret = JSON.parse(raw); } catch (e) { return; }
+    if (!ret || !ret.state) return;
+    var cap = null;
+    for (var i = 0; i < state.capacites.length; i++) if (state.capacites[i].id === ret.capId) cap = state.capacites[i];
+    if (!cap) { cap = { id: ret.capId || capId(), name: "", atelier: null, report: null }; state.capacites.push(cap); }
+    cap.atelier = ret.state;
+    if (ret.report) { cap.report = ret.report; if (ret.report.name) cap.name = ret.report.name; }
+    if (ret.name && !cap.name) cap.name = ret.name;
+    if (!cap.name) cap.name = "Capacité";
+    setTab("nen");
+  }
+
   // --- règles : PF, niveau, compétences ----------------------------------------
   function niveau() { return Math.max(1, Math.ceil((state.pfTotal || 0) / 100)); }
   function compPfMax() { return 5 * niveau(); }   // 5 PF max par compétence et par niveau
@@ -451,12 +654,71 @@
     var c = compByName(name);
     if (!c) return 0;
     var abbr = caracAbbr(c.carac);
-    return compBase(name) + modOf(caracVal(abbr)) + diversOf(name);
+    return compBase(name) + modOf(caracVal(abbr)) + diversOf(name) + etatMalus(c) + clarteMalus(c);
+  }
+
+  // --- règles : états et clarté appliqués aux jets (etats.md, sens.md) ---------
+  // Les « Situations » ne valent qu'en opposition à l'adversaire : elles ne
+  // touchent pas les propres jets du personnage. Les « Autres états » (Paralysie,
+  // À terre, Inconscience…) s'appliquent à ses compétences.
+  function activeEtats() {
+    var out = [];
+    (DATA.etats || []).forEach(function (e) {
+      var v = state.etatsActifs[e.name];
+      if (!v || /situation/i.test(e.categorie || "")) return;
+      var mods = e.mods;
+      if (v !== true) e.paliers.forEach(function (p) { if (p.name === v) mods = p.mods; });
+      out.push({ name: e.name, mods: mods || [] });
+    });
+    return out;
+  }
+  // clarté effective d'un sens = clarté choisie + mods d'état « Clarté des sens »
+  // (l'Inconscience baisse tous les sens), bornée 0-10
+  function clarteEtatMod() {
+    var s = 0;
+    activeEtats().forEach(function (e) { e.mods.forEach(function (m) { if (m.cible === "Clarté des sens") s += m.val; }); });
+    return s;
+  }
+  function clarteOf(name) {
+    var base = state.acuite[name] != null ? state.acuite[name] : 10;
+    return clamp(base + clarteEtatMod(), 0, 10);
+  }
+  // Malus d'état sur une compétence : les cibles sont des groupes/noms
+  // (Attaque, Défense, Physique, Sensoriel, Vocal, Initiative/Esquive/Parade).
+  // Par état, un seul malus s'applique : le plus PRÉCIS qui désigne la compétence
+  // (nom exact > groupe ciblé > Physique). Plusieurs états se cumulent.
+  function etatCibleRank(cible, k) {
+    if ((cible === "Initiative" || cible === "Esquive" || cible === "Parade") && k.name === cible) return 3;
+    if ((cible === "Attaque" || cible === "Défense" || cible === "Sensoriel" || cible === "Vocal") && (k.groupes || []).indexOf(cible) >= 0) return 2;
+    if (cible === "Physique" && (k.groupes || []).indexOf("Physique") >= 0) return 1;
+    return 0;
+  }
+  function etatMalus(k) {
+    if (!k || !k.groupes) return 0;   // compétences personnalisées : hors groupes
+    var total = 0;
+    activeEtats().forEach(function (e) {
+      var best = null;
+      e.mods.forEach(function (m) { var r = etatCibleRank(m.cible, k); if (r > 0 && (!best || r > best.r)) best = { r: r, val: m.val }; });
+      if (best) total += best.val;
+    });
+    return total;
+  }
+  // Malus de clarté (sens.md). Une compétence du groupe Sensoriel PERÇOIT par son
+  // sens (elle en porte le nom) : −20 par point de clarté manquant. Une compétence
+  // du groupe Physique AGIT en s'appuyant sur la Vue par défaut : −10 par point de
+  // clarté manquant de la Vue. Un jet ne subit qu'un seul des deux malus.
+  function clarteMalus(k) {
+    if (!k || !k.groupes) return 0;
+    if (k.groupes.indexOf("Sensoriel") >= 0) return -20 * (10 - clarteOf(k.name));
+    if (k.groupes.indexOf("Physique") >= 0) return -10 * (10 - clarteOf("Vue"));
+    return 0;
   }
   // Points de fatigue courants : réserve dont le maximum est l'Endurance
   // (capacites-physiques.md) ; null = au maximum. Chaque point SOUS ZÉRO donne
-  // −10 à tous les jets ; à −Endurance, le personnage s'effondre.
-  function fatiguePts() { return state.fatigue == null ? caracVal("END") : state.fatigue; }
+  // −10 à tous les jets ; à −(fatigue max), le personnage s'effondre.
+  // fatigue max = Endurance + bonus (avantage « Fatigue supérieure », don du MJ).
+  function fatigueMax() { return caracVal("END") + (state.fatigueBonus || 0); }
+  function fatiguePts() { return state.fatigue == null ? fatigueMax() : state.fatigue; }
   // Modificateurs qui pèsent sur TOUS les jets : réglage MJ/temporaire, et les
   // points de fatigue négatifs (−10 par point sous zéro).
   function modsGlobaux() { return (state.modGlobal || 0) + 10 * Math.min(0, fatiguePts()); }
@@ -512,9 +774,14 @@
     for (var i = 0; i < DATA.tailles.length; i++) if (DATA.tailles[i].name === state.tailleCat) return DATA.tailles[i];
     return null;
   }
-  function pvMax() {
+  function pvMaxAuto() {
     var t = tailleCat();
     return ((state.pvParNiveau || 0) + (t ? t.pvMod : 0)) * niveau();
+  }
+  function pvMax() {
+    // override manuel des PV max (état, don du MJ, règle maison) s'il est posé ;
+    // sinon la valeur calculée (PV par niveau + taille) × niveau.
+    return state.pvMaxOverride != null ? state.pvMaxOverride : pvMaxAuto();
   }
   function capRow(key, val) {
     var c = DATA.capacites[key];
@@ -581,7 +848,9 @@
   function modDegatsArme(a) {
     var mm = /×(\d)\s*FOR/.exec(a.mod || "");
     if (mm) {
-      var useDex = /Finesse/.test(a.props);
+      // Finesse (armes.md) : le porteur applique, au choix, son modificateur de
+      // Dextérité au lieu de celui de Force → on retient le meilleur des deux.
+      var useDex = /Finesse/.test(a.props) && modOf(caracVal("DEX")) > modOf(caracVal("FOR"));
       var carac = useDex ? "DEX" : "FOR";
       return { txt: "×" + mm[1] + " " + carac, val: +mm[1] * modOf(caracVal(carac)) };
     }
@@ -712,6 +981,21 @@
     if (over.length) w.push("Au-dessus du plafond de création (" + cap + ") : " + over.join(", ") + ".");
     if (pfSpent() > state.pfTotal) w.push("Les PF dépensés (" + pfSpent() + ") dépassent le capital (" + state.pfTotal + ").");
     if (avPtsSpent() > avPtsTotal()) w.push("Les points d'avantage dépensés (" + avPtsSpent() + ") dépassent le total (" + avPtsTotal() + ").");
+    if (diSpent() > (state.diTotal || 0)) w.push("Le DI dépensé (" + diSpent() + ") dépasse le capital de développement intérieur (" + (state.diTotal || 0) + ").");
+    if (auraDiSpent() > auraDiCap()) w.push("Développement de l'aura : " + auraDiSpent() + " DI dépassent le plafond de " + auraDiCap() + " DI (60 par prestige).");
+    (DATA.techniques || []).forEach(function (t) {
+      if (!state.techniques[t.name]) return;
+      if (t.bloc) { if (!prereqAllMet(t.prereq)) w.push("Technique « " + t.name + " » : prérequis non rempli (" + t.prereq + ")."); return; }
+      var r = techRank(t.name), pr = t.paliers[r];
+      if (pr && !prereqAllMet(pr.prereq)) w.push("Technique « " + t.name + " " + t.paliers[r].niveau + " » : prérequis non rempli (" + pr.prereq + ").");
+    });
+    if (diCatSpent() > 0 && !hasHatsu()) w.push("La conversion du DI en catégories exige le Hatsu.");
+    if (state.capacites.length && !hasHatsu()) w.push("Créer une capacité exige le Hatsu.");
+    DATA.nenCats.forEach(function (cat) {
+      var m = NEN_CAT_META[cat];
+      if ((state.diCat[cat] || 0) > 0 && affiniteCat(cat) === 0)
+        w.push("DI investi en " + cat + " sans affinité (archétype ou avantage Spécialiste manquant).");
+    });
     var verrou = [];
     DATA.competences.forEach(function (k) { if (!compAccessible(k) && state.comps[k.name] > 0) verrou.push(k.name); });
     if (verrou.length) w.push("PF investis dans une compétence verrouillée par la forme : " + verrou.join(", ") + " (onglet Options pour l'autoriser).");
@@ -748,7 +1032,7 @@
     });
     if (argentDepense() > state.argent) w.push("L'équipement (" + fmt(argentDepense()) + " Ɉ) dépasse la bourse (" + fmt(state.argent) + " Ɉ).");
     if (state.eclatA !== state.eclatN && !COMPACT) w.push("Éclat actuel ≠ Éclat de Naissance : réservé aux bascules rares en cours de vie.");
-    if (caracVal("END") > 0 && fatiguePts() <= -caracVal("END")) w.push("Points de fatigue à −" + caracVal("END") + " : le personnage s'effondre d'épuisement (Inconscience).");
+    if (fatigueMax() > 0 && fatiguePts() <= -fatigueMax()) w.push("Points de fatigue à −" + fatigueMax() + " : le personnage s'effondre d'épuisement (Inconscience).");
     if (pvCourant() <= 0) w.push("PV courants à 0 ou moins.");
     return w;
   }
@@ -760,8 +1044,10 @@
 
     if (meterBox) {
       meterBox.innerHTML = "";
-      [["Caractéristiques", caracSpent(), CARAC_POINTS, "pts"],
-       ["Points de formation", pfSpent(), state.pfTotal, "PF"]].forEach(function (m) {
+      var meters = [["Caractéristiques", caracSpent(), CARAC_POINTS, "pts"],
+       ["Points de formation", pfSpent(), state.pfTotal, "PF"]];
+      if (hasNen() || state.diTotal) meters.push(["Développement intérieur", diSpent(), state.diTotal, "DI"]);
+      meters.forEach(function (m) {
         var box = el("span", "pc-meter");
         box.appendChild(el("span", null, m[0]));
         var v = el("b", m[1] > m[2] ? "over" : "");
@@ -805,7 +1091,10 @@
     t.appendChild(el("span", null, title));
     if (sub) t.appendChild(el("small", null, sub));
     b.appendChild(t);
-    if (note && !COMPACT) b.appendChild(el("div", "pc-block-note", note));   // notes = aide à lire les règles : masquées sur la fiche condensée
+    // note (mode d'emploi des règles) volontairement IGNORÉE : une fiche de
+    // personnage ne porte que des données et des contrôles, jamais de prose
+    // explicative (l'aide survit dans les tooltips). L'argument reste pour compat.
+    void note;
     parent.appendChild(b);
     return b;
   }
@@ -968,9 +1257,13 @@
       btns[d[0]] = t;
       panes[d[0]] = el("div", "pc-pane");
     });
-    sheet.appendChild(bar);
+    // bandeau collant : budgets + onglets + avertissements restent visibles en défilant
+    var stick = el("div", "pc-stick");
+    if (meterBox && meterBox.parentNode) stick.appendChild(meterBox);   // déplace les budgets dans le bandeau
+    stick.appendChild(bar);
     warnBox = el("div", "pc-warns");
-    sheet.appendChild(warnBox);
+    stick.appendChild(warnBox);
+    sheet.appendChild(stick);
     defs.forEach(function (d) { sheet.appendChild(panes[d[0]]); });
     function show(id) {
       defs.forEach(function (d) {
@@ -995,43 +1288,50 @@
 
     // ----- colonne A : caractéristiques + éclat + notes -----
     var bC = block(colA, "Caractéristiques", null,
-      "60 points à répartir · chaque caractéristique de 3 à 9 · 1 point par point");
+      "60 points · chaque carac de 3 à 9 · le modificateur (à droite) est le nombre ajouté aux jets");
     [["physique", "Physiques"], ["mentale", "Mentales"]].forEach(function (grp) {
-      var head = el("div", "pc-trow pc-carac-row head");
-      head.appendChild(el("span", null, ""));
-      head.appendChild(el("span", null, grp[1]));
-      head.appendChild(el("span", "pc-cell-num", "Valeur"));
-      head.appendChild(el("span", "pc-cell-num", "±"));
-      head.appendChild(el("span", "pc-cell-num", "Mod"));
-      bC.appendChild(head);
+      bC.appendChild(el("div", "pc-carac-grp", grp[1]));
       DATA.caracs.filter(function (k) { return k.groupe === grp[0]; }).forEach(function (k) {
-        var row = el("div", "pc-trow pc-carac-row");
-        row.appendChild(el("span", "pc-abbr", k.abbr));
-        var nm = el("span", null, k.name);
+        // mini-tuile à deux lignes : (abréviation + nom + modificateur) puis
+        // (stepper de valeur + ±) — reste lisible même à la largeur des règles
+        var row = el("div", "pc-carac-row");
+        var top = el("div", "pc-carac-top");
+        top.appendChild(el("span", "pc-abbr", k.abbr));
+        var nm = el("span", "nm", k.name);
         nm.title = k.desc;
-        row.appendChild(nm);
-        stepper(row,
+        top.appendChild(nm);
+        row.appendChild(top);
+        var bot = el("div", "pc-carac-bot");
+        stepper(bot,
           function () { return caracBase(k.abbr); },
           function (v) { state.caracs[k.abbr] = v; },
           function () { return CARAC_MIN; },
           function () { return caracMax(); });
-        var dv = el("input", "pc-comp-div");
+        var dv = el("input", "pc-comp-div pc-cdiv");
         dv.type = "number"; dv.placeholder = "±";
         dv.value = state.caracDivers[k.abbr] || "";
-        dv.title = "Bonus ou malus divers à la caractéristique (équipement, art, décision du MJ) : il change la valeur effective et tout ce qui en découle, pas le coût en points.";
+        dv.title = "Bonus ou malus divers à la caractéristique (équipement, art, décision du MJ) : il change la valeur effective, pas le coût en points.";
         dv.addEventListener("input", function () {
           var v = num(dv.value, 0);
           if (v) state.caracDivers[k.abbr] = v; else delete state.caracDivers[k.abbr];
           refresh();
         });
-        row.appendChild(dv);
-        var mod = el("span", "mod");
+        bot.appendChild(dv);
+        row.appendChild(bot);
+        var mod = el("span", "pc-cmod");
+        var modV = el("b", null, "");
+        var modE = el("small", null, "");   // valeur effective, badge affiché quand elle est ajustée
+        mod.appendChild(modV); mod.appendChild(modE);
+        rollable(mod, function () { return "Modificateur de " + k.name; }, function () { return modOf(caracVal(k.abbr)); });
         updaters.push(function () {
-          mod.textContent = signed(modOf(caracVal(k.abbr)));
-          mod.title = "Valeur effective " + caracVal(k.abbr) +
-            (state.caracDivers[k.abbr] ? " (" + caracBase(k.abbr) + " " + signed(state.caracDivers[k.abbr]) + ")" : "");
+          var eff = caracVal(k.abbr), m = modOf(eff), adj = eff !== caracBase(k.abbr);
+          modV.textContent = signed(m);
+          mod.classList.toggle("neg", m < 0);
+          modE.textContent = adj ? String(eff) : "";
+          mod.title = "Modificateur (ajouté aux jets) · valeur effective " + eff +
+            (adj ? " (" + caracBase(k.abbr) + " ajusté par la forme ou le divers)" : "") + "\n" + ROLL_HINT;
         });
-        row.appendChild(mod);
+        top.appendChild(mod);
         bC.appendChild(row);
       });
     });
@@ -1052,26 +1352,20 @@
     // Bloc Éclat (palier + description/rareté du livre) : c'est de la lecture de
     // règles, retiré de la fiche condensée — l'Éclat se règle dans l'en-tête.
     if (!COMPACT) {
-      var bE = block(colA, "Éclat");
-      var desc = el("div", "pc-eclat-desc");
-      var info = el("div", "pc-eclat-info");
+      // Bloc Éclat COMPACT : le palier (tier de prestige, il gouverne les points
+      // d'avantage) en sous-titre du bloc ; la saveur du livre reste en infobulle.
+      // Plus de ligne « Naissance » (inutile) ni de paragraphe de lecture.
+      var bE = block(colA, "Éclat", " ");
+      var eSub = bE.querySelector(".pc-block-title small");
       var note = el("div", "pc-block-note");
-      bE.appendChild(info); bE.appendChild(desc); bE.appendChild(note);
+      bE.appendChild(note);
       updaters.push(function () {
         var palier = Math.floor(clamp(state.eclatA, 0, 999) / 5) * 5;
-        info.innerHTML = "";
-        [["Palier", String(palier)]].forEach(function (kv) {
-          var s = el("span"); s.appendChild(document.createTextNode(kv[0] + " "));
-          s.appendChild(el("b", null, kv[1])); info.appendChild(s);
-        });
+        if (eSub) eSub.textContent = "Palier " + palier;
         var t = null;
         for (var i = 0; i < DATA.eclat.length; i++)
           if (DATA.eclat[i].val <= state.eclatN) t = DATA.eclat[i];
-        desc.innerHTML = "";
-        if (t) {
-          desc.appendChild(document.createTextNode(t.desc));
-          if (t.naissance) desc.appendChild(el("span", "n", "Naissance : " + t.naissance + "."));
-        }
+        if (t) bE.title = t.desc;
         note.textContent = state.eclatA > 50
           ? "Au-delà de 50, le livre ne fixe plus de répartition de création : l'outil reprend la ligne 45-50, au cadre du MJ."
           : "";
@@ -1174,6 +1468,8 @@
     // ----- colonne B : capacités physiques + combat + sens -----
     // étiquettes compactes pour les colonnes longues du livre
     var SHORT = {
+      "Intermédiaire": "Interm.",
+      "Temps de sommeil": "Sommeil",
       "Activité intermédiaire": "Act. inter.", "Activité lourde": "Act. lourde",
       "Avant de pouvoir redormir": "Redormir", "Avant d'être fatigué": "Fatigué"
     };
@@ -1181,19 +1477,27 @@
     // SHORT pour les intitulés longs : elles suivent les règles sans double saisie
     var capDefs = [
       ["mouvement", "Mouvement", null, "Distance par round (~6 s) selon l'allure d'activité."],
+      ["saut", "Saut", null, "Longueur de saut, sans élan et avec élan (Saut = Force)."],
       ["port", "Port", null, "Charge selon l'allure d'activité : portée, maniée, soulevée."],
+      ["lancer", "Lancer", null, "Multiplicateur des portées de jet et de tir des armes que les muscles propulsent (Lancer = Force)."],
       ["apnee", "Apnée", null, "Souffle retenu, selon l'activité du moment."],
-      ["sommeil", "Sommeil et activité", null, "Sommeil requis et durées d'activité par jour ; puis veille minimale avant de redormir et durée avant d'être fatigué."]
+      ["pression", "Pression", null, "Profondeur d'eau supportée selon l'allure (Pression = Endurance)."],
+      ["repos", "Repos", null, "Sommeil requis par jour, veille tenable avant de devoir redormir, et délai avant d'être fatigué."],
+      ["fond", "Fond", null, "Durées d'activité intermédiaire et lourde qu'un personnage peut fournir dans sa journée sans risque."]
     ];
+    // une seule carte à sous-sections (bloc de stats compact)
+    var bCap = block(COMPACT ? colA : colB, "Capacités physiques", null,
+      "Distances et durées selon l'allure ; le ± décale la ligne lue (états, arts, MJ).");
     capDefs.forEach(function (d) {
       var cap = DATA.capacites[d[0]];
       if (!cap) return;
-      var b = block(COMPACT ? colA : colB, d[1], " ");   // fiche : capacités en colonne A (équilibre) ; sub rempli par l'updater (carac + crans)
-      b.title = d[3];
-      var sub = b.querySelector(".pc-block-title small");
-      // ± en crans propre à la capacité (états, arts, MJ) : décale la ligne lue
-      // dans la table 0-30 sans toucher la caractéristique ni les jets
-      var cdv = el("input", "pc-comp-div");
+      var sec = el("div", "pc-capsec");
+      sec.title = d[3];
+      var h = el("div", "pc-capsec-head");
+      h.appendChild(el("span", "nm", d[1]));
+      var sub = el("span", "sub", "");
+      h.appendChild(sub);
+      var cdv = el("input", "pc-comp-div pc-cdiv");
       cdv.type = "number"; cdv.placeholder = "±";
       cdv.value = state.capDivers[d[0]] || "";
       cdv.title = "Bonus ou malus divers en crans à cette capacité (états, arts, décision du MJ) : décale la ligne lue dans la table 0-30, sans toucher la caractéristique ni les jets.";
@@ -1202,10 +1506,10 @@
         if (v) state.capDivers[d[0]] = v; else delete state.capDivers[d[0]];
         refresh();
       });
-      var tEl = b.querySelector(".pc-block-title");
-      if (tEl) tEl.appendChild(cdv);
+      h.appendChild(cdv);
+      sec.appendChild(h);
       var labels = d[2] || cap.cols.map(function (c) { return SHORT[c] || c; });
-      var row = el("div", "pc-cap3" + (labels.length > 3 ? " pc-cap5" : ""));
+      var row = el("div", "pc-cap3" + (labels.length > 3 ? " pc-cap5" : labels.length === 2 ? " pc-cap2" : labels.length === 1 ? " pc-cap1" : ""));
       var cells = [];
       labels.forEach(function (lbl) {
         var c = el("div", "c");
@@ -1215,18 +1519,18 @@
         cells.push(v);
         row.appendChild(c);
       });
-      b.appendChild(row);
+      sec.appendChild(row);
       updaters.push(function () {
         var dv = state.capDivers[d[0]] || 0;
-        if (sub) sub.textContent = cap.carac + " " + caracVal(cap.carac) + (dv ? " · " + signed(dv) + " cran" + (Math.abs(dv) > 1 ? "s" : "") : "");
+        sub.textContent = cap.carac + " " + caracVal(cap.carac) + (dv ? " · " + signed(dv) + " cran" + (Math.abs(dv) > 1 ? "s" : "") : "");
         var r = capRow(d[0], capVal(d[0])) || [];
         cells.forEach(function (cell, i) { cell.textContent = r[i] || "—"; });
       });
       // milieux de déplacement de la forme (formes.md) : sous le Mouvement
       if (d[0] === "mouvement") {
         var mil = el("div", "pc-block-note");
-        mil.style.marginTop = ".25rem";
-        b.appendChild(mil);
+        mil.style.margin = ".2rem 0 0";
+        sec.appendChild(mil);
         updaters.push(function () {
           var f = formeCur();
           if (!f) { mil.textContent = ""; return; }
@@ -1237,13 +1541,22 @@
           mil.textContent = "Milieux de la forme : terre " + terre + " · eau " + eau + " · airs " + airs + ".";
         });
       }
+      bCap.appendChild(sec);
     });
     // Fiche condensée : les capacités rejoignent les caractéristiques en tête de colonne A ;
     // on redescend avantages et notes en bas (ordre naturel d'une fiche).
     if (COMPACT) { colA.appendChild(bAv); colA.appendChild(bN); }
 
-    var bF = block(colB, "Combat", null, "Valeurs = base + modificateur de carac + divers, et le modificateur à toutes les actions");
-    var bigrow = el("div", "pc-bigrow");
+    var bF = block(colB, "Combat", null, "Valeurs = compétence + carac + divers + modificateur à toutes les actions ; cliquer pour lancer.");
+    var bigrow = el("div", "pc-bigrow pc-bigrow-4");
+    // tuile PV (courants / max) en tête, avec les trois jets défensifs
+    var pvBox = el("div", "pc-big red");
+    pvBox.appendChild(el("span", "k", "PV"));
+    var pvBigV = el("span", "v", "");
+    pvBox.appendChild(pvBigV);
+    pvBox.title = "PV courants / PV max (édition sous les tuiles)";
+    bigrow.appendChild(pvBox);
+    updaters.push(function () { pvBigV.textContent = fmt(pvCourant()) + " / " + fmt(pvMax()); });
     [["Initiative", "Initiative"], ["Esquive", "Esquive"], ["Parade", "Parade"]].forEach(function (d) {
       var box = el("div", "pc-big");
       box.appendChild(el("span", "k", d[0]));
@@ -1258,18 +1571,8 @@
       bigrow.appendChild(box);
     });
     bF.appendChild(bigrow);
-    // modificateur à toutes les actions (blessures, circonstances, décision du MJ)
-    var gm = el("div", "pc-kv");
-    gm.appendChild(el("span", "k", "Mod. à toutes les actions"));
-    var gmIn = el("input", "pc-comp-div");
-    gmIn.type = "number"; gmIn.placeholder = "±";
-    gmIn.value = state.modGlobal || "";
-    gmIn.title = "S'ajoute à tous les jets (Initiative, Esquive, Parade et le reste) : malus de blessures, circonstances, décision du MJ.";
-    gmIn.addEventListener("input", function () { state.modGlobal = num(gmIn.value, 0); refresh(); });
-    gm.appendChild(gmIn);
-    bF.appendChild(gm);
 
-    // PV courants (suivi en jeu)
+    // PV courants (édition : input + max), attaché à la tuile PV
     var pvKv = el("div", "pc-kv");
     pvKv.appendChild(el("span", "k", "PV courants"));
     var pvIn = el("input", "pc-comp-div");
@@ -1289,21 +1592,93 @@
       if (document.activeElement !== pvIn) pvIn.value = state.pv == null ? "" : state.pv;
     });
 
-    // Points de fatigue : réserve (max = Endurance), consommables +15/point sur
-    // un jet (5 max) ; sous zéro, −10 par point ; effondrement à −Endurance.
+    // PV max éditables : vide = calculé (PV par niveau × niveau + taille), une
+    // valeur force le maximum (état, don du MJ, règle maison).
+    var pvMaxKv = el("div", "pc-kv");
+    pvMaxKv.appendChild(el("span", "k", "PV max"));
+    var pvMaxIn = el("input", "pc-comp-div");
+    pvMaxIn.type = "number";
+    pvMaxIn.title = "PV maximum. Vide = valeur calculée (PV par niveau × niveau + taille) ; une valeur la force (état, don du MJ, règle maison).";
+    pvMaxIn.addEventListener("input", function () {
+      state.pvMaxOverride = pvMaxIn.value === "" ? null : num(pvMaxIn.value, 0);
+      refresh();
+    });
+    pvMaxKv.appendChild(pvMaxIn);
+    bF.appendChild(pvMaxKv);
+    updaters.push(function () {
+      if (document.activeElement !== pvMaxIn) {
+        pvMaxIn.value = state.pvMaxOverride == null ? "" : state.pvMaxOverride;
+        pvMaxIn.placeholder = String(pvMaxAuto());
+      }
+    });
+
+    // modificateur à toutes les actions (blessures, circonstances, décision du MJ)
+    var gm = el("div", "pc-kv");
+    gm.appendChild(el("span", "k", "Mod. à toutes les actions"));
+    var gmIn = el("input", "pc-comp-div");
+    gmIn.type = "number"; gmIn.placeholder = "±";
+    gmIn.value = state.modGlobal || "";
+    gmIn.title = "S'ajoute à tous les jets (Initiative, Esquive, Parade et le reste) : malus de blessures, circonstances, décision du MJ.";
+    gmIn.addEventListener("input", function () { state.modGlobal = num(gmIn.value, 0); refresh(); });
+    gm.appendChild(gmIn);
+    bF.appendChild(gm);
+
+    // Points de fatigue : réserve (max = Endurance + bonus), consommables +15/point
+    // sur un jet (5 max) ; sous zéro, −10 par point ; effondrement à −(fatigue max).
     var ftKv = el("div", "pc-kv");
     var ftLbl = el("span", "k", "Points de fatigue");
-    ftLbl.title = "Réserve : maximum = Endurance. Se dépasser : +15 au jet par point consommé (5 max par jet, via le panneau Jets). Sous zéro : −10 à tous les jets par point. À −Endurance : effondrement.";
+    ftLbl.title = "Réserve : maximum = Endurance + bonus. Se dépasser : +15 au jet par point consommé (5 max par jet, via le panneau Jets). Sous zéro : −10 à tous les jets par point. À −(fatigue max) : effondrement.";
     ftKv.appendChild(ftLbl);
     stepper(ftKv,
       function () { return fatiguePts(); },
       function (v) { state.fatigue = v; },
-      function () { return -caracVal("END"); },
-      function () { return caracVal("END"); });
+      function () { return -fatigueMax(); },
+      function () { return fatigueMax(); });
     var ftMax = el("span", "pc-cell-dim");
-    updaters.push(function () { ftMax.textContent = "/ " + caracVal("END"); });
+    updaters.push(function () { ftMax.textContent = "/ " + fatigueMax(); });
     ftKv.appendChild(ftMax);
+    // bonus de fatigue max (avantage « Fatigue supérieure », don du MJ) — révélé au survol comme les autres ±
+    var ftBonus = el("input", "pc-comp-div pc-cdiv");
+    ftBonus.type = "number"; ftBonus.placeholder = "±";
+    ftBonus.style.width = "2.1rem"; ftBonus.style.flex = "0 0 auto";
+    ftBonus.value = state.fatigueBonus || "";
+    ftBonus.title = "Bonus à la fatigue maximale (avantage « Fatigue supérieure », don du MJ) : s'ajoute à l'Endurance.";
+    ftBonus.addEventListener("input", function () {
+      var v = num(ftBonus.value, 0);
+      if (v) state.fatigueBonus = v; else state.fatigueBonus = 0;
+      refresh();
+    });
+    ftKv.appendChild(ftBonus);
     bF.appendChild(ftKv);
+
+    // Actions par tour (deroulement-combat.md : propre au personnage, en général
+    // 1 à 10 ; pas de formule) — champ au choix du MJ, comme PV / niveau.
+    var actKv = el("div", "pc-kv");
+    actKv.appendChild(el("span", "k", "Actions par tour"));
+    var actIn = el("input", "pc-comp-div");
+    actIn.type = "number"; actIn.placeholder = "MJ";
+    actIn.title = "Nombre d'actions par tour, propre au personnage (en général 1 à 10), au choix du MJ.";
+    actIn.value = state.actions == null ? "" : state.actions;
+    actIn.addEventListener("input", function () { state.actions = actIn.value === "" ? null : num(actIn.value, 0); refresh(); });
+    actKv.appendChild(actIn);
+    bF.appendChild(actKv);
+
+    // Réduction de dégâts d'armure par type (degats.md) : sept champs éditables,
+    // seule la réduction du type de l'attaque s'applique. Valeurs au choix du MJ.
+    bF.appendChild(el("div", "pc-kv-head", "Réduction de dégâts"));
+    var rdGrid = el("div", "pc-rd");
+    [["CON", "Contondant"], ["TRA", "Tranchant"], ["PER", "Perforant"], ["FEU", "Feu"], ["FRO", "Froid"], ["ÉLE", "Électricité"], ["DÉC", "Décomposition"]].forEach(function (d) {
+      var cell = el("label", "pc-rd-cell");
+      var lb = el("span", "l", d[0]); lb.title = d[1];
+      cell.appendChild(lb);
+      var inp = el("input", "pc-comp-div"); inp.type = "number"; inp.placeholder = "0";
+      inp.title = "Réduction de dégâts contre le type " + d[1] + " (armure). Perce-armure en ignore 40, Perce-blindage 80.";
+      inp.value = state.reduction[d[0]] || "";
+      inp.addEventListener("input", function () { var v = num(inp.value, 0); if (v) state.reduction[d[0]] = v; else delete state.reduction[d[0]]; refresh(); });
+      cell.appendChild(inp);
+      rdGrid.appendChild(cell);
+    });
+    bF.appendChild(rdGrid);
 
     // Armes portées : attaque par type d'emploi, parade, dégâts ; familiarité
     // (−20/−40) et Lourdeur comptées dans l'attaque, familiarité dans la parade.
@@ -1390,11 +1765,36 @@
         line.appendChild(pchip);
       }
       var md = modDegatsArme(a);
-      var dmg = el("span", "dmg", "Dégâts " + a.degats + (md.val || md.txt ? " " + signed(md.val) + (md.txt ? " (" + md.txt + ")" : "") : ""));
-      dmg.title = "Dégâts de l'arme, plus son modificateur (une seule source, armes.md). Blesser : dégâts × degré de touche ÷ 100.";
+      var dmgD = armeDmgDivers(a, entry);
+      var totalDmg = a.degats + (md.val || 0) + dmgD;
+      var dmg = el("span", "dmg", "Dégâts " + totalDmg + (md.txt ? " (" + md.txt + ")" : "") + (a.type ? " · " + a.type : ""));
+      dmg.title = "Dégâts " + a.degats + " de base" +
+        (md.val ? " · modificateur " + signed(md.val) + (md.txt ? " (" + md.txt + ")" : "") : "") +
+        (dmgD ? " · divers " + signed(dmgD) : "") + (a.type ? "\nType : " + a.type + " (l'attaquant choisit lequel s'il y en a plusieurs)" : "") +
+        "\nBlesser : dégâts × degré de touche ÷ 100.";
       line.appendChild(dmg);
+      // ± dégâts propre à l'arme (avantage, Nen, art, MJ), révélé au survol
+      var dmgIn = el("input", "pc-comp-div pc-cdiv");
+      dmgIn.type = "number"; dmgIn.placeholder = "±dég";
+      dmgIn.style.width = "2.7rem"; dmgIn.style.flex = "0 0 auto";
+      dmgIn.value = dmgD || "";
+      dmgIn.title = "Bonus ou malus de dégâts propre à cette arme (avantage « Armes de corps supérieures », tranchant de Nen ou d'art, décision du MJ).";
+      dmgIn.addEventListener("change", function () {
+        var v = num(dmgIn.value, 0);
+        if (entry) entry.dmgDivers = v;
+        else if (v) state.armesCorpsDmgDivers[a.name] = v; else delete state.armesCorpsDmgDivers[a.name];
+        refresh();
+      });
+      line.appendChild(dmgIn);
       if (a.munitions) line.appendChild(el("span", "mun", "Munitions " + a.munitions));
       box.appendChild(line);
+      // méta de l'arme : portée réelle + propriétés — ce qui la définit (armes.md)
+      var metaBits = [];
+      // portée affichée seulement si l'arme atteint au-delà du corps (un « Mêlée »
+      // seul = allonge naturelle, déjà donnée par l'espace/allonge du personnage)
+      if (a.portee && a.portee !== "—" && !/^\s*(mêlée|corps)\s*$/i.test(a.portee)) metaBits.push("Portée " + a.portee);
+      if (a.props && a.props !== "Aucune") metaBits.push(a.props);
+      if (metaBits.length) box.appendChild(el("div", "pc-arme-meta", metaBits.join(" · ")));
       var notes = [];
       var famGen = malusArme(a);
       if (famGen) notes.push("familiarité " + signed(famGen) + " (attaque et parade)");
@@ -1416,12 +1816,13 @@
     }
     updaters.push(renderArmes);
 
-    // États (etats.md) : cocher pour mémoire ; la plupart des malus ne valent
-    // que contre l'adversaire qui les cause, ils ne sont donc PAS appliqués
-    // automatiquement aux jets.
+    // États (etats.md) : cocher pour les appliquer. Les « Autres états » sont
+    // répercutés AUTOMATIQUEMENT sur les totaux de compétence (etatMalus dans
+    // compTotal) ; seules les « Situations » ne valent qu'en opposition et ne
+    // sont donc pas appliquées aux propres jets.
     if (DATA.etats && DATA.etats.length) {
       var bEt = block(colB, "États", null,
-        "Cliquer un état pour le noter (re-cliquer pour changer de palier ou l'ôter). Les Situations ne valent qu'en opposition à l'adversaire qui les cause ; les autres états s'appliquent à tous les jets concernés. Rien n'est appliqué automatiquement : reporter soi-même.");
+        "Cliquer un état pour le noter (re-cliquer pour changer de palier ou l'ôter). Les Situations ne valent qu'en opposition à l'adversaire qui les cause ; les autres états sont appliqués automatiquement aux jets concernés.");
       var chipBox = el("div", "pc-chips");
       var summary = el("div", "pc-etat-sum");
       function modsTxt(mods) {
@@ -1480,42 +1881,26 @@
         });
       });
     }
-    var pvRow = el("div", "pc-bigrow");
-    pvRow.style.marginTop = ".55rem";
-    var pvBox = el("div", "pc-big red");
-    pvBox.appendChild(el("span", "k", "PV"));
-    var pvV = el("span", "v", "");
-    pvV.style.fontSize = "1.1rem"; pvV.style.paddingTop = ".18rem";
-    pvBox.appendChild(pvV);
-    pvRow.appendChild(pvBox);
-    var mvBox = el("div", "pc-big");
-    mvBox.appendChild(el("span", "k", "Mouvement"));
-    var mvV = el("span", "v", "");
-    mvV.style.fontSize = ".95rem"; mvV.style.paddingTop = ".28rem";
-    mvBox.appendChild(mvV);
-    pvRow.appendChild(mvBox);
-    var adBox = el("div", "pc-big");
-    adBox.appendChild(el("span", "k", "Arme de départ"));
-    var adV = el("span", "v", "");
-    adV.style.fontSize = ".8rem"; adV.style.paddingTop = ".34rem";
-    adBox.appendChild(adV);
-    pvRow.appendChild(adBox);
-    bF.appendChild(pvRow);
+    // arme de départ (le PV et le Mouvement ont leurs propres tuiles/blocs)
+    var adKv = el("div", "pc-kv");
+    adKv.appendChild(el("span", "k", "Arme de départ"));
+    var adV = el("span", "v");
+    adKv.appendChild(adV);
+    bF.appendChild(adKv);
     updaters.push(function () {
-      pvV.textContent = fmt(pvCourant()) + " / " + fmt(pvMax());
-      pvBox.title = "PV courants / PV max";
-      var mv = capRow("mouvement", capVal("mouvement"));
-      mvV.textContent = mv ? mv[0] + " · " + mv[1] : "—";
-      adV.textContent = state.armeDepart || "—";
+      adV.textContent = state.armeDepart || "";
+      // pas d'arme de départ choisie → ligne masquée (un « — » seul ne sert à rien)
+      adKv.style.display = state.armeDepart ? "" : "none";
     });
+    // donnée du perso (issue de la taille) : espace occupé et allonge — pas la
+    // formule de calcul des PV, qui n'a pas sa place sur une fiche.
     var pvNote = el("div", "pc-block-note");
-    pvNote.style.marginTop = ".3rem";
+    pvNote.style.marginTop = ".25rem";
     updaters.push(function () {
       var t = tailleCat();
-      pvNote.textContent = "PV max = (PV par niveau " + (t && t.pvMod ? signed(t.pvMod) + " taille " : "") + ") × niveau " + niveau() +
-        (t ? " · espace " + t.espace + " · allonge " + t.allonge : "");
+      pvNote.textContent = t ? "Espace " + t.espace + " · allonge " + t.allonge : "";
     });
-    if (!COMPACT) bF.appendChild(pvNote);   // note « PV max = … » : calcul auto, masqué sur la fiche
+    if (!COMPACT) bF.appendChild(pvNote);
 
     // Les lignes dépendent de la forme du personnage (niveau par sens, sens
     // inexistants masqués) : elles se re-rendent quand la forme change.
@@ -1525,7 +1910,6 @@
         "Clarté de 0 à 10, départ 10 ; elle chute en jeu, pas à la création. Le niveau de chaque sens vient de la forme du personnage.");
       var head = el("div", "pc-trow pc-sens-row head");
       head.appendChild(el("span", null, "Sens"));
-      head.appendChild(el("span", "niv", "Niveau"));
       head.appendChild(el("span", "pc-cell-num", "Clarté"));
       b.appendChild(head);
       sensBoxes.push({ typ: typ, box: b });
@@ -1542,9 +1926,10 @@
             var row = el("div", "pc-trow pc-sens-row");
             var latent = nv === "Latent";
             var nm = el("span", "nm" + (latent ? " latent" : ""), s.name);
-            nm.title = s.desc + (latent ? "\nFaculté endormie : s'éveille sous condition spéciale." : "");
+            // le niveau (déjà réglable dans l'onglet Options) passe en infobulle :
+            // le bloc de clarté ne garde que nom + clarté, pour des noms lisibles.
+            nm.title = s.desc + "\nNiveau : " + nv + (latent ? " · faculté endormie, s'éveille sous condition spéciale." : "");
             row.appendChild(nm);
-            row.appendChild(el("span", "niv", nv));
             if (latent) {
               row.appendChild(el("span", "niv", "endormi"));
             } else {
@@ -1588,31 +1973,22 @@
     onlyChip.classList.toggle("on", only);
     onlyChip.addEventListener("click", function () { only = !only; onlyChip.classList.toggle("on", only); render(); });
     tools.appendChild(onlyChip);
+    // bascule d'affichage des champs d'ajout d'une compétence personnalisée par champ
+    var addChip = el("span", "pc-chip");
+    addChip.textContent = "+ Compétence perso";
+    addChip.title = "Afficher un champ d'ajout de compétence personnalisée sous chaque champ.";
+    var addMode = false;
+    addChip.addEventListener("click", function () { addMode = !addMode; addChip.classList.toggle("on", addMode); render(); });
+    tools.appendChild(addChip);
     b.appendChild(tools);
+
+    // en-tête de colonnes collant (reste visible en défilant les 133 lignes)
+    var chead = el("div", "pc-comp-row pc-comp-head");
+    ["Compétence", "PF", "±", "Total"].forEach(function (t) { chead.appendChild(el("span", null, t)); });
+    b.appendChild(chead);
 
     var list = el("div", "pc-comp-list one");
     b.appendChild(list);
-
-    // ajout d'une compétence personnalisée (hors règles, à valider avec le MJ)
-    var addBar = el("div", "pc-comp-tools");
-    addBar.style.marginTop = ".5rem";
-    var addName = el("input", "pc-comp-search");
-    addName.type = "text"; addName.placeholder = "Compétence personnalisée (nom)…";
-    var addCarac = el("select", "pc-select");
-    DATA.caracs.forEach(function (k) {
-      var o = el("option"); o.value = k.abbr; o.textContent = k.abbr + " — " + k.name;
-      addCarac.appendChild(o);
-    });
-    var addBtn = el("button", "pc-mini", "+ Ajouter"); addBtn.type = "button";
-    addBtn.addEventListener("click", function () {
-      var n = addName.value.trim();
-      if (!n) return;
-      state.customComps.push({ name: n, carac: addCarac.value, pf: 0, divers: 0 });
-      addName.value = "";
-      render();
-    });
-    addBar.appendChild(addName); addBar.appendChild(addCarac); addBar.appendChild(addBtn);
-    b.appendChild(addBar);
 
     // Les lignes sont recréées à chaque filtre : leurs rafraîchisseurs vivent
     // dans rowSync (vidé au re-rendu) derrière un unique updater global, sinon
@@ -1620,68 +1996,102 @@
     var rowSync = [];
     updaters.push(function () { rowSync.forEach(function (f) { f(); }); });
 
+    // Rendu groupé par champ : compétences du livre, puis compétences
+    // personnalisées du même champ, puis (si l'ajout est déployé) un champ de
+    // saisie pour en ajouter une à ce champ. Le pseudo-champ « Personnalisé »
+    // recueille les compétences perso sans champ (anciens personnages).
     function render() {
       list.innerHTML = "";
       rowSync.length = 0;
       var q = search.value.trim().toLowerCase();
-      var champ = champSel.value;
-      var cur = null;
-      DATA.competences.forEach(function (k) {
-        if (champ && k.champ !== champ) return;
-        if (q && k.name.toLowerCase().indexOf(q) < 0) return;
-        if (only && !(state.comps[k.name] > 0) && !diversOf(k.name)) return;
-        if (k.champ !== cur) { cur = k.champ; list.appendChild(el("div", "pc-comp-champ", "Champ " + cur)); }
-        var row = el("div", "pc-comp-row");
-        var nm = el("span", "pc-comp-name");
-        var txt = document.createTextNode("");
-        nm.appendChild(txt);
-        row.appendChild(nm);
-        var abbr = el("span", "pc-comp-carac", caracAbbr(k.carac));
-        abbr.title = k.carac;
-        row.appendChild(abbr);
-        stepperPf(row, k);
-        // l'accessibilité peut changer (forme, onglet Options) : la ligne se
-        // remet à jour à chaque rafraîchissement
-        rowSync.push(function () {
-          var acc = compAccessible(k);
-          nm.classList.toggle("na", !acc);
-          txt.textContent = k.name + (acc ? " " : " ✗ ");
-          nm.title = k.desc + "\nGroupes : " + k.groupes.join(", ") +
-            (acc ? "" : "\nHors de portée du corps du personnage : verrouillée (voir l'onglet Options).");
+      var champFilter = champSel.value;
+      var ri = 0;   // index LOGIQUE de ligne (zébrage stable malgré les en-têtes de champ)
+      function put(row) { if (ri++ % 2) row.classList.add("odd"); list.appendChild(row); }
+      champs.concat(["Personnalisé"]).forEach(function (ch) {
+        if (champFilter && ch !== champFilter) return;
+        var std = DATA.competences.filter(function (k) {
+          return k.champ === ch && (!q || k.name.toLowerCase().indexOf(q) >= 0) &&
+                 (!only || state.comps[k.name] > 0 || diversOf(k.name));
         });
-        var div = el("input", "pc-comp-div");
-        div.type = "number"; div.placeholder = "±";
-        div.value = diversOf(k.name) || "";
-        div.title = "Bonus ou malus divers (équipement, circonstance, décision du MJ)";
-        div.addEventListener("input", function () {
-          var v = num(div.value, 0);
-          if (v) state.divers[k.name] = v; else delete state.divers[k.name];
-          refresh();
+        var cust = state.customComps.filter(function (c) {
+          return (c.champ || "Personnalisé") === ch && (!q || c.name.toLowerCase().indexOf(q) >= 0) &&
+                 (!only || (c.pf || 0) > 0 || c.divers);
         });
-        row.appendChild(div);
-        var tot = el("span", "pc-comp-total");
-        rowSync.push(function () {
-          var t = compTotal(k.name);
-          tot.textContent = signed(t);
-          tot.classList.toggle("zero", !(state.comps[k.name] > 0) && !diversOf(k.name));
-          tot.title = "Base +" + compBase(k.name) + " · Carac " + signed(modOf(caracVal(caracAbbr(k.carac)))) +
-            (diversOf(k.name) ? " · Divers " + signed(diversOf(k.name)) : "") + "\n" + ROLL_HINT;
-        });
-        rollable(tot, function () { return k.name; }, function () { return compTotal(k.name); });
-        row.appendChild(tot);
-        list.appendChild(row);
+        var showAdd = addMode && !q;   // pas de saisie d'ajout pendant une recherche
+        if (!std.length && !cust.length && !showAdd) return;
+        list.appendChild(el("div", "pc-comp-champ", "Champ " + ch));
+        ri = 0;   // repartir de zéro à chaque champ : la 1re ligne d'un champ est toujours claire
+        std.forEach(function (k) { put(stdRow(k)); });
+        cust.forEach(function (c) { put(customRow(c)); });
+        if (showAdd) list.appendChild(addRow(ch));
       });
-      // compétences personnalisées (lignes ajoutées par le joueur)
-      var customs = state.customComps.filter(function (c) {
-        return (!q || c.name.toLowerCase().indexOf(q) >= 0) &&
-               (!champ || champ === "Personnalisé") &&
-               (!only || (c.pf || 0) > 0 || c.divers);
-      });
-      if (customs.length) {
-        list.appendChild(el("div", "pc-comp-champ", "Champ Personnalisé"));
-        customs.forEach(function (c) { list.appendChild(customRow(c)); });
-      }
       refresh();
+    }
+    function stdRow(k) {
+      var row = el("div", "pc-comp-row");
+      var nm = el("span", "pc-comp-name");
+      var lbl = el("span", "pc-comp-label");
+      var txt = document.createTextNode("");
+      lbl.appendChild(txt);
+      nm.appendChild(lbl);
+      var gov = el("span", "pc-comp-gov", caracAbbr(k.carac));   // carac gouvernante en gris (protégée de la troncature)
+      gov.title = k.carac;
+      nm.appendChild(gov);
+      row.appendChild(nm);
+      stepperPf(row, k);
+      // l'accessibilité peut changer (forme, onglet Options) : la ligne se
+      // remet à jour à chaque rafraîchissement
+      rowSync.push(function () {
+        var acc = compAccessible(k);
+        nm.classList.toggle("na", !acc);
+        txt.textContent = k.name + (acc ? "" : " ✗");
+        nm.title = k.desc + "\nGroupes : " + k.groupes.join(", ") +
+          (acc ? "" : "\nHors de portée du corps du personnage : verrouillée (voir l'onglet Options).");
+      });
+      var div = el("input", "pc-comp-div pc-cdiv");
+      div.type = "number"; div.placeholder = "±";
+      div.value = diversOf(k.name) || "";
+      div.title = "Bonus ou malus divers (équipement, circonstance, décision du MJ)";
+      div.addEventListener("input", function () {
+        var v = num(div.value, 0);
+        if (v) state.divers[k.name] = v; else delete state.divers[k.name];
+        refresh();
+      });
+      row.appendChild(div);
+      var tot = el("span", "pc-comp-total");
+      rowSync.push(function () {
+        var t = compTotal(k.name);
+        var em = etatMalus(k), cm = clarteMalus(k);
+        tot.textContent = signed(t);
+        tot.classList.toggle("zero", !(state.comps[k.name] > 0) && !diversOf(k.name) && !em && !cm);
+        tot.title = "Base +" + compBase(k.name) + " · Carac " + signed(modOf(caracVal(caracAbbr(k.carac)))) +
+          (diversOf(k.name) ? " · Divers " + signed(diversOf(k.name)) : "") +
+          (em ? " · États " + signed(em) : "") + (cm ? " · Clarté " + signed(cm) : "") + "\n" + ROLL_HINT;
+      });
+      rollable(tot, function () { return k.name; }, function () { return compTotal(k.name); });
+      row.appendChild(tot);
+      return row;
+    }
+    function addRow(ch) {
+      var row = el("div", "pc-comp-add");
+      var name = el("input", "pc-comp-search");
+      name.type = "text"; name.placeholder = "Compétence personnalisée…";
+      var carac = el("select", "pc-select");
+      DATA.caracs.forEach(function (k) {
+        var o = el("option"); o.value = k.abbr; o.textContent = k.abbr; o.title = k.name; carac.appendChild(o);
+      });
+      var btn = el("button", "pc-mini", "+"); btn.type = "button";
+      btn.title = "Ajouter une compétence personnalisée au champ " + ch;
+      function add() {
+        var n = name.value.trim();
+        if (!n) return;
+        state.customComps.push({ name: n, carac: carac.value, champ: ch, pf: 0, divers: 0 });
+        render();
+      }
+      btn.addEventListener("click", add);
+      name.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); add(); } });
+      row.appendChild(name); row.appendChild(carac); row.appendChild(btn);
+      return row;
     }
     function customRow(c) {
       var row = el("div", "pc-comp-row");
@@ -1695,10 +2105,14 @@
         render();
       });
       nm.appendChild(db);
-      nm.appendChild(document.createTextNode(c.name));
+      var lbl = el("span", "pc-comp-label");
+      lbl.appendChild(document.createTextNode(c.name));
+      nm.appendChild(lbl);
+      var gov = el("span", "pc-comp-gov", c.carac);
+      gov.title = c.carac;
+      nm.appendChild(gov);
       nm.title = "Compétence personnalisée, hors des règles : à valider avec le MJ.";
       row.appendChild(nm);
-      row.appendChild(el("span", "pc-comp-carac", c.carac));
       var box = el("span", "pc-step");
       var minus = el("button", null, "−"); minus.type = "button";
       var val = el("span", "v", "0");
@@ -1888,6 +2302,7 @@
     var wrap = el("div");
     b.appendChild(wrap);
 
+    var artDescOpen = {};   // nom d'art -> déplié (préférence d'affichage, non sauvegardée)
     // même mécanique que les compétences : rafraîchisseurs locaux vidés au re-rendu
     var artSync = [];
     updaters.push(function () { artSync.forEach(function (f) { f(); }); });
@@ -1916,9 +2331,23 @@
       var box = el("div", "pc-art-card");
       var head = el("div", "pc-art-head");
       head.appendChild(el("span", "pc-art-name", a.name));
-      head.appendChild(el("span", "pc-art-tag", a.tagline));
+      var hr = el("span", "pc-art-hr");
+      if (a.tagline) hr.appendChild(el("span", "pc-art-tag", a.tagline));
+      var chev = a.desc ? el("span", "pc-art-chev", "▸") : null;
+      if (chev) hr.appendChild(chev);
+      head.appendChild(hr);
       box.appendChild(head);
-      if (a.desc) { var d = el("div", "pc-art-effet", a.desc); d.style.color = "var(--ink-3)"; box.appendChild(d); }
+      if (a.desc) box.appendChild(el("div", "pc-art-desc", a.desc));
+      if (a.desc) {
+        head.classList.add("clickable");
+        head.title = "Afficher ou masquer la description";
+        var setOpen = function (o) {
+          box.classList.toggle("open", o); chev.textContent = o ? "▾" : "▸";
+          if (o) artDescOpen[a.name] = 1; else delete artDescOpen[a.name];
+        };
+        head.addEventListener("click", function () { setOpen(!box.classList.contains("open")); });
+        setOpen(!!artDescOpen[a.name]);
+      }
       if (a.todo) box.appendChild(el("div", "pc-art-todo", "Fiche en chantier dans les règles."));
       var seg = el("div", "pc-seg");
       var effet = el("div", "pc-art-effet");
@@ -1962,7 +2391,7 @@
         frappe.textContent = f ? "Frappe : " + f : "";
         prereq.textContent = "";
         if (pd && pd.prereq) {
-          prereq.appendChild(document.createTextNode("Prérequis : "));
+          prereq.appendChild(el("span", "lbl", "Prérequis "));
           prereqParts(pd.prereq).forEach(function (c, i) {
             if (i) prereq.appendChild(document.createTextNode(", "));
             var ok = prereqOk(c);
@@ -1971,9 +2400,14 @@
             prereq.appendChild(sp);
           });
         }
+        // le panneau de détail n'apparaît qu'une fois un palier choisi
+        box.classList.toggle("active", !!p);
+        detail.style.display = p ? "" : "none";
       }
+      var detail = el("div", "pc-art-detail");
+      detail.appendChild(prereq); detail.appendChild(frappe); detail.appendChild(effet);
       artSync.push(syncDetail);
-      box.appendChild(seg); box.appendChild(prereq); box.appendChild(frappe); box.appendChild(effet);
+      box.appendChild(seg); box.appendChild(detail);
       syncDetail();
       return box;
     }
@@ -1987,12 +2421,348 @@
   }
 
   // --- onglet Nen ---------------------------------------------------------------
-  // Volontairement vide : le raccordement du Nen (capacités, développement
-  // intérieur) viendra quand ses règles de création seront posées.
+  // Tout le Nen de la fiche : archétype et affinités, développement intérieur et
+  // prestige, aura, développement des catégories, techniques (avec prérequis et
+  // coûts en DI), et les capacités du personnage — chacune ouvre l'Atelier.
   function buildNen(pane) {
-    var b = block(pane, "Nen", null,
-      "Cette partie de la fiche est en chantier : le raccordement du Nen (développement intérieur, catégories, capacités) viendra plus tard.");
-    b.appendChild(el("div", "pc-empty", "Rien à remplir pour l'instant."));
+    var cols = el("div", "pc-cols2");
+    var colA = el("div", "pc-col"), colB = el("div", "pc-col");
+    cols.appendChild(colA); cols.appendChild(colB);
+    pane.appendChild(cols);
+
+    // ===== colonne A =====
+    // --- Développement du Nen : archétype, DI, prestige, catégories ---
+    var bDev = block(colA, "Développement du Nen", null,
+      "L'archétype fixe les affinités. Le développement intérieur (DI) paie tout le Nen ; le prestige suit le DI total (un palier par 100 DI).");
+    var grid = el("div", "pc-id");
+    var archOpts = [["", "— choisir un archétype —"]].concat((DATA.archetypes || []).map(function (a) {
+      return [a.name, a.name + (a.spe ? " *" : "")];
+    }));
+    idField(grid, "c6", "Archétype", state.archetype, function (v) { state.archetype = v; }, {
+      options: archOpts,
+      tip: "L'archétype fixe les six affinités. Les archétypes marqués * (Spécialiste et hybrides) exigent l'avantage Spécialiste, sinon leur affinité de spécialisation reste à 0 %."
+    });
+    idField(grid, "c3", "Capital DI", state.diTotal, function (v) { state.diTotal = num(v, 0); },
+      { type: "number", min: 0, tip: "Le développement intérieur gagné, au choix du MJ (cadence selon l'Éclat). Il paie techniques, aura, catégories et capacités." });
+    var prestRo = idField(grid, "c3", "Prestige", prestige(), null, { ro: true });
+    updaters.push(function () { prestRo.textContent = String(prestige()); });
+    bDev.appendChild(grid);
+
+    // Développement des catégories (après le Hatsu) : DI investi -> pool DR/DE/...
+    var catNote = el("div", "pc-block-note");
+    bDev.appendChild(catNote);
+    var catWrap = el("div", "pc-opt-list");
+    bDev.appendChild(catWrap);
+    DATA.nenCats.forEach(function (cat) {
+      var meta = NEN_CAT_META[cat];
+      var row = el("div", "pc-opt-row pc-catrow");
+      var nm = el("span", "pc-opt-name", cat.charAt(0).toUpperCase() + cat.slice(1));
+      nm.title = "Pool " + meta.sigle + " · caractéristique requise : " + meta.carac + ".";
+      row.appendChild(nm);
+      var inp = el("input", "pc-comp-div");
+      inp.type = "number"; inp.min = 0; inp.placeholder = "DI";
+      inp.value = state.diCat[cat] || "";
+      inp.title = "DI investi dans la conversion vers " + meta.sigle + ".";
+      inp.addEventListener("input", function () {
+        var v = Math.max(0, num(inp.value, 0));
+        if (v) state.diCat[cat] = v; else delete state.diCat[cat];
+        refresh();
+      });
+      row.appendChild(inp);
+      var out = el("span", "pc-opt-state");
+      updaters.push(function () {
+        var aff = affiniteCat(cat);
+        out.textContent = meta.sigle + " " + poolCat(cat) + " · " + aff + "%";
+        out.classList.toggle("ko", aff === 0);
+        inp.disabled = !hasHatsu();
+      });
+      row.appendChild(out);
+      catWrap.appendChild(row);
+    });
+    updaters.push(function () {
+      catNote.textContent = hasHatsu()
+        ? "Chaque DI investi rend une part égale à l'affinité d'apprentissage de la catégorie."
+        : "Le développement des catégories se déverrouille avec le Hatsu.";
+      catWrap.style.opacity = hasHatsu() ? "1" : ".5";
+    });
+
+    // --- Affinités ---
+    var bAff = block(colA, "Affinités", null,
+      "Le même pourcentage sert à apprendre (vitesse de progression) et à employer (puissance) chaque catégorie.");
+    var affWrap = el("div", "pc-aff");
+    bAff.appendChild(affWrap);
+    var affRows = DATA.nenCats.map(function (cat) {
+      var row = el("div", "pc-aff-row");
+      row.appendChild(el("span", "nm", cat.charAt(0).toUpperCase() + cat.slice(1)));
+      var barBox = el("span", "bar");
+      var fill = el("i");
+      barBox.appendChild(fill);
+      row.appendChild(barBox);
+      var val = el("span", "v", "");
+      row.appendChild(val);
+      // ± affinité (avantage « Affinité supérieure », race, don du MJ) — révélé au survol
+      var dv = el("input", "pc-comp-div pc-cdiv");
+      dv.type = "number"; dv.placeholder = "±";
+      dv.value = state.affiniteDivers[cat] || "";
+      dv.title = "Ajustement d'affinité en points de % (avantage « Affinité supérieure », race, don du MJ).";
+      dv.addEventListener("input", function () {
+        var v = num(dv.value, 0);
+        if (v) state.affiniteDivers[cat] = v; else delete state.affiniteDivers[cat];
+        refresh();
+      });
+      row.appendChild(dv);
+      affWrap.appendChild(row);
+      return { cat: cat, fill: fill, val: val };
+    });
+    updaters.push(function () {
+      var aff = affinites();
+      affRows.forEach(function (r, i) {
+        r.fill.style.width = aff[i] + "%";
+        r.val.textContent = aff[i] + "%";
+        r.fill.classList.toggle("zero", aff[i] === 0);
+      });
+    });
+
+    // --- Aura ---
+    var bAura = block(colA, "Aura", null,
+      "L'aura se mesure en unités (UA). Développer l'aura coûte du DI, plafonné à 60 DI par prestige.");
+    var auraBig = el("div", "pc-bigrow");
+    var boxUAM = auraBigBox("UAM", "aura maximale"), boxUAR = auraBigBox("UAR", "aura par round"), boxRUA = auraBigBox("RUA", "régénération / min");
+    auraBig.appendChild(boxUAM.box); auraBig.appendChild(boxUAR.box); auraBig.appendChild(boxRUA.box);
+    bAura.appendChild(auraBig);
+    updaters.push(function () {
+      boxUAM.v.textContent = fmt(uam());
+      boxUAR.v.textContent = fmt(uar());
+      boxRUA.v.textContent = fmt(rua());
+      boxUAR.box.title = "UAR = base " + baseUAR() + " × (mult " + mulUAR() + " + 1)";
+      boxRUA.box.title = "RUA = base " + baseRUA() + " × (mult " + mulRUA() + " + 1)";
+    });
+    // override manuel des trois mesures d'aura (avantage, don du MJ) : vide = calculé
+    var auraOv = el("div", "pc-aura-ov");
+    [["UAM", "uam", uamAuto], ["UAR", "uar", uarAuto], ["RUA", "rua", ruaAuto]].forEach(function (d) {
+      var cell = el("label", "pc-aura-ov-cell");
+      cell.appendChild(el("span", "l", "Forcer " + d[0]));
+      var inp = el("input", "pc-comp-div");
+      inp.type = "number";
+      inp.title = "Forcer " + d[0] + " à la main (avantage, don du MJ, règle maison). Vide = valeur calculée.";
+      inp.addEventListener("input", function () { state.auraOverride[d[1]] = inp.value === "" ? null : num(inp.value, 0); refresh(); });
+      cell.appendChild(inp);
+      auraOv.appendChild(cell);
+      updaters.push(function () {
+        if (document.activeElement !== inp) {
+          inp.value = state.auraOverride[d[1]] == null ? "" : state.auraOverride[d[1]];
+          inp.placeholder = String(d[2]());
+        }
+      });
+    });
+    bAura.appendChild(auraOv);
+    var auraSteps = el("div", "pc-opt-list");
+    bAura.appendChild(auraSteps);
+    auraStep(auraSteps, "Multiplicateur d'UAR", "40 DI · +1 UAR et +1 RUA", "uar");
+    auraStep(auraSteps, "Multiplicateur de RUA", "20 DI · +1 RUA", "rua");
+    auraStep(auraSteps, "Aura maximale", "5 DI · +200 UAM", "uam");
+    var auraNote = el("div", "pc-block-note");
+    bAura.appendChild(auraNote);
+    updaters.push(function () {
+      auraNote.textContent = "Aura développée : " + auraDiSpent() + " / " + auraDiCap() + " DI (60 par prestige).";
+      auraNote.classList.toggle("pc-warn-inline", auraDiSpent() > auraDiCap());
+    });
+
+    // capacités sous l'aura (colonne A) : équilibre la colonne face aux techniques
+    buildCapacites(colA);
+    // ===== colonne B =====
+    buildTechniques(colB);
+
+    function auraBigBox(k, tip) {
+      var box = el("div", "pc-big pc-big--md");
+      box.appendChild(el("span", "k", k));
+      var v = el("span", "v", "");
+      box.appendChild(v);
+      box.title = tip;
+      return { box: box, v: v };
+    }
+    function auraStep(parent, label, sub, key) {
+      var row = el("div", "pc-opt-row");
+      var nm = el("span", "pc-opt-name", label);
+      nm.title = sub;
+      row.appendChild(nm);
+      stepper(row,
+        function () { return state.auraDev[key] || 0; },
+        function (v) { state.auraDev[key] = Math.max(0, v); },
+        function () { return 0; },
+        function () { return 999; });
+      var st = el("span", "pc-opt-state");
+      updaters.push(function () { st.textContent = sub; });
+      row.appendChild(st);
+      parent.appendChild(row);
+    }
+  }
+
+  // --- techniques du Nen (colonne de l'onglet Nen) ------------------------------
+  function buildTechniques(parent) {
+    var b = block(parent, "Techniques", null,
+      "Apprendre une technique coûte du DI ; une technique acquise reste. Un palier ou un bloc grisé a un prérequis non rempli.");
+    var wrap = el("div", "pc-tech-list");   // même espacement que la grille d'arts
+    b.appendChild(wrap);
+    var techDescOpen = {};   // nom de technique -> déplié
+    (DATA.techniques || []).forEach(function (t) { wrap.appendChild(techCard(t)); });
+
+    function techCard(t) {
+      var box = el("div", "pc-art-card");
+      var head = el("div", "pc-art-head");
+      head.appendChild(el("span", "pc-art-name", t.name));
+      var hr = el("span", "pc-art-hr");
+      if (t.tag) hr.appendChild(el("span", "pc-art-tag", t.tag));
+      var hasTables = t.tables && t.tables.length;
+      var canExpand = t.desc || hasTables;
+      var chev = canExpand ? el("span", "pc-art-chev", "▸") : null;
+      if (chev) hr.appendChild(chev);
+      head.appendChild(hr);
+      box.appendChild(head);
+      if (canExpand) {
+        // zone dépliable : description + tables internes (bonus chiffrés de Ren,
+        // Ken, Ko, Ryu, rayons de l'En…), masquée tant que la carte n'est pas ouverte
+        var expand = el("div", "pc-art-desc");
+        if (t.desc) expand.appendChild(el("div", null, t.desc));
+        (t.tables || []).forEach(function (tb) {
+          var tbl = el("table", "pc-mini-table");
+          var trh = el("tr");
+          (tb.cols || []).forEach(function (c) { trh.appendChild(el("th", null, c)); });
+          tbl.appendChild(trh);
+          (tb.rows || []).forEach(function (r) {
+            var tr = el("tr");
+            r.forEach(function (c) { tr.appendChild(el("td", null, c)); });
+            tbl.appendChild(tr);
+          });
+          expand.appendChild(tbl);
+        });
+        box.appendChild(expand);
+        head.classList.add("clickable");
+        head.title = "Afficher ou masquer le détail (description, bonus)";
+        var setOpen = function (o) {
+          box.classList.toggle("open", o); chev.textContent = o ? "▾" : "▸";
+          if (o) techDescOpen[t.name] = 1; else delete techDescOpen[t.name];
+        };
+        head.addEventListener("click", function () { setOpen(!box.classList.contains("open")); });
+        setOpen(!!techDescOpen[t.name]);
+      }
+      var seg = el("div", "pc-seg");
+      var detail = el("div", "pc-art-effet pc-tech-detail");
+      if (t.bloc) {
+        var btn = el("button", "pc-seg-btn");
+        btn.type = "button"; btn.textContent = "Apprendre";
+        btn.addEventListener("click", function () {
+          if (!prereqAllMet(t.prereq) && !state.techniques[t.name]) return;
+          if (state.techniques[t.name]) delete state.techniques[t.name]; else state.techniques[t.name] = true;
+          syncBloc(); refresh();
+        });
+        seg.appendChild(btn);
+        var cost = el("span", "pc-tech-cost", t.cout != null ? t.cout + " DI" : "");
+        seg.appendChild(cost);
+        function syncBloc() {
+          var on = !!state.techniques[t.name];
+          var ok = prereqAllMet(t.prereq);
+          btn.classList.toggle("on", on);
+          btn.textContent = on ? "Apprise" : "Apprendre";
+          btn.disabled = !on && !ok;
+          detail.textContent = t.prereq && t.prereq.toLowerCase() !== "aucun" ? "Prérequis : " + t.prereq : "";
+          detail.classList.toggle("pc-warn-inline", !ok && !on);
+        }
+        updaters.push(syncBloc); syncBloc();
+      } else {
+        var labels = ["—"].concat(t.paliers.map(function (p) { return p.niveau; }));
+        var btns = [];
+        labels.forEach(function (lb, i) {
+          var pb = el("button", "pc-seg-btn");
+          pb.type = "button"; pb.textContent = lb;
+          pb.title = lb;
+          pb.addEventListener("click", function () {
+            if (i === 0) { delete state.techniques[t.name]; }
+            else {
+              var pal = t.paliers[i - 1];
+              if (!prereqAllMet(pal.prereq)) return;
+              state.techniques[t.name] = pal.niveau;
+            }
+            syncPal(); refresh();
+          });
+          seg.appendChild(pb); btns.push(pb);
+        });
+        var cost2 = el("span", "pc-tech-cost", "");
+        seg.appendChild(cost2);
+        function syncPal() {
+          var r = techRank(t.name);
+          btns.forEach(function (pb, i) {
+            pb.classList.toggle("on", i - 1 === r);
+            if (i === 0) return;
+            var pal = t.paliers[i - 1];
+            pb.disabled = !prereqAllMet(pal.prereq) && (i - 1 !== r);
+            pb.title = pal.niveau + " · " + (pal.cout != null ? pal.cout + " DI" : "") + (pal.prereq ? " · prérequis : " + pal.prereq : "");
+          });
+          var pal = r >= 0 ? t.paliers[r] : null;
+          cost2.textContent = pal && pal.cout != null ? pal.cout + " DI" : "";
+          detail.textContent = pal ? pal.desc : (t.desc ? "" : "");
+        }
+        updaters.push(syncPal); syncPal();
+      }
+      box.appendChild(seg);
+      box.appendChild(detail);
+      return box;
+    }
+  }
+
+  // --- capacités du Nen : liste + ouverture de l'Atelier ------------------------
+  function buildCapacites(parent) {
+    var b = block(parent, "Capacités", null,
+      "Chaque capacité (Hatsu) se construit dans l'Atelier. Créer ou modifier une capacité y ouvre son schéma ; à l'enregistrement, elle revient sur la fiche.");
+    var list = el("div", "pc-forma-buys");
+    b.appendChild(list);
+    var gateNote = el("div", "pc-block-note");
+    b.appendChild(gateNote);
+
+    function render() {
+      list.innerHTML = "";
+      state.capacites.forEach(function (cap) {
+        var row = el("div", "pc-cap-line");
+        var main = el("div", "pc-cap-main");
+        var nm = el("span", "nm", cap.name || "Capacité sans nom");
+        main.appendChild(nm);
+        if (cap.report) {
+          var meta = [];
+          if (cap.report.type) meta.push(cap.report.type);
+          if (cap.report.di != null) meta.push(cap.report.di + " DI");
+          if (cap.report.uaa != null) meta.push(cap.report.uaa + " UAA");
+          if (cap.report.ma) meta.push(cap.report.ma + " MA");
+          main.appendChild(el("span", "meta", meta.join(" · ")));
+        }
+        row.appendChild(main);
+        var edit = el("button", "pc-mini", "Modifier"); edit.type = "button";
+        edit.addEventListener("click", function () { openAtelier(cap); });
+        row.appendChild(edit);
+        var del = el("button", "pc-mini danger", "×"); del.type = "button"; del.title = "Retirer cette capacité";
+        del.addEventListener("click", function () {
+          var i = state.capacites.indexOf(cap);
+          if (i >= 0) state.capacites.splice(i, 1);
+          render(); refresh(); save();
+        });
+        row.appendChild(del);
+        list.appendChild(row);
+      });
+      var add = el("button", "pc-mini", "+ Créer une capacité dans l'Atelier"); add.type = "button";
+      add.addEventListener("click", function () {
+        var cap = { id: capId(), name: "Nouvelle capacité", atelier: null, report: null };
+        state.capacites.push(cap);
+        render(); save();
+        openAtelier(cap);
+      });
+      list.appendChild(add);
+    }
+    updaters.push(function () {
+      gateNote.textContent = hasHatsu() ? "" : "Créer une capacité exige le Hatsu.";
+      list.style.opacity = hasHatsu() ? "1" : ".5";
+      list.querySelectorAll("button").forEach(function (btn) { btn.disabled = !hasHatsu(); });
+    });
+    render();
+    capacitesRender = render;   // pour rafraîchir après un retour de l'Atelier
   }
 
   // --- onglet Options : réglages manuels ----------------------------------------
@@ -2141,11 +2911,12 @@
     var mv = capRow("mouvement", capVal("mouvement")) || [];
     var pt = capRow("port", capVal("port")) || [];
     var ap = capRow("apnee", capVal("apnee")) || [];
-    var so = capRow("sommeil", capVal("sommeil")) || [];
+    var re = capRow("repos", capVal("repos")) || [];
+    var fo = capRow("fond", capVal("fond")) || [];
     table(["PV (courants / max)", "Initiative", "Esquive", "Parade", "Points de fatigue"],
           [[fmt(pvCourant()) + " / " + fmt(pvMax()), signed(compTotal("Initiative") + modsGlobaux()), signed(compTotal("Esquive") + modsGlobaux()),
-            signed(compTotal("Parade") + modsGlobaux()), fatiguePts() + " / " + caracVal("END")]]);
-    h("p", "Points de fatigue : maximum = Endurance ; +15 au jet par point consommé (5 max par jet) ; −10 à tous les jets par point sous zéro ; effondrement à −" + caracVal("END") + ".");
+            signed(compTotal("Parade") + modsGlobaux()), fatiguePts() + " / " + fatigueMax()]]);
+    h("p", "Points de fatigue : maximum = Endurance + bonus ; +15 au jet par point consommé (5 max par jet) ; −10 à tous les jets par point sous zéro ; effondrement à −" + fatigueMax() + ".");
     if (modsGlobaux()) h("p", "Modificateur à toutes les actions : " + signed(modsGlobaux()) +
       (fatiguePts() < 0 ? " (dont fatigue " + signed(10 * Math.min(0, fatiguePts())) + ")" : "") +
       " — déjà compté dans Initiative, Esquive et Parade ci-dessus, à reporter sur les autres jets (le tableau Armes ne le compte pas).");
@@ -2160,10 +2931,11 @@
                       (e.name === "Abri" ? "subi par l'assaillant : " : "") + (mods || "voir la règle")]);
     });
     if (etatLines.length) { h("h3", "États en cours"); table(["État", "Effets"], etatLines); }
-    var soCols = DATA.capacites.sommeil ? DATA.capacites.sommeil.cols.join(" · ") : "";
-    table(["Mouvement (marche · course · sprint)", "Port (léger · effort · maximal)",
-           "Apnée (légère · intermédiaire · lourde)", "Endurance (" + soCols + ")"],
-          [[mv.join(" · "), pt.join(" · "), ap.join(" · "), so.join(" · ")]]);
+    var reCols = DATA.capacites.repos ? DATA.capacites.repos.cols.join(" · ") : "";
+    var foCols = DATA.capacites.fond ? DATA.capacites.fond.cols.join(" · ") : "";
+    table(["Mouvement (légère · interm. · lourde)", "Port (légère · interm. · lourde)",
+           "Apnée (légère · interm. · lourde)", "Repos (" + reCols + ")", "Fond (" + foCols + ")"],
+          [[mv.join(" · "), pt.join(" · "), ap.join(" · "), re.join(" · "), fo.join(" · ")]]);
 
     h("h3", "Compétences");
     var invested = DATA.competences.filter(function (k) { return state.comps[k.name] > 0 || diversOf(k.name); });
@@ -2224,6 +2996,27 @@
         (a && a.paliers || []).forEach(function (x) { if (x.niveau === pal) pd = x; });
         var extra = a && a.frappe ? "Frappe " + frappeTxt(a, pal) : (pd && pd.effet ? pd.effet : "");
         return [n, pal, extra];
+      }));
+    }
+
+    if (hasNen()) {
+      h("h3", "Nen" + (state.archetype ? " — " + state.archetype : ""));
+      h("p", "Prestige " + prestige() + " · développement intérieur " + diSpent() + " / " + (state.diTotal || 0) + " DI · "
+        + "UAM " + fmt(uam()) + " · UAR " + uar() + " · RUA " + rua()
+        + (state.archetype ? " · affinités " + affinites().map(function (v, i) { return NEN_CAT_META[DATA.nenCats[i]].sigle + " " + v + "%"; }).join(", ") : ""));
+      var techRows = [];
+      (DATA.techniques || []).forEach(function (t) {
+        if (!state.techniques[t.name]) return;
+        var v = state.techniques[t.name];
+        techRows.push([t.name, v === true ? "apprise" : v]);
+      });
+      if (techRows.length) table(["Technique", "Palier"], techRows);
+      var poolRows = DATA.nenCats.filter(function (c) { return (state.diCat[c] || 0) > 0; })
+        .map(function (c) { return [c, NEN_CAT_META[c].sigle + " " + poolCat(c), (state.diCat[c] || 0) + " DI · " + affiniteCat(c) + "%"]; });
+      if (poolRows.length) table(["Catégorie", "Développement", "Investi"], poolRows);
+      if (state.capacites.length) table(["Capacité", "Type", "Coûts"], state.capacites.map(function (c) {
+        var r = c.report || {};
+        return [c.name, r.type || "", [r.di != null ? r.di + " DI" : "", r.uaa != null ? r.uaa + " UAA" : "", r.ma ? r.ma + " MA" : ""].filter(Boolean).join(" · ")];
       }));
     }
 
@@ -2390,8 +3183,13 @@
     buildHead(sheet);
     var panes = buildTabs(sheet);
     buildGeneral(panes.general);
-    buildFormations(panes.formations);
-    buildArts(panes.formations);
+    // Formations à gauche, Arts à droite (les arts, plus nombreux, prennent plus de place)
+    var faCols = el("div", "pc-cols-fa");
+    var faL = el("div", "pc-col"), faR = el("div", "pc-col");
+    faCols.appendChild(faL); faCols.appendChild(faR);
+    panes.formations.appendChild(faCols);
+    buildFormations(faL);
+    buildArts(faR);
     buildNen(panes.nen);
     buildOptions(panes.options);
     refresh();
@@ -2401,10 +3199,10 @@
     var root = document.getElementById("perso-atelier");
     if (!root || root.getAttribute("data-ready")) return;
     root.setAttribute("data-ready", "1");
-    if (DATA) { state = load() || blank(); mount(root); return; }
+    if (DATA) { state = load() || blank(); absorbAtelierReturn(); mount(root); return; }
     fetch(siteBase() + "creation.json", { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (d) { DATA = d; state = load() || blank(); mount(root); })
+      .then(function (d) { DATA = d; state = load() || blank(); absorbAtelierReturn(); mount(root); })
       .catch(function (e) { root.innerHTML = '<p style="padding:2rem;color:#b0402c">Le créateur n\'a pas pu charger ses données (' + e.message + ").</p>"; });
   }
 

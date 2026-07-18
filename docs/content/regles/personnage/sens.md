@@ -134,6 +134,8 @@ Quand le jet sert à percevoir par ce sens (se repérer, localiser ou identifier
 
 Quand le jet sert à agir en s'appuyant sur ce sens (attaquer, esquiver, se déplacer), chaque point de clarté manquant inflige −10 au jet, quel que soit le sens. Attaquer une cible mal vue est agir : le jet cherche à toucher, pas à obtenir une information, même si la Vue guide le coup.
 
+Par défaut, agir physiquement s'appuie sur la Vue : toute [compétence](competences.md) du groupe Physique subit le malus d'action de la Vue. Un personnage qui ne voit pas se rabat sur un autre sens, au choix du MJ.
+
 <p class="formula">Malus d'action = 10 × points de clarté manquants</p>
 
 </div>

@@ -73,6 +73,11 @@ BLOCK_LOWER = {
     "points", "vol", "vue", "état", "états", "arme", "armes", "touche", "attaque",
     "attaques", "course", "nage", "chasse", "garde", "reste", "passe", "coup",
 }
+# Premier mot qui rend un terme multi-mots trop courant pour être lié en minuscule
+# (prépositions et adverbes) : « Dans l'eau », « Sur terre », « Pas à pas »…
+NOISE_FIRST = {
+    "dans", "sur", "sous", "par", "en", "au", "aux", "vers", "entre", "hors", "chez", "pas",
+}
 
 _DET = re.compile(r"^(le|la|les|l'|un|une|des|du|de|d'|au|aux|à|ce|ses|son|sa|leur)\b", re.I)
 _VERBS = ("ajouter", "changer", "interagir", "répartir", "alterner", "combler", "choisir",
@@ -252,6 +257,12 @@ def build_registry():
         if (" " not in term and term[:1].isupper() and len(term) >= 6
                 and re.fullmatch(r"[A-Za-zÀ-ÿ]+", term)
                 and low not in BLOCK_LOWER and not low.endswith(("er", "ir", "re", "oir"))):
+            vs.add(low)
+        # Termes multi-mots : ajoute la forme minuscule, celle qu'ils prennent en pleine
+        # phrase (« degré de touche », « résistance à l'épuisement »), sinon ils ne se lient
+        # qu'écrits comme leur titre. On écarte les amorces prépositionnelles, qui
+        # deviendraient du bruit (« dans l'eau », « sur terre »).
+        elif " " in term and low != term and term.split()[0].lower() not in NOISE_FIRST:
             vs.add(low)
         terms[term] = {"variants": sorted(vs), "defs": out}
     return terms
